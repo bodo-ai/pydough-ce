@@ -1,0 +1,617 @@
+[
+  {
+    "name": "TPCH",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "CUSTOMER",
+        "type": "simple table",
+        "table path": "main.CUSTOMER",
+        "unique properties": [
+          "C_CUSTKEY"
+        ],
+        "properties": [
+          {
+            "name": "C_CUSTKEY",
+            "type": "table column",
+            "column name": "C_CUSTKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "C_NAME",
+            "type": "table column",
+            "column name": "C_NAME",
+            "data type": "string"
+          },
+          {
+            "name": "C_ADDRESS",
+            "type": "table column",
+            "column name": "C_ADDRESS",
+            "data type": "string"
+          },
+          {
+            "name": "C_NATIONKEY",
+            "type": "table column",
+            "column name": "C_NATIONKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "C_PHONE",
+            "type": "table column",
+            "column name": "C_PHONE",
+            "data type": "string"
+          },
+          {
+            "name": "C_ACCTBAL",
+            "type": "table column",
+            "column name": "C_ACCTBAL",
+            "data type": "numeric"
+          },
+          {
+            "name": "C_MKTSEGMENT",
+            "type": "table column",
+            "column name": "C_MKTSEGMENT",
+            "data type": "string"
+          },
+          {
+            "name": "C_COMMENT",
+            "type": "table column",
+            "column name": "C_COMMENT",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "LINEITEM",
+        "type": "simple table",
+        "table path": "main.LINEITEM",
+        "unique properties": [
+          [
+            "L_ORDERKEY",
+            "L_LINENUMBER"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "L_ORDERKEY",
+            "type": "table column",
+            "column name": "L_ORDERKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "L_PARTKEY",
+            "type": "table column",
+            "column name": "L_PARTKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "L_SUPPKEY",
+            "type": "table column",
+            "column name": "L_SUPPKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "L_LINENUMBER",
+            "type": "table column",
+            "column name": "L_LINENUMBER",
+            "data type": "numeric"
+          },
+          {
+            "name": "L_QUANTITY",
+            "type": "table column",
+            "column name": "L_QUANTITY",
+            "data type": "numeric"
+          },
+          {
+            "name": "L_EXTENDEDPRICE",
+            "type": "table column",
+            "column name": "L_EXTENDEDPRICE",
+            "data type": "numeric"
+          },
+          {
+            "name": "L_DISCOUNT",
+            "type": "table column",
+            "column name": "L_DISCOUNT",
+            "data type": "numeric"
+          },
+          {
+            "name": "L_TAX",
+            "type": "table column",
+            "column name": "L_TAX",
+            "data type": "numeric"
+          },
+          {
+            "name": "L_RETURNFLAG",
+            "type": "table column",
+            "column name": "L_RETURNFLAG",
+            "data type": "string"
+          },
+          {
+            "name": "L_LINESTATUS",
+            "type": "table column",
+            "column name": "L_LINESTATUS",
+            "data type": "string"
+          },
+          {
+            "name": "L_SHIPDATE",
+            "type": "table column",
+            "column name": "L_SHIPDATE",
+            "data type": "datetime"
+          },
+          {
+            "name": "L_COMMITDATE",
+            "type": "table column",
+            "column name": "L_COMMITDATE",
+            "data type": "datetime"
+          },
+          {
+            "name": "L_RECEIPTDATE",
+            "type": "table column",
+            "column name": "L_RECEIPTDATE",
+            "data type": "datetime"
+          },
+          {
+            "name": "L_SHIPINSTRUCT",
+            "type": "table column",
+            "column name": "L_SHIPINSTRUCT",
+            "data type": "string"
+          },
+          {
+            "name": "L_SHIPMODE",
+            "type": "table column",
+            "column name": "L_SHIPMODE",
+            "data type": "string"
+          },
+          {
+            "name": "L_COMMENT",
+            "type": "table column",
+            "column name": "L_COMMENT",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "NATION",
+        "type": "simple table",
+        "table path": "main.NATION",
+        "unique properties": [
+          "N_NATIONKEY"
+        ],
+        "properties": [
+          {
+            "name": "N_NATIONKEY",
+            "type": "table column",
+            "column name": "N_NATIONKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "N_NAME",
+            "type": "table column",
+            "column name": "N_NAME",
+            "data type": "string"
+          },
+          {
+            "name": "N_REGIONKEY",
+            "type": "table column",
+            "column name": "N_REGIONKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "N_COMMENT",
+            "type": "table column",
+            "column name": "N_COMMENT",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "ORDERS",
+        "type": "simple table",
+        "table path": "main.ORDERS",
+        "unique properties": [
+          "O_ORDERKEY"
+        ],
+        "properties": [
+          {
+            "name": "O_ORDERKEY",
+            "type": "table column",
+            "column name": "O_ORDERKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "O_CUSTKEY",
+            "type": "table column",
+            "column name": "O_CUSTKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "O_ORDERSTATUS",
+            "type": "table column",
+            "column name": "O_ORDERSTATUS",
+            "data type": "string"
+          },
+          {
+            "name": "O_TOTALPRICE",
+            "type": "table column",
+            "column name": "O_TOTALPRICE",
+            "data type": "numeric"
+          },
+          {
+            "name": "O_ORDERDATE",
+            "type": "table column",
+            "column name": "O_ORDERDATE",
+            "data type": "datetime"
+          },
+          {
+            "name": "O_ORDERPRIORITY",
+            "type": "table column",
+            "column name": "O_ORDERPRIORITY",
+            "data type": "string"
+          },
+          {
+            "name": "O_CLERK",
+            "type": "table column",
+            "column name": "O_CLERK",
+            "data type": "string"
+          },
+          {
+            "name": "O_SHIPPRIORITY",
+            "type": "table column",
+            "column name": "O_SHIPPRIORITY",
+            "data type": "numeric"
+          },
+          {
+            "name": "O_COMMENT",
+            "type": "table column",
+            "column name": "O_COMMENT",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "PART",
+        "type": "simple table",
+        "table path": "main.PART",
+        "unique properties": [
+          "P_PARTKEY"
+        ],
+        "properties": [
+          {
+            "name": "P_PARTKEY",
+            "type": "table column",
+            "column name": "P_PARTKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "P_NAME",
+            "type": "table column",
+            "column name": "P_NAME",
+            "data type": "string"
+          },
+          {
+            "name": "P_MFGR",
+            "type": "table column",
+            "column name": "P_MFGR",
+            "data type": "string"
+          },
+          {
+            "name": "P_BRAND",
+            "type": "table column",
+            "column name": "P_BRAND",
+            "data type": "string"
+          },
+          {
+            "name": "P_TYPE",
+            "type": "table column",
+            "column name": "P_TYPE",
+            "data type": "string"
+          },
+          {
+            "name": "P_SIZE",
+            "type": "table column",
+            "column name": "P_SIZE",
+            "data type": "numeric"
+          },
+          {
+            "name": "P_CONTAINER",
+            "type": "table column",
+            "column name": "P_CONTAINER",
+            "data type": "string"
+          },
+          {
+            "name": "P_RETAILPRICE",
+            "type": "table column",
+            "column name": "P_RETAILPRICE",
+            "data type": "numeric"
+          },
+          {
+            "name": "P_COMMENT",
+            "type": "table column",
+            "column name": "P_COMMENT",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "PARTSUPP",
+        "type": "simple table",
+        "table path": "main.PARTSUPP",
+        "unique properties": [
+          [
+            "PS_PARTKEY",
+            "PS_SUPPKEY"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "PS_PARTKEY",
+            "type": "table column",
+            "column name": "PS_PARTKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "PS_SUPPKEY",
+            "type": "table column",
+            "column name": "PS_SUPPKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "PS_AVAILQTY",
+            "type": "table column",
+            "column name": "PS_AVAILQTY",
+            "data type": "numeric"
+          },
+          {
+            "name": "PS_SUPPLYCOST",
+            "type": "table column",
+            "column name": "PS_SUPPLYCOST",
+            "data type": "numeric"
+          },
+          {
+            "name": "PS_COMMENT",
+            "type": "table column",
+            "column name": "PS_COMMENT",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "REGION",
+        "type": "simple table",
+        "table path": "main.REGION",
+        "unique properties": [
+          "R_REGIONKEY"
+        ],
+        "properties": [
+          {
+            "name": "R_REGIONKEY",
+            "type": "table column",
+            "column name": "R_REGIONKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "R_NAME",
+            "type": "table column",
+            "column name": "R_NAME",
+            "data type": "string"
+          },
+          {
+            "name": "R_COMMENT",
+            "type": "table column",
+            "column name": "R_COMMENT",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "SUPPLIER",
+        "type": "simple table",
+        "table path": "main.SUPPLIER",
+        "unique properties": [
+          "S_SUPPKEY"
+        ],
+        "properties": [
+          {
+            "name": "S_SUPPKEY",
+            "type": "table column",
+            "column name": "S_SUPPKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "S_NAME",
+            "type": "table column",
+            "column name": "S_NAME",
+            "data type": "string"
+          },
+          {
+            "name": "S_ADDRESS",
+            "type": "table column",
+            "column name": "S_ADDRESS",
+            "data type": "string"
+          },
+          {
+            "name": "S_NATIONKEY",
+            "type": "table column",
+            "column name": "S_NATIONKEY",
+            "data type": "numeric"
+          },
+          {
+            "name": "S_PHONE",
+            "type": "table column",
+            "column name": "S_PHONE",
+            "data type": "string"
+          },
+          {
+            "name": "S_ACCTBAL",
+            "type": "table column",
+            "column name": "S_ACCTBAL",
+            "data type": "numeric"
+          },
+          {
+            "name": "S_COMMENT",
+            "type": "table column",
+            "column name": "S_COMMENT",
+            "data type": "string"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "CUSTOMERS",
+        "parent collection": "NATION",
+        "child collection": "CUSTOMER",
+        "keys": {
+          "N_NATIONKEY": [
+            "C_NATIONKEY"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "NATION",
+        "original parent": "NATION",
+        "original property": "CUSTOMERS",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "LINEITEMS",
+        "parent collection": "ORDERS",
+        "child collection": "LINEITEM",
+        "keys": {
+          "O_ORDERKEY": [
+            "L_ORDERKEY"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "ORDER",
+        "original parent": "ORDERS",
+        "original property": "LINEITEMS",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "LINEITEMS",
+        "parent collection": "PARTSUPP",
+        "child collection": "LINEITEM",
+        "keys": {
+          "PS_PARTKEY": [
+            "L_PARTKEY"
+          ],
+          "PS_SUPPKEY": [
+            "L_SUPPKEY"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "PARTSUPP",
+        "original parent": "PARTSUPP",
+        "original property": "LINEITEMS",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "NATIONS",
+        "parent collection": "REGION",
+        "child collection": "NATION",
+        "keys": {
+          "R_REGIONKEY": [
+            "N_REGIONKEY"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "REGION",
+        "original parent": "REGION",
+        "original property": "NATIONS",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "ORDER",
+        "parent collection": "CUSTOMER",
+        "child collection": "ORDERS",
+        "keys": {
+          "C_CUSTKEY": [
+            "O_CUSTKEY"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "CUSTOMER",
+        "original parent": "CUSTOMER",
+        "original property": "ORDER",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "PARTSUPPS",
+        "parent collection": "SUPPLIER",
+        "child collection": "PARTSUPP",
+        "keys": {
+          "S_SUPPKEY": [
+            "PS_SUPPKEY"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "SUPPLIER",
+        "original parent": "SUPPLIER",
+        "original property": "PARTSUPPS",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "PARTSUPPS",
+        "parent collection": "PART",
+        "child collection": "PARTSUPP",
+        "keys": {
+          "P_PARTKEY": [
+            "PS_PARTKEY"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "PART",
+        "original parent": "PART",
+        "original property": "PARTSUPPS",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "SUPPLIERS",
+        "parent collection": "NATION",
+        "child collection": "SUPPLIER",
+        "keys": {
+          "N_NATIONKEY": [
+            "S_NATIONKEY"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "NATION",
+        "original parent": "NATION",
+        "original property": "SUPPLIERS",
+        "singular": true
+      }
+    ]
+  }
+]

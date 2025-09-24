@@ -1,0 +1,85 @@
+[
+  {
+    "name": "ANALYTICS",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "cities",
+        "type": "simple table",
+        "table path": "public.cities",
+        "unique properties": [
+          "city_id"
+        ],
+        "properties": [
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "city_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "city_name",
+            "type": "table column",
+            "column name": "city_name",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "payments",
+        "type": "simple table",
+        "table path": "public.payments",
+        "unique properties": [
+          "payment_id"
+        ],
+        "properties": [
+          {
+            "name": "payment_id",
+            "type": "table column",
+            "column name": "payment_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "city_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric"
+          },
+          {
+            "name": "paid_at",
+            "type": "table column",
+            "column name": "paid_at",
+            "data type": "string"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "payment",
+        "parent collection": "cities",
+        "child collection": "payments",
+        "keys": {
+          "city_id": [
+            "city_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "city",
+        "original parent": "cities",
+        "original property": "payment",
+        "singular": true
+      }
+    ]
+  }
+]

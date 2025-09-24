@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+.claude/
+# Environment
+.env
+.env.*
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
+
+# Local data
+*.db
+*.sqlite
+metadata/*.db
+
+# OS
+.DS_Store

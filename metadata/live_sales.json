@@ -1,0 +1,37 @@
+[
+  {
+    "name": "SALES",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "sales",
+        "type": "simple table",
+        "table path": "main.sales",
+        "unique properties": [
+          "id"
+        ],
+        "properties": [
+          {
+            "name": "id",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric"
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string"
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric"
+          }
+        ]
+      }
+    ],
+    "relationships": []
+  }
+]

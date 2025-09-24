@@ -1,0 +1,1718 @@
+[
+  {
+    "name": "PAGILA",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "film_actor",
+        "type": "simple table",
+        "table path": "public.film_actor",
+        "unique properties": [
+          [
+            "actor_id",
+            "film_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "actor_id",
+            "type": "table column",
+            "column name": "actor_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "address",
+        "type": "simple table",
+        "table path": "public.address",
+        "unique properties": [
+          "address_id"
+        ],
+        "properties": [
+          {
+            "name": "address_id",
+            "type": "table column",
+            "column name": "address_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string"
+          },
+          {
+            "name": "address2",
+            "type": "table column",
+            "column name": "address2",
+            "data type": "string"
+          },
+          {
+            "name": "district",
+            "type": "table column",
+            "column name": "district",
+            "data type": "string"
+          },
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "city_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "postal_code",
+            "type": "table column",
+            "column name": "postal_code",
+            "data type": "string"
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "city",
+        "type": "simple table",
+        "table path": "public.city",
+        "unique properties": [
+          "city_id"
+        ],
+        "properties": [
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "city_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string"
+          },
+          {
+            "name": "country_id",
+            "type": "table column",
+            "column name": "country_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "actor",
+        "type": "simple table",
+        "table path": "public.actor",
+        "unique properties": [
+          "actor_id"
+        ],
+        "properties": [
+          {
+            "name": "actor_id",
+            "type": "table column",
+            "column name": "actor_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string"
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "category",
+        "type": "simple table",
+        "table path": "public.category",
+        "unique properties": [
+          "category_id"
+        ],
+        "properties": [
+          {
+            "name": "category_id",
+            "type": "table column",
+            "column name": "category_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "country",
+        "type": "simple table",
+        "table path": "public.country",
+        "unique properties": [
+          "country_id"
+        ],
+        "properties": [
+          {
+            "name": "country_id",
+            "type": "table column",
+            "column name": "country_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "country",
+            "data type": "string"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "customer",
+        "type": "simple table",
+        "table path": "public.customer",
+        "unique properties": [
+          "customer_id"
+        ],
+        "properties": [
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "store_id",
+            "type": "table column",
+            "column name": "store_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string"
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string"
+          },
+          {
+            "name": "email",
+            "type": "table column",
+            "column name": "email",
+            "data type": "string"
+          },
+          {
+            "name": "address_id",
+            "type": "table column",
+            "column name": "address_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "activebool",
+            "type": "table column",
+            "column name": "activebool",
+            "data type": "bool"
+          },
+          {
+            "name": "create_date",
+            "type": "table column",
+            "column name": "create_date",
+            "data type": "datetime"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          },
+          {
+            "name": "active",
+            "type": "table column",
+            "column name": "active",
+            "data type": "numeric"
+          }
+        ]
+      },
+      {
+        "name": "film",
+        "type": "simple table",
+        "table path": "public.film",
+        "unique properties": [
+          "film_id"
+        ],
+        "properties": [
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string"
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "description",
+            "data type": "string"
+          },
+          {
+            "name": "release_year",
+            "type": "table column",
+            "column name": "release_year",
+            "data type": "string"
+          },
+          {
+            "name": "language_id",
+            "type": "table column",
+            "column name": "language_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "original_language_id",
+            "type": "table column",
+            "column name": "original_language_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "rental_duration",
+            "type": "table column",
+            "column name": "rental_duration",
+            "data type": "numeric"
+          },
+          {
+            "name": "rental_rate",
+            "type": "table column",
+            "column name": "rental_rate",
+            "data type": "numeric"
+          },
+          {
+            "name": "length",
+            "type": "table column",
+            "column name": "length",
+            "data type": "numeric"
+          },
+          {
+            "name": "replacement_cost",
+            "type": "table column",
+            "column name": "replacement_cost",
+            "data type": "numeric"
+          },
+          {
+            "name": "rating",
+            "type": "table column",
+            "column name": "rating",
+            "data type": "string"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          },
+          {
+            "name": "special_features",
+            "type": "table column",
+            "column name": "special_features",
+            "data type": "string"
+          },
+          {
+            "name": "fulltext",
+            "type": "table column",
+            "column name": "fulltext",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "film_category",
+        "type": "simple table",
+        "table path": "public.film_category",
+        "unique properties": [
+          [
+            "film_id",
+            "category_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "category_id",
+            "type": "table column",
+            "column name": "category_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "inventory",
+        "type": "simple table",
+        "table path": "public.inventory",
+        "unique properties": [
+          "inventory_id"
+        ],
+        "properties": [
+          {
+            "name": "inventory_id",
+            "type": "table column",
+            "column name": "inventory_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "store_id",
+            "type": "table column",
+            "column name": "store_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "language",
+        "type": "simple table",
+        "table path": "public.language",
+        "unique properties": [
+          "language_id"
+        ],
+        "properties": [
+          {
+            "name": "language_id",
+            "type": "table column",
+            "column name": "language_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "rental",
+        "type": "simple table",
+        "table path": "public.rental",
+        "unique properties": [
+          "rental_id"
+        ],
+        "properties": [
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "rental_date",
+            "type": "table column",
+            "column name": "rental_date",
+            "data type": "string"
+          },
+          {
+            "name": "inventory_id",
+            "type": "table column",
+            "column name": "inventory_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "return_date",
+            "type": "table column",
+            "column name": "return_date",
+            "data type": "string"
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "staff",
+        "type": "simple table",
+        "table path": "public.staff",
+        "unique properties": [
+          "staff_id"
+        ],
+        "properties": [
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string"
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string"
+          },
+          {
+            "name": "address_id",
+            "type": "table column",
+            "column name": "address_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "email",
+            "type": "table column",
+            "column name": "email",
+            "data type": "string"
+          },
+          {
+            "name": "store_id",
+            "type": "table column",
+            "column name": "store_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "active",
+            "type": "table column",
+            "column name": "active",
+            "data type": "bool"
+          },
+          {
+            "name": "username",
+            "type": "table column",
+            "column name": "username",
+            "data type": "string"
+          },
+          {
+            "name": "password",
+            "type": "table column",
+            "column name": "password",
+            "data type": "string"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          },
+          {
+            "name": "picture",
+            "type": "table column",
+            "column name": "picture",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "payment",
+        "type": "simple table",
+        "table path": "public.payment",
+        "unique properties": [
+          [
+            "payment_date",
+            "payment_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "payment_id",
+            "type": "table column",
+            "column name": "payment_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric"
+          },
+          {
+            "name": "payment_date",
+            "type": "table column",
+            "column name": "payment_date",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "store",
+        "type": "simple table",
+        "table path": "public.store",
+        "unique properties": [
+          "store_id"
+        ],
+        "properties": [
+          {
+            "name": "store_id",
+            "type": "table column",
+            "column name": "store_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "manager_staff_id",
+            "type": "table column",
+            "column name": "manager_staff_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "address_id",
+            "type": "table column",
+            "column name": "address_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "payment_p2022_07",
+        "type": "simple table",
+        "table path": "public.payment_p2022_07",
+        "unique properties": [
+          [
+            "payment_date",
+            "payment_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "payment_id",
+            "type": "table column",
+            "column name": "payment_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric"
+          },
+          {
+            "name": "payment_date",
+            "type": "table column",
+            "column name": "payment_date",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "payment_p2022_02",
+        "type": "simple table",
+        "table path": "public.payment_p2022_02",
+        "unique properties": [
+          [
+            "payment_date",
+            "payment_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "payment_id",
+            "type": "table column",
+            "column name": "payment_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric"
+          },
+          {
+            "name": "payment_date",
+            "type": "table column",
+            "column name": "payment_date",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "payment_p2022_03",
+        "type": "simple table",
+        "table path": "public.payment_p2022_03",
+        "unique properties": [
+          [
+            "payment_date",
+            "payment_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "payment_id",
+            "type": "table column",
+            "column name": "payment_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric"
+          },
+          {
+            "name": "payment_date",
+            "type": "table column",
+            "column name": "payment_date",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "payment_p2022_04",
+        "type": "simple table",
+        "table path": "public.payment_p2022_04",
+        "unique properties": [
+          [
+            "payment_date",
+            "payment_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "payment_id",
+            "type": "table column",
+            "column name": "payment_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric"
+          },
+          {
+            "name": "payment_date",
+            "type": "table column",
+            "column name": "payment_date",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "payment_p2022_05",
+        "type": "simple table",
+        "table path": "public.payment_p2022_05",
+        "unique properties": [
+          [
+            "payment_date",
+            "payment_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "payment_id",
+            "type": "table column",
+            "column name": "payment_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric"
+          },
+          {
+            "name": "payment_date",
+            "type": "table column",
+            "column name": "payment_date",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "payment_p2022_01",
+        "type": "simple table",
+        "table path": "public.payment_p2022_01",
+        "unique properties": [
+          [
+            "payment_date",
+            "payment_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "payment_id",
+            "type": "table column",
+            "column name": "payment_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric"
+          },
+          {
+            "name": "payment_date",
+            "type": "table column",
+            "column name": "payment_date",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "payment_p2022_06",
+        "type": "simple table",
+        "table path": "public.payment_p2022_06",
+        "unique properties": [
+          [
+            "payment_date",
+            "payment_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "payment_id",
+            "type": "table column",
+            "column name": "payment_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric"
+          },
+          {
+            "name": "payment_date",
+            "type": "table column",
+            "column name": "payment_date",
+            "data type": "string"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "film_actors",
+        "parent collection": "actor",
+        "child collection": "film_actor",
+        "keys": {
+          "actor_id": [
+            "actor_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "actor",
+        "original parent": "actor",
+        "original property": "film_actors",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "film_actors",
+        "parent collection": "film",
+        "child collection": "film_actor",
+        "keys": {
+          "film_id": [
+            "film_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "film",
+        "original parent": "film",
+        "original property": "film_actors",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "addresses",
+        "parent collection": "city",
+        "child collection": "address",
+        "keys": {
+          "city_id": [
+            "city_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "city",
+        "original parent": "city",
+        "original property": "addresses",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "cities",
+        "parent collection": "country",
+        "child collection": "city",
+        "keys": {
+          "country_id": [
+            "country_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "country",
+        "original parent": "country",
+        "original property": "cities",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "customers",
+        "parent collection": "address",
+        "child collection": "customer",
+        "keys": {
+          "address_id": [
+            "address_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "addres",
+        "original parent": "address",
+        "original property": "customers",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "customers",
+        "parent collection": "store",
+        "child collection": "customer",
+        "keys": {
+          "store_id": [
+            "store_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "store",
+        "original parent": "store",
+        "original property": "customers",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "films",
+        "parent collection": "language",
+        "child collection": "film",
+        "keys": {
+          "language_id": [
+            "language_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "language",
+        "original parent": "language",
+        "original property": "films",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "films_2",
+        "parent collection": "language",
+        "child collection": "film",
+        "keys": {
+          "language_id": [
+            "original_language_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "language_2",
+        "original parent": "language",
+        "original property": "films_2",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "film_categories",
+        "parent collection": "category",
+        "child collection": "film_category",
+        "keys": {
+          "category_id": [
+            "category_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "category",
+        "original parent": "category",
+        "original property": "film_categories",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "film_categories",
+        "parent collection": "film",
+        "child collection": "film_category",
+        "keys": {
+          "film_id": [
+            "film_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "film",
+        "original parent": "film",
+        "original property": "film_categories",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "inventories",
+        "parent collection": "film",
+        "child collection": "inventory",
+        "keys": {
+          "film_id": [
+            "film_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "film",
+        "original parent": "film",
+        "original property": "inventories",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "inventories",
+        "parent collection": "store",
+        "child collection": "inventory",
+        "keys": {
+          "store_id": [
+            "store_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "store",
+        "original parent": "store",
+        "original property": "inventories",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "rentals",
+        "parent collection": "customer",
+        "child collection": "rental",
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customer",
+        "original property": "rentals",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "rentals",
+        "parent collection": "inventory",
+        "child collection": "rental",
+        "keys": {
+          "inventory_id": [
+            "inventory_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "inventory",
+        "original parent": "inventory",
+        "original property": "rentals",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "rentals",
+        "parent collection": "staff",
+        "child collection": "rental",
+        "keys": {
+          "staff_id": [
+            "staff_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "staff",
+        "original parent": "staff",
+        "original property": "rentals",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "staffs",
+        "parent collection": "address",
+        "child collection": "staff",
+        "keys": {
+          "address_id": [
+            "address_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "addres",
+        "original parent": "address",
+        "original property": "staffs",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "staffs",
+        "parent collection": "store",
+        "child collection": "staff",
+        "keys": {
+          "store_id": [
+            "store_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "store",
+        "original parent": "store",
+        "original property": "staffs",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "stores",
+        "parent collection": "address",
+        "child collection": "store",
+        "keys": {
+          "address_id": [
+            "address_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "addres",
+        "original parent": "address",
+        "original property": "stores",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_02s",
+        "parent collection": "customer",
+        "child collection": "payment_p2022_02",
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customer",
+        "original property": "payment_p2022_02s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_02s",
+        "parent collection": "rental",
+        "child collection": "payment_p2022_02",
+        "keys": {
+          "rental_id": [
+            "rental_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "rental",
+        "original parent": "rental",
+        "original property": "payment_p2022_02s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_02s",
+        "parent collection": "staff",
+        "child collection": "payment_p2022_02",
+        "keys": {
+          "staff_id": [
+            "staff_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "staff",
+        "original parent": "staff",
+        "original property": "payment_p2022_02s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_03s",
+        "parent collection": "customer",
+        "child collection": "payment_p2022_03",
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customer",
+        "original property": "payment_p2022_03s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_03s",
+        "parent collection": "rental",
+        "child collection": "payment_p2022_03",
+        "keys": {
+          "rental_id": [
+            "rental_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "rental",
+        "original parent": "rental",
+        "original property": "payment_p2022_03s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_03s",
+        "parent collection": "staff",
+        "child collection": "payment_p2022_03",
+        "keys": {
+          "staff_id": [
+            "staff_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "staff",
+        "original parent": "staff",
+        "original property": "payment_p2022_03s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_04s",
+        "parent collection": "customer",
+        "child collection": "payment_p2022_04",
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customer",
+        "original property": "payment_p2022_04s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_04s",
+        "parent collection": "rental",
+        "child collection": "payment_p2022_04",
+        "keys": {
+          "rental_id": [
+            "rental_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "rental",
+        "original parent": "rental",
+        "original property": "payment_p2022_04s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_04s",
+        "parent collection": "staff",
+        "child collection": "payment_p2022_04",
+        "keys": {
+          "staff_id": [
+            "staff_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "staff",
+        "original parent": "staff",
+        "original property": "payment_p2022_04s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_05s",
+        "parent collection": "customer",
+        "child collection": "payment_p2022_05",
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customer",
+        "original property": "payment_p2022_05s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_05s",
+        "parent collection": "rental",
+        "child collection": "payment_p2022_05",
+        "keys": {
+          "rental_id": [
+            "rental_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "rental",
+        "original parent": "rental",
+        "original property": "payment_p2022_05s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_05s",
+        "parent collection": "staff",
+        "child collection": "payment_p2022_05",
+        "keys": {
+          "staff_id": [
+            "staff_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "staff",
+        "original parent": "staff",
+        "original property": "payment_p2022_05s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_01s",
+        "parent collection": "customer",
+        "child collection": "payment_p2022_01",
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customer",
+        "original property": "payment_p2022_01s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_01s",
+        "parent collection": "rental",
+        "child collection": "payment_p2022_01",
+        "keys": {
+          "rental_id": [
+            "rental_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "rental",
+        "original parent": "rental",
+        "original property": "payment_p2022_01s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_01s",
+        "parent collection": "staff",
+        "child collection": "payment_p2022_01",
+        "keys": {
+          "staff_id": [
+            "staff_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "staff",
+        "original parent": "staff",
+        "original property": "payment_p2022_01s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_06s",
+        "parent collection": "customer",
+        "child collection": "payment_p2022_06",
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customer",
+        "original property": "payment_p2022_06s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_06s",
+        "parent collection": "rental",
+        "child collection": "payment_p2022_06",
+        "keys": {
+          "rental_id": [
+            "rental_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "rental",
+        "original parent": "rental",
+        "original property": "payment_p2022_06s",
+        "singular": true
+      },
+      {
+        "type": "simple join",
+        "name": "payment_p2022_06s",
+        "parent collection": "staff",
+        "child collection": "payment_p2022_06",
+        "keys": {
+          "staff_id": [
+            "staff_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "staff",
+        "original parent": "staff",
+        "original property": "payment_p2022_06s",
+        "singular": true
+      }
+    ]
+  }
+]

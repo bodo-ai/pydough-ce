@@ -1,0 +1,85 @@
+[
+  {
+    "name": "ANALYTICS",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "cities",
+        "type": "simple table",
+        "table path": "public.cities",
+        "unique properties": [
+          "id"
+        ],
+        "properties": [
+          {
+            "name": "id",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric"
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string"
+          }
+        ]
+      },
+      {
+        "name": "payments",
+        "type": "simple table",
+        "table path": "public.payments",
+        "unique properties": [
+          "id"
+        ],
+        "properties": [
+          {
+            "name": "id",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric"
+          },
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "city_id",
+            "data type": "numeric"
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric"
+          },
+          {
+            "name": "paid_at",
+            "type": "table column",
+            "column name": "paid_at",
+            "data type": "string"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "payment",
+        "parent collection": "cities",
+        "child collection": "payments",
+        "keys": {
+          "id": [
+            "city_id"
+          ]
+        },
+        "singular": false
+      },
+      {
+        "type": "reverse",
+        "name": "city",
+        "original parent": "cities",
+        "original property": "payment",
+        "singular": true
+      }
+    ]
+  }
+]
