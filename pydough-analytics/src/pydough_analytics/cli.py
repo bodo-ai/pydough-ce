@@ -19,7 +19,7 @@ console = Console()
 app = typer.Typer(help="PyDough Analytics Community Edition tooling.")
 
 
-@app.callback()
+@app.callback(invoke_without_command=True)
 def main(
     version: bool = typer.Option(
         False,

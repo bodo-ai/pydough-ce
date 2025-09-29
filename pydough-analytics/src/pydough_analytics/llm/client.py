@@ -66,6 +66,18 @@ class GeminiClient:
         self._retry_backoff = max(0.5, retry_backoff)
 
     def generate(self, prompt: Prompt) -> LLMResponse:
+        # Helpful debug to verify prompt construction without dumping full contents
+        if logger.isEnabledFor(logging.DEBUG):
+            try:
+                logger.debug(
+                    "Gemini generate() with system len=%s, user len=%s, model=%s",
+                    len(prompt.system) if isinstance(prompt.system, str) else None,
+                    len(prompt.user) if isinstance(prompt.user, str) else None,
+                    self._model,
+                )
+            except Exception:
+                # Guard against any unexpected types; debugging only
+                logger.debug("Gemini generate() prompt debug unavailable")
         config_kwargs = {
             'system_instruction': prompt.system,
             'temperature': self._temperature,
