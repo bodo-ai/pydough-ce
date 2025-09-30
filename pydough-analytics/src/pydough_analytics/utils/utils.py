@@ -5,7 +5,7 @@ import traceback
 import tempfile
 from pydough.unqualified import transform_cell
 import pydough
-from .file_service import load_json
+from .storage.file_service import load_json
 
 # Given the JSON string stored in Database.connection_string, return a dict of creds. Raises ValidationError on invalid JSON.
 def parse_connection_string(connection_string: str) -> dict:
