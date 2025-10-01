@@ -7,7 +7,9 @@ from pathlib import Path
 _DATABASE_LOADERS: dict[str, Callable[[dict], Engine]] = {}
 
 def register_database(name: str):
-    """Decorator to register a new database loader by name."""
+    """
+    Decorator to register a new database loader by name.
+    """
     def decorator(fn: Callable[[dict], Engine]):
         _DATABASE_LOADERS[name.lower()] = fn
         return fn
@@ -39,11 +41,15 @@ class Connector:
         self.engine: Engine = _DATABASE_LOADERS[db_type](params)
 
     def get_engine(self) -> Engine:
-        """Returns the SQLAlchemy engine for database operations."""
+        """
+        Returns the SQLAlchemy engine for database operations.
+        """
         return self.engine
 
     def test_connection(self) -> bool:
-        """Tries to connect to the database to verify connectivity."""
+        """
+        Tries to connect to the database to verify connectivity.
+        """
         try:
             with self.engine.connect():
                 return True

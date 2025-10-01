@@ -5,7 +5,7 @@ from itertools import product
 from collections import defaultdict
 from sqlalchemy import inspect, text
 from sqlalchemy.engine import Engine, CursorResult
-from metadata_constants import TYPE_MAPS, RESERVED_KEYWORDS, CHAR_REPLACEMENTS
+from .metadata_constants import TYPE_MAPS, RESERVED_KEYWORDS, CHAR_REPLACEMENTS
 
 def make_valid_identifier(db_type: str, name: str) -> str:
     """

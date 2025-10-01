@@ -1,0 +1,35 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pydough-analytics"
+version = "0.1.0"
+description = "Text-to-analytics toolkit built on PyDough"
+readme = "README.md"
+authors = [{name = "Bodo.ai"}]
+license = "Apache-2.0"
+requires-python = ">=3.10"
+dependencies = [
+  "pydough>=1.0.10",
+  "SQLAlchemy>=2.0.41",
+  "python-dotenv>=1.1.0",
+  "google-genai>=1.2.0",
+  "typer>=0.19.0",
+  "rich>=14.0.0"
+]
+
+[project.urls]
+Repository = "https://github.com/bodo-ai/pydough-ce"
+
+[project.scripts]
+pydough-analytics = "pydough_analytics.cli:app"
+
+[tool.typer]
+auto_envvar_prefix = "PYDOUGH_ANALYTICS"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/pydough_analytics", "README.md", "LICENSE"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pydough_analytics"]

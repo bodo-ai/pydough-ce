@@ -123,7 +123,6 @@ def generate_functions_section(markdown: list[str], graph: GraphMetadata) -> lis
     except Exception as e:
         raise Exception(f"Error processing functions: {e}")
 
-
 def generate_markdown_from_metadata(graph: GraphMetadata):
     """
     Converts a pydough graph metadata object into a formatted Markdown string..

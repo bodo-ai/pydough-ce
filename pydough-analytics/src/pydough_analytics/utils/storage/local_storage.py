@@ -1,11 +1,12 @@
 import os
-from django.conf import settings
+from pathlib import Path
 from .base import StorageInterface
+
+LOCAL_STORAGE_PATH = Path.cwd()
 
 class LocalStorage(StorageInterface):
     def __init__(self):
-        root_path = getattr(settings, "MEDIA_ROOT", os.path.join(settings.BASE_DIR, "media"))
-        self.base_path = os.path.join(root_path, "data")
+        self.base_path = LOCAL_STORAGE_PATH
 
     def upload_bytes(self, key: str, data: bytes):
         full_path = os.path.join(self.base_path, key)
