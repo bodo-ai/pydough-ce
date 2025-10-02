@@ -9,34 +9,27 @@ from sqlalchemy import inspect
 
 
 def get_engine_from_credentials(config: dict) -> tuple[Engine, str]:
-	"""
+    """
     Extracts connection parameters and builds SQLAlchemy engine.
     """
-	db_type: str = config.pop("engine")
-	connector: Connector = Connector(db_type, **config)
-	return connector.get_engine(), db_type
+    try:
+        db_type: str = config.pop("engine")
+        connector: Connector = Connector(db_type, **config)
+        return connector.get_engine(), db_type
+    except Exception as e:
+        raise ValueError(f"Failed to create engine: {e}") from e
 
 
 def list_all_tables_and_columns(engine: Engine) -> list[str]:
     """
     Get all tables and columns from the database before metadata generation.
     """
-    inspector = inspect(engine)
-    tables: list[str] = inspector.get_table_names()
-    return tables
-
-
-def ask_for_table_selection(table_list: list[str]) -> list[str]:
-    """
-    Prompts the user to select tables by index or partial name.
-    """
-    print("All available tables:")
-    print(", ".join(table_list))
-    raw_input: str = input("Enter comma-separated table names (or leave empty for all): ").strip()
-    if not raw_input:
-        return table_list
-    selections: list[str] = [s.strip().lower() for s in raw_input.split(",")]
-    return [t for t in table_list if t.lower() in selections or t in selections]
+    try:
+        inspector = inspect(engine)
+        tables: list[str] = inspector.get_table_names()
+        return tables
+    except Exception as e:
+        raise RuntimeError(f"Failed to inspect tables: {e}") from e
 
 
 def generate_metadata_from_config(engine: str, database: str, graph_name: str, json_path: str):
@@ -53,20 +46,21 @@ def generate_metadata_from_config(engine: str, database: str, graph_name: str, j
 
         # Take config and connect to a database
         print(f"Connecting to '{graph_name}' using engine '{engine}'...")
-        json_output_path: Path = Path(json_path)
         engine_obj, db_type = get_engine_from_credentials(config)
 
         # Get the table list
         table_list: list[str] = list_all_tables_and_columns(engine_obj)
-        selected_tables: list[str] = ask_for_table_selection(table_list)
 
         # Generate the metadata
-        print(f"Generating metadata for {len(selected_tables)} tables...")
-        metadata: json = generate_metadata(engine_obj, graph_name, db_type, selected_tables)
+        print(f"Generating metadata for {len(table_list)} tables...")
+        metadata: json = generate_metadata(engine_obj, graph_name, db_type, table_list)
 
         # Save the metadata
+        json_output_path: Path = Path(json_path)
         save_json(json_output_path, metadata)
         print(f"Metadata for '{graph_name}' written to: {json_output_path}")
+
+        return metadata
 
     except Exception as e:
         print(f"[ERROR] Failed to generate Metadata: {e}", file=sys.stderr)
