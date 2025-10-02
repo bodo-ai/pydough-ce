@@ -1,7 +1,7 @@
 import re
 from datetime import datetime
 import pydough
-from ..utils.utils import extract_python_code, execute_code_and_extract_result
+from ..utils.utils import extract_python_code, execute_code_and_extract_result, read_file
 from ..utils.storage.file_service import load_markdown
 from .ai_providers import get_provider
 
@@ -10,7 +10,7 @@ from .ai_providers import get_provider
 class Result:
     def __init__(
         self, 
-        pydough_code=None, 
+        pydough_code=None,
         full_explanation=None, 
         df=None, 
         exception=None, 
@@ -36,22 +36,21 @@ class Result:
 
 # This class serves as a client for interacting with an LLM to ask questions, handle discourse, and correct errors.
 class LLMClient:
-    def __init__(self, prompt, script, db_markdown_map=None, provider="google", model="gemini-2.5-pro", definitions=None):
-        self.prompt = prompt
-        self.script = script
+    def __init__(self, prompt="../data/prompts/prompt.md", script="../data/prompts/cheatsheet.md", db_markdown_map=None, provider="google", model="gemini-2.5-pro", definitions=None):
+        self.prompt = read_file(prompt)
+        self.script = read_file(script)
         self.db_markdown_map = db_markdown_map or {}
         self.provider = provider
         self.model = model
         self.definitions = definitions or []
 
     # This method asks a question to the LLM, formats the prompt, executes the code, and returns a Result object.
-    def ask(self, question, kg_path, db_config, md_path, db_name, context_data=None, auto_correct=False, max_corrections=1, **kwargs):
+    def ask(self, question, kg_path, md_path, db_name, db_config= { "engine":   "sqlite", "database": "../data/Databases/Tpch.db"}, context_data=None, auto_correct=False, max_corrections=1, **kwargs):
         result = Result(original_question=question)
 
         try:
             md_content = load_markdown(md_path)
             self.db_markdown_map[db_name] = md_content
-            # Ejecutar prompt con proveedor
             client = get_provider(self.provider, self.model)
             formatted_q, formatted_prompt = self.format_prompt(question, db_name, context_data)
 
@@ -97,13 +96,7 @@ class LLMClient:
                 )
 
         return result
-
-
-    # This method adds a new definition to the LLM client, which can be used in prompts.
-    def add_definition(self, new_definition):
-        if new_definition:
-            self.definitions.append(new_definition)
-
+    
     # This method reformulates a follow-up question based on the original question and the result of a previous query.
     def discourse(self, result, follow_up):
         if not result:
@@ -120,6 +113,11 @@ class LLMClient:
             f"The dataframe generated was: {result.df}. Now, answer this follow-up question: '{follow_up}'. "
             f"IMPORTANT: If you need any of the above code, you must declare it again because it does not exist in memory."
         )
+        
+    # This method adds a new definition to the LLM client, which can be used in prompts.
+    def add_definition(self, new_definition):
+        if new_definition:
+            self.definitions.append(new_definition)
 
     # This method corrects the result of a previous query if an exception occurred, reformulating the question to ask for help.
     def correct(self, result, kg_path, db_config, md_path, db_name, context_data, **kwargs):

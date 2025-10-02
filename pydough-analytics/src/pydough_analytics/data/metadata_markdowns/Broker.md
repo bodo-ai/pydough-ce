@@ -1,0 +1,141 @@
+# Metadata Overview: Broker (Graph Name)
+
+### The `customers` collection contains the following columns:
+- **_id**: The unique identifying string for the customer
+  - Synonyms: customer key
+  - Sample values: C001, C005, C014
+- **name**: The name of the customer
+  - Synonyms: customer name, first and last name
+  - Sample values: Ava Wilson, Bob Johnson, David Kim, Emily Davis
+- **email**: The email of the customer
+  - Synonyms: email address, customer email
+  - Sample values: alex.rodriguez@email.com, ava.wilson@email.com, arah.nguyen@email.com, samantha.lee@email.com
+- **phone**: The phone number of the customer
+  - Synonyms: phone number, customer phone
+  - Sample values: 555-123-4567, 555-623-7419, 555-135-7902
+- **address1**: The address of the customer
+  - Synonyms: first address line, street address
+  - Sample values: 123 Main St, 951 Pine Rd, 246 Elm St, 258 Elm Ave
+- **address2**: The second address of the customer, if one exists
+  - Synonyms: second address line
+- **city**: The city the customer lives in
+  - Synonyms: customer address city
+  - Sample values: Anytown, Yourtown, Someville, Mytown
+- **state**: The state the customer lives in, by its capitalized two-letter abbreviation
+  - Synonyms: customer address state
+  - Sample values: CA, NY, TX, FL, NJ
+- **country**: The country the customer lives in
+  - Synonyms: customer address country
+  - Sample values: USA
+- **postal_code**: The postal/zip code of the customer's address
+  - Synonyms: zip code, customer address postal code
+  - Sample values: 90001, 10002, 08801
+- **join_date**: The date the customer joined the brokerage
+  - Synonyms: signup date, customer join date, account creation date
+- **status**: The state of the customer's account, which is either 'active', 'inactive', or 'suspended'
+  - Synonyms: customer account status, activity state
+  - Sample values: active, inactive, suspended
+- **transactions_made**: All of the transactions made by the customer, including both buys and sells
+  - Synonyms: exchanges made, trades made, stock purchases and sales
+
+### The `tickers` collection contains the following columns:
+- **_id**: The unique identifying string for each ticker
+  - Synonyms: ticker key
+  - Sample values: T001, T003, T007, T0018
+- **symbol**: The symbol used to abbreviate the ticker name in a recognizable manner, e.g. APPL for Apple, or GOOG for Google
+  - Synonyms: ticker symbol, ticker abbreviation
+  - Sample values: APPL, AMZN, BRK.B, FB, GOOG, NFLX, MSFT
+- **name**: The full name of the ticker, e.g. the company name
+  - Synonyms: company name, business name
+  - Sample values: Berkshire Hathaway Inc., Alphabet Inc., Apple Inc., Microsoft Corporation
+- **ticker_type**: The category of ticker, which is either 'stock', 'etf', or 'mutual fund'
+  - Synonyms: category, classification
+  - Sample values: stock, etf, mutual fund
+- **exchange**: The exchange that the ticker is listed on, which is either 'NASDAQ', 'NYSE', 'NYSE Arca', or 'Vanguard'
+  - Sample values: NASDAQ, NYSE, NYSE Arca, Vanguard
+- **currency**: The currency that the ticker is traded in, which is always 'USD'
+  - Sample values: USD
+- **db2x**: The two-letter exchange code corresponding to the ticker's exchange, which is either 'NQ' for NASDAQ, 'NY' for NYSE, 'NX' for 'NYSE Arca', or 'VA' for Vanguard
+  - Synonyms: exchange code
+  - Sample values: NQ, NY, NX, VG
+- **is_active**: Whether the ticker is still active
+  - Synonyms: ticker in use
+- **transactions_of**: The transactions made of a ticker, including both buys and sells of the ticker
+  - Synonyms: purchases, sales, exchanges, trades of ticker
+- **daily_prices**: The daily price records for the ticker
+  - Synonyms: historical prices, price updates
+
+### The `daily_prices` collection contains the following columns:
+- **ticker_id**: The ticker id from the ticker whose price is being record
+  - Synonyms: ticker key
+  - Sample values: T002, T003, T005, T007, T011
+- **date**: The date of the price record
+  - Synonyms: record datetime, price update date
+- **open**: The opening price of the ticker on the day of the record
+  - Synonyms: opening price
+  - Sample values: 150, 3200, 2500, 280
+- **high**: The highest price of the ticker during the day of the record
+  - Synonyms: high price, high-point, maximum price during day
+  - Sample values: 152.5, 282.75, 3225, 185, 2525
+- **low**: The lowest price of the ticker during the day of the record
+  - Synonyms: low price, low-point, minimum price during day
+  - Sample values: 148.75, 279.5, 3180, 178.5, 2475
+- **close**: The close price of the ticker on the day of the record
+  - Synonyms: closing price
+  - Sample values: 151.25, 281, 3210, 184.25, 2510
+- **volume**: The total number of shares of the ticker traded during the day
+  - Synonyms: daily trading volume
+  - Sample values: 75000000, 4000000, 1500000, 35000000
+- **epoch_ms**: The number of milliseconds since the epoch (January 1, 1970) that the record was created
+  - Synonyms: created timestamp in epoch milliseconds
+  - Sample values: 1680336000000, 1680336000000, 1680336000000
+- **source**: The exchange where the price record originated from, which is either 'NASDAQ', 'NYSE' or 'Vanguard'
+  - Synonyms: price record origin
+  - Sample values: NYSE, NASDAQ, Vanguard
+- **ticker**: The ticker that the daily price record corresponds to
+  - Synonyms: stock, etf, fund, company
+
+### The `transactions` collection contains the following columns:
+- **transaction_id**: The unique identifying string for each transaction
+  - Synonyms: transaction key
+  - Sample values: TX035, TX001, TX008, TX033
+- **customer_id**: The id of the customer who made the transaction
+  - Synonyms: customer key
+  - Sample values: C003, C005, C007, C001, C008
+- **ticker_id**: The id of the ticker being bought/sold in the transaction
+  - Synonyms: ticker key
+  - Sample values: T001, T007, T008
+- **date_time**: The timestamp that the transaction was made at
+  - Synonyms: transaction timestamp, buy/sell datetime
+- **transaction_type**: The type of transaction, which is either 'buy' or 'sell'
+  - Synonyms: category, classification
+  - Sample values: buy, sell
+- **shares**: The number of shares being bought/sold in the transaction
+  - Synonyms: volume traded, transaction size
+  - Sample values: 150, 120, 110
+- **price**: The price that the ticker was bought/sold at in the transaction
+  - Synonyms: buy price, sell price, cost, per-share value
+  - Sample values: 180, 200, 220, 150, 130
+- **amount**: The total monetary value of the transaction (cost for buy, revenue for sell), which is the price multiplied by the number of shares
+  - Synonyms: total cost, total revenue, transaction value
+  - Sample values: 27000, 24000, 24200, 15000, 13000
+- **currency**: The currency that the transaction was made in, which is always 'USD'
+  - Sample values: USD
+- **tax**: The tax applied by the brokerage onto the transaction
+  - Synonyms: levy, duty, tariff
+  - Sample values: 135, 120, 121, 75, 65
+- **commission**: The commission taken by the brokerage for the transaction
+  - Synonyms: brokerage fee, transaction fee
+  - Sample values: 20, 15, 10
+- **kpx**: The internal code used for the transaction, which corresponds to the transaction id
+  - Sample values: KP056, KP053, KP011
+- **settlement_date_str**: The date the transaction was settled, which is a string in the form YYYYMMDD HH:MM:SS, or null if not settled yet
+  - Synonyms: settlement timestamp, datetime of transaction finalization
+  - Sample values: 20230401 09:30:00, 20230401 10:15:00, 20230401 11:00:00
+- **status**: The status of the transaction, which is either 'success', 'fail', or 'pending'
+  - Synonyms: transaction state
+  - Sample values: success, fail, pending
+- **customer**: The customer who made the transaction
+  - Synonyms: user, client, stock buyer/seller
+- **ticker**: The ticker that the transaction was made of
+  - Synonyms: stock, etf, fund, company

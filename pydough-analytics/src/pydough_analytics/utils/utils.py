@@ -7,6 +7,10 @@ from pydough.unqualified import transform_cell
 import pydough
 from .storage.file_service import load_json
 
+def read_file(file_path):
+    with open(file_path, "r", encoding="utf-8") as file:
+        return file.read()
+    
 # Given the JSON string stored in Database.connection_string, return a dict of creds. Raises ValidationError on invalid JSON.
 def parse_connection_string(connection_string: str) -> dict:
     normalized: str = connection_string.replace("'", '"')

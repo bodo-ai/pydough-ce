@@ -1,0 +1,178 @@
+# Metadata Overview: Dealership (Graph Name)
+
+### The `cars` collection contains the following columns:
+- **id**: Unique identifier for each car
+  - Synonyms: car key, car id
+  - Sample values: 1, 3, 5, 6, 18
+- **make**: The make of the car, e.g. Ford, Toyota, etc.
+  - Synonyms: car brand, car manufacturer
+  - Sample values: Toyota, Honda, Ford, Tesla, Nissan
+- **model**: The model name of the car, e..g Civic, Model 3, A4, RX350, Equinox, etc.
+  - Synonyms: car model, car type
+  - Sample values: Camry, Accord, Mustang, Civic, Altima, Tiguan
+- **year**: Year the car was manufactured
+  - Synonyms: year of production, manufacturing year
+  - Sample values: 2021, 2022, 2023
+- **color**: Color of the car
+  - Synonyms: paint color
+  - Sample values: Silver, platinum/grey, blue, Titan Silver, black, ebony black, baby blue, Black, Jade, Fiery red
+- **vin_number**: Vehicle identification number, a unique code used to identify individual motor vehicles
+  - Synonyms: VIN, vehicle ID
+  - Sample values: 1C4HJXDG3NW123456, 1C6SRFFT3NN123456, 3VV2B7AX1NM123456
+- **engine_type**: Type of engine (e.g., V6, V8, Electric)
+  - Synonyms: motor, engine model
+  - Sample values: Boxer 4, Electric, Flat 6, Inline 4, Inline 6, V6, V8
+- **transmission**: Type of transmission, which is always either 'Automatic', 'Manual', or 'CVT'
+  - Synonyms: gearbox, transmission type
+  - Sample values: Automatic, Manual, CVT
+- **cost**: Cost of the car
+  - Synonyms: value
+  - Sample values: 38000.0, 45000.0, 22000.0, 32000.0
+- **crtd_ts**: Timestamp when the car was added to the system
+  - Synonyms: created timestamp, system entry date
+- **sale_records**: All sales made where the car was sold
+  - Synonyms: purchases of vehicle, car sales, vehicle transactions
+- **inventory_snapshots**: The inventory snapshots for the car, which show whether it was in the dealership's inventory at specific dates
+  - Synonyms: availability records, inventory history
+
+### The `salespeople` collection contains the following columns:
+- **id**: Unique identifier for each salesperson in the dealership
+  - Synonyms: salesperson key, salesperson id, salesperson number
+  - Sample values: 1, 5, 10, 13
+- **first_name**: The first name of the salesperson
+  - Sample values: John, Jane, David, Sarah
+- **last_name**: The last name of the salesperson
+  - Synonyms: surname
+  - Sample values: Doe, Smith, Taylor, Thomas
+- **email**: Work email of the salesperson
+  - Synonyms: email address, work email
+  - Sample values: john.doe@autonation.com, michael.johnson@autonation.com, jennifer.davis@directauto.com
+- **phone**: Contact phone number of the salesperson, where tte first 3 digits are the area code. Format: (123)-456-7890
+  - Synonyms: phone number, contact information
+  - Sample values: (555)-123-4567, (444)-333-4444, (001)-415-5678, (555)-789-0123
+- **hire_date**: The date the salesperson was hired
+  - Synonyms: employment date, start date
+- **termination_date**: The date the salesperson left the dealership, if applicable (null if still working there)
+  - Synonyms: firing date, exit date, quitting date, end date
+- **crtd_ts**: Timestamp when the salesperson record was created
+  - Synonyms: created timestamp, system entry date
+- **sales_made**: All the sales brokered by the salesperson
+  - Synonyms: sales records, transactions made, deals closed
+
+### The `customers` collection contains the following columns:
+- **id**: Unique identifier for each customer
+  - Synonyms: customer key, customer id
+  - Sample values: 1, 5, 9, 12
+- **first_name**: The first name of the customer
+  - Sample values: William, Ava, Sophia, Mia
+- **last_name**: The last name of the customer
+  - Synonyms: surname
+  - Sample values: Davis, Miller, Jackson, Lee
+- **email**: The email address of the customer
+  - Synonyms: contact email, email address
+  - Sample values: william.davis@example.com, charlotte.anderson@example.com, sophia.lee@microsoft.com, christopher.brown@ai.com, abigail.harris@company.io
+- **phone**: The phone number of the customer listed with the dealership
+  - Synonyms: contact information, phone number
+  - Sample values: 555-888-9999, 555-666-5555, 555-456-7890, 555-444-3333
+- **address**: The home address of the customer given to the dealership
+  - Synonyms: street address, home address, street name and street number
+  - Sample values: 123 Main St, 456 Oak Ave, 987 Birch Dr, 951 Oak Ln
+- **city**: The city of the customer's home address
+  - Sample values: New York, Los Angeles, Chicago, Dallas
+- **state**: The state of the customer's home address, by its capitalized two-letter abbreviation
+  - Sample values: NY, CA, TX, IL
+- **zip_code**: The zip-code of the customer's home address
+  - Sample values: 10001, 60007, 95101, 94101
+- **crtd_ts**: Timestamp when the customer record was created
+  - Synonyms: created timestamp, system entry date
+- **car_purchases**: All car purchases made by the customer
+  - Synonyms: vehicle purchase records, car transactions, automobile purchases
+
+### The `payments_made` collection contains the following columns:
+- **id**: Unique identifier for each payment made
+  - Synonyms: payment key, payment id
+  - Sample values: 1, 11, 16, 17
+- **vendor_name**: Name of the vendor to whom the payment was made
+  - Synonyms: payment recipient, vendor
+  - Sample values: Chevrolet Auto, Marketing Agency, Car Manufacturer Inc
+- **payment_date**: Date that the payment was made
+- **payment_amount**: The amount that was paid in the payment in USD
+  - Synonyms: payment sum, dollar value
+  - Sample values: 150000.0, 1500.0, 22000.0
+- **payment_method**: Method of payment, which is either 'bank_transfer', 'credit_card', 'check', or 'credit_card'
+  - Synonyms: transfer medium, payment type
+  - Sample values: bank_transfer, credit_card, check, credit_card
+- **invoice_number**: Invoice number associated with the payment
+  - Synonyms: invoice id, invoice key, invoice serial
+  - Sample values: INV-001, INV-017, INV-008
+- **invoice_date**: Date of the invoice
+  - Synonyms: date of payment
+- **due_date**: Due date of the invoice
+  - Synonyms: deadline, expected payment date
+- **crtd_ts**: Timestamp when the payment made record was created
+  - Synonyms: system entry date, created timestamp
+
+### The `payments_received` collection contains the following columns:
+- **id**: Unique identifier for each payment received record
+  - Synonyms: payment key, payment id
+  - Sample values: 1, 2, 10, 19, 23
+- **sale_id**: The id of the sale that the payment is associated with
+  - Synonyms: sale key, sale id
+  - Sample values: 1, 5, 9, 20, 21
+- **payment_date**: Date when the payment was received. Can take place after the sale date, or in installments.
+  - Synonyms: transaction date, installment date
+- **payment_amount**: Amount of the payment received. Can be less than the sale price if the payment is made in installments.
+  - Synonyms: cash received, payment sum
+  - Sample values: 115000.0, 5000.0, 44000.0, 26000.0
+- **payment_method**: Method used to make the payment, which can be 'check', 'financing', 'credit_card', 'debit_card', or 'cash'
+  - Synonyms: transfer method, payment type
+  - Sample values: check, financing, credit_card, debit_card, cash
+- **crtd_ts**: Timestamp when the payment received record was created
+  - Synonyms: system entry date, created timestamp
+- **sale_record**: The sale that the payment is a part of
+  - Synonyms: purchase record, vehicle sale, car purchase
+
+### The `sales` collection contains the following columns:
+- **id**: Unique identifier for each car sale
+  - Synonyms: sale key, sale id
+  - Sample values: 5, 11, 12, 18, 22
+- **car_id**: The id of the car being purchased in the sale
+  - Synonyms: car key, car id
+  - Sample values: 1, 3, 5, 6, 18
+- **salesperson_id**: The id of the salesperson who brokered the sale
+  - Synonyms: salesperson key, salesperson id
+  - Sample values: 1, 5, 10, 13
+- **customer_id**: The id of the customer who purchased the car in the sale
+  - Synonyms: customer key, customer id
+  - Sample values: 1, 5, 9, 12
+- **sale_price**: Price at which the car was sold
+  - Synonyms: purchase cost, sale amount, dollar value
+  - Sample values: 43500.0, 30500.0, 38000.0, 49000.0, 26500.0
+- **sale_date**: Date when the car was sold
+  - Synonyms: purchase date, transaction date
+- **crtd_ts**: Timestamp when the sale record was created
+  - Synonyms: system entry date, created timestamp
+- **car**: The car being purchased in the sale
+  - Synonyms: vehicle, automobile
+- **salesperson**: The salesperson who brokered the car purchase deal
+  - Synonyms: broker, sales associate, sales staff, dealer
+- **customer**: The customer who purchased the car
+  - Synonyms: client, buyer, purchaser, consumer, user
+- **payment**: The payment installments made for the sale, which can be one or multiple installments for a single sale
+  - Synonyms: sale purchase installments, payment records
+
+### The `inventory_snapshots` collection contains the following columns:
+- **id**: Unique identifier for each inventory snapshot entry
+  - Synonyms: inventory snapshot key, snapshot id
+  - Sample values: 1, 4, 13, 19, 23
+- **snapshot_date**: Date of the inventory snapshot
+  - Synonyms: date of snapshot, inventory date
+- **car_id**: The key of the car that the inventory snapshot is for
+  - Synonyms: car key, car id
+  - Sample values: 2, 10, 1, 4, 9
+- **is_in_inventory**: Whether that specific car was in the dealership's inventory at the time of the snapshot
+  - Synonyms: car in inventory, car availability
+- **crtd_ts**: Timestamp when the inventory snapshot record was created
+  - Synonyms: system entry date, created timestamp
+- **car**: The car that the inventory snapshot belongs to
+  - Synonyms: vehicle, automobile

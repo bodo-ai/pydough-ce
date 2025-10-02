@@ -1,0 +1,508 @@
+[    
+    {
+        "name": "Broker",
+        "version": "V2",
+        "collections": [
+        {
+            "name": "customers",
+            "type": "simple table",
+            "table path": "main.sbCustomer",
+            "unique properties": ["_id"],
+            "properties": [
+            {
+                "name": "_id",
+                "type": "table column",
+                "column name": "sbCustId",
+                "data type": "string",
+                "description": "The unique identifying string for the customer",
+                "sample values": ["C001", "C005", "C014"],
+                "synonyms": ["customer key"]
+            },
+            {
+                "name": "name",
+                "type": "table column",
+                "column name": "sbCustName",
+                "data type": "string",
+                "description": "The name of the customer",
+                "sample values": ["Ava Wilson", "Bob Johnson", "David Kim", "Emily Davis"],
+                "synonyms": ["customer name", "first and last name"]
+            },
+            {
+                "name": "email",
+                "type": "table column",
+                "column name": "sbCustEmail",
+                "data type": "string",
+                "description": "The email of the customer",
+                "sample values": ["alex.rodriguez@email.com", "ava.wilson@email.com", "arah.nguyen@email.com", "samantha.lee@email.com"],
+                "synonyms": ["email address", "customer email"]
+            },
+            {
+                "name": "phone",
+                "type": "table column",
+                "column name": "sbCustPhone",
+                "data type": "string",
+                "description": "The phone number of the customer",
+                "sample values": ["555-123-4567", "555-623-7419", "555-135-7902"],
+                "synonyms": ["phone number", "customer phone"]
+            },
+            {
+                "name": "address1",
+                "type": "table column",
+                "column name": "sbCustAddress1",
+                "data type": "string",
+                "description": "The address of the customer",
+                "sample values": ["123 Main St", "951 Pine Rd", "246 Elm St", "258 Elm Ave"],
+                "synonyms": ["first address line", "street address"]
+            },
+            {
+                "name": "address2",
+                "type": "table column",
+                "column name": "sbCustAddress2",
+                "data type": "string",
+                "description": "The second address of the customer, if one exists",
+                "synonyms": ["second address line"]
+            },
+            {
+                "name": "city",
+                "type": "table column",
+                "column name": "sbCustCity",
+                "data type": "string",
+                "description": "The city the customer lives in",
+                "sample values": ["Anytown", "Yourtown", "Someville", "Mytown"],
+                "synonyms": ["customer address city"]
+            },
+            {
+                "name": "state",
+                "type": "table column",
+                "column name": "sbCustState",
+                "data type": "string",
+                "description": "The state the customer lives in, by its capitalized two-letter abbreviation",
+                "sample values": ["CA", "NY", "TX", "FL", "NJ"],
+                "synonyms": ["customer address state"]
+            },
+            {
+                "name": "country",
+                "type": "table column",
+                "column name": "sbCustCountry",
+                "data type": "string",
+                "description": "The country the customer lives in",
+                "sample values": ["USA"],
+                "synonyms": ["customer address country"]
+            },
+            {
+                "name": "postal_code",
+                "type": "table column",
+                "column name": "sbCustPostalCode",
+                "data type": "string",
+                "description": "The postal/zip code of the customer's address",
+                "sample values": ["90001", "10002", "08801"],
+                "synonyms": ["zip code", "customer address postal code"]
+            },
+            {
+                "name": "join_date",
+                "type": "table column",
+                "column name": "sbCustJoinDate",
+                "data type": "datetime",
+                "description": "The date the customer joined the brokerage",
+                "synonyms": ["signup date", "customer join date", "account creation date"]
+            },
+            {
+                "name": "status",
+                "type": "table column",
+                "column name": "sbCustStatus",
+                "data type": "string",
+                "description": "The state of the customer's account, which is either 'active', 'inactive', or 'suspended'",
+                "sample values": ["active", "inactive", "suspended"],
+                "synonyms": ["customer account status", "activity state"]
+            }
+            ],
+            "description": "The customers who have accounts with the the brokerage",
+            "synonyms": ["users", "clients", "members", "subscribers"]
+        },
+        {
+            "name": "tickers",
+            "type": "simple table",
+            "table path": "main.sbTicker",
+            "unique properties": ["_id"],
+            "properties": [
+            {
+                "name": "_id",
+                "type": "table column",
+                "column name": "sbTickerId",
+                "data type": "string",
+                "description": "The unique identifying string for each ticker",
+                "sample values": ["T001", "T003", "T007", "T0018"],
+                "synonyms": ["ticker key"]
+            },
+            {
+                "name": "symbol",
+                "type": "table column",
+                "column name": "sbTickerSymbol",
+                "data type": "string",
+                "description": "The symbol used to abbreviate the ticker name in a recognizable manner, e.g. APPL for Apple, or GOOG for Google",
+                "sample values": ["APPL", "AMZN", "BRK.B", "FB", "GOOG", "NFLX", "MSFT"],
+                "synonyms": ["ticker symbol", "ticker abbreviation"]
+            },
+            {
+                "name": "name",
+                "type": "table column",
+                "column name": "sbTickerName",
+                "data type": "string",
+                "description": "The full name of the ticker, e.g. the company name",
+                "sample values": ["Berkshire Hathaway Inc.", "Alphabet Inc.", "Apple Inc.", "Microsoft Corporation"],
+                "synonyms": ["company name", "business name"]
+            },
+            {
+                "name": "ticker_type",
+                "type": "table column",
+                "column name": "sbTickerType",
+                "data type": "string",
+                "description": "The category of ticker, which is either 'stock', 'etf', or 'mutual fund'",
+                "sample values": ["stock", "etf", "mutual fund"],
+                "synonyms": ["category", "classification"]
+            },
+            {
+                "name": "exchange",
+                "type": "table column",
+                "column name": "sbTickerExchange",
+                "data type": "string",
+                "description": "The exchange that the ticker is listed on, which is either 'NASDAQ', 'NYSE', 'NYSE Arca', or 'Vanguard'",
+                "sample values": ["NASDAQ", "NYSE", "NYSE Arca", "Vanguard"],
+                "synonyms": []
+            },
+            {
+                "name": "currency",
+                "type": "table column",
+                "column name": "sbTickerCurrency",
+                "data type": "string",
+                "description": "The currency that the ticker is traded in, which is always 'USD'",
+                "sample values": ["USD"]
+            },
+            {
+                "name": "db2x",
+                "type": "table column",
+                "column name": "sbTickerDb2x",
+                "data type": "string",
+                "description": "The two-letter exchange code corresponding to the ticker's exchange, which is either 'NQ' for NASDAQ, 'NY' for NYSE, 'NX' for 'NYSE Arca', or 'VA' for Vanguard",
+                "sample values": ["NQ", "NY", "NX", "VG"],
+                "synonyms": ["exchange code"]
+            },
+            {
+                "name": "is_active",
+                "type": "table column",
+                "column name": "sbTickerIsActive",
+                "data type": "bool",
+                "description": "Whether the ticker is still active",
+                "synonyms": ["ticker in use"]
+            }
+            ],
+            "description": "All of the tickers that the brokerage trades",
+            "synonyms": ["stocks", "etfs", "mutual funds"]
+        },
+        {
+            "name": "daily_prices",
+            "type": "simple table",
+            "table path": "main.sbDailyPrice",
+            "unique properties": [["ticker_id", "date"]],
+            "properties": [
+            {
+                "name": "ticker_id",
+                "type": "table column",
+                "column name": "sbDpTickerId",
+                "data type": "string",
+                "description": "The ticker id from the ticker whose price is being record",
+                "sample values": ["T002", "T003", "T005", "T007", "T011"],
+                "synonyms": ["ticker key"]
+            },
+            {
+                "name": "date",
+                "type": "table column",
+                "column name": "sbDpDate",
+                "data type": "datetime",
+                "description": "The date of the price record",
+                "synonyms": ["record datetime", "price update date"]
+            },
+            {
+                "name": "open",
+                "type": "table column",
+                "column name": "sbDpOpen",
+                "data type": "numeric",
+                "description": "The opening price of the ticker on the day of the record",
+                "sample values": [150, 3200, 2500, 280],
+                "synonyms": ["opening price"]
+            },
+            {
+                "name": "high",
+                "type": "table column",
+                "column name": "sbDpHigh",
+                "data type": "numeric",
+                "description": "The highest price of the ticker during the day of the record",
+                "sample values": [152.5, 282.75, 3225, 185, 2525],
+                "synonyms": ["high price", "high-point", "maximum price during day"]
+            },
+            {
+                "name": "low",
+                "type": "table column",
+                "column name": "sbDpLow",
+                "data type": "numeric",
+                "description": "The lowest price of the ticker during the day of the record",
+                "sample values": [148.75, 279.5, 3180, 178.5, 2475],
+                "synonyms": ["low price", "low-point", "minimum price during day"]
+            },
+            {
+                "name": "close",
+                "type": "table column",
+                "column name": "sbDpClose",
+                "data type": "numeric",
+                "description": "The close price of the ticker on the day of the record",
+                "sample values": [151.25, 281, 3210, 184.25, 2510],
+                "synonyms": ["closing price"]
+            },
+            {
+                "name": "volume",
+                "type": "table column",
+                "column name": "sbDpVolume",
+                "data type": "numeric",
+                "description": "The total number of shares of the ticker traded during the day",
+                "sample values": [75000000, 4000000, 1500000, 35000000],
+                "synonyms": ["daily trading volume"]
+            },
+            {
+                "name": "epoch_ms",
+                "type": "table column",
+                "column name": "sbDpEpochMs",
+                "data type": "numeric",
+                "description": "The number of milliseconds since the epoch (January 1, 1970) that the record was created",
+                "sample values": [1680336000000, 1680336000000, 1680336000000],
+                "synonyms": ["created timestamp in epoch milliseconds"]
+            },
+            {
+                "name": "source",
+                "type": "table column",
+                "column name": "sbDpSource",
+                "data type": "string",
+                "description": "The exchange where the price record originated from, which is either 'NASDAQ', 'NYSE' or 'Vanguard'",
+                "sample values": ["NYSE", "NASDAQ", "Vanguard"],
+                "synonyms": ["price record origin"]
+            }
+            ],
+            "description": "The daily updates on tickers including their price information within a single day",
+            "synonyms": ["historical stock prices", "daily ticker price data"]
+        },
+        {
+            "name": "transactions",
+            "type": "simple table",
+            "table path": "main.sbTransaction",
+            "unique properties": ["transaction_id", "kpx"],
+            "properties": [
+            {
+                "name": "transaction_id",
+                "type": "table column",
+                "column name": "sbTxId",
+                "data type": "string",
+                "description": "The unique identifying string for each transaction",
+                "sample values": ["TX035", "TX001", "TX008", "TX033"],
+                "synonyms": ["transaction key"]
+            },
+            {
+                "name": "customer_id",
+                "type": "table column",
+                "column name": "sbTxCustId",
+                "data type": "string",
+                "description": "The id of the customer who made the transaction",
+                "sample values": ["C003", "C005", "C007", "C001", "C008"],
+                "synonyms": ["customer key"]
+            },
+            {
+                "name": "ticker_id",
+                "type": "table column",
+                "column name": "sbTxTickerId",
+                "data type": "string",
+                "description": "The id of the ticker being bought/sold in the transaction",
+                "sample values": ["T001", "T007", "T008"],
+                "synonyms": ["ticker key"]
+            },
+            {
+                "name": "date_time",
+                "type": "table column",
+                "column name": "sbTxDateTime",
+                "data type": "datetime",
+                "description": "The timestamp that the transaction was made at",
+                "synonyms": ["transaction timestamp", "buy/sell datetime"]
+            },
+            {
+                "name": "transaction_type",
+                "type": "table column",
+                "column name": "sbTxType",
+                "data type": "string",
+                "description": "The type of transaction, which is either 'buy' or 'sell'",
+                "sample values": ["buy", "sell"],
+                "synonyms": ["category", "classification"]
+            },
+            {
+                "name": "shares",
+                "type": "table column",
+                "column name": "sbTxShares",
+                "data type": "numeric",
+                "description": "The number of shares being bought/sold in the transaction",
+                "sample values": [150, 120, 110],
+                "synonyms": ["volume traded", "transaction size"]
+            },
+            {
+                "name": "price",
+                "type": "table column",
+                "column name": "sbTxPrice",
+                "data type": "numeric",
+                "description": "The price that the ticker was bought/sold at in the transaction",
+                "sample values": [180, 200, 220, 150, 130],
+                "synonyms": ["buy price", "sell price", "cost", "per-share value"]
+            },
+            {
+                "name": "amount",
+                "type": "table column",
+                "column name": "sbTxAmount",
+                "data type": "numeric",
+                "description": "The total monetary value of the transaction (cost for buy, revenue for sell), which is the price multiplied by the number of shares",
+                "sample values": [27000, 24000, 24200, 15000, 13000],
+                "synonyms": ["total cost", "total revenue", "transaction value"]
+            },
+            {
+                "name": "currency",
+                "type": "table column",
+                "column name": "sbTxCcy",
+                "data type": "string",
+                "description": "The currency that the transaction was made in, which is always 'USD'",
+                "sample values": ["USD"]
+            },
+            {
+                "name": "tax",
+                "type": "table column",
+                "column name": "sbTxTax",
+                "data type": "numeric",
+                "description": "The tax applied by the brokerage onto the transaction",
+                "sample values": [135, 120, 121, 75, 65],
+                "synonyms": ["levy", "duty", "tariff"]
+            },
+            {
+                "name": "commission",
+                "type": "table column",
+                "column name": "sbTxCommission",
+                "data type": "numeric",
+                "description": "The commission taken by the brokerage for the transaction",
+                "sample values": [20, 15, 10],
+                "synonyms": ["brokerage fee", "transaction fee"]
+            },
+            {
+                "name": "kpx",
+                "type": "table column",
+                "column name": "sbTxKpx",
+                "data type": "string",
+                "description": "The internal code used for the transaction, which corresponds to the transaction id",
+                "sample values": ["KP056", "KP053", "KP011"],
+                "synonyms": []
+            },
+            {
+                "name": "settlement_date_str",
+                "type": "table column",
+                "column name": "sbTxSettlementDateStr",
+                "data type": "string",
+                "description": "The date the transaction was settled, which is a string in the form YYYYMMDD HH:MM:SS, or null if not settled yet",
+                "sample values": ["20230401 09:30:00", "20230401 10:15:00", "20230401 11:00:00"],
+                "synonyms": ["settlement timestamp", "datetime of transaction finalization"]
+            },
+            {
+                "name": "status",
+                "type": "table column",
+                "column name": "sbTxStatus",
+                "data type": "string",
+                "description": "The status of the transaction, which is either 'success', 'fail', or 'pending'",
+                "sample values": ["success", "fail", "pending"],
+                "synonyms": ["transaction state"]
+            }
+            ],
+            "description": "All transactions made through the brokerage",
+            "synonyms": ["exchanges", "trades", "buy/sell orders"]
+        }
+        ],
+        "relationships": [
+        {
+            "name": "transactions_made",
+            "type": "simple join",
+            "parent collection": "customers",
+            "child collection": "transactions",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "_id": [
+                "customer_id"
+            ]
+            },
+            "description": "All of the transactions made by the customer, including both buys and sells",
+            "synonyms": ["exchanges made", "trades made", "stock purchases and sales"]
+        },
+        {
+            "name": "customer",
+            "type": "reverse",
+            "original parent": "customers",
+            "original property": "transactions_made",
+            "singular": true,
+            "always matches": true,
+            "description": "The customer who made the transaction",
+            "synonyms": ["user", "client", "stock buyer/seller"]
+        },
+        {
+            "name": "transactions_of",
+            "type": "simple join",
+            "parent collection": "tickers",
+            "child collection": "transactions",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "_id": [
+                "ticker_id"
+            ]
+            },
+            "description": "The transactions made of a ticker, including both buys and sells of the ticker",
+            "synonyms": ["purchases", "sales", "exchanges", "trades of ticker"]
+        },
+        {
+            "name": "ticker",
+            "type": "reverse",
+            "original parent": "tickers",
+            "original property": "transactions_of",
+            "singular": true,
+            "always matches": true,
+            "description": "The ticker that the transaction was made of",
+            "synonyms": ["stock", "etf", "fund", "company"]
+        },
+        {
+            "name": "ticker",
+            "type": "simple join",
+            "parent collection": "daily_prices",
+            "child collection": "tickers",
+            "singular": true,
+            "always matches": true,
+            "keys": {
+            "ticker_id": [
+                "_id"
+            ]
+            },
+            "description": "The ticker that the daily price record corresponds to",
+            "synonyms": ["stock", "etf", "fund", "company"]
+        },
+        {
+            "name": "daily_prices",
+            "type": "reverse",
+            "original parent": "daily_prices",
+            "original property": "ticker",
+            "singular": false,
+            "always matches": false,
+            "description": "The daily price records for the ticker",
+            "synonyms": ["historical prices", "price updates"]
+        }
+        ],
+        "additional definitions": [],
+        "verified pydough analysis": [],
+        "extra semantic info": {}
+    }
+]
