@@ -217,7 +217,7 @@
             "synonyms": ["contact number", "telephone number"]
           },
           {
-            "name": "account_balance",
+            "name": "acctbal",
             "type": "table column",
             "column name": "s_acctbal",
             "data type": "numeric",
@@ -583,7 +583,7 @@
             "synonyms": ["balance", "credit", "wealth", "debt", "surplus", "cash on hand", "money in bank"]
           },
           {
-            "name": "market_segment",
+            "name": "mktsegment",
             "type": "table column",
             "column name": "c_mktsegment",
             "data type": "string",

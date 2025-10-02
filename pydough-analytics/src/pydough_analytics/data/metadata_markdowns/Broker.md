@@ -71,7 +71,7 @@
   - Sample values: T002, T003, T005, T007, T011
 - **date**: The date of the price record
   - Synonyms: record datetime, price update date
-- **open**: The opening price of the ticker on the day of the record
+- **_open_**: The opening price of the ticker on the day of the record
   - Synonyms: opening price
   - Sample values: 150, 3200, 2500, 280
 - **high**: The highest price of the ticker during the day of the record

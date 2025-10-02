@@ -3,6 +3,7 @@ from rich.console import Console
 
 from .commands.generate_json_cmd import generate_metadata_from_config
 from .commands.generate_md_cmd import generate_markdown_from_config
+from .commands.ask_cmd import ask_from_cli
 
 console = Console()
 
@@ -46,6 +47,37 @@ def generate_md(
     """
     generate_markdown_from_config(graph_name, json_path, md_path)
 
-
+@app.command("ask")
+def ask(
+    question: str = typer.Option(..., help="Natural language question"),
+    engine: str = typer.Option(..., help="DB engine, e.g. sqlite"),
+    database: str = typer.Option(..., help="DB path/conn string"),
+    db_name: str = typer.Option(..., help="Logical database name (e.g. TPCH)"),
+    md_path: str = typer.Option(..., help="Path to DB markdown"),
+    kg_path: str = typer.Option(..., help="Path to knowledge graph JSON"),
+    provider: str = typer.Option(None, help="LLM provider (optional)"),
+    model: str = typer.Option(None, help="LLM model id (optional)"),
+    show_sql: bool = typer.Option(False, help="Print generated SQL"),
+    show_df: bool = typer.Option(False, help="Print DataFrame as table"),
+    show_explanation: bool = typer.Option(False, help="Print explanation"),
+    as_json: bool = typer.Option(False, help="Output as JSON instead of table"),
+    rows: int = typer.Option(20, help="Number of rows to show from the DataFrame"),
+):
+    ask_from_cli(
+        question=question,
+        engine=engine,
+        database=database,
+        db_name=db_name,
+        md_path=md_path,
+        kg_path=kg_path,
+        provider=provider,
+        model=model,
+        show_sql=show_sql,
+        show_df=show_df,
+        show_explanation=show_explanation,
+        as_json=as_json,
+        rows=rows,
+    )
+    
 if __name__ == "__main__":
 	app()

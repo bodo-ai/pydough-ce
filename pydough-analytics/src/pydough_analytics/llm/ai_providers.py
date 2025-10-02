@@ -3,12 +3,8 @@ import json
 import boto3
 from abc import ABC, abstractmethod
 from botocore.config import Config
-from azure.ai.inference import ChatCompletionsClient
-from azure.ai.inference.models import UserMessage, SystemMessage
-from azure.core.credentials import AzureKeyCredential
 import google.genai as genai
 from google.genai import types
-from mistralai import Mistral
 from anthropic import AnthropicVertex
 import aisuite as ai
 
@@ -17,25 +13,6 @@ class AIProvider(ABC):
     @abstractmethod
     def ask(self, question, prompt, **kwargs):
         pass
-
-
-class AzureAIProvider(AIProvider):
-    def __init__(self, model_id):
-        self.client = self.setup_azure_client()
-        self.model_id = model_id
-
-    def setup_azure_client(self):
-        endpoint = os.getenv("AZURE_BASE_URL")
-        key = os.getenv("AZURE_API_KEY")
-        if not endpoint or not key:
-            raise ValueError("Azure environment variables are not set.")
-        return ChatCompletionsClient(endpoint=endpoint, credential=AzureKeyCredential(key))
-
-    def ask(self, question, prompt, **kwargs):
-        messages = [SystemMessage(prompt), UserMessage(question)]
-        completion = self.client.complete(messages=messages, max_tokens=kwargs.get("max_tokens", 20000),
-                                          model=self.model_id, stream=True)
-        return "".join([chunk.choices[0]["delta"]["content"] for chunk in completion if chunk.choices])
 
 
 class ClaudeAIProvider(AIProvider):
@@ -103,22 +80,6 @@ class DeepSeekAIProvider(AIProvider):
         return response["output"]["message"]["content"][0]["text"]
 
 
-class MistralAIProvider(AIProvider):
-    def __init__(self, model_id):
-        self.api_key = os.environ["MISTRAL_API_KEY"]
-        self.model_id = model_id
-        self.client = Mistral(api_key=self.api_key)
-
-    def ask(self, question, prompt, **kwargs):
-        messages = [{"role": "system", "content": prompt}, {"role": "user", "content": question}]
-        response = self.client.chat.complete(
-            model=self.model_id,
-            messages=messages,
-            **kwargs
-        )
-        return response.choices[0].message.content
-
-
 class OtherAIProvider(AIProvider):
     def __init__(self, provider, model_id, config=None):
         self.client = ai.Client(config) if config else ai.Client()
@@ -138,13 +99,9 @@ class OtherAIProvider(AIProvider):
 def get_provider(provider, model_id, config=None):
     if provider == "anthropic":
         return ClaudeAIProvider(model_id, config=config)
-    elif provider == "azure":
-        return AzureAIProvider(model_id)
     elif provider == "aws-deepseek":
         return DeepSeekAIProvider(model_id)
     elif provider == "google":
         return GeminiAIProvider(model_id, config=config)
-    elif provider == "mistral":
-        return MistralAIProvider(model_id)
     else:
         return OtherAIProvider(provider, model_id, config)
