@@ -7,10 +7,10 @@
             "name": "cars",
             "type": "simple table",
             "table path": "main.cars",
-            "unique properties": ["id", "vin_number"],
+            "unique properties": ["id_", "vin_number"],
             "properties": [
             {
-                "name": "id",
+                "name": "id_",
                 "type": "table column",
                 "column name": "id",
                 "data type": "numeric",
@@ -114,10 +114,10 @@
             "name": "salespeople",
             "type": "simple table",
             "table path": "main.salespersons",
-            "unique properties": ["id", "email"],
+            "unique properties": ["id_", "email"],
             "properties": [
             {
-                "name": "id",
+                "name": "id_",
                 "type": "table column",
                 "column name": "id",
                 "data type": "numeric",
@@ -192,10 +192,10 @@
             "name": "customers",
             "type": "simple table",
             "table path": "main.customers",
-            "unique properties": ["id", "email"],
+            "unique properties": ["id_", "email"],
             "properties": [
             {
-                "name": "id",
+                "name": "id_",
                 "type": "table column",
                 "column name": "id",
                 "data type": "numeric",
@@ -288,10 +288,10 @@
             "name": "payments_made",
             "type": "simple table",
             "table path": "main.payments_made",
-            "unique properties": ["id", "invoice_number"],
+            "unique properties": ["id_", "invoice_number"],
             "properties": [
             {
-                "name": "id",
+                "name": "id_",
                 "type": "table column",
                 "column name": "id",
                 "data type": "numeric",
@@ -374,10 +374,10 @@
             "name": "payments_received",
             "type": "simple table",
             "table path": "main.payments_received",
-            "unique properties": ["id"],
+            "unique properties": ["id_"],
             "properties": [
             {
-                "name": "id",
+                "name": "id_",
                 "type": "table column",
                 "column name": "id",
                 "data type": "numeric",
@@ -436,10 +436,10 @@
             "name": "sales",
             "type": "simple table",
             "table path": "main.sales",
-            "unique properties": ["id"],
+            "unique properties": ["id_"],
             "properties": [
             {
-                "name": "id",
+                "name": "id_",
                 "type": "table column",
                 "column name": "id",
                 "data type": "numeric",
@@ -507,10 +507,10 @@
             "name": "inventory_snapshots",
             "type": "simple table",
             "table path": "main.inventory_snapshots",
-            "unique properties": ["id"],
+            "unique properties": ["id_"],
             "properties": [
             {
-                "name": "id",
+                "name": "id_",
                 "type": "table column",
                 "column name": "id",
                 "data type": "numeric",
@@ -565,7 +565,7 @@
             "singular": false,
             "always matches": false,
             "keys": {
-            "id": [
+            "id_": [
                 "car_id"
             ]
             },
@@ -590,7 +590,7 @@
             "singular": false,
             "always matches": false,
             "keys": {
-            "id": [
+            "id_": [
                 "car_id"
             ]
             },
@@ -615,7 +615,7 @@
             "singular": false,
             "always matches": false,
             "keys": {
-            "id": [
+            "id_": [
                 "salesperson_id"
             ]
             },
@@ -640,7 +640,7 @@
             "singular": false,
             "always matches": false,
             "keys": {
-            "id": [
+            "id_": [
                 "customer_id"
             ]
             },
@@ -665,7 +665,7 @@
             "singular": false,
             "always matches": false,
             "keys": {
-            "id": [
+            "id_": [
                 "sale_id"
             ]
             },

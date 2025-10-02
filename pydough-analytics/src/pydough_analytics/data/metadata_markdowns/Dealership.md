@@ -1,7 +1,7 @@
 # Metadata Overview: Dealership (Graph Name)
 
 ### The `cars` collection contains the following columns:
-- **id**: Unique identifier for each car
+- **id_**: Unique identifier for each car
   - Synonyms: car key, car id
   - Sample values: 1, 3, 5, 6, 18
 - **make**: The make of the car, e.g. Ford, Toyota, etc.
@@ -36,7 +36,7 @@
   - Synonyms: availability records, inventory history
 
 ### The `salespeople` collection contains the following columns:
-- **id**: Unique identifier for each salesperson in the dealership
+- **id_**: Unique identifier for each salesperson in the dealership
   - Synonyms: salesperson key, salesperson id, salesperson number
   - Sample values: 1, 5, 10, 13
 - **first_name**: The first name of the salesperson
@@ -60,7 +60,7 @@
   - Synonyms: sales records, transactions made, deals closed
 
 ### The `customers` collection contains the following columns:
-- **id**: Unique identifier for each customer
+- **id_**: Unique identifier for each customer
   - Synonyms: customer key, customer id
   - Sample values: 1, 5, 9, 12
 - **first_name**: The first name of the customer
@@ -89,7 +89,7 @@
   - Synonyms: vehicle purchase records, car transactions, automobile purchases
 
 ### The `payments_made` collection contains the following columns:
-- **id**: Unique identifier for each payment made
+- **id_**: Unique identifier for each payment made
   - Synonyms: payment key, payment id
   - Sample values: 1, 11, 16, 17
 - **vendor_name**: Name of the vendor to whom the payment was made
@@ -113,7 +113,7 @@
   - Synonyms: system entry date, created timestamp
 
 ### The `payments_received` collection contains the following columns:
-- **id**: Unique identifier for each payment received record
+- **id_**: Unique identifier for each payment received record
   - Synonyms: payment key, payment id
   - Sample values: 1, 2, 10, 19, 23
 - **sale_id**: The id of the sale that the payment is associated with
@@ -133,7 +133,7 @@
   - Synonyms: purchase record, vehicle sale, car purchase
 
 ### The `sales` collection contains the following columns:
-- **id**: Unique identifier for each car sale
+- **id_**: Unique identifier for each car sale
   - Synonyms: sale key, sale id
   - Sample values: 5, 11, 12, 18, 22
 - **car_id**: The id of the car being purchased in the sale
@@ -162,7 +162,7 @@
   - Synonyms: sale purchase installments, payment records
 
 ### The `inventory_snapshots` collection contains the following columns:
-- **id**: Unique identifier for each inventory snapshot entry
+- **id_**: Unique identifier for each inventory snapshot entry
   - Synonyms: inventory snapshot key, snapshot id
   - Sample values: 1, 4, 13, 19, 23
 - **snapshot_date**: Date of the inventory snapshot
