@@ -18,4 +18,3 @@ def runner() -> CliRunner:
 	Fixture para usar el runner de Typer en todos los tests.
 	"""
 	return CliRunner()
-

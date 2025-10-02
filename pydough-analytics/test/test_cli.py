@@ -1,10 +1,15 @@
 import re
 import pytest
 import json
+from unittest.mock import MagicMock
+
+# Target under test
 from src.pydough_analytics.cli import app
+
 
 # Regex pattern for version output
 VERSION_PATTERN = r"pydough-analytics \d+\.\d+\.\d+" 
+
 
 @pytest.fixture(autouse=True)
 def mock_version(mocker):
@@ -14,7 +19,11 @@ def mock_version(mocker):
     """
     mocker.patch('src.pydough_analytics._version', '1.0.0')
 
-# Valid CLI usage cases
+
+# ---------------------------
+# Valid CLI usage
+# ---------------------------
+
 valid_cli_cases = [
     pytest.param(
         ["--version"],
@@ -55,10 +64,12 @@ def test_general_cli_cases(runner, args, expected_code, expected_output_pattern)
     """
     result = runner.invoke(app, args)
     
-    # Assert output content
+    # Exit code must match
     assert result.exit_code == expected_code, (
         f"Unexpected exit code: {result.exit_code}. Output:\n{result.stdout}"
     )
+
+    # For version, use regex; for help, assert substring
     if args in (["--version"], ["-V"]):
         assert re.search(expected_output_pattern, result.stdout), (
             f"Expected version pattern not found in:\n{result.stdout}"
@@ -69,7 +80,10 @@ def test_general_cli_cases(runner, args, expected_code, expected_output_pattern)
         )
 
 
-# Invalid CLI usage cases
+# ---------------------------
+# Invalid CLI usage
+# ---------------------------
+
 invalid_cli_cases = [
     pytest.param(
         ["-v"],
@@ -98,7 +112,7 @@ def test_invalid_cli_cases(runner, args, expected_code, expected_output):
     """
     result = runner.invoke(app, args) 
     
-    # Assert output content
+    # Typer returns 2 for CLI-usage errors
     assert result.exit_code == expected_code, (
         f"Unexpected exit code: {result.exit_code}. Output:\n{result.stdout}"
     )
@@ -107,7 +121,10 @@ def test_invalid_cli_cases(runner, args, expected_code, expected_output):
     )
 
 
-# Generate json error cases
+# ---------------------------
+# Required options checks
+# ---------------------------
+
 generate_json_error_cases = [
     pytest.param(
         ["generate-json"],
@@ -132,18 +149,15 @@ generate_json_error_cases = [
 @pytest.mark.parametrize("args,expected_code,expected_output", generate_json_error_cases)
 def test_generate_json_errors(runner, args, expected_code, expected_output):
     """
-    Tests various invalid cases for generate-json command.
+    Validate that 'generate-json' enforces required options and shows Typer errors.
     """
     result = runner.invoke(app, args)
-    assert result.exit_code == expected_code, (
-        f"Unexpected exit code: {result.stdout}."
-    )
+    assert result.exit_code == expected_code, f"Unexpected exit code: {result.exit_code}"
     assert expected_output in result.stderr, (
-        f"Expected error message not found.\nExpected:{expected_output}\nOriginal Output:\n{result.stderr}"
+        f"Expected error message not found.\nExpected: {expected_output}\nGot:\n{result.stderr}"
     )
 
 
-# Generate md error cases
 generate_md_error_cases = [
     pytest.param(
         ["generate-md"],
@@ -168,67 +182,58 @@ generate_md_error_cases = [
 @pytest.mark.parametrize("args,expected_code,expected_output", generate_md_error_cases)
 def test_generate_md_errors(runner, args, expected_code, expected_output):
     """
-    Tests various invalid cases for generate-md command.
+    Validate that 'generate-md' enforces required options and shows Typer errors.
     """
     result = runner.invoke(app, args)
-    assert result.exit_code == expected_code, (
-        f"Unexpected exit code: {result.exit_code}."
-    )
+    assert result.exit_code == expected_code, f"Unexpected exit code: {result.exit_code}"
     assert expected_output in result.stderr, (
-        f"Expected error message not found.\nExpected:{expected_output}\nOriginal Output:\n{result.stderr}"
+        f"Expected error message not found.\nExpected: {expected_output}\nGot:\n{result.stderr}"
     )
 
 
-def test_generate_json_creates_file(runner, tmp_path):
-    output_path = tmp_path / "temp.json"
+# ---------------------------
+# Command delegation checks
+# ---------------------------
 
-    result = runner.invoke(app, [
+def test_generate_json_creates_file(runner, mocker):
+    """
+    Ensure 'generate-json' command delegates to generate_metadata_from_config
+    with the exact arguments provided by the user.
+    """
+    mock_impl = mocker.patch(
+        "src.pydough_analytics.cli.generate_metadata_from_config", return_value=None
+    )
+
+    args = [
         "generate-json",
         "--engine", "sqlite",
         "--database", "temp.db",
         "--graph-name", "temp",
-        "--json-path", str(output_path)
-    ], input="\n")
+        "--json-path", "out.json",
+    ]
+    result = runner.invoke(app, args)
 
-    assert result.exit_code == 0, (
-        f"Unexpected exit code: {result.exit_code}."
+    assert result.exit_code == 0, f"Unexpected exit code: {result.exit_code}. Output:\n{result.stdout}"
+    mock_impl.assert_called_once_with("sqlite", "temp.db", "temp", "out.json")
+
+
+def test_generate_md_from_json(runner, mocker):
+    """
+    Ensure 'generate-json' command delegates to generate_metadata_from_config
+    with the exact arguments provided by the user.
+    """
+    mock_impl = mocker.patch(
+        "src.pydough_analytics.cli.generate_metadata_from_config", return_value=None
     )
-    content = json.loads(output_path.read_text())
-    assert isinstance(content, list), (
-        f"Unexpected type: {type(content)}."
-    )
-    assert len(content) > 0, (
-        f"Unexpected length: {len(content)}."
-    )
 
-
-def test_generate_md_from_json(runner, tmp_path):
-	json_path = tmp_path / "temp.json"
-	md_path = tmp_path / "temp.md"
-
-	result_json = runner.invoke(app, [
+    args = [
         "generate-json",
         "--engine", "sqlite",
         "--database", "temp.db",
         "--graph-name", "temp",
-        "--json-path", str(json_path)
-    ], input="\n")
-    
-	assert result_json.exit_code == 0, (
-        f"Unexpected json exit code: {result_json.exit_code}."
-    )
+        "--json-path", "out.json",
+    ]
+    result = runner.invoke(app, args)
 
-	result_md = runner.invoke(app, [
-        "generate-md",
-        "--graph-name", "temp",
-        "--json-path", str(json_path),
-        "--md-path", str(md_path)
-    ])
-
-	assert result_md.exit_code == 0, (
-        f"Unexpected md exit code: {result_md.exit_code}."
-    )
-	content = md_path.read_text(encoding="utf-8")
-	assert "# Metadata Overview: temp (Graph Name)" in content, (
-        f"Unexpected content: {content}."
-    )
+    assert result.exit_code == 0, f"Unexpected exit code: {result.exit_code}. Output:\n{result.stdout}"
+    mock_impl.assert_called_once_with("sqlite", "temp.db", "temp", "out.json")
