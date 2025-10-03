@@ -39,9 +39,6 @@ GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/gcp-key.json
 GOOGLE_PROJECT_ID=your-gcp-project
 GOOGLE_REGION=us-east5
 
-# Anthropic (direct)
-ANTHROPIC_API_KEY=sk-ant-...
-
 # AWS Bedrock (Claude via AWS)
 AWS_ACCESS_KEY_ID=...
 AWS_SECRET_ACCESS_KEY=...

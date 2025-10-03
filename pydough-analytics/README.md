@@ -35,10 +35,7 @@ pydough-analytics --help
   export GOOGLE_PROJECT_ID="your-gcp-project"
   export GOOGLE_REGION="us-east5"
   ```
-- **Anthropic API (direct)**
-  ```bash
-  export ANTHROPIC_API_KEY="sk-ant-..."
-  ```
+  
 - **AWS Bedrock (Claude via AWS)**
   ```bash
   export AWS_ACCESS_KEY_ID=...
