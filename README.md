@@ -34,7 +34,7 @@ You can export credentials directly in your shell **or** keep them in a `.env` a
 
 **.env example (pick only what you use):**
 ```dotenv
-# Anthropic via Vertex AI (Claude on Vertex)
+# Gemini and Anthropic via Vertex AI
 GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/gcp-key.json
 GOOGLE_PROJECT_ID=your-gcp-project
 GOOGLE_REGION=us-east5

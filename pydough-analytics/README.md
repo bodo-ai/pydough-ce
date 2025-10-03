@@ -29,13 +29,13 @@ pydough-analytics --help
 
 ### Provider credentials (pick one path)
 - **Defaults (Google/Gemini)**: no extra env if already configured.
-- **Anthropic via Vertex AI**
+- **Gemini and Anthropic via Vertex AI**
   ```bash
   export GOOGLE_APPLICATION_CREDENTIALS="/absolute/path/to/cred.json"
   export GOOGLE_PROJECT_ID="your-gcp-project"
   export GOOGLE_REGION="us-east5"
   ```
-  
+
 - **AWS Bedrock (Claude via AWS)**
   ```bash
   export AWS_ACCESS_KEY_ID=...

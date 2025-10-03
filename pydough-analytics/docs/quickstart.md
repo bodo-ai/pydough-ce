@@ -101,7 +101,7 @@ Natural language → PyDough code (+ optional SQL / DataFrame / explanation).
 
 Set credentials for your chosen provider. Examples:
 
-**Anthropic via Vertex AI**
+**Gemini and Anthropic via Vertex AI**
 ```bash
 export GOOGLE_APPLICATION_CREDENTIALS="/absolute/path/to/cred.json"
 export GOOGLE_PROJECT_ID="your-gcp-project"
