@@ -55,6 +55,12 @@ valid_cli_cases = [
         "Generate Markdown documentation",
         id="help_generate_md"
     ),
+    pytest.param(
+        ["ask", "--help"],
+        0,
+        "Ask a natural language question",
+        id="help_generate_md"
+    ),
 ]
 
 @pytest.mark.parametrize("args,expected_code,expected_output_pattern", valid_cli_cases)
@@ -237,3 +243,44 @@ def test_generate_md_from_json(runner, mocker):
 
     assert result.exit_code == 0, f"Unexpected exit code: {result.exit_code}. Output:\n{result.stdout}"
     mock_impl.assert_called_once_with("sqlite", "temp.db", "temp", "out.json")
+
+def test_ask_delegates_to_impl(runner, mocker):
+    """
+    Ensure 'ask' command delegates to ask_from_cli with the correct arguments.
+    """
+    mock_impl = mocker.patch("src.pydough_analytics.cli.ask_from_cli", return_value=None)
+
+    args = [
+        "ask",
+        "--question", "How many rows?",
+        "--engine", "sqlite",
+        "--database", "test.db",
+        "--db-name", "TestDB",
+        "--md-path", "docs.md",
+        "--kg-path", "graph.json",
+        "--provider", "openai",
+        "--model", "gpt-4",
+        "--show-sql",
+        "--show-df",
+        "--show-explanation",
+        "--as-json",
+        "--rows", "50",
+    ]
+    result = runner.invoke(app, args)
+    assert result.exit_code == 0
+
+    mock_impl.assert_called_once_with(
+        question="How many rows?",
+        engine="sqlite",
+        database="test.db",
+        db_name="TestDB",
+        md_path="docs.md",
+        kg_path="graph.json",
+        provider="openai",
+        model="gpt-4",
+        show_sql=True,
+        show_df=True,
+        show_explanation=True,
+        as_json=True,
+        rows=50,
+    )

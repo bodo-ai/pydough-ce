@@ -63,6 +63,9 @@ def ask(
     as_json: bool = typer.Option(False, help="Output as JSON instead of table"),
     rows: int = typer.Option(20, help="Number of rows to show from the DataFrame"),
 ):
+    """
+    Ask a natural language question to a LLM provider for generate PyDough code.
+    """
     ask_from_cli(
         question=question,
         engine=engine,
