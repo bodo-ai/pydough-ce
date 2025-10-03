@@ -19,7 +19,9 @@ pydough-analytics generate-md --help
 pydough-analytics ask --help
 ```
 
-## **Terminal location:** run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  
+## **Terminal location:** 
+
+Run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  
  Quick check:
  ```bash
  ls data

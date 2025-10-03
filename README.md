@@ -57,7 +57,9 @@ export $(grep -v '^#' .env | xargs)
 
 > The CLI reads environment variables from your shell. (Using Python, you can also auto-load `.env` by importing `pydough_analytics.config.env`.)
 
-## **Terminal location:** run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  
+## **Terminal location:** 
+
+Run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  
  Quick check:
  ```bash
  ls data

@@ -48,7 +48,9 @@ pydough-analytics --help
 
 > Tip: If you use a `.env`, you can auto-load it in Python via `import pydough_analytics.config.env`. For the CLI, export env vars in your shell.
 
-### **Terminal location:** run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  
+### **Terminal location:** 
+
+Run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  
  Quick check:
  ```bash
  ls data
