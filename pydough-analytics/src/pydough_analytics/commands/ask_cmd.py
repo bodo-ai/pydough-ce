@@ -89,7 +89,7 @@ def ask_from_cli(
 ) -> None:
     db_config = {"engine": engine, "database": database}
 
-    PKG = Path(__file__).resolve().parents[1]
+    PKG = Path(__file__).resolve().parents[3]
     prompt_path = PKG / "data" / "prompts" / "prompt.md"
     cheatsheet_path = PKG / "data" / "prompts" / "cheatsheet.md"
 
