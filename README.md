@@ -2,64 +2,116 @@
 
 Welcome to the `pydough-ce` project! This repository contains the `pydough-analytics` toolkit, a powerful system that turns natural language questions into safe, executable analytics.
 
-It combines a custom Domain-Specific Language (DSL) called PyDough with Gemini-powered LLM prompting to create a seamless text-to-analytics workflow.
+It combines a custom Domain-Specific Language (DSL) called PyDough with LLM-powered system to create a seamless text-to-analytics workflow.
 
-## Quick Start
+## Getting Started
 
-1. **Clone and enter the repo root**
+> **Terminal location:** run all commands **from the repo root** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).
+> Quick check:
+> ```bash
+> ls data
+> # → Databases  metadata  metadata_markdowns  prompts
+> ```
 
-   ```bash
-   git clone https://github.com/bodo-ai/pydough-ce.git
-   cd pydough-ce
-   ```
+### Requirements
 
-2. **Provision Python 3.11 (>=3.10 works) and a clean virtualenv**
+- Python 3.10 or newer (3.11 recommended).
+- SQLite database file to introspect.
+- PyDough 1.0.10 or newer.
 
-   ```bash
-   rm -rf .venv
-   python3 -m venv .venv
-   source .venv/bin/activate
-   ```
+### Configure the environment
 
-3. **Install the toolkit into the venv**
+Here is the full shell sequence. Replace `/path/to/pydough-ce` with your clone path.
 
-   ```bash
-   python -m pip install --upgrade pip
-   python -m pip install -e pydough-analytics
-   export PATH="$(pwd)/.venv/bin:$PATH"
-   hash -r
-   pydough-analytics --version
-   ```
+```bash
+cd /path/to/pydough-ce
+rm -rf .venv
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e pydough-analytics
+export PATH="$(pwd)/.venv/bin:$PATH"
+hash -r
+pydough-analytics --version
+```
 
-4. **Generate metadata JSON from a SQLite database**
+### Provider credentials (.env or shell)
 
-   ```bash
-   pydough-analytics generate-json \
-      --engine sqlite \
-      --database ./metadata/tpch.db \
-      --graph-name TPCH \
-      --json-path ./metadata/tpch_graph.json
-   ```
+You can export credentials directly in your shell **or** keep them in a `.env` at the repo root.
 
-   This introspects the bundled SQLite DB (metadata/tpch.db) and produces a PyDough V2 metadata graph as JSON (metadata/tpch_graph.json).
+**.env example (pick only what you use):**
+```dotenv
+# Anthropic via Vertex AI (Claude on Vertex)
+GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/gcp-key.json
+GOOGLE_PROJECT_ID=your-gcp-project
+GOOGLE_REGION=us-east5
 
-5. **Export Markdown docs from the metadata**
+# Anthropic (direct)
+ANTHROPIC_API_KEY=sk-ant-...
 
-   ```bash
-   pydough-analytics generate-md \
-      --graph-name TPCH \
-      --json-path ./metadata/tpch_graph.json \
-      --md-path ./docs/tpch.md
-   ```
+# AWS Bedrock (Claude via AWS)
+AWS_ACCESS_KEY_ID=...
+AWS_SECRET_ACCESS_KEY=...
+AWS_DEFAULT_REGION=us-east-1
+```
 
-   The Markdown file will contain a human-readable version of the metadata graph.
+**Load .env into your shell (bash/zsh):**
+```bash
+set -a; source .env; set +a
+# or
+export $(grep -v '^#' .env | xargs)
+```
 
-6. **(Optional) Run tests**
+> The CLI reads environment variables from your shell. (Using Python, you can also auto-load `.env` by importing `pydough_analytics.config.env`.)
 
-   ```bash
-   python -m pip install pytest
-   pytest -q pydough-analytics/tests
-   ```
+### Default paths (data at repo root)
+
+We keep project artifacts in **`./data/`** for consistency:
+- **Database (SQLite):** `./data/Databases/TPCH.db`
+- **Metadata JSON:** `./data/metadata/Tpch_graph.json`
+- **Metadata Markdown:** `./data/metadata_markdowns/Tpch.md`
+
+### Generate metadata from SQLite
+
+```bash
+pydough-analytics generate-json   --engine sqlite   --database ./data/Databases/TPCH.db   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json
+```
+
+This inspects the SQLite file and creates a metadata graph definition under `data/metadata/Tpch_graph.json`.
+
+### Export Markdown docs
+
+```bash
+pydough-analytics generate-md   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json   --md-path ./data/metadata_markdowns/Tpch.md
+```
+
+The Markdown file provides a human-friendly overview of the metadata: collections, properties, and relationships.
+
+### Ask the LLM (after generating JSON + Markdown)
+
+Run natural-language questions on your dataset. The **PyDough code is always printed**; you can optionally include **SQL**, a **DataFrame** preview, and an **explanation**. The CE default is **Google / Gemini 2.5 Pro**.
+
+```bash
+pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --engine sqlite   --database ./data/Databases/TPCH.db   --db-name TPCH   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
+```
+
+Notes:
+- `--db-name` should match the `--graph-name` used during metadata generation (here: `TPCH`).
+- To switch providers (e.g., Anthropic), pass a valid provider/model for your integration:
+  ```bash
+  --provider anthropic --model claude-sonnet-4-5@20250929
+  ```
+- Use `--rows` to control how many DataFrame rows are displayed (default: 20).
+
+### Run the test suite (optional)
+
+```bash
+python -m pip install pytest
+pytest -q pydough-analytics/tests
+```
+
+With these steps you now have the full CE pipeline:
+SQLite DB → JSON metadata graph → Markdown documentation → **LLM Ask**.
 
 ## What It Does
 
@@ -93,69 +145,6 @@ At its core, this project lets you ask questions of your relational database in 
 └── README.md              # You are here!
 ```
 
-## Getting Started
-
-### Requirements
-
-- Python 3.10 or newer (3.11 recommended).
-- SQLite database file to introspect.
-- Pydough 1.0.10 or newer.
-
-### Configure the environment
-
-   If you skipped the “Quick Start” section, here is the full shell sequence again. Replace /path/to/pydough-ce with your clone path.
-
-   ```bash
-   cd /path/to/pydough-ce
-   rm -rf .venv
-   python -m venv .venv
-   source .venv/bin/activate
-   python -m pip install --upgrade pip
-   python -m pip install -e pydough-analytics
-   export PATH="$(pwd)/.venv/bin:$PATH"
-   hash -r
-   pydough-analytics --version
-   ```
-
-### Generate metadata from SQLite
-
-   Use the bundled sample database (metadata/live_sales.db) to generate a PyDough metadata graph in JSON:
-
-   ```bash
-   pydough-analytics generate-json \
-      --engine sqlite \
-      --database ./metadata/live_sales.db \
-      --graph-name SALES \
-      --json-path ./metadata/live_sales.json
-  ```
-
-   This inspects the SQLite file and creates a metadata graph definition under metadata/live_sales.json.
-
-### Export Markdown docs
-
-   Convert the generated JSON graph into Markdown documentation:
-
-   ```bash
-   pydough-analytics generate-md \
-      --graph-name SALES \
-      --json-path ./metadata/live_sales.json \
-      --md-path ./docs/live_sales.md
-   ```
-
-   The Markdown file provides a human-friendly overview of the metadata: collections, properties, and relationships.
-
-### Run the test suite (optional)
-
-   ```bash
-   python -m pip install pytest
-   pytest -q pydough-analytics/tests
-   ```
-
-   With these steps you now have the full CE pipeline:
-   SQLite DB → JSON metadata graph → Markdown documentation.
-
-This command exercises the full Community Edition pipeline: prompt building, Gemini invocation, PyDough execution, and result preview. For more usage examples (metadata generation, JSON output, module entry point), see [pydough-analytics/README.md](pydough-analytics/README.md).
-
 ## The PyDough DSL
 
 PyDough is a Pythonic DSL designed for the LLM to emit—and for you to read—concise analytics logic. Typical patterns include filtering, aggregation, and ranking.
@@ -164,8 +153,7 @@ PyDough is a Pythonic DSL designed for the LLM to emit—and for you to read—c
 # Top 3 sales by amount
 result = sales.CALCULATE(city, amount).TOP_K(3, by=amount.DESC())
 ```
-
-Dive deeper in the [PyDough DSL Prompt Authoring Guide](pydough-analytics/docs/pydough-prompt-guide.md).
+You can check the full PyDough repo and documentation here: https://github.com/bodo-ai/PyDough/tree/main
 
 ## What’s Next?
 
