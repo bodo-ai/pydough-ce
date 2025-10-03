@@ -133,26 +133,49 @@ pydough-analytics/
 ## Architecture Overview
 
 ```
-+-----------------------------+                     
-| CLI (Typer)                 |                     
-| (generate-json, generate-md)|                    
-+-------------+---------------+                     
-              |                                    
-              v                                    
-+----------------------------+         +---------------------------+       
-| Metadata Generator         | ----->  | Metadata JSON             |       
-| (SQLAlchemy inspector +    |         | (graph definition, V2)    |       
-|  identifier sanitizer,     |         +---------------------------+       
-|  type mapping)             |                                    
-+-------------+--------------+                                    
-              |                                    
-              v                                    
-+----------------------------+         +---------------------------+       
-| Markdown Exporter          | ----->  | Markdown Docs             |       
-| (render schema from graph) |         | (human-readable overview) |       
-+----------------------------+         +---------------------------+       
++-----------------------------+                               
+| CLI (Typer)                 |                               
+| (generate-json, generate-md,|                               
+|  ask)                       |                               
++-------------+---------------+                               
+              |                                               
+              v                                               
++-----------------------------+       +---------------------------+       
+| Metadata Generator          | ----> | Metadata JSON             |       
+| (SQLAlchemy inspector +     |       | (graph definition, V2)    |       
+|  identifier sanitizer,      |       +---------------------------+       
+|  type mapping)              |                                               
++-------------+---------------+                                               
+              |                                               
+              v                                               
++-----------------------------+       +---------------------------+       
+| Markdown Exporter           | ----> | Markdown Docs             |       
+| (render schema from graph)  |       | (human-readable overview) |       
++-------------+---------------+       +---------------------------+       
+
+              |
+              v
++-----------------------------+       +---------------------------+       
+| Ask Command (Typer)         | ----> | LLM Client                |       
+| (natural language question) |       | (prompt + schema + guide) |       
++-------------+---------------+       +-------------+-------------+       
+              |                                                    
+              v                                                    
++-----------------------------+       +---------------------------+       
+| AI Providers                | ----> | Gemini / Claude / DeepSeek|       
+| (google, anthropic, aws,    |       | or aisuite                |       
+|  other via aisuite)         |       +---------------------------+       
++-------------+---------------+                                      
+              |                                                    
+              v                                                    
++-----------------------------+       +---------------------------+       
+| PyDough Executor            | ----> | SQL + DataFrame           |       
+| (extract code, run on DB,   |       | (results + explanation)   |       
+|  sanitize, retry on errors) |       +---------------------------+       
++-----------------------------+                                            
 
 Notes:
-- **Engines**: SQLite (built-in).
-- **Storage**: local JSON + Markdown files.
+- **Engines**: SQLite (built-in), planned: PostgreSQL/MySQL/Snowflake.
+- **LLM Providers**: Google Gemini, Anthropic (Claude), AWS Bedrock (DeepSeek), aisuite (others).
+- **Artifacts**: JSON graph, Markdown docs, generated PyDough code, SQL, result DataFrame.
 ```

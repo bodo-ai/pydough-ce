@@ -85,7 +85,7 @@ md_content = generate_markdown(metadata_loaded, graph_name="SALES")
 # Save Markdown to file
 save_markdown(".data/metadata_markdowns/live_sales.md", md_content)
 
-print("✅ Metadata JSON and Markdown generated successfully!")
+print(" Metadata JSON and Markdown generated successfully!")
 ```
 
 This gives you the same workflow as the CLI:
