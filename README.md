@@ -106,6 +106,7 @@ Notes:
 
 ```bash
 python -m pip install pytest
+python -m pip install pytest-mock
 pytest -q pydough-analytics/tests
 ```
 
