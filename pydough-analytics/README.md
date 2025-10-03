@@ -7,6 +7,42 @@ Community Edition toolkit that combines the PyDough DSL with LLM-based prompting
 - Safe execution layer that materialises PyDough results as SQL and DataFrames.
 - A Typer-based CLI for metadata generation and ad-hoc querying.
 
+## TPCH sample database (download helper)
+
+To make local testing easy, this repo includes a small helper script to download the TPCH demo database.
+
+- **Script location:** `pydough-analytics/setup_tpch.sh`
+- **What it does:** If the target file already exists, it prints `FOUND` and exits. Otherwise it downloads the SQLite DB.
+- **Where the DB should live:** `./data/Databases/TPCH.db` (from the repo root). The rest of the docs/CLI examples assume this path.
+
+### One-liner (macOS/Linux)
+
+Run from the **repo root**:
+
+```bash
+mkdir -p ./data/Databases
+bash pydough-analytics/setup_tpch.sh ./data/Databases/TPCH.db
+```
+
+If you don't have `wget`, you can use `curl` instead:
+
+```bash
+mkdir -p ./data/Databases
+curl -L https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -o ./data/Databases/TPCH.db
+```
+
+Verify the file is present:
+
+```bash
+ls -lh ./data/Databases/TPCH.db
+```
+
+### Windows (PowerShell)
+
+```powershell
+New-Item -ItemType Directory -Force -Path .\data\Databases | Out-Null
+Invoke-WebRequest -Uri https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -OutFile .\data\Databases\TPCH.db
+
 ## Quick usage
 
 Get from **database → metadata (JSON) → Markdown → ask** in a few commands. This section includes *everything necessary* to run quickly.
