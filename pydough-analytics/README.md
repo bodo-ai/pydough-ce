@@ -48,12 +48,17 @@ pydough-analytics --help
 
 > Tip: If you use a `.env`, you can auto-load it in Python via `import pydough_analytics.config.env`. For the CLI, export env vars in your shell.
 
----
+> **Terminal location:** run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  
+> Quick check:
+> ```bash
+> ls data
+> # → Databases  metadata  metadata_markdowns  prompts
+> ```
 
 ### 1) Generate metadata JSON
 
 ```bash
-pydough-analytics generate-json   --engine sqlite   --database ./data/databases/tpch.db   --graph-name TPCH   --json-path ./metadata/tpch.json
+pydough-analytics generate-json   --engine sqlite   --database ./data/databases/tpch.db   --graph-name TPCH   --json-path ./data/metadata/tpch.json
 ```
 
 - `--engine`: Database engine (currently: `sqlite`).
@@ -61,7 +66,6 @@ pydough-analytics generate-json   --engine sqlite   --database ./data/databases/
 - `--graph-name`: Logical name for this dataset (you’ll reuse it as `--db-name` in `ask`).
 - `--json-path`: Where to save the graph JSON.
 
----
 
 ### 2) Export Markdown (used by the LLM)
 

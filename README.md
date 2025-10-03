@@ -4,14 +4,7 @@ Welcome to the `pydough-ce` project! This repository contains the `pydough-analy
 
 It combines a custom Domain-Specific Language (DSL) called PyDough with LLM-powered system to create a seamless text-to-analytics workflow.
 
-## Getting Started
-
-> **Terminal location:** run all commands **from the repo root** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).
-> Quick check:
-> ```bash
-> ls data
-> # → Databases  metadata  metadata_markdowns  prompts
-> ```
+# Getting Started
 
 ### Requirements
 
@@ -64,7 +57,14 @@ export $(grep -v '^#' .env | xargs)
 
 > The CLI reads environment variables from your shell. (Using Python, you can also auto-load `.env` by importing `pydough_analytics.config.env`.)
 
-### Default paths (data at repo root)
+> **Terminal location:** run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  
+> Quick check:
+> ```bash
+> ls data
+> # → Databases  metadata  metadata_markdowns  prompts
+> ```
+
+### Default paths (data at `pydough-analytics` folder)
 
 We keep project artifacts in **`./data/`** for consistency:
 - **Database (SQLite):** `./data/Databases/TPCH.db`
