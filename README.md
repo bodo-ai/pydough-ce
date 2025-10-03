@@ -36,6 +36,7 @@ You can export credentials directly in your shell **or** keep them in a `.env` a
 ```dotenv
 # Gemini and Anthropic via Vertex AI
 GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/gcp-key.json
+export GOOGLE_API_KEY:=...
 GOOGLE_PROJECT_ID=your-gcp-project
 GOOGLE_REGION=us-east5
 
@@ -107,7 +108,7 @@ Notes:
 ```bash
 python -m pip install pytest
 python -m pip install pytest-mock
-pytest -q pydough-analytics/tests
+pytest -q tests
 ```
 
 With these steps you now have the full CE pipeline:

@@ -32,6 +32,7 @@ pydough-analytics --help
 - **Gemini and Anthropic via Vertex AI**
   ```bash
   export GOOGLE_APPLICATION_CREDENTIALS="/absolute/path/to/cred.json"
+  export GOOGLE_API_KEY:=...
   export GOOGLE_PROJECT_ID="your-gcp-project"
   export GOOGLE_REGION="us-east5"
   ```
@@ -40,7 +41,7 @@ pydough-analytics --help
   ```bash
   export AWS_ACCESS_KEY_ID=...
   export AWS_SECRET_ACCESS_KEY=...
-  export AWS_DEFAULT_REGION=us-east-1
+  export AWS_DEFAULT_REGION="us-east-1"
   ```
 
 > Tip: If you use a `.env`, you can auto-load it in Python via `import pydough_analytics.config.env`. For the CLI, export env vars in your shell.
