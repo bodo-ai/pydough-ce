@@ -4,37 +4,37 @@
 
 To make local testing easy, this repo includes a small helper script to download the TPCH demo database.
 
-- **Script location:** `pydough-analytics/setup_tpch.sh`
+- **Script location:** `../setup_tpch.sh`
 - **What it does:** If the target file already exists, it prints `FOUND` and exits. Otherwise it downloads the SQLite DB.
-- **Where the DB should live:** `./data/Databases/TPCH.db` (from the repo root). The rest of the docs/CLI examples assume this path.
+- **Where the DB should live:** `../data/databases/TPCH.db` (from the repo root). The rest of the docs/CLI examples assume this path.
 
 ### One-liner (macOS/Linux)
 
 Run from the **repo root**:
 
 ```bash
-mkdir -p ./data/Databases
-bash pydough-analytics/setup_tpch.sh ./data/Databases/TPCH.db
+mkdir -p ../data/databases
+bash ../setup_tpch.sh ../data/databases/TPCH.db
 ```
 
 If you don't have `wget`, you can use `curl` instead:
 
 ```bash
-mkdir -p ./data/Databases
-curl -L https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -o ./data/Databases/TPCH.db
+mkdir -p ../data/databases
+curl -L https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -o ../data/databases/TPCH.db
 ```
 
 Verify the file is present:
 
 ```bash
-ls -lh ./data/Databases/TPCH.db
+ls -lh ../data/databases/TPCH.db
 ```
 
 ### Windows (PowerShell)
 
 ```powershell
-New-Item -ItemType Directory -Force -Path .\data\Databases | Out-Null
-Invoke-WebRequest -Uri https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -OutFile .\data\Databases\TPCH.db
+New-Item -ItemType Directory -Force -Path ..\data\databases | Out-Null
+Invoke-WebRequest -Uri https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -OutFile ..\data\databases\TPCH.db
 
 ## Installation
 
@@ -61,7 +61,7 @@ Run all of the next commands **from the `pydough-analytics` folder** (the folder
  Quick check:
  ```bash
  ls data
- # → Databases  metadata  metadata_markdowns  prompts
+ # → databases  metadata  metadata_markdowns  prompts
  ```
 
 ## Generating metadata (sample)
@@ -71,7 +71,7 @@ Generate a PyDough metadata graph in JSON from the bundled SQLite database:
   ```bash
   pydough-analytics generate-json \
     --engine sqlite \
-    --database ./data/metadata/live_sales.db \
+    --database ./data/databases/live_sales.db \
     --graph-name SALES \
     --json-path ./data/metadata/live_sales.json
   ```
@@ -107,7 +107,7 @@ from pydough_analytics.schema.markdown import generate_markdown
 # Generate JSON metadata from SQLite
 metadata = generate_metadata_from_config(
     engine="sqlite",
-    database=".data/metadata/live_sales.db",
+    database=".data/databases/live_sales.db",
     graph_name="SALES",
     json_path=".data/metadata/live_sales.json"
 )
@@ -160,7 +160,7 @@ export AWS_DEFAULT_REGION=us-east-1
 The **code is always printed**. You can optionally show SQL, a table (DataFrame), and an explanation.
 
 ```bash
-pydough-analytics ask   --question "What are the most common transaction statuses and their respective counts?"   --engine sqlite   --database ./metadata/live_sales.db   --db-name SALES   --md-path .data/metadata_markdowns/live_sales.md   --kg-path .data/metadata/live_sales.json   --provider anthropic   --model claude-sonnet-4-5@20250929   --show-sql --show-df --show-explanation
+pydough-analytics ask   --question "What are the most common transaction statuses and their respective counts?"   --engine sqlite   --database ./data/databases/live_sales.db   --db-name SALES   --md-path .data/metadata_markdowns/live_sales.md   --kg-path .data/metadata/live_sales.json   --provider anthropic   --model claude-sonnet-4-5@20250929   --show-sql --show-df --show-explanation
 ```
 
 Flags summary

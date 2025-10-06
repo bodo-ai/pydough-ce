@@ -11,37 +11,37 @@ Community Edition toolkit that combines the PyDough DSL with LLM-based prompting
 
 To make local testing easy, this repo includes a small helper script to download the TPCH demo database.
 
-- **Script location:** `pydough-analytics/setup_tpch.sh`
+- **Script location:** `setup_tpch.sh`
 - **What it does:** If the target file already exists, it prints `FOUND` and exits. Otherwise it downloads the SQLite DB.
-- **Where the DB should live:** `./data/Databases/TPCH.db` (from the repo root). The rest of the docs/CLI examples assume this path.
+- **Where the DB should live:** `./data/databases/TPCH.db` (from the repo root). The rest of the docs/CLI examples assume this path.
 
 ### One-liner (macOS/Linux)
 
 Run from the **repo root**:
 
 ```bash
-mkdir -p ./data/Databases
-bash pydough-analytics/setup_tpch.sh ./data/Databases/TPCH.db
+mkdir -p ./data/databases
+bash setup_tpch.sh ./data/databases/TPCH.db
 ```
 
 If you don't have `wget`, you can use `curl` instead:
 
 ```bash
-mkdir -p ./data/Databases
-curl -L https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -o ./data/Databases/TPCH.db
+mkdir -p ./data/databases
+curl -L https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -o ./data/databases/TPCH.db
 ```
 
 Verify the file is present:
 
 ```bash
-ls -lh ./data/Databases/TPCH.db
+ls -lh ./data/databases/TPCH.db
 ```
 
 ### Windows (PowerShell)
 
 ```powershell
-New-Item -ItemType Directory -Force -Path .\data\Databases | Out-Null
-Invoke-WebRequest -Uri https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -OutFile .\data\Databases\TPCH.db
+New-Item -ItemType Directory -Force -Path .\data\databases | Out-Null
+Invoke-WebRequest -Uri https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -OutFile .\data\databases\TPCH.db
 
 ## Quick usage
 
@@ -88,7 +88,7 @@ Run all of the next commands **from the `pydough-analytics` folder** (the folder
  Quick check:
  ```bash
  ls data
- # → Databases  metadata  metadata_markdowns  prompts
+ # → databases  metadata  metadata_markdowns  prompts
  ```
 
 ### 1) Generate metadata JSON

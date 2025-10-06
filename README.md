@@ -12,35 +12,35 @@ To make local testing easy, this repo includes a small helper script to download
 
 - **Script location:** `pydough-analytics/setup_tpch.sh`
 - **What it does:** If the target file already exists, it prints `FOUND` and exits. Otherwise it downloads the SQLite DB.
-- **Where the DB should live:** `./data/Databases/TPCH.db` (from the repo root). The rest of the docs/CLI examples assume this path.
+- **Where the DB should live:** `./pydough-analytics/data/databases/TPCH.db` (from the repo root). The rest of the docs/CLI examples assume this path.
 
 ### One-liner (macOS/Linux)
 
 Run from the **repo root**:
 
 ```bash
-mkdir -p ./data/Databases
-bash pydough-analytics/setup_tpch.sh ./data/Databases/TPCH.db
+mkdir -p ./pydough-analytics/data/databases
+bash pydough-analytics/setup_tpch.sh ./pydough-analytics/data/databases/TPCH.db
 ```
 
 If you don't have `wget`, you can use `curl` instead:
 
 ```bash
-mkdir -p ./data/Databases
-curl -L https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -o ./data/Databases/TPCH.db
+mkdir -p ./pydough-analytics/data/databases
+curl -L https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -o ./pydough-analytics/data/databases/TPCH.db
 ```
 
 Verify the file is present:
 
 ```bash
-ls -lh ./data/Databases/TPCH.db
+ls -lh ./pydough-analytics/data/databases/TPCH.db
 ```
 
 ### Windows (PowerShell)
 
 ```powershell
-New-Item -ItemType Directory -Force -Path .\data\Databases | Out-Null
-Invoke-WebRequest -Uri https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -OutFile .\data\Databases\TPCH.db
+New-Item -ItemType Directory -Force -Path .\pydough-analytics\data\databases | Out-Null
+Invoke-WebRequest -Uri https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -OutFile .\pydough-analytics\data\databases\TPCH.db
 
 ### Requirements
 
@@ -97,20 +97,20 @@ Run all of the next commands **from the `pydough-analytics` folder** (the folder
  Quick check:
  ```bash
  ls data
- # → Databases  metadata  metadata_markdowns  prompts
+ # → databases  metadata  metadata_markdowns  prompts
  ```
 
 ### Default paths (data at `pydough-analytics` folder)
 
 We keep project artifacts in **`./data/`** for consistency:
-- **Database (SQLite):** `./data/Databases/TPCH.db`
+- **Database (SQLite):** `./data/databases/TPCH.db`
 - **Metadata JSON:** `./data/metadata/Tpch_graph.json`
 - **Metadata Markdown:** `./data/metadata_markdowns/Tpch.md`
 
 ### Generate metadata from SQLite
 
 ```bash
-pydough-analytics generate-json   --engine sqlite   --database ./data/Databases/TPCH.db   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json
+pydough-analytics generate-json   --engine sqlite   --database ./data/databases/TPCH.db   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json
 ```
 
 This inspects the SQLite file and creates a metadata graph definition under `data/metadata/Tpch_graph.json`.
@@ -128,7 +128,7 @@ The Markdown file provides a human-friendly overview of the metadata: collection
 Run natural-language questions on your dataset. The **PyDough code is always printed**; you can optionally include **SQL**, a **DataFrame** preview, and an **explanation**. The CE default is **Google / Gemini 2.5 Pro**.
 
 ```bash
-pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --engine sqlite   --database ./data/Databases/TPCH.db   --db-name TPCH   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
+pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --engine sqlite   --database ./data/databases/TPCH.db   --db-name TPCH   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
 ```
 
 Notes:

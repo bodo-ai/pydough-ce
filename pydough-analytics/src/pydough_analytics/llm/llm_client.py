@@ -45,7 +45,7 @@ class LLMClient:
         self.definitions = definitions or []
 
     # This method asks a question to the LLM, formats the prompt, executes the code, and returns a Result object.
-    def ask(self, question, kg_path, md_path, db_name, db_config= { "engine":   "sqlite", "database": "../data/Databases/Tpch.db"}, context_data=None, auto_correct=False, max_corrections=1, **kwargs):
+    def ask(self, question, kg_path, md_path, db_name, db_config= { "engine":   "sqlite", "database": "../data/databases/Tpch.db"}, context_data=None, auto_correct=False, max_corrections=1, **kwargs):
         result = Result(original_question=question)
 
         try:
