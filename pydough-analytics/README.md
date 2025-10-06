@@ -73,7 +73,7 @@ pydough-analytics --help
   export GOOGLE_REGION="us-east5"
   ```
 
-- **AWS Bedrock (Claude via AWS)**
+- **AWS Bedrock (Deepseek via AWS)**
   ```bash
   export AWS_ACCESS_KEY_ID=...
   export AWS_SECRET_ACCESS_KEY=...

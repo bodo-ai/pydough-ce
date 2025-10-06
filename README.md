@@ -76,12 +76,6 @@ export GOOGLE_API_KEY:=...
 GOOGLE_PROJECT_ID=your-gcp-project
 GOOGLE_REGION=us-east5
 
-# AWS Bedrock (Claude via AWS)
-AWS_ACCESS_KEY_ID=...
-AWS_SECRET_ACCESS_KEY=...
-AWS_DEFAULT_REGION=us-east-1
-```
-
 **Load .env into your shell (bash/zsh):**
 ```bash
 set -a; source .env; set +a

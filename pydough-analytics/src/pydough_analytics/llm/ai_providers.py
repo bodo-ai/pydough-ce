@@ -62,24 +62,6 @@ class GeminiAIProvider(AIProvider):
         return response.text, response.usage_metadata
 
 
-class DeepSeekAIProvider(AIProvider):
-    def __init__(self, model_id):
-        config = Config(read_timeout=500)
-        self.brt = boto3.client(service_name='bedrock-runtime', config=config)
-        self.model_id = model_id
-
-    def ask(self, question, prompt, **kwargs):
-        system_messages = [{"text": prompt}]
-        messages = [{"role": "user", "content": [{"text": question}]}]
-        response = self.brt.converse(
-            modelId=self.model_id,
-            inferenceConfig={"maxTokens": kwargs.get("max_tokens", 30000), **kwargs},
-            system=system_messages,
-            messages=messages
-        )
-        return response["output"]["message"]["content"][0]["text"]
-
-
 class OtherAIProvider(AIProvider):
     def __init__(self, provider, model_id, config=None):
         self.client = ai.Client(config) if config else ai.Client()
@@ -99,8 +81,6 @@ class OtherAIProvider(AIProvider):
 def get_provider(provider, model_id, config=None):
     if provider == "anthropic":
         return ClaudeAIProvider(model_id, config=config)
-    elif provider == "aws-deepseek":
-        return DeepSeekAIProvider(model_id)
     elif provider == "google":
         return GeminiAIProvider(model_id, config=config)
     else:
