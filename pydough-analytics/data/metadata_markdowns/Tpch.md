@@ -11,7 +11,7 @@ TPCH is used ONLY for performing calculations, such as average, sum, count, etc.
 - **supply_records**: A list of all supply records for suppliers and parts.
 
 ### The `customers` collection contains the following columns:
-- **acctbal**: The account balance of the customer.
+- **account_balance**: The account balance of the customer.
 - **address**: The address of the customer.
 - **comment**: Additional comments or notes about the customer.
 - **key**: A unique identifier for the customer.
