@@ -1,0 +1,320 @@
+# Metadata Overview: Ewallet (Graph Name)
+
+### The `users` collection contains the following columns:
+- **uid**: The unique identifier for each user in the system
+  - Synonyms: user id, user key
+  - Sample values: 1, 3, 5, 10, 11
+- **username**: The username for the user
+  - Synonyms: name, account profile
+  - Sample values: john_doe, michael_brown, bizuser, huang2143
+- **email**: The email for the user
+  - Synonyms: email address, contact email
+  - Sample values: john.doe@email.com, lisa.jones@email.com, customerserv@shopsmart.biz, huang2143@example.com, contact@business.co
+- **phone_number**: The phone number for the user (null if not provided), which always starts with a `+` and the country code and does not have dashes
+  - Synonyms: phone, mobile number, contact number
+  - Sample values: +1234567890, +9876543210, +8091017161, +8612345678901, +6123456789
+- **created_at**: The timestamp when the user account was created
+  - Synonyms: account creation date, registration datetime
+- **last_login_at**: The last time the user logged into their account (null if never logged in)
+  - Synonyms: most recent login datetime, latest access timestmap
+- **user_type**: The type of user, which can be either `individual` or `business`
+  - Synonyms: category, classification
+  - Sample values: individual, business
+- **status**: The status of the user account, which can be either `active`, `inactive`, `deleted` or `suspended`
+  - Synonyms: account state, activity, user status
+  - Sample values: active, inactive, suspended, deleted
+- **country**: The two-letter country code for the country of the user
+  - Synonyms: nation
+  - Sample values: US, CA, FR, GB, AU
+- **address_billing**: The billing address for the user, including street address, city, sometimes province/country, and postal code
+  - Synonyms: billing location, billing street address
+  - Sample values: 123 Main St, Anytown US 12345, 456 Oak Rd, Toronto ON M1M2M2, 12 Rue Baptiste, Paris 75001, 12 Mardon Rd, Wellington 6012
+- **address_delivery**: The delivery address for the user, including street address, city, sometimes province/country, and postal code, or null if not provided
+  - Sample values: 123 Main St, Anytown US 12345, 25 London Road, Manchester M12 4XY, 19 Smith St, Brunswick VIC 3056
+- **kyc_status**: The KYC status, which can be either `approved`, `pending`, or `rejected`
+  - Synonyms: approval status, verification status
+  - Sample values: approved, pending, rejected
+- **kyc_verified_at**: The date when the kyc status became verified (null if not provided)
+  - Synonyms: date of approval, date of verification
+- **transactions_sent**: All transactions made where the user is the sender
+  - Synonyms: transactions from user
+- **transactions_received**: The transactions where the user was the recipient
+  - Synonyms: transactions to user
+- **balances**: The historical account balance for the user, which can include multiple updates over time
+  - Synonyms: historical account balance, user balance history
+- **notifications**: The notifications that have been sent to the user
+  - Synonyms: user notifications, user alerts
+- **sessions**: The login sessions by the user
+  - Synonyms: user login sessions, session history
+- **setting_snapshots**: The setting snapshot history for the user, which can include multiple updates over time
+  - Synonyms: setting history, user setting snapshots
+
+### The `merchants` collection contains the following columns:
+- **mid**: Unique identifier for each merchant in the system
+  - Synonyms: merchant key, merchant id
+  - Sample values: 1, 5, 10, 12, 15
+- **name**: The name of the merchant
+  - Synonyms: merchant name, business name, company name
+  - Sample values: TechMart, FitLifeGear, UrbanDining, KidzPlayhouse, GameRush
+- **description**: The detailed description of what the merchant does or sells
+  - Synonyms: business industry description, merchant product types, market segment description, company description
+  - Sample values: Leading electronics retailer, SaaS productivity tools for developers, Cosmetics and beauty supplies, Books and reading accessories
+- **website_url**: The URL to the merchant's website
+  - Synonyms: website link, web address
+  - Sample values: https://fitlifegear.com, https://hometechsolutions.net, https://bookworms.co.uk, https://www.zenhomegoods.com'
+- **logo_url**: The URL to the merchant's logo image
+  - Synonyms: image link, logo image address
+  - Sample values: https://www.techmart.com/logo.png, https://www.fashiontrend.com/logo.png, https://gamerush.co/gr-logo.png, https://kidzplayhouse.com/logo.png
+- **created_at**: The timestamp when the merchant was registered in the system
+  - Synonyms: merchant registration date, merchant creation date
+- **country**: The two-letter capitalized country code for the country of the merchant
+  - Synonyms: nation
+  - Sample values: US, CA, IT, FR, UK
+- **state**: The state for the merchant within the country, or null if not applicable
+  - Synonyms: province
+  - Sample values: California, Ontario, Catalonia, New South Wales, British Columbia
+- **city**: The city for the merchant's location within the country
+  - Sample values: Los Angeles, Berlin, Rome, Vancouver, Sydney
+- **postal_code**: The postal/zip code of the merchant's location within the city
+  - Synonyms: zip code
+  - Sample values: 90011, M5V2J2, 1010, 94105
+- **address**: The full address of the merchant, including street address, city, sometimes province, and postal code
+  - Synonyms: street address, full location
+  - Sample values: 645 Wilshire Blvd, Los Angeles CA 90011, 159 Franklin St, Melbourne VIC 3004, 350 Mission St, San Francisco CA 94105, 35 Rue du Faubourg Saint-Antoine, 75011 Paris, Passeig de Gracia 35, Barcelona 08003
+- **status**: The status of the merchant account, which can be either `active`, `inactive` or `suspended`
+  - Synonyms: account state, activity, merchant status
+  - Sample values: active, inactive, suspended
+- **category**: The blanket category/industry/market segment that the merchant is in
+  - Synonyms: industry, high-level market segment
+  - Sample values: retail (hardware), Food & Dining, Travel & Hospitality, Retail, Business Services
+- **sub_category**: The more specific category/industry/market segment that the merchant is in within the category
+  - Synonyms: sub-industry, specific market segment
+  - Sample values: Electronics, Sporting GOods, Restaurants, Accommodation, Toys & Games, Books, Pets, Groceries
+- **merchant_category_code**: The category code for the merchant, which is a 4-digit number that identifies the type of business
+  - Sample values: 5734, 5977, 7011, 5719, 5732
+- **contact_name**: The full name of the individual who is the primary contact for the merchant
+  - Synonyms: contact person, contact individual
+  - Sample values: John Jacobs, Daniel Lee, Marco Rossi, Sophia Turner
+- **contact_email**: The email of the contact person for the merchant
+  - Synonyms: contact email, contact person email
+  - Sample values: jjacobs@techmart.com, dlee@greengourmet.com, ebrown@hometechsolutions.net, sturner@bookworms.co.uk, mschmidt@codesuite.io, agarcia@handycraft.store
+- **contact_phone**: The phone number of the contact person, which always starts with a `+` and the country code and does not have dashes
+  - Synonyms: contact phone number, contact person phone
+  - Sample values: +15551234567, +49301234567, +441612345678, +61298765432, +442078912345
+- **transactions_sent**: The transactions sent by the merchant
+  - Synonyms: merchant transactions sent, merchant outgoing transactions
+- **transactions_received**: The transactions received by the merchant
+  - Synonyms: merchant transactions received, merchant incoming transactions
+- **balances**: The historical account balance for the merchant, which can include multiple updates over time
+  - Synonyms: historical account balance, merchant balance history
+- **coupons**: The coupons issued by the merchant
+  - Synonyms: merchant coupons, merchant discount codes
+
+### The `coupons` collection contains the following columns:
+- **cid**: The unique identifier for each coupon in the system
+  - Synonyms: coupon key, coupon id
+  - Sample values: 1, 4, 5, 7, 10
+- **merchant_id**: The id of the merchant who issues the coupon
+  - Synonyms: merchant key, merchant id, issuing business id
+  - Sample values: 2, 5, 7, 8, 9
+- **code**: The code used to enter the coupon
+  - Synonyms: coupon code, discount code, promo code
+  - Sample values: TECH20, DINEDISCOUNT, HOME15, GLOWUP, GAMERALERT
+- **description**: A verbal description of what hte coupon is for
+  - Sample values: 20% off tech and electronics, Buy 2 get 1 free on cosmetics', Get 25% off accessories, $10 off $75+ purchase
+- **start_date**: The date when the coupon first became valid
+  - Synonyms: available since, valid from
+- **end_date**: The date when the coupon is no longer valid
+  - Synonyms: available until, valid until, expiration date
+- **discount_type**: The category of the coupon, which can be either `percentage` or `fixed_amount`
+  - Synonyms: classification, category
+  - Sample values: percentage, fixed_amount
+- **discount_value**: The value of the discount, which is the percentage off if the discount type is `percentage`, or the number of dollars off if `fixed_amount`
+  - Synonyms: dollars off, percentage off, amount, size
+  - Sample values: 20.0, 30.0, 10.0, 15.0, 25.0
+- **min_purchase_amount**: The minimum amount of money that must be spent on a purchase in USD to be eligible for the coupon (null if not applicable)
+  - Synonyms: minimum spend, minimum purchase, minimum order price
+  - Sample values: 100.0, 50.0, 1000.0, 150.0
+- **max_discount_amount**: The maximum amount of money that can be saved using the coupon in USD (null if not applicable)
+  - Synonyms: promotion limit, discount cap, maximum savings
+  - Sample values: 50.0, 300.0, 10.0, 15.0
+- **redemption_limit**: The maximum number of times the coupon can be redeemed before expiring/becoming invalid (null if not applicable)
+  - Synonyms: maximum number of uses, redemption cap, usage limit
+  - Sample values: 500, 1000, 200, 300, 750
+- **status**: The status of the coupon, which can be either `active`, `inactive`, or `expired`
+  - Synonyms: availability, usability, activity state
+  - Sample values: active, inactive, expired
+- **created_at**: Timestamp when the coupon record was created in the system
+  - Synonyms: creation datetime
+- **updated_at**: Timestamp when the coupon record was last updated in the system (null if never updated after creation)
+  - Synonyms: update datetime
+- **merchant**: The merchant who issued the coupon
+  - Synonyms: issuing company, business
+- **transaction_used_in**: The transactions that the coupon was used in
+  - Synonyms: uses, transactions with coupon
+
+### The `transactions` collection contains the following columns:
+- **txid**: The unique identifier for each transaction in the system (the original transaction & coupon applied are different rows with different values of this key)
+  - Synonyms: transaction key, transaction id
+  - Sample values: 1, 3, 17, 21, 26
+- **sender_id**: The id of the key of the individual who sent the transaction, which is either the id of a user or a merchant, depending on sender_type
+  - Sample values: 1, 3, 8, 4, 10
+- **sender_type**: Which type of individual sent the transaction: 0 for user (meaning sender_id is a uid from users) or 1 for merchant (meaning sender_id is a mid from merchants)
+  - Synonyms: sent by merchant
+  - Sample values: 0, 1
+- **receiver_id**: The id of the key of the individual who received the transaction, which is either the id of a user or a merchant, depending on receiver_type
+  - Sample values: 1, 9, 10, 2, 5
+- **receiver_type**: Which type of individual received the transaction: 0 for user (meaning receiver_id is a uid from users) or 1 for merchant (meaning receiver_id is a mid from merchants)
+  - Synonyms: received by merchant
+  - Sample values: 0, 1
+- **amount**: The dollar amount of the transaction, which is the total amount for a record without a coupon applied, or the amount saved/rebated when the coupon is applied
+  - Sample values: 99.99, 20.0, 16.0, 125.5, 10.0
+- **status**: The status of the transaction, which can be either `success`, `failed`, `refunded`, or `pending`
+  - Synonyms: outcome, result, transaction status
+  - Sample values: success, failed, pending, refunded
+- **transaction_type**: The means the transaction was made, which can be either `credit` or `debit
+  - Synonyms: payment method, credit or debit
+  - Sample values: credit, debit
+- **description**: The category of transaction, which either says what was purchased or 'Coupon discount' if the transaction is a coupon discount being applied to a previous transaction in the system
+  - Synonyms: description of purchase, purchase subject
+  - Sample values: Online purchase, Coupon discount, Product purchase, Order #438721, Villa rental deposit, Refund on order #1234
+- **coupon_id**: The id of the coupon being used in the transaction, or null if the transaction is not a coupon discount
+  - Synonyms: coupon key, coupon id
+  - Sample values: 1, 3, 9, 10
+- **created_at**: The timestamp when the transfer was created in the system
+  - Synonyms: creation datetime
+- **completed_at**: The timestamp when the transfer was completed (null if not completed yet)
+  - Synonyms: completion datetime
+- **transaction_ref**: Randomly generated uuid4 for users' reference
+  - Synonyms: transaction uuid, reference number
+  - Sample values: ad154bf7-8185-4230-a8d8-3ef59b4e0012, kd454bf7-428d-eig2-a8d8-3ef59b4e0012, a7659c81-0cd0-4635-af6c-cf68d2c15ab2'
+- **gateway_name**: The portal through which the transaction was made, which can be either 'Stripe', 'PayPal', 'Checkout.com', 'Braintree' or 'Adyen'
+  - Synonyms: payment gateway, payment processor, payment portal
+  - Sample values: Stripe, PayPal, Checkout.com, Braintree, Adyen
+- **gateway_ref**: A reference number generated by the payment gateway for the transaction, which is used to track the transaction in the payment processor's system
+  - Synonyms: gateway reference number, payment processor reference
+  - Sample values: tx_123abc456def, rfnd_xkt521, sub_pjj908, stripe_ref_11_1, paypal_ref_12_1
+- **device_id**: The unique identifier for the device used to make the transaction
+  - Synonyms: device key, device identifier, device number
+  - Sample values: mobile_8fh2k1, web_8902wknz, web_zld22f, device_11_1, mobile_1av8p0
+- **ip_address**: The IP address of the device used to make the transaction
+  - Synonyms: IP
+  - Sample values: 199.59.148.201, 199.59.148.201, 70.121.39.25, 8.26.53.165
+- **user_agent**: The user agent used to make the transaction, which is a string that identifies the browser, operating system, and device type of the device used to make the transaction
+  - Synonyms: device information, browser information, device details
+  - Sample values: Mozilla/5.0 (iPhone; CPU iPhone OS 16_3_1 like Mac OS X) ..., Mozilla/5.0 (Linux; Android 13; SM-S901B) ..., Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ...
+- **sending_user**: The user who sent the transaction, if it was sent by a user (not found if it was sent by a merchant)
+  - Synonyms: source user, originating user
+- **receiving_user**: The user who received the transaction, if it was received by a user (not found if it was received by a merchant)
+  - Synonyms: destination user, receiving user account
+- **sending_merchant**: The merchant who sent the transaction, if it was sent by a merchant (not found if it was sent by a user)
+  - Synonyms: merchant source, merchant origin
+- **receiving_merchant**: The merchant who received the transaction, if it was received by a merchant (not found if it was received by a user)
+  - Synonyms: merchant destination, merchant recipient
+- **coupon**: The coupon that was used in the transaction, if one exists
+  - Synonyms: coupon used, discount used
+
+### The `user_balances` collection contains the following columns:
+- **user_id**: The id of the user whose account balance is being recorded
+  - Synonyms: user id, user key
+  - Sample values: 1, 4, 9, 10, 5
+- **balance**: The balance of the user's account in USD on the date of the record
+  - Synonyms: amount in account, user balance, account value
+  - Sample values: 525.8, -725.55, -55.99, -559.98, 0.0, 2733.92
+- **updated_at**: The timestamp when the user's balance was recorded
+  - Synonyms: update datetime, balance record date
+- **user**: The user who the account balance belongs to
+  - Synonyms: customer
+
+### The `merchant_balances` collection contains the following columns:
+- **merchant_id**: The id of the merchant whose account balance is being recorded
+  - Synonyms: merchant key, merchant id
+  - Sample values: 2, 4, 5, 9, 1
+- **balance**: The balance of the user's account in USD on the date of the record
+  - Synonyms: amount in account, merchant balance, account value
+  - Sample values: 3897.99, 29.95, 0.0, 89.99
+- **updated_at**: The timestamp when the merchant's balance was recorded
+  - Synonyms: update datetime, balance record date
+- **merchant**: The merchant who the account balance information belongs to
+  - Synonyms: business, company, merchant account
+
+### The `notifications` collection contains the following columns:
+- **notif_id**: The unique identifier for each notification in the system
+  - Synonyms: notification key, notification id
+  - Sample values: 1, 5, 10, 14, 16
+- **user_id**: The id for the user who received the notification
+  - Synonyms: user key, user id
+  - Sample values: 3, 5, 9, 10
+- **message**: The message contained in the notification sent to the user
+  - Synonyms: contents, text, description
+  - Sample values: Your order #123abc has been shipped!, Your CodeSuite subscription will renew on 7/1, Here''s $10 to start your glow up!', Reminder: Your FitLife membership expires in 7 days, An order from UrbanDining was unsuccessful, Weekend Flash Sale: 25% off all activewear!
+- **notification_type**: The type of notification message, which can be either `transaction`, `promotion`, or `general`
+  - Synonyms: message category, alert classification
+  - Sample values: transaction, promotion, general
+- **status**: The status of the notification, which can be either `read`, `unread`, or `archived`
+  - Synonyms: has been read
+  - Sample values: read, unread, archived
+- **created_at**: The timestamp when the notification was created
+  - Synonyms: creation datetime, notification creation date
+- **read_at**: The timestamp when the notification was read (null if not read yet)
+  - Synonyms: datetime read
+- **device_type**: The type of device/medium the notification was sent through, which can be either `mobile_app`, `email`, `sms`, or `web_app`
+  - Sample values: mobile_app, email, sms, web_app
+- **device_id**: The id of the device the notification was sent to, or null if the device type does not have device ids
+  - Sample values: mobile_8fh2k1, web_d8180kaf, mobile_8fh2k1
+- **action_url**: The URL included in hte notification that the user can click on to take action; can be external https or deeplink url within the app
+  - Synonyms: link, notification hyperlink
+  - Sample values: app://orders/123abc, https://zenhomesurvey.com/order/c51e10d1, https://kidzplayhouse.com/new-arrivals, https://techmart.com/promo/TECH20
+- **user**: The user who received the notification
+  - Synonyms: customer, client, user account
+
+### The `user_sessions` collection contains the following columns:
+- **user_id**: The id of the user who the session belongs to
+  - Synonyms: user id, user key
+  - Sample values: 1, 2, 3, 8, 10
+- **session_start**: The timestamp when the user session started
+  - Synonyms: beginning timestamp, session initialization datetime
+- **session_end**: The timestamp when the user session ended
+  - Synonyms: ending timestamp, session termination datetime
+- **device_type**: The type of device the session was made with, which can be either `web_app` or `mobile_app`
+  - Synonyms: session device, web or mobile
+  - Sample values: web_app, mobile_app
+- **device_id**: The id of the device the session was made with
+  - Sample values: web_d8180kaf, mobile_g3mjfz, web_zz91p44l, web_8902wknz
+- **user**: The user who the login session information belongs to
+  - Synonyms: customer, client, user account
+
+### The `user_setting_snapshots` collection contains the following columns:
+- **user_id**: The id for the user whose settings are being recorded
+  - Synonyms: user key, user id
+  - Sample values: 1, 2, 3, 5, 9
+- **snapshot_date**: The date when the setting snapshot was taken
+  - Synonyms: date of setting update, recorded date
+- **daily_transaction_limit**: The cap in settings of how much the user account allows to be spent in a single day
+  - Synonyms: daily spending cap
+  - Sample values: 1000.0, 500.0, 50.0, 250.0
+- **monthly_transaction_limit**: The cap in settings of how much the user account allows to be spent in a single month
+  - Synonyms: monthly spending cap
+  - Sample values: 5000.0, 500.0, 2000.0, 1000.0
+- **membership_status**: The member's status level within the system: 0 for bronze, 1 for silver, 2 for gold, 3 for platinum, 4 for VIP
+  - Synonyms: rank, membership level, membership tier
+  - Sample values: 0, 1, 2, 3, 4
+- **password_hash**: The hashed password of the user, which is used to verify the user's identity when they log in
+  - Sample values: bcryptHash($2yz9!&ka1), bcryptHash($2yz9!&ka1), bcryptHash(C0d3Rul3z!99)
+- **api_key**: The user's API key, which is used to authenticate the user when they make API requests (null if not provided)
+  - Synonyms: api token, application programming interface key
+  - Sample values: 9d61c49b-8977-4914-a36b-80d1445e38fa, 6c03c175-9ac9-4854-b064-a3fff2c62e31
+- **verified_devices**: A comma-separated list of the ids of the devices that have been verified for the user (null if not provided)
+  - Synonyms: device list, device ids
+  - Sample values: mobile_8fh2k1, mobile_yjp08q, mobile_1av8p0, web_k29qjd, mobile_x28qlj, web_d8180kaf, mobile_q3mz8n
+- **verified_ips**: A comma-sparated list of the IP addresses that have been verified for the user (null if not provided)
+  - Synonyms: IP addresses, IP list
+  - Sample values: 8.26.53.165, 68.85.32.201, 203.96.81.36, 192.168.0.1, 198.51.100.233, 70.121.39.25
+- **mfa_enabled**: Whether the user has enabled multi-factor authentication (MFA) for their account
+  - Synonyms: has mfa
+- **marketing_opt_in**: Whether the user has opted in to receive marketing communications
+  - Synonyms: allowed marketing
+- **created_at**: The timestamp when the record was added to the system
+  - Synonyms: system entry date
+- **user**: The user who the setting snapshot belongs to
+  - Synonyms: customer, client, user account

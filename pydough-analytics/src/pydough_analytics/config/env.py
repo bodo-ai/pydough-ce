@@ -1,34 +1,35 @@
-"""Environment and configuration helpers."""
-
 from __future__ import annotations
+from pathlib import Path
 
-import os
-from functools import lru_cache
-from typing import Optional
+def load_env() -> bool:
+    """
+    Carga variables desde un archivo .env si existe.
+    - Prioriza el .env del directorio actual (útil para notebooks en llm/).
+    - Si no, busca .env en padres comunes (repo root, src/, paquete, config/).
+    No lanza error si python-dotenv no está instalado.
+    """
+    try:
+        from dotenv import load_dotenv, find_dotenv  # pip install python-dotenv
+    except Exception:
+        return False
 
-from dotenv import load_dotenv
+    found = find_dotenv(usecwd=True)
+    if not found:
+        here = Path(__file__).resolve()
+        for p in (
+            here.parents[3] / ".env",  # <repo>/.env
+            here.parents[2] / ".env",  # <repo>/src/.env
+            here.parents[1] / ".env",  # <repo>/src/pydough_analytics/.env
+            here.parent / ".env",      # <repo>/src/pydough_analytics/config/.env
+        ):
+            if p.exists():
+                found = str(p)
+                break
 
-# Load environment variables from a local .env file if present.
-load_dotenv()
+    if found:
+        load_dotenv(found, override=False)
+        return True
+    return False
 
-
-class MissingConfig(RuntimeError):
-    """Raised when a required configuration value is missing."""
-
-
-def get_env(key: str, default: Optional[str] = None, *, required: bool = False) -> str | None:
-    """Fetch an environment variable, optionally enforcing its presence."""
-
-    value = os.getenv(key, default)
-    if required and value in {None, ""}:
-        raise MissingConfig(f"Environment variable '{key}' is required.")
-    return value
-
-
-@lru_cache(maxsize=None)
-def get_gemini_api_key() -> str:
-    """Convenience accessor for the Gemini API key."""
-
-    key = get_env("GEMINI_API_KEY", required=True)
-    assert key is not None
-    return key
+# Autocarga al importar (puedes comentarlo si prefieres llamarlo manualmente)
+load_env()

@@ -1,0 +1,270 @@
+# Metadata Overview: DermTreatment (Graph Name)
+
+### The `doctors` collection contains the following columns:
+- **doc_id**: Unique identifier for each doctor in the system
+  - Synonyms: doctor key, doctor id
+  - Sample values: 1, 2, 4, 8, 10
+- **first_name**: The first name of the doctor
+  - Sample values: John, Michael, Daniel, Olivia
+- **last_name**: The last name of the doctor
+  - Synonyms: surname
+  - Sample values: Smith, Brown, Wilson, Garcia
+- **specialty**: The specialty of the doctor, which can be one of the following: dermatology, immunology, general, or oncology
+  - Synonyms: focus, area, specialization, expertise, type of doctor
+  - Sample values: dermatology, immunology, general, oncology
+- **year_reg**: Year the doctor was registered and obtained license
+  - Synonyms: registration year, year received license
+  - Sample values: 1998, 2006, 2012, 2015, 2018
+- **med_school_name**: The name of the medical school where the doctor graduated
+  - Synonyms: alma matter, medical school, graduated from
+  - Sample values: University of Pennsylvania, Johns Hopkins University, Columbia University
+- **city**: The city where the doctor is located
+  - Synonyms: city of practice, city of work, location city, city of residence
+  - Sample values: San Francisco, Durham, Ann Arbour, New York
+- **state**: The state where the doctor is located, by its capitalized two-letter abbreviation
+  - Synonyms: state of practice, state of work, location state, state of residence
+  - Sample values: CA, NC, NY, MI
+- **zip_code**: The zip code where the doctor is located
+  - Synonyms: zip code of practice, zip code of work, location zip code, zip code of residence
+  - Sample values: 21201, 02115, 94304, 10027
+- **board_certification_number**: The board certification number of the doctor
+  - Synonyms: board certification number, certification number
+  - Sample values: YZA890, ABC123, GHI012, JKL345
+- **prescribed_treatments**: The treatments prescribed/administered by the doctor
+  - Synonyms: regimens, treatment plans, medical prescriptions
+
+### The `patients` collection contains the following columns:
+- **patient_id**: The unique identifier for each patient in the system
+  - Synonyms: patient key, patient id
+  - Sample values: 1, 3, 5, 7, 9
+- **first_name**: The first name of the patient
+  - Sample values: Alice, Bob, Carol, David, Eve
+- **last_name**: The last name of the patient
+  - Synonyms: surname
+  - Sample values: Smith, Richter, Martinez, Taylor
+- **date_of_birth**: The date the patient was born
+  - Synonyms: birthday
+- **date_of_registration**: The date the patient was registered in the system
+  - Synonyms: registration date, system entry date
+- **gender**: The gender of the patient, which can either 'Male', 'Female', or 'Others'
+  - Synonyms: sex
+  - Sample values: Male, Female, Others
+- **email**: The email of the patient used for contact information
+  - Synonyms: email address, contact email
+  - Sample values: alice@email.com, eve@email.com, frank@email.com, john@qwik.com'
+- **phone**: The phone number of the patient used for contact information
+  - Synonyms: contact phone, phone number
+  - Sample values: 555-123-4567, 555-987-6543, 555-123-4567
+- **street_address**: The street address of the patient's home, including street name and number
+  - Synonyms: street name and number, home address
+  - Sample values: 987 Birch Dr, 753 Walnut Ave, 951 Spruce Blvd
+- **city**: The city of the patient's address
+  - Synonyms: home city, town, city of residence
+  - Sample values: Anytown, Somecity, Somewhere, Somewhere
+- **state**: The state of the patient's address, by its capitalized two-letter abbreviation
+  - Synonyms: home state, state of residence
+  - Sample values: CA, TX, FL, OH
+- **zip_code**: The zip code of the patient's address
+  - Synonyms: home zip code, postal code, zip code of residence
+  - Sample values: 12345, 54321, 86420
+- **insurance_type**: The type of insurance the patient has, which can be one of the following: private, medicare, medicaid, or uninsured
+  - Sample values: private, medicare, medicaid, uninsured
+- **insurance_policy_number**: The policy number of the patient's insurance (null if uninsured)
+  - Synonyms: policy number
+  - Sample values: ABC123456, XYZ789012, JKL567890, PQR135790
+- **height**: The height of the patient in centimeters
+  - Synonyms: centimeter height
+  - Sample values: 165, 180, 160, 178
+- **weight**: The weight of the patient in kilograms
+  - Synonyms: kilogram weight
+  - Sample values: 60, 78, 90, 60
+- **treatments_received**: The drug treatment regimens the patient has been a part of
+  - Synonyms: Drug regimens, medical treatments, therapies, treatment history
+
+### The `drugs` collection contains the following columns:
+- **drug_id**: The unique identifier for each drug in the system
+  - Synonyms: drug key, drug id
+  - Sample values: 1, 2, 4, 8
+- **drug_name**: The brand name of the drug
+  - Synonyms: brand name, pharmaceutical name, medication name
+  - Sample values: Drugalin, Topizol, Biologic-X, Topicalin
+- **manufacturer**: The name of the company who produces the drug
+  - Synonyms: producer, drug manufacturer, pharmaceutical company, drug company
+  - Sample values: Pharma Inc, Acme Pharma, Derma Rx, BioMed Ltd
+- **drug_type**: The category of drug, which can be one of the following: 'biologic', 'small molecule', or 'topical'
+  - Synonyms: category, classification, type of drug
+  - Sample values: biologic, small molecule, topical
+- **mechanism_of_activation**: The mechanism of activation of the drug
+  - Synonyms: moa
+  - Sample values: TNF-alpha inhibitor, PDE4 inhibitor, IL-12/23 inhibitor
+- **fda_approval_date**: The date the drug was approved by the FDA (null if not approved because it is still under trial)
+  - Synonyms: approval date
+- **administration_route**: The means used to administer the drug, which can be one of the following: 'oral', 'injection' or 'topical'
+  - Synonyms: method of procedure, administration method, delivery means
+  - Sample values: oral, injection, topical
+- **recommended_dosage_amount**: The recommended amount of the drug to be taken per dose, where the unit is specified in the dosage_units property
+  - Synonyms: dose size, quantity per dose, amount taken per administration
+  - Sample values: 40, 30, 15, 5
+- **dosage_units**: The unit used by recommended_dosage_amount, which is either `mg` (for milligrams) or `g` (for grams)
+  - Synonyms: units of measurement, dosage unit, dose quantity scale factor
+  - Sample values: mg, g
+- **dose_frequency_hours**: The recommended number of hours between dosages
+  - Synonyms: gap between doses, administration hour intervals, time between doses
+  - Sample values: 336, 24, 12, 672
+- **national_drug_code**: The national drug code of the drug, which is a unique identifier assigned to each drug by the FDA
+  - Sample values: 12345-678-90, 13579-246-80, 95146-753-19
+- **treatments_used_in**: The treatments the drug was used in
+  - Synonyms: therapies, uses, regimens, prescriptions
+
+### The `diagnoses` collection contains the following columns:
+- **_id**: The unique identifier for each diagnosis in the system
+  - Synonyms: diagnosis key, diagnosis id
+  - Sample values: 1, 3, 5, 7, 9
+- **code**: The code of the diagnosis, which is a unique identifier assigned to each diagnosis by the ICD-10 system
+  - Synonyms: diagnosis code, ICD-10 code
+  - Sample values: L40.0, L40.59, F40.8, L40.50
+- **name**: Name of the diagnosis, in medical terms
+  - Synonyms: title
+  - Sample values: Psoriasis vulgaris, Generalized pustular psoriasis, Psoriasis, unspecified, Other psoriatic arthropathy, Psoriatic arthritis mutilans
+- **description**: An elaboration of the diagnosis, in more layman's terms and/or with some symptoms included
+  - Synonyms: details, symptoms, explanation
+  - Sample values: Plaque psoriasis, the most common form, Psoriasis not further specified, Includes flexural, erythrodermic, and other rare types, Small, teardrop-shaped lesions, Widespread pustules on top of red skin
+- **treatments_for**: The drug treatment regimens targeted at a patient with this diagnosis
+
+### The `treatments` collection contains the following columns:
+- **treatment_id**: Unique identifier for each treatment record in the system
+  - Synonyms: treatment id, treatment key
+  - Sample values: 1, 4, 7, 16, 26
+- **patient_id**: The id of the patient who is receiving the treatment
+  - Synonyms: patient key, patient id
+  - Sample values: 1, 3, 5, 7, 9
+- **doc_id**: The id of the doctor who is administering the treatment
+  - Synonyms: doctor key, doctor id
+  - Sample values: 1, 2, 4, 8
+- **drug_id**: The id of the drug being used in the treatment
+  - Synonyms: drug key, drug id
+  - Sample values: 1, 2, 3, 5
+- **diagnosis_id**: The id of the diagnosis the patient is being treated for
+  - Synonyms: diagnosis key, diagnosis id
+  - Sample values: 2, 4, 5, 6, 8
+- **start_date**: The date the treatment began
+  - Synonyms: treatment start date, treatment initiation date
+- **end_date**: The date the treatment ended (null if ongoing)
+  - Synonyms: treatment end date, treatment completion date
+- **is_placebo**: True if the treatment is a placebo, false otherwise
+  - Synonyms: placebo treatment, dummy treatment
+- **total_drug_amount**: The total quantity of the drug used in the treatment, where the unit is specified in the drug_unit property
+  - Synonyms: amount of drug used, total drug quantity, total dosage
+  - Sample values: 240, 180, 720, 360
+- **drug_unit**: The unit used by total_drug_amount, which is either `mg` (for milligrams) or `g` (for grams)
+  - Synonyms: dosage unit, unit of measurement, drug quantity scale factor
+  - Sample values: mg, g
+- **doctor**: The doctor who administered the treatment
+  - Synonyms: medical professional, treatment administrator, prescribing doctor
+- **patient**: The patient who the treatment was administered to
+  - Synonyms: trial subject, participant, client, drug recipient
+- **drug**: The drug being used as part of the treatment
+  - Synonyms: medication, pharmaceutical, drug product, therapy
+- **diagnosis**: The diagnosis associated with the treatment which the drug is treating
+  - Synonyms: medical condition, associated condition, cause of treatment
+- **outcome_records**: The reported outcomes of the treatment, which can include the same treatment at different points in time if not enough time has elapsed to record the complete outcome for a treatment
+  - Synonyms: quality reports, evaluations, assessments
+- **concomitant_meds**: The ancillary medications that were taken by a patient in addition to the treatment they are receiving during their treatment
+  - Synonyms: additional drugs, ancillary medications, concomitant drugs, accompanying medications, concurrent drugs
+- **adverse_events**: Any incident events recorded in association with the treatment
+  - Synonyms: side effects, medical incidents
+
+### The `outcomes` collection contains the following columns:
+- **outcome_id**: The unique identifier for each treatment outcome in the system
+  - Synonyms: outcome key, outcome id
+  - Sample values: 1, 5, 16, 20, 21
+- **treatment_id**: The id for the treatment that the outcome is related to
+  - Synonyms: treatment key, treatment id
+  - Sample values: 3, 5, 9, 25, 26
+- **assessment_date**: The date when the outcome assessment was made
+  - Synonyms: date of assessment, evaluation date
+- **day7_lesion_count**: The number of lesions counted on the patient's skin at day 7 after treatment started
+  - Synonyms: lesions observed on day 7
+  - Sample values: 20, 25, 18, 30, 22
+- **day30_lesion_count**: The number of lesions counted on the patient's skin at day 30 after treatment started (null if not enough time has passed)
+  - Synonyms: lesions observed on day 30
+  - Sample values: 15, 18, 12, 25, 16
+- **day100_lesion_count**: The number of lesions counted on the patient's skin at day 100 after treatment started (null if not enough time has passed)
+  - Synonyms: lesions observed on day 100
+  - Sample values: 5, 8, 3, 12, 6
+- **day7_pasi_score**: The PASI score calculated at day 7 after treatment started, (Psoriasis Area and Severity Index) which is a measure of the severity of psoriasis from 0 to 72
+  - Synonyms: PASI on day 7
+  - Sample values: 12.5, 15.0, 10.8, 18.2, 13.1
+- **day30_pasi_score**: The PASI score calculated at day 30 after treatment started, (Psoriasis Area and Severity Index) which is a measure of the severity of psoriasis from 0 to 72 (null if not enough time has passed)
+  - Synonyms: PASI on day 30
+  - Sample values: 8.2, 10.1, 6.4, 18.2, 13.1
+- **day100_pasi_score**: The PASI score calculated at day 100 after treatment started, (Psoriasis Area and Severity Index) which is a measure of the severity of psoriasis from 0 to 72 (null if not enough time has passed)
+  - Synonyms: PASI on day 100
+  - Sample values: 2.1, 3.5, 1.2, 5.8, 2.6
+- **day7_tewl**: TEWL score (Transepidermal Water Loss) calculated at day 7 after treatment started, which is a measure of skin hydration
+  - Synonyms: TEWL on day 7
+  - Sample values: 18.2, 20.1, 16.5, 22.4
+- **day30_tewl**: TEWL score (Transepidermal Water Loss) calculated at day 30 after treatment started, which is a measure of skin hydration, in n g/m^2/h (null if not enough time has passed)
+  - Synonyms: TEWL on day 30
+  - Sample values: 15.6, 17.2, 14.0, 19.1
+- **day100_tewl**: TEWL score (Transepidermal Water Loss) calculated at day 100 after treatment started, which is a measure of skin hydration, in n g/m^2/h (null if not enough time has passed)
+  - Synonyms: TEWL on day 100
+  - Sample values: 12.1, 13.5, 10.8, 15.2
+- **day7_itch_vas**: The itch visual analog scale (VAS) score at day 7 after treatment started, which is a measure of itch severity from 0 to 100
+  - Synonyms: VAS on day 7
+  - Sample values: 60, 70, 55, 80, 65
+- **day30_itch_vas**: The itch visual analog scale (VAS) score at day 30 after treatment started, which is a measure of itch severity from 0 to 100 (null if not enough time has passed)
+  - Synonyms: VAS on day 30
+  - Sample values: 40, 50, 35, 60, 45
+- **day100_itch_vas**: The itch visual analog scale (VAS) score at day 100 after treatment started, which is a measure of itch severity from 0 to 100 (null if not enough time has passed)
+  - Synonyms: VAS on day 100
+  - Sample values: 20, 30, 15, 40, 25
+- **day7_hfg**: Hair growth factor (HGF) score at day 7 after treatment started, on a scale from 0 to 5
+  - Synonyms: HFG on day 7
+  - Sample values: 1.5, 1.0, 2.0, 0.5, 1.2
+- **day30_hfg**: Hair growth factor (HGF) score at day 30 after treatment started, on a scale from 0 to 5 (null if not enough time has passed)
+  - Synonyms: HFG on day 30
+  - Sample values: 2.5, 2.0, 3.0, 1.5, 2.2
+- **day100_hfg**: Hair growth factor (HGF) score at day 100 after treatment started, on a scale from 0 to 5 (null if not enough time has passed)
+  - Synonyms: HFG on day 100
+  - Sample values: 4.0, 3.5, 4.5, 3.0, 3.8
+- **treatment**: The treatment that the outcome record is reporting on
+  - Synonyms: regimen, prescription, medical trial
+
+### The `concomitant_meds` collection contains the following columns:
+- **_id**: The unique identifier for each concomitant medication record in the system
+  - Synonyms: concomitant drug key, concomitant drug id
+  - Sample values: 1, 5, 12, 14, 15
+- **treatment_id**: The id of the treatment that the concomitant medication record is related to
+  - Sample values: 1, 4, 8, 11, 13, 14
+- **medicine_name**: The name of the medicine being taken by the patient as a concomitant drug
+  - Synonyms: concomitant drug name
+  - Sample values: Acetaminophen, Ibuprofen, Loratadine, Multivitamin, Calcium supplement, Vitamin D, Hydrocortisone cream
+- **start_date**: Date the concomitant drug treatment was started
+  - Synonyms: concomitant drug start date, first date
+- **end_date**: Date the concomitant drug treatment finished (null if ongoing)
+  - Synonyms: last date, concomitant drug end date
+- **dose_amount**: The amount of the medicine taken per dose, where the unit is specified in the dose_unit property
+  - Synonyms: amount of dose, quantity per dose, dose size
+  - Sample values: 500, 200, 10, 1, 50
+- **dose_unit**: The unit used by dose_amount
+  - Sample values: mg, g, tablet, IU
+- **dose_frequency**: The frequency of the dose in hours (null if one-time use)
+  - Synonyms: gap between doses, administration hour intervals, time between doses
+  - Sample values: 6, 24, 8, 12
+- **treatment**: The treatment that the administration of the concomitant medication was related to
+  - Synonyms: medical trial, regimen, main prescription
+
+### The `adverse_events` collection contains the following columns:
+- **_id**: The unique identifier for each adverse event record in the system
+  - Synonyms: adverse event key, adverse event id
+  - Sample values: 1, 3, 5, 7, 8
+- **treatment_id**: The id for the treatment that the adverse event occurred during
+  - Synonyms: treatment key, treatment id
+  - Sample values: 2, 5, 9, 11, 14
+- **reported_date**: The date the adverse event was reported
+  - Synonyms: incident date, date of reaction
+- **description**: Descriptor of the adverse event, which can be a single word or a phrase
+  - Sample values: Mild injection site  reaction, Headache, nausea, Severe allergic reaction, hospitalization required, Diarrhea
+- **treatment**: The treatment that the adverse event occurred during
+  - Synonyms: regimen, medical trial, prescription

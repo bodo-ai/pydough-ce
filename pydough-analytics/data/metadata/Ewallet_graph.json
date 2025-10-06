@@ -1,0 +1,1219 @@
+[    
+    {
+        "name": "Ewallet",
+        "version": "V2",
+        "collections": [
+        {
+            "name": "users",
+            "type": "simple table",
+            "table path": "main.users",
+            "unique properties": ["uid", "username"],
+            "properties": [
+            {
+                "name": "uid",
+                "type": "table column",
+                "column name": "uid",
+                "data type": "numeric",
+                "description": "The unique identifier for each user in the system",
+                "sample values": [1, 3, 5, 10, 11],
+                "synonyms": ["user id", "user key"]
+            },
+            {
+                "name": "username",
+                "type": "table column",
+                "column name": "username",
+                "data type": "string",
+                "description": "The username for the user",
+                "sample values": ["john_doe", "michael_brown", "bizuser", "huang2143"],
+                "synonyms": ["name", "account profile"]
+            },
+            {
+                "name": "email",
+                "type": "table column",
+                "column name": "email",
+                "data type": "string",
+                "description": "The email for the user",
+                "sample values": ["john.doe@email.com", "lisa.jones@email.com", "customerserv@shopsmart.biz", "huang2143@example.com", "contact@business.co"],
+                "synonyms": ["email address", "contact email"]
+            },
+            {
+                "name": "phone_number",
+                "type": "table column",
+                "column name": "phone_number",
+                "data type": "string",
+                "description": "The phone number for the user (null if not provided), which always starts with a `+` and the country code and does not have dashes",
+                "sample values": ["+1234567890", "+9876543210", "+8091017161", "+8612345678901", "+6123456789"],
+                "synonyms": ["phone", "mobile number", "contact number"]
+            },
+            {
+                "name": "created_at",
+                "type": "table column",
+                "column name": "created_at",
+                "data type": "datetime",
+                "description": "The timestamp when the user account was created",
+                "synonyms": ["account creation date", "registration datetime"]
+            },
+            {
+                "name": "last_login_at",
+                "type": "table column",
+                "column name": "last_login_at",
+                "data type": "datetime",
+                "description": "The last time the user logged into their account (null if never logged in)",
+                "synonyms": ["most recent login datetime", "latest access timestmap"]
+            },
+            {
+                "name": "user_type",
+                "type": "table column",
+                "column name": "user_type",
+                "data type": "string",
+                "description": "The type of user, which can be either `individual` or `business`",
+                "sample values": ["individual", "business"],
+                "synonyms": ["category", "classification"]
+            },
+            {
+                "name": "status",
+                "type": "table column",
+                "column name": "status",
+                "data type": "string",
+                "description": "The status of the user account, which can be either `active`, `inactive`, `deleted` or `suspended`",
+                "sample values": ["active", "inactive", "suspended", "deleted"],
+                "synonyms": ["account state", "activity", "user status"]
+            },
+            {
+                "name": "country",
+                "type": "table column",
+                "column name": "country",
+                "data type": "string",
+                "description": "The two-letter country code for the country of the user",
+                "sample values": ["US", "CA", "FR", "GB", "AU"],
+                "synonyms": ["nation"]
+            },
+            {
+                "name": "address_billing",
+                "type": "table column",
+                "column name": "address_billing",
+                "data type": "string",
+                "description": "The billing address for the user, including street address, city, sometimes province/country, and postal code",
+                "sample values": ["123 Main St, Anytown US 12345", "456 Oak Rd, Toronto ON M1M2M2", "12 Rue Baptiste, Paris 75001", "12 Mardon Rd, Wellington 6012"],
+                "synonyms": ["billing location", "billing street address"]
+            },
+            {
+                "name": "address_delivery",
+                "type": "table column",
+                "column name": "address_delivery",
+                "data type": "string",
+                "description": "The delivery address for the user, including street address, city, sometimes province/country, and postal code, or null if not provided",
+                "sample values": ["123 Main St, Anytown US 12345", "25 London Road, Manchester M12 4XY", "19 Smith St, Brunswick VIC 3056"],
+                "synonyms": []
+            },
+            {
+                "name": "kyc_status",
+                "type": "table column",
+                "column name": "kyc_status",
+                "data type": "string",
+                "description": "The KYC status, which can be either `approved`, `pending`, or `rejected`",
+                "sample values": ["approved", "pending", "rejected"],
+                "synonyms": ["approval status", "verification status"]
+            },
+            {
+                "name": "kyc_verified_at",
+                "type": "table column",
+                "column name": "kyc_verified_at",
+                "data type": "datetime",
+                "description": "The date when the kyc status became verified (null if not provided)",
+                "synonyms": ["date of approval", "date of verification"]
+            }
+            ],
+            "description": "Every user in the system, which can be either an individual or a business",
+            "synonyms": ["accounts", "user profiles", "user accounts", "clients", "consumers"]
+        },
+        {
+            "name": "merchants",
+            "type": "simple table",
+            "table path": "main.merchants",
+            "unique properties": ["mid", "name"],
+            "properties": [
+            {
+                "name": "mid",
+                "type": "table column",
+                "column name": "mid",
+                "data type": "numeric",
+                "description": "Unique identifier for each merchant in the system",
+                "sample values": [1, 5, 10, 12, 15],
+                "synonyms": ["merchant key", "merchant id"]
+            },
+            {
+                "name": "name",
+                "type": "table column",
+                "column name": "name",
+                "data type": "string",
+                "description": "The name of the merchant",
+                "sample values": ["TechMart", "FitLifeGear", "UrbanDining", "KidzPlayhouse", "GameRush"],
+                "synonyms": ["merchant name", "business name", "company name"]
+            },
+            {
+                "name": "description",
+                "type": "table column",
+                "column name": "description",
+                "data type": "string",
+                "description": "The detailed description of what the merchant does or sells",
+                "sample values": ["Leading electronics retailer", "SaaS productivity tools for developers", "Cosmetics and beauty supplies", "Books and reading accessories"],
+                "synonyms": ["business industry description", "merchant product types", "market segment description", "company description"]
+            },
+            {
+                "name": "website_url",
+                "type": "table column",
+                "column name": "website_url",
+                "data type": "string",
+                "description": "The URL to the merchant's website",
+                "sample values": ["https://fitlifegear.com", "https://hometechsolutions.net", "https://bookworms.co.uk", "https://www.zenhomegoods.com'"],
+                "synonyms": ["website link", "web address"]
+            },
+            {
+                "name": "logo_url",
+                "type": "table column",
+                "column name": "logo_url",
+                "data type": "string",
+                "description": "The URL to the merchant's logo image",
+                "sample values": ["https://www.techmart.com/logo.png", "https://www.fashiontrend.com/logo.png", "https://gamerush.co/gr-logo.png", "https://kidzplayhouse.com/logo.png"],
+                "synonyms": ["image link", "logo image address"]
+            },
+            {
+                "name": "created_at",
+                "type": "table column",
+                "column name": "created_at",
+                "data type": "datetime",
+                "description": "The timestamp when the merchant was registered in the system",
+                "synonyms": ["merchant registration date", "merchant creation date"]
+            },
+            {
+                "name": "country",
+                "type": "table column",
+                "column name": "country",
+                "data type": "string",
+                "description": "The two-letter capitalized country code for the country of the merchant",
+                "sample values": ["US", "CA", "IT", "FR", "UK"],
+                "synonyms": ["nation"]
+            },
+            {
+                "name": "state",
+                "type": "table column",
+                "column name": "state",
+                "data type": "string",
+                "description": "The state for the merchant within the country, or null if not applicable",
+                "sample values": ["California", "Ontario", "Catalonia", "New South Wales", "British Columbia"],
+                "synonyms": ["province"]
+            },
+            {
+                "name": "city",
+                "type": "table column",
+                "column name": "city",
+                "data type": "string",
+                "description": "The city for the merchant's location within the country",
+                "sample values": ["Los Angeles", "Berlin", "Rome", "Vancouver", "Sydney"]
+            },
+            {
+                "name": "postal_code",
+                "type": "table column",
+                "column name": "postal_code",
+                "data type": "string",
+                "description": "The postal/zip code of the merchant's location within the city",
+                "sample values": ["90011", "M5V2J2", "1010", "94105"],
+                "synonyms": ["zip code"]
+            },
+            {
+                "name": "address",
+                "type": "table column",
+                "column name": "address",
+                "data type": "string",
+                "description": "The full address of the merchant, including street address, city, sometimes province, and postal code",
+                "sample values": ["645 Wilshire Blvd, Los Angeles CA 90011", "159 Franklin St, Melbourne VIC 3004", "350 Mission St, San Francisco CA 94105", "35 Rue du Faubourg Saint-Antoine, 75011 Paris", "Passeig de Gracia 35, Barcelona 08003"],
+                "synonyms": ["street address", "full location"]
+            },
+            {
+                "name": "status",
+                "type": "table column",
+                "column name": "status",
+                "data type": "string",
+                "description": "The status of the merchant account, which can be either `active`, `inactive` or `suspended`",
+                "sample values": ["active", "inactive", "suspended"],
+                "synonyms": ["account state", "activity", "merchant status"]
+            },
+            {
+                "name": "category",
+                "type": "table column",
+                "column name": "category",
+                "data type": "string",
+                "description": "The blanket category/industry/market segment that the merchant is in",
+                "sample values": ["retail (hardware)", "Food & Dining", "Travel & Hospitality", "Retail", "Business Services"],
+                "synonyms": ["industry", "high-level market segment"]
+            },
+            {
+                "name": "sub_category",
+                "type": "table column",
+                "column name": "sub_category",
+                "data type": "string",
+                "description": "The more specific category/industry/market segment that the merchant is in within the category",
+                "sample values": ["Electronics", "Sporting GOods", "Restaurants", "Accommodation", "Toys & Games", "Books", "Pets", "Groceries"],
+                "synonyms": ["sub-industry", "specific market segment"]
+            },
+            {
+                "name": "merchant_category_code",
+                "type": "table column",
+                "column name": "mcc",
+                "data type": "numeric",
+                "description": "The category code for the merchant, which is a 4-digit number that identifies the type of business",
+                "sample values": [5734, 5977, 7011, 5719, 5732],
+                "synonyms": []
+            },
+            {
+                "name": "contact_name",
+                "type": "table column",
+                "column name": "contact_name",
+                "data type": "string",
+                "description": "The full name of the individual who is the primary contact for the merchant",
+                "sample values": ["John Jacobs", "Daniel Lee", "Marco Rossi", "Sophia Turner"],
+                "synonyms": ["contact person", "contact individual"]
+            },
+            {
+                "name": "contact_email",
+                "type": "table column",
+                "column name": "contact_email",
+                "data type": "string",
+                "description": "The email of the contact person for the merchant",
+                "sample values": ["jjacobs@techmart.com", "dlee@greengourmet.com", "ebrown@hometechsolutions.net", "sturner@bookworms.co.uk", "mschmidt@codesuite.io", "agarcia@handycraft.store"],
+                "synonyms": ["contact email", "contact person email"]
+            },
+            {
+                "name": "contact_phone",
+                "type": "table column",
+                "column name": "contact_phone",
+                "data type": "string",
+                "description": "The phone number of the contact person, which always starts with a `+` and the country code and does not have dashes",
+                "sample values": ["+15551234567", "+49301234567", "+441612345678", "+61298765432", "+442078912345"],
+                "synonyms": ["contact phone number", "contact person phone"]
+            }
+            ],
+            "description": "The merchant accounts registered in the system",
+            "synonyms": ["companies", "businesses", "vendors", "retailers", "stores"]
+        },
+        {
+            "name": "coupons",
+            "type": "simple table",
+            "table path": "main.coupons",
+            "unique properties": ["cid"],
+            "properties": [
+            {
+                "name": "cid",
+                "type": "table column",
+                "column name": "cid",
+                "data type": "numeric",
+                "description": "The unique identifier for each coupon in the system",
+                "sample values": [1, 4, 5, 7, 10],
+                "synonyms": ["coupon key", "coupon id"]
+            },
+            {
+                "name": "merchant_id",
+                "type": "table column",
+                "column name": "merchant_id",
+                "data type": "numeric",
+                "description": "The id of the merchant who issues the coupon",
+                "sample values": [2, 5, 7, 8, 9],
+                "synonyms": ["merchant key", "merchant id", "issuing business id"]
+            },
+            {
+                "name": "code",
+                "type": "table column",
+                "column name": "code",
+                "data type": "string",
+                "description": "The code used to enter the coupon",
+                "sample values": ["TECH20", "DINEDISCOUNT", "HOME15", "GLOWUP", "GAMERALERT"],
+                "synonyms": ["coupon code", "discount code", "promo code"]
+            },
+            {
+                "name": "description",
+                "type": "table column",
+                "column name": "description",
+                "data type": "string",
+                "description": "A verbal description of what hte coupon is for",
+                "sample values": ["20% off tech and electronics", "Buy 2 get 1 free on cosmetics'", "Get 25% off accessories", "$10 off $75+ purchase"],
+                "synonyms": []
+            },
+            {
+                "name": "start_date",
+                "type": "table column",
+                "column name": "start_date",
+                "data type": "datetime",
+                "description": "The date when the coupon first became valid",
+                "synonyms": ["available since", "valid from"]
+            },
+            {
+                "name": "end_date",
+                "type": "table column",
+                "column name": "end_date",
+                "data type": "datetime",
+                "description": "The date when the coupon is no longer valid",
+                "synonyms": ["available until", "valid until", "expiration date"]
+            },
+            {
+                "name": "discount_type",
+                "type": "table column",
+                "column name": "discount_type",
+                "data type": "string",
+                "description": "The category of the coupon, which can be either `percentage` or `fixed_amount`",
+                "sample values": ["percentage", "fixed_amount"],
+                "synonyms": ["classification", "category"]
+            },
+            {
+                "name": "discount_value",
+                "type": "table column",
+                "column name": "discount_value",
+                "data type": "numeric",
+                "description": "The value of the discount, which is the percentage off if the discount type is `percentage`, or the number of dollars off if `fixed_amount`",
+                "sample values": [20.0, 30.0, 10.0, 15.0, 25.0],
+                "synonyms": ["dollars off", "percentage off", "amount", "size"]
+            },
+            {
+                "name": "min_purchase_amount",
+                "type": "table column",
+                "column name": "min_purchase_amount",
+                "data type": "numeric",
+                "description": "The minimum amount of money that must be spent on a purchase in USD to be eligible for the coupon (null if not applicable)",
+                "sample values": [100.0, 50.0, 1000.0, 150.0],
+                "synonyms": ["minimum spend", "minimum purchase", "minimum order price"]
+            },
+            {
+                "name": "max_discount_amount",
+                "type": "table column",
+                "column name": "max_discount_amount",
+                "data type": "numeric",
+                "description": "The maximum amount of money that can be saved using the coupon in USD (null if not applicable)",
+                "sample values": [50.0, 300.0, 10.0, 15.0],
+                "synonyms": ["promotion limit", "discount cap", "maximum savings"]
+            },
+            {
+                "name": "redemption_limit",
+                "type": "table column",
+                "column name": "redemption_limit",
+                "data type": "numeric",
+                "description": "The maximum number of times the coupon can be redeemed before expiring/becoming invalid (null if not applicable)",
+                "sample values": [500, 1000, 200, 300, 750],
+                "synonyms": ["maximum number of uses", "redemption cap", "usage limit"]
+            },
+            {
+                "name": "status",
+                "type": "table column",
+                "column name": "status",
+                "data type": "string",
+                "description": "The status of the coupon, which can be either `active`, `inactive`, or `expired`",
+                "sample values": ["active", "inactive", "expired"],
+                "synonyms": ["availability", "usability", "activity state"]
+            },
+            {
+                "name": "created_at",
+                "type": "table column",
+                "column name": "created_at",
+                "data type": "datetime",
+                "description": "Timestamp when the coupon record was created in the system",
+                "synonyms": ["creation datetime"]
+            },
+            {
+                "name": "updated_at",
+                "type": "table column",
+                "column name": "updated_at",
+                "data type": "datetime",
+                "description": "Timestamp when the coupon record was last updated in the system (null if never updated after creation)",
+                "synonyms": ["update datetime"]
+            }
+            ],
+            "description": "The records of coupons that have been issued by merchants in the system",
+            "synonyms": ["discounts", "promotions", "special offers"]
+        },
+        {
+            "name": "transactions",
+            "type": "simple table",
+            "table path": "main.wallet_transactions_daily",
+            "unique properties": ["txid", "transaction_ref"],
+            "properties": [
+            {
+                "name": "txid",
+                "type": "table column",
+                "column name": "txid",
+                "data type": "numeric",
+                "description": "The unique identifier for each transaction in the system (the original transaction & coupon applied are different rows with different values of this key)",
+                "sample values": [1, 3, 17, 21, 26],
+                "synonyms": ["transaction key", "transaction id"]
+            },
+            {
+                "name": "sender_id",
+                "type": "table column",
+                "column name": "sender_id",
+                "data type": "numeric",
+                "description": "The id of the key of the individual who sent the transaction, which is either the id of a user or a merchant, depending on sender_type",
+                "sample values": [1, 3, 8, 4, 10],
+                "synonyms": []
+            },
+            {
+                "name": "sender_type",
+                "type": "table column",
+                "column name": "sender_type",
+                "data type": "numeric",
+                "description": "Which type of individual sent the transaction: 0 for user (meaning sender_id is a uid from users) or 1 for merchant (meaning sender_id is a mid from merchants)",
+                "sample values": [0, 1],
+                "synonyms": ["sent by merchant"]
+            },
+            {
+                "name": "receiver_id",
+                "type": "table column",
+                "column name": "receiver_id",
+                "data type": "numeric",
+                "description": "The id of the key of the individual who received the transaction, which is either the id of a user or a merchant, depending on receiver_type",
+                "sample values": [1, 9, 10, 2, 5],
+                "synonyms": []
+            },
+            {
+                "name": "receiver_type",
+                "type": "table column",
+                "column name": "receiver_type",
+                "data type": "numeric",
+                "description": "Which type of individual received the transaction: 0 for user (meaning receiver_id is a uid from users) or 1 for merchant (meaning receiver_id is a mid from merchants)",
+                "sample values": [0, 1],
+                "synonyms": ["received by merchant"]
+            },
+            {
+                "name": "amount",
+                "type": "table column",
+                "column name": "amount",
+                "data type": "numeric",
+                "description": "The dollar amount of the transaction, which is the total amount for a record without a coupon applied, or the amount saved/rebated when the coupon is applied",
+                "sample values": [99.99, 20.0, 16.0, 125.50, 10.0],
+                "synonyms": []
+            },
+            {
+                "name": "status",
+                "type": "table column",
+                "column name": "status",
+                "data type": "string",
+                "description": "The status of the transaction, which can be either `success`, `failed`, `refunded`, or `pending`",
+                "sample values": ["success", "failed", "pending", "refunded"],
+                "synonyms": ["outcome", "result", "transaction status"]
+            },
+            {
+                "name": "transaction_type",
+                "type": "table column",
+                "column name": "type",
+                "data type": "string",
+                "description": "The means the transaction was made, which can be either `credit` or `debit",
+                "sample values": ["credit", "debit"],
+                "synonyms": ["payment method", "credit or debit"]
+            },
+            {
+                "name": "description",
+                "type": "table column",
+                "column name": "description",
+                "data type": "string",
+                "description": "The category of transaction, which either says what was purchased or 'Coupon discount' if the transaction is a coupon discount being applied to a previous transaction in the system",
+                "sample values": ["Online purchase", "Coupon discount", "Product purchase", "Order #438721", "Villa rental deposit", "Refund on order #1234"],
+                "synonyms": ["description of purchase", "purchase subject"]
+            },
+            {
+                "name": "coupon_id",
+                "type": "table column",
+                "column name": "coupon_id",
+                "data type": "numeric",
+                "description": "The id of the coupon being used in the transaction, or null if the transaction is not a coupon discount",
+                "sample values": [1, 3, 9, 10],
+                "synonyms": ["coupon key", "coupon id"]
+            },
+            {
+                "name": "created_at",
+                "type": "table column",
+                "column name": "created_at",
+                "data type": "datetime",
+                "description": "The timestamp when the transfer was created in the system",
+                "synonyms": ["creation datetime"]
+            },
+            {
+                "name": "completed_at",
+                "type": "table column",
+                "column name": "completed_at",
+                "data type": "datetime",
+                "description": "The timestamp when the transfer was completed (null if not completed yet)",
+                "synonyms": ["completion datetime"]
+            },
+            {
+                "name": "transaction_ref",
+                "type": "table column",
+                "column name": "transaction_ref",
+                "data type": "string",
+                "description": "Randomly generated uuid4 for users' reference",
+                "sample values": ["ad154bf7-8185-4230-a8d8-3ef59b4e0012", "kd454bf7-428d-eig2-a8d8-3ef59b4e0012", "a7659c81-0cd0-4635-af6c-cf68d2c15ab2'"],
+                "synonyms": ["transaction uuid", "reference number"]
+            },
+            {
+                "name": "gateway_name",
+                "type": "table column",
+                "column name": "gateway_name",
+                "data type": "string",
+                "description": "The portal through which the transaction was made, which can be either 'Stripe', 'PayPal', 'Checkout.com', 'Braintree' or 'Adyen'",
+                "sample values": ["Stripe", "PayPal", "Checkout.com", "Braintree", "Adyen"],
+                "synonyms": ["payment gateway", "payment processor", "payment portal"]
+            },
+            {
+                "name": "gateway_ref",
+                "type": "table column",
+                "column name": "gateway_ref",
+                "data type": "string",
+                "description": "A reference number generated by the payment gateway for the transaction, which is used to track the transaction in the payment processor's system",
+                "sample values": ["tx_123abc456def", "rfnd_xkt521", "sub_pjj908", "stripe_ref_11_1", "paypal_ref_12_1"],
+                "synonyms": ["gateway reference number", "payment processor reference"]
+            },
+            {
+                "name": "device_id",
+                "type": "table column",
+                "column name": "device_id",
+                "data type": "string",
+                "description": "The unique identifier for the device used to make the transaction",
+                "sample values": ["mobile_8fh2k1", "web_8902wknz", "web_zld22f", "device_11_1", "mobile_1av8p0"],
+                "synonyms": ["device key", "device identifier", "device number"]
+            },
+            {
+                "name": "ip_address",
+                "type": "table column",
+                "column name": "ip_address",
+                "data type": "string",
+                "description": "The IP address of the device used to make the transaction",
+                "sample values": ["199.59.148.201", "199.59.148.201", "70.121.39.25", "8.26.53.165"],
+                "synonyms": ["IP"]
+            },
+            {
+                "name": "user_agent",
+                "type": "table column",
+                "column name": "user_agent",
+                "data type": "string",
+                "description": "The user agent used to make the transaction, which is a string that identifies the browser, operating system, and device type of the device used to make the transaction",
+                "sample values": ["Mozilla/5.0 (iPhone; CPU iPhone OS 16_3_1 like Mac OS X) ...", "Mozilla/5.0 (Linux; Android 13; SM-S901B) ...", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 ..."],
+                "synonyms": ["device information", "browser information", "device details"]
+            }
+            ],
+            "description": "Every transaction that has occurred in the system, where the source can be either a user or a merchant and the destination can be either a user or a merchant. If a coupon is used, there will be two identical transaction records, one for the original transaction (where the coupon id is null) and one for the coupon discount applied (where the coupon id is provided)",
+            "synonyms": ["transfers", "payments", "purchases"]
+        },
+        {
+            "name": "user_balances",
+            "type": "simple table",
+            "table path": "main.wallet_user_balance_daily",
+            "unique properties": [["user_id", "updated_at"]],
+            "properties": [
+            {
+                "name": "user_id",
+                "type": "table column",
+                "column name": "user_id",
+                "data type": "numeric",
+                "description": "The id of the user whose account balance is being recorded",
+                "sample values": [1, 4, 9, 10, 5],
+                "synonyms": ["user id", "user key"]
+            },
+            {
+                "name": "balance",
+                "type": "table column",
+                "column name": "balance",
+                "data type": "numeric",
+                "description": "The balance of the user's account in USD on the date of the record",
+                "sample values": [525.80, -725.55, -55.99, -559.98, 0.00, 2733.92],
+                "synonyms": ["amount in account", "user balance", "account value"]
+            },
+            {
+                "name": "updated_at",
+                "type": "table column",
+                "column name": "updated_at",
+                "data type": "datetime",
+                "description": "The timestamp when the user's balance was recorded",
+                "synonyms": ["update datetime", "balance record date"]
+            }
+            ],
+            "description": "The records of users' account balances in the system, which can include negative balances and multiple records for the same user made at different points in time",
+            "synonyms": ["user balance histories", "user balance records", "user account balances"]
+        },
+        {
+            "name": "merchant_balances",
+            "type": "simple table",
+            "table path": "main.wallet_merchant_balance_daily",
+            "unique properties": [["merchant_id", "updated_at"]],
+            "properties": [
+            {
+                "name": "merchant_id",
+                "type": "table column",
+                "column name": "merchant_id",
+                "data type": "numeric",
+                "description": "The id of the merchant whose account balance is being recorded",
+                "sample values": [2, 4, 5, 9, 1],
+                "synonyms": ["merchant key", "merchant id"]
+            },
+            {
+                "name": "balance",
+                "type": "table column",
+                "column name": "balance",
+                "data type": "numeric",
+                "description": "The balance of the user's account in USD on the date of the record",
+                "sample values": [3897.99, 29.95, 0.00, 89.99],
+                "synonyms": ["amount in account", "merchant balance", "account value"]
+            },
+            {
+                "name": "updated_at",
+                "type": "table column",
+                "column name": "updated_at",
+                "data type": "datetime",
+                "description": "The timestamp when the merchant's balance was recorded",
+                "synonyms": ["update datetime", "balance record date"]
+            }
+            ],
+            "description": "The records of merchants' account balances in the system, which can include negative balances and multiple records for the same merchant made at different points in time",
+            "synonyms": ["merchant balance histories", "merchant balance records", "merchant account balances"]
+        },
+        {
+            "name": "notifications",
+            "type": "simple table",
+            "table path": "main.notifications",
+            "unique properties": ["notif_id"],
+            "properties": [
+            {
+                "name": "notif_id",
+                "type": "table column",
+                "column name": "_id",
+                "data type": "numeric",
+                "description": "The unique identifier for each notification in the system",
+                "sample values": [1, 5, 10, 14, 16],
+                "synonyms": ["notification key", "notification id"]
+            },
+            {
+                "name": "user_id",
+                "type": "table column",
+                "column name": "user_id",
+                "data type": "numeric",
+                "description": "The id for the user who received the notification",
+                "sample values": [3, 5, 9, 10],
+                "synonyms": ["user key", "user id"]
+            },
+            {
+                "name": "message",
+                "type": "table column",
+                "column name": "message",
+                "data type": "string",
+                "description": "The message contained in the notification sent to the user",
+                "sample values": ["Your order #123abc has been shipped!", "Your CodeSuite subscription will renew on 7/1", "Here''s $10 to start your glow up!'", "Reminder: Your FitLife membership expires in 7 days", "An order from UrbanDining was unsuccessful", "Weekend Flash Sale: 25% off all activewear!"],
+                "synonyms": ["contents", "text", "description"]
+            },
+            {
+                "name": "notification_type",
+                "type": "table column",
+                "column name": "type",
+                "data type": "string",
+                "description": "The type of notification message, which can be either `transaction`, `promotion`, or `general`",
+                "sample values": ["transaction", "promotion", "general"],
+                "synonyms": ["message category", "alert classification"]
+            },
+            {
+                "name": "status",
+                "type": "table column",
+                "column name": "status",
+                "data type": "string",
+                "description": "The status of the notification, which can be either `read`, `unread`, or `archived`",
+                "sample values": ["read", "unread", "archived"],
+                "synonyms": ["has been read"]
+            },
+            {
+                "name": "created_at",
+                "type": "table column",
+                "column name": "created_at",
+                "data type": "datetime",
+                "description": "The timestamp when the notification was created",
+                "synonyms": ["creation datetime", "notification creation date"]
+            },
+            {
+                "name": "read_at",
+                "type": "table column",
+                "column name": "read_at",
+                "data type": "datetime",
+                "description": "The timestamp when the notification was read (null if not read yet)",
+                "synonyms": ["datetime read"]
+            },
+            {
+                "name": "device_type",
+                "type": "table column",
+                "column name": "device_type",
+                "data type": "string",
+                "description": "The type of device/medium the notification was sent through, which can be either `mobile_app`, `email`, `sms`, or `web_app`",
+                "sample values": ["mobile_app", "email", "sms", "web_app"],
+                "synonyms": []
+            },
+            {
+                "name": "device_id",
+                "type": "table column",
+                "column name": "device_id",
+                "data type": "string",
+                "description": "The id of the device the notification was sent to, or null if the device type does not have device ids",
+                "sample values": ["mobile_8fh2k1", "web_d8180kaf", "mobile_8fh2k1"],
+                "synonyms": []
+            },
+            {
+                "name": "action_url",
+                "type": "table column",
+                "column name": "action_url",
+                "data type": "string",
+                "description": "The URL included in hte notification that the user can click on to take action; can be external https or deeplink url within the app",
+                "sample values": ["app://orders/123abc", "https://zenhomesurvey.com/order/c51e10d1", "https://kidzplayhouse.com/new-arrivals", "https://techmart.com/promo/TECH20"],
+                "synonyms": ["link", "notification hyperlink"]
+            }
+            ],
+            "description": "All notifications sent to users in the system, such as alerts, reminders, and promotional messages",
+            "synonyms": ["alerts", "messages"]
+        },
+        {
+            "name": "user_sessions",
+            "type": "simple table",
+            "table path": "main.user_sessions",
+            "unique properties": [["user_id", "session_start"], ["user_id", "session_end"]],
+            "properties": [
+            {
+                "name": "user_id",
+                "type": "table column",
+                "column name": "user_id",
+                "data type": "numeric",
+                "description": "The id of the user who the session belongs to",
+                "sample values": [1, 2, 3, 8, 10],
+                "synonyms": ["user id", "user key"]
+            },
+            {
+                "name": "session_start",
+                "type": "table column",
+                "column name": "session_start_ts",
+                "data type": "datetime",
+                "description": "The timestamp when the user session started",
+                "synonyms": ["beginning timestamp", "session initialization datetime"]
+            },
+            {
+                "name": "session_end",
+                "type": "table column",
+                "column name": "session_end_ts",
+                "data type": "datetime",
+                "description": "The timestamp when the user session ended",
+                "synonyms": ["ending timestamp", "session termination datetime"]
+            },
+            {
+                "name": "device_type",
+                "type": "table column",
+                "column name": "device_type",
+                "data type": "string",
+                "description": "The type of device the session was made with, which can be either `web_app` or `mobile_app`",
+                "sample values": ["web_app", "mobile_app"],
+                "synonyms": ["session device", "web or mobile"]
+            },
+            {
+                "name": "device_id",
+                "type": "table column",
+                "column name": "device_id",
+                "data type": "string",
+                "description": "The id of the device the session was made with",
+                "sample values": ["web_d8180kaf", "mobile_g3mjfz", "web_zz91p44l", "web_8902wknz"],
+                "synonyms": []
+            }
+            ],
+            "description": "The records of user sessions in the system, which can include multiple sessions for the same user made at different points in time, each session with a start/end timestamp",
+            "synonyms": ["system logs", "user activity logs", "user session records"]
+        },
+        {
+            "name": "user_setting_snapshots",
+            "type": "simple table",
+            "table path": "main.user_setting_snapshot",
+            "unique properties": [["user_id", "snapshot_date"]],
+            "properties": [
+            {
+                "name": "user_id",
+                "type": "table column",
+                "column name": "user_id",
+                "data type": "numeric",
+                "description": "The id for the user whose settings are being recorded",
+                "sample values": [1, 2, 3, 5, 9],
+                "synonyms": ["user key", "user id"]
+            },
+            {
+                "name": "snapshot_date",
+                "type": "table column",
+                "column name": "snapshot_date",
+                "data type": "datetime",
+                "description": "The date when the setting snapshot was taken",
+                "synonyms": ["date of setting update", "recorded date"]
+            },
+            {
+                "name": "daily_transaction_limit",
+                "type": "table column",
+                "column name": "tx_limit_daily",
+                "data type": "numeric",
+                "description": "The cap in settings of how much the user account allows to be spent in a single day",
+                "sample values": [1000.0, 500.0, 50.0, 250.0],
+                "synonyms": ["daily spending cap"]
+            },
+            {
+                "name": "monthly_transaction_limit",
+                "type": "table column",
+                "column name": "tx_limit_monthly",
+                "data type": "numeric",
+                "description": "The cap in settings of how much the user account allows to be spent in a single month",
+                "sample values": [5000.0, 500.0, 2000.0, 1000.0],
+                "synonyms": ["monthly spending cap"]
+            },
+            {
+                "name": "membership_status",
+                "type": "table column",
+                "column name": "membership_status",
+                "data type": "numeric",
+                "description": "The member's status level within the system: 0 for bronze, 1 for silver, 2 for gold, 3 for platinum, 4 for VIP",
+                "sample values": [0, 1, 2, 3, 4],
+                "synonyms": ["rank", "membership level", "membership tier"]
+            },
+            {
+                "name": "password_hash",
+                "type": "table column",
+                "column name": "password_hash",
+                "data type": "string",
+                "description": "The hashed password of the user, which is used to verify the user's identity when they log in",
+                "sample values": ["bcryptHash($2yz9!&ka1)", "bcryptHash($2yz9!&ka1)", "bcryptHash(C0d3Rul3z!99)"],
+                "synonyms": []
+            },
+            {
+                "name": "api_key",
+                "type": "table column",
+                "column name": "api_key",
+                "data type": "string",
+                "description": "The user's API key, which is used to authenticate the user when they make API requests (null if not provided)",
+                "sample values": ["9d61c49b-8977-4914-a36b-80d1445e38fa", "6c03c175-9ac9-4854-b064-a3fff2c62e31"],
+                "synonyms": ["api token", "application programming interface key"]
+            },
+            {
+                "name": "verified_devices",
+                "type": "table column",
+                "column name": "verified_devices",
+                "data type": "string",
+                "description": "A comma-separated list of the ids of the devices that have been verified for the user (null if not provided)",
+                "sample values": ["mobile_8fh2k1", "mobile_yjp08q, mobile_1av8p0", "web_k29qjd, mobile_x28qlj", "web_d8180kaf, mobile_q3mz8n"],
+                "synonyms": ["device list", "device ids"]
+            },
+            {
+                "name": "verified_ips",
+                "type": "table column",
+                "column name": "verified_ips",
+                "data type": "string",
+                "description": "A comma-sparated list of the IP addresses that have been verified for the user (null if not provided)",
+                "sample values": ["8.26.53.165, 68.85.32.201", "203.96.81.36", "192.168.0.1", "198.51.100.233, 70.121.39.25"],
+                "synonyms": ["IP addresses", "IP list"]
+            },
+            {
+                "name": "mfa_enabled",
+                "type": "table column",
+                "column name": "mfa_enabled",
+                "data type": "bool",
+                "description": "Whether the user has enabled multi-factor authentication (MFA) for their account",
+                "synonyms": ["has mfa"]
+            },
+            {
+                "name": "marketing_opt_in",
+                "type": "table column",
+                "column name": "marketing_opt_in",
+                "data type": "bool",
+                "description": "Whether the user has opted in to receive marketing communications",
+                "synonyms": ["allowed marketing"]
+            },
+            {
+                "name": "created_at",
+                "type": "table column",
+                "column name": "created_at",
+                "data type": "datetime",
+                "description": "The timestamp when the record was added to the system",
+                "synonyms": ["system entry date"]
+            }
+            ],
+            "description": "The records of user settings in the system, which can include multiple updates for the same user made at different points in time",
+            "synonyms": ["user settings history", "user settings records"]
+        }
+        ],
+        "relationships": [
+        {
+            "name": "transactions_sent",
+            "type": "simple join",
+            "parent collection": "users",
+            "child collection": "transactions",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "uid": [
+                "sender_id"
+            ]
+            },
+            "description": "All transactions made where the user is the sender",
+            "synonyms": ["transactions from user"]
+        },
+        {
+            "name": "sending_user",
+            "type": "reverse",
+            "original parent": "users",
+            "original property": "transactions_sent",
+            "singular": true,
+            "always matches": false,
+            "description": "The user who sent the transaction, if it was sent by a user (not found if it was sent by a merchant)",
+            "synonyms": ["source user", "originating user"]
+        },
+        {
+            "name": "transactions_received",
+            "type": "simple join",
+            "parent collection": "users",
+            "child collection": "transactions",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "uid": [
+                "receiver_id"
+            ]
+            },
+            "description": "The transactions where the user was the recipient",
+            "synonyms": ["transactions to user"]
+        },
+        {
+            "name": "receiving_user",
+            "type": "reverse",
+            "original parent": "users",
+            "original property": "transactions_received",
+            "singular": true,
+            "always matches": false,
+            "description": "The user who received the transaction, if it was received by a user (not found if it was received by a merchant)",
+            "synonyms": ["destination user", "receiving user account"]
+        },
+        {
+            "name": "balances",
+            "type": "simple join",
+            "parent collection": "users",
+            "child collection": "user_balances",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "uid": [
+                "user_id"
+            ]
+            },
+            "description": "The historical account balance for the user, which can include multiple updates over time",
+            "synonyms": ["historical account balance", "user balance history"]
+        },
+        {
+            "name": "user",
+            "type": "reverse",
+            "original parent": "users",
+            "original property": "balances",
+            "singular": true,
+            "always matches": true,
+            "description": "The user who the account balance belongs to",
+            "synonyms": ["customer"]
+        },
+        {
+            "name": "notifications",
+            "type": "simple join",
+            "parent collection": "users",
+            "child collection": "notifications",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "uid": [
+                "user_id"
+            ]
+            },
+            "description": "The notifications that have been sent to the user",
+            "synonyms": ["user notifications", "user alerts"]
+        },
+        {
+            "name": "user",
+            "type": "reverse",
+            "original parent": "users",
+            "original property": "notifications",
+            "singular": true,
+            "always matches": true,
+            "description": "The user who received the notification",
+            "synonyms": ["customer", "client", "user account"]
+        },
+        {
+            "name": "sessions",
+            "type": "simple join",
+            "parent collection": "users",
+            "child collection": "user_sessions",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "uid": [
+                "user_id"
+            ]
+            },
+            "description": "The login sessions by the user",
+            "synonyms": ["user login sessions", "session history"]
+        },
+        {
+            "name": "user",
+            "type": "reverse",
+            "original parent": "users",
+            "original property": "sessions",
+            "singular": true,
+            "description": "The user who the login session information belongs to",
+            "synonyms": ["customer", "client", "user account"]
+        },
+        {
+            "name": "setting_snapshots",
+            "type": "simple join",
+            "parent collection": "users",
+            "child collection": "user_setting_snapshots",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "uid": [
+                "user_id"
+            ]
+            },
+            "description": "The setting snapshot history for the user, which can include multiple updates over time",
+            "synonyms": ["setting history", "user setting snapshots"]
+        },
+        {
+            "name": "user",
+            "type": "reverse",
+            "original parent": "users",
+            "original property": "setting_snapshots",
+            "singular": true,
+            "description": "The user who the setting snapshot belongs to",
+            "synonyms": ["customer", "client", "user account"]
+        },
+        {
+            "name": "transactions_sent",
+            "type": "simple join",
+            "parent collection": "merchants",
+            "child collection": "transactions",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "mid": [
+                "sender_id"
+            ]
+            },
+            "description": "The transactions sent by the merchant",
+            "synonyms": ["merchant transactions sent", "merchant outgoing transactions"]
+        },
+        {
+            "name": "sending_merchant",
+            "type": "reverse",
+            "original parent": "merchants",
+            "original property": "transactions_sent",
+            "singular": true,
+            "always matches": false,
+            "description": "The merchant who sent the transaction, if it was sent by a merchant (not found if it was sent by a user)",
+            "synonyms": ["merchant source", "merchant origin"]
+        },
+        {
+            "name": "transactions_received",
+            "type": "simple join",
+            "parent collection": "merchants",
+            "child collection": "transactions",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "mid": [
+                "receiver_id"
+            ]
+            },
+            "description": "The transactions received by the merchant",
+            "synonyms": ["merchant transactions received", "merchant incoming transactions"]
+        },
+        {
+            "name": "receiving_merchant",
+            "type": "reverse",
+            "original parent": "merchants",
+            "original property": "transactions_received",
+            "singular": true,
+            "always matches": false,
+            "description": "The merchant who received the transaction, if it was received by a merchant (not found if it was received by a user)",
+            "synonyms": ["merchant destination", "merchant recipient"]
+        },
+        {
+            "name": "balances",
+            "type": "simple join",
+            "parent collection": "merchants",
+            "child collection": "merchant_balances",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "mid": [
+                "merchant_id"
+            ]
+            },
+            "description": "The historical account balance for the merchant, which can include multiple updates over time",
+            "synonyms": ["historical account balance", "merchant balance history"]
+        },
+        {
+            "name": "merchant",
+            "type": "reverse",
+            "original parent": "merchants",
+            "original property": "balances",
+            "singular": true,
+            "always matches": true,
+            "description": "The merchant who the account balance information belongs to",
+            "synonyms": ["business", "company", "merchant account"]
+        },
+        {
+            "name": "coupons",
+            "type": "simple join",
+            "parent collection": "merchants",
+            "child collection": "coupons",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "mid": [
+                "merchant_id"
+            ]
+            },
+            "description": "The coupons issued by the merchant",
+            "synonyms": ["merchant coupons", "merchant discount codes"]
+        },
+        {
+            "name": "merchant",
+            "type": "reverse",
+            "original parent": "merchants",
+            "original property": "coupons",
+            "singular": true,
+            "always matches": true,
+            "description": "The merchant who issued the coupon",
+            "synonyms": ["issuing company", "business"]
+        },
+        {
+            "name": "transaction_used_in",
+            "type": "simple join",
+            "parent collection": "coupons",
+            "child collection": "transactions",
+            "singular": false,
+            "always matches": false,
+            "keys": {
+            "cid": [
+                "coupon_id"
+            ]
+            },
+            "description": "The transactions that the coupon was used in",
+            "synonyms": ["uses", "transactions with coupon"]
+        },
+        {
+            "name": "coupon",
+            "type": "reverse",
+            "original parent": "coupons",
+            "original property": "transaction_used_in",
+            "singular": true,
+            "always matches": false,
+            "description": "The coupon that was used in the transaction, if one exists",
+            "synonyms": ["coupon used", "discount used"]
+        }
+        ],
+        "additional definitions": [],
+        "verified pydough analysis": [],
+        "extra semantic info": {}
+    }
+]

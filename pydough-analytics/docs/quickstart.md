@@ -1,57 +1,225 @@
 # Quickstart
 
-## Installation
+## TPCH sample database (download helper)
+
+To make local testing easy, this repo includes a small helper script to download the TPCH demo database.
+
+- **Script location:** `../setup_tpch.sh`
+- **What it does:** If the target file already exists, it prints `FOUND` and exits. Otherwise it downloads the SQLite DB.
+- **Where the DB should live:** `../data/databases/TPCH.db` (from the repo root). The rest of the docs/CLI examples assume this path.
+
+### One-liner (macOS/Linux)
+
+Run from the **repo root**:
 
 ```bash
-# From source (development mode)
-cd pydough-analytics && pip install -e .
-
-# Or from PyPI (when published)
-pip install pydough-analytics
+mkdir -p ../data/databases
+bash ../setup_tpch.sh ../data/databases/TPCH.db
 ```
 
-Ensure the following environment variables are configured (a local `.env` is supported):
+If you don't have `wget`, you can use `curl` instead:
 
-- `GEMINI_API_KEY`: API key for Google Gemini models.
-- (Optional) `PYDOUGH_ANALYTICS_MODEL`, `PYDOUGH_ANALYTICS_TEMPERATURE` if you want to use Typer's auto env var integration.
+```bash
+mkdir -p ../data/databases
+curl -L https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -o ../data/databases/TPCH.db
+```
+
+Verify the file is present:
+
+```bash
+ls -lh ../data/databases/TPCH.db
+```
+
+### Windows (PowerShell)
+
+```powershell
+New-Item -ItemType Directory -Force -Path ..\data\databases | Out-Null
+Invoke-WebRequest -Uri https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -OutFile ..\data\databases\TPCH.db
+
+## Installation
+
+  ```bash
+  # From source (development mode)
+  cd pydough-analytics && pip install -e .
+
+  # Or from PyPI (when published)
+  pip install pydough-analytics
+  ```
+
+## Command reference
+
+```bash
+pydough-analytics --help
+pydough-analytics generate-json --help
+pydough-analytics generate-md --help
+pydough-analytics ask --help
+```
+
+## **Terminal location:** 
+
+Run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  
+ Quick check:
+ ```bash
+ ls data
+ # → databases  metadata  metadata_markdowns  prompts
+ ```
 
 ## Generating metadata (sample)
 
-```bash
-pydough-analytics init-metadata sqlite:///metadata/live_sales.db -o metadata/live_sales.json --graph-name SALES
-```
+Generate a PyDough metadata graph in JSON from the bundled SQLite database:
 
-- Supports SQLite out of the box.
-- PostgreSQL/MySQL/Snowflake are available via optional extras (see `pyproject.toml`).
-- Use `--no-reverse` to suppress reverse relationships if required.
+  ```bash
+  pydough-analytics generate-json \
+    --engine sqlite \
+    --database ./data/databases/live_sales.db \
+    --graph-name SALES \
+    --json-path ./data/metadata/live_sales.json
+  ```
 
-## Asking a question (sample)
+- Supported now: SQLite (local files or in-memory).
+- Planned: PostgreSQL, MySQL, Snowflake.
+- The --graph-name flag is required to name your graph.
+- The CLI will create output directories if they don’t exist.
 
-```bash
-pydough-analytics ask "Top 3 sales by amount" \
-  --metadata metadata/live_sales.json \
-  --graph-name SALES \
-  --url sqlite:///metadata/live_sales.db \
-  --show-sql --show-code
-```
+## Exporting documentation (Markdown)
 
-The CLI prints the PyDough code, generated SQL, and a table preview. Use `--max-rows` to limit the DataFrame slice returned from the database.
+Convert the generated JSON metadata into a human-readable Markdown file:
 
-## Python API
+  ```bash
+  pydough-analytics generate-md \
+    --graph-name SALES \
+    --json-path ./data/metadata/live_sales.json \
+    --md-path ./data/metadata_markdowns/live_sales.md
+  ```
+
+The Markdown output will include the collections, properties, and relationships of the graph.
+
+## Python API (programmatic usage)
+
+You can also call the generators directly from Python:
 
 ```python
-from pydough_analytics.pipeline.analytics import AnalyticsEngine
+from pathlib import Path
+from pydough_analytics.commands.generate_json_cmd import generate_metadata_from_config
+from pydough_analytics.utils.storage.file_service import load_json, save_markdown
+from pydough_analytics.schema.markdown import generate_markdown
 
-engine = AnalyticsEngine(
-    metadata_path="metadata/live_sales.json",
+# Generate JSON metadata from SQLite
+metadata = generate_metadata_from_config(
+    engine="sqlite",
+    database=".data/databases/live_sales.db",
     graph_name="SALES",
-    database_url="sqlite:///metadata/live_sales.db",
-    model="gemini-2.0-flash",
+    json_path=".data/metadata/live_sales.json"
 )
 
-result = engine.ask("Top 3 sales by amount", max_rows=10)
-print(result.dataframe)
-print(result.sql)
+# Reload the JSON metadata (optional)
+metadata_loaded = load_json(Path(".data/metadata/live_sales.json"))
+
+# Convert metadata to Markdown
+md_content = generate_markdown(metadata_loaded, graph_name="SALES")
+
+# Save Markdown to file
+save_markdown(".data/metadata_markdowns/live_sales.md", md_content)
+
+print(" Metadata JSON and Markdown generated successfully!")
 ```
 
-`AnalyticsResult` includes the DataFrame, SQL, PyDough code, explanation, and the number of attempts taken.
+This gives you the same workflow as the CLI:
+Database → Metadata JSON → Markdown docs.
+
+---
+
+## Ask questions with an LLM
+
+Natural language → PyDough code (+ optional SQL / DataFrame / explanation).
+
+### Provider credentials
+
+Set credentials for your chosen provider. Examples:
+
+**Gemini and Anthropic via Vertex AI**
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS="/absolute/path/to/cred.json"
+export GOOGLE_API_KEY:=...
+export GOOGLE_PROJECT_ID="your-gcp-project"
+export GOOGLE_REGION="us-east5"
+```
+
+**AWS Bedrock (Claude via AWS)**
+```bash
+export AWS_ACCESS_KEY_ID=...
+export AWS_SECRET_ACCESS_KEY=...
+export AWS_DEFAULT_REGION=us-east-1
+```
+
+> If you use a `.env`, importing `pydough_analytics.config.env` in Python will auto-load it.  
+> The CLI uses your shell environment.
+
+### CLI usage
+
+The **code is always printed**. You can optionally show SQL, a table (DataFrame), and an explanation.
+
+```bash
+pydough-analytics ask   --question "What are the most common transaction statuses and their respective counts?"   --engine sqlite   --database ./data/databases/live_sales.db   --db-name SALES   --md-path .data/metadata_markdowns/live_sales.md   --kg-path .data/metadata/live_sales.json   --provider anthropic   --model claude-sonnet-4-5@20250929   --show-sql --show-df --show-explanation
+```
+
+Flags summary
+
+- `--provider`, `--model` are optional if you stay on client defaults (Google/Gemini 2.5 Pro).  
+  If you switch to **Anthropic**, pass a **valid model** for that provider.
+- `--show-sql`, `--show-df`, `--show-explanation` are optional (code is always printed).
+- `--rows` controls how many table rows are displayed (default: 20).
+
+### Python API (ask programmatic)
+
+```python
+from pydough_analytics.llm.llm_client import LLMClient
+
+client = LLMClient(
+    # If you rely on defaults (Google/Gemini 2.5 Pro), omit provider/model.
+    # Example: Claude via Vertex AI
+    provider="anthropic",
+    model="claude-sonnet-4-5@20250929",
+)
+
+result = client.ask(
+    question="What are the most common transaction statuses and their respective counts?",
+    kg_path="./data/metadata/live_sales.json",                 # Knowledge Graph JSON
+    md_path="./data/metadata_markdowns/live_sales.md",         # Markdown doc for the DB
+    db_name="SALES",
+    db_config={"engine": "sqlite", "database": "./metadata/live_sales.db"},
+)
+
+print("PyDough code:
+", result.code)            # always available
+print("SQL:
+", result.sql or "<no sql>")
+if result.df is not None:
+    print(result.df.head())
+print("Explanation:
+", result.full_explanation or "<no explanation>")
+print("Exception:", result.exception)            # None if all good
+```
+
+---
+
+## Troubleshooting
+
+- **No such file or directory**  
+  Check exact paths & casing (`.data/metadata/...`, `./data/metadata_markdowns/...`).  
+  Quick check:
+  ```bash
+  ls -al ./metadata/live_sales.json
+  ls -al ./metadata_markdowns/live_sales.md
+  ```
+
+- **Model not found / Invalid model**  
+  Model IDs differ per provider (Anthropic direct vs Vertex AI vs Bedrock).  
+  Use the correct ID for your integration.
+
+- **Vertex AI auth error**  
+  Ensure `GOOGLE_APPLICATION_CREDENTIALS` is an **absolute path** to a valid JSON key,
+  and set `GOOGLE_PROJECT_ID` + `GOOGLE_REGION` (e.g., `us-east5`).
+
+- **Package not found (`pydough_analytics`) when calling as module**  
+  If not using `pip install -e .`, set `PYTHONPATH=./src`. Editable install is recommended.

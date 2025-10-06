@@ -1,234 +1,218 @@
 # pydough-analytics
 
-Community Edition toolkit that combines the PyDough DSL with LLM-based prompting
-to deliver text-to-analytics workflows. The package provides:
+Community Edition toolkit that combines the PyDough DSL with LLM-based prompting to deliver text-to-analytics workflows. The package provides:
 
 - Metadata generator that turns relational databases into PyDough knowledge graphs.
-- Prompt construction and Gemini-powered inference to translate natural language questions into PyDough code.
+- Prompt construction and llm-powered inference to translate natural language questions into PyDough code.
 - Safe execution layer that materialises PyDough results as SQL and DataFrames.
 - A Typer-based CLI for metadata generation and ad-hoc querying.
 
+## TPCH sample database (download helper)
+
+To make local testing easy, this repo includes a small helper script to download the TPCH demo database.
+
+- **Script location:** `setup_tpch.sh`
+- **What it does:** If the target file already exists, it prints `FOUND` and exits. Otherwise it downloads the SQLite DB.
+- **Where the DB should live:** `./data/databases/TPCH.db` (from the repo root). The rest of the docs/CLI examples assume this path.
+
+### One-liner (macOS/Linux)
+
+Run from the **repo root**:
+
+```bash
+mkdir -p ./data/databases
+bash setup_tpch.sh ./data/databases/TPCH.db
+```
+
+If you don't have `wget`, you can use `curl` instead:
+
+```bash
+mkdir -p ./data/databases
+curl -L https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -o ./data/databases/TPCH.db
+```
+
+Verify the file is present:
+
+```bash
+ls -lh ./data/databases/TPCH.db
+```
+
+### Windows (PowerShell)
+
+```powershell
+New-Item -ItemType Directory -Force -Path .\data\databases | Out-Null
+Invoke-WebRequest -Uri https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -OutFile .\data\databases\TPCH.db
+
 ## Quick usage
 
-```bash
-# Included sample (SQLite)
-pydough-analytics ask "Top 3 sales by amount" \
-  --metadata metadata/live_sales.json \
-  --graph-name SALES \
-  --url sqlite:///metadata/live_sales.db \
-  --show-sql --show-code
+Get from **database → metadata (JSON) → Markdown → ask** in a few commands. This section includes *everything necessary* to run quickly.
 
-# Or generate metadata for your DB
-pydough-analytics init-metadata sqlite:///data/your.db -o metadata/your.json --graph-name YOURDB
-pydough-analytics ask "Your question here" --metadata metadata/your.json --graph-name YOURDB --url sqlite:///data/your.db
-```
+---
 
-You can also run the CLI via the module entrypoint:
+## 0) One-time setup
 
 ```bash
-python -m pydough_analytics --version
-python -m pydough_analytics ask "Top 3 sales by amount" --metadata metadata/live_sales.json --graph-name SALES --url sqlite:///metadata/live_sales.db
+# From the repo root
+pip install -e .    # installs the CLI: `pydough-analytics`
+# (Optional) Verify:
+pydough-analytics --help
 ```
 
-## Advanced Example: Relationship Aggregation
+> If you prefer not to install, you can run via module:
+> ```bash
+> PYTHONPATH=./src python -m pydough_analytics.cli --help
+> ```
 
-With metadata for the Postgres `pagila` demo, you can aggregate over relationships. For example, total payments per customer (top 5):
+### Provider credentials (pick one path)
+- **Defaults (Google/Gemini)**: no extra env if already configured.
+- **Gemini and Anthropic via Vertex AI**
+  ```bash
+  export GOOGLE_APPLICATION_CREDENTIALS="/absolute/path/to/cred.json"
+  export GOOGLE_API_KEY:=...
+  export GOOGLE_PROJECT_ID="your-gcp-project"
+  export GOOGLE_REGION="us-east5"
+  ```
+
+- **AWS Bedrock (Deepseek via AWS)**
+  ```bash
+  export AWS_ACCESS_KEY_ID=...
+  export AWS_SECRET_ACCESS_KEY=...
+  export AWS_DEFAULT_REGION="us-east-1"
+  ```
+
+> Tip: If you use a `.env`, you can auto-load it in Python via `import pydough_analytics.config.env`. For the CLI, export env vars in your shell.
+
+### **Terminal location:** 
+
+Run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  
+ Quick check:
+ ```bash
+ ls data
+ # → databases  metadata  metadata_markdowns  prompts
+ ```
+
+### 1) Generate metadata JSON
 
 ```bash
-# Ensure you have metadata for the pagila database first
-# pydough-analytics init-metadata postgresql://USER:PASS@HOST:PORT/pagila -o metadata/pagila.json --graph-name PAGILA
-
-pydough-analytics ask "For each customer, show total payment amount. Show the top 5 customers." \
-  --metadata metadata/pagila.json \
-  --graph-name PAGILA \
-  --url postgresql://USER:PASS@HOST:PORT/pagila \
-  --show-code
+pydough-analytics generate-json   --engine sqlite   --database ./data/databases/TPCH.db   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json
 ```
 
-Expected PyDough shape:
+- `--engine`: Database engine (currently: `sqlite`).
+- `--database`: DB file or connection string.
+- `--graph-name`: Logical name for this dataset (you’ll reuse it as `--db-name` in `ask`).
+- `--json-path`: Where to save the graph JSON.
 
-```python
-result = customer.CALCULATE(
-    first_name,
-    last_name,
-    total_amount=SUM(payments.amount)
-).TOP_K(5, by=total_amount.DESC())
-```
 
-## Installation
+### 2) Export Markdown (used by the LLM)
 
 ```bash
-pip install pydough-analytics
-
-# Optional database extras
-pip install "pydough-analytics[postgres]"    # installs psycopg2-binary
-pip install "pydough-analytics[snowflake]"   # installs snowflake-connector-python
+pydough-analytics generate-md   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json   --md-path ./data/metadata_markdowns/Tpch.md
 ```
 
-Environment
+- Markdown helps the LLM stay grounded during `ask`.
+- Keep JSON + Markdown in version control for reproducibility.
 
-- Set `GEMINI_API_KEY` in your environment or `.env` file.
-- Optional flags: `--model`, `--temperature`, `--attempts`, `--max-rows` on the CLI.
+---
 
-Tip: CLI options can also be set via environment variables with the prefix `PYDOUGH_ANALYTICS_` (e.g., `PYDOUGH_ANALYTICS_MODEL=gemini-2.0-flash`).
+### 3) Ask the LLM
 
-CLI flags
-
-- `--json` to emit machine-readable output (includes code, sql, rows)
-- `--log-level DEBUG` for verbose tracing
-- `--timeout` to cap execution time per query (defaults to 10s)
-- `--max-rows` to limit DataFrame size
-
-See also `docs/quickstart.md` and `docs/pydough-prompt-guide.md`.
-
-
-### Supported backends
-
-- SQLite (local files or in-memory)
-- PostgreSQL / Postgres-compatible (psycopg2-binary required)
-- Snowflake (snowflake-connector-python required)
-
-Example for Postgres using the Pagila demo:
+The **PyDough code is always printed**. You can optionally show **SQL**, a **DataFrame** preview, and an **explanation**.
 
 ```bash
-# run metadata generation and use target database
-pydough-analytics init-metadata postgresql://USER:PASS@HOST:PORT/pagila -o metadata/pagila.json --graph-name PAGILA
-pydough-analytics ask "Top 5 cities by total payment amount" \n  --metadata metadata/pagila.json \n  --graph-name PAGILA \n  --url postgresql://USER:PASS@HOST:PORT/pagila \n  --attempts 3 --show-sql --show-code
+pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --engine sqlite   --database ./data/databases/TPCH.db   --db-name TPCH   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
 ```
 
-```bash
-# Postgres requirements
-pip install psycopg2-binary
+- If you switch from defaults (e.g., to Anthropic), add:
+  ```bash
+  --provider anthropic --model claude-sonnet-4-5@20250929
+  ```
+- Control table size with `--rows` (default: 20).
 
-# Snowflake requirements
-pip install "snowflake-connector-python[pandas]"
-```
+---
 
 ### Troubleshooting
 
-- **`FileNotFoundError` or `Graph ... not found`** – The path passed to `--metadata` is incorrect, or the name passed to `--graph-name` does not exist in the metadata file. Double-check your file paths and the `name` field inside your metadata JSON.
-  - Tip: open the generated Markdown summary (same path as the JSON, `.md` extension) to confirm names and casing.
-  - Ensure Python 3.10+ (`python3.11 -V`) when installing/running.
-- **`Expected a collection, but received an expression`** – the generated code referenced a scalar property where a collection was expected. The CLI will retry with feedback; if the error persists, inspect the emitted PyDough or run with `--json` to capture the failing code.
-- **`Imports are not allowed`** – the sandbox rejects import or filesystem calls; ensure prompts request pure PyDough.
-- **Large result sets** – use `--max-rows` to limit output (defaults to 100); the JSON output (`--json`) returns a records array suitable for automation.
-- **Logging** – adjust verbosity with `--log-level DEBUG` to inspect prompt/response flow.
+- **No such file or directory** → Check paths and casing; ensure `./data/metadata` and `./data/metadata_markdowns` exist.
+- **Model not found** → Model IDs vary by provider (Anthropic direct vs Vertex vs Bedrock). Use the correct one.
+- **Vertex AI auth error** → Use an **absolute** path for `GOOGLE_APPLICATION_CREDENTIALS` and set project/region.
 
-### Live LLM tests (optional)
+## Supported backends
 
-Run natural-language tests against the sample SQLite data.
+- SQLite (local files or in-memory).
 
-```bash
-# 1) Python ≥3.10
-python3.11 -m venv .venv && source .venv/bin/activate
-pip install -e .
+## Suggested next steps
 
-# 2) Ensure GEMINI_API_KEY is set (env or .env)
+- To expand database coverage, add connectors for MySQL, PostgreSQL, and Snowflake, updating the CLI to accept engine-specific flags and extending the metadata.
+- Improve the troubleshooting documentation by covering engine-specific errors, connection problems, missing database files, and common CLI usage mistakes with clear resolutions.
+- Introduce an MCP server app that exposes the existing CLI commands as tools, enabling integration with editors and external orchestrators through a simple JSON-RPC interface.
+- Provide richer examples and Jupyter notebooks, showing end-to-end pipelines from SQLite, connecting to different databases, and visualizing metadata graphs for more practical learning.
 
-# 3) Enable live tests and run
-export PYDOUGH_ANALYTICS_RUN_LIVE=1
-pytest -m live_llm -q
 
-# Run only the general + suite tests
-pytest -q tests/test_natural_language_live.py tests/test_natural_language_suite_live.py tests/test_natural_language_general_live.py
+## Source folder structure
+
 ```
-
-Notes:
-- Calls the Gemini API; costs may apply. Keep `max_rows` small.
-- Postgres live test: set `PYDOUGH_ANALYTICS_LIVE_PG_URL`, `PYDOUGH_ANALYTICS_LIVE_PG_METADATA` and run `pytest -m live_llm`.
-
-### Prompt customization
-
-Control how metadata is rendered into the prompt and override the base prompt text via env (succinct):
-
-- Schema rendering: `PYDOUGH_ANALYTICS_SCHEMA_STYLE=markdown|summary|json|none`
-- Limits (when using `summary`): `PYDOUGH_ANALYTICS_SCHEMA_MAX_COLLECTIONS` (default 12), `PYDOUGH_ANALYTICS_SCHEMA_MAX_COLUMNS` (default 8)
-- System prompt override: `PYDOUGH_ANALYTICS_SYSTEM_PROMPT_PATH=/path/to/system_prompt.md`
-- Guide override: `PYDOUGH_ANALYTICS_GUIDE_PATH=/path/to/pydough_guide.md`
-- LLM client override: `PYDOUGH_ANALYTICS_LLM_PROVIDER=gemini` (register custom providers via `pydough_analytics.llm.client.register_llm_client`)
-
-Example:
-
-```bash
-export PYDOUGH_ANALYTICS_SCHEMA_STYLE=summary
-export PYDOUGH_ANALYTICS_SYSTEM_PROMPT_PATH=prompts/system.md
-export PYDOUGH_ANALYTICS_GUIDE_PATH=prompts/guide.md
-pydough-analytics ask "Top sales" --metadata metadata/live_sales.json --graph-name SALES --url sqlite:///metadata/live_sales.db
+pydough-analytics/
+├── src/                   # Library source code.
+│   └── pydough_analytics/
+│       ├── commands/      # CLI command implementations.
+│       ├── config/        # Default settings and configuration helpers.
+│       ├── data/          # Internal data loaders or fixtures.
+│       ├── llm/           # Modules for LLM integration.
+│       ├── metadata/      # Metadata generation and validation logic.
+│       ├── utils/         # Shared utility functions.
+│       ├── __init__.py    # Package entry.
+│       ├── __main__.py    # Allows `python -m pydough_analytics` execution.
+│       ├── _version.py    # Package version constant.
+│       └── cli.py         # Typer CLI entrypoint (`pydough-analytics`).
+└── README.md              # Package-specific documentation.
 ```
-
-Custom LLM provider (advanced):
-
-```python
-from pydough_analytics.llm.client import register_llm_client, LLMResponse
-
-class MyLLM:
-    def generate(self, prompt):
-        return LLMResponse(code="result = sales.CALCULATE(city, amount).TOP_K(3, by=amount.DESC())", explanation=None, raw_text="{}", usage_metadata=None)
-
-register_llm_client("myprovider", lambda **kwargs: MyLLM())
-# Then set: export PYDOUGH_ANALYTICS_LLM_PROVIDER=myprovider
-```
-
-### Suggested next steps
-
-- Add CLI flags mirroring env knobs: `--schema-style`, `--schema-max-collections`, `--schema-max-columns`, `--system-prompt-path`, `--guide-path`.
-- Introduce prompt strategies behind `PYDOUGH_ANALYTICS_PROMPT_STRATEGY` (e.g., `concise`, `rich`, `aggregate`, `row`).
-- Context trimming per question: include only relevant collections/columns (keyword match or lightweight embedding filter).
-- Few-shot library: inject 1–3 examples matched to intent (top‑k, filter, ordering, aggregates, relationship rollups).
-- Error‑aware retries: map common PyDough runtime errors to explicit “fix hints” injected into the next prompt.
-
-### MCP server (optional)
-
-Install the MCP extras if you want to expose pydough-analytics as a Machine Cooperation Protocol server:
-
-```bash
-pip install "pydough-analytics[mcp]"
-python -m pydough_analytics.mcp.server
-```
-
-Available tools:
-
-- `pydough.init_metadata(url, graph_name="DATABASE")`: returns metadata JSON and (optionally) markdown.
-- `pydough.open_session(database_url, metadata_path=..., graph_name="DATABASE")`: opens a session, returning a `session_id`.
-- `pydough.ask(session_id, question, attempts=2, max_rows=100)`: runs a question and returns code, SQL, and rows.
-- `pydough.schema_markdown(session_id)`: returns the markdown summary for an active session.
-- `pydough.close_session(session_id)`: closes the session and cleans up temporary files.
-- `pydough.list_sessions()`: auxiliary tool to inspect active sessions.
-
-Resources exposed via MCP:
-
-- `metadata/{session_id}` – markdown schema.
-- `result/{session_id}` – last query result (code, SQL, rows).
-
-The server uses the same environment variables as the CLI (e.g., `GEMINI_API_KEY`). When metadata is passed inline, it is persisted in a temporary file per session; closing the session removes that file.
-
-Example Claude Desktop manifest entry:
-
-```json
-{
-  "name": "pydough-analytics",
-  "command": ["python", "-m", "pydough_analytics.mcp.server"]
-}
-```
-
 
 ## Architecture Overview
 
 ```
-+----------------------------+    +------------------------------+    +------------------------+
-| CLI / Python API / MCP     | -> | Prompt Builder               | -> | LLM Client             |
-| (ask / init / MCP tools)   |    | (metadata + cheat sheet +    |    | (JSON schema, retries) |
-+-------------+--------------+    |  guide)                      |    +-----------+------------+
-              |                   +---------------+--------------+                |
-              |                                   |                               v
-              |                                   v                     +------------------------+
-              |                        +-----------------------+        | PyDough Executor       |
-              |                        | Metadata Generator    | <----- | (load graph, to_sql/   |
-              |                        | (SQLAlchemy -> JSON)  |        |  to_df, sanitize+retry)|
-              |                        +-----------+-----------+        +-----------+------------+
-              v                                    |                                ^
-+----------------------------+         +-----------v-----------+                    |
-| GEMINI_API_KEY (env/.env)  |         | Metadata JSON / MD    | <------------------+
-+----------------------------+         | (graph + markdown)    |      Runtime feedback (errors)
-                                       +-----------------------+
++-----------------------------+                               
+| CLI (Typer)                 |                               
+| (generate-json, generate-md,|                               
+|  ask)                       |                               
++-------------+---------------+                               
+              |                                               
+              v                                               
++-----------------------------+       +---------------------------+       
+| Metadata Generator          | ----> | Metadata JSON             |       
+| (SQLAlchemy inspector +     |       | (graph definition, V2)    |       
+|  identifier sanitizer,      |       +---------------------------+       
+|  type mapping)              |                                               
++-------------+---------------+                                               
+              |                                               
+              v                                               
++-----------------------------+       +---------------------------+       
+| Markdown Exporter           | ----> | Markdown Docs             |       
+| (render schema from graph)  |       | (human-readable overview) |       
++-------------+---------------+       +---------------------------+       
+
+              |
+              v
++-----------------------------+       +---------------------------+       
+| Ask Command (Typer)         | ----> | LLM Client                |       
+| (natural language question) |       | (prompt + schema + guide) |       
++-------------+---------------+       +-------------+-------------+       
+              |                                                    
+              v                                                    
++-----------------------------+       +---------------------------+       
+| AI Providers                | ----> | Gemini / Claude / DeepSeek|       
+| (google, anthropic, aws,    |       | or aisuite                |       
+|  other via aisuite)         |       +---------------------------+       
++-------------+---------------+                                      
+              |                                                    
+              v                                                    
++-----------------------------+       +---------------------------+       
+| PyDough Executor            | ----> | SQL + DataFrame           |       
+| (extract code, run on DB,   |       | (results + explanation)   |       
+|  sanitize, retry on errors) |       +---------------------------+       
++-----------------------------+                                            
+
+Notes:
+- **Engines**: SQLite (built-in), planned: PostgreSQL/MySQL/Snowflake.
+- **LLM Providers**: Google Gemini, Anthropic (Claude), AWS Bedrock (DeepSeek), aisuite (others).
+- **Artifacts**: JSON graph, Markdown docs, generated PyDough code, SQL, result DataFrame.
 ```

@@ -20,3 +20,6 @@ metadata/*.db
 
 # OS
 .DS_Store
+
+# Data
+./data/databases/

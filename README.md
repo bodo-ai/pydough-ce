@@ -1,55 +1,148 @@
-# pydough-full
+# pydough-ce
 
-Welcome to the `pydough-full` project! This repository contains the `pydough-analytics` toolkit, a powerful system that turns natural language questions into safe, executable analytics.
+Welcome to the `pydough-ce` project! This repository contains the `pydough-analytics` toolkit, a powerful system that turns natural language questions into safe, executable analytics.
 
-It combines a custom Domain-Specific Language (DSL) called PyDough with Gemini-powered LLM prompting to create a seamless text-to-analytics workflow.
+It combines a custom Domain-Specific Language (DSL) called PyDough with LLM-powered system to create a seamless text-to-analytics workflow.
 
-## Quick Start
+# Getting Started
 
-1. **Clone and select the repo root**
-   ```bash
-   cd /path/to/pydough-ce
-   ```
-2. **Provision Python 3.11 (or any >=3.10) and a clean virtualenv**
-   ```bash
-   pyenv install 3.11.9
-   pyenv local 3.11.9
-   rm -rf .venv
-   python -m venv .venv
-   source .venv/bin/activate
-   ```
-3. **Install the toolkit into the venv**
-   ```bash
-   python -m pip install --upgrade pip
-   python -m pip install -e pydough-analytics
-   export PATH="$(pwd)/.venv/bin:$PATH"
-   unalias pydough-analytics 2>/dev/null
-   hash -r
-   type -a pydough-analytics
-   pydough-analytics --version
-   ```
-4. **Provide your Gemini API key**
-   ```bash
-   export GEMINI_API_KEY="your_api_key_here"
-   ```
-   (You can also place it in a `.env` file in the repo root.)
-5. **Run the sample question against the bundled SQLite database**
-   ```bash
-   pydough-analytics --log-level DEBUG ask \
-  "List the top 3 rows by the column 'amount' from the 'sales' table. Return only 'city' and 'amount', sorted by 'amount' in descending order." \
-  --metadata metadata/live_sales.json \
-  --graph-name SALES \
-  --url sqlite:///metadata/live_sales.db \
-  --show-sql --show-code
-   ```
-   The DEBUG line confirms the full prompt length being sent to Gemini; the output includes the generated PyDough, SQL, and result preview.
-6. **(Optional) Run a live LLM smoke test from the repo root**
-   ```bash
-   python -m pip install pytest
-   export PYDOUGH_ANALYTICS_RUN_LIVE=1
-   python -m pytest -q pydough-analytics/tests/test_natural_language_live.py::test_live_sales_top_rows_natural
-   ```
-   This executes a single pytest marked `live_llm`, calling Gemini once via the bundled SQLite fixtures. If the test is skipped because the sample metadata is not found, create `pydough-analytics/metadata -> ../metadata` (symlink) or run the test from inside `pydough-analytics/`.
+## TPCH sample database (download helper)
+
+To make local testing easy, this repo includes a small helper script to download the TPCH demo database.
+
+- **Script location:** `pydough-analytics/setup_tpch.sh`
+- **What it does:** If the target file already exists, it prints `FOUND` and exits. Otherwise it downloads the SQLite DB.
+- **Where the DB should live:** `./pydough-analytics/data/databases/TPCH.db` (from the repo root). The rest of the docs/CLI examples assume this path.
+
+### One-liner (macOS/Linux)
+
+Run from the **repo root**:
+
+```bash
+mkdir -p ./pydough-analytics/data/databases
+bash pydough-analytics/setup_tpch.sh ./pydough-analytics/data/databases/TPCH.db
+```
+
+If you don't have `wget`, you can use `curl` instead:
+
+```bash
+mkdir -p ./pydough-analytics/data/databases
+curl -L https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -o ./pydough-analytics/data/databases/TPCH.db
+```
+
+Verify the file is present:
+
+```bash
+ls -lh ./pydough-analytics/data/databases/TPCH.db
+```
+
+### Windows (PowerShell)
+
+```powershell
+New-Item -ItemType Directory -Force -Path .\pydough-analytics\data\databases | Out-Null
+Invoke-WebRequest -Uri https://github.com/lovasoa/TPCH-sqlite/releases/download/v1.0/TPC-H.db -OutFile .\pydough-analytics\data\databases\TPCH.db
+
+### Requirements
+
+- Python 3.10 or newer (3.11 recommended).
+- SQLite database file to introspect.
+- PyDough 1.0.10 or newer.
+
+### Configure the environment
+
+Here is the full shell sequence. Replace `/path/to/pydough-ce` with your clone path.
+
+```bash
+cd /path/to/pydough-ce
+rm -rf .venv
+python -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install -e pydough-analytics
+export PATH="$(pwd)/.venv/bin:$PATH"
+hash -r
+pydough-analytics --version
+```
+
+### Provider credentials (.env or shell)
+
+You can export credentials directly in your shell **or** keep them in a `.env` at the repo root.
+
+**.env example (pick only what you use):**
+```dotenv
+# Gemini and Anthropic via Vertex AI
+GOOGLE_APPLICATION_CREDENTIALS=/absolute/path/to/gcp-key.json
+export GOOGLE_API_KEY:=...
+GOOGLE_PROJECT_ID=your-gcp-project
+GOOGLE_REGION=us-east5
+
+**Load .env into your shell (bash/zsh):**
+```bash
+set -a; source .env; set +a
+# or
+export $(grep -v '^#' .env | xargs)
+```
+
+> The CLI reads environment variables from your shell. (Using Python, you can also auto-load `.env` by importing `pydough_analytics.config.env`.)
+
+## **Terminal location:** 
+
+Run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  
+ Quick check:
+ ```bash
+ ls data
+ # → databases  metadata  metadata_markdowns  prompts
+ ```
+
+### Default paths (data at `pydough-analytics` folder)
+
+We keep project artifacts in **`./data/`** for consistency:
+- **Database (SQLite):** `./data/databases/TPCH.db`
+- **Metadata JSON:** `./data/metadata/Tpch_graph.json`
+- **Metadata Markdown:** `./data/metadata_markdowns/Tpch.md`
+
+### Generate metadata from SQLite
+
+```bash
+pydough-analytics generate-json   --engine sqlite   --database ./data/databases/TPCH.db   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json
+```
+
+This inspects the SQLite file and creates a metadata graph definition under `data/metadata/Tpch_graph.json`.
+
+### Export Markdown docs
+
+```bash
+pydough-analytics generate-md   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json   --md-path ./data/metadata_markdowns/Tpch.md
+```
+
+The Markdown file provides a human-friendly overview of the metadata: collections, properties, and relationships.
+
+### Ask the LLM (after generating JSON + Markdown)
+
+Run natural-language questions on your dataset. The **PyDough code is always printed**; you can optionally include **SQL**, a **DataFrame** preview, and an **explanation**. The CE default is **Google / Gemini 2.5 Pro**.
+
+```bash
+pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --engine sqlite   --database ./data/databases/TPCH.db   --db-name TPCH   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
+```
+
+Notes:
+- `--db-name` should match the `--graph-name` used during metadata generation (here: `TPCH`).
+- To switch providers (e.g., Anthropic), pass a valid provider/model for your integration:
+  ```bash
+  --provider anthropic --model claude-sonnet-4-5@20250929
+  ```
+- Use `--rows` to control how many DataFrame rows are displayed (default: 20).
+
+### Run the test suite (optional)
+
+```bash
+python -m pip install pytest
+python -m pip install pytest-mock
+pytest -q tests
+```
+
+With these steps you now have the full CE pipeline:
+SQLite DB → JSON metadata graph → Markdown documentation → **LLM Ask**.
 
 ## What It Does
 
@@ -63,69 +156,25 @@ At its core, this project lets you ask questions of your relational database in 
 ## Key Features
 
 - **Natural language interface** – Query data without writing SQL.
-- **Automatic schema analysis** – Works with SQLite, PostgreSQL, MySQL, and Snowflake.
+- **Automatic schema analysis** – Works with SQLite.
 - **Safety by design** – PyDough limits execution to declarative analytics, reducing blast radius.
-- **Developer friendly** – Includes a CLI, Python API, and optional MCP server.
-- **Extensible** – Plug in custom prompts, LLM providers, or database connectors.
+- **Developer friendly** – Includes a CLI, Python API.
+- **Extensible** – Plug in custom prompts, LLM providers.
 
 ## Repository Structure
 
 ```
 / 
-├── metadata/              # Sample metadata files.
+│
 ├── pydough-analytics/     # Core Python package.
+│   ├── data/              # Sanmple metadata files.
+│   ├── docs/              # Additional guides.
+│   ├── samples/           # Sample code with notebooks.
 │   ├── src/               # Library source code.
 │   ├── tests/             # Unit and integration tests.
-│   ├── docs/              # Additional guides.
 │   └── README.md          # In-depth package documentation.
 └── README.md              # You are here!
 ```
-
-## Getting Started
-
-### Requirements
-
-- Python 3.10 or newer (3.11 recommended).
-- A Google Gemini API key available as `GEMINI_API_KEY`.
-- (Optional) Additional database drivers if you target PostgreSQL, MySQL, or Snowflake.
-
-### Configure the environment
-
-If you skipped the “Quick Start” section, here is the full shell sequence again. Replace `/path/to/pydough-ce` with your clone path.
-
-```bash
-cd /path/to/pydough-ce
-pyenv install 3.11.9
-pyenv local 3.11.9
-rm -rf .venv
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install -e pydough-analytics
-export PATH="$(pwd)/.venv/bin:$PATH"
-unalias pydough-analytics 2>/dev/null
-hash -r
-pydough-analytics --version
-```
-
-Set your Gemini key (either in the shell or `.env`):
-
-```bash
-export GEMINI_API_KEY="your_api_key_here"
-```
-
-### Run the sample question
-
-```bash
-pydough-analytics --log-level DEBUG ask \
-  "List the top 3 rows by the column 'amount' from the 'sales' table. Return only 'city' and 'amount', sorted by 'amount' in descending order." \
-  --metadata metadata/live_sales.json \
-  --graph-name SALES \
-  --url sqlite:///metadata/live_sales.db \
-  --show-sql --show-code
-```
-
-This command exercises the full Community Edition pipeline: prompt building, Gemini invocation, PyDough execution, and result preview. For more usage examples (metadata generation, JSON output, module entry point), see [pydough-analytics/README.md](pydough-analytics/README.md).
 
 ## The PyDough DSL
 
@@ -135,54 +184,11 @@ PyDough is a Pythonic DSL designed for the LLM to emit—and for you to read—c
 # Top 3 sales by amount
 result = sales.CALCULATE(city, amount).TOP_K(3, by=amount.DESC())
 ```
-
-Dive deeper in the [PyDough DSL Prompt Authoring Guide](pydough-analytics/docs/pydough-prompt-guide.md).
-
-## Troubleshooting
-
-### Python / virtualenv setup keeps finding the wrong CLI
-
-If `pydough-analytics --version` reports “ModuleNotFoundError: No module named 'pydough_analytics'”, it usually means your shell is invoking an outdated console script. Reset the environment:
-
-```bash
-cd /path/to/pydough-ce
-pyenv local 3.11.9
-rm -rf .venv
-python -m venv .venv
-source .venv/bin/activate
-python -m pip install -e pydough-analytics
-export PATH="$(pwd)/.venv/bin:$PATH"
-unalias pydough-analytics 2>/dev/null
-hash -r
-pydough-analytics --version
-```
-
-### Prompt looks “short” or empty
-
-Enable debug logging to inspect the payload lengths sent to Gemini:
-
-```bash
-pydough-analytics --log-level DEBUG ask "List the top 3 rows..." --metadata metadata/live_sales.json --graph-name SALES --url sqlite:///metadata/live_sales.db
-```
-
-Look for `Gemini generate() with system len=..., user len=...`. If the lengths are non-zero, the prompt built correctly; adjust the question wording if Gemini returns invalid code.
-
-### Pytest cannot find the live test file
-
-When running from the repository root (`pydough-ce`):
-
-```bash
-python -m pip install pytest
-export PYDOUGH_ANALYTICS_RUN_LIVE=1
-python -m pytest -q pydough-analytics/tests/test_natural_language_live.py::test_live_sales_top_rows_natural
-```
-
-Ensure you are using the repo virtualenv (`which python` → `.venv/bin/python`). If you see the test skipped because metadata files are missing, create a symlink `ln -s ../metadata pydough-analytics/metadata` or run the command from within `pydough-analytics/` so the fixtures can locate the sample data.
+You can check the full PyDough repo and documentation here: https://github.com/bodo-ai/PyDough/tree/main
 
 ## What’s Next?
 
 We welcome ideas and contributions. Current focus areas include:
 
-- Smarter schema trimming to send only the most relevant context.
-- Few-shot prompt libraries tuned to analytics intents.
-- Richer, error-aware retry strategies.
+- New version with a mcp server.
+- Support for more databases.
