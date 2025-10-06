@@ -94,7 +94,7 @@ Run all of the next commands **from the `pydough-analytics` folder** (the folder
 ### 1) Generate metadata JSON
 
 ```bash
-pydough-analytics generate-json   --engine sqlite   --database ./data/databases/tpch.db   --graph-name TPCH   --json-path ./data/metadata/tpch.json
+pydough-analytics generate-json   --engine sqlite   --database ./data/databases/TPCH.db   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json
 ```
 
 - `--engine`: Database engine (currently: `sqlite`).
@@ -106,7 +106,7 @@ pydough-analytics generate-json   --engine sqlite   --database ./data/databases/
 ### 2) Export Markdown (used by the LLM)
 
 ```bash
-pydough-analytics generate-md   --graph-name TPCH   --json-path ./data/metadata/tpch.json   --md-path ./data/metadata_markdowns/tpch.md
+pydough-analytics generate-md   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json   --md-path ./data/metadata_markdowns/Tpch.md
 ```
 
 - Markdown helps the LLM stay grounded during `ask`.
@@ -119,7 +119,7 @@ pydough-analytics generate-md   --graph-name TPCH   --json-path ./data/metadata/
 The **PyDough code is always printed**. You can optionally show **SQL**, a **DataFrame** preview, and an **explanation**.
 
 ```bash
-pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --engine sqlite   --database ./data/databases/tpch.db   --db-name TPCH   --md-path ./data/metadata_markdowns/tpch.md   --kg-path ./data/metadata/tpch.json   --show-sql --show-df --show-explanation
+pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --engine sqlite   --database ./data/databases/TPCH.db   --db-name TPCH   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
 ```
 
 - If you switch from defaults (e.g., to Anthropic), add:

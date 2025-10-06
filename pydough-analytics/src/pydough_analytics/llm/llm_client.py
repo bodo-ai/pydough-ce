@@ -1,5 +1,6 @@
 import re
 from datetime import datetime
+from pathlib import Path
 import pydough
 from ..utils.utils import extract_python_code, execute_code_and_extract_result, read_file
 from ..utils.storage.file_service import load_markdown
@@ -36,9 +37,13 @@ class Result:
 
 # This class serves as a client for interacting with an LLM to ask questions, handle discourse, and correct errors.
 class LLMClient:
-    def __init__(self, prompt="../data/prompts/prompt.md", script="../data/prompts/cheatsheet.md", db_markdown_map=None, provider="google", model="gemini-2.5-pro", definitions=None):
-        self.prompt = read_file(prompt)
-        self.script = read_file(script)
+    def __init__(self, prompt=None, script=None, db_markdown_map=None, provider="google", model="gemini-2.5-pro", definitions=None):
+        PKG = Path(__file__).resolve().parents[3]
+        DATA_DIR = PKG / "data" / "prompts"
+        prompt_path = prompt or (DATA_DIR / "prompt.md")
+        script_path = script or (DATA_DIR / "cheatsheet.md")
+        self.prompt = read_file(prompt_path)
+        self.script = read_file(script_path)
         self.db_markdown_map = db_markdown_map or {}
         self.provider = provider
         self.model = model
@@ -134,7 +139,7 @@ class LLMClient:
                 return Result(original_question=result.original_question, exception=str(e))
         return result
     
-         # This method formats the prompt for the LLM, including the question, database schema, and any additional context.
+    # This method formats the prompt for the LLM, including the question, database schema, and any additional context.
     def format_prompt(self, question, db_name, context_data):
         db_content = self.db_markdown_map.get(db_name, "")
         context = context_data or {}
