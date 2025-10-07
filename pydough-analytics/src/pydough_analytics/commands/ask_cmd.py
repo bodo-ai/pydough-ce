@@ -74,8 +74,7 @@ def _print_json(result, question: str) -> None:
 def ask_from_cli(
     *,
     question: str,
-    engine: str,
-    database: str,
+    url: str,
     db_name: str,
     md_path: str,
     kg_path: str,
@@ -87,7 +86,6 @@ def ask_from_cli(
     as_json: bool = False,
     rows: int = 20,
 ) -> None:
-    db_config = {"engine": engine, "database": database}
 
     PKG = Path(__file__).resolve().parents[3]
     prompt_path = PKG / "data" / "prompts" / "prompt.md"
@@ -103,7 +101,7 @@ def ask_from_cli(
     res = client.ask(
         question=question,
         kg_path=kg_path,
-        db_config=db_config,
+        url=url,
         md_path=md_path,
         db_name=db_name,
     )

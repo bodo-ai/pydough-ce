@@ -50,7 +50,7 @@ class LLMClient:
         self.definitions = definitions or []
 
     # This method asks a question to the LLM, formats the prompt, executes the code, and returns a Result object.
-    def ask(self, question, kg_path, md_path, db_name, db_config= { "engine":   "sqlite", "database": "../data/databases/Tpch.db"}, context_data=None, auto_correct=False, max_corrections=1, **kwargs):
+    def ask(self, question, kg_path, md_path, db_name, url= "sqlite:///data/databases/TPCH.db", context_data=None, auto_correct=False, max_corrections=1, **kwargs):
         result = Result(original_question=question)
 
         try:
@@ -77,7 +77,7 @@ class LLMClient:
                 extracted_code,
                 env,
                 db_name=db_name,
-                db_config=db_config,
+                url=url,
                 kg_path=kg_path
             )
             
@@ -92,7 +92,7 @@ class LLMClient:
                     result,
                     db_name=db_name,
                     kg_path=kg_path,
-                    db_config=db_config,
+                    url=url,
                     md_path=md_path,
                     context_data=context_data,
                     auto_correct=auto_correct,
@@ -125,7 +125,7 @@ class LLMClient:
             self.definitions.append(new_definition)
 
     # This method corrects the result of a previous query if an exception occurred, reformulating the question to ask for help.
-    def correct(self, result, kg_path, db_config, md_path, db_name, context_data, **kwargs):
+    def correct(self, result, kg_path, url, md_path, db_name, context_data, **kwargs):
         if result.exception:
             try:
                 formatted_q, formatted_prompt = self.format_prompt(result.original_question, db_name, context_data)
@@ -134,7 +134,7 @@ class LLMClient:
                     f"The error is: '{result.exception}'. The original question was: '{result.original_question}'. "
                     f"Can you help me fix the issue? Take into account the context: '{formatted_prompt}'."
                 )
-                return self.ask(corrective_question, db_name=db_name, kg_path=kg_path, db_config=db_config, md_path=md_path, context_data=context_data, **kwargs)
+                return self.ask(corrective_question, db_name=db_name, kg_path=kg_path, url=url, md_path=md_path, context_data=context_data, **kwargs)
             except Exception as e:
                 return Result(original_question=result.original_question, exception=str(e))
         return result

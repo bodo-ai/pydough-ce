@@ -6,39 +6,11 @@ import tempfile
 from pydough.unqualified import transform_cell
 import pydough
 from .storage.file_service import load_json
+from urllib.parse import urlparse, parse_qs
 
 def read_file(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
         return file.read()
-    
-# Given the JSON string stored in Database.connection_string, return a dict of creds. Raises ValidationError on invalid JSON.
-def parse_connection_string(connection_string: str) -> dict:
-    normalized: str = connection_string.replace("'", '"')
-    try:
-        return json.loads(normalized)
-    except json.JSONDecodeError as e:
-        raise ValueError(f"Invalid JSON in connection_string: {e}")
-    
-# Parses a connection string that can be in JSON format or key=value pairs.
-def parse_key_value_connection_string(connection_string: str) -> dict:
-    normalized: str = connection_string.strip().replace("'", '"')
-    try:
-        return json.loads(normalized)
-    except json.JSONDecodeError:
-        pass
-
-    # If JSON parsing fails, try to parse as key=value pairs
-    try:
-        creds: dict[str, str] = {}
-        for pair in normalized.split(';'):
-            if '=' not in pair:
-                continue
-            key, value = pair.split('=', 1)
-            value = value.strip().strip('"').strip("'")
-            creds[key.strip()] = value
-        return creds
-    except Exception as e:
-        raise ValueError(f"Invalid connection string format: {e}")
 
 # This function extracts Python code from a given text, looking for code blocks or specific patterns
 def extract_python_code(text):
@@ -55,10 +27,58 @@ def extract_python_code(text):
 
     return ""
 
-# This function executes the provided PyDough code in a controlled environment
-def execute_code_and_extract_result(code, env, kg_path=None, db_name=None, db_config=None):
+def parse_db_url(url: str) -> dict:
+    """
+    Parse connection string into a db_config dict compatible with PyDough.
+    Supports SQLite and Snowflake (extensible a MySQL/Postgres).
+    """
+    parsed = urlparse(url)
+    db_type = parsed.scheme.lower()
 
-    if kg_path and db_name and db_config:
+    if db_type == "sqlite":
+        # sqlite:///path/to/file.db
+        return {
+            "engine": "sqlite",
+            "database": parsed.path.lstrip("/"), 
+        }
+
+    elif db_type == "snowflake":
+        # snowflake://user:pass@account/database/schema?warehouse=WH&role=ROLE
+        path_parts = [p for p in parsed.path.split("/") if p]
+        sf_database = path_parts[0] if len(path_parts) >= 1 else ""
+        sf_schema = path_parts[1] if len(path_parts) >= 2 else ""
+
+        query_params = parse_qs(parsed.query)
+        return {
+            "engine": "snowflake",
+            "user": parsed.username,
+            "password": parsed.password,
+            "account": parsed.hostname,
+            "database": sf_database,
+            "schema": sf_schema,
+            "warehouse": query_params.get("warehouse", [""])[0],
+            "role": query_params.get("role", [""])[0],
+        }
+    
+    elif db_type in ("mysql", "postgres"):
+        # Example: mysql://user:pass@host:3306/dbname
+        database = parsed.path.lstrip("/")
+        return {
+            "engine": "mysql" if db_type == "mysql" else "postgres",
+            "username": parsed.username,
+            "password": parsed.password,
+            "host": parsed.hostname or "localhost",
+            "port": parsed.port or (3306 if db_type == "mysql" else 5432),
+            "database": database,
+        }
+
+    else:
+        raise ValueError(f"Unsupported engine in URL: {db_type}")
+
+# This function executes the provided PyDough code in a controlled environment
+def execute_code_and_extract_result(code, env, kg_path=None, db_name=None, url=None):
+
+    if kg_path and db_name and url:
         metadata = load_json(kg_path)
         with tempfile.NamedTemporaryFile(mode="w+", suffix=".json") as tmp:
             json.dump(metadata, tmp)
@@ -66,7 +86,9 @@ def execute_code_and_extract_result(code, env, kg_path=None, db_name=None, db_co
             graph_meta = metadata[0]
             actual_graph_name = graph_meta.get("name")
             pydough.active_session.load_metadata_graph(tmp.name, actual_graph_name)
-        engine = db_config.get("engine")
+        
+        db_config = parse_db_url(url)
+        engine = db_config["engine"]
 
         if engine == "sqlite":
             pydough.active_session.connect_database(
@@ -107,69 +129,3 @@ def execute_code_and_extract_result(code, env, kg_path=None, db_name=None, db_co
         return df, sql
     except Exception as e:
         raise RuntimeError(f"Error executing PyDough code:\n{traceback.format_exc()}")
-
-def get_db_config(connection_string: str) -> tuple[dict, str]:
-    # Convert connection_string into a flat dict of creds
-    db_creds = parse_key_value_connection_string(connection_string)
-    engine_type = db_creds.get("engine")
-
-    if engine_type == "sqlite":
-        db_config = {
-            "engine":   "sqlite",
-            "database": db_creds["db_path"]
-        }
-    elif engine_type == "snowflake":
-        db_config = {
-            "engine":    "snowflake",
-            "user":      db_creds["SF_USERNAME"],
-            "account":   db_creds["SF_ACCOUNT"],
-            "warehouse": db_creds.get("SF_WH"),
-            "database":  db_creds.get("SF_DATABASE"),
-            "schema":    db_creds.get("SF_SCHEMA"),
-            "role":      db_creds.get("SF_ROLE"),
-        }
-    elif engine_type in ("mysql", "postgres"):
-        default_port = 3306 if engine_type == "mysql" else 5432
-        db_config = {
-            "engine":   engine_type,
-            "username": db_creds["username"],
-            "host":     db_creds["host"],
-            "port":     db_creds.get("port", default_port),
-            "database": db_creds["database"]
-        }
-
-    else:
-        raise ValueError(f"Unsupported database engine: {engine_type}")
-
-    return db_config
-
-def initialize_pydough_session(metadata_path: str, db_name: str, db_config: dict):
-
-    metadata = load_json(metadata_path)
-    with tempfile.NamedTemporaryFile(mode="w+", suffix=".json") as tmp:
-        json.dump(metadata, tmp)
-        tmp.flush()
-        graph_meta = metadata[0]
-        actual_graph_name = graph_meta.get("name")
-        pydough.active_session.load_metadata_graph(tmp.name, actual_graph_name)
-    engine = db_config.get("engine")
-    if engine == "sqlite":
-        pydough.active_session.connect_database(
-            "sqlite",
-            database=db_config["database"],
-            check_same_thread=False
-        )
-    elif engine == "snowflake":
-        pydough.active_session.connect_database(
-            "snowflake",
-            user=db_config["user"],
-            password=db_config["password"],
-            account=db_config["account"],
-            warehouse=db_config["warehouse"],
-            database=db_config["database"],
-            schema=db_config["schema"]
-        )
-    else:
-        raise ValueError(f"Unsupported engine: {engine}")
-
-

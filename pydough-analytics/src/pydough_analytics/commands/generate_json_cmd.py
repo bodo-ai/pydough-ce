@@ -6,50 +6,61 @@ from ..metadata.generate_knowledge_graph import generate_metadata
 from ..utils.storage.file_service import save_json
 from sqlalchemy.engine import Engine
 from sqlalchemy import inspect
+from urllib.parse import urlparse
 
 
-def get_engine_from_credentials(config: dict) -> tuple[Engine, str]:
+def get_engine_from_credentials(url: str) -> tuple[Engine, str]:
     """
     Extracts connection parameters and builds SQLAlchemy engine.
     """
     try:
-        db_type: str = config.pop("engine")
-        connector: Connector = Connector(db_type, **config)
-        return connector.get_engine(), db_type
+        parsed = urlparse(url)
+        db_type = parsed.scheme.lower()
+        path_parts = [p for p in parsed.path.split("/") if p]
+        sf_schema = ""
+        if len(path_parts) >= 2:
+            _, sf_schema = path_parts[0], path_parts[1]
+        connector: Connector = Connector(db_type, url)
+        return connector.get_engine(), db_type, sf_schema
     except Exception as e:
         raise ValueError(f"Failed to create engine: {e}") from e
 
 
-def list_all_tables_and_columns(engine: Engine) -> list[str]:
+def list_all_tables_and_columns(engine: Engine, db_type: str, sf_schema: str = "") -> list[str]:
     """
     Get all tables and columns from the database before metadata generation.
     """
     try:
         inspector = inspect(engine)
-        tables: list[str] = inspector.get_table_names()
-        return tables
+        tables_by_schema = {}
+
+        if db_type == "snowflake":
+            if not sf_schema:
+                raise ValueError("Schema is required for Snowflake connections.")
+            tables = inspector.get_table_names(schema=sf_schema)
+            tables_by_schema[sf_schema] = tables
+        else:
+            default_schema = inspector.default_schema_name
+            tables = inspector.get_table_names()
+            tables_by_schema[default_schema] = tables
+
+        all_tables = [t for tbls in tables_by_schema.values() for t in tbls]
+        return all_tables
     except Exception as e:
         raise RuntimeError(f"Failed to inspect tables: {e}") from e
 
 
-def generate_metadata_from_config(engine: str, database: str, graph_name: str, json_path: str):
+def generate_metadata_from_config(url: str, graph_name: str, json_path: str):
     """
     Generate metadata from a database.
     """
     try:
-        config: dict = {
-            "engine": engine,
-            "database": database,
-            "graph_name": graph_name,
-            "json_path": json_path
-        }
-
-        # Take config and connect to a database
-        print(f"Connecting to '{graph_name}' using engine '{engine}'...")
-        engine_obj, db_type = get_engine_from_credentials(config)
+# Take config and connect to a database
+        print(f"Connecting to '{graph_name}'...")
+        engine_obj, db_type, sf_schema = get_engine_from_credentials(url)
 
         # Get the table list
-        table_list: list[str] = list_all_tables_and_columns(engine_obj)
+        table_list: list[str] = list_all_tables_and_columns(engine_obj, db_type, sf_schema)
 
         # Generate the metadata
         print(f"Generating metadata for {len(table_list)} tables...")

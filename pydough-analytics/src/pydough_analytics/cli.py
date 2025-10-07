@@ -26,15 +26,14 @@ def main(
 
 @app.command("generate-json")
 def generate_json(
-    engine: str = typer.Option(..., help="Database engine (e.g., sqlite)"),
-    database: str = typer.Option(..., help="Database path or connection string"),
+    url: str = typer.Option(..., help="Connection string"),
     graph_name: str = typer.Option(..., help="Graph name for the metadata"),
     json_path: str = typer.Option(..., help="Path to save the metadata JSON file")
 ):
     """
     Generate metadata from a database and export it to JSON.
     """
-    generate_metadata_from_config(engine, database, graph_name, json_path)
+    generate_metadata_from_config(url, graph_name, json_path)
 
 @app.command("generate-md")
 def generate_md(
@@ -50,8 +49,7 @@ def generate_md(
 @app.command("ask")
 def ask(
     question: str = typer.Option(..., help="Natural language question"),
-    engine: str = typer.Option(..., help="DB engine, e.g. sqlite"),
-    database: str = typer.Option(..., help="DB path/conn string"),
+    url: str = typer.Option(..., help="Connection string"),
     db_name: str = typer.Option(..., help="Logical database name (e.g. TPCH)"),
     md_path: str = typer.Option(..., help="Path to DB markdown"),
     kg_path: str = typer.Option(..., help="Path to knowledge graph JSON"),
@@ -68,8 +66,7 @@ def ask(
     """
     ask_from_cli(
         question=question,
-        engine=engine,
-        database=database,
+        url=url,
         db_name=db_name,
         md_path=md_path,
         kg_path=kg_path,
