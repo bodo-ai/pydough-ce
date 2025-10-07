@@ -1,4 +1,5 @@
 import re
+from re import Match
 import json
 import textwrap
 import traceback
@@ -6,7 +7,7 @@ import tempfile
 from pydough.unqualified import transform_cell
 import pydough
 from .storage.file_service import load_json
-from urllib.parse import urlparse, parse_qs
+from urllib.parse import urlparse, parse_qs, ParseResult
 
 def read_file(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
@@ -17,11 +18,11 @@ def extract_python_code(text):
     if not isinstance(text, str):
         return ""
 
-    matches = re.findall(r"```python\n(.*?)```", text, re.DOTALL)
+    matches: list = re.findall(r"```python\n(.*?)```", text, re.DOTALL)
     if matches:
         return textwrap.dedent(matches[-1]).strip()
 
-    answer_match = re.search(r"Answer:\s*(.*)", text, flags=re.IGNORECASE | re.DOTALL)
+    answer_match: Match | None = re.search(r"Answer:\s*(.*)", text, flags=re.IGNORECASE | re.DOTALL)
     if answer_match:
         return answer_match.group(1).strip()
 
@@ -32,8 +33,8 @@ def parse_db_url(url: str) -> dict:
     Parse connection string into a db_config dict compatible with PyDough.
     Supports SQLite and Snowflake (extensible a MySQL/Postgres).
     """
-    parsed = urlparse(url)
-    db_type = parsed.scheme.lower()
+    parsed: ParseResult = urlparse(url)
+    db_type: str = parsed.scheme.lower()
 
     if db_type == "sqlite":
         # sqlite:///path/to/file.db
@@ -44,11 +45,11 @@ def parse_db_url(url: str) -> dict:
 
     elif db_type == "snowflake":
         # snowflake://user:pass@account/database/schema?warehouse=WH&role=ROLE
-        path_parts = [p for p in parsed.path.split("/") if p]
-        sf_database = path_parts[0] if len(path_parts) >= 1 else ""
-        sf_schema = path_parts[1] if len(path_parts) >= 2 else ""
+        path_parts: list[str] = [p for p in parsed.path.split("/") if p]
+        sf_database: str = path_parts[0] if len(path_parts) >= 1 else ""
+        sf_schema: str = path_parts[1] if len(path_parts) >= 2 else ""
 
-        query_params = parse_qs(parsed.query)
+        query_params: dict[str, list[str]] = parse_qs(parsed.query)
         return {
             "engine": "snowflake",
             "user": parsed.username,
@@ -62,7 +63,7 @@ def parse_db_url(url: str) -> dict:
     
     elif db_type in ("mysql", "postgres"):
         # Example: mysql://user:pass@host:3306/dbname
-        database = parsed.path.lstrip("/")
+        database: str = parsed.path.lstrip("/")
         return {
             "engine": "mysql" if db_type == "mysql" else "postgres",
             "username": parsed.username,
@@ -79,16 +80,16 @@ def parse_db_url(url: str) -> dict:
 def execute_code_and_extract_result(code, env, kg_path=None, db_name=None, url=None):
 
     if kg_path and db_name and url:
-        metadata = load_json(kg_path)
+        metadata: list = load_json(kg_path)
         with tempfile.NamedTemporaryFile(mode="w+", suffix=".json") as tmp:
             json.dump(metadata, tmp)
             tmp.flush()
-            graph_meta = metadata[0]
-            actual_graph_name = graph_meta.get("name")
+            graph_meta: dict = metadata[0]
+            actual_graph_name: str = graph_meta.get("name")
             pydough.active_session.load_metadata_graph(tmp.name, actual_graph_name)
         
-        db_config = parse_db_url(url)
-        engine = db_config["engine"]
+        db_config: str = parse_db_url(url)
+        engine: str = db_config["engine"]
 
         if engine == "sqlite":
             pydough.active_session.connect_database(
@@ -107,8 +108,8 @@ def execute_code_and_extract_result(code, env, kg_path=None, db_name=None, url=N
                 schema=db_config["schema"]
             )
         elif engine in ("mysql", "postgres"):
-            default_port = 3306 if engine == "mysql" else 5432
-            db_key = "dbname" if engine == "postgres" else "database"
+            default_port: int = 3306 if engine == "mysql" else 5432
+            db_key: str = "dbname" if engine == "postgres" else "database"
             pydough.active_session.connect_database(
                 engine,
                 user=db_config["username"],

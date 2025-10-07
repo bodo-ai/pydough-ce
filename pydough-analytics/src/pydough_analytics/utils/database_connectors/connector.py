@@ -44,7 +44,7 @@ def load_mysql_engine(url: str) -> Engine:
     if not url.startswith("mysql://"):
         raise ValueError("Invalid MySQL connection string.")
 
-    url = url.replace("mysql://", "mysql+mysqlconnector://", 1)
+    url: str = url.replace("mysql://", "mysql+mysqlconnector://", 1)
     return create_engine(url)
 
 # Loader for Postgres using a connection string
@@ -57,7 +57,7 @@ def load_postgres_engine(url: str) -> Engine:
     if not url.startswith("postgres://"):
         raise ValueError("Invalid PostgreSQL connection string.")
     # Normalize scheme to 'postgresql+psycopg2'
-    url = url.replace("postgres://", "postgresql+psycopg2://", 1)
+    url: str = url.replace("postgres://", "postgresql+psycopg2://", 1)
     return create_engine(url)
 
 class Connector:
@@ -70,7 +70,7 @@ class Connector:
         engine = connector.get_engine()
     """
     def __init__(self, db_type: str, url: str):
-        db_type = db_type.lower()
+        db_type: str = db_type.lower()
         if db_type not in _DATABASE_LOADERS:
             raise ValueError(f"Unsupported database type: {db_type}")
         # Call the appropriate loader to get the SQLAlchemy engine

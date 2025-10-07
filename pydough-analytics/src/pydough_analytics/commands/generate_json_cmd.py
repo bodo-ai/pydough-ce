@@ -6,7 +6,7 @@ from ..metadata.generate_knowledge_graph import generate_metadata
 from ..utils.storage.file_service import save_json
 from sqlalchemy.engine import Engine
 from sqlalchemy import inspect
-from urllib.parse import urlparse
+from urllib.parse import urlparse, ParseResult
 
 
 def get_engine_from_credentials(url: str) -> tuple[Engine, str]:
@@ -14,10 +14,10 @@ def get_engine_from_credentials(url: str) -> tuple[Engine, str]:
     Extracts connection parameters and builds SQLAlchemy engine.
     """
     try:
-        parsed = urlparse(url)
-        db_type = parsed.scheme.lower()
-        path_parts = [p for p in parsed.path.split("/") if p]
-        sf_schema = ""
+        parsed: ParseResult = urlparse(url)
+        db_type: str = parsed.scheme.lower()
+        path_parts: list[str] = [p for p in parsed.path.split("/") if p]
+        sf_schema: str = ""
         if len(path_parts) >= 2:
             _, sf_schema = path_parts[0], path_parts[1]
         connector: Connector = Connector(db_type, url)
@@ -32,19 +32,19 @@ def list_all_tables_and_columns(engine: Engine, db_type: str, sf_schema: str = "
     """
     try:
         inspector = inspect(engine)
-        tables_by_schema = {}
+        tables_by_schema: dict = {}
 
         if db_type == "snowflake":
             if not sf_schema:
                 raise ValueError("Schema is required for Snowflake connections.")
-            tables = inspector.get_table_names(schema=sf_schema)
+            tables: list = inspector.get_table_names(schema=sf_schema)
             tables_by_schema[sf_schema] = tables
         else:
-            default_schema = inspector.default_schema_name
-            tables = inspector.get_table_names()
+            default_schema: str = inspector.default_schema_name
+            tables: list = inspector.get_table_names()
             tables_by_schema[default_schema] = tables
 
-        all_tables = [t for tbls in tables_by_schema.values() for t in tbls]
+        all_tables: list = [t for tbls in tables_by_schema.values() for t in tbls]
         return all_tables
     except Exception as e:
         raise RuntimeError(f"Failed to inspect tables: {e}") from e
