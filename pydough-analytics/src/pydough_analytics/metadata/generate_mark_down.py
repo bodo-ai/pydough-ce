@@ -109,7 +109,8 @@ def generate_functions_section(markdown: list[str], graph: GraphMetadata) -> lis
     Appends the user-defined functions to the Markdown output.
     """
     try:
-        markdown.append("## Functions")
+        if graph.get_function_names():
+            markdown.append("## Functions")
         for func_name in graph.get_function_names():
             func: ExpressionFunctionOperator = graph.get_function(func_name)
             markdown.append(f"### Function: `{func_name}`")
