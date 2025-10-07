@@ -104,7 +104,7 @@ We keep project artifacts in **`./data/`** for consistency:
 ### Generate metadata from SQLite
 
 ```bash
-pydough-analytics generate-json   --engine sqlite   --database ./data/databases/TPCH.db   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json
+pydough-analytics generate-json   --url sqlite:///data/databases/TPCH.db   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json
 ```
 
 This inspects the SQLite file and creates a metadata graph definition under `data/metadata/Tpch_graph.json`.
@@ -122,7 +122,7 @@ The Markdown file provides a human-friendly overview of the metadata: collection
 Run natural-language questions on your dataset. The **PyDough code is always printed**; you can optionally include **SQL**, a **DataFrame** preview, and an **explanation**. The CE default is **Google / Gemini 2.5 Pro**.
 
 ```bash
-pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --engine sqlite   --database ./data/databases/TPCH.db   --db-name TPCH   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
+pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --url sqlite:///data/databases/TPCH.db   --db-name TPCH   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
 ```
 
 Notes:
@@ -156,7 +156,7 @@ At its core, this project lets you ask questions of your relational database in 
 ## Key Features
 
 - **Natural language interface** – Query data without writing SQL.
-- **Automatic schema analysis** – Works with SQLite.
+- **Automatic schema analysis** – Works with SQLite, Snowflake, MySQL and PostgSQL.
 - **Safety by design** – PyDough limits execution to declarative analytics, reducing blast radius.
 - **Developer friendly** – Includes a CLI, Python API.
 - **Extensible** – Plug in custom prompts, LLM providers.

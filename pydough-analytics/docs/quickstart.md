@@ -63,6 +63,7 @@ Run all of the next commands **from the `pydough-analytics` folder** (the folder
  ls data
  # → databases  metadata  metadata_markdowns  prompts
  ```
+See **pydough-analytics/Supported backends** section in the README for detailed database connection specifications used in the following commands.
 
 ## Generating metadata (sample)
 
@@ -70,14 +71,12 @@ Generate a PyDough metadata graph in JSON from the bundled SQLite database:
 
   ```bash
   pydough-analytics generate-json \
-    --engine sqlite \
-    --database ./data/databases/live_sales.db \
+    --url 'sqlite:///data/databases/live_sales.db' \
     --graph-name SALES \
     --json-path ./data/metadata/live_sales.json
   ```
 
-- Supported now: SQLite (local files or in-memory).
-- Planned: PostgreSQL, MySQL, Snowflake.
+- Supported now: SQLite (local files or in-memory), Snowflake, MySQL and PostgreSQL.
 - The --graph-name flag is required to name your graph.
 - The CLI will create output directories if they don’t exist.
 
@@ -106,8 +105,7 @@ from pydough_analytics.schema.markdown import generate_markdown
 
 # Generate JSON metadata from SQLite
 metadata = generate_metadata_from_config(
-    engine="sqlite",
-    database=".data/databases/live_sales.db",
+    url='sqlite:///data/databases/live_sales.db',
     graph_name="SALES",
     json_path=".data/metadata/live_sales.json"
 )
@@ -145,13 +143,6 @@ export GOOGLE_PROJECT_ID="your-gcp-project"
 export GOOGLE_REGION="us-east5"
 ```
 
-**AWS Bedrock (Claude via AWS)**
-```bash
-export AWS_ACCESS_KEY_ID=...
-export AWS_SECRET_ACCESS_KEY=...
-export AWS_DEFAULT_REGION=us-east-1
-```
-
 > If you use a `.env`, importing `pydough_analytics.config.env` in Python will auto-load it.  
 > The CLI uses your shell environment.
 
@@ -160,7 +151,7 @@ export AWS_DEFAULT_REGION=us-east-1
 The **code is always printed**. You can optionally show SQL, a table (DataFrame), and an explanation.
 
 ```bash
-pydough-analytics ask   --question "What are the most common transaction statuses and their respective counts?"   --engine sqlite   --database ./data/databases/live_sales.db   --db-name SALES   --md-path .data/metadata_markdowns/live_sales.md   --kg-path .data/metadata/live_sales.json   --provider anthropic   --model claude-sonnet-4-5@20250929   --show-sql --show-df --show-explanation
+pydough-analytics ask   --question "What are the most common transaction statuses and their respective counts?"   --url 'sqlite:///data/databases/live_sales.db'   --db-name SALES   --md-path .data/metadata_markdowns/live_sales.md   --kg-path .data/metadata/live_sales.json   --provider anthropic   --model claude-sonnet-4-5@20250929   --show-sql --show-df --show-explanation
 ```
 
 Flags summary
@@ -183,22 +174,19 @@ client = LLMClient(
 )
 
 result = client.ask(
+    url='sqlite:///data/databases/live_sales.db'
     question="What are the most common transaction statuses and their respective counts?",
     kg_path="./data/metadata/live_sales.json",                 # Knowledge Graph JSON
     md_path="./data/metadata_markdowns/live_sales.md",         # Markdown doc for the DB
-    db_name="SALES",
-    db_config={"engine": "sqlite", "database": "./metadata/live_sales.db"},
+    db_name="SALES"
 )
 
-print("PyDough code:
-", result.code)            # always available
-print("SQL:
-", result.sql or "<no sql>")
+print("PyDough code: ", result.code)  # always available
+print("SQL:", result.sql or "<no sql>")
 if result.df is not None:
     print(result.df.head())
-print("Explanation:
-", result.full_explanation or "<no explanation>")
-print("Exception:", result.exception)            # None if all good
+    print("Explanation:", result.full_explanation or "<no explanation>")
+print("Exception:", result.exception)  # None if all good
 ```
 
 ---
