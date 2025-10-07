@@ -135,20 +135,20 @@ generate_json_error_cases = [
     pytest.param(
         ["generate-json"],
         2,
-        "Missing option '--engine'",
+        "Missing option '--url'",
         id="json_missing_all"
     ),
     pytest.param(
-        ["generate-json", "--engine", "sqlite"],
+        ["generate-json", "--url", "sqlite:///test.db"],
         2,
-        "Missing option '--database'",
+        "Missing option '--graph-name'",
         id="json_missing_database"
     ),
     pytest.param(
-        ["generate-json", "--engine", "test", "--database", "test.db", "--graph-name", "Test", "--json-path", "out.json"],
+        ["generate-json", "--url", "sqlite///test.db", "--graph-name", "Test", "--json-path", "out.json"],
         1,
         "ERROR",
-        id="json_invalid_path"
+        id="json_url_path"
     ),
 ]
 
@@ -212,15 +212,14 @@ def test_generate_json_creates_file(runner, mocker):
 
     args = [
         "generate-json",
-        "--engine", "sqlite",
-        "--database", "temp.db",
+        "--url", "sqlite:///temp.db",
         "--graph-name", "temp",
         "--json-path", "out.json",
     ]
     result = runner.invoke(app, args)
 
     assert result.exit_code == 0, f"Unexpected exit code: {result.exit_code}. Output:\n{result.stdout}"
-    mock_impl.assert_called_once_with("sqlite", "temp.db", "temp", "out.json")
+    mock_impl.assert_called_once_with("sqlite:///temp.db", "temp", "out.json")
 
 
 def test_generate_md_from_json(runner, mocker):
@@ -234,15 +233,14 @@ def test_generate_md_from_json(runner, mocker):
 
     args = [
         "generate-json",
-        "--engine", "sqlite",
-        "--database", "temp.db",
+        "--url", "sqlite:///temp.db",
         "--graph-name", "temp",
         "--json-path", "out.json",
     ]
     result = runner.invoke(app, args)
 
     assert result.exit_code == 0, f"Unexpected exit code: {result.exit_code}. Output:\n{result.stdout}"
-    mock_impl.assert_called_once_with("sqlite", "temp.db", "temp", "out.json")
+    mock_impl.assert_called_once_with("sqlite:///temp.db", "temp", "out.json")
 
 def test_ask_delegates_to_impl(runner, mocker):
     """
@@ -253,8 +251,7 @@ def test_ask_delegates_to_impl(runner, mocker):
     args = [
         "ask",
         "--question", "How many rows?",
-        "--engine", "sqlite",
-        "--database", "test.db",
+        "--url", "sqlite:///test.db",
         "--db-name", "TestDB",
         "--md-path", "docs.md",
         "--kg-path", "graph.json",
@@ -271,8 +268,7 @@ def test_ask_delegates_to_impl(runner, mocker):
 
     mock_impl.assert_called_once_with(
         question="How many rows?",
-        engine="sqlite",
-        database="test.db",
+        url="sqlite:///test.db",
         db_name="TestDB",
         md_path="docs.md",
         kg_path="graph.json",

@@ -55,26 +55,6 @@ def test_gemini_ai_provider_returns_text(monkeypatch):
 
 
 # ---------------------------
-# DeepSeekAIProvider
-# ---------------------------
-
-def test_deepseek_ai_provider(monkeypatch):
-    """
-    Ensure DeepSeekAIProvider.ask extracts text from AWS Bedrock response.
-    """
-    mock_brt = MagicMock()
-    mock_brt.converse.return_value = {
-        "output": {"message": {"content": [{"text": "Deep Answer"}]}}
-    }
-    monkeypatch.setattr(providers.boto3, "client", lambda *a, **k: mock_brt)
-
-    p = providers.DeepSeekAIProvider(model_id="deepseek-1")
-    out = p.ask("Q?", "Prompt", max_tokens=123)
-    assert out == "Deep Answer"
-    mock_brt.converse.assert_called_once()
-
-
-# ---------------------------
 # OtherAIProvider
 # ---------------------------
 
@@ -102,7 +82,6 @@ def test_other_ai_provider(monkeypatch):
     "provider,cls_name",
     [
         ("anthropic", providers.ClaudeAIProvider),
-        ("aws-deepseek", providers.DeepSeekAIProvider),
         ("google", providers.GeminiAIProvider),
         ("openai", providers.OtherAIProvider),
     ],

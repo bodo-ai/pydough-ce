@@ -18,7 +18,7 @@ from src.pydough_analytics.commands.generate_json_cmd import (
 
 engine_cases = [
     pytest.param(
-        {"engine": "sqlite", "database": "dummy.db"},
+        "sqlite:///dummy.db",
         "sqlite",
         id="valid_sqlite",
     ),
@@ -30,8 +30,8 @@ engine_cases = [
 ]
 
 
-@pytest.mark.parametrize("config,expected", engine_cases)
-def test_get_engine_from_credentials(mocker, config, expected):
+@pytest.mark.parametrize("url,expected", engine_cases)
+def test_get_engine_from_credentials(mocker, url, expected):
     """
     Ensure get_engine_from_credentials
     """
@@ -45,14 +45,14 @@ def test_get_engine_from_credentials(mocker, config, expected):
 
     if isinstance(expected, str):
         # Happy path
-        engine, db_type = get_engine_from_credentials(config.copy())
+        engine, db_type, _ = get_engine_from_credentials(url)
         assert engine is mock_engine
         assert db_type == expected
         mock_connector_cls.assert_called_once()
     else:
         # Error path (missing `engine` key)
         with expected:
-            get_engine_from_credentials(config.copy())
+            get_engine_from_credentials(url)
 
 
 # ---------------------------
@@ -60,14 +60,14 @@ def test_get_engine_from_credentials(mocker, config, expected):
 # ---------------------------
 
 tables_cases = [
-    pytest.param(["customers", "orders"], None, id="two_tables"),
-    pytest.param([], None, id="no_tables"),
-    pytest.param(Exception("Inspector error"), pytest.raises(RuntimeError), id="inspector_error"),
+    pytest.param(["customers", "orders"], "sqlite", "", None, id="two_tables"),
+    pytest.param([], "sqlite", "", None, id="no_tables"),
+    pytest.param(Exception("Inspector error"), "sqlite", "", pytest.raises(RuntimeError), id="inspector_error"),
 ]
 
 
-@pytest.mark.parametrize("mock_result,expected", tables_cases)
-def test_list_all_tables_and_columns(mocker, mock_result, expected):
+@pytest.mark.parametrize("mock_result,db_type,schema,expected", tables_cases)
+def test_list_all_tables_and_columns(mocker, mock_result, db_type, schema, expected):
     """
     Ensure list_all_tables_and_columns
     """
@@ -76,15 +76,15 @@ def test_list_all_tables_and_columns(mocker, mock_result, expected):
         "src.pydough_analytics.commands.generate_json_cmd.inspect"
     )
 
-    if isinstance(expected, type) and expected is pytest.raises(RuntimeError):
+    if isinstance(mock_result, Exception):
         # Simulate failure in `inspect(engine)`
         mock_inspect.side_effect = mock_result
         with expected:
-            list_all_tables_and_columns(mock_engine)
+            list_all_tables_and_columns(mock_engine, db_type, schema)
     else:
         # Normal behavior
         mock_inspect.return_value.get_table_names.return_value = mock_result
-        tables = list_all_tables_and_columns(mock_engine)
+        tables = list_all_tables_and_columns(mock_engine, db_type, schema)
         assert tables == mock_result
 
 
@@ -94,7 +94,7 @@ def test_list_all_tables_and_columns(mocker, mock_result, expected):
 
 md_success_cases = [
     pytest.param(
-        dict(engine="sqlite", database="memory.db", graph_name="TestGraph"),
+        dict(url="sqlite:///memory.db", graph_name="TestGraph"),
         [{"name": "customers"}],
         id="valid_metadata",
     ),
@@ -132,8 +132,7 @@ def test_generate_metadata_from_config_success(tmp_path, mocker, capsys, params,
 
     # Execute
     result = generate_metadata_from_config(
-        engine=params["engine"],
-        database=params["database"],
+        url=params["url"],
         graph_name=params["graph_name"],
         json_path=str(json_path),
     )
@@ -154,7 +153,7 @@ def test_generate_metadata_from_config_success(tmp_path, mocker, capsys, params,
 
     # Validate stdout messages and ensure no stderr
     captured = capsys.readouterr()
-    assert f"Connecting to '{params['graph_name']}' using engine '{params['engine']}'..." in captured.out
+    assert f"Connecting to '{params['graph_name']}'..." in captured.out
     assert "Generating metadata for 1 tables..." in captured.out
     assert f"Metadata for '{params['graph_name']}' written to: {json_path}" in captured.out
     assert captured.err == ""
@@ -166,25 +165,25 @@ def test_generate_metadata_from_config_success(tmp_path, mocker, capsys, params,
 
 md_error_cases = [
     pytest.param(
-        dict(engine=None, database="memory.db", graph_name="TestGraph"),
+        dict(url="memory.db", graph_name="TestGraph"),
         "connector_error",
         r"\[ERROR\] Failed to generate Metadata: .*",
         id="invalid_engine_connector_fail",
     ),
     pytest.param(
-        dict(engine="sqlite", database="memory.db", graph_name="TestGraph"),
+        dict(url="sqlite:///memory.db", graph_name="TestGraph"),
         "inspect_error",
         r"\[ERROR\] Failed to generate Metadata: Failed to inspect tables: boom on inspect",
         id="inspect_failure",
     ),
     pytest.param(
-        dict(engine="sqlite", database="memory.db", graph_name="TestGraph"),
+        dict(url="sqlite:///memory.db", graph_name="TestGraph"),
         "generate_metadata_error",
         r"\[ERROR\] Failed to generate Metadata: gen failed",
         id="generation_failure",
     ),
     pytest.param(
-        dict(engine="sqlite", database="memory.db", graph_name="TestGraph"),
+        dict(url="sqlite:///memory.db", graph_name="TestGraph"),
         "save_error",
         r"\[ERROR\] Failed to generate Metadata: disk full",
         id="save_failure",
@@ -240,8 +239,7 @@ def test_generate_metadata_from_config_errors(tmp_path, mocker, capsys, params, 
     # Execute and assert SystemExit(1)
     with pytest.raises(SystemExit) as e:
         generate_metadata_from_config(
-            engine=params.get("engine"),
-            database=params.get("database"),
+            url=params.get("url"),
             graph_name=params.get("graph_name"),
             json_path=str(json_path),
         )
@@ -256,15 +254,15 @@ def test_generate_metadata_from_config_errors(tmp_path, mocker, capsys, params, 
     # Validate stdout by phase — progress logs can legitimately appear before the crash
     if fail_type == "connector_error":
         # Only the initial "Connecting..." is expected
-        assert f"Connecting to '{params['graph_name']}' using engine '{params['engine']}'..." in captured.out
+        assert f"Connecting to '{params['graph_name']}'..." in captured.out
     elif fail_type == "inspect_error":
         # We printed "Connecting..." before attempting inspection
-        assert f"Connecting to '{params['graph_name']}' using engine '{params['engine']}'..." in captured.out
+        assert f"Connecting to '{params['graph_name']}'..." in captured.out
     elif fail_type == "generate_metadata_error":
         # We printed both "Connecting..." and "Generating metadata..." before failing
-        assert f"Connecting to '{params['graph_name']}' using engine '{params['engine']}'..." in captured.out
+        assert f"Connecting to '{params['graph_name']}'..." in captured.out
         assert "Generating metadata for 1 tables..." in captured.out
     elif fail_type == "save_error":
         # We printed both "Connecting..." and "Generating metadata..." before failing on save
-        assert f"Connecting to '{params['graph_name']}' using engine '{params['engine']}'..." in captured.out
+        assert f"Connecting to '{params['graph_name']}'..." in captured.out
         assert "Generating metadata for 1 tables..." in captured.out
