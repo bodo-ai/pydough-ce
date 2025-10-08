@@ -375,4 +375,4 @@ def test_generate_markdown_from_metadata_wraps_exceptions(mocker):
     with pytest.raises(Exception) as e:
         generate_markdown_from_metadata(graph)
         
-    assert "Failed to generate Markdown due to error: {e}" in str(e.value)
+    assert "Failed to generate Markdown due to error:" in str(e.value)
