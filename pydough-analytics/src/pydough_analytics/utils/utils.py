@@ -79,11 +79,13 @@ def execute_code_and_extract_result(code, env, kg_path=None, db_name=None, url=N
     """
     if kg_path and db_name and url:
         metadata: list = load_json(kg_path)
+        graph: dict | None = next((graph for graph in metadata if graph.get("name") == db_name), None)
+        if not graph:
+            raise ValueError(f"Graph with name '{db_name}' not found in metadata file: {kg_path}")
         with tempfile.NamedTemporaryFile(mode="w+", suffix=".json") as tmp:
             json.dump(metadata, tmp)
             tmp.flush()
-            graph_meta: dict = metadata[0]
-            actual_graph_name: str = graph_meta.get("name")
+            actual_graph_name: str = graph.get("name")
             pydough.active_session.load_metadata_graph(tmp.name, actual_graph_name)
         
         db_config: str = parse_db_url(url)
