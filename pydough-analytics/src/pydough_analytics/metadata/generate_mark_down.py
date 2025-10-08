@@ -140,4 +140,4 @@ def generate_markdown_from_metadata(graph: GraphMetadata):
 
         return "\n".join(markdown_output)
     except Exception as e:
-        raise Exception("Failed to generate Markdown due to error: {e}")
+        raise Exception(f"Failed to generate Markdown due to error: {e}")
