@@ -109,7 +109,8 @@ def generate_functions_section(markdown: list[str], graph: GraphMetadata) -> lis
     Appends the user-defined functions to the Markdown output.
     """
     try:
-        markdown.append("## Functions")
+        if graph.get_function_names():
+            markdown.append("## Functions")
         for func_name in graph.get_function_names():
             func: ExpressionFunctionOperator = graph.get_function(func_name)
             markdown.append(f"### Function: `{func_name}`")
@@ -139,4 +140,4 @@ def generate_markdown_from_metadata(graph: GraphMetadata):
 
         return "\n".join(markdown_output)
     except Exception as e:
-        raise Exception("Failed to generate Markdown due to error: {e}")
+        raise Exception(f"Failed to generate Markdown due to error: {e}")

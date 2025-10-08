@@ -177,8 +177,7 @@ def test_ask_from_cli_json_mode(mocker):
 
     ask_from_cli(
         question="Q?",
-        engine="sqlite",
-        database=":memory:",
+        url="sqlite:///:memory:",
         db_name="DB",
         md_path="doc.md",
         kg_path="kg.json",
@@ -204,8 +203,7 @@ def test_ask_from_cli_error_path_prints_error_and_returns(mocker):
 
     ask_from_cli(
         question="Q?",
-        engine="sqlite",
-        database=":memory:",
+        url="sqlite:///:memory:",
         db_name="DB",
         md_path="doc.md",
         kg_path="kg.json",
@@ -241,8 +239,7 @@ def test_ask_from_cli_shows_sql_df_explanation_when_flags_true(mocker):
 
     ask_from_cli(
         question="Q?",
-        engine="sqlite",
-        database=":memory:",
+        url="sqlite:///:memory:",
         db_name="DB",
         md_path="doc.md",
         kg_path="kg.json",
