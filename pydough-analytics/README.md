@@ -49,10 +49,11 @@ Get from **database → metadata (JSON) → Markdown → ask** in a few commands
 
 ---
 
-## 0) One-time setup
+## One-time setup
 
 ```bash
-# From the repo root
+# From the repo root 
+# Make sure to using the environment setup when running it.
 pip install -e .    # installs the CLI: `pydough-analytics`
 # (Optional) Verify:
 pydough-analytics --help

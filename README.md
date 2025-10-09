@@ -50,6 +50,7 @@ Invoke-WebRequest -Uri https://github.com/lovasoa/TPCH-sqlite/releases/download/
 
 ### Configure the environment
 
+Make sure to use the following environment setup when running the app.
 Here is the full shell sequence. Replace `/path/to/pydough-ce` with your clone path.
 
 ```bash
