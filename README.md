@@ -1,8 +1,25 @@
-# pydough-ce
+# PyDough-CE
 
 Welcome to the `pydough-ce` project! This repository contains the `pydough-analytics` toolkit, a powerful system that turns natural language questions into safe, executable analytics.
 
 It combines a custom Domain-Specific Language (DSL) called PyDough with LLM-powered system to create a seamless text-to-analytics workflow.
+
+## What It Does
+
+At its core, this project lets you ask questions of your relational database in plain English. The pipeline handles the heavy lifting:
+
+1. **Generate Metadata** – Reflect your database schema into a PyDough knowledge graph.
+2. **Ask a Question** – Phrase your analytics request in natural language (e.g., “Which cities have the highest sales?”).
+3. **Translate to PyDough** – The LLM converts the question into the PyDough DSL, a declarative language purpose-built for analytics.
+4. **Execute Safely** – PyDough compiles to SQL, runs against your database, and returns a tidy DataFrame.
+
+## Key Features
+
+- **Natural language interface** – Query data without writing SQL.
+- **Automatic schema analysis** – Works with SQLite, Snowflake, MySQL and PostgSQL.
+- **Safety by design** – PyDough limits execution to declarative analytics, reducing blast radius.
+- **Developer friendly** – Includes a CLI, Python API.
+- **Extensible** – Plug in custom prompts, LLM providers.
 
 # Getting Started
 
@@ -233,23 +250,6 @@ pytest -q tests
 
 With these steps you now have the full CE pipeline:
 SQLite DB → JSON metadata graph → Markdown documentation → **LLM Ask**.
-
-## What It Does
-
-At its core, this project lets you ask questions of your relational database in plain English. The pipeline handles the heavy lifting:
-
-1. **Generate Metadata** – Reflect your database schema into a PyDough knowledge graph.
-2. **Ask a Question** – Phrase your analytics request in natural language (e.g., “Which cities have the highest sales?”).
-3. **Translate to PyDough** – The LLM converts the question into the PyDough DSL, a declarative language purpose-built for analytics.
-4. **Execute Safely** – PyDough compiles to SQL, runs against your database, and returns a tidy DataFrame.
-
-## Key Features
-
-- **Natural language interface** – Query data without writing SQL.
-- **Automatic schema analysis** – Works with SQLite, Snowflake, MySQL and PostgSQL.
-- **Safety by design** – PyDough limits execution to declarative analytics, reducing blast radius.
-- **Developer friendly** – Includes a CLI, Python API.
-- **Extensible** – Plug in custom prompts, LLM providers.
 
 ## Repository Structure
 
