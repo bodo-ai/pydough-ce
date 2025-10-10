@@ -5,8 +5,7 @@ from typing import Optional
 from rich.console import Console
 from rich.table import Table
 
-# Carga .env si lo tienes (no rompe si no existe)
-from ..config import env as _env  # noqa: F401
+from ..config import env as _env  
 from ..llm.llm_client import LLMClient
 
 console = Console()
@@ -36,14 +35,13 @@ def _print_dataframe(df, limit: int = 20) -> None:
     except Exception:
         it = df.iterrows()
 
-    # Evitar crash si no está pandas: usar comprobación simple de None
     try:
-        import pandas as pd  # noqa: F401
-        def _is_na(x):  # type: ignore
+        import pandas as pd  
+        def _is_na(x):  
             import pandas as pd
             return pd.isna(x)
     except Exception:
-        def _is_na(x):  # type: ignore
+        def _is_na(x):  
             return x is None
 
     for _, row in it:
