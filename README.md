@@ -177,7 +177,7 @@ We keep project artifacts in **`./data/`** for consistency:
 ### Generate metadata from SQLite
 
 ```bash
-pydough-analytics generate-json   --url sqlite:///data/databases/TPCH.db   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json
+pydough-analytics generate-json   --url sqlite:///data/databases/TPCH.db   --graph-name tpch   --json-path ./data/metadata/Tpch_graph.json
 ```
 
 This inspects the SQLite file and creates a metadata graph definition under `data/metadata/Tpch_graph.json`.
@@ -185,7 +185,7 @@ This inspects the SQLite file and creates a metadata graph definition under `dat
 ### Export Markdown docs
 
 ```bash
-pydough-analytics generate-md   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json   --md-path ./data/metadata_markdowns/Tpch.md
+pydough-analytics generate-md   --graph-name tpch   --json-path ./data/metadata/Tpch_graph.json   --md-path ./data/metadata_markdowns/Tpch.md
 ```
 
 The Markdown file provides a human-friendly overview of the metadata: collections, properties, and relationships.
@@ -195,7 +195,7 @@ The Markdown file provides a human-friendly overview of the metadata: collection
 Run natural-language questions on your dataset. The **PyDough code is always printed**; you can optionally include **SQL**, a **DataFrame** preview, and an **explanation**. The CE default is **Google / Gemini 2.5 Pro**.
 
 ```bash
-pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --url sqlite:///data/databases/TPCH.db   --db-name TPCH   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
+pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --url sqlite:///data/databases/TPCH.db   --db-name tpch   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
 ```
 
 Notes:

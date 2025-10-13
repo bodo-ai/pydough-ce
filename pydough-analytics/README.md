@@ -134,7 +134,7 @@ Run all of the next commands **from the `pydough-analytics` folder** (the folder
 ### 1) Generate metadata JSON
 
 ```bash
-pydough-analytics generate-json   --url 'sqlite:///data/databases/TPCH.db'   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json
+pydough-analytics generate-json   --url 'sqlite:///data/databases/TPCH.db'   --graph-name tpch   --json-path ./data/metadata/Tpch_graph.json
 ```
 
 - `--url`: Connection string.
@@ -145,7 +145,7 @@ pydough-analytics generate-json   --url 'sqlite:///data/databases/TPCH.db'   --g
 ### 2) Export Markdown (used by the LLM)
 
 ```bash
-pydough-analytics generate-md   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json   --md-path ./data/metadata_markdowns/Tpch.md
+pydough-analytics generate-md   --graph-name tpch   --json-path ./data/metadata/Tpch_graph.json   --md-path ./data/metadata_markdowns/Tpch.md
 ```
 
 - `--graph-name`: Logical name for this dataset in the JSON.
@@ -162,7 +162,7 @@ pydough-analytics generate-md   --graph-name TPCH   --json-path ./data/metadata/
 The **PyDough code is always printed**. You can optionally show **SQL**, a **DataFrame** preview, and an **explanation**.
 
 ```bash
-pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --url 'sqlite:///data/databases/TPCH.db'   --db-name TPCH   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
+pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --url 'sqlite:///data/databases/TPCH.db'   --db-name tpch   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
 ```
 
 - `--question`: Natural language question to be answered.
