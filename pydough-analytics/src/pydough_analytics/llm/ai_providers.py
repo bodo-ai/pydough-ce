@@ -17,7 +17,6 @@ class AIProvider(ABC):
 
 class ClaudeAIProvider(AIProvider):
     def __init__(self, model_id, config=None):
-        self.api_key = os.environ["GOOGLE_API_KEY"]
         self.project = os.environ["GOOGLE_PROJECT_ID"]
         self.location = "us-east5"
         self.model_id = model_id
@@ -44,7 +43,6 @@ class ClaudeAIProvider(AIProvider):
 
 class GeminiAIProvider(AIProvider):
     def __init__(self, model_id, config=None):
-        self.api_key = os.environ["GOOGLE_API_KEY"]
         self.project = os.environ["GOOGLE_PROJECT_ID"]
         self.location = os.environ["GOOGLE_REGION"]
         self.model_id = model_id
