@@ -32,7 +32,6 @@ GOOGLE_GENAI_USE_VERTEXAI=true
 **Defaults / notes**
 - **Gemini on Vertex**: default region on code if not provided is **`us-central1`**.
 - **Claude on Vertex**: default region on code if not provided is **`us-east5`**.
-- You can also use the SDK alt env names: `GOOGLE_CLOUD_PROJECT` / `GOOGLE_CLOUD_LOCATION`.
 - Vertex can also use credentials via gcloud auth application-default login
 - Ensure IAM role like `roles/aiplatform.user` and **Vertex AI API** enabled.
 
