@@ -21,6 +21,7 @@ def test_claude_ai_provider_stream_parsing(monkeypatch):
 
     monkeypatch.setenv("GOOGLE_API_KEY", "x")
     monkeypatch.setenv("GOOGLE_PROJECT_ID", "y")
+    monkeypatch.setenv("GOOGLE_APPLICATION_CREDENTIALS", "z")
 
     monkeypatch.setattr(providers, "AnthropicVertex", lambda project_id, region: SimpleNamespace(messages=mock_client))
 
@@ -46,7 +47,7 @@ def test_gemini_ai_provider_returns_text(monkeypatch):
     monkeypatch.setenv("GOOGLE_API_KEY", "x")
     monkeypatch.setenv("GOOGLE_PROJECT_ID", "y")
     monkeypatch.setenv("GOOGLE_REGION", "z")
-    monkeypatch.setattr(providers.genai, "Client", lambda project, location: mock_client)
+    monkeypatch.setattr(providers.genai, "Client", lambda *a, **k: mock_client)
 
     p = providers.GeminiAIProvider(model_id="gemini-1")
     text, usage = p.ask("Q?", "Prompt")
@@ -86,6 +87,16 @@ def test_other_ai_provider(monkeypatch):
         ("openai", providers.OtherAIProvider),
     ],
 )
-def test_get_provider_returns_correct_class(provider, cls_name):
+def test_get_provider_returns_correct_class(monkeypatch, provider, cls_name):
+    """
+    Ensure get_provider returns the correct class based on provider string.
+    """
+    monkeypatch.setenv("GOOGLE_PROJECT_ID", "test-proj")
+    monkeypatch.setenv("GOOGLE_APPLICATION_CREDENTIALS", "/tmp/creds.json")
+    monkeypatch.setenv("GOOGLE_API_KEY", "xyz")
+    monkeypatch.setattr(providers, "AnthropicVertex", lambda *a, **k: MagicMock())
+    monkeypatch.setattr(providers.genai, "Client", lambda *a, **k: MagicMock())
+    monkeypatch.setattr(providers.ai, "Client", lambda *a, **k: MagicMock())
+
     out = providers.get_provider(provider, "model-x")
     assert isinstance(out, cls_name)

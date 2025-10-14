@@ -1,13 +1,11 @@
 import os
-import json
-import boto3
 from abc import ABC, abstractmethod
-from botocore.config import Config
 import google.genai as genai
 from google.genai import types
 from anthropic import AnthropicVertex
 import aisuite as ai
-
+from dotenv import load_dotenv
+load_dotenv()
 
 class AIProvider(ABC):
     @abstractmethod
@@ -17,71 +15,108 @@ class AIProvider(ABC):
 
 class ClaudeAIProvider(AIProvider):
     def __init__(self, model_id, config=None):
-        self.api_key = os.environ["GOOGLE_API_KEY"]
-        self.project = os.environ["GOOGLE_PROJECT_ID"]
-        self.location = "us-east5"
-        self.model_id = model_id
-        self.client = AnthropicVertex(project_id=self.project, region=self.location)
+        try:
+            self.project = os.getenv("GOOGLE_PROJECT_ID")
+            self.location = os.getenv("GOOGLE_REGION", "us-east5")
+            self.model_id = model_id
+
+            creds_path = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+            if not self.project or not creds_path:
+                raise ValueError("Missing GOOGLE_PROJECT_ID or GOOGLE_APPLICATION_CREDENTIALS.")
+
+            self.client = AnthropicVertex(project_id=self.project, region=self.location)
+        except Exception as e:
+            raise ValueError(f"Error initializing ClaudeAIProvider: {e}")
 
     def ask(self, question, prompt, **kwargs):
-        kwargs.setdefault("max_tokens", 20000)
-        response_stream = self.client.messages.create(
-            messages=[{"role": "user", "content": question}],
-            model=self.model_id,
-            system=prompt,
-            stream=True,
-            **kwargs
-        )
-        full_output = ""
-        for chunk in response_stream:
-            data = chunk.to_dict() if hasattr(chunk, "to_dict") else chunk
-            if data.get("type") == "content_block_delta":
-                delta = data.get("delta", {})
-                if delta.get("type") == "text_delta":
-                    full_output += delta.get("text", "")
-        return full_output, None
+        try:
+            kwargs.setdefault("max_tokens", 20000)
+            response_stream = self.client.messages.create(
+                messages=[{"role": "user", "content": question}],
+                model=self.model_id,
+                system=prompt,
+                stream=True,
+                **kwargs
+            )
+            full_output = ""
+            for chunk in response_stream:
+                data = chunk.to_dict() if hasattr(chunk, "to_dict") else chunk
+                if data.get("type") == "content_block_delta":
+                    delta = data.get("delta", {})
+                    if delta.get("type") == "text_delta":
+                        full_output += delta.get("text", "")
+            return full_output, None
+        except Exception as e:
+            raise ValueError(f"Error during ask in ClaudeAIProvider: {e}")
 
 
 class GeminiAIProvider(AIProvider):
     def __init__(self, model_id, config=None):
-        self.api_key = os.environ["GOOGLE_API_KEY"]
-        self.project = os.environ["GOOGLE_PROJECT_ID"]
-        self.location = os.environ["GOOGLE_REGION"]
-        self.model_id = model_id
-        self.client = genai.Client(project=self.project, location=self.location)
+        try:
+            self.api_key = os.getenv("GOOGLE_API_KEY")
+            self.project = os.getenv("GOOGLE_PROJECT_ID")
+            self.location = os.getenv("GOOGLE_REGION", "us-central1")
+            self.use_vertex = os.getenv("GOOGLE_GENAI_USE_VERTEXAI", "true").lower() in ("1", "true", "yes")
+            self.model_id = model_id
+            if self.use_vertex:
+                if not self.project:
+                    raise ValueError("Missing GOOGLE_PROJECT_ID for Vertex mode.")
+                self.client = genai.Client(
+                    vertexai=True,
+                    project=self.project,
+                    location=self.location
+                )
+            else:
+                if not self.api_key:
+                    raise ValueError("Missing GOOGLE_API_KEY for non-Vertex mode")
+                self.client = genai.Client(api_key=self.api_key)
+        except Exception as e:
+            raise ValueError(f"Error initializing GeminiAIProvider: {e}")
 
     def ask(self, question, prompt, **kwargs):
-        response = self.client.models.generate_content(
-            model=self.model_id,
-            contents=question,
-            config=types.GenerateContentConfig(
-                system_instruction=prompt,
-                **kwargs
-            ),
-        )
-        return response.text, response.usage_metadata
+        try:
+            response = self.client.models.generate_content(
+                model=self.model_id,
+                contents=question,
+                config=types.GenerateContentConfig(
+                    system_instruction=prompt,
+                    **kwargs
+                ),
+            )
+            return response.text, response.usage_metadata
+        except Exception as e:
+            raise ValueError(f"Error during ask in GeminiAIProvider: {e}")
 
 
 class OtherAIProvider(AIProvider):
     def __init__(self, provider, model_id, config=None):
-        self.client = ai.Client(config) if config else ai.Client()
-        self.provider = provider
-        self.model_id = model_id
+        try:
+            self.client = ai.Client(config) if config else ai.Client()
+            self.provider = provider
+            self.model_id = model_id
+        except Exception as e:
+            raise ValueError(f"Error initializing other provider: {e}")
 
     def ask(self, question, prompt, **kwargs):
-        messages = [{"role": "system", "content": prompt}, {"role": "user", "content": question}]
-        response = self.client.chat.completions.create(
-            model=f"{self.provider}:{self.model_id}",
-            messages=messages,
-            **kwargs
-        )
-        return response.choices[0].message.content
+        try:
+            messages = [{"role": "system", "content": prompt}, {"role": "user", "content": question}]
+            response = self.client.chat.completions.create(
+                model=f"{self.provider}:{self.model_id}",
+                messages=messages,
+                **kwargs
+            )
+            return response.choices[0].message.content
+        except Exception as e:
+            raise ValueError(f"Error during ask in other provider: {e}")
 
 
 def get_provider(provider, model_id, config=None):
-    if provider == "anthropic":
-        return ClaudeAIProvider(model_id, config=config)
-    elif provider == "google":
-        return GeminiAIProvider(model_id, config=config)
-    else:
-        return OtherAIProvider(provider, model_id, config)
+    try:
+        if provider == "anthropic":
+            return ClaudeAIProvider(model_id, config=config)
+        elif provider == "google":
+            return GeminiAIProvider(model_id, config=config)
+        else:
+            return OtherAIProvider(provider, model_id, config)
+    except Exception as e:
+        raise ValueError(f"Error getting provider {provider}: {e}")
