@@ -13,7 +13,7 @@ class AIProvider(ABC):
     @abstractmethod
     def ask(self, question, prompt, **kwargs):
         pass
-
+y
 
 class ClaudeAIProvider(AIProvider):
     def __init__(self, model_id, config=None):

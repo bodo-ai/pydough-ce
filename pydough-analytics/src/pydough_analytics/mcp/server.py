@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 import json
 import logging
 import tempfile
@@ -8,6 +7,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Dict, Optional
 from sqlalchemy import create_engine, inspect
+from types import SimpleNamespace
 
 from fastmcp import FastMCP
 from fastmcp.exceptions import ToolError
@@ -24,9 +24,9 @@ server = FastMCP("pydough-analytics")
 @dataclass
 class SessionData:
     client: LLMClient
-    kg_path: Path          
-    md_path: Path           
-    metadata_markdown: str  
+    kg_path: Path           # path to the JSON knowledge graph for this session
+    md_path: Path           # path to the rendered Markdown for this session
+    metadata_markdown: str  # cached Markdown content
     db_name: str
     db_config: Dict[str, Any]
     default_max_rows: int
@@ -39,6 +39,7 @@ _sessions: Dict[str, SessionData] = {}
 # -------- helpers --------
 
 def _write_temp_file(suffix: str, text: str) -> Path:
+    """Write text to a namespaced temp file and return its path."""
     directory = Path(tempfile.gettempdir()) / "pydough_analytics_mcp"
     directory.mkdir(parents=True, exist_ok=True)
     path = directory / f"{uuid.uuid4().hex}{suffix}"
@@ -47,12 +48,13 @@ def _write_temp_file(suffix: str, text: str) -> Path:
 
 
 def _extract_graph(metadata: Any, graph_name: str) -> Dict[str, Any]:
+    """Pick the requested graph (by name) from a metadata list/dict."""
     graphs = [metadata] if isinstance(metadata, dict) else list(metadata)
-    # 1) match por nombre
+    # 1) match by name
     for g in graphs:
         if isinstance(g, dict) and g.get("name") == graph_name:
             return g
-    # 2) fallback: el primero dict
+    # 2) fallback: first dict entry
     for g in graphs:
         if isinstance(g, dict):
             return g
@@ -60,12 +62,15 @@ def _extract_graph(metadata: Any, graph_name: str) -> Dict[str, Any]:
 
 
 def _db_config_from_url(database_url: str) -> Dict[str, Any]:
-    # Conversión mínima para tu LLMClient (que espera dict tipo {"engine": "...", "database": "..."})
+    """
+    Minimal conversion to the LLMClient-expected dict format
+    (e.g., {"engine": "...", "database": "..."}). Extend as needed.
+    """
     if database_url.startswith("sqlite:///"):
         return {"engine": "sqlite", "database": database_url.replace("sqlite:///", "", 1)}
     if database_url.startswith("sqlite://"):
         return {"engine": "sqlite", "database": database_url.replace("sqlite://", "", 1)}
-    # Extiéndelo si necesitas Postgres/MySQL; por ahora devolvemos un marcador genérico
+    # Extend for Postgres/MySQL/etc. For now, return a generic marker.
     return {"engine": "url", "database": database_url}
 
 
@@ -79,16 +84,16 @@ async def init_metadata_impl(
     split_groups: bool = True,
 ) -> Dict[str, Any]:
     """
-    Genera metadata usando tu firma actual:
+    Build metadata using the current signature:
       generate_metadata(engine, graph_name, db_type, tables, split_groups)
-    y (opcional) el Markdown del grafo.
+    and optionally the Markdown for the graph.
     """
     engine = create_engine(url)
     try:
         insp = inspect(engine)
         db_type = engine.dialect.name  # "sqlite", "postgresql", "mysql", etc.
 
-        # Lista de tablas (usa el schema por defecto si aplica)
+        # Table list (uses the default schema if available)
         try:
             default_schema = insp.default_schema_name
         except Exception:
@@ -96,7 +101,7 @@ async def init_metadata_impl(
 
         tables = insp.get_table_names(schema=default_schema) if default_schema else insp.get_table_names()
 
-        # Llama a tu generate_metadata con la firma real
+        # Call your generate_metadata with the actual signature
         metadata_graphs = generate_metadata(
             engine=engine,
             graph_name=graph_name,
@@ -105,12 +110,12 @@ async def init_metadata_impl(
             split_groups=split_groups,
         )
 
-        # Extrae el grafo pedido y genera Markdown si se solicitó
+        # Extract the requested graph and render Markdown (if requested)
         graph_entry = _extract_graph(metadata_graphs, graph_name)
         markdown = generate_markdown_from_metadata(graph_entry) if return_markdown else None
 
         return {
-            "metadata": metadata_graphs,   # lista de grafos (V2)
+            "metadata": metadata_graphs,  # list of graphs (V2)
             "graph_name": graph_name,
             "markdown": markdown,
         }
@@ -127,16 +132,17 @@ async def open_session_impl(
     db_config: Optional[Dict[str, Any]] = None,
     db_name: str = "DATABASE",
     graph_name: str = "DATABASE",
-    metadata_path: Optional[str] = None, 
+    metadata_path: Optional[str] = None,
     metadata: Optional[Any] = None,
     max_rows: int = 100,
     provider: str = "google",
     model: str = "gemini-2.5-pro",
 ) -> Dict[str, Any]:
+    """Open an LLM session with metadata (kg_path/md_path) and DB config."""
     if not metadata_path and metadata is None:
         raise ToolError("Either metadata_path or metadata must be provided.")
 
-    
+    # Load metadata either from disk or in-memory
     if metadata_path:
         kg_file = Path(metadata_path).expanduser().resolve()
         if not kg_file.exists():
@@ -146,18 +152,21 @@ async def open_session_impl(
         metadata_obj = metadata
         kg_file = _write_temp_file(".json", json.dumps(metadata_obj, indent=2))
 
+    # Render Markdown for the selected graph
+    try:
+        graph_entry = _extract_graph(metadata_obj, graph_name)
+        md_text = generate_markdown_from_metadata(graph_entry)
+    except Exception as e:
+        raise ToolError(f"Failed to generate Markdown: {e}") from e
     
-    graph_entry = _extract_graph(metadata_obj, graph_name)
-    md_text = generate_markdown_from_metadata(graph_entry)
     md_file = _write_temp_file(".md", md_text)
 
-    
+    # Normalize DB config
     if not db_config:
         if not database_url:
             raise ToolError("Provide either db_config or database_url")
         db_config = _db_config_from_url(database_url)
 
-    
     client = LLMClient(provider=provider, model=model)
 
     session_id = str(uuid.uuid4())
@@ -175,7 +184,7 @@ async def open_session_impl(
 
 
 async def close_session_impl(*, session_id: str) -> Dict[str, Any]:
-    """Cierra una sesión y limpia archivos temporales."""
+    """Close a session and remove its temporary files."""
     data = _sessions.pop(session_id, None)
     if not data:
         raise ToolError(f"Session '{session_id}' not found")
@@ -196,8 +205,9 @@ async def ask_impl(
     question: str,
     auto_correct: bool = False,
     max_corrections: int = 1,
-    provider_params: Optional[Dict[str, Any]] = None,  # ✅ JSON-friendly
+    provider_params: Optional[Dict[str, Any]] = None,  # JSON-friendly
 ) -> Dict[str, Any]:
+    """Ask the LLM using the session’s metadata and DB configuration."""
     session = _sessions.get(session_id)
     if not session:
         raise ToolError(f"Session '{session_id}' not found")
@@ -211,7 +221,7 @@ async def ask_impl(
             db_config=session.db_config,
             auto_correct=auto_correct,
             max_corrections=max_corrections,
-            **(provider_params or {}), 
+            **(provider_params or {}),
         )
     except Exception as exc:
         raise ToolError(f"LLM error: {exc}") from exc
@@ -229,6 +239,7 @@ async def ask_impl(
 
 
 async def schema_markdown_impl(*, session_id: str) -> Dict[str, Any]:
+    """Return the stored Markdown for this session’s graph."""
     session = _sessions.get(session_id)
     if not session:
         raise ToolError(f"Session '{session_id}' not found")
@@ -236,6 +247,7 @@ async def schema_markdown_impl(*, session_id: str) -> Dict[str, Any]:
 
 
 async def list_sessions_impl() -> Dict[str, Any]:
+    """List currently open sessions (minimal diagnostics)."""
     return {
         "sessions": [
             {
@@ -252,6 +264,7 @@ async def list_sessions_impl() -> Dict[str, Any]:
 # -------- resources --------
 
 async def metadata_resource_impl(session_id: str) -> Dict[str, Any]:
+    """Expose the session’s Markdown as a resource."""
     session = _sessions.get(session_id)
     if not session:
         raise ToolError(f"Session '{session_id}' not found")
@@ -259,6 +272,7 @@ async def metadata_resource_impl(session_id: str) -> Dict[str, Any]:
 
 
 async def result_resource_impl(session_id: str) -> Dict[str, Any]:
+    """Expose the last ask() result for this session as a resource."""
     session = _sessions.get(session_id)
     if not session:
         raise ToolError(f"Session '{session_id}' not found")
