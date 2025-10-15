@@ -280,5 +280,4 @@ You can check the full PyDough repo and documentation here: https://github.com/b
 
 We welcome ideas and contributions. Current focus areas include:
 
-- New version with a mcp server.
 - Support for more databases.
