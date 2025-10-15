@@ -52,12 +52,16 @@ notebooks = [
   "ipykernel>=6.30.0",
   "matplotlib>=0.1.7"
 ]
+mcp = [
+  "fastmcp>=0.4.0"
+]
 
 [project.urls]
 Repository = "https://github.com/bodo-ai/pydough-ce"
 
 [project.scripts]
 pydough-analytics = "pydough_analytics.cli:app"
+pydough-analytics-mcp = "pydough_analytics.mcp.mcp_entry:main"
 
 [tool.typer]
 auto_envvar_prefix = "PYDOUGH_ANALYTICS"
