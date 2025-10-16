@@ -242,6 +242,13 @@ Notes:
 
 ### Run the test suite (optional)
 
+Install the [dev] version and run the tests with:
+```bash
+python -m pip install -e .[dev]
+pytest -q tests
+```
+
+Or, if you prefer to install the dependencies directly:
 ```bash
 python -m pip install pytest
 python -m pip install pytest-mock
@@ -250,6 +257,22 @@ pytest -q tests
 
 With these steps you now have the full CE pipeline:
 SQLite DB → JSON metadata graph → Markdown documentation → **LLM Ask**.
+
+### Run notebook samples (optional)
+
+To explore the demo notebooks, install the [notebooks] version, or directly install the following dependencies:
+```bash
+python -m pip install -e .[notebooks]
+```
+
+Or manually install:
+```bash
+python -m pip install jupyterlab
+python -m pip install ipykernel
+python -m pip install matplotlib
+```
+
+Then open the notebook sample in `./samples/llm_demo.ipynb`.
 
 ## Repository Structure
 
