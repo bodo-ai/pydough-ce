@@ -205,7 +205,7 @@ async def ask_impl(
     question: str,
     auto_correct: bool = False,
     max_corrections: int = 1,
-    provider_params: Optional[Dict[str, Any]] = None,  # JSON-friendly
+    provider_params: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
     """Ask the LLM using the session’s metadata and DB configuration."""
     session = _sessions.get(session_id)
@@ -218,7 +218,6 @@ async def ask_impl(
             kg_path=str(session.kg_path),
             md_path=str(session.md_path),
             db_name=session.db_name,
-            db_config=session.db_config,
             auto_correct=auto_correct,
             max_corrections=max_corrections,
             **(provider_params or {}),
