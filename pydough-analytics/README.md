@@ -351,6 +351,7 @@ pip install "pydough-analytics[mcp]"
 
 The server exposes a full suite of **tools** and **resources** under the MCP name **`pydough-analytics`**.
 
+See more on the README_MCP.md under the mcp folder.
 ---
 
 ### 🛠️ Available Tools
