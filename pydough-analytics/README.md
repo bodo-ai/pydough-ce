@@ -340,21 +340,21 @@ pip install "pydough-analytics[mcp]"
 ### Run the server
 
 1. Navigate to the main project directory and then to pydough-analytics
-   ```bash
-   cd pydough-analytics
-   ```
+  ```bash
+  cd pydough-analytics
+  ```
 
 2. Start the MCP server:
-   ```bash
-   fastmcp run src/pydough_analytics/mcp/mcp_entry.py:server
-   ```
+  ```bash
+  fastmcp run src/pydough_analytics/mcp/mcp_entry.py:server
+  ```
 
 The server exposes a full suite of **tools** and **resources** under the MCP name **`pydough-analytics`**.
 
 See more on the README_MCP.md under the mcp folder.
 ---
 
-### 🛠️ Available Tools
+### Available Tools
 
 | Tool | Description |
 |------|--------------|
@@ -387,7 +387,7 @@ When metadata is passed inline (instead of via `metadata_path`), it’s persiste
 
 ---
 
-### 🧠 Example Manifest (Claude Desktop)
+### Example Manifest (Claude Desktop)
 
 ```json
 {
@@ -478,13 +478,6 @@ pydough-analytics/
 | (tools + resources:         |       | Inspector / Claude / IDEs | 
 |  init_metadata, ask, etc.)  |       |                           |
 +-----------------------------+       +---------------------------+
-
-Notes:
-- **Engines**: SQLite (built-in), Snowflake, MySQL and PostgreSQL.
-- **LLM Providers**: Google Gemini, Anthropic (Claude), aisuite (others).
-- **Artifacts**: JSON graph, Markdown docs, generated PyDough code, SQL, result DataFrame.
-- **MCP Server**: Exposes PyDough-Analytics functions to external tools through a Machine Cooperation Protocol interface.
-
 
 Notes:
 - **Engines**: SQLite (built-in), Snowflake, MySQL and PostgreSQL.
