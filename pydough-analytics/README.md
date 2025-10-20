@@ -418,12 +418,14 @@ pydough-analytics/
 │       ├── data/          # Internal data loaders or fixtures.
 │       ├── llm/           # Modules for LLM integration.
 │       ├── metadata/      # Metadata generation and validation logic.
+│       ├── mcp/           # Machine Cooperation Protocol (MCP) server and entrypoint.
 │       ├── utils/         # Shared utility functions.
 │       ├── __init__.py    # Package entry.
 │       ├── __main__.py    # Allows `python -m pydough_analytics` execution.
 │       ├── _version.py    # Package version constant.
 │       └── cli.py         # Typer CLI entrypoint (`pydough-analytics`).
 └── README.md              # Package-specific documentation.
+
 ```
 
 ## Architecture Overview
@@ -468,10 +470,25 @@ pydough-analytics/
 | PyDough Executor            | ----> | SQL + DataFrame           |       
 | (extract code, run on DB,   |       | (results + explanation)   |       
 |  sanitize, retry on errors) |       +---------------------------+       
-+-----------------------------+                                            
++-------------+---------------+                                            
+              |
+              v
++-----------------------------+       +---------------------------+
+| MCP Server (FastMCP)        | ----> | External Clients (MCP)    |
+| (tools + resources:         |       | Inspector / Claude / IDEs | 
+|  init_metadata, ask, etc.)  |       |                           |
++-----------------------------+       +---------------------------+
 
 Notes:
 - **Engines**: SQLite (built-in), Snowflake, MySQL and PostgreSQL.
 - **LLM Providers**: Google Gemini, Anthropic (Claude), aisuite (others).
 - **Artifacts**: JSON graph, Markdown docs, generated PyDough code, SQL, result DataFrame.
+- **MCP Server**: Exposes PyDough-Analytics functions to external tools through a Machine Cooperation Protocol interface.
+
+
+Notes:
+- **Engines**: SQLite (built-in), Snowflake, MySQL and PostgreSQL.
+- **LLM Providers**: Google Gemini, Anthropic (Claude), aisuite (others).
+- **Artifacts**: JSON graph, Markdown docs, generated PyDough code, SQL, result DataFrame.
+- **MCP Server**: Exposes PyDough-Analytics functions to external tools through a Machine Cooperation Protocol interface.
 ```
