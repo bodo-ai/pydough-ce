@@ -152,9 +152,9 @@
 - **s_comment**: No description available.
 
 #### Contains the following sub-collections or relationships
-- **partsupp_2**: No description available.
+- **partsupp**: No description available.
   - Related to: `supplier.partsupp`
-- **nation_2**: No description available.
+- **nation**: No description available.
   - Related to: `supplier.nation`
 
 

@@ -807,7 +807,7 @@
       },
       {
         "type": "simple join",
-        "name": "partsupp_2",
+        "name": "partsupp",
         "parent collection": "supplier",
         "child collection": "partsupp",
         "singular": true,
@@ -824,7 +824,7 @@
         "type": "reverse",
         "name": "supplier",
         "original parent": "supplier",
-        "original property": "partsupp_2",
+        "original property": "partsupp",
         "singular": true,
         "always matches": true,
         "description": "",
@@ -847,7 +847,7 @@
       },
       {
         "type": "reverse",
-        "name": "nation_2",
+        "name": "nation",
         "original parent": "nation",
         "original property": "supplier",
         "singular": true,
