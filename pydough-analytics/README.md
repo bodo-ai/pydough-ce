@@ -275,11 +275,84 @@ postgresql+psycopg2://user:password@host:port/mydb
 - `port`: Port number (default: 5432).
 - `mydb`: Database name.
 
+## MCP Server (Optional)
+
+You can optionally run **PyDough-Analytics** as a [Machine Cooperation Protocol (MCP)](https://modelcontextprotocol.io) server to expose its analytics tools programmatically (for example, from **Claude Desktop**).
+
+### Installation
+
+Install the MCP extras from the root folder:
+```bash
+pip install "pydough-analytics[mcp]"
+```
+
+### Run the server
+
+1. Navigate to the main project directory and then to pydough-analytics
+  ```bash
+  cd pydough-analytics
+  ```
+
+2. Start the MCP server:
+  ```bash
+  fastmcp run src/pydough_analytics/mcp/mcp_entry.py:server
+  ```
+
+The server exposes a full suite of **tools** and **resources** under the MCP name **`pydough-analytics`**.
+
+See more on the README_MCP.md under the mcp folder.
+---
+
+### Available Tools
+
+| Tool | Description |
+|------|--------------|
+| **pydough.init_metadata(url, graph_name="DATABASE")** | Generates metadata JSON and optionally Markdown from a live database. |
+| **pydough.open_session(database_url or db_config, metadata_path=..., graph_name="DATABASE")** | Opens a PyDough session and returns a unique `session_id`. |
+| **pydough.ask(session_id, question, auto_correct=False, max_corrections=1)** | Runs an LLM-assisted query using the session’s metadata and DB configuration. Returns PyDough code, SQL, and result rows. |
+| **pydough.schema_markdown(session_id)** | Returns the Markdown schema documentation for the active session. |
+| **pydough.list_sessions()** | Lists active sessions with basic diagnostic info. |
+| **pydough.close_session(session_id)** | Closes the session and removes its temporary metadata files. |
+
+---
+
+### Resources
+
+| Resource URI | Description |
+|---------------|-------------|
+| **`pydough://metadata/{session_id}`** | Markdown representation of the session’s graph schema. |
+| **`pydough://result/{session_id}`** | JSON object containing the last query’s PyDough code, SQL, and results. |
+
+---
+
+### Environment Variables
+
+The MCP server uses the same environment configuration as the CLI:
+- `GOOGLE_PROJECT_ID`, `GOOGLE_REGION`, and `GOOGLE_APPLICATION_CREDENTIALS` — for Vertex/Claude/Gemini clients.  
+- `GEMINI_API_KEY` or `ANTHROPIC_API_KEY` — if using direct SDK mode.  
+
+When metadata is passed inline (instead of via `metadata_path`), it’s persisted temporarily in  
+`/tmp/pydough_analytics_mcp/` and automatically deleted when `close_session()` is called.
+
+---
+
+### Example Manifest (Claude Desktop)
+
+```json
+{
+  "name": "pydough-analytics",
+  "command": [
+    "fastmcp",
+    "run",
+    "src/pydough_analytics/mcp/mcp_entry.py:server"
+  ]
+}
+```
+
 ## Suggested next steps
 
 - To expand database coverage updating the CLI to accept engine-specific flags and extending the metadata.
 - Improve the troubleshooting documentation by covering engine-specific errors, connection problems, missing database files, and common CLI usage mistakes with clear resolutions.
-- Introduce an MCP server app that exposes the existing CLI commands as tools, enabling integration with editors and external orchestrators through a simple JSON-RPC interface.
 - Provide richer examples and Jupyter notebooks, showing end-to-end pipelines from SQLite, connecting to different databases, and visualizing metadata graphs for more practical learning.
 
 
@@ -294,12 +367,14 @@ pydough-analytics/
 │       ├── data/          # Internal data loaders or fixtures.
 │       ├── llm/           # Modules for LLM integration.
 │       ├── metadata/      # Metadata generation and validation logic.
+│       ├── mcp/           # Machine Cooperation Protocol (MCP) server and entrypoint.
 │       ├── utils/         # Shared utility functions.
 │       ├── __init__.py    # Package entry.
 │       ├── __main__.py    # Allows `python -m pydough_analytics` execution.
 │       ├── _version.py    # Package version constant.
 │       └── cli.py         # Typer CLI entrypoint (`pydough-analytics`).
 └── README.md              # Package-specific documentation.
+
 ```
 
 ## Architecture Overview
@@ -344,10 +419,18 @@ pydough-analytics/
 | PyDough Executor            | ----> | SQL + DataFrame           |       
 | (extract code, run on DB,   |       | (results + explanation)   |       
 |  sanitize, retry on errors) |       +---------------------------+       
-+-----------------------------+                                            
++-------------+---------------+                                            
+              |
+              v
++-----------------------------+       +---------------------------+
+| MCP Server (FastMCP)        | ----> | External Clients (MCP)    |
+| (tools + resources:         |       | Inspector / Claude / IDEs | 
+|  init_metadata, ask, etc.)  |       |                           |
++-----------------------------+       +---------------------------+
 
 Notes:
 - **Engines**: SQLite (built-in), Snowflake, MySQL and PostgreSQL.
 - **LLM Providers**: Google Gemini, Anthropic (Claude), aisuite (others).
 - **Artifacts**: JSON graph, Markdown docs, generated PyDough code, SQL, result DataFrame.
+- **MCP Server**: Exposes PyDough-Analytics functions to external tools through a Machine Cooperation Protocol interface.
 ```

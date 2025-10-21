@@ -208,6 +208,13 @@ Notes:
 
 ### Run the test suite (optional)
 
+Install the [dev] version and run the tests with:
+```bash
+python -m pip install -e .[dev]
+pytest -q tests
+```
+
+Or, if you prefer to install the dependencies directly:
 ```bash
 python -m pip install pytest
 python -m pip install pytest-mock
@@ -246,5 +253,4 @@ You can check the full PyDough repo and documentation here: https://github.com/b
 
 We welcome ideas and contributions. Current focus areas include:
 
-- New version with a mcp server.
 - Support for more databases.
