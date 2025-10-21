@@ -173,11 +173,9 @@ def generate_functions_section(markdown: list[str], graph: GraphMetadata) -> lis
     """
     Appends the user-defined functions to the Markdown output.
     """
-    # ✅ Acepta dicts y objetos ricos
     graph = _ensure_graph_object(graph)
 
     try:
-        # Si el objeto no expone funciones, salta silenciosamente
         if not hasattr(graph, "get_function_names"):
             return markdown
 

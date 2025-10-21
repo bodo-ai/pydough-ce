@@ -135,12 +135,18 @@ Natural language → PyDough code (+ optional SQL / DataFrame / explanation).
 
 Set credentials for your chosen provider. Examples:
 
-**Gemini and Anthropic via Vertex AI**
+**Gemini and Anthropic Via Vertex**
 ```bash
 export GOOGLE_APPLICATION_CREDENTIALS="/absolute/path/to/cred.json"
-export GOOGLE_API_KEY:=...
 export GOOGLE_PROJECT_ID="your-gcp-project"
-export GOOGLE_REGION="us-east5"
+export GOOGLE_REGION="your-region"
+GOOGLE_GENAI_USE_VERTEXAI=true
+```
+
+**Gemini via API (No Vertex)**
+```bash
+GOOGLE_API_KEY="your-google-api-key"
+GOOGLE_GENAI_USE_VERTEXAI=false
 ```
 
 > If you use a `.env`, importing `pydough_analytics.config.env` in Python will auto-load it.  

@@ -1,11 +1,11 @@
 from __future__ import annotations
 from pathlib import Path
+import sys
 from typing import Optional
 
 from rich.console import Console
 from rich.table import Table
 
-from ..config import env as _env  
 from ..llm.llm_client import LLMClient
 
 console = Console()
@@ -84,46 +84,49 @@ def ask_from_cli(
     as_json: bool = False,
     rows: int = 20,
 ) -> None:
+    try:
+        PKG = Path(__file__).resolve().parents[3]
+        prompt_path = PKG / "data" / "prompts" / "prompt.md"
+        cheatsheet_path = PKG / "data" / "prompts" / "cheatsheet.md"
 
-    PKG = Path(__file__).resolve().parents[3]
-    prompt_path = PKG / "data" / "prompts" / "prompt.md"
-    cheatsheet_path = PKG / "data" / "prompts" / "cheatsheet.md"
+        client = LLMClient(
+            prompt=str(prompt_path),
+            script=str(cheatsheet_path),
+            provider=provider or "google",
+            model=model or "gemini-2.5-pro",
+        )
 
-    client = LLMClient(
-        prompt=str(prompt_path),
-        script=str(cheatsheet_path),
-        provider=provider or "google",
-        model=model or "gemini-2.5-pro",
-    )
+        res = client.ask(
+            question=question,
+            kg_path=kg_path,
+            url=url,
+            md_path=md_path,
+            db_name=db_name,
+        )
 
-    res = client.ask(
-        question=question,
-        kg_path=kg_path,
-        url=url,
-        md_path=md_path,
-        db_name=db_name,
-    )
+        if as_json:
+            _print_json(res, question)
+            return
 
-    if as_json:
-        _print_json(res, question)
-        return
+        console.rule("PyDough code")
+        console.print(f"```python\n{res.code or ''}\n```")
+        
+        if res.exception:
+            console.rule("[red]Error[/red]")
+            console.print(res.exception)
+            return
 
-    console.rule("PyDough code")
-    console.print(f"```python\n{res.code or ''}\n```")
-    
-    if res.exception:
-        console.rule("[red]Error[/red]")
-        console.print(res.exception)
-        return
+        if show_sql:
+            console.rule("SQL")
+            console.print(res.sql or "<no sql>")
 
-    if show_sql:
-        console.rule("SQL")
-        console.print(res.sql or "<no sql>")
+        if show_df:
+            console.rule("Result preview")
+            _print_dataframe(res.df, limit=rows)
 
-    if show_df:
-        console.rule("Result preview")
-        _print_dataframe(res.df, limit=rows)
-
-    if show_explanation:
-        console.rule("Explanation")
-        console.print(res.full_explanation or "<no explanation>")
+        if show_explanation:
+            console.rule("Explanation")
+            console.print(res.full_explanation or "<no explanation>")
+    except Exception as e:
+        console.print(f"[ERROR] Failed to ask: {e}", file=sys.stderr)
+        sys.exit(1)

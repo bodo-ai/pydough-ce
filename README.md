@@ -23,122 +23,88 @@ At its core, this project lets you ask questions of your relational database in 
 
 # Getting Started
 
-## Provider Setup — Vertex (default) vs API-Key Mode
+## Provider Setup — Env (Vertex vs API‑Key)
 
-This project supports **two authentication modes** for AI providers:
-
-1. **Vertex AI mode** (default, recommended) — uses **Application Default Credentials (ADC)** through Google Cloud IAM.  
-2. **API-Key mode** — optional fallback for Gemini via the public **Google AI Studio API** (no IAM, less control).
-
-Both **Gemini** and **Claude** run on Vertex AI by default.
+Below are concise **`.env` examples** reflecting the two modes we support for both Claude and Gemini and a variant with explicit region.  
+> **Do not commit real credentials or API keys to Git.** Use placeholders in docs and local `.env` files.
 
 ---
 
-### Vertex AI prerequisite (ADC) — Required by default
+### 1) Minimal Vertex (recommended, default)
 
-The default AI providers in this repo (Gemini and Claude) are wired through **Google Vertex AI**, which **requires Application Default Credentials (ADC)**.  
-An API key alone is **not** sufficient in this mode.
+Use **ADC + Vertex**. No API key required. The SDK will use Vertex if you pass `project/location` in code **or** set `GOOGLE_GENAI_USE_VERTEXAI=true`.
+
+```bash
+# .env — minimal Vertex
+GOOGLE_PROJECT_ID="your-gcp-project-id"
+GOOGLE_APPLICATION_CREDENTIALS=/abs/path/to/service-account.json
+GOOGLE_GENAI_USE_VERTEXAI=true
+# Optional: explicit region selection (see #3), defaults noted below
+# GOOGLE_REGION="us-east5"    # e.g., Claude default region
+# GOOGLE_REGION="us-central1" # e.g., Gemini default region
+```
+
+**Defaults / notes**
+- **Gemini on Vertex**: default region on code if not provided is **`us-central1`**.
+- **Claude on Vertex**: default region on code if not provided is **`us-east5`**.
+- You can also use the SDK alt env names: `GOOGLE_CLOUD_PROJECT` / `GOOGLE_CLOUD_LOCATION`.
+- Vertex can also use credentials via gcloud auth application-default login
+- Ensure IAM role like `roles/aiplatform.user` and **Vertex AI API** enabled.
 
 ---
 
-### Quick setup (local dev)
+### 2) API‑Key mode (no Vertex) — *Gemini only*
+
+If you set `GOOGLE_GENAI_USE_VERTEXAI=false`, the code will use the **Google AI Studio (API‑key) SDK** for Gemini.  
+In this mode, `GOOGLE_API_KEY` is **required**, and ADC / project / region are **not used** by the Gemini client.
 
 ```bash
-# 1) Authenticate to Google Cloud and generate ADC
-gcloud auth application-default login
+# .env — API‑key mode (Gemini via Google AI Studio API)
+GOOGLE_API_KEY="your-google-api-key"
+GOOGLE_GENAI_USE_VERTEXAI=false
 
-# 2) Set your active project and region
-export GOOGLE_PROJECT_ID="your-gcp-project"
-export GOOGLE_REGION="us-east5"
-
-# 3) (Optional) Use a service account JSON instead of your user identity
-export GOOGLE_APPLICATION_CREDENTIALS="/absolute/path/to/key.json"
+# These may exist in your shell and are harmless here, but are not required by API‑key mode:
+# GOOGLE_PROJECT_ID="your-gcp-project-id"
+# GOOGLE_APPLICATION_CREDENTIALS=/abs/path/to/service-account.json
+# GOOGLE_REGION="us-central1"
 ```
 
-> **Important:** When using Vertex mode, `GOOGLE_API_KEY` is **ignored**.  
-> Both **Gemini** and **Claude** authenticate via ADC under Vertex.
+**Notes**
+- No IAM or Vertex regional control; intended for quick tests or limited environments.
 
-Tip: If you use a `.env`, you can auto-load it in Python via `import pydough_analytics.config.env`. For the CLI, export env vars in your shell.
+---
 
-### Setup (service account)
+### 3) Vertex with explicit region (Gemini & Claude)
 
-1. Create a **Service Account** with Vertex permissions (e.g. `roles/aiplatform.user`).
-2. Enable the Vertex AI API in your GCP project.
-3. Download the service account JSON key and set environment variables:
-   ```bash
-   export GOOGLE_APPLICATION_CREDENTIALS="/absolute/path/to/key.json"
-   export GOOGLE_PROJECT_ID="your-gcp-project"
-   export GOOGLE_REGION="us-east5"
-   ```
-4. Verify that the selected region supports the models you intend to use.
+Set an explicit region that supports the models you plan to use. if you do not set either one of the they have the next default values:
+- **Gemini** → `us-central1`
+- **Claude** → `us-east5`
 
-### Quick sanity check (Python)
-
-```python
-# Test Gemini connection through Vertex AI
-import os, google.genai as genai
-from google.genai import types
-
-client = genai.Client(
-    project=os.environ["GOOGLE_PROJECT_ID"],
-    location=os.environ["GOOGLE_REGION"],
-)
-resp = client.models.generate_content(
-    model="gemini-1.5-flash-002",
-    contents="Say 'Vertex OK' if you can see this.",
-    config=types.GenerateContentConfig(system_instruction="Healthcheck"),
-)
-print(resp.text)
-```
-
-If you encounter errors:
-- Ensure ADC exists: `gcloud auth application-default print-access-token`
-- Check `GOOGLE_PROJECT_ID` and `GOOGLE_REGION` values
-- Confirm IAM permissions (`roles/aiplatform.user`)
-
-### Using Claude via Vertex
-
-This repo’s Claude integration uses the **Anthropic on Vertex** endpoint.  
-It **also requires ADC**, and must be configured in the same environment as Gemini.
-
-Make sure your chosen region (e.g. `us-east5`) supports Claude models.
-
-## API-Key Mode (Google AI Studio)
-
-If you **prefer not to use Vertex AI**, you can run Gemini through the **Google AI Studio API** using an **API key** instead of ADC.  
-This method is simpler but lacks IAM integration and regional control.
-
-### Environment
 ```bash
-export GOOGLE_API_KEY="your-api-key"
+# .env — Vertex with explicit region
+GOOGLE_PROJECT_ID="your-gcp-project-id"
+GOOGLE_REGION="us-east5"  # or us-central1, europe-west4, etc., if supported
+GOOGLE_APPLICATION_CREDENTIALS=/abs/path/to/service-account.json
+GOOGLE_GENAI_USE_VERTEXAI=true
+# GOOGLE_API_KEY can be unset in Vertex mode
 ```
 
-### Client setup (Python)
-```python
-import google.genai as genai
+---
 
-# Create a client using only the API key (no project/location)
-client = genai.Client(api_key=os.environ["GOOGLE_API_KEY"])
-resp = client.models.generate_content(
-    model="gemini-1.5-flash-002",
-    contents="Hello from API-key mode!"
-)
-print(resp.text)
-```
+### Recap
 
->  **Note:**  
-> - API-Key mode does **not** use ADC or IAM roles.  
-> - Recommended only for experimentation or limited environments.
-
-With ADC configured, both **Gemini** and **Claude** authenticate and stream responses securely through **Vertex AI**.
+- **Switch** between modes using **`GOOGLE_GENAI_USE_VERTEXAI`**:
+  - `true`  → Vertex (ADC). Requires `GOOGLE_PROJECT_ID` (+ `GOOGLE_REGION` optional) and credentials.
+  - `false` → API‑key mode for Gemini. Requires `GOOGLE_API_KEY`.
+- **Claude** in this repo runs **only via Vertex** (ADC), so it needs `project` and a supported `region` (e.g., `us-east5`).
 
 ## TPCH sample database (download helper)
 
 To make local testing easy, this repo includes a small helper script to download the TPCH demo database.
 
-- **Script location:** `pydough-analytics/setup_tpch.sh`
+- **Script location:** `setup_tpch.sh`
 - **What it does:** If the target file already exists, it prints `FOUND` and exits. Otherwise it downloads the SQLite DB.
-- **Where the DB should live:** `./pydough-analytics/data/databases/TPCH.db` (from the repo root). The rest of the docs/CLI examples assume this path.
+- **Where the DB should live:** `./data/databases/TPCH.db` (from the repo root). The rest of the docs/CLI examples assume this path.
 
 ### One-liner (macOS/Linux)
 
@@ -211,7 +177,7 @@ We keep project artifacts in **`./data/`** for consistency:
 ### Generate metadata from SQLite
 
 ```bash
-pydough-analytics generate-json   --url sqlite:///data/databases/TPCH.db   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json
+pydough-analytics generate-json   --url sqlite:///data/databases/TPCH.db   --graph-name tpch   --json-path ./data/metadata/Tpch_graph.json
 ```
 
 This inspects the SQLite file and creates a metadata graph definition under `data/metadata/Tpch_graph.json`.
@@ -219,7 +185,7 @@ This inspects the SQLite file and creates a metadata graph definition under `dat
 ### Export Markdown docs
 
 ```bash
-pydough-analytics generate-md   --graph-name TPCH   --json-path ./data/metadata/Tpch_graph.json   --md-path ./data/metadata_markdowns/Tpch.md
+pydough-analytics generate-md   --graph-name tpch   --json-path ./data/metadata/Tpch_graph.json   --md-path ./data/metadata_markdowns/Tpch.md
 ```
 
 The Markdown file provides a human-friendly overview of the metadata: collections, properties, and relationships.
@@ -229,7 +195,7 @@ The Markdown file provides a human-friendly overview of the metadata: collection
 Run natural-language questions on your dataset. The **PyDough code is always printed**; you can optionally include **SQL**, a **DataFrame** preview, and an **explanation**. The CE default is **Google / Gemini 2.5 Pro**.
 
 ```bash
-pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --url sqlite:///data/databases/TPCH.db   --db-name TPCH   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
+pydough-analytics ask   --question "Give me the name of all the suppliers from the United States"   --url sqlite:///data/databases/TPCH.db   --db-name tpch   --md-path ./data/metadata_markdowns/Tpch.md   --kg-path ./data/metadata/Tpch_graph.json   --show-sql --show-df --show-explanation
 ```
 
 Notes:
@@ -257,22 +223,6 @@ pytest -q tests
 
 With these steps you now have the full CE pipeline:
 SQLite DB → JSON metadata graph → Markdown documentation → **LLM Ask**.
-
-### Run notebook samples (optional)
-
-To explore the demo notebooks, install the [notebooks] version, or directly install the following dependencies:
-```bash
-python -m pip install -e .[notebooks]
-```
-
-Or manually install:
-```bash
-python -m pip install jupyterlab
-python -m pip install ipykernel
-python -m pip install matplotlib
-```
-
-Then open the notebook sample in `./samples/llm_demo.ipynb`.
 
 ## Repository Structure
 
