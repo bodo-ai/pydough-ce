@@ -281,7 +281,7 @@ You can optionally run **PyDough-Analytics** as a [Machine Cooperation Protocol 
 
 ### Installation
 
-Install the MCP extras:
+Install the MCP extras from the root folder:
 ```bash
 pip install "pydough-analytics[mcp]"
 ```

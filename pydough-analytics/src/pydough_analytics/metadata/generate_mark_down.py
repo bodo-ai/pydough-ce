@@ -91,7 +91,6 @@ def generate_collections_and_subcollections(markdown: list[str], graph: GraphMet
                         markdown.append(f"  - Sample values: {sample_values_str}")
 
                 markdown.append("")
-                # Sub-collections or relationships como propiedades especiales
                 relationship_props = [
                     collection.get_property(p)
                     for p in collection.get_property_names()
@@ -111,7 +110,6 @@ def generate_collections_and_subcollections(markdown: list[str], graph: GraphMet
                     markdown.append("")
 
             else:
-                # ✅ Ruta dict-adaptada: usa tus iteradores simples
                 markdown.append("- **Description**: No description available.")
                 markdown.append("")
                 markdown.append("#### Contains the following scalar properties or columns")
