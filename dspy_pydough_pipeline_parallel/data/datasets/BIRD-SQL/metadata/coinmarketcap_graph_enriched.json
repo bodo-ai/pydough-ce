@@ -1,0 +1,693 @@
+[
+  {
+    "name": "coinmarketcap",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "coins",
+        "type": "simple table",
+        "table path": "main.coins",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "Unique ID number identifying each coin.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the cryptocurrency.",
+            "sample values": [
+              "Bitcoin",
+              "Litecoin",
+              "Namecoin",
+              "Terracoin",
+              "Peercoin"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "slug",
+            "type": "table column",
+            "column name": "slug",
+            "data type": "string",
+            "description": "The URL-friendly slug name of the cryptocurrency.",
+            "sample values": [
+              "bitcoin",
+              "litecoin",
+              "namecoin",
+              "terracoin",
+              "peercoin"
+            ],
+            "synonyms": [
+              "slug"
+            ]
+          },
+          {
+            "name": "symbol",
+            "type": "table column",
+            "column name": "symbol",
+            "data type": "string",
+            "description": "The ticker symbol of the cryptocurrency.",
+            "sample values": [
+              "BTC",
+              "LTC",
+              "NMC",
+              "TRC",
+              "PPC"
+            ],
+            "synonyms": [
+              "symbol"
+            ]
+          },
+          {
+            "name": "status",
+            "type": "table column",
+            "column name": "status",
+            "data type": "string",
+            "description": "The current status of the cryptocurrency.",
+            "sample values": [
+              "active",
+              "untracked",
+              "inactive",
+              "extinct"
+            ],
+            "synonyms": [
+              "status"
+            ],
+            "extra semantic info": {
+              "status values": {
+                "active": "This coin is active and available for transactions.",
+                "untracked": "This coin cannot be tracked.",
+                "inactive": "This coin is not available for transactions.",
+                "extinct": "This coin has disappeared."
+              }
+            }
+          },
+          {
+            "name": "category",
+            "type": "table column",
+            "column name": "category",
+            "data type": "string",
+            "description": "The category of the cryptocurrency, such as coin or token.",
+            "sample values": [
+              "coin",
+              "token"
+            ],
+            "synonyms": [
+              "category"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "description",
+            "data type": "string",
+            "description": "A detailed description of the cryptocurrency.",
+            "sample values": [
+              "## **What Is Bitcoin (BTC)?**\\n\\nBitc...",
+              "## What Is Litecoin (LTC)?\\n\\nLitecoi...",
+              "Namecoin (NMC) is a cryptocurrency . ...",
+              "Terracoin (TRC) launched in 2012 with...",
+              "Peercoin (PPC) is a cryptocurrency . ..."
+            ],
+            "synonyms": [
+              "description"
+            ]
+          },
+          {
+            "name": "subreddit",
+            "type": "table column",
+            "column name": "subreddit",
+            "data type": "string",
+            "description": "The name of the coin's subreddit on Reddit.",
+            "sample values": [
+              "bitcoin",
+              "litecoin",
+              "namecoin",
+              "terracoin",
+              "peercoin"
+            ],
+            "synonyms": [
+              "subreddit"
+            ]
+          },
+          {
+            "name": "notice",
+            "type": "table column",
+            "column name": "notice",
+            "data type": "string",
+            "description": "Any special notices or alerts related to the coin.",
+            "sample values": [
+              "TIPS has undergone a [swap](https://b...",
+              "We have received reports that withdra...",
+              "YoBit is currently trading an old cha...",
+              "We have received reports from the Ver...",
+              "Updated on 23rdFebruary2021: Please n..."
+            ],
+            "synonyms": [
+              "notice"
+            ]
+          },
+          {
+            "name": "tags",
+            "type": "table column",
+            "column name": "tags",
+            "data type": "string",
+            "description": "A list of tags associated with the coin.",
+            "sample values": [
+              "mineable, pow, sha-256, store-of-valu...",
+              "mineable, pow, scrypt, medium-of-exch...",
+              "mineable, pow, sha-256, platform",
+              "mineable, pow, sha-256, masternodes",
+              "mineable, hybrid-pow-pos, sha-256, me..."
+            ],
+            "synonyms": [
+              "tags"
+            ]
+          },
+          {
+            "name": "tag_names",
+            "type": "table column",
+            "column name": "tag_names",
+            "data type": "string",
+            "description": "The display names for the tags associated with the coin.",
+            "sample values": [
+              "Mineable, PoW, SHA-256, Store of Valu...",
+              "Mineable, PoW, Scrypt, Medium of Exch...",
+              "Mineable, PoW, SHA-256, Platform",
+              "Mineable, PoW, SHA-256, Masternodes",
+              "Mineable, Hybrid - PoW & PoS, SHA-256..."
+            ],
+            "synonyms": [
+              "tag_names"
+            ]
+          },
+          {
+            "name": "website",
+            "type": "table column",
+            "column name": "website",
+            "data type": "string",
+            "description": "The official website of the cryptocurrency.",
+            "sample values": [
+              "https://bitcoin.org/",
+              "https://litecoin.org/",
+              "https://www.namecoin.org/",
+              "http://www.terracoin.io/",
+              "http://www.peercoin.net"
+            ],
+            "synonyms": [
+              "website"
+            ]
+          },
+          {
+            "name": "platform_id",
+            "type": "table column",
+            "column name": "platform_id",
+            "data type": "numeric",
+            "description": "The ID number of the platform the coin is built on.",
+            "sample values": [
+              1027,
+              1765,
+              1376,
+              1839,
+              4256
+            ],
+            "synonyms": [
+              "platform_id"
+            ]
+          },
+          {
+            "name": "date_added",
+            "type": "table column",
+            "column name": "date_added",
+            "data type": "string",
+            "description": "The date when the cryptocurrency was added to the database.",
+            "sample values": [
+              "2013-04-28T00:00:00.000Z",
+              "2013-05-03T00:00:00.000Z",
+              "2013-05-08T00:00:00.000Z",
+              "2013-05-09T00:00:00.000Z",
+              "2013-05-10T00:00:00.000Z"
+            ],
+            "synonyms": [
+              "date_added"
+            ]
+          },
+          {
+            "name": "date_launched",
+            "type": "table column",
+            "column name": "date_launched",
+            "data type": "string",
+            "description": "The date when the cryptocurrency was launched.",
+            "sample values": [
+              "2018-01-16T00:00:00.000Z",
+              "2018-05-01T00:00:00.000Z",
+              "2017-09-18T22:20:00.000Z",
+              "2015-03-06T14:49:00.000Z",
+              "2016-08-22T15:50:00.000Z"
+            ],
+            "synonyms": [
+              "date_launched"
+            ]
+          }
+        ],
+        "description": "Contains detailed information about various cryptocurrencies.",
+        "synonyms": [
+          "coins"
+        ]
+      },
+      {
+        "name": "historical",
+        "type": "simple table",
+        "table path": "main.historical",
+        "unique properties": [
+          [
+            "date_",
+            "coin_id",
+            "cmc_rank",
+            "market_cap",
+            "price",
+            "open_",
+            "high",
+            "low",
+            "close",
+            "time_high",
+            "time_low",
+            "volume_24h",
+            "percent_change_1h",
+            "percent_change_24h",
+            "percent_change_7d",
+            "circulating_supply",
+            "total_supply",
+            "max_supply",
+            "num_market_pairs"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "date_",
+            "type": "table column",
+            "column name": "\"date\"",
+            "data type": "datetime",
+            "description": "The date of the historical data record.",
+            "sample values": [
+              "2013-04-28",
+              "2013-04-29",
+              "2013-04-30",
+              "2013-05-01",
+              "2013-05-02"
+            ],
+            "synonyms": [
+              "date"
+            ]
+          },
+          {
+            "name": "coin_id",
+            "type": "table column",
+            "column name": "coin_id",
+            "data type": "numeric",
+            "description": "The ID number referring to the coin in the coins table.",
+            "sample values": [
+              1,
+              2,
+              5,
+              3,
+              4
+            ],
+            "synonyms": [
+              "coin_id"
+            ]
+          },
+          {
+            "name": "cmc_rank",
+            "type": "table column",
+            "column name": "cmc_rank",
+            "data type": "numeric",
+            "description": "CoinMarketCap rank, a metric used to rank the relative popularity of different cryptocurrencies.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "cmc_rank"
+            ]
+          },
+          {
+            "name": "market_cap",
+            "type": "table column",
+            "column name": "market_cap",
+            "data type": "numeric",
+            "description": "Market capitalization, which refers to how much a coin is worth as determined by the coin market (in dollars).",
+            "sample values": [
+              1488566971.9558687,
+              74637021.56790735,
+              7250186.647688276,
+              5995997.185385211,
+              1503099.4011388426
+            ],
+            "synonyms": [
+              "market_cap"
+            ],
+            "extra semantic info": {
+              "calculation": "market cap = latest trade price * circulating supply"
+            }
+          },
+          {
+            "name": "price",
+            "type": "table column",
+            "column name": "price",
+            "data type": "numeric",
+            "description": "The price of the coin in dollars.",
+            "sample values": [
+              134.210021972656,
+              4.34840488433838,
+              0.386524856090546,
+              1.10723268985748,
+              0.646892309188843
+            ],
+            "synonyms": [
+              "price"
+            ]
+          },
+          {
+            "name": "open_",
+            "type": "table column",
+            "column name": "open",
+            "data type": "numeric",
+            "description": "The opening price of the cryptocurrency for a given time period (in dollars).",
+            "sample values": [
+              134.44400024414062,
+              4.366759777069092,
+              0.3871999979019165,
+              1.103790044784546,
+              0.6493669748306274
+            ],
+            "synonyms": [
+              "open"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "If null or empty, it means this coin has not opened yet today."
+            }
+          },
+          {
+            "name": "high",
+            "type": "table column",
+            "column name": "high",
+            "data type": "numeric",
+            "description": "The highest price of the coin for the time period (in dollars).",
+            "sample values": [
+              147.48800659179688,
+              4.573599815368652,
+              0.4247649908065796,
+              1.3357700109481812,
+              0.7197409868240356
+            ],
+            "synonyms": [
+              "high"
+            ]
+          },
+          {
+            "name": "low",
+            "type": "table column",
+            "column name": "low",
+            "data type": "numeric",
+            "description": "The lowest price of the coin for the time period (in dollars).",
+            "sample values": [
+              134.0,
+              4.225639820098877,
+              0.37790799140930176,
+              1.1027400493621826,
+              0.6421470046043396
+            ],
+            "synonyms": [
+              "low"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The max profit for the day can be calculated as: high - low."
+            }
+          },
+          {
+            "name": "close",
+            "type": "table column",
+            "column name": "close",
+            "data type": "numeric",
+            "description": "The closing price of the cryptocurrency at the end of the time period.",
+            "sample values": [
+              144.5399932861328,
+              4.383900165557861,
+              0.4088610112667084,
+              1.328320026397705,
+              0.7096909880638123
+            ],
+            "synonyms": [
+              "close"
+            ]
+          },
+          {
+            "name": "time_high",
+            "type": "table column",
+            "column name": "time_high",
+            "data type": "string",
+            "description": "The time at which the highest price was achieved.",
+            "sample values": [
+              "13:15:01",
+              "13:15:03",
+              "12:45:02",
+              "13:15:02",
+              "16:05:14"
+            ],
+            "synonyms": [
+              "time_high"
+            ]
+          },
+          {
+            "name": "time_low",
+            "type": "table column",
+            "column name": "time_low",
+            "data type": "string",
+            "description": "The time at which the lowest price was achieved.",
+            "sample values": [
+              "05:20:01",
+              "19:25:02",
+              "04:05:04",
+              "00:05:02",
+              "02:20:02"
+            ],
+            "synonyms": [
+              "time_low"
+            ]
+          },
+          {
+            "name": "volume_24h",
+            "type": "table column",
+            "column name": "volume_24h",
+            "data type": "numeric",
+            "description": "The total value of the cryptocurrency traded in the past 24 hours.",
+            "sample values": [
+              0.0,
+              46862728.0,
+              31112234.0,
+              148422.484375,
+              182580.390625
+            ],
+            "synonyms": [
+              "volume_24h"
+            ]
+          },
+          {
+            "name": "percent_change_1h",
+            "type": "table column",
+            "column name": "percent_change_1h",
+            "data type": "numeric",
+            "description": "The price percentage change in the last hour.",
+            "sample values": [
+              0.639231,
+              0.799273,
+              -0.934763,
+              -0.0505028,
+              0.609159
+            ],
+            "synonyms": [
+              "percent_change_1h"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The change is the difference (in percent) between the price now compared to the price around this time 1 hour ago."
+            }
+          },
+          {
+            "name": "percent_change_24h",
+            "type": "table column",
+            "column name": "percent_change_24h",
+            "data type": "numeric",
+            "description": "The price percentage change in the last 24 hours.",
+            "sample values": [
+              7.63553,
+              0.920718,
+              18.558,
+              9.58407,
+              14.6398
+            ],
+            "synonyms": [
+              "percent_change_24h"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The change is the difference (in percent) between the price now compared to the price around this time 24 hours ago."
+            }
+          },
+          {
+            "name": "percent_change_7d",
+            "type": "table column",
+            "column name": "percent_change_7d",
+            "data type": "numeric",
+            "description": "The price percentage change in the last 7 days.",
+            "sample values": [
+              -13.809,
+              -16.7201,
+              1.64395,
+              -22.2015,
+              -12.337
+            ],
+            "synonyms": [
+              "percent_change_7d"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The change is the difference (in percent) between the price now compared to the price around this time 7 days ago."
+            }
+          },
+          {
+            "name": "circulating_supply",
+            "type": "table column",
+            "column name": "circulating_supply",
+            "data type": "numeric",
+            "description": "The approximate number of coins that are circulating in the market and in the general public's hands.",
+            "sample values": [
+              11091325.0,
+              17164230.0,
+              18757362.0,
+              5415300.0,
+              2323569.75
+            ],
+            "synonyms": [
+              "circulating_supply"
+            ]
+          },
+          {
+            "name": "total_supply",
+            "type": "table column",
+            "column name": "total_supply",
+            "data type": "numeric",
+            "description": "The total amount of coins in existence right now.",
+            "sample values": [
+              11091325.0,
+              17164230.0,
+              18757362.0,
+              5415300.0,
+              2323569.75
+            ],
+            "synonyms": [
+              "total_supply"
+            ]
+          },
+          {
+            "name": "max_supply",
+            "type": "table column",
+            "column name": "max_supply",
+            "data type": "numeric",
+            "description": "The maximum approximate amount of coins that will ever exist in the lifetime of the cryptocurrency.",
+            "sample values": [
+              21000000.0,
+              84000000.0,
+              42000000.0,
+              336000000.0,
+              48166000.0
+            ],
+            "synonyms": [
+              "max_supply"
+            ],
+            "extra semantic info": {
+              "calculation": "the number of coins verifiably burned so far = max_supply - total_supply"
+            }
+          },
+          {
+            "name": "num_market_pairs",
+            "type": "table column",
+            "column name": "num_market_pairs",
+            "data type": "numeric",
+            "description": "The number of market pairs across all exchanges trading this currency.",
+            "sample values": [
+              7050,
+              5146,
+              382,
+              299,
+              537
+            ],
+            "synonyms": [
+              "num_market_pairs"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Active coins that have gone inactive can easily be identified as having a num_market_pairs of 0."
+            }
+          }
+        ],
+        "description": "Contains daily historical market data for cryptocurrencies.",
+        "synonyms": [
+          "historical"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "historicals",
+        "type": "simple join",
+        "singular": false,
+        "always matches": false,
+        "description": "Historical market data for this coin.",
+        "synonyms": [
+          "historicals"
+        ],
+        "parent collection": "coins",
+        "child collection": "historical",
+        "keys": {
+          "id_": [
+            "coin_id"
+          ]
+        }
+      },
+      {
+        "name": "coin",
+        "type": "reverse",
+        "singular": true,
+        "always matches": false,
+        "description": "The coin this historical data belongs to.",
+        "synonyms": [
+          "coin"
+        ],
+        "original parent": "coins",
+        "original property": "historicals"
+      }
+    ]
+  }
+]

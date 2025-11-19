@@ -1,0 +1,460 @@
+[
+  {
+    "name": "cars",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "country",
+        "type": "simple table",
+        "table path": "main.country",
+        "unique properties": [
+          "origin"
+        ],
+        "properties": [
+          {
+            "name": "origin",
+            "type": "table column",
+            "column name": "origin",
+            "data type": "numeric",
+            "description": "The unique identifier for the origin country.",
+            "sample values": [
+              1,
+              2,
+              3
+            ],
+            "synonyms": [
+              "origin"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "country",
+            "data type": "string",
+            "description": "The origin country of the car.",
+            "sample values": [
+              "USA",
+              "Europe",
+              "Japan"
+            ],
+            "synonyms": [
+              "country"
+            ]
+          }
+        ],
+        "description": "Stores information about the origin countries of the cars.",
+        "synonyms": [
+          "country"
+        ]
+      },
+      {
+        "name": "data",
+        "type": "simple table",
+        "table path": "main.data",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "ID",
+            "data type": "numeric",
+            "description": "Unique ID for each car.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "ID"
+            ]
+          },
+          {
+            "name": "mpg",
+            "type": "table column",
+            "column name": "mpg",
+            "data type": "numeric",
+            "description": "Mileage of the car in miles per gallon.",
+            "sample values": [
+              18.0,
+              15.0,
+              16.0,
+              17.0,
+              14.0
+            ],
+            "synonyms": [
+              "mpg"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The car with higher mileage is more fuel-efficient."
+            }
+          },
+          {
+            "name": "cylinders",
+            "type": "table column",
+            "column name": "cylinders",
+            "data type": "numeric",
+            "description": "The number of cylinders present in the car.",
+            "sample values": [
+              8,
+              4,
+              6,
+              3,
+              5
+            ],
+            "synonyms": [
+              "cylinders"
+            ]
+          },
+          {
+            "name": "displacement",
+            "type": "table column",
+            "column name": "displacement",
+            "data type": "numeric",
+            "description": "Engine displacement in cubic mm.",
+            "sample values": [
+              307.0,
+              350.0,
+              318.0,
+              304.0,
+              302.0
+            ],
+            "synonyms": [
+              "displacement"
+            ]
+          },
+          {
+            "name": "horsepower",
+            "type": "table column",
+            "column name": "horsepower",
+            "data type": "numeric",
+            "description": "Horse power associated with the car.",
+            "sample values": [
+              130,
+              165,
+              150,
+              140,
+              198
+            ],
+            "synonyms": [
+              "horsepower"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Horse power is the metric used to indicate the power produced by a car's engine - the higher the number, the more power is sent to the wheels and, in theory, the faster it will go."
+            }
+          },
+          {
+            "name": "weight",
+            "type": "table column",
+            "column name": "weight",
+            "data type": "numeric",
+            "description": "Weight of the car in lbs.",
+            "sample values": [
+              3504,
+              3693,
+              3436,
+              3433,
+              3449
+            ],
+            "synonyms": [
+              "weight"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A bigger, heavier vehicle provides better crash protection than a smaller"
+            }
+          },
+          {
+            "name": "acceleration",
+            "type": "table column",
+            "column name": "acceleration",
+            "data type": "numeric",
+            "description": "Acceleration of the car in miles per squared hour.",
+            "sample values": [
+              12.0,
+              11.5,
+              11.0,
+              10.5,
+              10.0
+            ],
+            "synonyms": [
+              "acceleration"
+            ]
+          },
+          {
+            "name": "model",
+            "type": "table column",
+            "column name": "model",
+            "data type": "numeric",
+            "description": "The year when the car model was introduced in the market.",
+            "sample values": [
+              70,
+              71,
+              72,
+              73,
+              74
+            ],
+            "synonyms": [
+              "model"
+            ],
+            "extra semantic info": {
+              "year_mapping": {
+                "0": 1970
+              }
+            }
+          },
+          {
+            "name": "car_name",
+            "type": "table column",
+            "column name": "car_name",
+            "data type": "string",
+            "description": "Name of the car.",
+            "sample values": [
+              "chevrolet chevelle malibu",
+              "buick skylark 320",
+              "plymouth satellite",
+              "amc rebel sst",
+              "ford torino"
+            ],
+            "synonyms": [
+              "car_name"
+            ]
+          }
+        ],
+        "description": "Contains detailed technical specifications and data for each car.",
+        "synonyms": [
+          "data"
+        ],
+        "extra semantic info": {
+          "commonsense evidence": {
+            "sweep volume calculation": "sweep volume = displacement / no_of cylinders"
+          }
+        }
+      },
+      {
+        "name": "price",
+        "type": "simple table",
+        "table path": "main.price",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "ID",
+            "data type": "numeric",
+            "description": "Unique ID for each car.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "ID"
+            ]
+          },
+          {
+            "name": "price",
+            "type": "table column",
+            "column name": "price",
+            "data type": "numeric",
+            "description": "Price of the car in USD.",
+            "sample values": [
+              25561.59078,
+              24221.42273,
+              27240.84373,
+              33684.96888,
+              20000.0
+            ],
+            "synonyms": [
+              "price"
+            ]
+          }
+        ],
+        "description": "Contains the price information for each car.",
+        "synonyms": [
+          "price"
+        ]
+      },
+      {
+        "name": "production",
+        "type": "simple table",
+        "table path": "main.production",
+        "unique properties": [
+          [
+            "id_",
+            "model_year"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "ID",
+            "data type": "numeric",
+            "description": "The id of the car.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "ID"
+            ]
+          },
+          {
+            "name": "model_year",
+            "type": "table column",
+            "column name": "model_year",
+            "data type": "numeric",
+            "description": "Year when the car model was introduced in the market.",
+            "sample values": [
+              1970,
+              1971,
+              1972,
+              1973,
+              1975
+            ],
+            "synonyms": [
+              "model_year"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "country",
+            "data type": "numeric",
+            "description": "Country ID to which the car belongs.",
+            "sample values": [
+              1,
+              3,
+              2
+            ],
+            "synonyms": [
+              "country"
+            ]
+          }
+        ],
+        "description": "Contains production details for each car, including the model year and country of origin.",
+        "synonyms": [
+          "production"
+        ],
+        "extra semantic info": {
+          "continent_mapping": {
+            "Japan": "Asia",
+            "USA": "North America"
+          }
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "data",
+        "parent collection": "price",
+        "child collection": "data",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "id_"
+          ]
+        },
+        "description": "Provides the detailed specifications for the car associated with this price.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "price",
+        "original parent": "price",
+        "original property": "data",
+        "singular": true,
+        "always matches": false,
+        "description": "Provides the price information for this car.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "productions",
+        "parent collection": "price",
+        "child collection": "production",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "id_"
+          ]
+        },
+        "description": "Lists all production records for the car associated with this price.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "price",
+        "original parent": "price",
+        "original property": "productions",
+        "singular": true,
+        "always matches": false,
+        "description": "Provides the price information for the car in this production record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "productions",
+        "parent collection": "data",
+        "child collection": "production",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "id_"
+          ]
+        },
+        "description": "Lists all production records for this car.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "data",
+        "original parent": "data",
+        "original property": "productions",
+        "singular": true,
+        "always matches": false,
+        "description": "Provides the detailed specifications for the car in this production record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "productions",
+        "parent collection": "country",
+        "child collection": "production",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "origin": [
+            "country"
+          ]
+        },
+        "description": "Lists all production records for cars originating from this country.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_record",
+        "original parent": "country",
+        "original property": "productions",
+        "singular": true,
+        "always matches": false,
+        "description": "Provides the origin country details for this production record.",
+        "synonyms": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,926 @@
+[
+  {
+    "name": "regional_sales",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "customers",
+        "type": "simple table",
+        "table path": "main.Customers",
+        "unique properties": [
+          "customerid"
+        ],
+        "properties": [
+          {
+            "name": "customerid",
+            "type": "table column",
+            "column name": "CustomerID",
+            "data type": "numeric",
+            "description": "Unique ID number for each customer.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "CustomerID"
+            ]
+          },
+          {
+            "name": "customer_names",
+            "type": "table column",
+            "column name": "\"Customer Names\"",
+            "data type": "string",
+            "description": "The name of the customer.",
+            "sample values": [
+              "Avon Corp",
+              "WakeFern ",
+              "Elorac, Corp",
+              "ETUDE Ltd",
+              "Procter Corp"
+            ],
+            "synonyms": [
+              "Customer Names"
+            ]
+          }
+        ],
+        "description": "Contains information about customers.",
+        "synonyms": [
+          "Customers"
+        ]
+      },
+      {
+        "name": "products",
+        "type": "simple table",
+        "table path": "main.Products",
+        "unique properties": [
+          "productid"
+        ],
+        "properties": [
+          {
+            "name": "productid",
+            "type": "table column",
+            "column name": "ProductID",
+            "data type": "numeric",
+            "description": "Unique ID number for each product.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "ProductID"
+            ]
+          },
+          {
+            "name": "product_name",
+            "type": "table column",
+            "column name": "\"Product Name\"",
+            "data type": "string",
+            "description": "The name of the product.",
+            "sample values": [
+              "Cookware",
+              "Photo Frames",
+              "Table Lamps",
+              "Serveware",
+              "Bathroom Furniture"
+            ],
+            "synonyms": [
+              "Product Name"
+            ]
+          }
+        ],
+        "description": "Contains information about products.",
+        "synonyms": [
+          "Products"
+        ]
+      },
+      {
+        "name": "regions",
+        "type": "simple table",
+        "table path": "main.Regions",
+        "unique properties": [
+          "statecode"
+        ],
+        "properties": [
+          {
+            "name": "statecode",
+            "type": "table column",
+            "column name": "StateCode",
+            "data type": "string",
+            "description": "The unique two-letter code identifying the state.",
+            "sample values": [
+              "AL",
+              "AR",
+              "AZ",
+              "CA",
+              "CO"
+            ],
+            "synonyms": [
+              "StateCode"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "State",
+            "data type": "string",
+            "description": "The full name of the state.",
+            "sample values": [
+              "Alabama",
+              "Arkansas",
+              "Arizona",
+              "California",
+              "Colorado"
+            ],
+            "synonyms": [
+              "State"
+            ]
+          },
+          {
+            "name": "region",
+            "type": "table column",
+            "column name": "Region",
+            "data type": "string",
+            "description": "The region where the state is located.",
+            "sample values": [
+              "South",
+              "West",
+              "Northeast",
+              "Midwest"
+            ],
+            "synonyms": [
+              "Region"
+            ]
+          }
+        ],
+        "description": "Contains information about states and their corresponding regions.",
+        "synonyms": [
+          "Regions"
+        ]
+      },
+      {
+        "name": "sales_orders",
+        "type": "simple table",
+        "table path": "main.\"Sales Orders\"",
+        "unique properties": [
+          "ordernumber"
+        ],
+        "properties": [
+          {
+            "name": "ordernumber",
+            "type": "table column",
+            "column name": "OrderNumber",
+            "data type": "string",
+            "description": "The unique number identifying the order.",
+            "sample values": [
+              "SO - 0001000",
+              "SO - 0001001",
+              "SO - 0001002",
+              "SO - 0001003",
+              "SO - 0001004"
+            ],
+            "synonyms": [
+              "OrderNumber"
+            ]
+          },
+          {
+            "name": "sales_channel",
+            "type": "table column",
+            "column name": "\"Sales Channel\"",
+            "data type": "string",
+            "description": "The channel through which the sale was made (e.g., In-Store, Online).",
+            "sample values": [
+              "In-Store",
+              "Online",
+              "Distributor",
+              "Wholesale"
+            ],
+            "synonyms": [
+              "Sales Channel"
+            ]
+          },
+          {
+            "name": "warehousecode",
+            "type": "table column",
+            "column name": "WarehouseCode",
+            "data type": "string",
+            "description": "The code for the warehouse from which the order was shipped.",
+            "sample values": [
+              "WARE-UHY1004",
+              "WARE-NMK1003",
+              "WARE-PUJ1005",
+              "WARE-XYS1001",
+              "WARE-MKL1006"
+            ],
+            "synonyms": [
+              "WarehouseCode"
+            ]
+          },
+          {
+            "name": "procureddate",
+            "type": "table column",
+            "column name": "ProcuredDate",
+            "data type": "string",
+            "description": "The date when the products for the order were procured.",
+            "sample values": [
+              "12/31/17",
+              "4/10/18",
+              "7/19/18",
+              "10/27/18",
+              "2/4/19"
+            ],
+            "synonyms": [
+              "ProcuredDate"
+            ],
+            "extra semantic info": {
+              "date format": "month/day/two-digit year, e.g., 17 represents 2017"
+            }
+          },
+          {
+            "name": "orderdate",
+            "type": "table column",
+            "column name": "OrderDate",
+            "data type": "string",
+            "description": "The date the order was placed.",
+            "sample values": [
+              "5/31/18",
+              "6/1/18",
+              "6/2/18",
+              "6/3/18",
+              "6/4/18"
+            ],
+            "synonyms": [
+              "OrderDate"
+            ]
+          },
+          {
+            "name": "shipdate",
+            "type": "table column",
+            "column name": "ShipDate",
+            "data type": "string",
+            "description": "The date the order was shipped.",
+            "sample values": [
+              "6/14/18",
+              "6/22/18",
+              "6/21/18",
+              "6/2/18",
+              "6/16/18"
+            ],
+            "synonyms": [
+              "ShipDate"
+            ]
+          },
+          {
+            "name": "deliverydate",
+            "type": "table column",
+            "column name": "DeliveryDate",
+            "data type": "string",
+            "description": "The date the order was delivered.",
+            "sample values": [
+              "6/19/18",
+              "7/2/18",
+              "7/1/18",
+              "6/7/18",
+              "6/26/18"
+            ],
+            "synonyms": [
+              "DeliveryDate"
+            ]
+          },
+          {
+            "name": "currencycode",
+            "type": "table column",
+            "column name": "CurrencyCode",
+            "data type": "string",
+            "description": "The currency code for the transaction, e.g., USD.",
+            "sample values": [
+              "USD"
+            ],
+            "synonyms": [
+              "CurrencyCode"
+            ]
+          },
+          {
+            "name": "salesteamid",
+            "type": "table column",
+            "column name": "_SalesTeamID",
+            "data type": "numeric",
+            "description": "The ID of the sales team member associated with the order. Foreign key to the sales_team table.",
+            "sample values": [
+              6,
+              14,
+              21,
+              28,
+              22
+            ],
+            "synonyms": [
+              "_SalesTeamID"
+            ]
+          },
+          {
+            "name": "customerid",
+            "type": "table column",
+            "column name": "_CustomerID",
+            "data type": "numeric",
+            "description": "The ID of the customer who placed the order. Foreign key to the customers table.",
+            "sample values": [
+              15,
+              20,
+              16,
+              48,
+              49
+            ],
+            "synonyms": [
+              "_CustomerID"
+            ]
+          },
+          {
+            "name": "storeid",
+            "type": "table column",
+            "column name": "_StoreID",
+            "data type": "numeric",
+            "description": "The ID of the store where the order was placed. Foreign key to the store_locations table.",
+            "sample values": [
+              259,
+              196,
+              213,
+              107,
+              111
+            ],
+            "synonyms": [
+              "_StoreID"
+            ]
+          },
+          {
+            "name": "productid",
+            "type": "table column",
+            "column name": "_ProductID",
+            "data type": "numeric",
+            "description": "The ID of the product ordered. Foreign key to the products table.",
+            "sample values": [
+              12,
+              27,
+              16,
+              23,
+              26
+            ],
+            "synonyms": [
+              "_ProductID"
+            ]
+          },
+          {
+            "name": "order_quantity",
+            "type": "table column",
+            "column name": "\"Order Quantity\"",
+            "data type": "numeric",
+            "description": "The number of units of the product ordered.",
+            "sample values": [
+              5,
+              3,
+              1,
+              8,
+              4
+            ],
+            "synonyms": [
+              "Order Quantity"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A higher value indicates a larger order quantity."
+            }
+          },
+          {
+            "name": "discount_applied",
+            "type": "table column",
+            "column name": "\"Discount Applied\"",
+            "data type": "numeric",
+            "description": "The discount percentage applied to the order, in decimal format.",
+            "sample values": [
+              0.075,
+              0.05,
+              0.1,
+              0.15,
+              0.3
+            ],
+            "synonyms": [
+              "Discount Applied"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A value of 0.2 represents a 20% discount."
+            }
+          },
+          {
+            "name": "unit_price",
+            "type": "table column",
+            "column name": "\"Unit Price\"",
+            "data type": "string",
+            "description": "The price per unit of the product.",
+            "sample values": [
+              "1,963.10",
+              "3,939.60",
+              "1,775.50",
+              "2,324.90",
+              "1,822.40"
+            ],
+            "synonyms": [
+              "Unit Price"
+            ]
+          },
+          {
+            "name": "unit_cost",
+            "type": "table column",
+            "column name": "\"Unit Cost\"",
+            "data type": "string",
+            "description": "The cost per unit of the product.",
+            "sample values": [
+              "1,001.18",
+              "3,348.66",
+              "781.22",
+              "1,464.69",
+              "1,476.14"
+            ],
+            "synonyms": [
+              "Unit Cost"
+            ]
+          }
+        ],
+        "description": "Contains detailed information about each sales order.",
+        "synonyms": [
+          "Sales Orders"
+        ],
+        "extra semantic info": {
+          "commonsense evidence": "If the warehouse code is the same, it means this product is shipped from the same warehouse.",
+          "delivery speed": "The difference 'DeliveryDate - OrderDate' indicates the delivery speed; a smaller difference means faster delivery.",
+          "net profit": "Calculated as 'Unit Price' - 'Unit Cost'."
+        }
+      },
+      {
+        "name": "sales_team",
+        "type": "simple table",
+        "table path": "main.\"Sales Team\"",
+        "unique properties": [
+          "salesteamid"
+        ],
+        "properties": [
+          {
+            "name": "salesteamid",
+            "type": "table column",
+            "column name": "SalesTeamID",
+            "data type": "numeric",
+            "description": "Unique ID for each sales team member.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "SalesTeamID"
+            ]
+          },
+          {
+            "name": "sales_team",
+            "type": "table column",
+            "column name": "\"Sales Team\"",
+            "data type": "string",
+            "description": "The name of the sales team member.",
+            "sample values": [
+              "Adam Hernandez",
+              "Keith Griffin",
+              "Jerry Green",
+              "Chris Armstrong",
+              "Stephen Payne"
+            ],
+            "synonyms": [
+              "Sales Team"
+            ]
+          },
+          {
+            "name": "region",
+            "type": "table column",
+            "column name": "Region",
+            "data type": "string",
+            "description": "The region assigned to the sales team member.",
+            "sample values": [
+              "Northeast",
+              "West",
+              "South",
+              "Midwest"
+            ],
+            "synonyms": [
+              "Region"
+            ]
+          }
+        ],
+        "description": "Contains information about sales team members and their regions.",
+        "synonyms": [
+          "Sales Team"
+        ]
+      },
+      {
+        "name": "store_locations",
+        "type": "simple table",
+        "table path": "main.\"Store Locations\"",
+        "unique properties": [
+          "storeid"
+        ],
+        "properties": [
+          {
+            "name": "storeid",
+            "type": "table column",
+            "column name": "StoreID",
+            "data type": "numeric",
+            "description": "Unique ID for each store location.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "StoreID"
+            ]
+          },
+          {
+            "name": "city_name",
+            "type": "table column",
+            "column name": "\"City Name\"",
+            "data type": "string",
+            "description": "The name of the city where the store is located.",
+            "sample values": [
+              "Birmingham",
+              "Huntsville",
+              "Mobile",
+              "Montgomery",
+              "Little Rock"
+            ],
+            "synonyms": [
+              "City Name"
+            ]
+          },
+          {
+            "name": "county",
+            "type": "table column",
+            "column name": "County",
+            "data type": "string",
+            "description": "The full name of the county where the store is located.",
+            "sample values": [
+              "Shelby County/Jefferson County",
+              "Limestone County/Madison County",
+              "Mobile County",
+              "Montgomery County",
+              "Pulaski County"
+            ],
+            "synonyms": [
+              "County"
+            ]
+          },
+          {
+            "name": "statecode",
+            "type": "table column",
+            "column name": "StateCode",
+            "data type": "string",
+            "description": "The two-letter code for the state where the store is located. Foreign key to the regions table.",
+            "sample values": [
+              "AL",
+              "AR",
+              "AZ",
+              "CA",
+              "CO"
+            ],
+            "synonyms": [
+              "StateCode"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "State",
+            "data type": "string",
+            "description": "The full name of the state where the store is located.",
+            "sample values": [
+              "Alabama",
+              "Arkansas",
+              "Arizona",
+              "California",
+              "Colorado"
+            ],
+            "synonyms": [
+              "State"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "Type",
+            "data type": "string",
+            "description": "The type of administrative division for the location (e.g., City, Town).",
+            "sample values": [
+              "City",
+              "Town",
+              "CDP",
+              "Unified Government",
+              "Consolidated Government"
+            ],
+            "synonyms": [
+              "Type"
+            ]
+          },
+          {
+            "name": "latitude",
+            "type": "table column",
+            "column name": "Latitude",
+            "data type": "numeric",
+            "description": "The latitude of the store's location.",
+            "sample values": [
+              33.52744,
+              34.69901,
+              30.69436,
+              32.36681,
+              34.74648
+            ],
+            "synonyms": [
+              "Latitude"
+            ]
+          },
+          {
+            "name": "longitude",
+            "type": "table column",
+            "column name": "Longitude",
+            "data type": "numeric",
+            "description": "The longitude of the store's location.",
+            "sample values": [
+              -86.79905,
+              -86.67298,
+              -88.04305,
+              -86.29997,
+              -92.28959
+            ],
+            "synonyms": [
+              "Longitude"
+            ]
+          },
+          {
+            "name": "areacode",
+            "type": "table column",
+            "column name": "AreaCode",
+            "data type": "numeric",
+            "description": "The telephone area code for the store's location.",
+            "sample values": [
+              205,
+              256,
+              251,
+              334,
+              501
+            ],
+            "synonyms": [
+              "AreaCode"
+            ]
+          },
+          {
+            "name": "population",
+            "type": "table column",
+            "column name": "Population",
+            "data type": "numeric",
+            "description": "The population of the area where the store is located.",
+            "sample values": [
+              212461,
+              190582,
+              194288,
+              200602,
+              197992
+            ],
+            "synonyms": [
+              "Population"
+            ]
+          },
+          {
+            "name": "household_income",
+            "type": "table column",
+            "column name": "\"Household Income\"",
+            "data type": "numeric",
+            "description": "The average household income in the store's area.",
+            "sample values": [
+              89972,
+              78554,
+              76170,
+              79866,
+              79902
+            ],
+            "synonyms": [
+              "Household Income"
+            ]
+          },
+          {
+            "name": "median_income",
+            "type": "table column",
+            "column name": "\"Median Income\"",
+            "data type": "numeric",
+            "description": "The median income in the store's area.",
+            "sample values": [
+              31061,
+              48775,
+              38776,
+              42927,
+              46085
+            ],
+            "synonyms": [
+              "Median Income"
+            ]
+          },
+          {
+            "name": "land_area",
+            "type": "table column",
+            "column name": "\"Land Area\"",
+            "data type": "numeric",
+            "description": "The land area of the store's location.",
+            "sample values": [
+              378353942,
+              552604579,
+              361044263,
+              413985435,
+              307398785
+            ],
+            "synonyms": [
+              "Land Area"
+            ]
+          },
+          {
+            "name": "water_area",
+            "type": "table column",
+            "column name": "\"Water Area\"",
+            "data type": "numeric",
+            "description": "The water area of the store's location.",
+            "sample values": [
+              6591013,
+              3452021,
+              105325210,
+              4411954,
+              6758644
+            ],
+            "synonyms": [
+              "Water Area"
+            ]
+          },
+          {
+            "name": "time_zone",
+            "type": "table column",
+            "column name": "\"Time Zone\"",
+            "data type": "string",
+            "description": "The time zone of the store's location.",
+            "sample values": [
+              "America/Chicago",
+              "America/Phoenix",
+              "America/Los Angeles",
+              "America/Denver",
+              "America/New York"
+            ],
+            "synonyms": [
+              "Time Zone"
+            ]
+          }
+        ],
+        "description": "Contains information about store locations, including demographic and geographic data.",
+        "synonyms": [
+          "Store Locations"
+        ],
+        "extra semantic info": {
+          "coordinates": "The combination of Latitude and Longitude provides the exact geographic coordinates of the store."
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "sales_orders",
+        "parent collection": "products",
+        "child collection": "sales_orders",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "productid": [
+            "productid"
+          ]
+        },
+        "description": "The sales orders associated with this product.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "product",
+        "original parent": "products",
+        "original property": "sales_orders",
+        "singular": true,
+        "always matches": false,
+        "description": "The product associated with this sales order.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "sales_orders",
+        "parent collection": "store_locations",
+        "child collection": "sales_orders",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "storeid": [
+            "storeid"
+          ]
+        },
+        "description": "The sales orders made at this store location.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "store_location",
+        "original parent": "store_locations",
+        "original property": "sales_orders",
+        "singular": true,
+        "always matches": false,
+        "description": "The store location where this sales order was made.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "sales_orders",
+        "parent collection": "customers",
+        "child collection": "sales_orders",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customerid": [
+            "customerid"
+          ]
+        },
+        "description": "The sales orders placed by this customer.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customers",
+        "original property": "sales_orders",
+        "singular": true,
+        "always matches": false,
+        "description": "The customer who placed this sales order.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "sales_orders",
+        "parent collection": "sales_team",
+        "child collection": "sales_orders",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "salesteamid": [
+            "salesteamid"
+          ]
+        },
+        "description": "The sales orders managed by this sales team member.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "sales_team_member",
+        "original parent": "sales_team",
+        "original property": "sales_orders",
+        "singular": true,
+        "always matches": false,
+        "description": "The sales team member who managed this sales order.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "store_locations",
+        "parent collection": "regions",
+        "child collection": "store_locations",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "statecode": [
+            "statecode"
+          ]
+        },
+        "description": "The store locations within this region.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "region",
+        "original parent": "regions",
+        "original property": "store_locations",
+        "singular": true,
+        "always matches": false,
+        "description": "The region where this store location is.",
+        "synonyms": []
+      }
+    ]
+  }
+]

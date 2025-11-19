@@ -1,0 +1,419 @@
+[
+  {
+    "name": "sales",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "customers",
+        "type": "simple table",
+        "table path": "main.Customers",
+        "unique properties": [
+          "customerid"
+        ],
+        "properties": [
+          {
+            "name": "customerid",
+            "type": "table column",
+            "column name": "CustomerID",
+            "data type": "numeric",
+            "description": "The unique ID of the customer.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "CustomerID"
+            ]
+          },
+          {
+            "name": "firstname",
+            "type": "table column",
+            "column name": "FirstName",
+            "data type": "string",
+            "description": "The customer's first name.",
+            "sample values": [
+              "Aaron",
+              "Abby",
+              "Abe",
+              "Abhijit",
+              "Abigail"
+            ],
+            "synonyms": [
+              "FirstName"
+            ]
+          },
+          {
+            "name": "middleinitial",
+            "type": "table column",
+            "column name": "MiddleInitial",
+            "data type": "string",
+            "description": "The customer's middle initial.",
+            "sample values": [
+              "A",
+              "B",
+              "C",
+              "E",
+              "J"
+            ],
+            "synonyms": [
+              "MiddleInitial"
+            ]
+          },
+          {
+            "name": "lastname",
+            "type": "table column",
+            "column name": "LastName",
+            "data type": "string",
+            "description": "The customer's last name.",
+            "sample values": [
+              "Alexander",
+              "Bryant",
+              "Butler",
+              "Chen",
+              "Coleman"
+            ],
+            "synonyms": [
+              "LastName"
+            ]
+          }
+        ],
+        "description": "Contains information about individual customers.",
+        "synonyms": [
+          "Customers"
+        ]
+      },
+      {
+        "name": "employees",
+        "type": "simple table",
+        "table path": "main.Employees",
+        "unique properties": [
+          "employeeid"
+        ],
+        "properties": [
+          {
+            "name": "employeeid",
+            "type": "table column",
+            "column name": "EmployeeID",
+            "data type": "numeric",
+            "description": "The unique ID of the employee.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "EmployeeID"
+            ]
+          },
+          {
+            "name": "firstname",
+            "type": "table column",
+            "column name": "FirstName",
+            "data type": "string",
+            "description": "The employee's first name.",
+            "sample values": [
+              "Abraham",
+              "Reginald",
+              "Cheryl",
+              "Michel",
+              "Innes"
+            ],
+            "synonyms": [
+              "FirstName"
+            ]
+          },
+          {
+            "name": "middleinitial",
+            "type": "table column",
+            "column name": "MiddleInitial",
+            "data type": "string",
+            "description": "The employee's middle initial.",
+            "sample values": [
+              "e",
+              "l",
+              "a",
+              "u",
+              "r"
+            ],
+            "synonyms": [
+              "MiddleInitial"
+            ]
+          },
+          {
+            "name": "lastname",
+            "type": "table column",
+            "column name": "LastName",
+            "data type": "string",
+            "description": "The employee's last name.",
+            "sample values": [
+              "Bennet",
+              "Blotchet-Halls",
+              "Carson",
+              "DeFrance",
+              "del Castillo"
+            ],
+            "synonyms": [
+              "LastName"
+            ]
+          }
+        ],
+        "description": "Contains information about company employees, including salespersons.",
+        "synonyms": [
+          "Employees"
+        ]
+      },
+      {
+        "name": "products",
+        "type": "simple table",
+        "table path": "main.Products",
+        "unique properties": [
+          "productid"
+        ],
+        "properties": [
+          {
+            "name": "productid",
+            "type": "table column",
+            "column name": "ProductID",
+            "data type": "numeric",
+            "description": "The unique ID of the product.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "ProductID"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "The product name.",
+            "sample values": [
+              "Adjustable Race",
+              "Bearing Ball",
+              "BB Ball Bearing",
+              "Headset Ball Bearings",
+              "Blade"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "price",
+            "type": "table column",
+            "column name": "Price",
+            "data type": "numeric",
+            "description": "The unit price of the product.",
+            "sample values": [
+              1.6,
+              0.8,
+              2.4,
+              0,
+              189.6
+            ],
+            "synonyms": [
+              "Price"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if the price = 0.0, it means this product is free or a gift"
+            }
+          }
+        ],
+        "description": "Contains details about the products available for sale.",
+        "synonyms": [
+          "Products"
+        ]
+      },
+      {
+        "name": "sales",
+        "type": "simple table",
+        "table path": "main.Sales",
+        "unique properties": [
+          "salesid"
+        ],
+        "properties": [
+          {
+            "name": "salesid",
+            "type": "table column",
+            "column name": "SalesID",
+            "data type": "numeric",
+            "description": "The unique ID of the sale.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "SalesID"
+            ]
+          },
+          {
+            "name": "salespersonid",
+            "type": "table column",
+            "column name": "SalesPersonID",
+            "data type": "numeric",
+            "description": "The unique ID of the salesperson who made the sale. This is a foreign key to the employees table.",
+            "sample values": [
+              17,
+              5,
+              8,
+              1,
+              14
+            ],
+            "synonyms": [
+              "SalesPersonID"
+            ]
+          },
+          {
+            "name": "customerid",
+            "type": "table column",
+            "column name": "CustomerID",
+            "data type": "numeric",
+            "description": "The unique ID of the customer who made the purchase. This is a foreign key to the customers table.",
+            "sample values": [
+              10482,
+              1964,
+              12300,
+              4182,
+              15723
+            ],
+            "synonyms": [
+              "CustomerID"
+            ]
+          },
+          {
+            "name": "productid",
+            "type": "table column",
+            "column name": "ProductID",
+            "data type": "numeric",
+            "description": "The unique ID of the product sold. This is a foreign key to the products table.",
+            "sample values": [
+              500,
+              306,
+              123,
+              437,
+              246
+            ],
+            "synonyms": [
+              "ProductID"
+            ]
+          },
+          {
+            "name": "quantity",
+            "type": "table column",
+            "column name": "Quantity",
+            "data type": "numeric",
+            "description": "The trading quantity of the product sold.",
+            "sample values": [
+              500,
+              810,
+              123,
+              437,
+              750
+            ],
+            "synonyms": [
+              "Quantity"
+            ]
+          }
+        ],
+        "description": "Contains transactional data for sales, linking customers, products, and the salesperson who made the sale.",
+        "synonyms": [
+          "Sales"
+        ],
+        "extra semantic info": {
+          "commonsense evidence": "total price = quantity x Products' Price"
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "sales_of_product",
+        "parent collection": "products",
+        "child collection": "sales",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "productid": [
+            "productid"
+          ]
+        },
+        "description": "The sales records associated with this product.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "product",
+        "original parent": "products",
+        "original property": "sales_of_product",
+        "singular": true,
+        "always matches": true,
+        "description": "The product sold in this sales transaction.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "sales_to_customer",
+        "parent collection": "customers",
+        "child collection": "sales",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customerid": [
+            "customerid"
+          ]
+        },
+        "description": "The sales records for this customer.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customers",
+        "original property": "sales_to_customer",
+        "singular": true,
+        "always matches": true,
+        "description": "The customer who made this purchase.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "sales_by_employee",
+        "parent collection": "employees",
+        "child collection": "sales",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "employeeid": [
+            "salespersonid"
+          ]
+        },
+        "description": "The sales records managed by this employee.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "employee",
+        "original parent": "employees",
+        "original property": "sales_by_employee",
+        "singular": true,
+        "always matches": true,
+        "description": "The employee (salesperson) who made this sale.",
+        "synonyms": []
+      }
+    ]
+  }
+]

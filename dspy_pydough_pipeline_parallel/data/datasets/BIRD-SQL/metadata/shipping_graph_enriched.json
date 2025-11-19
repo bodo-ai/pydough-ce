@@ -1,0 +1,734 @@
+[
+  {
+    "name": "shipping",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "city",
+        "type": "simple table",
+        "table path": "main.city",
+        "unique properties": [
+          "city_id"
+        ],
+        "properties": [
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "city_id",
+            "data type": "numeric",
+            "description": "Unique identifier for the city.",
+            "sample values": [
+              100,
+              101,
+              102,
+              103,
+              104
+            ],
+            "synonyms": [
+              "city_id"
+            ]
+          },
+          {
+            "name": "city_name",
+            "type": "table column",
+            "column name": "city_name",
+            "data type": "string",
+            "description": "Name of the city.",
+            "sample values": [
+              "Union City",
+              "Huntington Park",
+              "Passaic",
+              "Hempstead",
+              "Berwyn"
+            ],
+            "synonyms": [
+              "city_name"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "State in which the city is located.",
+            "sample values": [
+              "New Jersey",
+              "California",
+              "New York",
+              "Illinois",
+              "Massachusetts"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "population",
+            "type": "table column",
+            "column name": "population",
+            "data type": "numeric",
+            "description": "Population of the city.",
+            "sample values": [
+              67088,
+              61348,
+              67861,
+              56554,
+              54016
+            ],
+            "synonyms": [
+              "population"
+            ]
+          },
+          {
+            "name": "area",
+            "type": "table column",
+            "column name": "area",
+            "data type": "numeric",
+            "description": "Square mileage the city covers.",
+            "sample values": [
+              1.3,
+              3.0,
+              3.1,
+              3.7,
+              3.9
+            ],
+            "synonyms": [
+              "area"
+            ]
+          }
+        ],
+        "description": "Contains information about cities, including their population and area.",
+        "synonyms": [
+          "city"
+        ],
+        "extra semantic info": {
+          "population_density": "Can be calculated as 'area' / 'population'."
+        }
+      },
+      {
+        "name": "customer",
+        "type": "simple table",
+        "table path": "main.customer",
+        "unique properties": [
+          "cust_id"
+        ],
+        "properties": [
+          {
+            "name": "cust_id",
+            "type": "table column",
+            "column name": "cust_id",
+            "data type": "numeric",
+            "description": "Unique identifier for the customer.",
+            "sample values": [
+              193,
+              304,
+              314,
+              381,
+              493
+            ],
+            "synonyms": [
+              "cust_id"
+            ]
+          },
+          {
+            "name": "cust_name",
+            "type": "table column",
+            "column name": "cust_name",
+            "data type": "string",
+            "description": "Business name of the customer.",
+            "sample values": [
+              "Advanced Fabricators",
+              "Pard's Trailer Sales",
+              "Saar Enterprises, Inc.",
+              "Autoware Inc",
+              "Harry's Hot Rod Auto & Truck Accessories"
+            ],
+            "synonyms": [
+              "cust_name"
+            ]
+          },
+          {
+            "name": "annual_revenue",
+            "type": "table column",
+            "column name": "annual_revenue",
+            "data type": "numeric",
+            "description": "Annual revenue of the customer.",
+            "sample values": [
+              39588651,
+              17158109,
+              47403613,
+              5583961,
+              11732302
+            ],
+            "synonyms": [
+              "annual_revenue"
+            ]
+          },
+          {
+            "name": "cust_type",
+            "type": "table column",
+            "column name": "cust_type",
+            "data type": "string",
+            "description": "The type of customer, such as manufacturer, wholesaler, or retailer.",
+            "sample values": [
+              "manufacturer",
+              "wholesaler",
+              "retailer"
+            ],
+            "synonyms": [
+              "cust_type"
+            ]
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string",
+            "description": "Physical street address of the customer.",
+            "sample values": [
+              "5141 Summit Boulevard",
+              "5910 South 300 West",
+              "11687 192nd Street",
+              "854 Southwest 12th Avenue",
+              "105 NW 13th St"
+            ],
+            "synonyms": [
+              "address"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "City of the customer's address.",
+            "sample values": [
+              "West Palm Beach",
+              "Salt Lake City",
+              "Council Bluffs",
+              "Pompano Beach",
+              "Grand Prairie"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "State of the customer's address (abbreviation).",
+            "sample values": [
+              "FL",
+              "UT",
+              "IA",
+              "TX",
+              "PA"
+            ],
+            "synonyms": [
+              "state"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "State abbreviations can be mapped to full names, e.g., NY to New York."
+            }
+          },
+          {
+            "name": "zip_",
+            "type": "table column",
+            "column name": "zip",
+            "data type": "numeric",
+            "description": "Postal code of the customer's address.",
+            "sample values": [
+              33415.0,
+              84107.0,
+              51503.0,
+              33069.0,
+              75050.0
+            ],
+            "synonyms": [
+              "zip"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string",
+            "description": "Telephone number to reach the customer.",
+            "sample values": [
+              "(561) 683-3535",
+              "(801) 262-4864",
+              "(712) 366-4929",
+              "(954) 738-4000",
+              "(972) 263-8080"
+            ],
+            "synonyms": [
+              "phone"
+            ]
+          }
+        ],
+        "description": "Contains information about customers, including their business details and location.",
+        "synonyms": [
+          "customer"
+        ]
+      },
+      {
+        "name": "driver",
+        "type": "simple table",
+        "table path": "main.driver",
+        "unique properties": [
+          "driver_id"
+        ],
+        "properties": [
+          {
+            "name": "driver_id",
+            "type": "table column",
+            "column name": "driver_id",
+            "data type": "numeric",
+            "description": "Unique identifier for the driver.",
+            "sample values": [
+              20,
+              21,
+              22,
+              23,
+              24
+            ],
+            "synonyms": [
+              "driver_id"
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "First given name of the driver.",
+            "sample values": [
+              "Sue",
+              "Andrea",
+              "Roger",
+              "Zachery",
+              "Adel"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "Family name of the driver.",
+            "sample values": [
+              "Newell",
+              "Simons",
+              "McHaney",
+              "Hicks",
+              "Al-Alawi"
+            ],
+            "synonyms": [
+              "last_name"
+            ]
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string",
+            "description": "Street address of the driver's home.",
+            "sample values": [
+              "268 Richmond Ave",
+              "3574 Oak Limb Cv",
+              "1839 S Orleans St",
+              "3649 Park Lake Dr",
+              "749 E Mckellar Ave"
+            ],
+            "synonyms": [
+              "address"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "City the driver lives in.",
+            "sample values": [
+              "Memphis"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "State the driver lives in (abbreviation).",
+            "sample values": [
+              "TN"
+            ],
+            "synonyms": [
+              "state"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "State abbreviations can be mapped to full names, e.g., NY to New York."
+            }
+          },
+          {
+            "name": "zip_code",
+            "type": "table column",
+            "column name": "zip_code",
+            "data type": "numeric",
+            "description": "Postal code of the driver's address.",
+            "sample values": [
+              38106,
+              38135,
+              38118,
+              38109,
+              38114
+            ],
+            "synonyms": [
+              "zip_code"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string",
+            "description": "Telephone number of the driver.",
+            "sample values": [
+              "(901) 774-6569",
+              "(901) 384-0984",
+              "(901) 948-1043",
+              "(901) 362-6674",
+              "(901) 947-4433"
+            ],
+            "synonyms": [
+              "phone"
+            ]
+          }
+        ],
+        "description": "Contains information about truck drivers, including their personal and contact details.",
+        "synonyms": [
+          "driver"
+        ],
+        "extra semantic info": {
+          "full_name": "Can be created by combining 'first_name' and 'last_name'."
+        }
+      },
+      {
+        "name": "shipment",
+        "type": "simple table",
+        "table path": "main.shipment",
+        "unique properties": [
+          "ship_id"
+        ],
+        "properties": [
+          {
+            "name": "ship_id",
+            "type": "table column",
+            "column name": "ship_id",
+            "data type": "numeric",
+            "description": "Unique identifier of the shipment.",
+            "sample values": [
+              1000,
+              1001,
+              1002,
+              1003,
+              1004
+            ],
+            "synonyms": [
+              "ship_id"
+            ]
+          },
+          {
+            "name": "cust_id",
+            "type": "table column",
+            "column name": "cust_id",
+            "data type": "numeric",
+            "description": "A foreign key reference to the customer for whom the shipment is intended.",
+            "sample values": [
+              3660,
+              2001,
+              1669,
+              989,
+              2298
+            ],
+            "synonyms": [
+              "cust_id"
+            ]
+          },
+          {
+            "name": "weight",
+            "type": "table column",
+            "column name": "weight",
+            "data type": "numeric",
+            "description": "The weight of the shipment in pounds.",
+            "sample values": [
+              3528.0,
+              11394.0,
+              8712.0,
+              17154.0,
+              9279.0
+            ],
+            "synonyms": [
+              "weight"
+            ]
+          },
+          {
+            "name": "truck_id",
+            "type": "table column",
+            "column name": "truck_id",
+            "data type": "numeric",
+            "description": "A foreign key reference to the truck used for the shipment.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "truck_id"
+            ]
+          },
+          {
+            "name": "driver_id",
+            "type": "table column",
+            "column name": "driver_id",
+            "data type": "numeric",
+            "description": "A foreign key reference to the driver who transported the shipment.",
+            "sample values": [
+              23,
+              27,
+              21,
+              24,
+              22
+            ],
+            "synonyms": [
+              "driver_id"
+            ]
+          },
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "city_id",
+            "data type": "numeric",
+            "description": "A foreign key reference to the destination city of the shipment.",
+            "sample values": [
+              137,
+              186,
+              268,
+              365,
+              253
+            ],
+            "synonyms": [
+              "city_id"
+            ]
+          },
+          {
+            "name": "ship_date",
+            "type": "table column",
+            "column name": "ship_date",
+            "data type": "string",
+            "description": "The date the shipment was made.",
+            "sample values": [
+              "2016-01-08",
+              "2016-01-18",
+              "2016-01-19",
+              "2016-01-24",
+              "2016-01-26"
+            ],
+            "synonyms": [
+              "ship_date"
+            ]
+          }
+        ],
+        "description": "Contains information about shipments, linking customers, trucks, drivers, and destinations.",
+        "synonyms": [
+          "shipment"
+        ]
+      },
+      {
+        "name": "truck",
+        "type": "simple table",
+        "table path": "main.truck",
+        "unique properties": [
+          "truck_id"
+        ],
+        "properties": [
+          {
+            "name": "truck_id",
+            "type": "table column",
+            "column name": "truck_id",
+            "data type": "numeric",
+            "description": "Unique identifier for the truck.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "truck_id"
+            ]
+          },
+          {
+            "name": "make",
+            "type": "table column",
+            "column name": "make",
+            "data type": "string",
+            "description": "The brand or manufacturer of the truck.",
+            "sample values": [
+              "Peterbilt",
+              "Mack",
+              "Kenworth"
+            ],
+            "synonyms": [
+              "make"
+            ],
+            "extra semantic info": {
+              "headquarters": {
+                "Peterbilt": "Texas (TX)",
+                "Mack": "North Carolina (NC)",
+                "Kenworth": "Washington (WA)"
+              }
+            }
+          },
+          {
+            "name": "model_year",
+            "type": "table column",
+            "column name": "model_year",
+            "data type": "numeric",
+            "description": "The year the truck was manufactured.",
+            "sample values": [
+              2005,
+              2006,
+              2007,
+              2008,
+              2009
+            ],
+            "synonyms": [
+              "model_year"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A higher model year indicates a newer truck."
+            }
+          }
+        ],
+        "description": "Contains information about the trucks used for shipments.",
+        "synonyms": [
+          "truck"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "shipments",
+        "parent collection": "truck",
+        "child collection": "shipment",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "truck_id": [
+            "truck_id"
+          ]
+        },
+        "description": "The shipments carried out by this truck.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "truck",
+        "original parent": "truck",
+        "original property": "shipments",
+        "singular": true,
+        "always matches": false,
+        "description": "The truck used for this shipment.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "shipments",
+        "parent collection": "driver",
+        "child collection": "shipment",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "driver_id": [
+            "driver_id"
+          ]
+        },
+        "description": "The shipments handled by this driver.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "driver",
+        "original parent": "driver",
+        "original property": "shipments",
+        "singular": true,
+        "always matches": false,
+        "description": "The driver who handled this shipment.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "shipments",
+        "parent collection": "city",
+        "child collection": "shipment",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "city_id": [
+            "city_id"
+          ]
+        },
+        "description": "The shipments destined for this city.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "city",
+        "original parent": "city",
+        "original property": "shipments",
+        "singular": true,
+        "always matches": false,
+        "description": "The destination city for this shipment.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "shipments",
+        "parent collection": "customer",
+        "child collection": "shipment",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "cust_id": [
+            "cust_id"
+          ]
+        },
+        "description": "The shipments for this customer.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customer",
+        "original property": "shipments",
+        "singular": true,
+        "always matches": false,
+        "description": "The customer who will receive this shipment.",
+        "synonyms": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,695 @@
+[
+  {
+    "name": "airline",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "air_carriers",
+        "type": "simple table",
+        "table path": "main.\"Air Carriers\"",
+        "unique properties": [
+          "code"
+        ],
+        "properties": [
+          {
+            "name": "code",
+            "type": "table column",
+            "column name": "Code",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              19031,
+              19032,
+              19033,
+              19034,
+              19035
+            ],
+            "synonyms": [
+              "Code"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "Description",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Mackey International Inc.: MAC",
+              "Munz Northern Airlines Inc.: XY",
+              "Cochise Airlines Inc.: COC",
+              "Golden Gate Airlines Inc.: GSA",
+              "Aeromech Inc.: RZZ"
+            ],
+            "synonyms": [
+              "Description"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Air Carriers"
+        ]
+      },
+      {
+        "name": "airlines",
+        "type": "simple table",
+        "table path": "main.Airlines",
+        "unique properties": [
+          [
+            "fl_date",
+            "op_carrier_airline_id",
+            "tail_num",
+            "op_carrier_fl_num",
+            "origin_airport_id",
+            "origin_airport_seq_id",
+            "origin_city_market_id",
+            "origin",
+            "dest_airport_id",
+            "dest_airport_seq_id",
+            "dest_city_market_id",
+            "dest",
+            "crs_dep_time",
+            "dep_time",
+            "dep_delay",
+            "dep_delay_new",
+            "arr_time",
+            "arr_delay",
+            "arr_delay_new",
+            "cancelled",
+            "cancellation_code",
+            "crs_elapsed_time",
+            "actual_elapsed_time",
+            "carrier_delay",
+            "weather_delay",
+            "nas_delay",
+            "security_delay",
+            "late_aircraft_delay"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "fl_date",
+            "type": "table column",
+            "column name": "FL_DATE",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2018/8/1",
+              "2018/8/2",
+              "2018/8/3",
+              "2018/8/4",
+              "2018/8/5"
+            ],
+            "synonyms": [
+              "FL_DATE"
+            ]
+          },
+          {
+            "name": "op_carrier_airline_id",
+            "type": "table column",
+            "column name": "OP_CARRIER_AIRLINE_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              19805,
+              20427,
+              21167,
+              20452,
+              20363
+            ],
+            "synonyms": [
+              "OP_CARRIER_AIRLINE_ID"
+            ]
+          },
+          {
+            "name": "tail_num",
+            "type": "table column",
+            "column name": "TAIL_NUM",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "N956AN",
+              "N973AN",
+              "N9006",
+              "N870NN",
+              "N9023N"
+            ],
+            "synonyms": [
+              "TAIL_NUM"
+            ]
+          },
+          {
+            "name": "op_carrier_fl_num",
+            "type": "table column",
+            "column name": "OP_CARRIER_FL_NUM",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1587,
+              1588,
+              1590,
+              1591,
+              1593
+            ],
+            "synonyms": [
+              "OP_CARRIER_FL_NUM"
+            ]
+          },
+          {
+            "name": "origin_airport_id",
+            "type": "table column",
+            "column name": "ORIGIN_AIRPORT_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              12478,
+              14107,
+              11042,
+              14843,
+              10423
+            ],
+            "synonyms": [
+              "ORIGIN_AIRPORT_ID"
+            ]
+          },
+          {
+            "name": "origin_airport_seq_id",
+            "type": "table column",
+            "column name": "ORIGIN_AIRPORT_SEQ_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1247805,
+              1410702,
+              1104205,
+              1484306,
+              1042302
+            ],
+            "synonyms": [
+              "ORIGIN_AIRPORT_SEQ_ID"
+            ]
+          },
+          {
+            "name": "origin_city_market_id",
+            "type": "table column",
+            "column name": "ORIGIN_CITY_MARKET_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              31703,
+              30466,
+              30647,
+              34819,
+              30423
+            ],
+            "synonyms": [
+              "ORIGIN_CITY_MARKET_ID"
+            ]
+          },
+          {
+            "name": "origin",
+            "type": "table column",
+            "column name": "ORIGIN",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "JFK",
+              "PHX",
+              "CLE",
+              "SJU",
+              "AUS"
+            ],
+            "synonyms": [
+              "ORIGIN"
+            ]
+          },
+          {
+            "name": "dest_airport_id",
+            "type": "table column",
+            "column name": "DEST_AIRPORT_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              14107,
+              11618,
+              11298,
+              13303,
+              13930
+            ],
+            "synonyms": [
+              "DEST_AIRPORT_ID"
+            ]
+          },
+          {
+            "name": "dest_airport_seq_id",
+            "type": "table column",
+            "column name": "DEST_AIRPORT_SEQ_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1410702,
+              1161802,
+              1129806,
+              1330303,
+              1393006
+            ],
+            "synonyms": [
+              "DEST_AIRPORT_SEQ_ID"
+            ]
+          },
+          {
+            "name": "dest_city_market_id",
+            "type": "table column",
+            "column name": "DEST_CITY_MARKET_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              30466,
+              31703,
+              30194,
+              32467,
+              30977
+            ],
+            "synonyms": [
+              "DEST_CITY_MARKET_ID"
+            ]
+          },
+          {
+            "name": "dest",
+            "type": "table column",
+            "column name": "DEST",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "PHX",
+              "EWR",
+              "DFW",
+              "MIA",
+              "ORD"
+            ],
+            "synonyms": [
+              "DEST"
+            ]
+          },
+          {
+            "name": "crs_dep_time",
+            "type": "table column",
+            "column name": "CRS_DEP_TIME",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1640,
+              1512,
+              744,
+              900,
+              600
+            ],
+            "synonyms": [
+              "CRS_DEP_TIME"
+            ]
+          },
+          {
+            "name": "dep_time",
+            "type": "table column",
+            "column name": "DEP_TIME",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1649,
+              1541,
+              741,
+              944,
+              556
+            ],
+            "synonyms": [
+              "DEP_TIME"
+            ]
+          },
+          {
+            "name": "dep_delay",
+            "type": "table column",
+            "column name": "DEP_DELAY",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              9,
+              29,
+              -3,
+              44,
+              -4
+            ],
+            "synonyms": [
+              "DEP_DELAY"
+            ]
+          },
+          {
+            "name": "dep_delay_new",
+            "type": "table column",
+            "column name": "DEP_DELAY_NEW",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              9,
+              29,
+              0,
+              44,
+              1
+            ],
+            "synonyms": [
+              "DEP_DELAY_NEW"
+            ]
+          },
+          {
+            "name": "arr_time",
+            "type": "table column",
+            "column name": "ARR_TIME",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2006,
+              2350,
+              938,
+              1347,
+              951
+            ],
+            "synonyms": [
+              "ARR_TIME"
+            ]
+          },
+          {
+            "name": "arr_delay",
+            "type": "table column",
+            "column name": "ARR_DELAY",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              44,
+              53,
+              -2,
+              43,
+              -7
+            ],
+            "synonyms": [
+              "ARR_DELAY"
+            ]
+          },
+          {
+            "name": "arr_delay_new",
+            "type": "table column",
+            "column name": "ARR_DELAY_NEW",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              44,
+              53,
+              0,
+              43,
+              5
+            ],
+            "synonyms": [
+              "ARR_DELAY_NEW"
+            ]
+          },
+          {
+            "name": "cancelled",
+            "type": "table column",
+            "column name": "CANCELLED",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "CANCELLED"
+            ]
+          },
+          {
+            "name": "cancellation_code",
+            "type": "table column",
+            "column name": "CANCELLATION_CODE",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A",
+              "B",
+              "C"
+            ],
+            "synonyms": [
+              "CANCELLATION_CODE"
+            ]
+          },
+          {
+            "name": "crs_elapsed_time",
+            "type": "table column",
+            "column name": "CRS_ELAPSED_TIME",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              342,
+              285,
+              176,
+              304,
+              173
+            ],
+            "synonyms": [
+              "CRS_ELAPSED_TIME"
+            ]
+          },
+          {
+            "name": "actual_elapsed_time",
+            "type": "table column",
+            "column name": "ACTUAL_ELAPSED_TIME",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              377,
+              309,
+              177,
+              303,
+              175
+            ],
+            "synonyms": [
+              "ACTUAL_ELAPSED_TIME"
+            ]
+          },
+          {
+            "name": "carrier_delay",
+            "type": "table column",
+            "column name": "CARRIER_DELAY",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              9,
+              0,
+              43,
+              28,
+              21
+            ],
+            "synonyms": [
+              "CARRIER_DELAY"
+            ]
+          },
+          {
+            "name": "weather_delay",
+            "type": "table column",
+            "column name": "WEATHER_DELAY",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              2,
+              48,
+              46,
+              9
+            ],
+            "synonyms": [
+              "WEATHER_DELAY"
+            ]
+          },
+          {
+            "name": "nas_delay",
+            "type": "table column",
+            "column name": "NAS_DELAY",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              35,
+              53,
+              0,
+              2,
+              70
+            ],
+            "synonyms": [
+              "NAS_DELAY"
+            ]
+          },
+          {
+            "name": "security_delay",
+            "type": "table column",
+            "column name": "SECURITY_DELAY",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              42,
+              4,
+              3,
+              14
+            ],
+            "synonyms": [
+              "SECURITY_DELAY"
+            ]
+          },
+          {
+            "name": "late_aircraft_delay",
+            "type": "table column",
+            "column name": "LATE_AIRCRAFT_DELAY",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              6,
+              73,
+              33,
+              5
+            ],
+            "synonyms": [
+              "LATE_AIRCRAFT_DELAY"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Airlines"
+        ]
+      },
+      {
+        "name": "airports",
+        "type": "simple table",
+        "table path": "main.Airports",
+        "unique properties": [
+          "code"
+        ],
+        "properties": [
+          {
+            "name": "code",
+            "type": "table column",
+            "column name": "Code",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "01A",
+              "03A",
+              "04A",
+              "05A",
+              "06A"
+            ],
+            "synonyms": [
+              "Code"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "Description",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Afognak Lake, AK: Afognak Lake Airport",
+              "Granite Mountain, AK: Bear Creek Mini...",
+              "Lik, AK: Lik Mining Camp",
+              "Little Squaw, AK: Little Squaw Airport",
+              "Kizhuyak, AK: Kizhuyak Bay"
+            ],
+            "synonyms": [
+              "Description"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Airports"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "airlines",
+        "parent collection": "air_carriers",
+        "child collection": "airlines",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "op_carrier_airline_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "air_carriers",
+        "original parent": "air_carriers",
+        "original property": "airlines",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "airlines",
+        "parent collection": "airports",
+        "child collection": "airlines",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "dest"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "airports",
+        "original parent": "airports",
+        "original property": "airlines",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "airlines_2",
+        "parent collection": "airports",
+        "child collection": "airlines",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "origin"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "airports_2",
+        "original parent": "airports",
+        "original property": "airlines_2",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

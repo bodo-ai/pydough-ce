@@ -1,0 +1,655 @@
+[
+  {
+    "name": "video_games",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "game",
+        "type": "simple table",
+        "table path": "main.game",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              44,
+              45,
+              46,
+              47,
+              48
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "genre_id",
+            "type": "table column",
+            "column name": "genre_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4,
+              5,
+              11,
+              2,
+              9
+            ],
+            "synonyms": [
+              "genre_id"
+            ]
+          },
+          {
+            "name": "game_name",
+            "type": "table column",
+            "column name": "game_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2 Games in 1: Sonic Advance & ChuChu ...",
+              "2 Games in 1: Sonic Battle & ChuChu R...",
+              "2 Games in 1: Sonic Pinball Party & C...",
+              "2 Games in 1: SpongeBob SquarePants: ...",
+              "2 in 1 Combo Pack: Sonic Heroes / Sup..."
+            ],
+            "synonyms": [
+              "game_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "game"
+        ]
+      },
+      {
+        "name": "game_platform",
+        "type": "simple table",
+        "table path": "main.game_platform",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "game_publisher_id",
+            "type": "table column",
+            "column name": "game_publisher_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8564,
+              9852,
+              11063,
+              9065,
+              9544
+            ],
+            "synonyms": [
+              "game_publisher_id"
+            ]
+          },
+          {
+            "name": "platform_id",
+            "type": "table column",
+            "column name": "platform_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4,
+              7,
+              15,
+              16,
+              12
+            ],
+            "synonyms": [
+              "platform_id"
+            ]
+          },
+          {
+            "name": "release_year",
+            "type": "table column",
+            "column name": "release_year",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2007,
+              2006,
+              2011,
+              2009,
+              1981
+            ],
+            "synonyms": [
+              "release_year"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "game_platform"
+        ]
+      },
+      {
+        "name": "game_publisher",
+        "type": "simple table",
+        "table path": "main.game_publisher",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "game_id",
+            "type": "table column",
+            "column name": "game_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10866,
+              9244,
+              5464,
+              10868,
+              7282
+            ],
+            "synonyms": [
+              "game_id"
+            ]
+          },
+          {
+            "name": "publisher_id",
+            "type": "table column",
+            "column name": "publisher_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              369,
+              328,
+              498,
+              464,
+              17
+            ],
+            "synonyms": [
+              "publisher_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "game_publisher"
+        ]
+      },
+      {
+        "name": "genre",
+        "type": "simple table",
+        "table path": "main.genre",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "genre_name",
+            "type": "table column",
+            "column name": "genre_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Action",
+              "Adventure",
+              "Fighting",
+              "Misc",
+              "Platform"
+            ],
+            "synonyms": [
+              "genre_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "genre"
+        ]
+      },
+      {
+        "name": "platform",
+        "type": "simple table",
+        "table path": "main.platform",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "platform_name",
+            "type": "table column",
+            "column name": "platform_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Wii",
+              "NES",
+              "GB",
+              "DS",
+              "X360"
+            ],
+            "synonyms": [
+              "platform_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "platform"
+        ]
+      },
+      {
+        "name": "publisher",
+        "type": "simple table",
+        "table path": "main.publisher",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "publisher_name",
+            "type": "table column",
+            "column name": "publisher_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "10TACLE Studios",
+              "1C Company",
+              "20th Century Fox Video Games",
+              "2D Boy",
+              "3DO"
+            ],
+            "synonyms": [
+              "publisher_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "publisher"
+        ]
+      },
+      {
+        "name": "region",
+        "type": "simple table",
+        "table path": "main.region",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "region_name",
+            "type": "table column",
+            "column name": "region_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "North America",
+              "Europe",
+              "Japan",
+              "Other"
+            ],
+            "synonyms": [
+              "region_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "region"
+        ]
+      },
+      {
+        "name": "region_sales",
+        "type": "simple table",
+        "table path": "main.region_sales",
+        "unique properties": [
+          [
+            "region_id",
+            "game_platform_id",
+            "num_sales"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "region_id",
+            "type": "table column",
+            "column name": "region_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "region_id"
+            ]
+          },
+          {
+            "name": "game_platform_id",
+            "type": "table column",
+            "column name": "game_platform_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              50,
+              51,
+              52,
+              53,
+              54
+            ],
+            "synonyms": [
+              "game_platform_id"
+            ]
+          },
+          {
+            "name": "num_sales",
+            "type": "table column",
+            "column name": "num_sales",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3.5,
+              1.43,
+              0.51,
+              0.27,
+              0.48
+            ],
+            "synonyms": [
+              "num_sales"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "region_sales"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "game",
+        "parent collection": "genre",
+        "child collection": "game",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "genre_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "genre",
+        "original parent": "genre",
+        "original property": "game",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "game_platform",
+        "parent collection": "platform",
+        "child collection": "game_platform",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "platform_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "platform",
+        "original parent": "platform",
+        "original property": "game_platform",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "game_platform",
+        "parent collection": "game_publisher",
+        "child collection": "game_platform",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "game_publisher_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "game_publisher",
+        "original parent": "game_publisher",
+        "original property": "game_platform",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "game_publisher",
+        "parent collection": "publisher",
+        "child collection": "game_publisher",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "publisher_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "publisher",
+        "original parent": "publisher",
+        "original property": "game_publisher",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "game_publisher",
+        "parent collection": "game",
+        "child collection": "game_publisher",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "game_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "game",
+        "original parent": "game",
+        "original property": "game_publisher",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "region_sales",
+        "parent collection": "region",
+        "child collection": "region_sales",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "region_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "region",
+        "original parent": "region",
+        "original property": "region_sales",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "region_sales",
+        "parent collection": "game_platform",
+        "child collection": "region_sales",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "game_platform_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "game_platform",
+        "original parent": "game_platform",
+        "original property": "region_sales",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

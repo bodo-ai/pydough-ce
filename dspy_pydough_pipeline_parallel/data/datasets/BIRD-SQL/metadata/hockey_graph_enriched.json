@@ -1,0 +1,6423 @@
+[
+  {
+    "name": "hockey",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "awardscoaches",
+        "type": "simple table",
+        "table path": "main.AwardsCoaches",
+        "unique properties": [
+          [
+            "coachid",
+            "award",
+            "year_",
+            "lgid",
+            "note"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "coachid",
+            "type": "table column",
+            "column name": "coachID",
+            "data type": "string",
+            "description": "Unique identifier for the coach.",
+            "sample values": [
+              "patrile01c",
+              "irvindi01c",
+              "gormato01c",
+              "adamsja01c",
+              "hartce01c"
+            ],
+            "synonyms": [
+              "coachID"
+            ]
+          },
+          {
+            "name": "award",
+            "type": "table column",
+            "column name": "award",
+            "data type": "string",
+            "description": "Name of the award received by the coach.",
+            "sample values": [
+              "First Team All-Star",
+              "Second Team All-Star",
+              "Jack Adams",
+              "Baldwin",
+              "Schmertz"
+            ],
+            "synonyms": [
+              "award"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year the award was given.",
+            "sample values": [
+              1930,
+              1931,
+              1932,
+              1933,
+              1934
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league in which the award was given.",
+            "sample values": [
+              "NHL",
+              "WHA"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "note",
+            "type": "table column",
+            "column name": "note",
+            "data type": "string",
+            "description": "Additional notes about the award.",
+            "sample values": [],
+            "synonyms": [
+              "note"
+            ]
+          }
+        ],
+        "description": "Records of awards given to hockey coaches.",
+        "synonyms": [
+          "AwardsCoaches"
+        ]
+      },
+      {
+        "name": "awardsmisc",
+        "type": "simple table",
+        "table path": "main.AwardsMisc",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "Name of the person or entity receiving the award.",
+            "sample values": [
+              "1960 U.S. Olympic Hockey Team",
+              "1998 U.S. Olympic Women's Hockey Team",
+              "Al Arbour",
+              "Alex Delvecchio",
+              "Art Berglund"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "ID",
+            "data type": "string",
+            "description": "Identifier for the player or coach associated with the award.",
+            "sample values": [
+              "arboual01",
+              "delveal01",
+              "rossar01",
+              "wirtzar01h",
+              "chadwbi01h"
+            ],
+            "synonyms": [
+              "ID"
+            ]
+          },
+          {
+            "name": "award",
+            "type": "table column",
+            "column name": "award",
+            "data type": "string",
+            "description": "Name of the award.",
+            "sample values": [
+              "Patrick"
+            ],
+            "synonyms": [
+              "award"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year the award was given.",
+            "sample values": [
+              2001,
+              1998,
+              1991,
+              1973,
+              1983
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "NHL"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "note",
+            "type": "table column",
+            "column name": "note",
+            "data type": "string",
+            "description": "Additional notes regarding the award.",
+            "sample values": [
+              "posthumous"
+            ],
+            "synonyms": [
+              "note"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Noted information about the award."
+            }
+          }
+        ],
+        "description": "Records of miscellaneous awards given to players, coaches, or other personnel.",
+        "synonyms": [
+          "AwardsMisc"
+        ]
+      },
+      {
+        "name": "awardsplayers",
+        "type": "simple table",
+        "table path": "main.AwardsPlayers",
+        "unique properties": [
+          [
+            "playerid",
+            "award",
+            "year_"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "Unique identifier for the player.",
+            "sample values": [
+              "abelsi01",
+              "alfreda01",
+              "amontto01",
+              "anderto01",
+              "antonmi01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "award",
+            "type": "table column",
+            "column name": "award",
+            "data type": "string",
+            "description": "Name of the award received.",
+            "sample values": [
+              "First Team All-Star",
+              "Hart",
+              "Second Team All-Star",
+              "All-Rookie",
+              "Calder"
+            ],
+            "synonyms": [
+              "award"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year the award was given.",
+            "sample values": [
+              1948,
+              1949,
+              1941,
+              1950,
+              1995
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "NHL",
+              "WHA"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "note",
+            "type": "table column",
+            "column name": "note",
+            "data type": "string",
+            "description": "Additional notes about the award.",
+            "sample values": [
+              "tie",
+              "shared",
+              "Most Gentlemanly",
+              "Rookie",
+              "Best Goaltender"
+            ],
+            "synonyms": [
+              "note"
+            ]
+          },
+          {
+            "name": "pos",
+            "type": "table column",
+            "column name": "pos",
+            "data type": "string",
+            "description": "Player's position when receiving the award.",
+            "sample values": [
+              "C",
+              "LW",
+              "F",
+              "RW",
+              "D"
+            ],
+            "synonyms": [
+              "pos"
+            ],
+            "extra semantic info": {
+              "codes": {
+                "C": "center",
+                "D": "defenseman",
+                "F": "forward",
+                "G": "goalie",
+                "LW": "left winger",
+                "RW": "right winger",
+                "W": "winger"
+              },
+              "note": "A player with position 'W' (winger) can play as both LW (left winger) and RW (right winger)."
+            }
+          }
+        ],
+        "description": "Records of awards given to hockey players.",
+        "synonyms": [
+          "AwardsPlayers"
+        ]
+      },
+      {
+        "name": "coaches",
+        "type": "simple table",
+        "table path": "main.Coaches",
+        "unique properties": [
+          [
+            "coachid",
+            "year_",
+            "tmid",
+            "stint"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "coachid",
+            "type": "table column",
+            "column name": "coachID",
+            "data type": "string",
+            "description": "Unique identifier for the coach.",
+            "sample values": [
+              "abelsi01c",
+              "adamsja01c",
+              "agnewga01c",
+              "allenke01c",
+              "allisda01c"
+            ],
+            "synonyms": [
+              "coachID"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "The year of the season for this coaching record.",
+            "sample values": [
+              1952,
+              1953,
+              1957,
+              1958,
+              1959
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team the coach was with.",
+            "sample values": [
+              "CHI",
+              "DET",
+              "STL",
+              "KCS",
+              "DTC"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "NHL",
+              "WHA",
+              "NHA",
+              "WCHL",
+              "PCHA"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "stint",
+            "type": "table column",
+            "column name": "stint",
+            "data type": "numeric",
+            "description": "The order of coaching stints for a coach with the same team in the same year.",
+            "sample values": [
+              1,
+              2,
+              3
+            ],
+            "synonyms": [
+              "stint"
+            ]
+          },
+          {
+            "name": "notes",
+            "type": "table column",
+            "column name": "notes",
+            "data type": "string",
+            "description": "Additional notes about the coaching stint.",
+            "sample values": [
+              "interim",
+              "co-coach with Barry Smith",
+              "co-coach with Dave Lewis"
+            ],
+            "synonyms": [
+              "notes"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Noted information about the coaching record."
+            }
+          },
+          {
+            "name": "g",
+            "type": "table column",
+            "column name": "g",
+            "data type": "numeric",
+            "description": "Number of games coached in the regular season.",
+            "sample values": [
+              70,
+              33,
+              74,
+              10,
+              3
+            ],
+            "synonyms": [
+              "g"
+            ]
+          },
+          {
+            "name": "w",
+            "type": "table column",
+            "column name": "w",
+            "data type": "numeric",
+            "description": "Number of wins in the regular season.",
+            "sample values": [
+              27,
+              12,
+              16,
+              25,
+              26
+            ],
+            "synonyms": [
+              "w"
+            ],
+            "extra semantic info": {
+              "formula": "winning rates = wins / (wins + losses)"
+            }
+          },
+          {
+            "name": "l",
+            "type": "table column",
+            "column name": "l",
+            "data type": "numeric",
+            "description": "Number of losses in the regular season.",
+            "sample values": [
+              28,
+              51,
+              12,
+              37,
+              29
+            ],
+            "synonyms": [
+              "l"
+            ]
+          },
+          {
+            "name": "t",
+            "type": "table column",
+            "column name": "t",
+            "data type": "numeric",
+            "description": "Number of ties in the regular season.",
+            "sample values": [
+              15,
+              7,
+              5,
+              8,
+              16
+            ],
+            "synonyms": [
+              "t"
+            ]
+          },
+          {
+            "name": "postg",
+            "type": "table column",
+            "column name": "postg",
+            "data type": "string",
+            "description": "Number of games coached in the post-season.",
+            "sample values": [
+              "7",
+              "4",
+              "6",
+              "11",
+              "14"
+            ],
+            "synonyms": [
+              "postg"
+            ]
+          },
+          {
+            "name": "postw",
+            "type": "table column",
+            "column name": "postw",
+            "data type": "string",
+            "description": "Number of wins in the post-season.",
+            "sample values": [
+              "3",
+              "0",
+              "2",
+              "6",
+              "5"
+            ],
+            "synonyms": [
+              "postw"
+            ]
+          },
+          {
+            "name": "postl",
+            "type": "table column",
+            "column name": "postl",
+            "data type": "string",
+            "description": "Number of losses in the post-season.",
+            "sample values": [
+              "4",
+              "5",
+              "6",
+              "7",
+              "2"
+            ],
+            "synonyms": [
+              "postl"
+            ]
+          },
+          {
+            "name": "postt",
+            "type": "table column",
+            "column name": "postt",
+            "data type": "string",
+            "description": "Number of ties in the post-season.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "postt"
+            ]
+          }
+        ],
+        "description": "Season-by-season statistics for hockey coaches.",
+        "synonyms": [
+          "Coaches"
+        ]
+      },
+      {
+        "name": "combinedshutouts",
+        "type": "simple table",
+        "table path": "main.CombinedShutouts",
+        "unique properties": [
+          [
+            "year_",
+            "month_",
+            "date_",
+            "tmid",
+            "oppid",
+            "r_p",
+            "idgoalie1",
+            "idgoalie2"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the game.",
+            "sample values": [
+              1929,
+              1941,
+              1955,
+              1968,
+              1970
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "month_",
+            "type": "table column",
+            "column name": "\"month\"",
+            "data type": "numeric",
+            "description": "Month of the game.",
+            "sample values": [
+              3,
+              2,
+              11,
+              1,
+              12
+            ],
+            "synonyms": [
+              "month"
+            ]
+          },
+          {
+            "name": "date_",
+            "type": "table column",
+            "column name": "\"date\"",
+            "data type": "numeric",
+            "description": "Day of the month of the game.",
+            "sample values": [
+              14,
+              15,
+              22,
+              5,
+              2
+            ],
+            "synonyms": [
+              "date"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier of the team that achieved the shutout.",
+            "sample values": [
+              "TOR",
+              "MTL",
+              "OAK",
+              "STL",
+              "QUN"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "oppid",
+            "type": "table column",
+            "column name": "oppID",
+            "data type": "string",
+            "description": "Identifier of the opponent team.",
+            "sample values": [
+              "NYA",
+              "BOS",
+              "PHI",
+              "DET",
+              "CLF"
+            ],
+            "synonyms": [
+              "oppID"
+            ]
+          },
+          {
+            "name": "r_p",
+            "type": "table column",
+            "column name": "\"R/P\"",
+            "data type": "string",
+            "description": "Indicates if the game was in the regular season or postseason.",
+            "sample values": [
+              "R",
+              "P"
+            ],
+            "synonyms": [
+              "R/P"
+            ],
+            "extra semantic info": {
+              "codes": {
+                "R": "regular season",
+                "P": "postseason"
+              }
+            }
+          },
+          {
+            "name": "idgoalie1",
+            "type": "table column",
+            "column name": "IDgoalie1",
+            "data type": "string",
+            "description": "Identifier of the first goalie contributing to the shutout.",
+            "sample values": [
+              "chabolo01",
+              "bibeapa01",
+              "plantja01",
+              "smithga01",
+              "hallgl01"
+            ],
+            "synonyms": [
+              "IDgoalie1"
+            ]
+          },
+          {
+            "name": "idgoalie2",
+            "type": "table column",
+            "column name": "IDgoalie2",
+            "data type": "string",
+            "description": "Identifier of the second goalie contributing to the shutout.",
+            "sample values": [
+              "grantbe01",
+              "gardibe01",
+              "hodgech01",
+              "wakeler01",
+              "gamblbr01"
+            ],
+            "synonyms": [
+              "IDgoalie2"
+            ]
+          }
+        ],
+        "description": "Records of games where two or more goalies combined for a shutout.",
+        "synonyms": [
+          "CombinedShutouts"
+        ],
+        "extra semantic info": {
+          "date_composition": "The date of the game is composed of the 'year_', 'month_', and 'date_' fields."
+        }
+      },
+      {
+        "name": "goalies",
+        "type": "simple table",
+        "table path": "main.Goalies",
+        "unique properties": [
+          [
+            "playerid",
+            "year_",
+            "stint"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "Unique identifier for the player.",
+            "sample values": [
+              "abbotge01",
+              "abrahch01",
+              "adamsjo02",
+              "aebisda01",
+              "aikendo01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the season (e.g., 2005 for the 2005-06 season).",
+            "sample values": [
+              1943,
+              1974,
+              1975,
+              1976,
+              1972
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "stint",
+            "type": "table column",
+            "column name": "stint",
+            "data type": "numeric",
+            "description": "Order of appearance for a player with multiple stints in the same season.",
+            "sample values": [
+              1,
+              2,
+              3
+            ],
+            "synonyms": [
+              "stint"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team.",
+            "sample values": [
+              "BOS",
+              "NEW",
+              "WAS",
+              "COL",
+              "MTL"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "NHL",
+              "WHA",
+              "NHA",
+              "WCHL",
+              "PCHA"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "gp",
+            "type": "table column",
+            "column name": "GP",
+            "data type": "string",
+            "description": "Games played in the regular season.",
+            "sample values": [
+              "1",
+              "16",
+              "41",
+              "45",
+              "14"
+            ],
+            "synonyms": [
+              "GP"
+            ]
+          },
+          {
+            "name": "min_",
+            "type": "table column",
+            "column name": "\"Min\"",
+            "data type": "string",
+            "description": "Minutes played in the regular season.",
+            "sample values": [
+              "60",
+              "870",
+              "2385",
+              "2484",
+              "780"
+            ],
+            "synonyms": [
+              "Min"
+            ]
+          },
+          {
+            "name": "w",
+            "type": "table column",
+            "column name": "W",
+            "data type": "string",
+            "description": "Wins in the regular season.",
+            "sample values": [
+              "0",
+              "8",
+              "18",
+              "15",
+              "9"
+            ],
+            "synonyms": [
+              "W"
+            ]
+          },
+          {
+            "name": "l",
+            "type": "table column",
+            "column name": "L",
+            "data type": "string",
+            "description": "Losses in the regular season.",
+            "sample values": [
+              "1",
+              "6",
+              "18",
+              "22",
+              "3"
+            ],
+            "synonyms": [
+              "L"
+            ]
+          },
+          {
+            "name": "t_ol",
+            "type": "table column",
+            "column name": "\"T/OL\"",
+            "data type": "string",
+            "description": "Ties or overtime losses in the regular season.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "4",
+              "3"
+            ],
+            "synonyms": [
+              "T/OL"
+            ]
+          },
+          {
+            "name": "eng",
+            "type": "table column",
+            "column name": "ENG",
+            "data type": "string",
+            "description": "Empty net goals allowed in the regular season.",
+            "sample values": [
+              "0",
+              "1",
+              "3",
+              "4",
+              "5"
+            ],
+            "synonyms": [
+              "ENG"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "An empty net goal occurs when a team scores against an opponent that has removed their goalie from the ice."
+            }
+          },
+          {
+            "name": "sho",
+            "type": "table column",
+            "column name": "SHO",
+            "data type": "string",
+            "description": "Shutouts in the regular season.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "SHO"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A shutout is credited to a goaltender who prevents the opposing team from scoring for the entire game."
+            }
+          },
+          {
+            "name": "ga",
+            "type": "table column",
+            "column name": "GA",
+            "data type": "string",
+            "description": "Goals against in the regular season.",
+            "sample values": [
+              "7",
+              "47",
+              "136",
+              "159",
+              "39"
+            ],
+            "synonyms": [
+              "GA"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The number of goals recorded against the goalie while they are on the ice during regulation and overtime."
+            }
+          },
+          {
+            "name": "sa",
+            "type": "table column",
+            "column name": "SA",
+            "data type": "string",
+            "description": "Shots against in the regular season.",
+            "sample values": [
+              "504",
+              "1221",
+              "1438",
+              "538",
+              "593"
+            ],
+            "synonyms": [
+              "SA"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The number of shots on goal recorded while the goalie is on the ice."
+            }
+          },
+          {
+            "name": "postgp",
+            "type": "table column",
+            "column name": "PostGP",
+            "data type": "string",
+            "description": "Postseason games played.",
+            "sample values": [
+              "1",
+              "2",
+              "11",
+              "8",
+              "5"
+            ],
+            "synonyms": [
+              "PostGP"
+            ]
+          },
+          {
+            "name": "postmin",
+            "type": "table column",
+            "column name": "PostMin",
+            "data type": "string",
+            "description": "Postseason minutes played.",
+            "sample values": [
+              "1",
+              "90",
+              "34",
+              "662",
+              "488"
+            ],
+            "synonyms": [
+              "PostMin"
+            ]
+          },
+          {
+            "name": "postw",
+            "type": "table column",
+            "column name": "PostW",
+            "data type": "string",
+            "description": "Postseason wins.",
+            "sample values": [
+              "0",
+              "6",
+              "1",
+              "2",
+              "3"
+            ],
+            "synonyms": [
+              "PostW"
+            ]
+          },
+          {
+            "name": "postl",
+            "type": "table column",
+            "column name": "PostL",
+            "data type": "string",
+            "description": "Postseason losses.",
+            "sample values": [
+              "0",
+              "1",
+              "5",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "PostL"
+            ]
+          },
+          {
+            "name": "postt",
+            "type": "table column",
+            "column name": "PostT",
+            "data type": "string",
+            "description": "Postseason ties.",
+            "sample values": [
+              "1",
+              "0",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "PostT"
+            ]
+          },
+          {
+            "name": "posteng",
+            "type": "table column",
+            "column name": "PostENG",
+            "data type": "string",
+            "description": "Postseason empty net goals allowed.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "5"
+            ],
+            "synonyms": [
+              "PostENG"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "An empty net goal occurs when a team scores against an opponent that has removed their goalie from the ice."
+            }
+          },
+          {
+            "name": "postsho",
+            "type": "table column",
+            "column name": "PostSHO",
+            "data type": "string",
+            "description": "Postseason shutouts.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "PostSHO"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A shutout is credited to a goaltender who prevents the opposing team from scoring for the entire game."
+            }
+          },
+          {
+            "name": "postga",
+            "type": "table column",
+            "column name": "PostGA",
+            "data type": "string",
+            "description": "Postseason goals against.",
+            "sample values": [
+              "0",
+              "5",
+              "1",
+              "23",
+              "13"
+            ],
+            "synonyms": [
+              "PostGA"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The number of goals recorded against the goalie while they are on the ice during regulation and overtime."
+            }
+          },
+          {
+            "name": "postsa",
+            "type": "table column",
+            "column name": "PostSA",
+            "data type": "string",
+            "description": "Postseason shots against.",
+            "sample values": [
+              "51",
+              "0",
+              "14",
+              "295",
+              "239"
+            ],
+            "synonyms": [
+              "PostSA"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The number of shots on goal recorded while the goalie is on the ice."
+            }
+          }
+        ],
+        "description": "Season-by-season statistics for hockey goalies.",
+        "synonyms": [
+          "Goalies"
+        ]
+      },
+      {
+        "name": "goaliessc",
+        "type": "simple table",
+        "table path": "main.GoaliesSC",
+        "unique properties": [
+          [
+            "playerid",
+            "year_"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "Unique identifier for the player.",
+            "sample values": [
+              "benedcl01",
+              "clancki01",
+              "holmeha01",
+              "lehmahu01",
+              "lindsbe01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the Stanley Cup final.",
+            "sample values": [
+              1914,
+              1919,
+              1920,
+              1922,
+              1925
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team.",
+            "sample values": [
+              "OT1",
+              "OTS",
+              "MTM",
+              "TBS",
+              "SEA"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "NHA",
+              "NHL",
+              "PCHA",
+              "WCHL"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "gp",
+            "type": "table column",
+            "column name": "GP",
+            "data type": "numeric",
+            "description": "Games played in the Stanley Cup final.",
+            "sample values": [
+              3,
+              5,
+              6,
+              4,
+              1
+            ],
+            "synonyms": [
+              "GP"
+            ]
+          },
+          {
+            "name": "min_",
+            "type": "table column",
+            "column name": "\"Min\"",
+            "data type": "numeric",
+            "description": "Minutes played in the Stanley Cup final.",
+            "sample values": [
+              180,
+              300,
+              361,
+              240,
+              2
+            ],
+            "synonyms": [
+              "Min"
+            ]
+          },
+          {
+            "name": "w",
+            "type": "table column",
+            "column name": "W",
+            "data type": "numeric",
+            "description": "Wins in the Stanley Cup final.",
+            "sample values": [
+              0,
+              3,
+              5,
+              2,
+              1
+            ],
+            "synonyms": [
+              "W"
+            ]
+          },
+          {
+            "name": "l",
+            "type": "table column",
+            "column name": "L",
+            "data type": "numeric",
+            "description": "Losses in the Stanley Cup final.",
+            "sample values": [
+              3,
+              2,
+              1,
+              0
+            ],
+            "synonyms": [
+              "L"
+            ]
+          },
+          {
+            "name": "t",
+            "type": "table column",
+            "column name": "T",
+            "data type": "numeric",
+            "description": "Ties in the Stanley Cup final.",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "T"
+            ]
+          },
+          {
+            "name": "sho",
+            "type": "table column",
+            "column name": "SHO",
+            "data type": "numeric",
+            "description": "Shutouts in the Stanley Cup final.",
+            "sample values": [
+              0,
+              1,
+              3,
+              2
+            ],
+            "synonyms": [
+              "SHO"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A shutout is credited to a goaltender who prevents the opposing team from scoring for the entire game."
+            }
+          },
+          {
+            "name": "ga",
+            "type": "table column",
+            "column name": "GA",
+            "data type": "numeric",
+            "description": "Goals against in the Stanley Cup final.",
+            "sample values": [
+              26,
+              11,
+              12,
+              8,
+              3
+            ],
+            "synonyms": [
+              "GA"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The number of goals recorded against the goalie while they are on the ice during regulation and overtime."
+            }
+          }
+        ],
+        "description": "Statistics for goalies in the Stanley Cup finals.",
+        "synonyms": [
+          "GoaliesSC"
+        ]
+      },
+      {
+        "name": "goaliesshootout",
+        "type": "simple table",
+        "table path": "main.GoaliesShootout",
+        "unique properties": [
+          [
+            "playerid",
+            "year_",
+            "stint",
+            "tmid",
+            "w",
+            "l",
+            "sa",
+            "ga"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "Unique identifier for the player.",
+            "sample values": [
+              "aebisda01",
+              "andercr01",
+              "aubinje01",
+              "auldal01",
+              "bacasja01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the season.",
+            "sample values": [
+              2005,
+              2006,
+              2008,
+              2009,
+              2010
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "stint",
+            "type": "table column",
+            "column name": "stint",
+            "data type": "numeric",
+            "description": "Order of appearance for a player with multiple stints in the same season.",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "stint"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team.",
+            "sample values": [
+              "COL",
+              "MTL",
+              "CHI",
+              "FLO",
+              "OTT"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "w",
+            "type": "table column",
+            "column name": "W",
+            "data type": "numeric",
+            "description": "Wins in shootouts.",
+            "sample values": [
+              2,
+              0,
+              1,
+              7,
+              6
+            ],
+            "synonyms": [
+              "W"
+            ]
+          },
+          {
+            "name": "l",
+            "type": "table column",
+            "column name": "L",
+            "data type": "numeric",
+            "description": "Losses in shootouts.",
+            "sample values": [
+              1,
+              2,
+              3,
+              0,
+              4
+            ],
+            "synonyms": [
+              "L"
+            ]
+          },
+          {
+            "name": "sa",
+            "type": "table column",
+            "column name": "SA",
+            "data type": "numeric",
+            "description": "Shots against in shootouts.",
+            "sample values": [
+              10,
+              18,
+              7,
+              2,
+              11
+            ],
+            "synonyms": [
+              "SA"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The number of shots on goal recorded while the goalie is on the ice."
+            }
+          },
+          {
+            "name": "ga",
+            "type": "table column",
+            "column name": "GA",
+            "data type": "numeric",
+            "description": "Goals against in shootouts.",
+            "sample values": [
+              2,
+              6,
+              5,
+              0,
+              7
+            ],
+            "synonyms": [
+              "GA"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The number of goals recorded against the goalie while they are on the ice during regulation and overtime."
+            }
+          }
+        ],
+        "description": "Statistics for goalies in shootouts.",
+        "synonyms": [
+          "GoaliesShootout"
+        ]
+      },
+      {
+        "name": "hof",
+        "type": "simple table",
+        "table path": "main.HOF",
+        "unique properties": [
+          "hofid"
+        ],
+        "properties": [
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of induction into the Hall of Fame.",
+            "sample values": [
+              1969,
+              1960,
+              1959,
+              1972,
+              1977
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "hofid",
+            "type": "table column",
+            "column name": "hofID",
+            "data type": "string",
+            "description": "Unique identifier for the Hall of Fame induction record.",
+            "sample values": [
+              "abelsi01h",
+              "adamsch01h",
+              "adamsja01h",
+              "adamswe01h",
+              "ahearbu01h"
+            ],
+            "synonyms": [
+              "hofID"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "Name of the inductee.",
+            "sample values": [
+              "Sid Abel",
+              "Charles Adams",
+              "Jack Adams",
+              "Weston Adams",
+              "Bunny Ahearne"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "category",
+            "type": "table column",
+            "column name": "category",
+            "data type": "string",
+            "description": "Category of induction (e.g., Player, Builder).",
+            "sample values": [
+              "Player",
+              "Builder",
+              "Referee/Linesman"
+            ],
+            "synonyms": [
+              "category"
+            ]
+          }
+        ],
+        "description": "Records of inductees into the Hockey Hall of Fame.",
+        "synonyms": [
+          "HOF"
+        ]
+      },
+      {
+        "name": "master",
+        "type": "simple table",
+        "table path": "main.Master",
+        "unique properties": [
+          [
+            "playerid",
+            "coachid",
+            "hofid",
+            "firstname",
+            "lastname",
+            "namenote",
+            "namegiven",
+            "namenick",
+            "height",
+            "weight",
+            "shootcatch",
+            "legendsid",
+            "ihdbid",
+            "hrefid",
+            "firstnhl",
+            "lastnhl",
+            "firstwha",
+            "lastwha",
+            "pos",
+            "birthyear",
+            "birthmon",
+            "birthday",
+            "birthcountry",
+            "birthstate",
+            "birthcity",
+            "deathyear",
+            "deathmon",
+            "deathday",
+            "deathcountry",
+            "deathstate",
+            "deathcity"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "Unique identifier for the player.",
+            "sample values": [
+              "aaltoan01",
+              "abbeybr01",
+              "abbotge01",
+              "abbotre01",
+              "abdelju01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "coachid",
+            "type": "table column",
+            "column name": "coachID",
+            "data type": "string",
+            "description": "Unique identifier for the coach.",
+            "sample values": [
+              "abelsi01c",
+              "adamsja01c",
+              "agnewga01c",
+              "allenke01c",
+              "allisda01c"
+            ],
+            "synonyms": [
+              "coachID"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "If a person has both a playerID and a coachID, it indicates they became a coach after their playing career."
+            }
+          },
+          {
+            "name": "hofid",
+            "type": "table column",
+            "column name": "hofID",
+            "data type": "string",
+            "description": "Identifier for the person's Hall of Fame record, if applicable.",
+            "sample values": [
+              "abelsi01h",
+              "adamsch01h",
+              "adamsja01h",
+              "adamswe01h",
+              "ahearbu01h"
+            ],
+            "synonyms": [
+              "hofID"
+            ]
+          },
+          {
+            "name": "firstname",
+            "type": "table column",
+            "column name": "firstName",
+            "data type": "string",
+            "description": "First name of the person.",
+            "sample values": [
+              "Antti",
+              "Bruce",
+              "George",
+              "Reg",
+              "Justin"
+            ],
+            "synonyms": [
+              "firstName"
+            ]
+          },
+          {
+            "name": "lastname",
+            "type": "table column",
+            "column name": "lastName",
+            "data type": "string",
+            "description": "Last name of the person.",
+            "sample values": [
+              "Aalto",
+              "Abbey",
+              "Abbott",
+              "Abdelkader",
+              "Abel"
+            ],
+            "synonyms": [
+              "lastName"
+            ]
+          },
+          {
+            "name": "namenote",
+            "type": "table column",
+            "column name": "nameNote",
+            "data type": "string",
+            "description": "Additional notes about the person's name.",
+            "sample values": [
+              "also known as Bellehumeur",
+              "also listed as Bourdginon",
+              "born Bodnarchuk",
+              "also known as Bowcher",
+              "also known as Burmeister"
+            ],
+            "synonyms": [
+              "nameNote"
+            ]
+          },
+          {
+            "name": "namegiven",
+            "type": "table column",
+            "column name": "nameGiven",
+            "data type": "string",
+            "description": "The person's given name.",
+            "sample values": [
+              "Antti",
+              "Bruce",
+              "George Henry",
+              "Reginald Stewart",
+              "Clarence John"
+            ],
+            "synonyms": [
+              "nameGiven"
+            ]
+          },
+          {
+            "name": "namenick",
+            "type": "table column",
+            "column name": "nameNick",
+            "data type": "string",
+            "description": "The person's nickname(s).",
+            "sample values": [
+              "Preacher",
+              "Taffy",
+              "Boot Nose",
+              "Acky",
+              "Woody"
+            ],
+            "synonyms": [
+              "nameNick"
+            ]
+          },
+          {
+            "name": "height",
+            "type": "table column",
+            "column name": "height",
+            "data type": "string",
+            "description": "Height of the person in inches.",
+            "sample values": [
+              "73",
+              "67",
+              "71",
+              "74",
+              "72"
+            ],
+            "synonyms": [
+              "height"
+            ]
+          },
+          {
+            "name": "weight",
+            "type": "table column",
+            "column name": "weight",
+            "data type": "string",
+            "description": "Weight of the person in pounds.",
+            "sample values": [
+              "210",
+              "185",
+              "153",
+              "164",
+              "195"
+            ],
+            "synonyms": [
+              "weight"
+            ]
+          },
+          {
+            "name": "shootcatch",
+            "type": "table column",
+            "column name": "shootCatch",
+            "data type": "string",
+            "description": "Player's shooting hand (or catching hand for goalies).",
+            "sample values": [
+              "L",
+              "R",
+              "B"
+            ],
+            "synonyms": [
+              "shootCatch"
+            ],
+            "extra semantic info": {
+              "codes": {
+                "L": "left hand",
+                "R": "right hand"
+              },
+              "note": "A null or empty value implies the player is skilled with both hands."
+            }
+          },
+          {
+            "name": "legendsid",
+            "type": "table column",
+            "column name": "legendsID",
+            "data type": "string",
+            "description": "Identifier at Legends Of Hockey.",
+            "sample values": [
+              "14862",
+              "18411",
+              "11801",
+              "21661",
+              "11802"
+            ],
+            "synonyms": [
+              "legendsID"
+            ]
+          },
+          {
+            "name": "ihdbid",
+            "type": "table column",
+            "column name": "ihdbID",
+            "data type": "string",
+            "description": "Identifier at the Internet Hockey Database.",
+            "sample values": [
+              "5928",
+              "11918",
+              "14591",
+              "11431",
+              "81002"
+            ],
+            "synonyms": [
+              "ihdbID"
+            ]
+          },
+          {
+            "name": "hrefid",
+            "type": "table column",
+            "column name": "hrefID",
+            "data type": "string",
+            "description": "Identifier at Hockey-Reference.com.",
+            "sample values": [
+              "aaltoan01",
+              "abbeybr01",
+              "abbotge01",
+              "abbotre01",
+              "abdelju01"
+            ],
+            "synonyms": [
+              "hrefID"
+            ]
+          },
+          {
+            "name": "firstnhl",
+            "type": "table column",
+            "column name": "firstNHL",
+            "data type": "string",
+            "description": "First NHL season.",
+            "sample values": [
+              "1997",
+              "1943",
+              "1952",
+              "2007",
+              "1926"
+            ],
+            "synonyms": [
+              "firstNHL"
+            ]
+          },
+          {
+            "name": "lastnhl",
+            "type": "table column",
+            "column name": "lastNHL",
+            "data type": "string",
+            "description": "Last NHL season.",
+            "sample values": [
+              "2000",
+              "1943",
+              "1952",
+              "2011",
+              "1933"
+            ],
+            "synonyms": [
+              "lastNHL"
+            ]
+          },
+          {
+            "name": "firstwha",
+            "type": "table column",
+            "column name": "firstWHA",
+            "data type": "string",
+            "description": "First WHA season.",
+            "sample values": [
+              "1975",
+              "1976",
+              "1974",
+              "1973",
+              "1978"
+            ],
+            "synonyms": [
+              "firstWHA"
+            ]
+          },
+          {
+            "name": "lastwha",
+            "type": "table column",
+            "column name": "lastWHA",
+            "data type": "string",
+            "description": "Last WHA season.",
+            "sample values": [
+              "1975",
+              "1977",
+              "1976",
+              "1973",
+              "1978"
+            ],
+            "synonyms": [
+              "lastWHA"
+            ]
+          },
+          {
+            "name": "pos",
+            "type": "table column",
+            "column name": "pos",
+            "data type": "string",
+            "description": "Primary playing position.",
+            "sample values": [
+              "C",
+              "D",
+              "G",
+              "L",
+              "R"
+            ],
+            "synonyms": [
+              "pos"
+            ],
+            "extra semantic info": {
+              "codes": {
+                "C": "center",
+                "D": "defenseman",
+                "F": "forward",
+                "G": "goalie",
+                "LW": "left winger",
+                "RW": "right winger",
+                "W": "winger"
+              },
+              "note": "A player with position 'W' can play both LW and RW. Some players may have multiple positions listed (e.g., 'L/D')."
+            }
+          },
+          {
+            "name": "birthyear",
+            "type": "table column",
+            "column name": "birthYear",
+            "data type": "string",
+            "description": "Year of birth.",
+            "sample values": [
+              "1975",
+              "1951",
+              "1911",
+              "1930",
+              "1987"
+            ],
+            "synonyms": [
+              "birthYear"
+            ]
+          },
+          {
+            "name": "birthmon",
+            "type": "table column",
+            "column name": "birthMon",
+            "data type": "string",
+            "description": "Month of birth.",
+            "sample values": [
+              "3",
+              "8",
+              "2",
+              "5",
+              "12"
+            ],
+            "synonyms": [
+              "birthMon"
+            ]
+          },
+          {
+            "name": "birthday",
+            "type": "table column",
+            "column name": "birthDay",
+            "data type": "string",
+            "description": "Day of birth.",
+            "sample values": [
+              "4",
+              "18",
+              "3",
+              "25",
+              "28"
+            ],
+            "synonyms": [
+              "birthDay"
+            ]
+          },
+          {
+            "name": "birthcountry",
+            "type": "table column",
+            "column name": "birthCountry",
+            "data type": "string",
+            "description": "Country of birth.",
+            "sample values": [
+              "Finland",
+              "Canada",
+              "USA",
+              "Sweden",
+              "Brunei Darussalam"
+            ],
+            "synonyms": [
+              "birthCountry"
+            ]
+          },
+          {
+            "name": "birthstate",
+            "type": "table column",
+            "column name": "birthState",
+            "data type": "string",
+            "description": "State or province of birth.",
+            "sample values": [
+              "ON",
+              "MB",
+              "MI",
+              "SK",
+              "QC"
+            ],
+            "synonyms": [
+              "birthState"
+            ]
+          },
+          {
+            "name": "birthcity",
+            "type": "table column",
+            "column name": "birthCity",
+            "data type": "string",
+            "description": "City of birth.",
+            "sample values": [
+              "Lappeenranta",
+              "Toronto",
+              "Synenham",
+              "Winnipeg",
+              "Muskegon"
+            ],
+            "synonyms": [
+              "birthCity"
+            ]
+          },
+          {
+            "name": "deathyear",
+            "type": "table column",
+            "column name": "deathYear",
+            "data type": "string",
+            "description": "Year of death.",
+            "sample values": [
+              "1964",
+              "2000",
+              "2001",
+              "1947",
+              "1968"
+            ],
+            "synonyms": [
+              "deathYear"
+            ]
+          },
+          {
+            "name": "deathmon",
+            "type": "table column",
+            "column name": "deathMon",
+            "data type": "string",
+            "description": "Month of death.",
+            "sample values": [
+              "8",
+              "2",
+              "12",
+              "5",
+              "3"
+            ],
+            "synonyms": [
+              "deathMon"
+            ]
+          },
+          {
+            "name": "deathday",
+            "type": "table column",
+            "column name": "deathDay",
+            "data type": "string",
+            "description": "Day of death.",
+            "sample values": [
+              "1",
+              "7",
+              "24",
+              "18",
+              "19"
+            ],
+            "synonyms": [
+              "deathDay"
+            ]
+          },
+          {
+            "name": "deathcountry",
+            "type": "table column",
+            "column name": "deathCountry",
+            "data type": "string",
+            "description": "Country of death.",
+            "sample values": [
+              "USA",
+              "Canada",
+              "France",
+              "Belgium",
+              "Russia"
+            ],
+            "synonyms": [
+              "deathCountry"
+            ]
+          },
+          {
+            "name": "deathstate",
+            "type": "table column",
+            "column name": "deathState",
+            "data type": "string",
+            "description": "State or province of death.",
+            "sample values": [
+              "MI",
+              "AB",
+              "SK",
+              "MB",
+              "ON"
+            ],
+            "synonyms": [
+              "deathState"
+            ]
+          },
+          {
+            "name": "deathcity",
+            "type": "table column",
+            "column name": "deathCity",
+            "data type": "string",
+            "description": "City of death.",
+            "sample values": [
+              "Sault Ste. Marie",
+              "Farmington",
+              "Calgary",
+              "Swift Current",
+              "Red Deer"
+            ],
+            "synonyms": [
+              "deathCity"
+            ]
+          }
+        ],
+        "description": "Master table with biographical information for all players, coaches, and other personnel.",
+        "synonyms": [
+          "Master"
+        ],
+        "extra semantic info": {
+          "date_composition": "The date of birth is composed of the 'birthyear', 'birthmon', and 'birthday' fields."
+        }
+      },
+      {
+        "name": "scoring",
+        "type": "simple table",
+        "table path": "main.Scoring",
+        "unique properties": [
+          [
+            "playerid",
+            "year_",
+            "stint",
+            "tmid",
+            "lgid",
+            "pos",
+            "gp",
+            "g",
+            "a",
+            "pts",
+            "pim",
+            "plus",
+            "ppg",
+            "ppa",
+            "shg",
+            "sha",
+            "gwg",
+            "gtg",
+            "sog",
+            "postgp",
+            "postg",
+            "posta",
+            "postpts",
+            "postpim",
+            "post_plus",
+            "postppg",
+            "postppa",
+            "postshg",
+            "postsha",
+            "postgwg",
+            "postsog"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "Unique identifier for the player.",
+            "sample values": [
+              "aaltoan01",
+              "abbeybr01",
+              "abbotge01",
+              "abbotre01",
+              "abdelju01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the season.",
+            "sample values": [
+              1997,
+              1998,
+              1999,
+              2000,
+              1975
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "stint",
+            "type": "table column",
+            "column name": "stint",
+            "data type": "numeric",
+            "description": "Order of appearance for a player with multiple stints in the same season.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "stint"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team.",
+            "sample values": [
+              "ANA",
+              "CIN",
+              "BOS",
+              "MTL",
+              "DET"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "NHL",
+              "WHA",
+              "PCHA",
+              "WCHL",
+              "NHA"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "pos",
+            "type": "table column",
+            "column name": "pos",
+            "data type": "string",
+            "description": "Player's position.",
+            "sample values": [
+              "C",
+              "D",
+              "G",
+              "L",
+              "R"
+            ],
+            "synonyms": [
+              "pos"
+            ],
+            "extra semantic info": {
+              "codes": {
+                "C": "center",
+                "D": "defenseman",
+                "F": "forward",
+                "G": "goalie",
+                "LW": "left winger",
+                "RW": "right winger",
+                "W": "winger"
+              },
+              "note": "A player with position 'W' can play both LW and RW. Some players may have multiple positions listed (e.g., 'L/D')."
+            }
+          },
+          {
+            "name": "gp",
+            "type": "table column",
+            "column name": "GP",
+            "data type": "numeric",
+            "description": "Games played in the regular season.",
+            "sample values": [
+              3,
+              73,
+              63,
+              12,
+              17
+            ],
+            "synonyms": [
+              "GP"
+            ]
+          },
+          {
+            "name": "g",
+            "type": "table column",
+            "column name": "G",
+            "data type": "numeric",
+            "description": "Goals scored in the regular season.",
+            "sample values": [
+              0,
+              3,
+              7,
+              1,
+              8
+            ],
+            "synonyms": [
+              "G"
+            ]
+          },
+          {
+            "name": "a",
+            "type": "table column",
+            "column name": "A",
+            "data type": "numeric",
+            "description": "Assists in the regular season.",
+            "sample values": [
+              0,
+              5,
+              11,
+              1,
+              3
+            ],
+            "synonyms": [
+              "A"
+            ]
+          },
+          {
+            "name": "pts",
+            "type": "table column",
+            "column name": "Pts",
+            "data type": "numeric",
+            "description": "Points (goals + assists) in the regular season.",
+            "sample values": [
+              0,
+              8,
+              18,
+              2,
+              1
+            ],
+            "synonyms": [
+              "Pts"
+            ]
+          },
+          {
+            "name": "pim",
+            "type": "table column",
+            "column name": "PIM",
+            "data type": "numeric",
+            "description": "Penalty minutes in the regular season.",
+            "sample values": [
+              0,
+              24,
+              26,
+              2,
+              12
+            ],
+            "synonyms": [
+              "PIM"
+            ]
+          },
+          {
+            "name": "plus",
+            "type": "table column",
+            "column name": "\"+/-\"",
+            "data type": "string",
+            "description": "Plus/minus rating in the regular season.",
+            "sample values": [
+              "-1",
+              "-12",
+              "-13",
+              "1",
+              "-3"
+            ],
+            "synonyms": [
+              "+/-"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Measures a player's on-ice goal differential. A positive number means their team scored more goals than they allowed while the player was on the ice."
+            }
+          },
+          {
+            "name": "ppg",
+            "type": "table column",
+            "column name": "PPG",
+            "data type": "string",
+            "description": "Power play goals in the regular season.",
+            "sample values": [
+              "0",
+              "2",
+              "1",
+              "4",
+              "3"
+            ],
+            "synonyms": [
+              "PPG"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A goal scored by a team with a numerical advantage on the ice due to penalties against the opposing team."
+            }
+          },
+          {
+            "name": "ppa",
+            "type": "table column",
+            "column name": "PPA",
+            "data type": "string",
+            "description": "Power play assists in the regular season.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "5",
+              "3"
+            ],
+            "synonyms": [
+              "PPA"
+            ]
+          },
+          {
+            "name": "shg",
+            "type": "table column",
+            "column name": "SHG",
+            "data type": "string",
+            "description": "Shorthanded goals in the regular season.",
+            "sample values": [
+              "0",
+              "2",
+              "1",
+              "5",
+              "7"
+            ],
+            "synonyms": [
+              "SHG"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A goal scored by a team with a numerical disadvantage on the ice due to penalties."
+            }
+          },
+          {
+            "name": "sha",
+            "type": "table column",
+            "column name": "SHA",
+            "data type": "string",
+            "description": "Shorthanded assists in the regular season.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "SHA"
+            ]
+          },
+          {
+            "name": "gwg",
+            "type": "table column",
+            "column name": "GWG",
+            "data type": "string",
+            "description": "Game-winning goals in the regular season.",
+            "sample values": [
+              "0",
+              "1",
+              "3",
+              "2",
+              "5"
+            ],
+            "synonyms": [
+              "GWG"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The goal that puts the winning team ahead of the losing team's final score."
+            }
+          },
+          {
+            "name": "gtg",
+            "type": "table column",
+            "column name": "GTG",
+            "data type": "string",
+            "description": "Game-tying goals in the regular season.",
+            "sample values": [
+              "0",
+              "1",
+              "3",
+              "2",
+              "5"
+            ],
+            "synonyms": [
+              "GTG"
+            ]
+          },
+          {
+            "name": "sog",
+            "type": "table column",
+            "column name": "SOG",
+            "data type": "string",
+            "description": "Shots on goal in the regular season.",
+            "sample values": [
+              "1",
+              "61",
+              "102",
+              "18",
+              "2"
+            ],
+            "synonyms": [
+              "SOG"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A shot that results in a goal or a save by the goaltender."
+            }
+          },
+          {
+            "name": "postgp",
+            "type": "table column",
+            "column name": "PostGP",
+            "data type": "string",
+            "description": "Postseason games played.",
+            "sample values": [
+              "4",
+              "10",
+              "11",
+              "5",
+              "2"
+            ],
+            "synonyms": [
+              "PostGP"
+            ]
+          },
+          {
+            "name": "postg",
+            "type": "table column",
+            "column name": "PostG",
+            "data type": "string",
+            "description": "Postseason goals scored.",
+            "sample values": [
+              "0",
+              "2",
+              "1",
+              "4",
+              "5"
+            ],
+            "synonyms": [
+              "PostG"
+            ]
+          },
+          {
+            "name": "posta",
+            "type": "table column",
+            "column name": "PostA",
+            "data type": "string",
+            "description": "Postseason assists.",
+            "sample values": [
+              "0",
+              "1",
+              "3",
+              "2",
+              "8"
+            ],
+            "synonyms": [
+              "PostA"
+            ]
+          },
+          {
+            "name": "postpts",
+            "type": "table column",
+            "column name": "PostPts",
+            "data type": "string",
+            "description": "Postseason points.",
+            "sample values": [
+              "0",
+              "3",
+              "2",
+              "1",
+              "4"
+            ],
+            "synonyms": [
+              "PostPts"
+            ]
+          },
+          {
+            "name": "postpim",
+            "type": "table column",
+            "column name": "PostPIM",
+            "data type": "string",
+            "description": "Postseason penalty minutes.",
+            "sample values": [
+              "2",
+              "0",
+              "36",
+              "22",
+              "8"
+            ],
+            "synonyms": [
+              "PostPIM"
+            ]
+          },
+          {
+            "name": "post_plus",
+            "type": "table column",
+            "column name": "\"Post+/-\"",
+            "data type": "string",
+            "description": "Postseason plus/minus rating.",
+            "sample values": [
+              "0",
+              "2",
+              "1",
+              "-4",
+              "-5"
+            ],
+            "synonyms": [
+              "Post+/-"
+            ]
+          },
+          {
+            "name": "postppg",
+            "type": "table column",
+            "column name": "PostPPG",
+            "data type": "string",
+            "description": "Postseason power play goals.",
+            "sample values": [
+              "0",
+              "1",
+              "5",
+              "2",
+              "3"
+            ],
+            "synonyms": [
+              "PostPPG"
+            ]
+          },
+          {
+            "name": "postppa",
+            "type": "table column",
+            "column name": "PostPPA",
+            "data type": "string",
+            "description": "Postseason power play assists.",
+            "sample values": [
+              "0",
+              "1",
+              "3",
+              "2",
+              "4"
+            ],
+            "synonyms": [
+              "PostPPA"
+            ]
+          },
+          {
+            "name": "postshg",
+            "type": "table column",
+            "column name": "PostSHG",
+            "data type": "string",
+            "description": "Postseason shorthanded goals.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3"
+            ],
+            "synonyms": [
+              "PostSHG"
+            ]
+          },
+          {
+            "name": "postsha",
+            "type": "table column",
+            "column name": "PostSHA",
+            "data type": "string",
+            "description": "Postseason shorthanded assists.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "PostSHA"
+            ]
+          },
+          {
+            "name": "postgwg",
+            "type": "table column",
+            "column name": "PostGWG",
+            "data type": "string",
+            "description": "Postseason game-winning goals.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "PostGWG"
+            ]
+          },
+          {
+            "name": "postsog",
+            "type": "table column",
+            "column name": "PostSOG",
+            "data type": "string",
+            "description": "Postseason shots on goal.",
+            "sample values": [
+              "0",
+              "11",
+              "12",
+              "17",
+              "7"
+            ],
+            "synonyms": [
+              "PostSOG"
+            ]
+          }
+        ],
+        "description": "Season-by-season scoring statistics for players.",
+        "synonyms": [
+          "Scoring"
+        ]
+      },
+      {
+        "name": "scoringsc",
+        "type": "simple table",
+        "table path": "main.ScoringSC",
+        "unique properties": [
+          [
+            "playerid",
+            "year_",
+            "tmid",
+            "lgid",
+            "pos",
+            "gp",
+            "g",
+            "a",
+            "pts",
+            "pim"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "Unique identifier for the player.",
+            "sample values": [
+              "adamsbi01",
+              "adamsja01",
+              "anderer02",
+              "anderjo03",
+              "andrell01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the Stanley Cup final.",
+            "sample values": [
+              1920,
+              1921,
+              1923,
+              1924,
+              1925
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team.",
+            "sample values": [
+              "VML",
+              "CAT",
+              "VIC",
+              "TRS",
+              "MOC"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "PCHA",
+              "WCHL",
+              "NHL",
+              "NHA"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "pos",
+            "type": "table column",
+            "column name": "pos",
+            "data type": "string",
+            "description": "Player's position.",
+            "sample values": [
+              "R",
+              "C",
+              "L",
+              "F",
+              "G"
+            ],
+            "synonyms": [
+              "pos"
+            ]
+          },
+          {
+            "name": "gp",
+            "type": "table column",
+            "column name": "GP",
+            "data type": "numeric",
+            "description": "Games played in the Stanley Cup final.",
+            "sample values": [
+              4,
+              5,
+              2,
+              1,
+              3
+            ],
+            "synonyms": [
+              "GP"
+            ]
+          },
+          {
+            "name": "g",
+            "type": "table column",
+            "column name": "G",
+            "data type": "numeric",
+            "description": "Goals scored in the Stanley Cup final.",
+            "sample values": [
+              0,
+              2,
+              6,
+              1,
+              3
+            ],
+            "synonyms": [
+              "G"
+            ]
+          },
+          {
+            "name": "a",
+            "type": "table column",
+            "column name": "A",
+            "data type": "numeric",
+            "description": "Assists in the Stanley Cup final.",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              5
+            ],
+            "synonyms": [
+              "A"
+            ]
+          },
+          {
+            "name": "pts",
+            "type": "table column",
+            "column name": "Pts",
+            "data type": "numeric",
+            "description": "Points in the Stanley Cup final.",
+            "sample values": [
+              0,
+              3,
+              7,
+              1,
+              2
+            ],
+            "synonyms": [
+              "Pts"
+            ]
+          },
+          {
+            "name": "pim",
+            "type": "table column",
+            "column name": "PIM",
+            "data type": "numeric",
+            "description": "Penalty minutes in the Stanley Cup final.",
+            "sample values": [
+              0,
+              6,
+              18,
+              2,
+              10
+            ],
+            "synonyms": [
+              "PIM"
+            ]
+          }
+        ],
+        "description": "Scoring statistics for players in the Stanley Cup finals.",
+        "synonyms": [
+          "ScoringSC"
+        ]
+      },
+      {
+        "name": "scoringshootout",
+        "type": "simple table",
+        "table path": "main.ScoringShootout",
+        "unique properties": [
+          [
+            "playerid",
+            "year_",
+            "stint",
+            "tmid",
+            "s",
+            "g",
+            "gdg"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "Unique identifier for the player.",
+            "sample values": [
+              "adamske01",
+              "afanadm01",
+              "afinoma01",
+              "alexeni01",
+              "alfreda01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the season.",
+            "sample values": [
+              2006,
+              2005,
+              2007,
+              2009,
+              2008
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "stint",
+            "type": "table column",
+            "column name": "stint",
+            "data type": "numeric",
+            "description": "Order of appearance for a player with multiple stints in the same season.",
+            "sample values": [
+              1,
+              2,
+              3
+            ],
+            "synonyms": [
+              "stint"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team.",
+            "sample values": [
+              "PHO",
+              "TBL",
+              "BUF",
+              "ATL",
+              "CHI"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "s",
+            "type": "table column",
+            "column name": "S",
+            "data type": "numeric",
+            "description": "Shots taken in shootouts.",
+            "sample values": [
+              1,
+              2,
+              5,
+              6,
+              3
+            ],
+            "synonyms": [
+              "S"
+            ]
+          },
+          {
+            "name": "g",
+            "type": "table column",
+            "column name": "G",
+            "data type": "numeric",
+            "description": "Goals scored in shootouts.",
+            "sample values": [
+              0,
+              1,
+              3,
+              2,
+              5
+            ],
+            "synonyms": [
+              "G"
+            ]
+          },
+          {
+            "name": "gdg",
+            "type": "table column",
+            "column name": "GDG",
+            "data type": "numeric",
+            "description": "Game-deciding goals in shootouts.",
+            "sample values": [
+              0,
+              1,
+              2,
+              6,
+              3
+            ],
+            "synonyms": [
+              "GDG"
+            ]
+          }
+        ],
+        "description": "Statistics for players in shootouts.",
+        "synonyms": [
+          "ScoringShootout"
+        ]
+      },
+      {
+        "name": "scoringsup",
+        "type": "simple table",
+        "table path": "main.ScoringSup",
+        "unique properties": [
+          [
+            "playerid",
+            "year_",
+            "ppa",
+            "sha"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "Unique identifier for the player.",
+            "sample values": [
+              "actonke01",
+              "adamsgr01",
+              "allismi01",
+              "archida01",
+              "bassebo01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the season.",
+            "sample values": [
+              1988,
+              1989,
+              1987,
+              1990
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "ppa",
+            "type": "table column",
+            "column name": "PPA",
+            "data type": "string",
+            "description": "Power play assists.",
+            "sample values": [
+              "1",
+              "5",
+              "4",
+              "25",
+              "10"
+            ],
+            "synonyms": [
+              "PPA"
+            ]
+          },
+          {
+            "name": "sha",
+            "type": "table column",
+            "column name": "SHA",
+            "data type": "string",
+            "description": "Shorthanded assists.",
+            "sample values": [
+              "1",
+              "2",
+              "4",
+              "3"
+            ],
+            "synonyms": [
+              "SHA"
+            ]
+          }
+        ],
+        "description": "Supplemental scoring statistics for players.",
+        "synonyms": [
+          "ScoringSup"
+        ]
+      },
+      {
+        "name": "seriespost",
+        "type": "simple table",
+        "table path": "main.SeriesPost",
+        "unique properties": [
+          [
+            "year_",
+            "round_",
+            "series",
+            "tmidwinner",
+            "lgidwinner",
+            "tmidloser",
+            "lgidloser",
+            "w",
+            "l",
+            "t",
+            "goalswinner",
+            "goalsloser",
+            "note"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the playoff series.",
+            "sample values": [
+              1912,
+              1913,
+              1914,
+              1915,
+              1916
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "round_",
+            "type": "table column",
+            "column name": "\"round\"",
+            "data type": "string",
+            "description": "The round of the playoffs.",
+            "sample values": [
+              "SCF",
+              "F",
+              "SF",
+              "SCSF",
+              "WP"
+            ],
+            "synonyms": [
+              "round"
+            ]
+          },
+          {
+            "name": "series",
+            "type": "table column",
+            "column name": "series",
+            "data type": "string",
+            "description": "Identifier for the series within a round.",
+            "sample values": [
+              "A",
+              "B",
+              "C",
+              "D",
+              "E"
+            ],
+            "synonyms": [
+              "series"
+            ]
+          },
+          {
+            "name": "tmidwinner",
+            "type": "table column",
+            "column name": "tmIDWinner",
+            "data type": "string",
+            "description": "Identifier of the winning team.",
+            "sample values": [
+              "VA1",
+              "TBS",
+              "OT1",
+              "VML",
+              "MOC"
+            ],
+            "synonyms": [
+              "tmIDWinner"
+            ]
+          },
+          {
+            "name": "lgidwinner",
+            "type": "table column",
+            "column name": "lgIDWinner",
+            "data type": "string",
+            "description": "League identifier of the winning team.",
+            "sample values": [
+              "PCHA",
+              "NHA",
+              "NHL",
+              "WCHL",
+              "WHA"
+            ],
+            "synonyms": [
+              "lgIDWinner"
+            ]
+          },
+          {
+            "name": "tmidloser",
+            "type": "table column",
+            "column name": "tmIDLoser",
+            "data type": "string",
+            "description": "Identifier of the losing team.",
+            "sample values": [
+              "QU1",
+              "MOC",
+              "VA1",
+              "MOW",
+              "OT1"
+            ],
+            "synonyms": [
+              "tmIDLoser"
+            ]
+          },
+          {
+            "name": "lgidloser",
+            "type": "table column",
+            "column name": "lgIDLoser",
+            "data type": "string",
+            "description": "League identifier of the losing team.",
+            "sample values": [
+              "NHA",
+              "PCHA",
+              "NHL",
+              "WCHL",
+              "WHA"
+            ],
+            "synonyms": [
+              "lgIDLoser"
+            ]
+          },
+          {
+            "name": "w",
+            "type": "table column",
+            "column name": "W",
+            "data type": "numeric",
+            "description": "Wins for the winning team in the series.",
+            "sample values": [
+              2,
+              1,
+              3,
+              4,
+              0
+            ],
+            "synonyms": [
+              "W"
+            ]
+          },
+          {
+            "name": "l",
+            "type": "table column",
+            "column name": "L",
+            "data type": "numeric",
+            "description": "Losses for the winning team in the series.",
+            "sample values": [
+              1,
+              0,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "L"
+            ]
+          },
+          {
+            "name": "t",
+            "type": "table column",
+            "column name": "T",
+            "data type": "numeric",
+            "description": "Ties in the series.",
+            "sample values": [
+              0,
+              1,
+              2
+            ],
+            "synonyms": [
+              "T"
+            ]
+          },
+          {
+            "name": "goalswinner",
+            "type": "table column",
+            "column name": "GoalsWinner",
+            "data type": "numeric",
+            "description": "Total goals scored by the winning team in the series.",
+            "sample values": [
+              16,
+              6,
+              13,
+              4,
+              26
+            ],
+            "synonyms": [
+              "GoalsWinner"
+            ]
+          },
+          {
+            "name": "goalsloser",
+            "type": "table column",
+            "column name": "GoalsLoser",
+            "data type": "numeric",
+            "description": "Total goals scored by the losing team in the series.",
+            "sample values": [
+              12,
+              2,
+              8,
+              1,
+              13
+            ],
+            "synonyms": [
+              "GoalsLoser"
+            ]
+          },
+          {
+            "name": "note",
+            "type": "table column",
+            "column name": "note",
+            "data type": "string",
+            "description": "Additional notes about the series.",
+            "sample values": [
+              "EX",
+              "TG",
+              "ND",
+              "DEF"
+            ],
+            "synonyms": [
+              "note"
+            ],
+            "extra semantic info": {
+              "codes": {
+                "EX": "exhibition",
+                "ND": "no decision",
+                "TG": "total-goals series"
+              }
+            }
+          }
+        ],
+        "description": "Results of post-season playoff series.",
+        "synonyms": [
+          "SeriesPost"
+        ]
+      },
+      {
+        "name": "teamsplits",
+        "type": "simple table",
+        "table path": "main.TeamSplits",
+        "unique properties": [
+          [
+            "year_",
+            "tmid"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the season.",
+            "sample values": [
+              1909,
+              1910,
+              1911,
+              1912,
+              1913
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "NHA",
+              "PCHA",
+              "NHL",
+              "WCHL",
+              "WHA"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team.",
+            "sample values": [
+              "COB",
+              "HAI",
+              "LES",
+              "MOS",
+              "MOW"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "hw",
+            "type": "table column",
+            "column name": "hW",
+            "data type": "numeric",
+            "description": "Home wins.",
+            "sample values": [
+              2,
+              3,
+              6,
+              5,
+              4
+            ],
+            "synonyms": [
+              "hW"
+            ]
+          },
+          {
+            "name": "hl",
+            "type": "table column",
+            "column name": "hL",
+            "data type": "numeric",
+            "description": "Home losses.",
+            "sample values": [
+              4,
+              3,
+              2,
+              0,
+              1
+            ],
+            "synonyms": [
+              "hL"
+            ]
+          },
+          {
+            "name": "ht",
+            "type": "table column",
+            "column name": "hT",
+            "data type": "numeric",
+            "description": "Home ties.",
+            "sample values": [
+              0,
+              1,
+              2,
+              4,
+              3
+            ],
+            "synonyms": [
+              "hT"
+            ]
+          },
+          {
+            "name": "hotl",
+            "type": "table column",
+            "column name": "hOTL",
+            "data type": "string",
+            "description": "Home overtime losses.",
+            "sample values": [
+              "2",
+              "3",
+              "1",
+              "0",
+              "4"
+            ],
+            "synonyms": [
+              "hOTL"
+            ]
+          },
+          {
+            "name": "rw",
+            "type": "table column",
+            "column name": "rW",
+            "data type": "numeric",
+            "description": "Road wins.",
+            "sample values": [
+              2,
+              1,
+              0,
+              5,
+              4
+            ],
+            "synonyms": [
+              "rW"
+            ]
+          },
+          {
+            "name": "rl",
+            "type": "table column",
+            "column name": "rL",
+            "data type": "numeric",
+            "description": "Road losses.",
+            "sample values": [
+              4,
+              5,
+              6,
+              1,
+              2
+            ],
+            "synonyms": [
+              "rL"
+            ]
+          },
+          {
+            "name": "rt",
+            "type": "table column",
+            "column name": "rT",
+            "data type": "numeric",
+            "description": "Road ties.",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              6
+            ],
+            "synonyms": [
+              "rT"
+            ]
+          },
+          {
+            "name": "rotl",
+            "type": "table column",
+            "column name": "rOTL",
+            "data type": "string",
+            "description": "Road overtime losses.",
+            "sample values": [
+              "1",
+              "5",
+              "3",
+              "4",
+              "0"
+            ],
+            "synonyms": [
+              "rOTL"
+            ]
+          },
+          {
+            "name": "sepw",
+            "type": "table column",
+            "column name": "SepW",
+            "data type": "string",
+            "description": "September wins.",
+            "sample values": [
+              "1"
+            ],
+            "synonyms": [
+              "SepW"
+            ]
+          },
+          {
+            "name": "sepl",
+            "type": "table column",
+            "column name": "SepL",
+            "data type": "string",
+            "description": "September losses.",
+            "sample values": [
+              "1"
+            ],
+            "synonyms": [
+              "SepL"
+            ]
+          },
+          {
+            "name": "sept",
+            "type": "table column",
+            "column name": "SepT",
+            "data type": "string",
+            "description": "September ties.",
+            "sample values": [],
+            "synonyms": [
+              "SepT"
+            ]
+          },
+          {
+            "name": "sepol",
+            "type": "table column",
+            "column name": "SepOL",
+            "data type": "string",
+            "description": "September overtime losses.",
+            "sample values": [
+              "0"
+            ],
+            "synonyms": [
+              "SepOL"
+            ]
+          },
+          {
+            "name": "octw",
+            "type": "table column",
+            "column name": "OctW",
+            "data type": "string",
+            "description": "October wins.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "OctW"
+            ]
+          },
+          {
+            "name": "octl",
+            "type": "table column",
+            "column name": "OctL",
+            "data type": "string",
+            "description": "October losses.",
+            "sample values": [
+              "1",
+              "0",
+              "2",
+              "4",
+              "5"
+            ],
+            "synonyms": [
+              "OctL"
+            ]
+          },
+          {
+            "name": "octt",
+            "type": "table column",
+            "column name": "OctT",
+            "data type": "string",
+            "description": "October ties.",
+            "sample values": [
+              "0",
+              "1",
+              "4",
+              "2",
+              "3"
+            ],
+            "synonyms": [
+              "OctT"
+            ]
+          },
+          {
+            "name": "octol",
+            "type": "table column",
+            "column name": "OctOL",
+            "data type": "string",
+            "description": "October overtime losses.",
+            "sample values": [
+              "1",
+              "0",
+              "2",
+              "3",
+              "5"
+            ],
+            "synonyms": [
+              "OctOL"
+            ]
+          },
+          {
+            "name": "novw",
+            "type": "table column",
+            "column name": "NovW",
+            "data type": "string",
+            "description": "November wins.",
+            "sample values": [
+              "5",
+              "1",
+              "2",
+              "0",
+              "4"
+            ],
+            "synonyms": [
+              "NovW"
+            ]
+          },
+          {
+            "name": "novl",
+            "type": "table column",
+            "column name": "NovL",
+            "data type": "string",
+            "description": "November losses.",
+            "sample values": [
+              "1",
+              "4",
+              "3",
+              "2",
+              "0"
+            ],
+            "synonyms": [
+              "NovL"
+            ]
+          },
+          {
+            "name": "novt",
+            "type": "table column",
+            "column name": "NovT",
+            "data type": "string",
+            "description": "November ties.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "NovT"
+            ]
+          },
+          {
+            "name": "novol",
+            "type": "table column",
+            "column name": "NovOL",
+            "data type": "string",
+            "description": "November overtime losses.",
+            "sample values": [
+              "0",
+              "2",
+              "1",
+              "4",
+              "3"
+            ],
+            "synonyms": [
+              "NovOL"
+            ]
+          },
+          {
+            "name": "decw",
+            "type": "table column",
+            "column name": "DecW",
+            "data type": "string",
+            "description": "December wins.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "DecW"
+            ]
+          },
+          {
+            "name": "decl",
+            "type": "table column",
+            "column name": "DecL",
+            "data type": "string",
+            "description": "December losses.",
+            "sample values": [
+              "1",
+              "0",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "DecL"
+            ]
+          },
+          {
+            "name": "dect",
+            "type": "table column",
+            "column name": "DecT",
+            "data type": "string",
+            "description": "December ties.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "DecT"
+            ]
+          },
+          {
+            "name": "decol",
+            "type": "table column",
+            "column name": "DecOL",
+            "data type": "string",
+            "description": "December overtime losses.",
+            "sample values": [
+              "0",
+              "2",
+              "1",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "DecOL"
+            ]
+          },
+          {
+            "name": "janw",
+            "type": "table column",
+            "column name": "JanW",
+            "data type": "numeric",
+            "description": "January wins.",
+            "sample values": [
+              1,
+              0,
+              2,
+              4,
+              3
+            ],
+            "synonyms": [
+              "JanW"
+            ]
+          },
+          {
+            "name": "janl",
+            "type": "table column",
+            "column name": "JanL",
+            "data type": "numeric",
+            "description": "January losses.",
+            "sample values": [
+              1,
+              3,
+              2,
+              0,
+              6
+            ],
+            "synonyms": [
+              "JanL"
+            ]
+          },
+          {
+            "name": "jant",
+            "type": "table column",
+            "column name": "JanT",
+            "data type": "numeric",
+            "description": "January ties.",
+            "sample values": [
+              0,
+              1,
+              3,
+              2,
+              4
+            ],
+            "synonyms": [
+              "JanT"
+            ]
+          },
+          {
+            "name": "janol",
+            "type": "table column",
+            "column name": "JanOL",
+            "data type": "string",
+            "description": "January overtime losses.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "JanOL"
+            ]
+          },
+          {
+            "name": "febw",
+            "type": "table column",
+            "column name": "FebW",
+            "data type": "numeric",
+            "description": "February wins.",
+            "sample values": [
+              2,
+              1,
+              6,
+              5,
+              4
+            ],
+            "synonyms": [
+              "FebW"
+            ]
+          },
+          {
+            "name": "febl",
+            "type": "table column",
+            "column name": "FebL",
+            "data type": "numeric",
+            "description": "February losses.",
+            "sample values": [
+              3,
+              5,
+              0,
+              1,
+              2
+            ],
+            "synonyms": [
+              "FebL"
+            ]
+          },
+          {
+            "name": "febt",
+            "type": "table column",
+            "column name": "FebT",
+            "data type": "numeric",
+            "description": "February ties.",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "FebT"
+            ]
+          },
+          {
+            "name": "febol",
+            "type": "table column",
+            "column name": "FebOL",
+            "data type": "string",
+            "description": "February overtime losses.",
+            "sample values": [
+              "0",
+              "1",
+              "4",
+              "2",
+              "3"
+            ],
+            "synonyms": [
+              "FebOL"
+            ]
+          },
+          {
+            "name": "marw",
+            "type": "table column",
+            "column name": "MarW",
+            "data type": "string",
+            "description": "March wins.",
+            "sample values": [
+              "1",
+              "3",
+              "0",
+              "2",
+              "5"
+            ],
+            "synonyms": [
+              "MarW"
+            ]
+          },
+          {
+            "name": "marl",
+            "type": "table column",
+            "column name": "MarL",
+            "data type": "string",
+            "description": "March losses.",
+            "sample values": [
+              "4",
+              "0",
+              "2",
+              "1",
+              "3"
+            ],
+            "synonyms": [
+              "MarL"
+            ]
+          },
+          {
+            "name": "mart",
+            "type": "table column",
+            "column name": "MarT",
+            "data type": "string",
+            "description": "March ties.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "4",
+              "3"
+            ],
+            "synonyms": [
+              "MarT"
+            ]
+          },
+          {
+            "name": "marol",
+            "type": "table column",
+            "column name": "MarOL",
+            "data type": "string",
+            "description": "March overtime losses.",
+            "sample values": [
+              "1",
+              "0",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "MarOL"
+            ]
+          },
+          {
+            "name": "aprw",
+            "type": "table column",
+            "column name": "AprW",
+            "data type": "string",
+            "description": "April wins.",
+            "sample values": [
+              "1",
+              "0",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "AprW"
+            ]
+          },
+          {
+            "name": "aprl",
+            "type": "table column",
+            "column name": "AprL",
+            "data type": "string",
+            "description": "April losses.",
+            "sample values": [
+              "0",
+              "2",
+              "1",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "AprL"
+            ]
+          },
+          {
+            "name": "aprt",
+            "type": "table column",
+            "column name": "AprT",
+            "data type": "string",
+            "description": "April ties.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "4",
+              "3"
+            ],
+            "synonyms": [
+              "AprT"
+            ]
+          },
+          {
+            "name": "aprol",
+            "type": "table column",
+            "column name": "AprOL",
+            "data type": "string",
+            "description": "April overtime losses.",
+            "sample values": [
+              "1",
+              "0",
+              "2",
+              "3"
+            ],
+            "synonyms": [
+              "AprOL"
+            ]
+          }
+        ],
+        "description": "Team statistics split by home/road and by month.",
+        "synonyms": [
+          "TeamSplits"
+        ]
+      },
+      {
+        "name": "teamvsteam",
+        "type": "simple table",
+        "table path": "main.TeamVsTeam",
+        "unique properties": [
+          [
+            "year_",
+            "tmid",
+            "oppid"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the season.",
+            "sample values": [
+              1909,
+              1910,
+              1911,
+              1912,
+              1913
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "NHA",
+              "PCHA",
+              "NHL",
+              "WCHL",
+              "WHA"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team.",
+            "sample values": [
+              "COB",
+              "HAI",
+              "LES",
+              "MOS",
+              "MOW"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "oppid",
+            "type": "table column",
+            "column name": "oppID",
+            "data type": "string",
+            "description": "Identifier for the opponent team.",
+            "sample values": [
+              "HAI",
+              "LES",
+              "MOS",
+              "MOW",
+              "OT1"
+            ],
+            "synonyms": [
+              "oppID"
+            ]
+          },
+          {
+            "name": "w",
+            "type": "table column",
+            "column name": "W",
+            "data type": "numeric",
+            "description": "Wins against the opponent.",
+            "sample values": [
+              1,
+              2,
+              0,
+              3,
+              4
+            ],
+            "synonyms": [
+              "W"
+            ]
+          },
+          {
+            "name": "l",
+            "type": "table column",
+            "column name": "L",
+            "data type": "numeric",
+            "description": "Losses against the opponent.",
+            "sample values": [
+              1,
+              0,
+              2,
+              4,
+              3
+            ],
+            "synonyms": [
+              "L"
+            ]
+          },
+          {
+            "name": "t",
+            "type": "table column",
+            "column name": "T",
+            "data type": "numeric",
+            "description": "Ties against the opponent.",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "T"
+            ]
+          },
+          {
+            "name": "otl",
+            "type": "table column",
+            "column name": "OTL",
+            "data type": "string",
+            "description": "Overtime losses against the opponent.",
+            "sample values": [
+              "0",
+              "1",
+              "3",
+              "2",
+              "4"
+            ],
+            "synonyms": [
+              "OTL"
+            ]
+          }
+        ],
+        "description": "Head-to-head records for teams against each opponent in a season.",
+        "synonyms": [
+          "TeamVsTeam"
+        ]
+      },
+      {
+        "name": "teams",
+        "type": "simple table",
+        "table path": "main.Teams",
+        "unique properties": [
+          [
+            "year_",
+            "tmid"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the season.",
+            "sample values": [
+              1909,
+              1910,
+              1911,
+              1912,
+              1913
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "NHA",
+              "PCHA",
+              "NHL",
+              "WCHL",
+              "WHA"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team.",
+            "sample values": [
+              "COB",
+              "HAI",
+              "LES",
+              "MOS",
+              "MOW"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "franchid",
+            "type": "table column",
+            "column name": "franchID",
+            "data type": "string",
+            "description": "Identifier for the franchise.",
+            "sample values": [
+              "BKN",
+              "MTL",
+              "TBS",
+              "MOS",
+              "MTW"
+            ],
+            "synonyms": [
+              "franchID"
+            ]
+          },
+          {
+            "name": "confid",
+            "type": "table column",
+            "column name": "confID",
+            "data type": "string",
+            "description": "Identifier for the conference.",
+            "sample values": [
+              "CC",
+              "WA",
+              "WC",
+              "EC"
+            ],
+            "synonyms": [
+              "confID"
+            ]
+          },
+          {
+            "name": "divid",
+            "type": "table column",
+            "column name": "divID",
+            "data type": "string",
+            "description": "Identifier for the division.",
+            "sample values": [
+              "AM",
+              "CA",
+              "ED",
+              "WD",
+              "WW"
+            ],
+            "synonyms": [
+              "divID"
+            ]
+          },
+          {
+            "name": "rank",
+            "type": "table column",
+            "column name": "rank",
+            "data type": "numeric",
+            "description": "Final standing in the division or league.",
+            "sample values": [
+              4,
+              5,
+              7,
+              6,
+              1
+            ],
+            "synonyms": [
+              "rank"
+            ]
+          },
+          {
+            "name": "playoff",
+            "type": "table column",
+            "column name": "playoff",
+            "data type": "string",
+            "description": "How far the team advanced in the playoffs.",
+            "sample values": [
+              "LCS",
+              "WCS",
+              "NHAF",
+              "SC",
+              "F"
+            ],
+            "synonyms": [
+              "playoff"
+            ]
+          },
+          {
+            "name": "g",
+            "type": "table column",
+            "column name": "G",
+            "data type": "numeric",
+            "description": "Games played.",
+            "sample values": [
+              12,
+              16,
+              18,
+              15,
+              20
+            ],
+            "synonyms": [
+              "G"
+            ]
+          },
+          {
+            "name": "w",
+            "type": "table column",
+            "column name": "W",
+            "data type": "numeric",
+            "description": "Wins.",
+            "sample values": [
+              4,
+              2,
+              3,
+              11,
+              9
+            ],
+            "synonyms": [
+              "W"
+            ]
+          },
+          {
+            "name": "l",
+            "type": "table column",
+            "column name": "L",
+            "data type": "numeric",
+            "description": "Losses.",
+            "sample values": [
+              8,
+              10,
+              1,
+              3,
+              9
+            ],
+            "synonyms": [
+              "L"
+            ]
+          },
+          {
+            "name": "t",
+            "type": "table column",
+            "column name": "T",
+            "data type": "numeric",
+            "description": "Ties.",
+            "sample values": [
+              0,
+              1,
+              2,
+              4,
+              3
+            ],
+            "synonyms": [
+              "T"
+            ]
+          },
+          {
+            "name": "otl",
+            "type": "table column",
+            "column name": "OTL",
+            "data type": "string",
+            "description": "Overtime losses.",
+            "sample values": [
+              "3",
+              "4",
+              "6",
+              "5",
+              "0"
+            ],
+            "synonyms": [
+              "OTL"
+            ]
+          },
+          {
+            "name": "pts",
+            "type": "table column",
+            "column name": "Pts",
+            "data type": "numeric",
+            "description": "Total points in the standings.",
+            "sample values": [
+              8,
+              4,
+              7,
+              22,
+              18
+            ],
+            "synonyms": [
+              "Pts"
+            ]
+          },
+          {
+            "name": "sow",
+            "type": "table column",
+            "column name": "SoW",
+            "data type": "string",
+            "description": "Shootout wins.",
+            "sample values": [
+              "3",
+              "5",
+              "2",
+              "8",
+              "12"
+            ],
+            "synonyms": [
+              "SoW"
+            ]
+          },
+          {
+            "name": "sol",
+            "type": "table column",
+            "column name": "SoL",
+            "data type": "string",
+            "description": "Shootout losses.",
+            "sample values": [
+              "7",
+              "5",
+              "8",
+              "2",
+              "3"
+            ],
+            "synonyms": [
+              "SoL"
+            ]
+          },
+          {
+            "name": "gf",
+            "type": "table column",
+            "column name": "GF",
+            "data type": "numeric",
+            "description": "Goals for (scored by the team).",
+            "sample values": [
+              79,
+              77,
+              59,
+              52,
+              91
+            ],
+            "synonyms": [
+              "GF"
+            ]
+          },
+          {
+            "name": "ga",
+            "type": "table column",
+            "column name": "GA",
+            "data type": "numeric",
+            "description": "Goals against (allowed by the team).",
+            "sample values": [
+              104,
+              83,
+              100,
+              95,
+              41
+            ],
+            "synonyms": [
+              "GA"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "Full team name.",
+            "sample values": [
+              "Cobalt Silver Kings",
+              "Haileybury Hockey Club",
+              "Les Canadiens",
+              "Montreal Shamrocks",
+              "Montreal Wanderers"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "pim",
+            "type": "table column",
+            "column name": "PIM",
+            "data type": "string",
+            "description": "Penalty minutes.",
+            "sample values": [
+              "336",
+              "27",
+              "333",
+              "355",
+              "253"
+            ],
+            "synonyms": [
+              "PIM"
+            ]
+          },
+          {
+            "name": "benchminor",
+            "type": "table column",
+            "column name": "BenchMinor",
+            "data type": "string",
+            "description": "Bench minor penalties in minutes.",
+            "sample values": [
+              "12",
+              "14",
+              "8",
+              "2",
+              "20"
+            ],
+            "synonyms": [
+              "BenchMinor"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A penalty assessed against the team rather than an individual player, often for actions by the coach or players on the bench."
+            }
+          },
+          {
+            "name": "ppg",
+            "type": "table column",
+            "column name": "PPG",
+            "data type": "string",
+            "description": "Power play goals scored.",
+            "sample values": [
+              "28",
+              "51",
+              "42",
+              "46",
+              "40"
+            ],
+            "synonyms": [
+              "PPG"
+            ]
+          },
+          {
+            "name": "ppc",
+            "type": "table column",
+            "column name": "PPC",
+            "data type": "string",
+            "description": "Power play chances.",
+            "sample values": [
+              "220",
+              "279",
+              "240",
+              "294",
+              "253"
+            ],
+            "synonyms": [
+              "PPC"
+            ],
+            "extra semantic info": {
+              "formula": "power play percentage (PP%) = PPG / PPC"
+            }
+          },
+          {
+            "name": "sha",
+            "type": "table column",
+            "column name": "SHA",
+            "data type": "string",
+            "description": "Shorthanded goals against.",
+            "sample values": [
+              "4",
+              "2",
+              "5",
+              "7",
+              "6"
+            ],
+            "synonyms": [
+              "SHA"
+            ]
+          },
+          {
+            "name": "pkg",
+            "type": "table column",
+            "column name": "PKG",
+            "data type": "string",
+            "description": "Power play goals against (penalty kill goals).",
+            "sample values": [
+              "45",
+              "43",
+              "36",
+              "42",
+              "44"
+            ],
+            "synonyms": [
+              "PKG"
+            ]
+          },
+          {
+            "name": "pkc",
+            "type": "table column",
+            "column name": "PKC",
+            "data type": "string",
+            "description": "Penalty kill chances (times shorthanded).",
+            "sample values": [
+              "242",
+              "301",
+              "267",
+              "248",
+              "206"
+            ],
+            "synonyms": [
+              "PKC"
+            ]
+          },
+          {
+            "name": "shf",
+            "type": "table column",
+            "column name": "SHF",
+            "data type": "string",
+            "description": "Shorthanded goals for.",
+            "sample values": [
+              "3",
+              "8",
+              "2",
+              "7",
+              "10"
+            ],
+            "synonyms": [
+              "SHF"
+            ]
+          }
+        ],
+        "description": "Season-by-season statistics and information for each team.",
+        "synonyms": [
+          "Teams"
+        ]
+      },
+      {
+        "name": "teamshalf",
+        "type": "simple table",
+        "table path": "main.TeamsHalf",
+        "unique properties": [
+          [
+            "year_",
+            "tmid",
+            "half"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the season.",
+            "sample values": [
+              1916,
+              1917,
+              1918,
+              1919,
+              1920
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "NHA",
+              "NHL"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team.",
+            "sample values": [
+              "MOC",
+              "MOW",
+              "OT1",
+              "QU1",
+              "TBS"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "half",
+            "type": "table column",
+            "column name": "half",
+            "data type": "numeric",
+            "description": "Indicates if the stats are for the first (1) or second (2) half of the season.",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "half"
+            ]
+          },
+          {
+            "name": "rank",
+            "type": "table column",
+            "column name": "rank",
+            "data type": "numeric",
+            "description": "Final standing for that half of the season.",
+            "sample values": [
+              1,
+              3,
+              5,
+              4,
+              2
+            ],
+            "synonyms": [
+              "rank"
+            ]
+          },
+          {
+            "name": "g",
+            "type": "table column",
+            "column name": "G",
+            "data type": "numeric",
+            "description": "Games played in the half-season.",
+            "sample values": [
+              10,
+              4,
+              14,
+              8,
+              6
+            ],
+            "synonyms": [
+              "G"
+            ]
+          },
+          {
+            "name": "w",
+            "type": "table column",
+            "column name": "W",
+            "data type": "numeric",
+            "description": "Wins in the half-season.",
+            "sample values": [
+              7,
+              3,
+              2,
+              8,
+              5
+            ],
+            "synonyms": [
+              "W"
+            ]
+          },
+          {
+            "name": "l",
+            "type": "table column",
+            "column name": "L",
+            "data type": "numeric",
+            "description": "Losses in the half-season.",
+            "sample values": [
+              3,
+              7,
+              8,
+              2,
+              5
+            ],
+            "synonyms": [
+              "L"
+            ]
+          },
+          {
+            "name": "t",
+            "type": "table column",
+            "column name": "T",
+            "data type": "numeric",
+            "description": "Ties in the half-season.",
+            "sample values": [
+              0
+            ],
+            "synonyms": [
+              "T"
+            ]
+          },
+          {
+            "name": "gf",
+            "type": "table column",
+            "column name": "GF",
+            "data type": "numeric",
+            "description": "Goals for in the half-season.",
+            "sample values": [
+              58,
+              31,
+              56,
+              38,
+              63
+            ],
+            "synonyms": [
+              "GF"
+            ]
+          },
+          {
+            "name": "ga",
+            "type": "table column",
+            "column name": "GA",
+            "data type": "numeric",
+            "description": "Goals against in the half-season.",
+            "sample values": [
+              38,
+              42,
+              72,
+              65,
+              41
+            ],
+            "synonyms": [
+              "GA"
+            ]
+          }
+        ],
+        "description": "Team statistics for seasons that were split into two halves.",
+        "synonyms": [
+          "TeamsHalf"
+        ]
+      },
+      {
+        "name": "teamspost",
+        "type": "simple table",
+        "table path": "main.TeamsPost",
+        "unique properties": [
+          [
+            "year_",
+            "tmid"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the postseason.",
+            "sample values": [
+              1913,
+              1914,
+              1916,
+              1917,
+              1918
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "NHA",
+              "NHL",
+              "PCHA",
+              "WCHL",
+              "WHA"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team.",
+            "sample values": [
+              "MOC",
+              "TBS",
+              "MOW",
+              "OT1",
+              "MTL"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "g",
+            "type": "table column",
+            "column name": "G",
+            "data type": "numeric",
+            "description": "Games played in the postseason.",
+            "sample values": [
+              2,
+              5,
+              6,
+              4,
+              8
+            ],
+            "synonyms": [
+              "G"
+            ]
+          },
+          {
+            "name": "w",
+            "type": "table column",
+            "column name": "W",
+            "data type": "numeric",
+            "description": "Wins in the postseason.",
+            "sample values": [
+              1,
+              0,
+              4,
+              2,
+              3
+            ],
+            "synonyms": [
+              "W"
+            ]
+          },
+          {
+            "name": "l",
+            "type": "table column",
+            "column name": "L",
+            "data type": "numeric",
+            "description": "Losses in the postseason.",
+            "sample values": [
+              1,
+              0,
+              4,
+              2,
+              3
+            ],
+            "synonyms": [
+              "L"
+            ]
+          },
+          {
+            "name": "t",
+            "type": "table column",
+            "column name": "T",
+            "data type": "numeric",
+            "description": "Ties in the postseason.",
+            "sample values": [
+              0,
+              1,
+              2,
+              4,
+              3
+            ],
+            "synonyms": [
+              "T"
+            ]
+          },
+          {
+            "name": "gf",
+            "type": "table column",
+            "column name": "GF",
+            "data type": "numeric",
+            "description": "Goals for in the postseason.",
+            "sample values": [
+              2,
+              6,
+              1,
+              4,
+              7
+            ],
+            "synonyms": [
+              "GF"
+            ]
+          },
+          {
+            "name": "ga",
+            "type": "table column",
+            "column name": "GA",
+            "data type": "numeric",
+            "description": "Goals against in the postseason.",
+            "sample values": [
+              6,
+              2,
+              4,
+              1,
+              7
+            ],
+            "synonyms": [
+              "GA"
+            ]
+          },
+          {
+            "name": "pim",
+            "type": "table column",
+            "column name": "PIM",
+            "data type": "string",
+            "description": "Penalty minutes in the postseason.",
+            "sample values": [
+              "59",
+              "68",
+              "87",
+              "69",
+              "31"
+            ],
+            "synonyms": [
+              "PIM"
+            ]
+          },
+          {
+            "name": "benchminor",
+            "type": "table column",
+            "column name": "BenchMinor",
+            "data type": "string",
+            "description": "Bench minor penalties in minutes in the postseason.",
+            "sample values": [
+              "0",
+              "6",
+              "2",
+              "4",
+              "10"
+            ],
+            "synonyms": [
+              "BenchMinor"
+            ]
+          },
+          {
+            "name": "ppg",
+            "type": "table column",
+            "column name": "PPG",
+            "data type": "string",
+            "description": "Power play goals in the postseason.",
+            "sample values": [
+              "1",
+              "5",
+              "9",
+              "10",
+              "2"
+            ],
+            "synonyms": [
+              "PPG"
+            ]
+          },
+          {
+            "name": "ppc",
+            "type": "table column",
+            "column name": "PPC",
+            "data type": "string",
+            "description": "Power play chances in the postseason.",
+            "sample values": [
+              "39",
+              "27",
+              "25",
+              "11",
+              "75"
+            ],
+            "synonyms": [
+              "PPC"
+            ]
+          },
+          {
+            "name": "sha",
+            "type": "table column",
+            "column name": "SHA",
+            "data type": "string",
+            "description": "Shorthanded goals against in the postseason.",
+            "sample values": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "synonyms": [
+              "SHA"
+            ]
+          },
+          {
+            "name": "pkg",
+            "type": "table column",
+            "column name": "PKG",
+            "data type": "string",
+            "description": "Power play goals against in the postseason.",
+            "sample values": [
+              "3",
+              "8",
+              "4",
+              "6",
+              "12"
+            ],
+            "synonyms": [
+              "PKG"
+            ]
+          },
+          {
+            "name": "pkc",
+            "type": "table column",
+            "column name": "PKC",
+            "data type": "string",
+            "description": "Penalty kill chances in the postseason.",
+            "sample values": [
+              "55",
+              "45",
+              "20",
+              "13",
+              "64"
+            ],
+            "synonyms": [
+              "PKC"
+            ]
+          },
+          {
+            "name": "shf",
+            "type": "table column",
+            "column name": "SHF",
+            "data type": "string",
+            "description": "Shorthanded goals for in the postseason.",
+            "sample values": [
+              "0",
+              "1",
+              "3",
+              "5",
+              "2"
+            ],
+            "synonyms": [
+              "SHF"
+            ]
+          }
+        ],
+        "description": "Overall team statistics for the postseason.",
+        "synonyms": [
+          "TeamsPost"
+        ]
+      },
+      {
+        "name": "teamssc",
+        "type": "simple table",
+        "table path": "main.TeamsSC",
+        "unique properties": [
+          [
+            "year_",
+            "tmid"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "Year of the Stanley Cup final.",
+            "sample values": [
+              1912,
+              1913,
+              1914,
+              1915,
+              1916
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "Identifier for the league.",
+            "sample values": [
+              "NHA",
+              "PCHA",
+              "NHL",
+              "WCHL"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "Identifier for the team.",
+            "sample values": [
+              "QU1",
+              "VA1",
+              "TBS",
+              "OT1",
+              "VML"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "g",
+            "type": "table column",
+            "column name": "G",
+            "data type": "numeric",
+            "description": "Games played in the Stanley Cup final.",
+            "sample values": [
+              3,
+              5,
+              4,
+              2,
+              6
+            ],
+            "synonyms": [
+              "G"
+            ]
+          },
+          {
+            "name": "w",
+            "type": "table column",
+            "column name": "W",
+            "data type": "numeric",
+            "description": "Wins in the Stanley Cup final.",
+            "sample values": [
+              1,
+              2,
+              3,
+              0,
+              5
+            ],
+            "synonyms": [
+              "W"
+            ]
+          },
+          {
+            "name": "l",
+            "type": "table column",
+            "column name": "L",
+            "data type": "numeric",
+            "description": "Losses in the Stanley Cup final.",
+            "sample values": [
+              2,
+              1,
+              0,
+              3
+            ],
+            "synonyms": [
+              "L"
+            ]
+          },
+          {
+            "name": "t",
+            "type": "table column",
+            "column name": "T",
+            "data type": "numeric",
+            "description": "Ties in the Stanley Cup final.",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "T"
+            ]
+          },
+          {
+            "name": "gf",
+            "type": "table column",
+            "column name": "GF",
+            "data type": "numeric",
+            "description": "Goals for in the Stanley Cup final.",
+            "sample values": [
+              12,
+              16,
+              13,
+              8,
+              26
+            ],
+            "synonyms": [
+              "GF"
+            ]
+          },
+          {
+            "name": "ga",
+            "type": "table column",
+            "column name": "GA",
+            "data type": "numeric",
+            "description": "Goals against in the Stanley Cup final.",
+            "sample values": [
+              16,
+              12,
+              8,
+              13,
+              26
+            ],
+            "synonyms": [
+              "GA"
+            ]
+          },
+          {
+            "name": "pim",
+            "type": "table column",
+            "column name": "PIM",
+            "data type": "string",
+            "description": "Penalty minutes in the Stanley Cup final.",
+            "sample values": [
+              "24",
+              "20",
+              "75",
+              "53",
+              "50"
+            ],
+            "synonyms": [
+              "PIM"
+            ]
+          }
+        ],
+        "description": "Team statistics for the Stanley Cup finals.",
+        "synonyms": [
+          "TeamsSC"
+        ]
+      },
+      {
+        "name": "abbrev",
+        "type": "simple table",
+        "table path": "main.abbrev",
+        "unique properties": [
+          [
+            "type_",
+            "code"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "Type",
+            "data type": "string",
+            "description": "The type of entity the abbreviation represents (e.g., Conference, Division).",
+            "sample values": [
+              "Conference",
+              "Division",
+              "Playoffs",
+              "Round"
+            ],
+            "synonyms": [
+              "Type"
+            ]
+          },
+          {
+            "name": "code",
+            "type": "table column",
+            "column name": "Code",
+            "data type": "string",
+            "description": "The abbreviated code.",
+            "sample values": [
+              "CC",
+              "EC",
+              "WA",
+              "WC",
+              "AD"
+            ],
+            "synonyms": [
+              "Code"
+            ]
+          },
+          {
+            "name": "fullname",
+            "type": "table column",
+            "column name": "Fullname",
+            "data type": "string",
+            "description": "The full name corresponding to the code.",
+            "sample values": [
+              "Campbell Conference",
+              "Eastern Conference",
+              "Wales Conference",
+              "Western Conference",
+              "Adams Division"
+            ],
+            "synonyms": [
+              "Fullname"
+            ]
+          }
+        ],
+        "description": "A lookup table for abbreviations used throughout the database.",
+        "synonyms": [
+          "abbrev"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "awardscoaches",
+        "parent collection": "coaches",
+        "child collection": "awardscoaches",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "coachid": [
+            "coachid"
+          ]
+        },
+        "description": "Awards received by this coach.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "coach_record",
+        "original parent": "coaches",
+        "original property": "awardscoaches",
+        "singular": true,
+        "always matches": false,
+        "description": "The coach who received this award.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "awardsplayers",
+        "parent collection": "master",
+        "child collection": "awardsplayers",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "playerid"
+          ]
+        },
+        "description": "Awards received by this player.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "master_record",
+        "original parent": "master",
+        "original property": "awardsplayers",
+        "singular": true,
+        "always matches": true,
+        "description": "The player who received this award.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "coaches",
+        "parent collection": "teams",
+        "child collection": "coaches",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmid"
+          ]
+        },
+        "description": "Coaches for this team in this season.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "original parent": "teams",
+        "original property": "coaches",
+        "singular": true,
+        "always matches": true,
+        "description": "The team this coach was with for this record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "combined_shutouts_as_goalie2",
+        "parent collection": "master",
+        "child collection": "combinedshutouts",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "idgoalie2"
+          ]
+        },
+        "description": "Combined shutouts where this player was the second listed goalie.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "goalie2_master_record",
+        "original parent": "master",
+        "original property": "combined_shutouts_as_goalie2",
+        "singular": true,
+        "always matches": false,
+        "description": "The master record for the second goalie in this combined shutout.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "combined_shutouts_as_goalie1",
+        "parent collection": "master",
+        "child collection": "combinedshutouts",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "idgoalie1"
+          ]
+        },
+        "description": "Combined shutouts where this player was the first listed goalie.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "goalie1_master_record",
+        "original parent": "master",
+        "original property": "combined_shutouts_as_goalie1",
+        "singular": true,
+        "always matches": false,
+        "description": "The master record for the first goalie in this combined shutout.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "goalies",
+        "parent collection": "master",
+        "child collection": "goalies",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "playerid"
+          ]
+        },
+        "description": "Goaltending statistics for this player.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "master_record",
+        "original parent": "master",
+        "original property": "goalies",
+        "singular": true,
+        "always matches": true,
+        "description": "The player record for this goaltending statistic entry.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "goalies",
+        "parent collection": "teams",
+        "child collection": "goalies",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmid"
+          ]
+        },
+        "description": "Goalies who played for this team in this season.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "original parent": "teams",
+        "original property": "goalies",
+        "singular": true,
+        "always matches": false,
+        "description": "The team this goalie played for.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "goaliessc",
+        "parent collection": "master",
+        "child collection": "goaliessc",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "playerid"
+          ]
+        },
+        "description": "Stanley Cup goaltending statistics for this player.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "master_record",
+        "original parent": "master",
+        "original property": "goaliessc",
+        "singular": true,
+        "always matches": true,
+        "description": "The player record for this Stanley Cup goaltending statistic.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "goaliessc",
+        "parent collection": "teams",
+        "child collection": "goaliessc",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmid"
+          ]
+        },
+        "description": "Stanley Cup goaltending statistics for this team.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "original parent": "teams",
+        "original property": "goaliessc",
+        "singular": true,
+        "always matches": false,
+        "description": "The team this goalie played for in the Stanley Cup final.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "goaliesshootout",
+        "parent collection": "master",
+        "child collection": "goaliesshootout",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "playerid"
+          ]
+        },
+        "description": "Shootout statistics for this goalie.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "master_record",
+        "original parent": "master",
+        "original property": "goaliesshootout",
+        "singular": true,
+        "always matches": false,
+        "description": "The player record for this shootout statistic.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "goaliesshootout",
+        "parent collection": "teams",
+        "child collection": "goaliesshootout",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmid"
+          ]
+        },
+        "description": "Shootout statistics for goalies on this team.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "original parent": "teams",
+        "original property": "goaliesshootout",
+        "singular": true,
+        "always matches": false,
+        "description": "The team this goalie played for.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "master_record",
+        "parent collection": "coaches",
+        "child collection": "master",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "coachid": [
+            "coachid"
+          ]
+        },
+        "description": "The master biographical record for this coach.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "coaches",
+        "original parent": "coaches",
+        "original property": "master_record",
+        "singular": false,
+        "always matches": false,
+        "description": "The coaching stints for this person.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "scoring",
+        "parent collection": "master",
+        "child collection": "scoring",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "playerid"
+          ]
+        },
+        "description": "Scoring statistics for this player.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "master_record",
+        "original parent": "master",
+        "original property": "scoring",
+        "singular": true,
+        "always matches": false,
+        "description": "The player associated with this scoring record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "scoring",
+        "parent collection": "teams",
+        "child collection": "scoring",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmid"
+          ]
+        },
+        "description": "Scoring statistics for players on this team.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "original parent": "teams",
+        "original property": "scoring",
+        "singular": true,
+        "always matches": false,
+        "description": "The team associated with this scoring record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "scoringsc",
+        "parent collection": "master",
+        "child collection": "scoringsc",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "playerid"
+          ]
+        },
+        "description": "Stanley Cup scoring statistics for this player.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "master_record",
+        "original parent": "master",
+        "original property": "scoringsc",
+        "singular": true,
+        "always matches": false,
+        "description": "The player associated with this Stanley Cup scoring record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "scoringsc",
+        "parent collection": "teams",
+        "child collection": "scoringsc",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmid"
+          ]
+        },
+        "description": "Stanley Cup scoring statistics for players on this team.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "original parent": "teams",
+        "original property": "scoringsc",
+        "singular": true,
+        "always matches": false,
+        "description": "The team associated with this Stanley Cup scoring record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "scoringshootout",
+        "parent collection": "master",
+        "child collection": "scoringshootout",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "playerid"
+          ]
+        },
+        "description": "Shootout scoring statistics for this player.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "master_record",
+        "original parent": "master",
+        "original property": "scoringshootout",
+        "singular": true,
+        "always matches": false,
+        "description": "The player associated with this shootout scoring record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "scoringshootout",
+        "parent collection": "teams",
+        "child collection": "scoringshootout",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmid"
+          ]
+        },
+        "description": "Shootout scoring statistics for players on this team.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "original parent": "teams",
+        "original property": "scoringshootout",
+        "singular": true,
+        "always matches": false,
+        "description": "The team associated with this shootout scoring record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "scoringsup",
+        "parent collection": "master",
+        "child collection": "scoringsup",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "playerid"
+          ]
+        },
+        "description": "Supplemental scoring statistics for this player.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "master_record",
+        "original parent": "master",
+        "original property": "scoringsup",
+        "singular": true,
+        "always matches": false,
+        "description": "The player associated with this supplemental scoring record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "series_as_loser",
+        "parent collection": "teams",
+        "child collection": "seriespost",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmidloser"
+          ]
+        },
+        "description": "Postseason series this team lost.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "losing_team_record",
+        "original parent": "teams",
+        "original property": "series_as_loser",
+        "singular": true,
+        "always matches": false,
+        "description": "The team that lost this postseason series.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "series_as_winner",
+        "parent collection": "teams",
+        "child collection": "seriespost",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmidwinner"
+          ]
+        },
+        "description": "Postseason series this team won.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "winning_team_record",
+        "original parent": "teams",
+        "original property": "series_as_winner",
+        "singular": true,
+        "always matches": false,
+        "description": "The team that won this postseason series.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "teamsplits",
+        "parent collection": "teams",
+        "child collection": "teamsplits",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmid"
+          ]
+        },
+        "description": "Detailed statistical splits for this team season.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "original parent": "teams",
+        "original property": "teamsplits",
+        "singular": true,
+        "always matches": true,
+        "description": "The main team record for these statistical splits.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "games_as_opponent",
+        "parent collection": "teams",
+        "child collection": "teamvsteam",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "tmid": [
+            "oppid"
+          ],
+          "year_": [
+            "year_"
+          ]
+        },
+        "description": "Head-to-head records where this team was the opponent.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "opponent_team_record",
+        "original parent": "teams",
+        "original property": "games_as_opponent",
+        "singular": true,
+        "always matches": true,
+        "description": "The opponent team in this head-to-head matchup.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "head_to_head_games",
+        "parent collection": "teams",
+        "child collection": "teamvsteam",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmid"
+          ]
+        },
+        "description": "Head-to-head records for this team against all opponents in a season.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "original parent": "teams",
+        "original property": "head_to_head_games",
+        "singular": true,
+        "always matches": true,
+        "description": "The primary team in this head-to-head matchup.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "teamshalf",
+        "parent collection": "teams",
+        "child collection": "teamshalf",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "tmid": [
+            "tmid"
+          ],
+          "year_": [
+            "year_"
+          ]
+        },
+        "description": "Half-season statistics for this team, for seasons that were split.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "original parent": "teams",
+        "original property": "teamshalf",
+        "singular": true,
+        "always matches": true,
+        "description": "The main team record for this half-season statistic.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "teamspost",
+        "parent collection": "teams",
+        "child collection": "teamspost",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmid"
+          ]
+        },
+        "description": "Overall postseason statistics for this team.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "original parent": "teams",
+        "original property": "teamspost",
+        "singular": true,
+        "always matches": true,
+        "description": "The main team record for these postseason statistics.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "teamssc",
+        "parent collection": "teams",
+        "child collection": "teamssc",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmid"
+          ]
+        },
+        "description": "Stanley Cup final statistics for this team.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "original parent": "teams",
+        "original property": "teamssc",
+        "singular": true,
+        "always matches": true,
+        "description": "The main team record for these Stanley Cup statistics.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "hof_record",
+        "singular": true,
+        "always matches": false,
+        "description": "Links to the Hall of Fame record for this person, if inducted.",
+        "synonyms": [],
+        "parent collection": "master",
+        "child collection": "hof",
+        "keys": {
+          "hofid": [
+            "hofid"
+          ]
+        }
+      },
+      {
+        "type": "reverse",
+        "name": "master_record",
+        "singular": true,
+        "always matches": false,
+        "description": "Links to the master biographical record for this Hall of Fame inductee.",
+        "synonyms": [],
+        "original parent": "master",
+        "original property": "hof_record"
+      },
+      {
+        "type": "simple join",
+        "name": "combined_shutouts",
+        "singular": false,
+        "always matches": false,
+        "description": "Combined shutouts achieved by this team in a given year.",
+        "synonyms": [],
+        "parent collection": "teams",
+        "child collection": "combinedshutouts",
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "tmid"
+          ]
+        }
+      },
+      {
+        "type": "reverse",
+        "name": "team_record",
+        "singular": true,
+        "always matches": false,
+        "description": "The team that achieved this combined shutout.",
+        "synonyms": [],
+        "original parent": "teams",
+        "original property": "combined_shutouts"
+      },
+      {
+        "type": "simple join",
+        "name": "combined_shutouts_as_opponent",
+        "singular": false,
+        "always matches": false,
+        "description": "Combined shutouts this team was the opponent for in a given year.",
+        "synonyms": [],
+        "parent collection": "teams",
+        "child collection": "combinedshutouts",
+        "keys": {
+          "year_": [
+            "year_"
+          ],
+          "tmid": [
+            "oppid"
+          ]
+        }
+      },
+      {
+        "type": "reverse",
+        "name": "opponent_team_record",
+        "singular": true,
+        "always matches": false,
+        "description": "The opponent team in this combined shutout game.",
+        "synonyms": [],
+        "original parent": "teams",
+        "original property": "combined_shutouts_as_opponent"
+      }
+    ]
+  }
+]

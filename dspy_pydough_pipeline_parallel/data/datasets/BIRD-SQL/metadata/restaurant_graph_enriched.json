@@ -1,0 +1,334 @@
+[
+  {
+    "name": "restaurant",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "generalinfo",
+        "type": "simple table",
+        "table path": "main.generalinfo",
+        "unique properties": [
+          "id_restaurant"
+        ],
+        "properties": [
+          {
+            "name": "id_restaurant",
+            "type": "table column",
+            "column name": "id_restaurant",
+            "data type": "numeric",
+            "description": "The unique identifier for the restaurant.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id_restaurant"
+            ]
+          },
+          {
+            "name": "label",
+            "type": "table column",
+            "column name": "label",
+            "data type": "string",
+            "description": "The name or label of the restaurant.",
+            "sample values": [
+              "sparky's diner",
+              "kabul afghan cuisine",
+              "helmand restaurant",
+              "afghani house",
+              "kabul afghan cusine"
+            ],
+            "synonyms": [
+              "label"
+            ]
+          },
+          {
+            "name": "food_type",
+            "type": "table column",
+            "column name": "food_type",
+            "data type": "string",
+            "description": "The type of food or cuisine the restaurant serves.",
+            "sample values": [
+              "24 hour diner",
+              "afghani",
+              "african",
+              "all ethnic",
+              "american"
+            ],
+            "synonyms": [
+              "food_type"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "The city where the restaurant is located.",
+            "sample values": [
+              "san francisco",
+              "san carlos",
+              "sunnyvale",
+              "san rafael",
+              "san jose"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "review",
+            "type": "table column",
+            "column name": "review",
+            "data type": "numeric",
+            "description": "The review rating of the restaurant.",
+            "sample values": [
+              2.3,
+              3.8,
+              4.0,
+              3.6,
+              3.7
+            ],
+            "synonyms": [
+              "review"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The review rating is from 0.0 to 5.0. The high review rating is positively correlated with the overall level of the restaurant. The restaurant with higher review rating is usually more popular among diners."
+            }
+          }
+        ],
+        "description": "Contains general information about each restaurant, such as its name, cuisine type, and review score.",
+        "synonyms": [
+          "generalinfo"
+        ]
+      },
+      {
+        "name": "geographic",
+        "type": "simple table",
+        "table path": "main.geographic",
+        "unique properties": [
+          "city"
+        ],
+        "properties": [
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "The name of the city.",
+            "sample values": [
+              "alameda",
+              "alamo",
+              "albany",
+              "alviso",
+              "american canyon"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "county",
+            "type": "table column",
+            "column name": "county",
+            "data type": "string",
+            "description": "The county the city belongs to.",
+            "sample values": [
+              "alameda county",
+              "contra costa county",
+              "santa clara county",
+              "unknown",
+              "napa county"
+            ],
+            "synonyms": [
+              "county"
+            ]
+          },
+          {
+            "name": "region",
+            "type": "table column",
+            "column name": "region",
+            "data type": "string",
+            "description": "The corresponding region for the city.",
+            "sample values": [
+              "bay area",
+              "napa valley",
+              "unknown",
+              "monterey",
+              "los angeles area"
+            ],
+            "synonyms": [
+              "region"
+            ]
+          }
+        ],
+        "description": "Contains geographic information about cities, including their county and region.",
+        "synonyms": [
+          "geographic"
+        ]
+      },
+      {
+        "name": "location",
+        "type": "simple table",
+        "table path": "main.location",
+        "unique properties": [
+          "id_restaurant"
+        ],
+        "properties": [
+          {
+            "name": "id_restaurant",
+            "type": "table column",
+            "column name": "id_restaurant",
+            "data type": "numeric",
+            "description": "A unique identifier for the restaurant, linking to the generalinfo table.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id_restaurant"
+            ]
+          },
+          {
+            "name": "street_num",
+            "type": "table column",
+            "column name": "street_num",
+            "data type": "numeric",
+            "description": "The street number of the restaurant's address.",
+            "sample values": [
+              242,
+              135,
+              430,
+              1103,
+              833
+            ],
+            "synonyms": [
+              "street_num"
+            ]
+          },
+          {
+            "name": "street_name",
+            "type": "table column",
+            "column name": "street_name",
+            "data type": "string",
+            "description": "The street name of the restaurant's address.",
+            "sample values": [
+              "church st",
+              "el camino real",
+              "broadway",
+              "e. el camino real",
+              "w. el camino real"
+            ],
+            "synonyms": [
+              "street_name"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "The city where the restaurant is located.",
+            "sample values": [
+              "san francisco",
+              "san carlos",
+              "sunnyvale",
+              "san jose",
+              "concord"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          }
+        ],
+        "description": "Contains the specific street address details for each restaurant.",
+        "synonyms": [
+          "location"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "generalinfos",
+        "parent collection": "geographic",
+        "child collection": "generalinfo",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "city": [
+            "city"
+          ]
+        },
+        "description": "Links a geographic area to the restaurants located within it.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "geographic",
+        "original parent": "geographic",
+        "original property": "generalinfos",
+        "singular": true,
+        "always matches": false,
+        "description": "Links a restaurant to its geographic information.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "location",
+        "parent collection": "generalinfo",
+        "child collection": "location",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "id_restaurant": [
+            "id_restaurant"
+          ]
+        },
+        "description": "Links a restaurant's general information to its specific location details.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "generalinfo",
+        "original parent": "generalinfo",
+        "original property": "location",
+        "singular": true,
+        "always matches": true,
+        "description": "Links a restaurant's location details back to its general information.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "locations",
+        "parent collection": "geographic",
+        "child collection": "location",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "city": [
+            "city"
+          ]
+        },
+        "description": "Links a geographic area to the restaurant locations within it.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "geographic",
+        "original parent": "geographic",
+        "original property": "locations",
+        "singular": true,
+        "always matches": false,
+        "description": "Links a restaurant location to its geographic information.",
+        "synonyms": []
+      }
+    ]
+  }
+]

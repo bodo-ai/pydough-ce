@@ -1,0 +1,752 @@
+[
+  {
+    "name": "airline",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "air_carriers",
+        "type": "simple table",
+        "table path": "main.\"Air Carriers\"",
+        "unique properties": [
+          "code"
+        ],
+        "properties": [
+          {
+            "name": "code",
+            "type": "table column",
+            "column name": "Code",
+            "data type": "numeric",
+            "description": "The unique code of the air carrier.",
+            "sample values": [
+              19031,
+              19032,
+              19033,
+              19034,
+              19035
+            ],
+            "synonyms": [
+              "Code"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "Description",
+            "data type": "string",
+            "description": "A description of the air carrier.",
+            "sample values": [
+              "Mackey International Inc.: MAC",
+              "Munz Northern Airlines Inc.: XY",
+              "Cochise Airlines Inc.: COC",
+              "Golden Gate Airlines Inc.: GSA",
+              "Aeromech Inc.: RZZ"
+            ],
+            "synonyms": [
+              "Description"
+            ]
+          }
+        ],
+        "description": "Information about various air carriers, identified by a unique code.",
+        "synonyms": [
+          "Air Carriers"
+        ]
+      },
+      {
+        "name": "airlines",
+        "type": "simple table",
+        "table path": "main.Airlines",
+        "unique properties": [
+          [
+            "fl_date",
+            "op_carrier_airline_id",
+            "tail_num",
+            "op_carrier_fl_num",
+            "origin_airport_id",
+            "origin_airport_seq_id",
+            "origin_city_market_id",
+            "origin",
+            "dest_airport_id",
+            "dest_airport_seq_id",
+            "dest_city_market_id",
+            "dest",
+            "crs_dep_time",
+            "dep_time",
+            "dep_delay",
+            "dep_delay_new",
+            "arr_time",
+            "arr_delay",
+            "arr_delay_new",
+            "cancelled",
+            "cancellation_code",
+            "crs_elapsed_time",
+            "actual_elapsed_time",
+            "carrier_delay",
+            "weather_delay",
+            "nas_delay",
+            "security_delay",
+            "late_aircraft_delay"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "fl_date",
+            "type": "table column",
+            "column name": "FL_DATE",
+            "data type": "string",
+            "description": "Flight date.",
+            "sample values": [
+              "2018/8/1",
+              "2018/8/2",
+              "2018/8/3",
+              "2018/8/4",
+              "2018/8/5"
+            ],
+            "synonyms": [
+              "FL_DATE"
+            ]
+          },
+          {
+            "name": "op_carrier_airline_id",
+            "type": "table column",
+            "column name": "OP_CARRIER_AIRLINE_ID",
+            "data type": "numeric",
+            "description": "Operator carrier airline ID.",
+            "sample values": [
+              19805,
+              20427,
+              21167,
+              20452,
+              20363
+            ],
+            "synonyms": [
+              "OP_CARRIER_AIRLINE_ID"
+            ]
+          },
+          {
+            "name": "tail_num",
+            "type": "table column",
+            "column name": "TAIL_NUM",
+            "data type": "string",
+            "description": "Plane's tail number.",
+            "sample values": [
+              "N956AN",
+              "N973AN",
+              "N9006",
+              "N870NN",
+              "N9023N"
+            ],
+            "synonyms": [
+              "TAIL_NUM"
+            ]
+          },
+          {
+            "name": "op_carrier_fl_num",
+            "type": "table column",
+            "column name": "OP_CARRIER_FL_NUM",
+            "data type": "numeric",
+            "description": "Operator carrier flight number.",
+            "sample values": [
+              1587,
+              1588,
+              1590,
+              1591,
+              1593
+            ],
+            "synonyms": [
+              "OP_CARRIER_FL_NUM"
+            ]
+          },
+          {
+            "name": "origin_airport_id",
+            "type": "table column",
+            "column name": "ORIGIN_AIRPORT_ID",
+            "data type": "numeric",
+            "description": "Origin airport ID.",
+            "sample values": [
+              12478,
+              14107,
+              11042,
+              14843,
+              10423
+            ],
+            "synonyms": [
+              "ORIGIN_AIRPORT_ID"
+            ]
+          },
+          {
+            "name": "origin_airport_seq_id",
+            "type": "table column",
+            "column name": "ORIGIN_AIRPORT_SEQ_ID",
+            "data type": "numeric",
+            "description": "Origin airport sequence ID.",
+            "sample values": [
+              1247805,
+              1410702,
+              1104205,
+              1484306,
+              1042302
+            ],
+            "synonyms": [
+              "ORIGIN_AIRPORT_SEQ_ID"
+            ]
+          },
+          {
+            "name": "origin_city_market_id",
+            "type": "table column",
+            "column name": "ORIGIN_CITY_MARKET_ID",
+            "data type": "numeric",
+            "description": "Origin city market ID.",
+            "sample values": [
+              31703,
+              30466,
+              30647,
+              34819,
+              30423
+            ],
+            "synonyms": [
+              "ORIGIN_CITY_MARKET_ID"
+            ]
+          },
+          {
+            "name": "origin",
+            "type": "table column",
+            "column name": "ORIGIN",
+            "data type": "string",
+            "description": "Airport of origin.",
+            "sample values": [
+              "JFK",
+              "PHX",
+              "CLE",
+              "SJU",
+              "AUS"
+            ],
+            "synonyms": [
+              "ORIGIN"
+            ],
+            "extra semantic info": {
+              "commonsense_evidence": "The origin city could be inferred by this code: you can refer to https://www.iata.org/en/publications/directories/code-search/?airport.search=mia to quickly check"
+            }
+          },
+          {
+            "name": "dest_airport_id",
+            "type": "table column",
+            "column name": "DEST_AIRPORT_ID",
+            "data type": "numeric",
+            "description": "ID of the destination airport.",
+            "sample values": [
+              14107,
+              11618,
+              11298,
+              13303,
+              13930
+            ],
+            "synonyms": [
+              "DEST_AIRPORT_ID"
+            ]
+          },
+          {
+            "name": "dest_airport_seq_id",
+            "type": "table column",
+            "column name": "DEST_AIRPORT_SEQ_ID",
+            "data type": "numeric",
+            "description": "Destination airport sequence ID.",
+            "sample values": [
+              1410702,
+              1161802,
+              1129806,
+              1330303,
+              1393006
+            ],
+            "synonyms": [
+              "DEST_AIRPORT_SEQ_ID"
+            ]
+          },
+          {
+            "name": "dest_city_market_id",
+            "type": "table column",
+            "column name": "DEST_CITY_MARKET_ID",
+            "data type": "numeric",
+            "description": "Destination city market ID.",
+            "sample values": [
+              30466,
+              31703,
+              30194,
+              32467,
+              30977
+            ],
+            "synonyms": [
+              "DEST_CITY_MARKET_ID"
+            ]
+          },
+          {
+            "name": "dest",
+            "type": "table column",
+            "column name": "DEST",
+            "data type": "string",
+            "description": "Destination airport.",
+            "sample values": [
+              "PHX",
+              "EWR",
+              "DFW",
+              "MIA",
+              "ORD"
+            ],
+            "synonyms": [
+              "DEST"
+            ],
+            "extra semantic info": {
+              "commonsense_evidence": "The destination city could be inferred by this code: you can refer to https://www.iata.org/en/publications/directories/code-search/?airport.search=mia to quickly check"
+            }
+          },
+          {
+            "name": "crs_dep_time",
+            "type": "table column",
+            "column name": "CRS_DEP_TIME",
+            "data type": "numeric",
+            "description": "Scheduled local departure time.",
+            "sample values": [
+              1640,
+              1512,
+              744,
+              900,
+              600
+            ],
+            "synonyms": [
+              "CRS_DEP_TIME"
+            ]
+          },
+          {
+            "name": "dep_time",
+            "type": "table column",
+            "column name": "DEP_TIME",
+            "data type": "numeric",
+            "description": "Flight departure time. Stored as an integer.",
+            "sample values": [
+              1649,
+              1541,
+              741,
+              944,
+              556
+            ],
+            "synonyms": [
+              "DEP_TIME"
+            ]
+          },
+          {
+            "name": "dep_delay",
+            "type": "table column",
+            "column name": "DEP_DELAY",
+            "data type": "numeric",
+            "description": "Departure delay indicator.",
+            "sample values": [
+              9,
+              29,
+              -3,
+              44,
+              -4
+            ],
+            "synonyms": [
+              "DEP_DELAY"
+            ],
+            "extra semantic info": {
+              "unit": "minutes",
+              "point_1": "if this value is positive: it means this flight delays; if the value is negative, it means this flight departs in advance (-4)",
+              "point_2": "if this value <= 0, it means this flight departs on time"
+            }
+          },
+          {
+            "name": "dep_delay_new",
+            "type": "table column",
+            "column name": "DEP_DELAY_NEW",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              9,
+              29,
+              0,
+              44,
+              1
+            ],
+            "synonyms": [
+              "DEP_DELAY_NEW"
+            ],
+            "extra semantic info": {
+              "usage_note": "This field is not considered useful."
+            }
+          },
+          {
+            "name": "arr_time",
+            "type": "table column",
+            "column name": "ARR_TIME",
+            "data type": "numeric",
+            "description": "Flight arrival time.",
+            "sample values": [
+              2006,
+              2350,
+              938,
+              1347,
+              951
+            ],
+            "synonyms": [
+              "ARR_TIME"
+            ]
+          },
+          {
+            "name": "arr_delay",
+            "type": "table column",
+            "column name": "ARR_DELAY",
+            "data type": "numeric",
+            "description": "Arrival delay time.",
+            "sample values": [
+              44,
+              53,
+              -2,
+              43,
+              -7
+            ],
+            "synonyms": [
+              "ARR_DELAY"
+            ],
+            "extra semantic info": {
+              "unit": "minutes",
+              "point_1": "if this value is positive: it means this flight will arrives late (delay); If the value is negative, this flight arrives earlier than scheduled. (-4)",
+              "point_2": "if this value <= 0, it means this flight arrives on time"
+            }
+          },
+          {
+            "name": "arr_delay_new",
+            "type": "table column",
+            "column name": "ARR_DELAY_NEW",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              44,
+              53,
+              0,
+              43,
+              5
+            ],
+            "synonyms": [
+              "ARR_DELAY_NEW"
+            ],
+            "extra semantic info": {
+              "usage_note": "This field is not considered useful."
+            }
+          },
+          {
+            "name": "cancelled",
+            "type": "table column",
+            "column name": "CANCELLED",
+            "data type": "numeric",
+            "description": "Flight cancellation indicator.",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "CANCELLED"
+            ]
+          },
+          {
+            "name": "cancellation_code",
+            "type": "table column",
+            "column name": "CANCELLATION_CODE",
+            "data type": "string",
+            "description": "Cancellation code.",
+            "sample values": [
+              "A",
+              "B",
+              "C"
+            ],
+            "synonyms": [
+              "CANCELLATION_CODE"
+            ],
+            "extra semantic info": {
+              "commonsense_evidence": "C--> A: more serious reasons lead to this cancellation"
+            }
+          },
+          {
+            "name": "crs_elapsed_time",
+            "type": "table column",
+            "column name": "CRS_ELAPSED_TIME",
+            "data type": "numeric",
+            "description": "Scheduled elapsed time.",
+            "sample values": [
+              342,
+              285,
+              176,
+              304,
+              173
+            ],
+            "synonyms": [
+              "CRS_ELAPSED_TIME"
+            ]
+          },
+          {
+            "name": "actual_elapsed_time",
+            "type": "table column",
+            "column name": "ACTUAL_ELAPSED_TIME",
+            "data type": "numeric",
+            "description": "Actual elapsed time.",
+            "sample values": [
+              377,
+              309,
+              177,
+              303,
+              175
+            ],
+            "synonyms": [
+              "ACTUAL_ELAPSED_TIME"
+            ]
+          },
+          {
+            "name": "carrier_delay",
+            "type": "table column",
+            "column name": "CARRIER_DELAY",
+            "data type": "numeric",
+            "description": "Carrier delay.",
+            "sample values": [
+              9,
+              0,
+              43,
+              28,
+              21
+            ],
+            "synonyms": [
+              "CARRIER_DELAY"
+            ],
+            "extra semantic info": {
+              "unit": "minutes"
+            }
+          },
+          {
+            "name": "weather_delay",
+            "type": "table column",
+            "column name": "WEATHER_DELAY",
+            "data type": "numeric",
+            "description": "Delay caused by the weather problem.",
+            "sample values": [
+              0,
+              2,
+              48,
+              46,
+              9
+            ],
+            "synonyms": [
+              "WEATHER_DELAY"
+            ],
+            "extra semantic info": {
+              "unit": "minutes"
+            }
+          },
+          {
+            "name": "nas_delay",
+            "type": "table column",
+            "column name": "NAS_DELAY",
+            "data type": "numeric",
+            "description": "Delay, in minutes, attributable to the National Aviation System.",
+            "sample values": [
+              35,
+              53,
+              0,
+              2,
+              70
+            ],
+            "synonyms": [
+              "NAS_DELAY"
+            ],
+            "extra semantic info": {
+              "unit": "minutes"
+            }
+          },
+          {
+            "name": "security_delay",
+            "type": "table column",
+            "column name": "SECURITY_DELAY",
+            "data type": "numeric",
+            "description": "Delay attribute to security.",
+            "sample values": [
+              0,
+              42,
+              4,
+              3,
+              14
+            ],
+            "synonyms": [
+              "SECURITY_DELAY"
+            ],
+            "extra semantic info": {
+              "unit": "minutes"
+            }
+          },
+          {
+            "name": "late_aircraft_delay",
+            "type": "table column",
+            "column name": "LATE_AIRCRAFT_DELAY",
+            "data type": "numeric",
+            "description": "Delay attribute to late aircraft.",
+            "sample values": [
+              0,
+              6,
+              73,
+              33,
+              5
+            ],
+            "synonyms": [
+              "LATE_AIRCRAFT_DELAY"
+            ],
+            "extra semantic info": {
+              "unit": "minutes"
+            }
+          }
+        ],
+        "description": "Detailed flight information, including departure, arrival, and delay statistics for various airlines.",
+        "synonyms": [
+          "Airlines"
+        ],
+        "extra semantic info": {
+          "elapsed_time_comparison": "if ACTUAL_ELAPSED_TIME < CRS_ELAPSED_TIME: this flight is faster than scheduled; if ACTUAL_ELAPSED_TIME > CRS_ELAPSED_TIME: this flight is slower than scheduled"
+        }
+      },
+      {
+        "name": "airports",
+        "type": "simple table",
+        "table path": "main.Airports",
+        "unique properties": [
+          "code"
+        ],
+        "properties": [
+          {
+            "name": "code",
+            "type": "table column",
+            "column name": "Code",
+            "data type": "string",
+            "description": "IATA code of the airport.",
+            "sample values": [
+              "01A",
+              "03A",
+              "04A",
+              "05A",
+              "06A"
+            ],
+            "synonyms": [
+              "Code"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "Description",
+            "data type": "string",
+            "description": "The description of the airport.",
+            "sample values": [
+              "Afognak Lake, AK: Afognak Lake Airport",
+              "Granite Mountain, AK: Bear Creek Mini...",
+              "Lik, AK: Lik Mining Camp",
+              "Little Squaw, AK: Little Squaw Airport",
+              "Kizhuyak, AK: Kizhuyak Bay"
+            ],
+            "synonyms": [
+              "Description"
+            ]
+          }
+        ],
+        "description": "Details about airports, including their IATA codes and full descriptions.",
+        "synonyms": [
+          "Airports"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "flights_operated",
+        "parent collection": "air_carriers",
+        "child collection": "airlines",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "op_carrier_airline_id"
+          ]
+        },
+        "description": "Links air carriers to their corresponding flight records in the airlines table based on the operator carrier airline ID.",
+        "synonyms": [
+          "airlines",
+          "flights_by_air_carriers"
+        ]
+      },
+      {
+        "type": "reverse",
+        "name": "operating_carrier_record",
+        "original parent": "air_carriers",
+        "original property": "flights_operated",
+        "singular": true,
+        "always matches": false,
+        "description": "Provides access to the operating air carrier details for a specific flight record.",
+        "synonyms": [
+          "air_carriers",
+          "air_carriers_record"
+        ]
+      },
+      {
+        "type": "simple join",
+        "name": "destination_flights",
+        "parent collection": "airports",
+        "child collection": "airlines",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "dest"
+          ]
+        },
+        "description": "Connects an airport to all flights for which it is the destination.",
+        "synonyms": [
+          "airlines_destination"
+        ]
+      },
+      {
+        "type": "reverse",
+        "name": "destination_airport_record",
+        "original parent": "airports",
+        "original property": "destination_flights",
+        "singular": true,
+        "always matches": false,
+        "description": "Provides access to the destination airport details for a specific flight record.",
+        "synonyms": [
+          "airports_for_destination"
+        ]
+      },
+      {
+        "type": "simple join",
+        "name": "origin_flights",
+        "parent collection": "airports",
+        "child collection": "airlines",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "origin"
+          ]
+        },
+        "description": "Connects an airport to all flights originating from it.",
+        "synonyms": [
+          "airlines_origin"
+        ]
+      },
+      {
+        "type": "reverse",
+        "name": "origin_airport_record",
+        "original parent": "airports",
+        "original property": "origin_flights",
+        "singular": true,
+        "always matches": false,
+        "description": "Provides access to the origin airport details for a specific flight record.",
+        "synonyms": [
+          "airports_for_origin"
+        ]
+      }
+    ]
+  }
+]

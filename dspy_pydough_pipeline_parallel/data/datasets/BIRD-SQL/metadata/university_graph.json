@@ -1,0 +1,565 @@
+[
+  {
+    "name": "university",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "country",
+        "type": "simple table",
+        "table path": "main.country",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "country_name",
+            "type": "table column",
+            "column name": "country_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Argentina",
+              "Australia",
+              "Austria",
+              "Bangladesh",
+              "Belarus"
+            ],
+            "synonyms": [
+              "country_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "country"
+        ]
+      },
+      {
+        "name": "ranking_criteria",
+        "type": "simple table",
+        "table path": "main.ranking_criteria",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "ranking_system_id",
+            "type": "table column",
+            "column name": "ranking_system_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3
+            ],
+            "synonyms": [
+              "ranking_system_id"
+            ]
+          },
+          {
+            "name": "criteria_name",
+            "type": "table column",
+            "column name": "criteria_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Teaching",
+              "International",
+              "Research",
+              "Citations",
+              "Income"
+            ],
+            "synonyms": [
+              "criteria_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "ranking_criteria"
+        ]
+      },
+      {
+        "name": "ranking_system",
+        "type": "simple table",
+        "table path": "main.ranking_system",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "system_name",
+            "type": "table column",
+            "column name": "system_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Times Higher Education World Universi...",
+              "Shanghai Ranking",
+              "Center for World University Rankings"
+            ],
+            "synonyms": [
+              "system_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "ranking_system"
+        ]
+      },
+      {
+        "name": "university",
+        "type": "simple table",
+        "table path": "main.university",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "country_id",
+            "type": "table column",
+            "column name": "country_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              73,
+              72,
+              33,
+              65,
+              31
+            ],
+            "synonyms": [
+              "country_id"
+            ]
+          },
+          {
+            "name": "university_name",
+            "type": "table column",
+            "column name": "university_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Harvard University",
+              "Massachusetts Institute of Technology",
+              "Stanford University",
+              "University of Cambridge",
+              "California Institute of Technology"
+            ],
+            "synonyms": [
+              "university_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "university"
+        ]
+      },
+      {
+        "name": "university_ranking_year",
+        "type": "simple table",
+        "table path": "main.university_ranking_year",
+        "unique properties": [
+          [
+            "university_id",
+            "ranking_criteria_id",
+            "year_",
+            "score"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "university_id",
+            "type": "table column",
+            "column name": "university_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              5,
+              2,
+              3,
+              6
+            ],
+            "synonyms": [
+              "university_id"
+            ]
+          },
+          {
+            "name": "ranking_criteria_id",
+            "type": "table column",
+            "column name": "ranking_criteria_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "ranking_criteria_id"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2011,
+              2012,
+              2013,
+              2014,
+              2015
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "score",
+            "type": "table column",
+            "column name": "score",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              100,
+              98,
+              91,
+              90,
+              88
+            ],
+            "synonyms": [
+              "score"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "university_ranking_year"
+        ]
+      },
+      {
+        "name": "university_year",
+        "type": "simple table",
+        "table path": "main.university_year",
+        "unique properties": [
+          [
+            "university_id",
+            "year_",
+            "num_students",
+            "student_staff_ratio",
+            "pct_international_students",
+            "pct_female_students"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "university_id",
+            "type": "table column",
+            "column name": "university_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              5,
+              2,
+              3,
+              6
+            ],
+            "synonyms": [
+              "university_id"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2011,
+              2012,
+              2013,
+              2014,
+              2015
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "num_students",
+            "type": "table column",
+            "column name": "num_students",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              20152,
+              2243,
+              11074,
+              15596,
+              7929
+            ],
+            "synonyms": [
+              "num_students"
+            ]
+          },
+          {
+            "name": "student_staff_ratio",
+            "type": "table column",
+            "column name": "student_staff_ratio",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8.9,
+              6.9,
+              9.0,
+              7.8,
+              8.4
+            ],
+            "synonyms": [
+              "student_staff_ratio"
+            ]
+          },
+          {
+            "name": "pct_international_students",
+            "type": "table column",
+            "column name": "pct_international_students",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              25,
+              27,
+              33,
+              22,
+              34
+            ],
+            "synonyms": [
+              "pct_international_students"
+            ]
+          },
+          {
+            "name": "pct_female_students",
+            "type": "table column",
+            "column name": "pct_female_students",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              33,
+              37,
+              42,
+              45,
+              46
+            ],
+            "synonyms": [
+              "pct_female_students"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "university_year"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "ranking_criteria",
+        "parent collection": "ranking_system",
+        "child collection": "ranking_criteria",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "ranking_system_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "ranking_system",
+        "original parent": "ranking_system",
+        "original property": "ranking_criteria",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "university",
+        "parent collection": "country",
+        "child collection": "university",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "country_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country",
+        "original parent": "country",
+        "original property": "university",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "university_ranking_year",
+        "parent collection": "university",
+        "child collection": "university_ranking_year",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "university_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "university",
+        "original parent": "university",
+        "original property": "university_ranking_year",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "university_ranking_year",
+        "parent collection": "ranking_criteria",
+        "child collection": "university_ranking_year",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "ranking_criteria_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "ranking_criteria",
+        "original parent": "ranking_criteria",
+        "original property": "university_ranking_year",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "university_year",
+        "parent collection": "university",
+        "child collection": "university_year",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "university_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "university",
+        "original parent": "university",
+        "original property": "university_year",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

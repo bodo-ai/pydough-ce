@@ -1,0 +1,250 @@
+[
+  {
+    "name": "craftbeer",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "beers",
+        "type": "simple table",
+        "table path": "main.beers",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2687,
+              2688,
+              2689,
+              2690,
+              2691
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "brewery_id",
+            "type": "table column",
+            "column name": "brewery_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "brewery_id"
+            ]
+          },
+          {
+            "name": "abv",
+            "type": "table column",
+            "column name": "abv",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.065,
+              0.087,
+              0.08,
+              0.099,
+              0.053
+            ],
+            "synonyms": [
+              "abv"
+            ]
+          },
+          {
+            "name": "ibu",
+            "type": "table column",
+            "column name": "ibu",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              65.0,
+              85.0,
+              35.0,
+              100.0,
+              98.0
+            ],
+            "synonyms": [
+              "ibu"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Dale's Pale Ale",
+              "Gordon Ale (2009)",
+              "Old Chub",
+              "GUBNA Imperial IPA",
+              "Mama's Little Yella Pils"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "style",
+            "type": "table column",
+            "column name": "style",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "American Pale Ale (APA)",
+              "American Double / Imperial IPA",
+              "Scottish Ale",
+              "Czech Pilsener",
+              "Russian Imperial Stout"
+            ],
+            "synonyms": [
+              "style"
+            ]
+          },
+          {
+            "name": "ounces",
+            "type": "table column",
+            "column name": "ounces",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              12.0,
+              16.0,
+              24.0,
+              19.2,
+              8.4
+            ],
+            "synonyms": [
+              "ounces"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "beers"
+        ]
+      },
+      {
+        "name": "breweries",
+        "type": "simple table",
+        "table path": "main.breweries",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NorthGate Brewing ",
+              "Against the Grain Brewery",
+              "Jack's Abby Craft Lagers",
+              "Mike Hess Brewing Company",
+              "Fort Point Beer Company"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Minneapolis",
+              "Louisville",
+              "Framingham",
+              "San Diego",
+              "San Francisco"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "MN",
+              "KY",
+              "MA",
+              "CA",
+              "SC"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "breweries"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "beers",
+        "parent collection": "breweries",
+        "child collection": "beers",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "brewery_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "breweries",
+        "original parent": "breweries",
+        "original property": "beers",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,332 @@
+[
+  {
+    "name": "app_store",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "playstore",
+        "type": "simple table",
+        "table path": "main.playstore",
+        "unique properties": [
+          [
+            "app",
+            "category",
+            "rating",
+            "reviews",
+            "size",
+            "installs",
+            "type_",
+            "price",
+            "content_rating",
+            "genres"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "app",
+            "type": "table column",
+            "column name": "App",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Photo Editor & Candy Camera & Grid & ...",
+              "Coloring book moana",
+              "U Launcher Lite \u2013 FREE Live Cool Them...",
+              "Sketch - Draw & Paint",
+              "Pixel Draw - Number Art Coloring Book"
+            ],
+            "synonyms": [
+              "App"
+            ]
+          },
+          {
+            "name": "category",
+            "type": "table column",
+            "column name": "Category",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "ART_AND_DESIGN",
+              "AUTO_AND_VEHICLES",
+              "BEAUTY",
+              "BOOKS_AND_REFERENCE",
+              "BUSINESS"
+            ],
+            "synonyms": [
+              "Category"
+            ]
+          },
+          {
+            "name": "rating",
+            "type": "table column",
+            "column name": "Rating",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4.1,
+              3.9,
+              4.7,
+              4.5,
+              4.3
+            ],
+            "synonyms": [
+              "Rating"
+            ]
+          },
+          {
+            "name": "reviews",
+            "type": "table column",
+            "column name": "Reviews",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              159,
+              967,
+              87510,
+              215644,
+              167
+            ],
+            "synonyms": [
+              "Reviews"
+            ]
+          },
+          {
+            "name": "size",
+            "type": "table column",
+            "column name": "Size",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "19M",
+              "14M",
+              "8.7M",
+              "25M",
+              "2.8M"
+            ],
+            "synonyms": [
+              "Size"
+            ]
+          },
+          {
+            "name": "installs",
+            "type": "table column",
+            "column name": "Installs",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "10,000+",
+              "500,000+",
+              "5,000,000+",
+              "50,000,000+",
+              "100,000+"
+            ],
+            "synonyms": [
+              "Installs"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "Type",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Free",
+              "Paid",
+              "NaN"
+            ],
+            "synonyms": [
+              "Type"
+            ]
+          },
+          {
+            "name": "price",
+            "type": "table column",
+            "column name": "Price",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0",
+              "$4.99",
+              "$3.99",
+              "$6.99",
+              "$1.49"
+            ],
+            "synonyms": [
+              "Price"
+            ]
+          },
+          {
+            "name": "content_rating",
+            "type": "table column",
+            "column name": "\"Content Rating\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Everyone",
+              "Teen",
+              "Everyone 10+",
+              "Mature 17+",
+              "Adults only 18+"
+            ],
+            "synonyms": [
+              "Content Rating"
+            ]
+          },
+          {
+            "name": "genres",
+            "type": "table column",
+            "column name": "Genres",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Art & Design",
+              "Art & Design;Pretend Play",
+              "Art & Design;Creativity",
+              "Art & Design;Action & Adventure",
+              "Auto & Vehicles"
+            ],
+            "synonyms": [
+              "Genres"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "playstore"
+        ]
+      },
+      {
+        "name": "user_reviews",
+        "type": "simple table",
+        "table path": "main.user_reviews",
+        "unique properties": [
+          [
+            "app",
+            "translated_review",
+            "sentiment",
+            "sentiment_polarity",
+            "sentiment_subjectivity"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "app",
+            "type": "table column",
+            "column name": "App",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "10 Best Foods for You",
+              "104 \u627e\u5de5\u4f5c - \u627e\u5de5\u4f5c \u627e\u6253\u5de5 \u627e\u517c\u8077 \u5c65\u6b77\u5065\u6aa2 \u5c65\u6b77\u8a3a\u7642\u5ba4",
+              "11st",
+              "1800 Contacts - Lens Store",
+              "1LINE \u2013 One Line with One Touch"
+            ],
+            "synonyms": [
+              "App"
+            ]
+          },
+          {
+            "name": "translated_review",
+            "type": "table column",
+            "column name": "Translated_Review",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "I like eat delicious food. That's I'm...",
+              "This help eating healthy exercise reg...",
+              "nan",
+              "Works great especially going grocery ...",
+              "Best idea us"
+            ],
+            "synonyms": [
+              "Translated_Review"
+            ]
+          },
+          {
+            "name": "sentiment",
+            "type": "table column",
+            "column name": "Sentiment",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Positive",
+              "nan",
+              "Neutral",
+              "Negative"
+            ],
+            "synonyms": [
+              "Sentiment"
+            ]
+          },
+          {
+            "name": "sentiment_polarity",
+            "type": "table column",
+            "column name": "Sentiment_Polarity",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1.0",
+              "0.25",
+              "nan",
+              "0.4",
+              "0.6000000000000001"
+            ],
+            "synonyms": [
+              "Sentiment_Polarity"
+            ]
+          },
+          {
+            "name": "sentiment_subjectivity",
+            "type": "table column",
+            "column name": "Sentiment_Subjectivity",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0.5333333333333333",
+              "0.28846153846153844",
+              "nan",
+              "0.875",
+              "0.3"
+            ],
+            "synonyms": [
+              "Sentiment_Subjectivity"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "user_reviews"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "user_reviews",
+        "parent collection": "playstore",
+        "child collection": "user_reviews",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "app": [
+            "app"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "playstore",
+        "original parent": "playstore",
+        "original property": "user_reviews",
+        "singular": false,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

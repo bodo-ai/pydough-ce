@@ -1,0 +1,473 @@
+[
+  {
+    "name": "shakespeare",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "chapters",
+        "type": "simple table",
+        "table path": "main.chapters",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "unique id number identifying the chapter",
+            "sample values": [
+              18704,
+              18705,
+              18706,
+              18707,
+              18708
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "act",
+            "type": "table column",
+            "column name": "Act",
+            "data type": "numeric",
+            "description": "An act is a major division of a theatre work, including a play, film, opera, or musical theatre",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Act"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "An act can consist of one or more scenes"
+            }
+          },
+          {
+            "name": "scene",
+            "type": "table column",
+            "column name": "Scene",
+            "data type": "numeric",
+            "description": "A scene is a dramatic part of a story, at a specific time and place, between specific characters.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Scene"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "Description",
+            "data type": "string",
+            "description": "textual description of the chapter.",
+            "sample values": [
+              "DUKE ORSINO\u2019s palace.",
+              "The sea-coast.",
+              "OLIVIA\u2019S house.",
+              "A street.",
+              "OLIVIA\u2019s house."
+            ],
+            "synonyms": [
+              "Description"
+            ]
+          },
+          {
+            "name": "work_id",
+            "type": "table column",
+            "column name": "work_id",
+            "data type": "numeric",
+            "description": "id number identifying the work",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "work_id"
+            ]
+          }
+        ],
+        "description": "Contains information about the chapters in Shakespeare's works, including act and scene numbers.",
+        "synonyms": [
+          "chapters"
+        ]
+      },
+      {
+        "name": "characters",
+        "type": "simple table",
+        "table path": "main.characters",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "unique id number identifying the characters",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "charname",
+            "type": "table column",
+            "column name": "CharName",
+            "data type": "string",
+            "description": "character name",
+            "sample values": [
+              "First Apparition",
+              "First Citizen",
+              "First Conspirator",
+              "First Gentleman",
+              "First Goth"
+            ],
+            "synonyms": [
+              "CharName"
+            ]
+          },
+          {
+            "name": "abbrev",
+            "type": "table column",
+            "column name": "Abbrev",
+            "data type": "string",
+            "description": "abbreviation. An abbreviation is a shortened form of a word or phrase.",
+            "sample values": [
+              "First Apparition",
+              "First Citizen",
+              "First Conspirator",
+              "First Gentleman",
+              "First Goth"
+            ],
+            "synonyms": [
+              "Abbrev"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "Description",
+            "data type": "string",
+            "description": "description of the character.",
+            "sample values": [
+              "",
+              "A senator of Venice",
+              "a Moor, beloved by Tamora",
+              "an executioner",
+              "Servant to Montague"
+            ],
+            "synonyms": [
+              "Description"
+            ]
+          }
+        ],
+        "description": "Details about the characters in Shakespeare's works.",
+        "synonyms": [
+          "characters"
+        ]
+      },
+      {
+        "name": "paragraphs",
+        "type": "simple table",
+        "table path": "main.paragraphs",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "unique id number identifying the paragraphs",
+            "sample values": [
+              630863,
+              630864,
+              630865,
+              630866,
+              630867
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "paragraphnum",
+            "type": "table column",
+            "column name": "ParagraphNum",
+            "data type": "numeric",
+            "description": "unique id number identifying the paragraph number",
+            "sample values": [
+              3,
+              4,
+              19,
+              20,
+              21
+            ],
+            "synonyms": [
+              "ParagraphNum"
+            ]
+          },
+          {
+            "name": "plaintext",
+            "type": "table column",
+            "column name": "PlainText",
+            "data type": "string",
+            "description": "main content of the paragraphs",
+            "sample values": [
+              "[Enter DUKE ORSINO, CURIO, and other ...",
+              "If music be the food of love, play on...",
+              "Will you go hunt, my lord?",
+              "What, Curio?",
+              "The hart."
+            ],
+            "synonyms": [
+              "PlainText"
+            ]
+          },
+          {
+            "name": "character_id",
+            "type": "table column",
+            "column name": "character_id",
+            "data type": "numeric",
+            "description": "unique id number identifying the mentioned character",
+            "sample values": [
+              1261,
+              840,
+              297,
+              1221,
+              1238
+            ],
+            "synonyms": [
+              "character_id"
+            ]
+          },
+          {
+            "name": "chapter_id",
+            "type": "table column",
+            "column name": "chapter_id",
+            "data type": "numeric",
+            "description": "unique id number identifying the related chapter",
+            "sample values": [
+              18704,
+              18705,
+              18706,
+              18707,
+              18708
+            ],
+            "synonyms": [
+              "chapter_id"
+            ]
+          }
+        ],
+        "description": "Contains the text of paragraphs from Shakespeare's works, linked to chapters and characters.",
+        "synonyms": [
+          "paragraphs"
+        ],
+        "extra semantic info": {
+          "commonsense evidence": "if number of the paragraphs is > 150, then it means this is a long chapter"
+        }
+      },
+      {
+        "name": "works",
+        "type": "simple table",
+        "table path": "main.works",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "unique id number identifying the work",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "Title",
+            "data type": "string",
+            "description": "title of the work",
+            "sample values": [
+              "Twelfth Night",
+              "All's Well That Ends Well",
+              "Antony and Cleopatra",
+              "As You Like It",
+              "Comedy of Errors"
+            ],
+            "synonyms": [
+              "Title"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "the short title or abbreviated title"
+            }
+          },
+          {
+            "name": "longtitle",
+            "type": "table column",
+            "column name": "LongTitle",
+            "data type": "string",
+            "description": "full title of the work",
+            "sample values": [
+              "Twelfth Night, Or What You Will",
+              "All's Well That Ends Well",
+              "Antony and Cleopatra",
+              "As You Like It",
+              "The Comedy of Errors"
+            ],
+            "synonyms": [
+              "LongTitle"
+            ]
+          },
+          {
+            "name": "date_",
+            "type": "table column",
+            "column name": "\"Date\"",
+            "data type": "numeric",
+            "description": "date of the work",
+            "sample values": [
+              1599,
+              1602,
+              1606,
+              1589,
+              1607
+            ],
+            "synonyms": [
+              "Date"
+            ]
+          },
+          {
+            "name": "genretype",
+            "type": "table column",
+            "column name": "GenreType",
+            "data type": "string",
+            "description": "the type of the genere",
+            "sample values": [
+              "Comedy",
+              "Tragedy",
+              "History",
+              "Poem",
+              "Sonnet"
+            ],
+            "synonyms": [
+              "GenreType"
+            ]
+          }
+        ],
+        "description": "A collection of Shakespeare's works, including titles, dates, and genres.",
+        "synonyms": [
+          "works"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "chapters",
+        "parent collection": "works",
+        "child collection": "chapters",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "work_id"
+          ]
+        },
+        "description": "The chapters that are part of this work.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "work_record",
+        "original parent": "works",
+        "original property": "chapters",
+        "singular": true,
+        "always matches": true,
+        "description": "The work this chapter belongs to.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "paragraphs",
+        "parent collection": "chapters",
+        "child collection": "paragraphs",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "chapter_id"
+          ]
+        },
+        "description": "The paragraphs that make up this chapter.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "chapter_record",
+        "original parent": "chapters",
+        "original property": "paragraphs",
+        "singular": true,
+        "always matches": true,
+        "description": "The chapter this paragraph belongs to.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "paragraphs",
+        "parent collection": "characters",
+        "child collection": "paragraphs",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "character_id"
+          ]
+        },
+        "description": "The paragraphs spoken by or related to this character.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "character_record",
+        "original parent": "characters",
+        "original property": "paragraphs",
+        "singular": true,
+        "always matches": true,
+        "description": "The character who speaks or is related to this paragraph.",
+        "synonyms": []
+      }
+    ]
+  }
+]

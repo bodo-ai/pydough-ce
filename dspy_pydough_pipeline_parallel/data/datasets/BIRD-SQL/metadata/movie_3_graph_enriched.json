@@ -1,0 +1,2247 @@
+[
+  {
+    "name": "movie_3",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "actor",
+        "type": "simple table",
+        "table path": "main.actor",
+        "unique properties": [
+          "actor_id"
+        ],
+        "properties": [
+          {
+            "name": "actor_id",
+            "type": "table column",
+            "column name": "actor_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each actor.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "actor_id"
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "The actor's first name.",
+            "sample values": [
+              "PENELOPE",
+              "NICK",
+              "ED",
+              "JENNIFER",
+              "JOHNNY"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "The actor's last name.",
+            "sample values": [
+              "GUINESS",
+              "WAHLBERG",
+              "CHASE",
+              "DAVIS",
+              "LOLLOBRIGIDA"
+            ],
+            "synonyms": [
+              "last_name"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 04:34:33.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains information about each actor, including their first and last names.",
+        "synonyms": [
+          "actor"
+        ],
+        "extra semantic info": {
+          "commonsense evidence": "The full name of an actor can be formed by combining the first_name and last_name."
+        }
+      },
+      {
+        "name": "address",
+        "type": "simple table",
+        "table path": "main.address",
+        "unique properties": [
+          "address_id"
+        ],
+        "properties": [
+          {
+            "name": "address_id",
+            "type": "table column",
+            "column name": "address_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each address.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "address_id"
+            ]
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string",
+            "description": "The primary street address.",
+            "sample values": [
+              "47 MySakila Drive",
+              "28 MySQL Boulevard",
+              "23 Workhaven Lane",
+              "1411 Lillydale Drive",
+              "1913 Hanoi Way"
+            ],
+            "synonyms": [
+              "address"
+            ]
+          },
+          {
+            "name": "address2",
+            "type": "table column",
+            "column name": "address2",
+            "data type": "string",
+            "description": "An optional second address line for additional details.",
+            "sample values": [
+              ""
+            ],
+            "synonyms": [
+              "address2"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "address2 is for additional address information if available"
+            }
+          },
+          {
+            "name": "district",
+            "type": "table column",
+            "column name": "district",
+            "data type": "string",
+            "description": "The district or state where the address is located.",
+            "sample values": [
+              "Alberta",
+              "QLD",
+              "Nagasaki",
+              "California",
+              "Attika"
+            ],
+            "synonyms": [
+              "district"
+            ]
+          },
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "city_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the city of the address.",
+            "sample values": [
+              300,
+              576,
+              463,
+              449,
+              38
+            ],
+            "synonyms": [
+              "city_id"
+            ]
+          },
+          {
+            "name": "postal_code",
+            "type": "table column",
+            "column name": "postal_code",
+            "data type": "string",
+            "description": "The postal code for the address.",
+            "sample values": [
+              "",
+              "35200",
+              "17886",
+              "83579",
+              "53561"
+            ],
+            "synonyms": [
+              "postal_code"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A postal code is a series of letters or digits or both, sometimes including spaces or punctuation, included in a postal address for the purpose of sorting mail."
+            }
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string",
+            "description": "The phone number associated with the address.",
+            "sample values": [
+              "",
+              "14033335568",
+              "6172235589",
+              "28303384290",
+              "838635286649"
+            ],
+            "synonyms": [
+              "phone"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 04:45:30.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains address information for customers, staff, and stores.",
+        "synonyms": [
+          "address"
+        ]
+      },
+      {
+        "name": "category",
+        "type": "simple table",
+        "table path": "main.category",
+        "unique properties": [
+          "category_id"
+        ],
+        "properties": [
+          {
+            "name": "category_id",
+            "type": "table column",
+            "column name": "category_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each category.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "category_id"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the category.",
+            "sample values": [
+              "Action",
+              "Animation",
+              "Children",
+              "Classics",
+              "Comedy"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 04:46:27.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains a list of film categories, such as 'Action', 'Comedy', etc.",
+        "synonyms": [
+          "category"
+        ]
+      },
+      {
+        "name": "city",
+        "type": "simple table",
+        "table path": "main.city",
+        "unique properties": [
+          "city_id"
+        ],
+        "properties": [
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "city_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each city.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "city_id"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "The name of the city.",
+            "sample values": [
+              "A Corua (La Corua)",
+              "Abha",
+              "Abu Dhabi",
+              "Acua",
+              "Adana"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "country_id",
+            "type": "table column",
+            "column name": "country_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the country where the city is located.",
+            "sample values": [
+              87,
+              82,
+              101,
+              60,
+              97
+            ],
+            "synonyms": [
+              "country_id"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 04:45:25.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains a list of cities.",
+        "synonyms": [
+          "city"
+        ]
+      },
+      {
+        "name": "country",
+        "type": "simple table",
+        "table path": "main.country",
+        "unique properties": [
+          "country_id"
+        ],
+        "properties": [
+          {
+            "name": "country_id",
+            "type": "table column",
+            "column name": "country_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each country.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "country_id"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "country",
+            "data type": "string",
+            "description": "The name of the country.",
+            "sample values": [
+              "Afghanistan",
+              "Algeria",
+              "American Samoa",
+              "Angola",
+              "Anguilla"
+            ],
+            "synonyms": [
+              "country"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Countries are grouped by continent. Examples: Africa (Algeria, Angola), Asia (Afghanistan, China), Europe (France, Germany), North America (Canada, Mexico), South America (Argentina, Brazil), Oceania (Australia, New Zealand)."
+            }
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 04:44:00.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains a list of countries.",
+        "synonyms": [
+          "country"
+        ]
+      },
+      {
+        "name": "customer",
+        "type": "simple table",
+        "table path": "main.customer",
+        "unique properties": [
+          "customer_id"
+        ],
+        "properties": [
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each customer.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "customer_id"
+            ]
+          },
+          {
+            "name": "store_id",
+            "type": "table column",
+            "column name": "store_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the store where the customer is registered.",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "store_id"
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "The customer's first name.",
+            "sample values": [
+              "MARY",
+              "PATRICIA",
+              "LINDA",
+              "BARBARA",
+              "ELIZABETH"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "The customer's last name.",
+            "sample values": [
+              "SMITH",
+              "JOHNSON",
+              "WILLIAMS",
+              "JONES",
+              "BROWN"
+            ],
+            "synonyms": [
+              "last_name"
+            ]
+          },
+          {
+            "name": "email",
+            "type": "table column",
+            "column name": "email",
+            "data type": "string",
+            "description": "The customer's email address.",
+            "sample values": [
+              "MARY.SMITH@sakilacustomer.org",
+              "PATRICIA.JOHNSON@sakilacustomer.org",
+              "LINDA.WILLIAMS@sakilacustomer.org",
+              "BARBARA.JONES@sakilacustomer.org",
+              "ELIZABETH.BROWN@sakilacustomer.org"
+            ],
+            "synonyms": [
+              "email"
+            ]
+          },
+          {
+            "name": "address_id",
+            "type": "table column",
+            "column name": "address_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the customer's address.",
+            "sample values": [
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "synonyms": [
+              "address_id"
+            ]
+          },
+          {
+            "name": "active",
+            "type": "table column",
+            "column name": "active",
+            "data type": "numeric",
+            "description": "Indicates whether the customer is active. 1 for active, 0 for inactive.",
+            "sample values": [
+              1,
+              0
+            ],
+            "synonyms": [
+              "active"
+            ],
+            "extra semantic info": {
+              "value mapping": {
+                "1": "active",
+                "0": "not active"
+              }
+            }
+          },
+          {
+            "name": "create_date",
+            "type": "table column",
+            "column name": "create_date",
+            "data type": "datetime",
+            "description": "The date the customer account was created.",
+            "sample values": [
+              "2006-02-14 22:04:36.0",
+              "2006-02-14 22:04:37.0"
+            ],
+            "synonyms": [
+              "create_date"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 04:57:20.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains information about each customer, including their name, email, and address.",
+        "synonyms": [
+          "customer"
+        ],
+        "extra semantic info": {
+          "commonsense evidence": "The full name of a customer can be formed by combining the first_name and last_name."
+        }
+      },
+      {
+        "name": "film",
+        "type": "simple table",
+        "table path": "main.film",
+        "unique properties": [
+          "film_id"
+        ],
+        "properties": [
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each film.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "film_id"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "The title of the film.",
+            "sample values": [
+              "ACADEMY DINOSAUR",
+              "ACE GOLDFINGER",
+              "ADAPTATION HOLES",
+              "AFFAIR PREJUDICE",
+              "AFRICAN EGG"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "description",
+            "data type": "string",
+            "description": "A brief synopsis of the film.",
+            "sample values": [
+              "A Epic Drama of a Feminist And a Mad ...",
+              "A Astounding Epistle of a Database Ad...",
+              "A Astounding Reflection of a Lumberja...",
+              "A Fanciful Documentary of a Frisbee A...",
+              "A Fast-Paced Documentary of a Pastry ..."
+            ],
+            "synonyms": [
+              "description"
+            ]
+          },
+          {
+            "name": "release_year",
+            "type": "table column",
+            "column name": "release_year",
+            "data type": "string",
+            "description": "The year the film was released.",
+            "sample values": [
+              "2006"
+            ],
+            "synonyms": [
+              "release_year"
+            ]
+          },
+          {
+            "name": "language_id",
+            "type": "table column",
+            "column name": "language_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the language of the film.",
+            "sample values": [
+              1
+            ],
+            "synonyms": [
+              "language_id"
+            ]
+          },
+          {
+            "name": "original_language_id",
+            "type": "table column",
+            "column name": "original_language_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the original language of the film, if different.",
+            "sample values": [],
+            "synonyms": [
+              "original_language_id"
+            ]
+          },
+          {
+            "name": "rental_duration",
+            "type": "table column",
+            "column name": "rental_duration",
+            "data type": "numeric",
+            "description": "The number of days a film can be rented for.",
+            "sample values": [
+              6,
+              3,
+              7,
+              5,
+              4
+            ],
+            "synonyms": [
+              "rental_duration"
+            ],
+            "extra semantic info": {
+              "unit": "days"
+            }
+          },
+          {
+            "name": "rental_rate",
+            "type": "table column",
+            "column name": "rental_rate",
+            "data type": "numeric",
+            "description": "The cost to rent the film for the rental duration.",
+            "sample values": [
+              0.99,
+              4.99,
+              2.99
+            ],
+            "synonyms": [
+              "rental_rate"
+            ]
+          },
+          {
+            "name": "length_",
+            "type": "table column",
+            "column name": "\"length\"",
+            "data type": "numeric",
+            "description": "The duration of the film in minutes.",
+            "sample values": [
+              86,
+              48,
+              50,
+              117,
+              130
+            ],
+            "synonyms": [
+              "length"
+            ],
+            "extra semantic info": {
+              "unit": "minutes"
+            }
+          },
+          {
+            "name": "replacement_cost",
+            "type": "table column",
+            "column name": "replacement_cost",
+            "data type": "numeric",
+            "description": "The cost to replace the film if it is lost or damaged.",
+            "sample values": [
+              20.99,
+              12.99,
+              18.99,
+              26.99,
+              22.99
+            ],
+            "synonyms": [
+              "replacement_cost"
+            ]
+          },
+          {
+            "name": "rating",
+            "type": "table column",
+            "column name": "rating",
+            "data type": "string",
+            "description": "The MPA film rating (e.g., G, PG, PG-13).",
+            "sample values": [
+              "PG",
+              "G",
+              "NC-17",
+              "PG-13",
+              "R"
+            ],
+            "synonyms": [
+              "rating"
+            ],
+            "extra semantic info": {
+              "value mapping": {
+                "G": "General Audiences",
+                "PG": "Parental Guidance Suggested",
+                "PG-13": "Parents Strongly Cautioned",
+                "R": "Restricted",
+                "NC-17": "Adults Only"
+              }
+            }
+          },
+          {
+            "name": "special_features",
+            "type": "table column",
+            "column name": "special_features",
+            "data type": "string",
+            "description": "A list of special features included with the film, such as 'Trailers' or 'Deleted Scenes'.",
+            "sample values": [
+              "Deleted Scenes,Behind the Scenes",
+              "Trailers,Deleted Scenes",
+              "Commentaries,Behind the Scenes",
+              "Deleted Scenes",
+              "Trailers"
+            ],
+            "synonyms": [
+              "special_features"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 05:03:42.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains information about each film in the inventory.",
+        "synonyms": [
+          "film"
+        ],
+        "extra semantic info": {
+          "calculation": "price_per_day = rental_rate / rental_duration"
+        }
+      },
+      {
+        "name": "film_actor",
+        "type": "simple table",
+        "table path": "main.film_actor",
+        "unique properties": [
+          [
+            "actor_id",
+            "film_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "actor_id",
+            "type": "table column",
+            "column name": "actor_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the actor.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "actor_id"
+            ]
+          },
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the film.",
+            "sample values": [
+              1,
+              23,
+              25,
+              106,
+              140
+            ],
+            "synonyms": [
+              "film_id"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 05:05:03.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "A junction table linking actors to films, representing which actors appeared in which films.",
+        "synonyms": [
+          "film_actor"
+        ]
+      },
+      {
+        "name": "film_category",
+        "type": "simple table",
+        "table path": "main.film_category",
+        "unique properties": [
+          [
+            "film_id",
+            "category_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the film.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "film_id"
+            ]
+          },
+          {
+            "name": "category_id",
+            "type": "table column",
+            "column name": "category_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the category.",
+            "sample values": [
+              6,
+              11,
+              8,
+              9,
+              5
+            ],
+            "synonyms": [
+              "category_id"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 05:07:09.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "A junction table linking films to categories.",
+        "synonyms": [
+          "film_category"
+        ]
+      },
+      {
+        "name": "film_text",
+        "type": "simple table",
+        "table path": "main.film_text",
+        "unique properties": [
+          "film_id"
+        ],
+        "properties": [
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric",
+            "description": "A unique identifier for the film, linking to the film table.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "film_id"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "The title of the film.",
+            "sample values": [
+              "ACADEMY DINOSAUR",
+              "ACE GOLDFINGER",
+              "ADAPTATION HOLES",
+              "AFFAIR PREJUDICE",
+              "AFRICAN EGG"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "description",
+            "data type": "string",
+            "description": "The full description of the film.",
+            "sample values": [
+              "A Epic Drama of a Feminist And a Mad ...",
+              "A Astounding Epistle of a Database Ad...",
+              "A Astounding Reflection of a Lumberja...",
+              "A Fanciful Documentary of a Frisbee A...",
+              "A Fast-Paced Documentary of a Pastry ..."
+            ],
+            "synonyms": [
+              "description"
+            ]
+          }
+        ],
+        "description": "Contains the full title and description for each film. This table is used for full-text search.",
+        "synonyms": [
+          "film_text"
+        ]
+      },
+      {
+        "name": "inventory",
+        "type": "simple table",
+        "table path": "main.inventory",
+        "unique properties": [
+          "inventory_id"
+        ],
+        "properties": [
+          {
+            "name": "inventory_id",
+            "type": "table column",
+            "column name": "inventory_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each item in the inventory.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "inventory_id"
+            ]
+          },
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the film.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "film_id"
+            ]
+          },
+          {
+            "name": "store_id",
+            "type": "table column",
+            "column name": "store_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the store that holds this inventory item.",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "store_id"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 05:09:17.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains information about each copy of a film in the store's inventory.",
+        "synonyms": [
+          "inventory"
+        ]
+      },
+      {
+        "name": "language",
+        "type": "simple table",
+        "table path": "main.language",
+        "unique properties": [
+          "language_id"
+        ],
+        "properties": [
+          {
+            "name": "language_id",
+            "type": "table column",
+            "column name": "language_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each language.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "language_id"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the language.",
+            "sample values": [
+              "English",
+              "Italian",
+              "Japanese",
+              "Mandarin",
+              "French"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 05:02:19.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains a list of languages.",
+        "synonyms": [
+          "language"
+        ]
+      },
+      {
+        "name": "payment",
+        "type": "simple table",
+        "table path": "main.payment",
+        "unique properties": [
+          "payment_id"
+        ],
+        "properties": [
+          {
+            "name": "payment_id",
+            "type": "table column",
+            "column name": "payment_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each payment.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "payment_id"
+            ]
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the customer who made the payment.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "customer_id"
+            ]
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the staff member who processed the payment.",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "staff_id"
+            ]
+          },
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the rental associated with this payment.",
+            "sample values": [
+              76,
+              573,
+              1185,
+              1422,
+              1476
+            ],
+            "synonyms": [
+              "rental_id"
+            ]
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric",
+            "description": "The amount of the payment.",
+            "sample values": [
+              2.99,
+              0.99,
+              5.99,
+              9.99,
+              4.99
+            ],
+            "synonyms": [
+              "amount"
+            ]
+          },
+          {
+            "name": "payment_date",
+            "type": "table column",
+            "column name": "payment_date",
+            "data type": "datetime",
+            "description": "The date and time the payment was made.",
+            "sample values": [
+              "2005-05-25 11:30:37.0",
+              "2005-05-28 10:35:23.0",
+              "2005-06-15 00:54:12.0",
+              "2005-06-15 18:02:53.0",
+              "2005-06-15 21:08:46.0"
+            ],
+            "synonyms": [
+              "payment_date"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 22:12:30.0",
+              "2006-02-15 22:12:31.0",
+              "2006-02-15 22:12:32.0",
+              "2006-02-15 22:12:33.0",
+              "2006-02-15 22:12:34.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains information about customer payments.",
+        "synonyms": [
+          "payment"
+        ]
+      },
+      {
+        "name": "rental",
+        "type": "simple table",
+        "table path": "main.rental",
+        "unique properties": [
+          "rental_id",
+          [
+            "rental_date",
+            "inventory_id",
+            "customer_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each rental.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "rental_id"
+            ]
+          },
+          {
+            "name": "rental_date",
+            "type": "table column",
+            "column name": "rental_date",
+            "data type": "datetime",
+            "description": "The date and time the film was rented.",
+            "sample values": [
+              "2005-05-24 22:53:30.0",
+              "2005-05-24 22:54:33.0",
+              "2005-05-24 23:03:39.0",
+              "2005-05-24 23:04:41.0",
+              "2005-05-24 23:05:21.0"
+            ],
+            "synonyms": [
+              "rental_date"
+            ]
+          },
+          {
+            "name": "inventory_id",
+            "type": "table column",
+            "column name": "inventory_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the inventory item that was rented.",
+            "sample values": [
+              367,
+              1525,
+              1711,
+              2452,
+              2079
+            ],
+            "synonyms": [
+              "inventory_id"
+            ]
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the customer who rented the film.",
+            "sample values": [
+              130,
+              459,
+              408,
+              333,
+              222
+            ],
+            "synonyms": [
+              "customer_id"
+            ]
+          },
+          {
+            "name": "return_date",
+            "type": "table column",
+            "column name": "return_date",
+            "data type": "datetime",
+            "description": "The date and time the film was returned. Null if not yet returned.",
+            "sample values": [
+              "2005-05-26 22:04:30.0",
+              "2005-05-28 19:40:33.0",
+              "2005-06-01 22:12:39.0",
+              "2005-06-03 01:43:41.0",
+              "2005-06-02 04:33:21.0"
+            ],
+            "synonyms": [
+              "return_date"
+            ]
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the staff member who processed the rental.",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "staff_id"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 21:30:53.0",
+              "2006-02-23 04:12:08.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains information about film rentals.",
+        "synonyms": [
+          "rental"
+        ]
+      },
+      {
+        "name": "staff",
+        "type": "simple table",
+        "table path": "main.staff",
+        "unique properties": [
+          "staff_id"
+        ],
+        "properties": [
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each staff member.",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "staff_id"
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "The staff member's first name.",
+            "sample values": [
+              "Mike",
+              "Jon"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "The staff member's last name.",
+            "sample values": [
+              "Hillyer",
+              "Stephens"
+            ],
+            "synonyms": [
+              "last_name"
+            ]
+          },
+          {
+            "name": "address_id",
+            "type": "table column",
+            "column name": "address_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the staff member's address.",
+            "sample values": [
+              3,
+              4
+            ],
+            "synonyms": [
+              "address_id"
+            ]
+          },
+          {
+            "name": "picture",
+            "type": "table column",
+            "column name": "picture",
+            "data type": "string",
+            "description": "A picture of the staff member.",
+            "sample values": [
+              "0x3F504E470D0A1A0A0000000D49484452000..."
+            ],
+            "synonyms": [
+              "picture"
+            ]
+          },
+          {
+            "name": "email",
+            "type": "table column",
+            "column name": "email",
+            "data type": "string",
+            "description": "The staff member's email address.",
+            "sample values": [
+              "Mike.Hillyer@sakilastaff.com",
+              "Jon.Stephens@sakilastaff.com"
+            ],
+            "synonyms": [
+              "email"
+            ]
+          },
+          {
+            "name": "store_id",
+            "type": "table column",
+            "column name": "store_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the store where the staff member works.",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "store_id"
+            ]
+          },
+          {
+            "name": "active",
+            "type": "table column",
+            "column name": "active",
+            "data type": "numeric",
+            "description": "Indicates whether the staff member is active. 1 for active, 0 for inactive.",
+            "sample values": [
+              1
+            ],
+            "synonyms": [
+              "active"
+            ],
+            "extra semantic info": {
+              "value mapping": {
+                "1": "active",
+                "0": "not active"
+              }
+            }
+          },
+          {
+            "name": "username",
+            "type": "table column",
+            "column name": "username",
+            "data type": "string",
+            "description": "The staff member's username for logging in.",
+            "sample values": [
+              "Mike",
+              "Jon"
+            ],
+            "synonyms": [
+              "username"
+            ]
+          },
+          {
+            "name": "password",
+            "type": "table column",
+            "column name": "password",
+            "data type": "string",
+            "description": "The staff member's password.",
+            "sample values": [
+              "8cb2237d0679ca88db6464eac60da96345513964"
+            ],
+            "synonyms": [
+              "password"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 04:57:16.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains information about each staff member.",
+        "synonyms": [
+          "staff"
+        ],
+        "extra semantic info": {
+          "commonsense evidence": "The full name of a staff member can be formed by combining the first_name and last_name."
+        }
+      },
+      {
+        "name": "store",
+        "type": "simple table",
+        "table path": "main.store",
+        "unique properties": [
+          "store_id",
+          "manager_staff_id"
+        ],
+        "properties": [
+          {
+            "name": "store_id",
+            "type": "table column",
+            "column name": "store_id",
+            "data type": "numeric",
+            "description": "A unique identifier for each store.",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "store_id"
+            ]
+          },
+          {
+            "name": "manager_staff_id",
+            "type": "table column",
+            "column name": "manager_staff_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the staff member who manages the store.",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "manager_staff_id"
+            ]
+          },
+          {
+            "name": "address_id",
+            "type": "table column",
+            "column name": "address_id",
+            "data type": "numeric",
+            "description": "A foreign key identifier for the store's address.",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "address_id"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "The timestamp of the last update to the record.",
+            "sample values": [
+              "2006-02-15 04:57:12.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "Contains information about each store, including its manager and address.",
+        "synonyms": [
+          "store"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "addresses",
+        "parent collection": "city",
+        "child collection": "address",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "city_id": [
+            "city_id"
+          ]
+        },
+        "description": "The addresses located in this city.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "city",
+        "original parent": "city",
+        "original property": "addresses",
+        "singular": true,
+        "always matches": true,
+        "description": "The city where this address is located.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "cities",
+        "parent collection": "country",
+        "child collection": "city",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "country_id": [
+            "country_id"
+          ]
+        },
+        "description": "The cities located in this country.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country",
+        "original parent": "country",
+        "original property": "cities",
+        "singular": true,
+        "always matches": true,
+        "description": "The country where this city is located.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "customers",
+        "parent collection": "address",
+        "child collection": "customer",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "address_id": [
+            "address_id"
+          ]
+        },
+        "description": "The customers associated with this address.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "address",
+        "original parent": "address",
+        "original property": "customers",
+        "singular": true,
+        "always matches": true,
+        "description": "The address of this customer.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "customers",
+        "parent collection": "store",
+        "child collection": "customer",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "store_id": [
+            "store_id"
+          ]
+        },
+        "description": "The customers registered at this store.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "store",
+        "original parent": "store",
+        "original property": "customers",
+        "singular": true,
+        "always matches": true,
+        "description": "The store where this customer is registered.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "films_as_original_language",
+        "parent collection": "language",
+        "child collection": "film",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "language_id": [
+            "original_language_id"
+          ]
+        },
+        "description": "The films for which this is the original language.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "original_language",
+        "original parent": "language",
+        "original property": "films_as_original_language",
+        "singular": true,
+        "always matches": false,
+        "description": "The original language of this film.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "films",
+        "parent collection": "language",
+        "child collection": "film",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "language_id": [
+            "language_id"
+          ]
+        },
+        "description": "The films available in this language.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "language",
+        "original parent": "language",
+        "original property": "films",
+        "singular": true,
+        "always matches": true,
+        "description": "The language of this film.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "film_actors",
+        "parent collection": "film",
+        "child collection": "film_actor",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "film_id": [
+            "film_id"
+          ]
+        },
+        "description": "The actors who appeared in this film.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "film",
+        "original parent": "film",
+        "original property": "film_actors",
+        "singular": true,
+        "always matches": true,
+        "description": "The film this actor appeared in.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "film_actors",
+        "parent collection": "actor",
+        "child collection": "film_actor",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "actor_id": [
+            "actor_id"
+          ]
+        },
+        "description": "The films this actor has appeared in.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "actor",
+        "original parent": "actor",
+        "original property": "film_actors",
+        "singular": true,
+        "always matches": true,
+        "description": "The actor who appeared in this film.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "film_categories",
+        "parent collection": "category",
+        "child collection": "film_category",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "category_id": [
+            "category_id"
+          ]
+        },
+        "description": "The films belonging to this category.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "category",
+        "original parent": "category",
+        "original property": "film_categories",
+        "singular": true,
+        "always matches": true,
+        "description": "The category this film belongs to.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "film_categories",
+        "parent collection": "film",
+        "child collection": "film_category",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "film_id": [
+            "film_id"
+          ]
+        },
+        "description": "The categories this film belongs to.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "film",
+        "original parent": "film",
+        "original property": "film_categories",
+        "singular": true,
+        "always matches": true,
+        "description": "The film associated with this category entry.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "film_text",
+        "parent collection": "film",
+        "child collection": "film_text",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "film_id": [
+            "film_id"
+          ]
+        },
+        "description": "The extended text details for the film.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "film",
+        "original parent": "film",
+        "original property": "film_text",
+        "singular": true,
+        "always matches": true,
+        "description": "The film associated with this text.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "inventories",
+        "parent collection": "store",
+        "child collection": "inventory",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "store_id": [
+            "store_id"
+          ]
+        },
+        "description": "The inventory items available at this store.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "store",
+        "original parent": "store",
+        "original property": "inventories",
+        "singular": true,
+        "always matches": true,
+        "description": "The store where this inventory item is located.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "inventories",
+        "parent collection": "film",
+        "child collection": "inventory",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "film_id": [
+            "film_id"
+          ]
+        },
+        "description": "The inventory items for this film.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "film",
+        "original parent": "film",
+        "original property": "inventories",
+        "singular": true,
+        "always matches": true,
+        "description": "The film associated with this inventory item.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "payments",
+        "parent collection": "rental",
+        "child collection": "payment",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "rental_id": [
+            "rental_id"
+          ]
+        },
+        "description": "The payments associated with this rental.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "rental",
+        "original parent": "rental",
+        "original property": "payments",
+        "singular": true,
+        "always matches": false,
+        "description": "The rental associated with this payment.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "payments",
+        "parent collection": "staff",
+        "child collection": "payment",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "staff_id": [
+            "staff_id"
+          ]
+        },
+        "description": "The payments processed by this staff member.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "staff",
+        "original parent": "staff",
+        "original property": "payments",
+        "singular": true,
+        "always matches": true,
+        "description": "The staff member who processed this payment.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "payments",
+        "parent collection": "customer",
+        "child collection": "payment",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ]
+        },
+        "description": "The payments made by this customer.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customer",
+        "original property": "payments",
+        "singular": true,
+        "always matches": true,
+        "description": "The customer who made this payment.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "rentals",
+        "parent collection": "staff",
+        "child collection": "rental",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "staff_id": [
+            "staff_id"
+          ]
+        },
+        "description": "The rentals processed by this staff member.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "staff",
+        "original parent": "staff",
+        "original property": "rentals",
+        "singular": true,
+        "always matches": true,
+        "description": "The staff member who processed this rental.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "rentals",
+        "parent collection": "customer",
+        "child collection": "rental",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ]
+        },
+        "description": "The rentals made by this customer.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customer",
+        "original property": "rentals",
+        "singular": true,
+        "always matches": true,
+        "description": "The customer who made this rental.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "rentals",
+        "parent collection": "inventory",
+        "child collection": "rental",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "inventory_id": [
+            "inventory_id"
+          ]
+        },
+        "description": "The rentals associated with this inventory item.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "inventory",
+        "original parent": "inventory",
+        "original property": "rentals",
+        "singular": true,
+        "always matches": true,
+        "description": "The inventory item associated with this rental.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "staffs",
+        "parent collection": "store",
+        "child collection": "staff",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "store_id": [
+            "store_id"
+          ]
+        },
+        "description": "The staff members who work at this store.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "store",
+        "original parent": "store",
+        "original property": "staffs",
+        "singular": true,
+        "always matches": true,
+        "description": "The store where this staff member works.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "staffs",
+        "parent collection": "address",
+        "child collection": "staff",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "address_id": [
+            "address_id"
+          ]
+        },
+        "description": "The staff members associated with this address.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "address",
+        "original parent": "address",
+        "original property": "staffs",
+        "singular": true,
+        "always matches": true,
+        "description": "The address of this staff member.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "stores",
+        "parent collection": "address",
+        "child collection": "store",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "address_id": [
+            "address_id"
+          ]
+        },
+        "description": "The stores located at this address.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "address",
+        "original parent": "address",
+        "original property": "stores",
+        "singular": true,
+        "always matches": true,
+        "description": "The address of this store.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "managed_store",
+        "parent collection": "staff",
+        "child collection": "store",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "staff_id": [
+            "manager_staff_id"
+          ]
+        },
+        "description": "The store managed by this staff member.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "manager",
+        "original parent": "staff",
+        "original property": "managed_store",
+        "singular": true,
+        "always matches": true,
+        "description": "The manager of this store.",
+        "synonyms": []
+      }
+    ]
+  }
+]

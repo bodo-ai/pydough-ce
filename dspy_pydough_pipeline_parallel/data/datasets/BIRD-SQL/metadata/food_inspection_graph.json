@@ -1,0 +1,536 @@
+[
+  {
+    "name": "food_inspection",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "businesses",
+        "type": "simple table",
+        "table path": "main.businesses",
+        "unique properties": [
+          "business_id"
+        ],
+        "properties": [
+          {
+            "name": "business_id",
+            "type": "table column",
+            "column name": "business_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              24,
+              31,
+              45,
+              48
+            ],
+            "synonyms": [
+              "business_id"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Tiramisu Kitchen",
+              "OMNI S.F. Hotel - 2nd Floor Pantry",
+              "Norman's Ice Cream and Freezes",
+              "CHARLIE'S DELI CAFE",
+              "ART'S CAFE"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "033 Belden Pl",
+              "500 California St, 2nd  Floor",
+              "2801 Leavenworth St",
+              "3202 FOLSOM St",
+              "747 IRVING St"
+            ],
+            "synonyms": [
+              "address"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "San Francisco",
+              "S.F.",
+              "SAN FRANCISCO",
+              "SF",
+              "Sf"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "postal_code",
+            "type": "table column",
+            "column name": "postal_code",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "94104",
+              "94133",
+              "94110",
+              "94122",
+              "94115"
+            ],
+            "synonyms": [
+              "postal_code"
+            ]
+          },
+          {
+            "name": "latitude",
+            "type": "table column",
+            "column name": "latitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              37.7911,
+              37.7929,
+              37.8072,
+              37.7471,
+              37.764
+            ],
+            "synonyms": [
+              "latitude"
+            ]
+          },
+          {
+            "name": "longitude",
+            "type": "table column",
+            "column name": "longitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              -122.404,
+              -122.403,
+              -122.419,
+              -122.414,
+              -122.466
+            ],
+            "synonyms": [
+              "longitude"
+            ]
+          },
+          {
+            "name": "phone_number",
+            "type": "table column",
+            "column name": "phone_number",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              14155345060,
+              14155823535,
+              14155344645,
+              14155812403,
+              14155288985
+            ],
+            "synonyms": [
+              "phone_number"
+            ]
+          },
+          {
+            "name": "tax_code",
+            "type": "table column",
+            "column name": "tax_code",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "H24",
+              "H01",
+              "H25",
+              "H88",
+              "H26"
+            ],
+            "synonyms": [
+              "tax_code"
+            ]
+          },
+          {
+            "name": "business_certificate",
+            "type": "table column",
+            "column name": "business_certificate",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              779059,
+              352312,
+              346882,
+              340024,
+              318022
+            ],
+            "synonyms": [
+              "business_certificate"
+            ]
+          },
+          {
+            "name": "application_date",
+            "type": "table column",
+            "column name": "application_date",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2001-10-10",
+              "1989-02-01",
+              "2003-05-23",
+              "1991-01-11",
+              "2002-12-09"
+            ],
+            "synonyms": [
+              "application_date"
+            ]
+          },
+          {
+            "name": "owner_name",
+            "type": "table column",
+            "column name": "owner_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Tiramisu LLC",
+              "OMNI San Francisco Hotel Corp",
+              "Norman Antiforda",
+              "HARB, CHARLES AND KRISTIN",
+              "YOON HAE RYONG"
+            ],
+            "synonyms": [
+              "owner_name"
+            ]
+          },
+          {
+            "name": "owner_address",
+            "type": "table column",
+            "column name": "owner_address",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "33 Belden St",
+              "500 California St, 2nd Floor",
+              "2801 Leavenworth St",
+              "1150 SANCHEZ",
+              "1567 FUNSTON AVE"
+            ],
+            "synonyms": [
+              "owner_address"
+            ]
+          },
+          {
+            "name": "owner_city",
+            "type": "table column",
+            "column name": "owner_city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "San Francisco",
+              "S.F.",
+              "SAN FRANCISCO",
+              "SF",
+              "Okland"
+            ],
+            "synonyms": [
+              "owner_city"
+            ]
+          },
+          {
+            "name": "owner_state",
+            "type": "table column",
+            "column name": "owner_state",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CA",
+              "DC",
+              "WA",
+              "TN",
+              "Ca"
+            ],
+            "synonyms": [
+              "owner_state"
+            ]
+          },
+          {
+            "name": "owner_zip",
+            "type": "table column",
+            "column name": "owner_zip",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "94104",
+              "94133",
+              "94114",
+              "94122",
+              "94115"
+            ],
+            "synonyms": [
+              "owner_zip"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "businesses"
+        ]
+      },
+      {
+        "name": "inspections",
+        "type": "simple table",
+        "table path": "main.inspections",
+        "unique properties": [
+          [
+            "business_id",
+            "score",
+            "date_",
+            "type_"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "business_id",
+            "type": "table column",
+            "column name": "business_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              24,
+              31,
+              45,
+              48
+            ],
+            "synonyms": [
+              "business_id"
+            ]
+          },
+          {
+            "name": "score",
+            "type": "table column",
+            "column name": "score",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              92,
+              94,
+              82,
+              100,
+              96
+            ],
+            "synonyms": [
+              "score"
+            ]
+          },
+          {
+            "name": "date_",
+            "type": "table column",
+            "column name": "\"date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2014-01-14",
+              "2014-01-24",
+              "2014-07-29",
+              "2014-08-07",
+              "2016-05-03"
+            ],
+            "synonyms": [
+              "date"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "type",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Routine - Unscheduled",
+              "Reinspection/Followup",
+              "Complaint Reinspection/Followup",
+              "Non-inspection site visit",
+              "Complaint"
+            ],
+            "synonyms": [
+              "type"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "inspections"
+        ]
+      },
+      {
+        "name": "violations",
+        "type": "simple table",
+        "table path": "main.violations",
+        "unique properties": [
+          [
+            "business_id",
+            "date_",
+            "violation_type_id",
+            "risk_category",
+            "description"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "business_id",
+            "type": "table column",
+            "column name": "business_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              24,
+              31,
+              45,
+              48
+            ],
+            "synonyms": [
+              "business_id"
+            ]
+          },
+          {
+            "name": "date_",
+            "type": "table column",
+            "column name": "\"date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2014-07-29",
+              "2014-01-14",
+              "2016-05-03",
+              "2014-06-12",
+              "2014-11-24"
+            ],
+            "synonyms": [
+              "date"
+            ]
+          },
+          {
+            "name": "violation_type_id",
+            "type": "table column",
+            "column name": "violation_type_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "103129",
+              "103144",
+              "103119",
+              "103145",
+              "103154"
+            ],
+            "synonyms": [
+              "violation_type_id"
+            ]
+          },
+          {
+            "name": "risk_category",
+            "type": "table column",
+            "column name": "risk_category",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Moderate Risk",
+              "Low Risk",
+              "High Risk"
+            ],
+            "synonyms": [
+              "risk_category"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "description",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Insufficient hot water or running water",
+              "Unapproved or unmaintained equipment ...",
+              "Inadequate and inaccessible handwashi...",
+              "Improper storage of equipment utensil...",
+              "Unclean or degraded floors walls or c..."
+            ],
+            "synonyms": [
+              "description"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "violations"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "inspections",
+        "parent collection": "businesses",
+        "child collection": "inspections",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "business_id": [
+            "business_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "businesses",
+        "original parent": "businesses",
+        "original property": "inspections",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "violations",
+        "parent collection": "businesses",
+        "child collection": "violations",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "business_id": [
+            "business_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "businesses",
+        "original parent": "businesses",
+        "original property": "violations",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

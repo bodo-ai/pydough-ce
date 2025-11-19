@@ -1,0 +1,271 @@
+[
+  {
+    "name": "trains",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "cars",
+        "type": "simple table",
+        "table path": "main.cars",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "The unique id number representing the cars.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "train_id",
+            "type": "table column",
+            "column name": "train_id",
+            "data type": "numeric",
+            "description": "The counterpart id for trains that the cars belong to. Foreign key to the trains collection.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "train_id"
+            ]
+          },
+          {
+            "name": "position",
+            "type": "table column",
+            "column name": "position",
+            "data type": "numeric",
+            "description": "Position id of cars in the trains, ranging from 1 to 4.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "position"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "1: head car, 4: tail car"
+            }
+          },
+          {
+            "name": "shape",
+            "type": "table column",
+            "column name": "shape",
+            "data type": "string",
+            "description": "Shape of the cars.",
+            "sample values": [
+              "rectangle",
+              "bucket",
+              "u_shaped",
+              "hexagon",
+              "ellipse"
+            ],
+            "synonyms": [
+              "shape"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": {
+                "regular shape": [
+                  "rectangle",
+                  "u_shaped",
+                  "hexagon"
+                ]
+              }
+            }
+          },
+          {
+            "name": "len_",
+            "type": "table column",
+            "column name": "len",
+            "data type": "string",
+            "description": "Length of the cars.",
+            "sample values": [
+              "short",
+              "long"
+            ],
+            "synonyms": [
+              "len"
+            ]
+          },
+          {
+            "name": "sides",
+            "type": "table column",
+            "column name": "sides",
+            "data type": "string",
+            "description": "Sides of the cars.",
+            "sample values": [
+              "not_double",
+              "double"
+            ],
+            "synonyms": [
+              "sides"
+            ]
+          },
+          {
+            "name": "roof",
+            "type": "table column",
+            "column name": "roof",
+            "data type": "string",
+            "description": "Roof of the cars.",
+            "sample values": [
+              "none",
+              "peaked",
+              "flat",
+              "arc",
+              "jagged"
+            ],
+            "synonyms": [
+              "roof"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "none: the roof is open"
+            }
+          },
+          {
+            "name": "wheels",
+            "type": "table column",
+            "column name": "wheels",
+            "data type": "numeric",
+            "description": "Number of wheels on the cars.",
+            "sample values": [
+              2,
+              3
+            ],
+            "synonyms": [
+              "wheels"
+            ]
+          },
+          {
+            "name": "load_shape",
+            "type": "table column",
+            "column name": "load_shape",
+            "data type": "string",
+            "description": "The shape of the load in the car.",
+            "sample values": [
+              "circle",
+              "hexagon",
+              "triangle",
+              "rectangle",
+              "diamond"
+            ],
+            "synonyms": [
+              "load_shape"
+            ]
+          },
+          {
+            "name": "load_num",
+            "type": "table column",
+            "column name": "load_num",
+            "data type": "numeric",
+            "description": "The number of items in the load, ranging from 0 to 3.",
+            "sample values": [
+              1,
+              3,
+              2,
+              0
+            ],
+            "synonyms": [
+              "load_num"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "0: empty load, 3: full load"
+            }
+          }
+        ],
+        "description": "Contains detailed information about the individual cars that make up each train.",
+        "synonyms": [
+          "cars"
+        ]
+      },
+      {
+        "name": "trains",
+        "type": "simple table",
+        "table path": "main.trains",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "The unique id representing the trains.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "direction",
+            "type": "table column",
+            "column name": "direction",
+            "data type": "string",
+            "description": "The direction of travel for the trains.",
+            "sample values": [
+              "east",
+              "west"
+            ],
+            "synonyms": [
+              "direction"
+            ]
+          }
+        ],
+        "description": "Contains information about the trains, including their direction of travel.",
+        "synonyms": [
+          "trains"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "cars",
+        "parent collection": "trains",
+        "child collection": "cars",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "train_id"
+          ]
+        },
+        "description": "The set of cars that belong to a specific train.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "train",
+        "original parent": "trains",
+        "original property": "cars",
+        "singular": true,
+        "always matches": false,
+        "description": "The train to which a specific car belongs.",
+        "synonyms": []
+      }
+    ]
+  }
+]

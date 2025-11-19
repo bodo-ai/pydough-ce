@@ -1,0 +1,578 @@
+[
+  {
+    "name": "codebase_comments",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "method",
+        "type": "simple table",
+        "table path": "main.Method",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "Id",
+            "data type": "numeric",
+            "description": "Unique id number that identifies methods.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Id"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "The name of the method.",
+            "sample values": [
+              "HtmlSharp.HtmlParser.Feed",
+              "HtmlSharp.HtmlParser.ParseDoctypeElement",
+              "IQ.Data.DbQueryProvider.GetQueryText",
+              "IQ.Data.DbQueryProvider.Execute",
+              "IQ.Data.DbQueryProvider.GetExecutionPlan"
+            ],
+            "synonyms": [
+              "Name"
+            ],
+            "extra semantic info": {
+              "structure": "The second part of the name, delimited by a dot (.), often indicates the specific task of the method."
+            }
+          },
+          {
+            "name": "fullcomment",
+            "type": "table column",
+            "column name": "FullComment",
+            "data type": "string",
+            "description": "The full comment associated with this method.",
+            "sample values": [
+              "Feeds data into the parser",
+              " interneral -- scan past <!ELEMENT de...",
+              " <summary>\n        /// Converts the q...",
+              " <summary>\n        /// Execute the qu...",
+              " <summary>\n        /// Convert the qu..."
+            ],
+            "synonyms": [
+              "FullComment"
+            ]
+          },
+          {
+            "name": "summary",
+            "type": "table column",
+            "column name": "Summary",
+            "data type": "string",
+            "description": "A summary of the method's purpose.",
+            "sample values": [
+              "Converts the query expression into te...",
+              "Execute the query expression ",
+              "Convert the query expression into an ...",
+              "Do all query translations execpt buil...",
+              "Determines whether a given expression..."
+            ],
+            "synonyms": [
+              "Summary"
+            ]
+          },
+          {
+            "name": "apicalls",
+            "type": "table column",
+            "column name": "ApiCalls",
+            "data type": "string",
+            "description": "A linearized sequence of API calls made by the method.",
+            "sample values": [
+              "System.String.IsNullOrEmpty HtmlSharp...",
+              "HtmlSharp.HtmlParser.ScanName System....",
+              "IQ.Data.DbQueryProvider.Translate IQ....",
+              "IQ.Data.DbQueryProvider.GetExecutionP...",
+              "System.Linq.Expressions.LambdaExpress..."
+            ],
+            "synonyms": [
+              "ApiCalls"
+            ]
+          },
+          {
+            "name": "commentisxml",
+            "type": "table column",
+            "column name": "CommentIsXml",
+            "data type": "numeric",
+            "description": "A flag indicating whether the comment is in XML format.",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "CommentIsXml"
+            ],
+            "extra semantic info": {
+              "value_mapping": {
+                "0": "The comment for this method is not in XML format.",
+                "1": "The comment for this method is in XML format."
+              }
+            }
+          },
+          {
+            "name": "sampledat",
+            "type": "table column",
+            "column name": "SampledAt",
+            "data type": "numeric",
+            "description": "The timestamp indicating when the method was sampled.",
+            "sample values": [
+              636430963695654788,
+              636430963695709898,
+              636430963721734366,
+              636430963721804459,
+              636430963721809465
+            ],
+            "synonyms": [
+              "SampledAt"
+            ]
+          },
+          {
+            "name": "solutionid",
+            "type": "table column",
+            "column name": "SolutionId",
+            "data type": "numeric",
+            "description": "The identifier for the solution this method belongs to. Foreign key to the solution table.",
+            "sample values": [
+              1,
+              2,
+              3,
+              5,
+              7
+            ],
+            "synonyms": [
+              "SolutionId"
+            ]
+          },
+          {
+            "name": "lang",
+            "type": "table column",
+            "column name": "Lang",
+            "data type": "string",
+            "description": "The language code of the method's source.",
+            "sample values": [
+              "en",
+              "fr",
+              "fi",
+              "it",
+              "af"
+            ],
+            "synonyms": [
+              "Lang"
+            ]
+          },
+          {
+            "name": "nametokenized",
+            "type": "table column",
+            "column name": "NameTokenized",
+            "data type": "string",
+            "description": "The tokenized version of the method name.",
+            "sample values": [
+              "html parser feed",
+              "html parser parse doctype element",
+              "db query provider get query text",
+              "db query provider execute",
+              "db query provider get execution plan"
+            ],
+            "synonyms": [
+              "NameTokenized"
+            ]
+          }
+        ],
+        "description": "Contains information about methods within solutions, including their names, comments, API calls, and associated metadata.",
+        "synonyms": [
+          "Method"
+        ]
+      },
+      {
+        "name": "methodparameter",
+        "type": "simple table",
+        "table path": "main.MethodParameter",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "Id",
+            "data type": "numeric",
+            "description": "Unique id number identifying method parameters.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Id"
+            ]
+          },
+          {
+            "name": "methodid",
+            "type": "table column",
+            "column name": "MethodId",
+            "data type": "string",
+            "description": "Identifier for the method this parameter belongs to. Foreign key to the method table.",
+            "sample values": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "synonyms": [
+              "MethodId"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "Type",
+            "data type": "string",
+            "description": "The data type of the method parameter.",
+            "sample values": [
+              "System.String",
+              "System.Int32",
+              "System.Linq.Expressions.Expression",
+              "IQ.Data.SelectExpression",
+              "IQ.Data.QueryCommand"
+            ],
+            "synonyms": [
+              "Type"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "The name of the method parameter.",
+            "sample values": [
+              "data",
+              "i",
+              "declstartpos",
+              "expression",
+              "s"
+            ],
+            "synonyms": [
+              "Name"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Parameter names that are single letters (e.g., 'H', 'z') may indicate that the parent method is not well-discriminative or descriptive."
+            }
+          }
+        ],
+        "description": "Lists the parameters for each method, including their names and data types.",
+        "synonyms": [
+          "MethodParameter"
+        ]
+      },
+      {
+        "name": "repo",
+        "type": "simple table",
+        "table path": "main.Repo",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "Id",
+            "data type": "numeric",
+            "description": "Unique id to identify repositories.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Id"
+            ]
+          },
+          {
+            "name": "url",
+            "type": "table column",
+            "column name": "Url",
+            "data type": "string",
+            "description": "The GitHub address of the repository.",
+            "sample values": [
+              "https://github.com/wallerdev/htmlshar...",
+              "https://github.com/unclebob/nslim.git",
+              "https://github.com/maravillas/linq-to...",
+              "https://github.com/mauriciodeamorim/t...",
+              "https://github.com/aroder/heatmap.git"
+            ],
+            "synonyms": [
+              "Url"
+            ]
+          },
+          {
+            "name": "stars",
+            "type": "table column",
+            "column name": "Stars",
+            "data type": "numeric",
+            "description": "The number of stars this repository has received.",
+            "sample values": [
+              14,
+              6,
+              3,
+              1,
+              5
+            ],
+            "synonyms": [
+              "Stars"
+            ]
+          },
+          {
+            "name": "forks",
+            "type": "table column",
+            "column name": "Forks",
+            "data type": "numeric",
+            "description": "The number of forks that the repository has.",
+            "sample values": [
+              2,
+              3,
+              0,
+              1,
+              32
+            ],
+            "synonyms": [
+              "Forks"
+            ]
+          },
+          {
+            "name": "watchers",
+            "type": "table column",
+            "column name": "Watchers",
+            "data type": "numeric",
+            "description": "The number of watchers of this repository.",
+            "sample values": [
+              14,
+              6,
+              3,
+              1,
+              5
+            ],
+            "synonyms": [
+              "Watchers"
+            ]
+          },
+          {
+            "name": "processedtime",
+            "type": "table column",
+            "column name": "ProcessedTime",
+            "data type": "numeric",
+            "description": "The timestamp indicating when this repository was processed or downloaded.",
+            "sample values": [
+              636430963247108053,
+              636472436323838240,
+              636430963280029575,
+              636430963299356346,
+              636472436346806990
+            ],
+            "synonyms": [
+              "ProcessedTime"
+            ]
+          }
+        ],
+        "description": "Contains information about code repositories, including their URLs and popularity metrics like stars, forks, and watchers.",
+        "synonyms": [
+          "Repo"
+        ]
+      },
+      {
+        "name": "solution",
+        "type": "simple table",
+        "table path": "main.Solution",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "Id",
+            "data type": "numeric",
+            "description": "Unique id to identify this solution.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Id"
+            ]
+          },
+          {
+            "name": "repoid",
+            "type": "table column",
+            "column name": "RepoId",
+            "data type": "numeric",
+            "description": "The identifier of the repository this solution belongs to. Foreign key to the repo table.",
+            "sample values": [
+              1,
+              3,
+              4,
+              5,
+              6
+            ],
+            "synonyms": [
+              "RepoId"
+            ]
+          },
+          {
+            "name": "path",
+            "type": "table column",
+            "column name": "Path",
+            "data type": "string",
+            "description": "The file path of this solution within its repository.",
+            "sample values": [
+              "wallerdev_htmlsharp\\HtmlSharp.sln",
+              "maravillas_linq-to-delicious\\tasty.sln",
+              "mauriciodeamorim_tdd.encontro2\\Tdd.En...",
+              "aroder_heatmap\\CenStatsHeatMap.sln",
+              "managedfusion_managedfusion\\ManagedFu..."
+            ],
+            "synonyms": [
+              "Path"
+            ]
+          },
+          {
+            "name": "processedtime",
+            "type": "table column",
+            "column name": "ProcessedTime",
+            "data type": "numeric",
+            "description": "The timestamp indicating when this solution was processed.",
+            "sample values": [
+              636430963695642191,
+              636430963721734366,
+              636430963735704849,
+              636430963750457674,
+              636430963775379234
+            ],
+            "synonyms": [
+              "ProcessedTime"
+            ]
+          },
+          {
+            "name": "wascompiled",
+            "type": "table column",
+            "column name": "WasCompiled",
+            "data type": "numeric",
+            "description": "A flag indicating whether this solution was successfully compiled.",
+            "sample values": [
+              1,
+              0
+            ],
+            "synonyms": [
+              "WasCompiled"
+            ],
+            "extra semantic info": {
+              "value_mapping": {
+                "0": "The solution was not compiled or compilation failed.",
+                "1": "The solution was successfully compiled."
+              }
+            }
+          }
+        ],
+        "description": "Represents solutions within repositories, including their file path and compilation status.",
+        "synonyms": [
+          "Solution"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "solutions",
+        "type": "simple join",
+        "singular": false,
+        "always matches": false,
+        "description": "The solutions contained within this repository.",
+        "synonyms": [],
+        "parent collection": "repo",
+        "child collection": "solution",
+        "keys": {
+          "id_": [
+            "repoid"
+          ]
+        }
+      },
+      {
+        "name": "repo",
+        "type": "reverse",
+        "singular": true,
+        "always matches": false,
+        "description": "The repository this solution belongs to.",
+        "synonyms": [],
+        "original parent": "repo",
+        "original property": "solutions"
+      },
+      {
+        "name": "methods",
+        "type": "simple join",
+        "singular": false,
+        "always matches": false,
+        "description": "The methods defined in this solution.",
+        "synonyms": [],
+        "parent collection": "solution",
+        "child collection": "method",
+        "keys": {
+          "id_": [
+            "solutionid"
+          ]
+        }
+      },
+      {
+        "name": "solution",
+        "type": "reverse",
+        "singular": true,
+        "always matches": false,
+        "description": "The solution this method belongs to.",
+        "synonyms": [],
+        "original parent": "solution",
+        "original property": "methods"
+      },
+      {
+        "name": "methodparameters",
+        "type": "simple join",
+        "singular": false,
+        "always matches": false,
+        "description": "The parameters for this method.",
+        "synonyms": [],
+        "parent collection": "method",
+        "child collection": "methodparameter",
+        "keys": {
+          "id_": [
+            "methodid"
+          ]
+        }
+      },
+      {
+        "name": "method",
+        "type": "reverse",
+        "singular": true,
+        "always matches": false,
+        "description": "The method this parameter belongs to.",
+        "synonyms": [],
+        "original parent": "method",
+        "original property": "methodparameters"
+      }
+    ]
+  }
+]

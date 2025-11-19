@@ -1,0 +1,554 @@
+[
+  {
+    "name": "authors",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "author",
+        "type": "simple table",
+        "table path": "main.Author",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "Id",
+            "data type": "numeric",
+            "description": "Unique identifier for the author.",
+            "sample values": [
+              9,
+              14,
+              15,
+              25,
+              37
+            ],
+            "synonyms": [
+              "Id"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "Full name of the author.",
+            "sample values": [
+              "Ernest Jordan",
+              "K. MORIBE",
+              "D. Jakominich",
+              "William H. Nailon",
+              "P. B. Littlewood"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "affiliation",
+            "type": "table column",
+            "column name": "Affiliation",
+            "data type": "string",
+            "description": "The organization with which the author is affiliated.",
+            "sample values": [
+              "Cavendish Laboratory|Cambridge Univer...",
+              "Department of Molecular Biology|Schoo...",
+              "HASLab / INESC TEC and Universidade d...",
+              "Purdue University, West Lafayette, In...",
+              "This project,is supported,by a Hong,K..."
+            ],
+            "synonyms": [
+              "Affiliation"
+            ]
+          }
+        ],
+        "description": "Details about the authors of academic papers.",
+        "synonyms": [
+          "Author"
+        ]
+      },
+      {
+        "name": "conference",
+        "type": "simple table",
+        "table path": "main.Conference",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "Id",
+            "data type": "numeric",
+            "description": "Unique identifier for the conference.",
+            "sample values": [
+              1,
+              2,
+              4,
+              5,
+              6
+            ],
+            "synonyms": [
+              "Id"
+            ]
+          },
+          {
+            "name": "shortname",
+            "type": "table column",
+            "column name": "ShortName",
+            "data type": "string",
+            "description": "The abbreviated name or acronym of the conference.",
+            "sample values": [
+              "IADIS",
+              "IADT",
+              "",
+              "ICOMP",
+              "ICAC"
+            ],
+            "synonyms": [
+              "ShortName"
+            ]
+          },
+          {
+            "name": "fullname",
+            "type": "table column",
+            "column name": "FullName",
+            "data type": "string",
+            "description": "The full name of the conference.",
+            "sample values": [
+              "International Association for Develop...",
+              "Issues and Applications of Database T...",
+              "IBM Germany Scientific Symposium Series",
+              "International Conference on Internet ...",
+              "International Conference on Autonomic..."
+            ],
+            "synonyms": [
+              "FullName"
+            ]
+          },
+          {
+            "name": "homepage",
+            "type": "table column",
+            "column name": "HomePage",
+            "data type": "string",
+            "description": "The URL of the conference's official homepage.",
+            "sample values": [
+              "",
+              "http://www.informatik.uni-trier.de/~l...",
+              "http://www.informatik.uni-trier.de/~l...",
+              "http://www.informatik.uni-trier.de/~l...",
+              "http://www.autonomic-conference.org/"
+            ],
+            "synonyms": [
+              "HomePage"
+            ]
+          }
+        ],
+        "description": "Information about academic conferences.",
+        "synonyms": [
+          "Conference"
+        ]
+      },
+      {
+        "name": "journal",
+        "type": "simple table",
+        "table path": "main.Journal",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "Id",
+            "data type": "numeric",
+            "description": "Unique identifier for the journal.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Id"
+            ]
+          },
+          {
+            "name": "shortname",
+            "type": "table column",
+            "column name": "ShortName",
+            "data type": "string",
+            "description": "The abbreviated name or acronym of the journal.",
+            "sample values": [
+              "ICOM",
+              "AEPIA",
+              "IBMRD",
+              "IBMSJ",
+              ""
+            ],
+            "synonyms": [
+              "ShortName"
+            ]
+          },
+          {
+            "name": "fullname",
+            "type": "table column",
+            "column name": "FullName",
+            "data type": "string",
+            "description": "The full name of the journal.",
+            "sample values": [
+              "Zeitschrift F\u00fcr Interaktive Und Koope...",
+              "Inteligencia Artificial,revista Ibero...",
+              "Ibm Journal of Research and Development",
+              "Ibm Systems Journal",
+              "Iet Software/iee Proceedings - Software"
+            ],
+            "synonyms": [
+              "FullName"
+            ]
+          },
+          {
+            "name": "homepage",
+            "type": "table column",
+            "column name": "HomePage",
+            "data type": "string",
+            "description": "The URL of the journal's official homepage.",
+            "sample values": [
+              "http://www.i-com-media.de",
+              "http://aepia.dsic.upv.es/revista/",
+              "http://www-tr.watson.ibm.com/journal/...",
+              "http://researchweb.watson.ibm.com/jou...",
+              "http://www.ietdl.org/IET-SEN"
+            ],
+            "synonyms": [
+              "HomePage"
+            ]
+          }
+        ],
+        "description": "Information about academic journals.",
+        "synonyms": [
+          "Journal"
+        ]
+      },
+      {
+        "name": "paper",
+        "type": "simple table",
+        "table path": "main.Paper",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "Id",
+            "data type": "numeric",
+            "description": "Unique identifier for the paper.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Id"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "Title",
+            "data type": "string",
+            "description": "The title of the paper.",
+            "sample values": [
+              "Stitching videos streamed by mobile p...",
+              "A nonlocal convection\u2013diffusion equation",
+              "Area Effects in Cepaea",
+              "Multiple paternity in a natural popul...",
+              "Complexity of Finding Short Resolutio..."
+            ],
+            "synonyms": [
+              "Title"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"Year\"",
+            "data type": "numeric",
+            "description": "The year the paper was published.",
+            "sample values": [
+              2009,
+              2007,
+              1963,
+              2005,
+              1997
+            ],
+            "synonyms": [
+              "Year"
+            ],
+            "extra semantic info": {
+              "commonsense reasoning": "if the year is '0', it means this paper is preprint, or not published"
+            }
+          },
+          {
+            "name": "conferenceid",
+            "type": "table column",
+            "column name": "ConferenceId",
+            "data type": "numeric",
+            "description": "Identifier for the conference where the paper was published. Foreign key to the conference table.",
+            "sample values": [
+              167,
+              0,
+              158,
+              341,
+              2397
+            ],
+            "synonyms": [
+              "ConferenceId"
+            ]
+          },
+          {
+            "name": "journalid",
+            "type": "table column",
+            "column name": "JournalId",
+            "data type": "numeric",
+            "description": "Identifier for the journal where the paper was published. Foreign key to the journal table.",
+            "sample values": [
+              0,
+              7234,
+              16867,
+              6130,
+              17639
+            ],
+            "synonyms": [
+              "JournalId"
+            ]
+          },
+          {
+            "name": "keyword",
+            "type": "table column",
+            "column name": "Keyword",
+            "data type": "string",
+            "description": "Keywords associated with the paper.",
+            "sample values": [
+              "mobile video capturing|real-time|vide...",
+              "Nonlocal diffusion; Convection\u2013diffus...",
+              "Keywords: methylation, epigenetic, me...",
+              "Optical properties, Organic materials...",
+              "Computational model; X-machine; Ants;..."
+            ],
+            "synonyms": [
+              "Keyword"
+            ],
+            "extra semantic info": {
+              "commonsense reasoning": "Keywords should contain words and phrases that suggest what the topic is about. \nSimilar keywords represent similar fields or sub-field. "
+            }
+          }
+        ],
+        "description": "Details about academic papers.",
+        "synonyms": [
+          "Paper"
+        ],
+        "extra semantic info": {
+          "commonsense reasoning": "If a paper contains '0' in both ConferenceId and JournalId, it means this paper is a preprint"
+        }
+      },
+      {
+        "name": "paperauthor",
+        "type": "simple table",
+        "table path": "main.PaperAuthor",
+        "unique properties": [
+          [
+            "paperid",
+            "authorid",
+            "name",
+            "affiliation"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "paperid",
+            "type": "table column",
+            "column name": "PaperId",
+            "data type": "numeric",
+            "description": "Identifier for the paper. Foreign key to the paper table.",
+            "sample values": [
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "synonyms": [
+              "PaperId"
+            ]
+          },
+          {
+            "name": "authorid",
+            "type": "table column",
+            "column name": "AuthorId",
+            "data type": "numeric",
+            "description": "Identifier for the author. Foreign key to the author table.",
+            "sample values": [
+              1456512,
+              1102257,
+              1806301,
+              2252569,
+              1491002
+            ],
+            "synonyms": [
+              "AuthorId"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "The author's name as it appears on the paper.",
+            "sample values": [
+              "ADAM G. JONES",
+              "Kazuo Iwama",
+              "Asgeir Finnseth",
+              "Gu\u00f0mundur J\u00f6kulsson",
+              "M. H. Friedman"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "affiliation",
+            "type": "table column",
+            "column name": "Affiliation",
+            "data type": "string",
+            "description": "The author's affiliation as it appears on the paper.",
+            "sample values": [
+              "Kyushu University 812 Fukuoka Japan 8...",
+              "The french National Institute for Res...",
+              "Nanjing University",
+              "NOAA|Forecast Systems Laboratory|Colo...",
+              "Office of Naval Research"
+            ],
+            "synonyms": [
+              "Affiliation"
+            ]
+          }
+        ],
+        "description": "An association table that links papers to their respective authors.",
+        "synonyms": [
+          "PaperAuthor"
+        ],
+        "extra semantic info": {
+          "commonsense reasoning": "A paper can have more than one author. Co-authorship can be derived from (paper ID, author ID) pair. "
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "papers",
+        "parent collection": "journal",
+        "child collection": "paper",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "journalid"
+          ]
+        },
+        "description": "The papers published in this journal.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "journal",
+        "original parent": "journal",
+        "original property": "papers",
+        "singular": true,
+        "always matches": false,
+        "description": "The journal where this paper was published.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "papers",
+        "parent collection": "conference",
+        "child collection": "paper",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "conferenceid"
+          ]
+        },
+        "description": "The papers presented at this conference.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "conference",
+        "original parent": "conference",
+        "original property": "papers",
+        "singular": true,
+        "always matches": false,
+        "description": "The conference where this paper was presented.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "paperauthors",
+        "parent collection": "author",
+        "child collection": "paperauthor",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "authorid"
+          ]
+        },
+        "description": "The paper-author associations for this author.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "author",
+        "original parent": "author",
+        "original property": "paperauthors",
+        "singular": true,
+        "always matches": false,
+        "description": "The author associated with this paper-author link.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "paperauthors",
+        "parent collection": "paper",
+        "child collection": "paperauthor",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "paperid"
+          ]
+        },
+        "description": "The paper-author associations for this paper.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "paper",
+        "original parent": "paper",
+        "original property": "paperauthors",
+        "singular": true,
+        "always matches": false,
+        "description": "The paper associated with this paper-author link.",
+        "synonyms": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,451 @@
+[
+  {
+    "name": "human_resources",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "employee",
+        "type": "simple table",
+        "table path": "main.employee",
+        "unique properties": [
+          "ssn"
+        ],
+        "properties": [
+          {
+            "name": "ssn",
+            "type": "table column",
+            "column name": "ssn",
+            "data type": "string",
+            "description": "The employee's Social Security Number (SSN).",
+            "sample values": [
+              "000-01-0000",
+              "000-02-2222",
+              "109-87-6543",
+              "109-87-6544",
+              "111-12-1111"
+            ],
+            "synonyms": [
+              "ssn",
+              "social security number"
+            ]
+          },
+          {
+            "name": "lastname",
+            "type": "table column",
+            "column name": "lastname",
+            "data type": "string",
+            "description": "The last name of the employee.",
+            "sample values": [
+              "Milgrom",
+              "Adams",
+              "Wood",
+              "Foster",
+              "Johnson"
+            ],
+            "synonyms": [
+              "lastname",
+              "last name"
+            ]
+          },
+          {
+            "name": "firstname",
+            "type": "table column",
+            "column name": "firstname",
+            "data type": "string",
+            "description": "The first name of the employee.",
+            "sample values": [
+              "Patricia",
+              "Sandy",
+              "Emily",
+              "Harold",
+              "James"
+            ],
+            "synonyms": [
+              "firstname",
+              "first name"
+            ]
+          },
+          {
+            "name": "hiredate",
+            "type": "table column",
+            "column name": "hiredate",
+            "data type": "string",
+            "description": "The date the employee was hired, in yyyy-mm-dd format.",
+            "sample values": [
+              "10/1/04",
+              "1/15/01",
+              "3/12/97",
+              "8/14/05",
+              "5/3/96"
+            ],
+            "synonyms": [
+              "hiredate",
+              "hire date"
+            ]
+          },
+          {
+            "name": "salary",
+            "type": "table column",
+            "column name": "salary",
+            "data type": "string",
+            "description": "The employee's annual salary in US dollars.",
+            "sample values": [
+              "US$57,500.00",
+              "US$19,500.00",
+              "US$69,000.00",
+              "US$55,000.00",
+              "US$47,500.00"
+            ],
+            "synonyms": [
+              "salary"
+            ]
+          },
+          {
+            "name": "gender",
+            "type": "table column",
+            "column name": "gender",
+            "data type": "string",
+            "description": "The gender of the employee.",
+            "sample values": [
+              "F",
+              "M"
+            ],
+            "synonyms": [
+              "gender"
+            ]
+          },
+          {
+            "name": "performance",
+            "type": "table column",
+            "column name": "performance",
+            "data type": "string",
+            "description": "The performance evaluation of the employee. Possible values are: Good, Average, Poor.",
+            "sample values": [
+              "Average",
+              "Good",
+              "Poor"
+            ],
+            "synonyms": [
+              "performance"
+            ]
+          },
+          {
+            "name": "positionid",
+            "type": "table column",
+            "column name": "positionID",
+            "data type": "numeric",
+            "description": "A unique identifier for the employee's position. This is a foreign key referencing the position table.",
+            "sample values": [
+              2,
+              3,
+              1,
+              4
+            ],
+            "synonyms": [
+              "positionID",
+              "position id"
+            ]
+          },
+          {
+            "name": "locationid",
+            "type": "table column",
+            "column name": "locationID",
+            "data type": "numeric",
+            "description": "A unique identifier for the employee's work location. This is a foreign key referencing the location table.",
+            "sample values": [
+              2,
+              1,
+              5,
+              3,
+              4
+            ],
+            "synonyms": [
+              "locationID",
+              "location id"
+            ]
+          }
+        ],
+        "description": "Contains information about employees, including personal details, salary, and job role.",
+        "extra semantic info": {
+          "commonsense evidence": "employee's full name is firstname lastname ."
+        },
+        "synonyms": [
+          "employee"
+        ]
+      },
+      {
+        "name": "location",
+        "type": "simple table",
+        "table path": "main.location",
+        "unique properties": [
+          "locationid"
+        ],
+        "properties": [
+          {
+            "name": "locationid",
+            "type": "table column",
+            "column name": "locationID",
+            "data type": "numeric",
+            "description": "A unique identifier for the location.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "locationID",
+              "location id"
+            ]
+          },
+          {
+            "name": "locationcity",
+            "type": "table column",
+            "column name": "locationcity",
+            "data type": "string",
+            "description": "The city where the office is located.",
+            "sample values": [
+              "Atlanta",
+              "Boston",
+              "Chicago",
+              "Miami",
+              "New York City"
+            ],
+            "synonyms": [
+              "locationcity",
+              "location city"
+            ]
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string",
+            "description": "The street address of the office location.",
+            "sample values": [
+              "450 Peachtree Rd",
+              "3 Commons Blvd",
+              "500 Loop Highway",
+              "210 Biscayne Blvd",
+              "1650 Washington Blvd"
+            ],
+            "synonyms": [
+              "address"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "The state abbreviation for the office location.",
+            "sample values": [
+              "GA",
+              "MA",
+              "IL",
+              "FL",
+              "NY"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "zipcode",
+            "type": "table column",
+            "column name": "zipcode",
+            "data type": "numeric",
+            "description": "The ZIP code for the office location.",
+            "sample values": [
+              30316,
+              2190,
+              60620,
+              33103,
+              15648
+            ],
+            "synonyms": [
+              "zipcode",
+              "zip code"
+            ]
+          },
+          {
+            "name": "officephone",
+            "type": "table column",
+            "column name": "officephone",
+            "data type": "string",
+            "description": "The main office phone number for the location.",
+            "sample values": [
+              "(404)333-5555",
+              "(617)123-4444",
+              "(312)444-6666",
+              "(305)787-9999",
+              "(518)256-3100"
+            ],
+            "synonyms": [
+              "officephone",
+              "office phone"
+            ]
+          }
+        ],
+        "description": "Contains information about different office locations.",
+        "synonyms": [
+          "location"
+        ]
+      },
+      {
+        "name": "position",
+        "type": "simple table",
+        "table path": "main.position",
+        "unique properties": [
+          "positionid"
+        ],
+        "properties": [
+          {
+            "name": "positionid",
+            "type": "table column",
+            "column name": "positionID",
+            "data type": "numeric",
+            "description": "A unique identifier for the position.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "positionID",
+              "position id"
+            ]
+          },
+          {
+            "name": "positiontitle",
+            "type": "table column",
+            "column name": "positiontitle",
+            "data type": "string",
+            "description": "The title of the job position.",
+            "sample values": [
+              "Account Representative",
+              "Manager",
+              "Trainee",
+              "Regional Manager"
+            ],
+            "synonyms": [
+              "positiontitle",
+              "position title"
+            ]
+          },
+          {
+            "name": "educationrequired",
+            "type": "table column",
+            "column name": "educationrequired",
+            "data type": "string",
+            "description": "The minimum years of education required for the position.",
+            "sample values": [
+              "4 year degree",
+              "2 year degree",
+              "6 year degree"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Generally, more complex work requires more education year."
+            },
+            "synonyms": [
+              "educationrequired",
+              "education required"
+            ]
+          },
+          {
+            "name": "minsalary",
+            "type": "table column",
+            "column name": "minsalary",
+            "data type": "string",
+            "description": "The minimum salary for this position.",
+            "sample values": [
+              "US$25,000.00",
+              "US$50,000.00",
+              "US$18,000.00",
+              "US$100,000.00"
+            ],
+            "synonyms": [
+              "minsalary",
+              "minimum salary"
+            ]
+          },
+          {
+            "name": "maxsalary",
+            "type": "table column",
+            "column name": "maxsalary",
+            "data type": "string",
+            "description": "The maximum salary for this position.",
+            "sample values": [
+              "US$75,000.00",
+              "US$150,000.00",
+              "US$25,000.00",
+              "US$250,000.00"
+            ],
+            "synonyms": [
+              "maxsalary",
+              "maximum salary"
+            ]
+          }
+        ],
+        "description": "Contains information about job positions within the company, including salary ranges and education requirements.",
+        "synonyms": [
+          "position"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "employees",
+        "parent collection": "position",
+        "child collection": "employee",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "positionid": [
+            "positionid"
+          ]
+        },
+        "description": "The employees holding this position.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "position",
+        "original parent": "position",
+        "original property": "employees",
+        "singular": true,
+        "always matches": false,
+        "description": "The position held by the employee.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "employees",
+        "parent collection": "location",
+        "child collection": "employee",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "locationid": [
+            "locationid"
+          ]
+        },
+        "description": "The employees working at this location.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "location",
+        "original parent": "location",
+        "original property": "employees",
+        "singular": true,
+        "always matches": false,
+        "description": "The work location of the employee.",
+        "synonyms": []
+      }
+    ]
+  }
+]

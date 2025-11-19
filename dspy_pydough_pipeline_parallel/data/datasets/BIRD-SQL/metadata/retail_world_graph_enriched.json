@@ -1,0 +1,1009 @@
+[
+  {
+    "name": "retail_world",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "categories",
+        "type": "simple table",
+        "table path": "main.Categories",
+        "unique properties": [
+          "categoryid"
+        ],
+        "properties": [
+          {
+            "name": "categoryid",
+            "type": "table column",
+            "column name": "CategoryID",
+            "data type": "numeric",
+            "description": "the unique id for the category",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "CategoryID"
+            ]
+          },
+          {
+            "name": "categoryname",
+            "type": "table column",
+            "column name": "CategoryName",
+            "data type": "string",
+            "description": "the category name",
+            "sample values": [
+              "Beverages",
+              "Condiments",
+              "Confections",
+              "Dairy Products",
+              "Grains/Cereals"
+            ],
+            "synonyms": [
+              "CategoryName"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "Description",
+            "data type": "string",
+            "description": "the detailed description of the category",
+            "sample values": [
+              "Soft drinks, coffees, teas, beers, an...",
+              "Sweet and savory sauces, relishes, sp...",
+              "Desserts, candies, and sweet breads",
+              "Cheeses",
+              "Breads, crackers, pasta, and cereal"
+            ],
+            "synonyms": [
+              "Description"
+            ]
+          }
+        ],
+        "description": "Contains information about product categories.",
+        "synonyms": [
+          "Categories"
+        ]
+      },
+      {
+        "name": "customers",
+        "type": "simple table",
+        "table path": "main.Customers",
+        "unique properties": [
+          "customerid"
+        ],
+        "properties": [
+          {
+            "name": "customerid",
+            "type": "table column",
+            "column name": "CustomerID",
+            "data type": "numeric",
+            "description": "the unique id for customers",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "CustomerID"
+            ]
+          },
+          {
+            "name": "customername",
+            "type": "table column",
+            "column name": "CustomerName",
+            "data type": "string",
+            "description": "the customer name",
+            "sample values": [
+              "Alfreds Futterkiste",
+              "Ana Trujillo Emparedados y helados",
+              "Antonio Moreno Taquer\u00eda",
+              "Around the Horn",
+              "Berglunds snabbk\u00f6p"
+            ],
+            "synonyms": [
+              "CustomerName"
+            ]
+          },
+          {
+            "name": "contactname",
+            "type": "table column",
+            "column name": "ContactName",
+            "data type": "string",
+            "description": "the contact person's name representing the company",
+            "sample values": [
+              "Maria Anders",
+              "Ana Trujillo",
+              "Antonio Moreno",
+              "Thomas Hardy",
+              "Christina Berglund"
+            ],
+            "synonyms": [
+              "ContactName"
+            ]
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "Address",
+            "data type": "string",
+            "description": "the address of the customer",
+            "sample values": [
+              "Obere Str. 57",
+              "Avda. de la Constituci\u00f3n 2222",
+              "Mataderos 2312",
+              "120 Hanover Sq.",
+              "Berguvsv\u00e4gen 8"
+            ],
+            "synonyms": [
+              "Address"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "City",
+            "data type": "string",
+            "description": "the city where the customer is located",
+            "sample values": [
+              "Berlin",
+              "M\u00e9xico D.F.",
+              "London",
+              "Lule\u00e5",
+              "Mannheim"
+            ],
+            "synonyms": [
+              "City"
+            ]
+          },
+          {
+            "name": "postalcode",
+            "type": "table column",
+            "column name": "PostalCode",
+            "data type": "string",
+            "description": "the postal code",
+            "sample values": [
+              "12209",
+              "5021",
+              "5023",
+              "WA1 1DP",
+              "S-958 22"
+            ],
+            "synonyms": [
+              "PostalCode"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "the country",
+            "sample values": [
+              "Germany",
+              "Mexico",
+              "UK",
+              "Sweden",
+              "France"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          }
+        ],
+        "description": "Contains information about customers.",
+        "synonyms": [
+          "Customers"
+        ]
+      },
+      {
+        "name": "employees",
+        "type": "simple table",
+        "table path": "main.Employees",
+        "unique properties": [
+          "employeeid"
+        ],
+        "properties": [
+          {
+            "name": "employeeid",
+            "type": "table column",
+            "column name": "EmployeeID",
+            "data type": "numeric",
+            "description": "the unique id for employees",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "EmployeeID"
+            ]
+          },
+          {
+            "name": "lastname",
+            "type": "table column",
+            "column name": "LastName",
+            "data type": "string",
+            "description": "the employee's last name",
+            "sample values": [
+              "Davolio",
+              "Fuller",
+              "Leverling",
+              "Peacock",
+              "Buchanan"
+            ],
+            "synonyms": [
+              "LastName"
+            ]
+          },
+          {
+            "name": "firstname",
+            "type": "table column",
+            "column name": "FirstName",
+            "data type": "string",
+            "description": "the employee's first name",
+            "sample values": [
+              "Nancy",
+              "Andrew",
+              "Janet",
+              "Margaret",
+              "Steven"
+            ],
+            "synonyms": [
+              "FirstName"
+            ]
+          },
+          {
+            "name": "birthdate",
+            "type": "table column",
+            "column name": "BirthDate",
+            "data type": "datetime",
+            "description": "the birth date of the employee",
+            "sample values": [
+              "1968-12-08",
+              "1952-02-19",
+              "1963-08-30",
+              "1958-09-19",
+              "1955-03-04"
+            ],
+            "synonyms": [
+              "BirthDate"
+            ]
+          },
+          {
+            "name": "photo",
+            "type": "table column",
+            "column name": "Photo",
+            "data type": "string",
+            "description": "the photo of the employee",
+            "sample values": [
+              "EmpID1.pic",
+              "EmpID2.pic",
+              "EmpID3.pic",
+              "EmpID4.pic",
+              "EmpID5.pic"
+            ],
+            "synonyms": [
+              "Photo"
+            ]
+          },
+          {
+            "name": "notes",
+            "type": "table column",
+            "column name": "Notes",
+            "data type": "string",
+            "description": "some additional information of the employee",
+            "sample values": [
+              "Education includes a BA in psychology...",
+              "Andrew received his BTS commercial an...",
+              "Janet has a BS degree in chemistry fr...",
+              "Margaret holds a BA in English litera...",
+              "Steven Buchanan graduated from St. An..."
+            ],
+            "synonyms": [
+              "Notes"
+            ]
+          }
+        ],
+        "description": "Contains information about employees.",
+        "synonyms": [
+          "Employees"
+        ],
+        "extra semantic info": {
+          "commonsense evidence": "the employee's full name is 'first_name last_name'."
+        }
+      },
+      {
+        "name": "orderdetails",
+        "type": "simple table",
+        "table path": "main.OrderDetails",
+        "unique properties": [
+          "orderdetailid"
+        ],
+        "properties": [
+          {
+            "name": "orderdetailid",
+            "type": "table column",
+            "column name": "OrderDetailID",
+            "data type": "numeric",
+            "description": "id of the order detail",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "OrderDetailID"
+            ]
+          },
+          {
+            "name": "orderid",
+            "type": "table column",
+            "column name": "OrderID",
+            "data type": "numeric",
+            "description": "the unique id for orders",
+            "sample values": [
+              10248,
+              10249,
+              10250,
+              10251,
+              10252
+            ],
+            "synonyms": [
+              "OrderID"
+            ]
+          },
+          {
+            "name": "productid",
+            "type": "table column",
+            "column name": "ProductID",
+            "data type": "numeric",
+            "description": "the unique id for products",
+            "sample values": [
+              11,
+              42,
+              72,
+              14,
+              51
+            ],
+            "synonyms": [
+              "ProductID"
+            ]
+          },
+          {
+            "name": "quantity",
+            "type": "table column",
+            "column name": "Quantity",
+            "data type": "numeric",
+            "description": "the quantity of the ordered products",
+            "sample values": [
+              12,
+              10,
+              5,
+              9,
+              40
+            ],
+            "synonyms": [
+              "Quantity"
+            ]
+          }
+        ],
+        "description": "Contains details for each order, linking orders to products.",
+        "synonyms": [
+          "OrderDetails"
+        ],
+        "extra semantic info": {
+          "commonsense evidence": "the total payment of the order = unit price * quantity * (1-discount)"
+        }
+      },
+      {
+        "name": "orders",
+        "type": "simple table",
+        "table path": "main.Orders",
+        "unique properties": [
+          "orderid"
+        ],
+        "properties": [
+          {
+            "name": "orderid",
+            "type": "table column",
+            "column name": "OrderID",
+            "data type": "numeric",
+            "description": "the unique id for orders",
+            "sample values": [
+              10248,
+              10249,
+              10250,
+              10251,
+              10252
+            ],
+            "synonyms": [
+              "OrderID"
+            ]
+          },
+          {
+            "name": "customerid",
+            "type": "table column",
+            "column name": "CustomerID",
+            "data type": "numeric",
+            "description": "the unique id for customers",
+            "sample values": [
+              90,
+              81,
+              34,
+              84,
+              76
+            ],
+            "synonyms": [
+              "CustomerID"
+            ]
+          },
+          {
+            "name": "employeeid",
+            "type": "table column",
+            "column name": "EmployeeID",
+            "data type": "numeric",
+            "description": "the unique id for employees",
+            "sample values": [
+              5,
+              6,
+              4,
+              3,
+              9
+            ],
+            "synonyms": [
+              "EmployeeID"
+            ]
+          },
+          {
+            "name": "orderdate",
+            "type": "table column",
+            "column name": "OrderDate",
+            "data type": "datetime",
+            "description": "the order date",
+            "sample values": [
+              "1996-07-04",
+              "1996-07-05",
+              "1996-07-08",
+              "1996-07-09",
+              "1996-07-10"
+            ],
+            "synonyms": [
+              "OrderDate"
+            ]
+          },
+          {
+            "name": "shipperid",
+            "type": "table column",
+            "column name": "ShipperID",
+            "data type": "numeric",
+            "description": "the id of the shipper",
+            "sample values": [
+              3,
+              1,
+              2
+            ],
+            "synonyms": [
+              "ShipperID"
+            ]
+          }
+        ],
+        "description": "Contains order information, linking customers, employees, and shippers.",
+        "synonyms": [
+          "Orders"
+        ]
+      },
+      {
+        "name": "products",
+        "type": "simple table",
+        "table path": "main.Products",
+        "unique properties": [
+          "productid"
+        ],
+        "properties": [
+          {
+            "name": "productid",
+            "type": "table column",
+            "column name": "ProductID",
+            "data type": "numeric",
+            "description": "the unique id for products",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "ProductID"
+            ]
+          },
+          {
+            "name": "productname",
+            "type": "table column",
+            "column name": "ProductName",
+            "data type": "string",
+            "description": "the name of the product",
+            "sample values": [
+              "Chais",
+              "Chang",
+              "Aniseed Syrup",
+              "Chef Anton's Cajun Seasoning",
+              "Chef Anton's Gumbo Mix"
+            ],
+            "synonyms": [
+              "ProductName"
+            ]
+          },
+          {
+            "name": "supplierid",
+            "type": "table column",
+            "column name": "SupplierID",
+            "data type": "numeric",
+            "description": "the unique id for supplier",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "SupplierID"
+            ]
+          },
+          {
+            "name": "categoryid",
+            "type": "table column",
+            "column name": "CategoryID",
+            "data type": "numeric",
+            "description": "the unique id for the product category",
+            "sample values": [
+              1,
+              2,
+              7,
+              6,
+              8
+            ],
+            "synonyms": [
+              "CategoryID"
+            ]
+          },
+          {
+            "name": "unit",
+            "type": "table column",
+            "column name": "Unit",
+            "data type": "string",
+            "description": "the unit of the product",
+            "sample values": [
+              "10 boxes x 20 bags",
+              "24 - 12 oz bottles",
+              "12 - 550 ml bottles",
+              "48 - 6 oz jars",
+              "36 boxes"
+            ],
+            "synonyms": [
+              "Unit"
+            ]
+          },
+          {
+            "name": "price",
+            "type": "table column",
+            "column name": "Price",
+            "data type": "numeric",
+            "description": "the price",
+            "sample values": [
+              18.0,
+              19.0,
+              10.0,
+              22.0,
+              21.35
+            ],
+            "synonyms": [
+              "Price"
+            ]
+          }
+        ],
+        "description": "Contains information about the products available for sale.",
+        "synonyms": [
+          "Products"
+        ]
+      },
+      {
+        "name": "shippers",
+        "type": "simple table",
+        "table path": "main.Shippers",
+        "unique properties": [
+          "shipperid"
+        ],
+        "properties": [
+          {
+            "name": "shipperid",
+            "type": "table column",
+            "column name": "ShipperID",
+            "data type": "numeric",
+            "description": "the unique id for shippers",
+            "sample values": [
+              1,
+              2,
+              3
+            ],
+            "synonyms": [
+              "ShipperID"
+            ]
+          },
+          {
+            "name": "shippername",
+            "type": "table column",
+            "column name": "ShipperName",
+            "data type": "string",
+            "description": "the shipped company name",
+            "sample values": [
+              "Speedy Express",
+              "United Package",
+              "Federal Shipping"
+            ],
+            "synonyms": [
+              "ShipperName"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "Phone",
+            "data type": "string",
+            "description": "the phone of the company",
+            "sample values": [
+              "(503) 555-9831",
+              "(503) 555-3199",
+              "(503) 555-9931"
+            ],
+            "synonyms": [
+              "Phone"
+            ]
+          }
+        ],
+        "description": "Contains information about the shipping companies.",
+        "synonyms": [
+          "Shippers"
+        ]
+      },
+      {
+        "name": "suppliers",
+        "type": "simple table",
+        "table path": "main.Suppliers",
+        "unique properties": [
+          "supplierid"
+        ],
+        "properties": [
+          {
+            "name": "supplierid",
+            "type": "table column",
+            "column name": "SupplierID",
+            "data type": "numeric",
+            "description": "the unique id for suppliers",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "SupplierID"
+            ]
+          },
+          {
+            "name": "suppliername",
+            "type": "table column",
+            "column name": "SupplierName",
+            "data type": "string",
+            "description": "the supplier name",
+            "sample values": [
+              "Exotic Liquid",
+              "New Orleans Cajun Delights",
+              "Grandma Kelly's Homestead",
+              "Tokyo Traders",
+              "Cooperativa de Quesos 'Las Cabras'"
+            ],
+            "synonyms": [
+              "SupplierName"
+            ]
+          },
+          {
+            "name": "contactname",
+            "type": "table column",
+            "column name": "ContactName",
+            "data type": "string",
+            "description": "the contact person's name representing the company",
+            "sample values": [
+              "Charlotte Cooper",
+              "Shelley Burke",
+              "Regina Murphy",
+              "Yoshi Nagase",
+              "Antonio del Valle Saavedra"
+            ],
+            "synonyms": [
+              "ContactName"
+            ]
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "Address",
+            "data type": "string",
+            "description": "the address of the supplier",
+            "sample values": [
+              "49 Gilbert St.",
+              "P.O. Box 78934",
+              "707 Oxford Rd.",
+              "9-8 Sekimai Musashino-shi",
+              "Calle del Rosal 4"
+            ],
+            "synonyms": [
+              "Address"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "City",
+            "data type": "string",
+            "description": "the city where the supplier is located",
+            "sample values": [
+              "Londona",
+              "New Orleans",
+              "Ann Arbor",
+              "Tokyo",
+              "Oviedo"
+            ],
+            "synonyms": [
+              "City"
+            ]
+          },
+          {
+            "name": "postalcode",
+            "type": "table column",
+            "column name": "PostalCode",
+            "data type": "string",
+            "description": "the postal code",
+            "sample values": [
+              "EC1 4SD",
+              "70117",
+              "48104",
+              "100",
+              "33007"
+            ],
+            "synonyms": [
+              "PostalCode"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "the country",
+            "sample values": [
+              "UK",
+              "USA",
+              "Japan",
+              "Spain",
+              "Australia"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "Phone",
+            "data type": "string",
+            "description": "the phone number",
+            "sample values": [
+              "(171) 555-2222",
+              "(100) 555-4822",
+              "(313) 555-5735",
+              "(03) 3555-5011",
+              "(98) 598 76 54"
+            ],
+            "synonyms": [
+              "Phone"
+            ]
+          }
+        ],
+        "description": "Contains information about the product suppliers.",
+        "synonyms": [
+          "Suppliers"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "orderdetails",
+        "parent collection": "products",
+        "child collection": "orderdetails",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "productid": [
+            "productid"
+          ]
+        },
+        "description": "The order line items for this product.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "product",
+        "original parent": "products",
+        "original property": "orderdetails",
+        "singular": true,
+        "always matches": false,
+        "description": "The product associated with this order line item.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "order_details",
+        "parent collection": "orders",
+        "child collection": "orderdetails",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "orderid": [
+            "orderid"
+          ]
+        },
+        "description": "The line items included in this order.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "order",
+        "original parent": "orders",
+        "original property": "order_details",
+        "singular": true,
+        "always matches": false,
+        "description": "The order to which this line item belongs.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "shipped_orders",
+        "parent collection": "shippers",
+        "child collection": "orders",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "shipperid": [
+            "shipperid"
+          ]
+        },
+        "description": "The orders shipped by this shipper.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "shipper",
+        "original parent": "shippers",
+        "original property": "shipped_orders",
+        "singular": true,
+        "always matches": false,
+        "description": "The shipper responsible for this order.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "orders",
+        "parent collection": "customers",
+        "child collection": "orders",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customerid": [
+            "customerid"
+          ]
+        },
+        "description": "The orders placed by this customer.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customers",
+        "original property": "orders",
+        "singular": true,
+        "always matches": false,
+        "description": "The customer who placed this order.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "handled_orders",
+        "parent collection": "employees",
+        "child collection": "orders",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "employeeid": [
+            "employeeid"
+          ]
+        },
+        "description": "The orders handled by this employee.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "employee",
+        "original parent": "employees",
+        "original property": "handled_orders",
+        "singular": true,
+        "always matches": false,
+        "description": "The employee who handled this order.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "products",
+        "parent collection": "suppliers",
+        "child collection": "products",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "supplierid": [
+            "supplierid"
+          ]
+        },
+        "description": "The products provided by this supplier.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "supplier",
+        "original parent": "suppliers",
+        "original property": "products",
+        "singular": true,
+        "always matches": false,
+        "description": "The supplier of this product.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "products",
+        "parent collection": "categories",
+        "child collection": "products",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "categoryid": [
+            "categoryid"
+          ]
+        },
+        "description": "The products within this category.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "category",
+        "original parent": "categories",
+        "original property": "products",
+        "singular": true,
+        "always matches": false,
+        "description": "The category of this product.",
+        "synonyms": []
+      }
+    ]
+  }
+]

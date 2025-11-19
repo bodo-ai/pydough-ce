@@ -1,0 +1,952 @@
+[
+  {
+    "name": "food_inspection_2",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "employee",
+        "type": "simple table",
+        "table path": "main.employee",
+        "unique properties": [
+          "employee_id"
+        ],
+        "properties": [
+          {
+            "name": "employee_id",
+            "type": "table column",
+            "column name": "employee_id",
+            "data type": "numeric",
+            "description": "The unique identifier for the employee.",
+            "sample values": [
+              103705,
+              104633,
+              106581,
+              111559,
+              112202
+            ],
+            "synonyms": [
+              "employee_id"
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "First name of the employee.",
+            "sample values": [
+              "Anastasia",
+              "Joshua",
+              "Zach",
+              "Lisa",
+              "Bob"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "Last name of the employee.",
+            "sample values": [
+              "Hansen",
+              "Rosa",
+              "Barber",
+              "Tillman",
+              "Benson"
+            ],
+            "synonyms": [
+              "last_name"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "full name: first name + last_name"
+            }
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string",
+            "description": "Physical street address of the employee.",
+            "sample values": [
+              "6023 S Elizabeth St",
+              "5000 N Wolcott Ave",
+              "7522 N Oleander Ave",
+              "5529 S Dorchester Ave",
+              "7011 S Campbell Ave"
+            ],
+            "synonyms": [
+              "address"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "City of the employee's address.",
+            "sample values": [
+              "Chicago",
+              "Park Forest",
+              "Hoffman Estates"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "State of the employee's address.",
+            "sample values": [
+              "IL"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "zip_",
+            "type": "table column",
+            "column name": "zip",
+            "data type": "numeric",
+            "description": "Postal code of the employee's address.",
+            "sample values": [
+              60636,
+              60640,
+              60631,
+              60637,
+              60629
+            ],
+            "synonyms": [
+              "zip"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string",
+            "description": "Telephone number to reach the employee.",
+            "sample values": [
+              "(773) 424-8729",
+              "(773) 293-6409",
+              "(219) 473-0757",
+              "(773) 424-5470",
+              "(773) 891-8653"
+            ],
+            "synonyms": [
+              "phone"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "Career title of the employee.",
+            "sample values": [
+              "Sanitarian",
+              "Supervisor",
+              "Division Manager"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "salary",
+            "type": "table column",
+            "column name": "salary",
+            "data type": "numeric",
+            "description": "The annual salary of the employee in US dollars.",
+            "sample values": [
+              79300,
+              82000,
+              79900,
+              84700,
+              81900
+            ],
+            "synonyms": [
+              "salary"
+            ],
+            "extra semantic info": {
+              "calculation": "monthly salary: salary / 12"
+            }
+          },
+          {
+            "name": "supervisor",
+            "type": "table column",
+            "column name": "supervisor",
+            "data type": "numeric",
+            "description": "The employee ID of the employee's supervisor. This is a foreign key referencing another employee in this table.",
+            "sample values": [
+              177316,
+              186742,
+              179582,
+              182205,
+              192462
+            ],
+            "synonyms": [
+              "supervisor"
+            ]
+          }
+        ],
+        "description": "Contains information about employees, including their personal details, job title, salary, and supervisor.",
+        "synonyms": [
+          "employee"
+        ]
+      },
+      {
+        "name": "establishment",
+        "type": "simple table",
+        "table path": "main.establishment",
+        "unique properties": [
+          "license_no"
+        ],
+        "properties": [
+          {
+            "name": "license_no",
+            "type": "table column",
+            "column name": "license_no",
+            "data type": "numeric",
+            "description": "The unique license number of the facility.",
+            "sample values": [
+              1,
+              2,
+              9,
+              40,
+              43
+            ],
+            "synonyms": [
+              "license_no"
+            ]
+          },
+          {
+            "name": "dba_name",
+            "type": "table column",
+            "column name": "dba_name",
+            "data type": "string",
+            "description": "The 'doing business as' name of the facility.",
+            "sample values": [
+              "HARVEST CRUSADES MINISTRIES",
+              "COSI",
+              "XANDO COFFEE & BAR / COSI SANDWICH BAR",
+              "VITO & NICK'S LOUNGE",
+              "JOHN SCHALLER"
+            ],
+            "synonyms": [
+              "dba_name"
+            ],
+            "extra semantic info": {
+              "definition": "DBA stands for 'doing business as.' It's also referred to as a business's assumed, trade or fictitious name."
+            }
+          },
+          {
+            "name": "aka_name",
+            "type": "table column",
+            "column name": "aka_name",
+            "data type": "string",
+            "description": "The 'also known as' name of the facility.",
+            "sample values": [
+              "COSI",
+              "KING'S CHINESE/PARK MANOR LOUNGE",
+              "MR BEEF ON HARLEM",
+              "LA UNICA FOOD MART",
+              "LE PETIT PARIS"
+            ],
+            "synonyms": [
+              "aka_name"
+            ],
+            "extra semantic info": {
+              "definition": "The aka name is used to indicate another name that a person or thing has or uses."
+            }
+          },
+          {
+            "name": "facility_type",
+            "type": "table column",
+            "column name": "facility_type",
+            "data type": "string",
+            "description": "The type of the facility (e.g., Restaurant, Grocery Store).",
+            "sample values": [
+              "Special Event",
+              "Restaurant",
+              "TAVERN",
+              "Grocery Store",
+              "Liquor"
+            ],
+            "synonyms": [
+              "facility_type"
+            ],
+            "extra semantic info": {
+              "categorization_examples": {
+                "Restaurants": [
+                  "Restaurant",
+                  "Cafeteria"
+                ],
+                "Education/School": [
+                  "PASTRY school",
+                  "CULINARY ARTS SCHOOL"
+                ]
+              }
+            }
+          },
+          {
+            "name": "risk_level",
+            "type": "table column",
+            "column name": "risk_level",
+            "data type": "numeric",
+            "description": "The risk level of the facility, indicating the potential for food safety issues.",
+            "sample values": [
+              2,
+              1,
+              3
+            ],
+            "synonyms": [
+              "risk_level"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Facilities with a higher risk level have more serious food safety issues."
+            }
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string",
+            "description": "Physical street address of the facility.",
+            "sample values": [
+              "118 N CENTRAL AVE ",
+              "230 W MONROE ST ",
+              "116 S MICHIGAN AVE ",
+              "233 N MICHIGAN AVE ",
+              "28 E JACKSON BLVD "
+            ],
+            "synonyms": [
+              "address"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "City of the facility's address.",
+            "sample values": [
+              "CHICAGO",
+              "Chicago",
+              "chicago",
+              "CHicago",
+              "MAYWOOD"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "State of the facility's address.",
+            "sample values": [
+              "IL"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "zip_",
+            "type": "table column",
+            "column name": "zip",
+            "data type": "numeric",
+            "description": "Postal code of the facility's address.",
+            "sample values": [
+              60644,
+              60606,
+              60603,
+              60601,
+              60604
+            ],
+            "synonyms": [
+              "zip"
+            ]
+          },
+          {
+            "name": "latitude",
+            "type": "table column",
+            "column name": "latitude",
+            "data type": "numeric",
+            "description": "The latitude coordinate of the facility.",
+            "sample values": [
+              41.8828450747188,
+              41.8807571586472,
+              41.8803958382596,
+              41.8865673708869,
+              41.8783416120634
+            ],
+            "synonyms": [
+              "latitude"
+            ]
+          },
+          {
+            "name": "longitude",
+            "type": "table column",
+            "column name": "longitude",
+            "data type": "numeric",
+            "description": "The longitude coordinate of the facility.",
+            "sample values": [
+              -87.7650954520439,
+              -87.6347092983425,
+              -87.6245017215946,
+              -87.6243846705971,
+              -87.6266749914868
+            ],
+            "synonyms": [
+              "longitude"
+            ]
+          },
+          {
+            "name": "ward",
+            "type": "table column",
+            "column name": "ward",
+            "data type": "numeric",
+            "description": "The ward number where the facility is located.",
+            "sample values": [
+              29,
+              42,
+              18,
+              11,
+              25
+            ],
+            "synonyms": [
+              "ward"
+            ],
+            "extra semantic info": {
+              "definition": "A ward number is assigned by local authorities, often for electoral or administrative purposes, to identify population counts and locality details."
+            }
+          }
+        ],
+        "description": "Details about food establishments, including license information, location, and risk assessment.",
+        "synonyms": [
+          "establishment"
+        ],
+        "extra semantic info": {
+          "location_calculation": "location = POINT(latitude, longitude)"
+        }
+      },
+      {
+        "name": "inspection",
+        "type": "simple table",
+        "table path": "main.inspection",
+        "unique properties": [
+          "inspection_id"
+        ],
+        "properties": [
+          {
+            "name": "inspection_id",
+            "type": "table column",
+            "column name": "inspection_id",
+            "data type": "numeric",
+            "description": "The unique identifier for the inspection.",
+            "sample values": [
+              44247,
+              44248,
+              44249,
+              44250,
+              44251
+            ],
+            "synonyms": [
+              "inspection_id"
+            ]
+          },
+          {
+            "name": "inspection_date",
+            "type": "table column",
+            "column name": "inspection_date",
+            "data type": "datetime",
+            "description": "The date when the inspection was conducted.",
+            "sample values": [
+              "2010-01-05",
+              "2010-01-21",
+              "2010-02-09",
+              "2010-03-18",
+              "2010-04-01"
+            ],
+            "synonyms": [
+              "inspection_date"
+            ]
+          },
+          {
+            "name": "inspection_type",
+            "type": "table column",
+            "column name": "inspection_type",
+            "data type": "string",
+            "description": "The type of the inspection (e.g., Complaint, Canvass).",
+            "sample values": [
+              "Complaint",
+              "Canvass",
+              "Canvass Re-Inspection",
+              "Suspected Food Poisoning",
+              "License Re-Inspection"
+            ],
+            "synonyms": [
+              "inspection_type"
+            ]
+          },
+          {
+            "name": "results",
+            "type": "table column",
+            "column name": "results",
+            "data type": "string",
+            "description": "The outcome of the inspection.",
+            "sample values": [
+              "Pass",
+              "Pass w/ Conditions",
+              "Fail",
+              "Out of Business",
+              "Business Not Located"
+            ],
+            "synonyms": [
+              "results"
+            ],
+            "extra semantic info": {
+              "quality_verification": "The quality is verified if the result is 'Pass' or 'Pass w/ Conditions'."
+            }
+          },
+          {
+            "name": "employee_id",
+            "type": "table column",
+            "column name": "employee_id",
+            "data type": "numeric",
+            "description": "The ID of the employee who conducted the inspection. Foreign key to the employee table.",
+            "sample values": [
+              141319,
+              143902,
+              143487,
+              104633,
+              123538
+            ],
+            "synonyms": [
+              "employee_id"
+            ]
+          },
+          {
+            "name": "license_no",
+            "type": "table column",
+            "column name": "license_no",
+            "data type": "numeric",
+            "description": "The license number of the facility that was inspected. Foreign key to the establishment table.",
+            "sample values": [
+              1222441,
+              1336561,
+              1334073,
+              1144381,
+              1144380
+            ],
+            "synonyms": [
+              "license_no"
+            ]
+          },
+          {
+            "name": "followup_to",
+            "type": "table column",
+            "column name": "followup_to",
+            "data type": "numeric",
+            "description": "The ID of the inspection that this inspection is a follow-up to. This is a self-referencing foreign key.",
+            "sample values": [
+              67871,
+              248210,
+              233215,
+              67744,
+              176555
+            ],
+            "synonyms": [
+              "followup_to"
+            ],
+            "extra semantic info": {
+              "hierarchy": "If this field has a value, it represents the parent inspection ID. A null or 'No data' value means this inspection is not a follow-up."
+            }
+          }
+        ],
+        "description": "Records of inspections conducted at food establishments, including dates, types, results, and the responsible employee.",
+        "synonyms": [
+          "inspection"
+        ]
+      },
+      {
+        "name": "inspection_point",
+        "type": "simple table",
+        "table path": "main.inspection_point",
+        "unique properties": [
+          "point_id"
+        ],
+        "properties": [
+          {
+            "name": "point_id",
+            "type": "table column",
+            "column name": "point_id",
+            "data type": "numeric",
+            "description": "The unique identifier for the inspection point.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "point_id"
+            ]
+          },
+          {
+            "name": "point_description",
+            "type": "table column",
+            "column name": "Description",
+            "data type": "string",
+            "description": "The specific description of the inspection point or requirement.",
+            "sample values": [
+              "Source sound condition, no spoilage, ...",
+              "Facilities to maintain proper tempera...",
+              "Potentially hazardous food meets temp...",
+              "Source of cross contamination control...",
+              "Personnel with infections restricted:..."
+            ],
+            "synonyms": [
+              "Description"
+            ]
+          },
+          {
+            "name": "category",
+            "type": "table column",
+            "column name": "category",
+            "data type": "string",
+            "description": "The category of the inspection point (e.g., Food Protection, Waste Disposal).",
+            "sample values": [
+              "Food Protection",
+              "Food Equipment and Utensil Sanitation",
+              "Wash and Waste Water Disposal",
+              "Toilet and Hand Washing Facilities fo...",
+              "Compliance Insect and Rodent Control"
+            ],
+            "synonyms": [
+              "category"
+            ]
+          },
+          {
+            "name": "code",
+            "type": "table column",
+            "column name": "code",
+            "data type": "string",
+            "description": "The sanitary operating requirement code associated with the inspection point.",
+            "sample values": [
+              "7-38-005 (B) (B-2)",
+              "7-38-005 (A)",
+              "7-38-010 (A) (B)",
+              "7-38-030",
+              "7-38-031"
+            ],
+            "synonyms": [
+              "code"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Each code stands for a specific operating requirement."
+            }
+          },
+          {
+            "name": "fine",
+            "type": "table column",
+            "column name": "fine",
+            "data type": "numeric",
+            "description": "The standard fine amount for a violation of this inspection point.",
+            "sample values": [
+              500,
+              250,
+              100
+            ],
+            "synonyms": [
+              "fine"
+            ]
+          },
+          {
+            "name": "point_level",
+            "type": "table column",
+            "column name": "point_level",
+            "data type": "string",
+            "description": "The severity level of the inspection point (Critical, Serious, or Minor).",
+            "sample values": [
+              "Critical",
+              "Serious ",
+              "Minor   "
+            ],
+            "synonyms": [
+              "point_level"
+            ]
+          }
+        ],
+        "description": "A list of standardized points or criteria that are checked during an inspection, including descriptions, categories, and potential fines.",
+        "synonyms": [
+          "inspection_point"
+        ],
+        "extra semantic info": {
+          "fine_structure": {
+            "Minor": 100,
+            "Serious": 250,
+            "Critical": 500
+          },
+          "commonsense evidence": "The fine for more serious food safety problems will be higher."
+        }
+      },
+      {
+        "name": "violation",
+        "type": "simple table",
+        "table path": "main.violation",
+        "unique properties": [
+          [
+            "inspection_id",
+            "point_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "inspection_id",
+            "type": "table column",
+            "column name": "inspection_id",
+            "data type": "numeric",
+            "description": "The ID of the inspection during which the violation was recorded. Foreign key to the inspection table.",
+            "sample values": [
+              44247,
+              44248,
+              44249,
+              44250,
+              44251
+            ],
+            "synonyms": [
+              "inspection_id"
+            ]
+          },
+          {
+            "name": "point_id",
+            "type": "table column",
+            "column name": "point_id",
+            "data type": "numeric",
+            "description": "The ID of the inspection point that was violated. Foreign key to the inspection_point table.",
+            "sample values": [
+              30,
+              32,
+              33,
+              34,
+              37
+            ],
+            "synonyms": [
+              "point_id"
+            ]
+          },
+          {
+            "name": "fine",
+            "type": "table column",
+            "column name": "fine",
+            "data type": "numeric",
+            "description": "The fine issued for this specific violation.",
+            "sample values": [
+              100,
+              0,
+              500,
+              250
+            ],
+            "synonyms": [
+              "fine"
+            ],
+            "extra semantic info": {
+              "fine_structure": {
+                "Minor": 100,
+                "Serious": 250,
+                "Critical": 500
+              },
+              "commonsense evidence": "The fine for more serious food safety problems will be higher."
+            }
+          },
+          {
+            "name": "inspector_comment",
+            "type": "table column",
+            "column name": "inspector_comment",
+            "data type": "string",
+            "description": "The comment provided by the inspector regarding the violation.",
+            "sample values": [
+              "All food not stored in the original c...",
+              "OBSERVED TORN DOOR GASKET ON DOOR OF ...",
+              "All food and non-food contact surface...",
+              "The floors shall be constructed per c...",
+              "Toilet rooms shall be completely encl..."
+            ],
+            "synonyms": [
+              "inspector_comment"
+            ]
+          }
+        ],
+        "description": "Links inspections to specific inspection points that were violated, including any fines and inspector comments.",
+        "synonyms": [
+          "violation"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "subordinates",
+        "parent collection": "employee",
+        "child collection": "employee",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "employee_id": [
+            "supervisor"
+          ]
+        },
+        "description": "Retrieves all employees who report to this employee (their subordinates).",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "supervisor_record",
+        "original parent": "employee",
+        "original property": "subordinates",
+        "singular": true,
+        "always matches": false,
+        "description": "Retrieves the employee who is the supervisor of this employee.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "followup_inspections",
+        "parent collection": "inspection",
+        "child collection": "inspection",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "inspection_id": [
+            "followup_to"
+          ]
+        },
+        "description": "Retrieves all inspections that are follow-ups to this inspection.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "parent_inspection_record",
+        "original parent": "inspection",
+        "original property": "followup_inspections",
+        "singular": true,
+        "always matches": false,
+        "description": "Retrieves the original inspection that this inspection is a follow-up to.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "inspections",
+        "parent collection": "establishment",
+        "child collection": "inspection",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "license_no": [
+            "license_no"
+          ]
+        },
+        "description": "Retrieves all inspections conducted for this establishment.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "establishment_record",
+        "original parent": "establishment",
+        "original property": "inspections",
+        "singular": true,
+        "always matches": false,
+        "description": "Retrieves the establishment record associated with this inspection.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "inspections_conducted",
+        "parent collection": "employee",
+        "child collection": "inspection",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "employee_id": [
+            "employee_id"
+          ]
+        },
+        "description": "Retrieves all inspections conducted by this employee.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "employee_record",
+        "original parent": "employee",
+        "original property": "inspections_conducted",
+        "singular": true,
+        "always matches": false,
+        "description": "Retrieves the employee record for the inspector who conducted this inspection.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "violations",
+        "parent collection": "inspection_point",
+        "child collection": "violation",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "point_id": [
+            "point_id"
+          ]
+        },
+        "description": "Retrieves all violations related to this specific inspection point.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "inspection_point_record",
+        "original parent": "inspection_point",
+        "original property": "violations",
+        "singular": true,
+        "always matches": false,
+        "description": "Retrieves the inspection point record associated with this violation.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "violations",
+        "parent collection": "inspection",
+        "child collection": "violation",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "inspection_id": [
+            "inspection_id"
+          ]
+        },
+        "description": "Retrieves all violations recorded during this inspection.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "inspection_record",
+        "original parent": "inspection",
+        "original property": "violations",
+        "singular": true,
+        "always matches": false,
+        "description": "Retrieves the inspection record associated with this violation.",
+        "synonyms": []
+      }
+    ]
+  }
+]

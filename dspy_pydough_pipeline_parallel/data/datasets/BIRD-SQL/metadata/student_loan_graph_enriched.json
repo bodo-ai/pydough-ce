@@ -1,0 +1,642 @@
+[
+  {
+    "name": "student_loan",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "bool_",
+        "type": "simple table",
+        "table path": "main.\"bool\"",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The state name, either 'pos' (positive) or 'neg' (negative).",
+            "sample values": [
+              "neg",
+              "pos"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          }
+        ],
+        "description": "A boolean-like table representing positive and negative states.",
+        "synonyms": [
+          "bool"
+        ]
+      },
+      {
+        "name": "disabled",
+        "type": "simple table",
+        "table path": "main.disabled",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the disabled student, serving as a foreign key to the person table.",
+            "sample values": [
+              "student114",
+              "student125",
+              "student142",
+              "student155",
+              "student156"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          }
+        ],
+        "description": "Represents students who are disabled.",
+        "synonyms": [
+          "disabled"
+        ]
+      },
+      {
+        "name": "enlist",
+        "type": "simple table",
+        "table path": "main.enlist",
+        "unique properties": [
+          [
+            "name",
+            "organ"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the enlisted student, serving as a foreign key to the person table.",
+            "sample values": [
+              "student40",
+              "student51",
+              "student109",
+              "student139",
+              "student148"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "organ",
+            "type": "table column",
+            "column name": "organ",
+            "data type": "string",
+            "description": "The organization in which the student is enlisted.",
+            "sample values": [
+              "fire_department",
+              "air_force",
+              "navy",
+              "marines",
+              "foreign_legion"
+            ],
+            "synonyms": [
+              "organization"
+            ]
+          }
+        ],
+        "description": "Records of students enlisted in various organizations.",
+        "synonyms": [
+          "enlist"
+        ]
+      },
+      {
+        "name": "enrolled",
+        "type": "simple table",
+        "table path": "main.enrolled",
+        "unique properties": [
+          [
+            "name",
+            "school"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the enrolled student, serving as a foreign key to the person table.",
+            "sample values": [
+              "student1",
+              "student10",
+              "student100",
+              "student1000",
+              "student101"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "school",
+            "type": "table column",
+            "column name": "school",
+            "data type": "string",
+            "description": "The school where the student is enrolled.",
+            "sample values": [
+              "occ",
+              "smc",
+              "ucb",
+              "ucla",
+              "ucsd"
+            ],
+            "synonyms": [
+              "school"
+            ]
+          },
+          {
+            "name": "month_",
+            "type": "table column",
+            "column name": "\"month\"",
+            "data type": "numeric",
+            "description": "The month of enrollment.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "month"
+            ]
+          }
+        ],
+        "description": "Records of student enrollments in different schools by month.",
+        "synonyms": [
+          "enrolled"
+        ]
+      },
+      {
+        "name": "filed_for_bankruptcy",
+        "type": "simple table",
+        "table path": "main.filed_for_bankrupcy",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the student who filed for bankruptcy, serving as a foreign key to the person table.",
+            "sample values": [
+              "student122",
+              "student126",
+              "student136",
+              "student145",
+              "student148"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          }
+        ],
+        "description": "Lists students who have filed for bankruptcy.",
+        "synonyms": [
+          "filed_for_bankrupcy"
+        ]
+      },
+      {
+        "name": "longest_absence_from_school",
+        "type": "simple table",
+        "table path": "main.longest_absense_from_school",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the student, serving as a foreign key to the person table.",
+            "sample values": [
+              "student1",
+              "student10",
+              "student100",
+              "student1000",
+              "student101"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "month_",
+            "type": "table column",
+            "column name": "\"month\"",
+            "data type": "numeric",
+            "description": "The duration of the student's longest absence from school, in months.",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "month"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A value of 0 means the student has never been absent."
+            }
+          }
+        ],
+        "description": "Records the longest absence from school for each student, measured in months.",
+        "synonyms": [
+          "longest_absense_from_school"
+        ]
+      },
+      {
+        "name": "male",
+        "type": "simple table",
+        "table path": "main.male",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the male student, serving as a foreign key to the person table.",
+            "sample values": [
+              "student1",
+              "student101",
+              "student102",
+              "student103",
+              "student105"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          }
+        ],
+        "description": "Lists students who are identified as male.",
+        "synonyms": [
+          "male"
+        ],
+        "extra semantic info": {
+          "commonsense evidence": "Students not present in this table are considered female."
+        }
+      },
+      {
+        "name": "no_payment_due",
+        "type": "simple table",
+        "table path": "main.no_payment_due",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the student, serving as a foreign key to the person table.",
+            "sample values": [
+              "student1",
+              "student10",
+              "student100",
+              "student1000",
+              "student101"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "bool_",
+            "type": "table column",
+            "column name": "\"bool\"",
+            "data type": "string",
+            "description": "Indicates whether the student has payments due, serving as a foreign key to the bool_ table.",
+            "sample values": [
+              "neg",
+              "pos"
+            ],
+            "synonyms": [
+              "bool"
+            ],
+            "extra semantic info": {
+              "value meanings": {
+                "neg": "The student does not have a payment due.",
+                "pos": "The student has a payment due."
+              }
+            }
+          }
+        ],
+        "description": "Indicates whether a student has any outstanding payments due.",
+        "synonyms": [
+          "no_payment_due"
+        ]
+      },
+      {
+        "name": "person",
+        "type": "simple table",
+        "table path": "main.person",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The unique name of the student.",
+            "sample values": [
+              "student1",
+              "student10",
+              "student100",
+              "student1000",
+              "student101"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          }
+        ],
+        "description": "The central table representing all students in the database.",
+        "synonyms": [
+          "person"
+        ]
+      },
+      {
+        "name": "unemployed",
+        "type": "simple table",
+        "table path": "main.unemployed",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the unemployed student, serving as a foreign key to the person table.",
+            "sample values": [
+              "student1000",
+              "student102",
+              "student106",
+              "student109",
+              "student118"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          }
+        ],
+        "description": "Lists students who are currently unemployed.",
+        "synonyms": [
+          "unemployed"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "no_payment_due_records",
+        "parent collection": "bool_",
+        "child collection": "no_payment_due",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "bool_"
+          ]
+        },
+        "description": "The payment due records associated with this boolean state.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "bool_value",
+        "original parent": "bool_",
+        "original property": "no_payment_due_records",
+        "singular": true,
+        "always matches": false,
+        "description": "The boolean state for this payment due record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "disabled",
+        "parent collection": "person",
+        "child collection": "disabled",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "The disability status of the person.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "disabled",
+        "singular": true,
+        "always matches": true,
+        "description": "The person associated with this disability status.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "enlistments",
+        "parent collection": "person",
+        "child collection": "enlist",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "The enlistments for the person in various organizations.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "enlistments",
+        "singular": true,
+        "always matches": true,
+        "description": "The person associated with this enlistment.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "enrollments",
+        "parent collection": "person",
+        "child collection": "enrolled",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "The school enrollments for the person.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "enrollments",
+        "singular": true,
+        "always matches": true,
+        "description": "The person associated with this enrollment.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "filed_for_bankruptcy",
+        "parent collection": "person",
+        "child collection": "filed_for_bankruptcy",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "The bankruptcy filing status of the person.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "filed_for_bankruptcy",
+        "singular": true,
+        "always matches": true,
+        "description": "The person who filed for bankruptcy.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "longest_absence_from_school",
+        "parent collection": "person",
+        "child collection": "longest_absence_from_school",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "The record of the person's longest absence from school.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "longest_absence_from_school",
+        "singular": true,
+        "always matches": true,
+        "description": "The person associated with this absence record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "male",
+        "parent collection": "person",
+        "child collection": "male",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "The gender status of the person, if male.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "male",
+        "singular": true,
+        "always matches": true,
+        "description": "The person associated with this gender status.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "no_payment_due",
+        "parent collection": "person",
+        "child collection": "no_payment_due",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "The payment due status for the person.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "no_payment_due",
+        "singular": true,
+        "always matches": true,
+        "description": "The person associated with this payment due status.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "unemployed",
+        "parent collection": "person",
+        "child collection": "unemployed",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "The employment status of the person, if unemployed.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "unemployed",
+        "singular": true,
+        "always matches": true,
+        "description": "The person associated with this employment status.",
+        "synonyms": []
+      }
+    ]
+  }
+]

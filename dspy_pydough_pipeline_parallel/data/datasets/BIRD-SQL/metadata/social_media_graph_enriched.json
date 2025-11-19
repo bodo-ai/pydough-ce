@@ -1,0 +1,466 @@
+[
+  {
+    "name": "social_media",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "location",
+        "type": "simple table",
+        "table path": "main.location",
+        "unique properties": [
+          "locationid"
+        ],
+        "properties": [
+          {
+            "name": "locationid",
+            "type": "table column",
+            "column name": "LocationID",
+            "data type": "numeric",
+            "description": "Unique ID of the location.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "LocationID"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "The country.",
+            "sample values": [
+              "Albania",
+              "Algeria",
+              "Andorra",
+              "Angola",
+              "Anguilla"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "State",
+            "data type": "string",
+            "description": "The state.",
+            "sample values": [
+              "Elbasan",
+              "Tirane",
+              "Souk Ahras",
+              "Alger",
+              "Constantine"
+            ],
+            "synonyms": [
+              "State"
+            ]
+          },
+          {
+            "name": "statecode",
+            "type": "table column",
+            "column name": "StateCode",
+            "data type": "string",
+            "description": "State code.",
+            "sample values": [
+              "AL",
+              "DZ",
+              "AD",
+              "AO",
+              "AI"
+            ],
+            "synonyms": [
+              "StateCode"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "City",
+            "data type": "string",
+            "description": "The city.",
+            "sample values": [
+              "Elbasan",
+              "Tirana",
+              "Souk Ahras",
+              "Algiers",
+              "Constantine"
+            ],
+            "synonyms": [
+              "City"
+            ]
+          }
+        ],
+        "description": "Contains geographical location information.",
+        "synonyms": [
+          "location"
+        ]
+      },
+      {
+        "name": "twitter",
+        "type": "simple table",
+        "table path": "main.twitter",
+        "unique properties": [
+          "tweetid"
+        ],
+        "properties": [
+          {
+            "name": "tweetid",
+            "type": "table column",
+            "column name": "TweetID",
+            "data type": "string",
+            "description": "The unique ID of the tweet.",
+            "sample values": [
+              "tw-682712873332805633",
+              "tw-682713045357998080",
+              "tw-682713219375476736",
+              "tw-682713436967579648",
+              "tw-682714048199311366"
+            ],
+            "synonyms": [
+              "TweetID"
+            ]
+          },
+          {
+            "name": "weekday",
+            "type": "table column",
+            "column name": "Weekday",
+            "data type": "string",
+            "description": "The weekday that the tweet has been posted.",
+            "sample values": [
+              "Thursday",
+              "Friday",
+              "Saturday",
+              "Sunday",
+              "Monday"
+            ],
+            "synonyms": [
+              "Weekday"
+            ]
+          },
+          {
+            "name": "hour_",
+            "type": "table column",
+            "column name": "\"Hour\"",
+            "data type": "numeric",
+            "description": "The hour that the tweet has been posted.",
+            "sample values": [
+              17,
+              18,
+              19,
+              20,
+              21
+            ],
+            "synonyms": [
+              "Hour"
+            ]
+          },
+          {
+            "name": "day_",
+            "type": "table column",
+            "column name": "\"Day\"",
+            "data type": "numeric",
+            "description": "The day that the tweet has been posted.",
+            "sample values": [
+              31,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "Day"
+            ]
+          },
+          {
+            "name": "lang",
+            "type": "table column",
+            "column name": "Lang",
+            "data type": "string",
+            "description": "The language of the tweet.",
+            "sample values": [
+              "en",
+              "_u",
+              "es",
+              "fr",
+              "ja"
+            ],
+            "synonyms": [
+              "Lang"
+            ]
+          },
+          {
+            "name": "isreshare",
+            "type": "table column",
+            "column name": "IsReshare",
+            "data type": "string",
+            "description": "Whether the tweet is reshared.",
+            "sample values": [
+              "FALSE",
+              "TRUE"
+            ],
+            "synonyms": [
+              "IsReshare"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A reshared tweet is when someone reshares or forwards a post. 'true' means the tweet is reshared; 'false' means it is not."
+            }
+          },
+          {
+            "name": "reach",
+            "type": "table column",
+            "column name": "Reach",
+            "data type": "numeric",
+            "description": "The reach of the tweet.",
+            "sample values": [
+              44,
+              1810,
+              282,
+              2087,
+              953
+            ],
+            "synonyms": [
+              "Reach"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Reach counts the number of unique users who have seen the tweet."
+            }
+          },
+          {
+            "name": "retweetcount",
+            "type": "table column",
+            "column name": "RetweetCount",
+            "data type": "numeric",
+            "description": "The retweet count.",
+            "sample values": [
+              0,
+              5,
+              4,
+              1,
+              6
+            ],
+            "synonyms": [
+              "RetweetCount"
+            ]
+          },
+          {
+            "name": "likes",
+            "type": "table column",
+            "column name": "Likes",
+            "data type": "numeric",
+            "description": "The number of likes.",
+            "sample values": [
+              0,
+              131,
+              40,
+              4,
+              70
+            ],
+            "synonyms": [
+              "Likes"
+            ]
+          },
+          {
+            "name": "klout",
+            "type": "table column",
+            "column name": "Klout",
+            "data type": "numeric",
+            "description": "The klout of the tweet.",
+            "sample values": [
+              35,
+              53,
+              47,
+              31,
+              49
+            ],
+            "synonyms": [
+              "Klout"
+            ]
+          },
+          {
+            "name": "sentiment",
+            "type": "table column",
+            "column name": "Sentiment",
+            "data type": "numeric",
+            "description": "The sentiment of the tweet.",
+            "sample values": [
+              0.0,
+              2.0,
+              -1.0,
+              -2.0,
+              1.0
+            ],
+            "synonyms": [
+              "Sentiment"
+            ],
+            "extra semantic info": {
+              ">0": "The sentiment of the tweet is positive.",
+              "=0": "The sentiment of the tweet is neutral.",
+              "<0": "The sentiment of the tweet is negative."
+            }
+          },
+          {
+            "name": "text_",
+            "type": "table column",
+            "column name": "\"text\"",
+            "data type": "string",
+            "description": "The text of the tweet.",
+            "sample values": [
+              "We are hiring: Senior Software Engine...",
+              "RT @CodeMineStatus: This is true Amaz...",
+              "Devops Engineer Aws Ansible Cassandra...",
+              "Happy New Year to all those AWS insta...",
+              "Amazon is hiring! #Sr. #International..."
+            ],
+            "synonyms": [
+              "text"
+            ]
+          },
+          {
+            "name": "locationid",
+            "type": "table column",
+            "column name": "LocationID",
+            "data type": "numeric",
+            "description": "The location ID of the poster.",
+            "sample values": [
+              3751,
+              3989,
+              3741,
+              3753,
+              3744
+            ],
+            "synonyms": [
+              "LocationID"
+            ]
+          },
+          {
+            "name": "userid",
+            "type": "table column",
+            "column name": "UserID",
+            "data type": "string",
+            "description": "The user ID of the poster.",
+            "sample values": [
+              "tw-40932430",
+              "tw-3179389829",
+              "tw-4624808414",
+              "tw-356447127",
+              "tw-3172686669"
+            ],
+            "synonyms": [
+              "UserID"
+            ]
+          }
+        ],
+        "description": "Contains information about tweets posted on Twitter.",
+        "synonyms": [
+          "twitter"
+        ]
+      },
+      {
+        "name": "user_",
+        "type": "simple table",
+        "table path": "main.\"user\"",
+        "unique properties": [
+          "userid"
+        ],
+        "properties": [
+          {
+            "name": "userid",
+            "type": "table column",
+            "column name": "UserID",
+            "data type": "string",
+            "description": "The unique ID of the user.",
+            "sample values": [
+              "\u001anknow531394",
+              "tw-10000632",
+              "tw-100012605",
+              "tw-1000137907",
+              "tw-1000155049"
+            ],
+            "synonyms": [
+              "UserID"
+            ]
+          },
+          {
+            "name": "gender",
+            "type": "table column",
+            "column name": "Gender",
+            "data type": "string",
+            "description": "User's gender. Possible values: Male, Female, Unknown.",
+            "sample values": [
+              "Unknown",
+              "Male",
+              "Unisex",
+              "Female"
+            ],
+            "synonyms": [
+              "Gender"
+            ]
+          }
+        ],
+        "description": "Contains information about users.",
+        "synonyms": [
+          "user"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "twitters",
+        "parent collection": "user_",
+        "child collection": "twitter",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "userid": [
+            "userid"
+          ]
+        },
+        "description": "The tweets posted by this user.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "user_",
+        "original parent": "user_",
+        "original property": "twitters",
+        "singular": true,
+        "always matches": false,
+        "description": "The user who posted this tweet.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "twitters",
+        "parent collection": "location",
+        "child collection": "twitter",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "locationid": [
+            "locationid"
+          ]
+        },
+        "description": "The tweets posted from this location.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "location",
+        "original parent": "location",
+        "original property": "twitters",
+        "singular": true,
+        "always matches": false,
+        "description": "The location from where this tweet was posted.",
+        "synonyms": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,2114 @@
+[
+  {
+    "name": "legislator",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "current_",
+        "type": "simple table",
+        "table path": "main.\"current\"",
+        "unique properties": [
+          [
+            "bioguide_id",
+            "cspan_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "ballotpedia_id",
+            "type": "table column",
+            "column name": "ballotpedia_id",
+            "data type": "string",
+            "description": "The ballotpedia.org page name for the person (spaces are given as spaces, not underscores).",
+            "sample values": [
+              "Sherrod Brown",
+              "Maria Cantwell",
+              "Ben Cardin",
+              "Tom Carper",
+              "Bob Casey, Jr."
+            ],
+            "synonyms": [
+              "ballotpedia_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on ballotpedia.org"
+            }
+          },
+          {
+            "name": "bioguide_id",
+            "type": "table column",
+            "column name": "bioguide_id",
+            "data type": "string",
+            "description": "The alphanumeric ID for this legislator.",
+            "sample values": [
+              "A000055",
+              "A000360",
+              "A000367",
+              "A000369",
+              "A000370"
+            ],
+            "synonyms": [
+              "bioguide_id"
+            ]
+          },
+          {
+            "name": "birthday_bio",
+            "type": "table column",
+            "column name": "birthday_bio",
+            "data type": "datetime",
+            "description": "The legislator's birthday, in YYYY-MM-DD format.",
+            "sample values": [
+              "1952-11-09",
+              "1958-10-13",
+              "1943-10-05",
+              "1947-01-23",
+              "1960-04-13"
+            ],
+            "synonyms": [
+              "birthday_bio"
+            ]
+          },
+          {
+            "name": "cspan_id",
+            "type": "table column",
+            "column name": "cspan_id",
+            "data type": "numeric",
+            "description": "The numeric ID for this legislator on C-SPAN's video website.",
+            "sample values": [
+              45516.0,
+              5.0,
+              1033767.0,
+              62817.0,
+              76386.0
+            ],
+            "synonyms": [
+              "cspan_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on C-SPAN's video website"
+            }
+          },
+          {
+            "name": "fec_id",
+            "type": "table column",
+            "column name": "fec_id",
+            "data type": "string",
+            "description": "A list of IDs for this legislator in Federal Election Commission data.",
+            "sample values": [
+              "['H2OH13033', 'S6OH00163']",
+              "['S8WA00194', 'H2WA01054']",
+              "['H6MD03177', 'S6MD03177']",
+              "['S8DE00079']",
+              "['S6PA00217']"
+            ],
+            "synonyms": [
+              "fec_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator hasn't not been registered in Federal Election Commission data."
+            }
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "The first name of the legislator.",
+            "sample values": [
+              "Sherrod",
+              "Maria",
+              "Benjamin",
+              "Thomas",
+              "Robert"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "gender_bio",
+            "type": "table column",
+            "column name": "gender_bio",
+            "data type": "string",
+            "description": "The gender of the legislator.",
+            "sample values": [
+              "M",
+              "F"
+            ],
+            "synonyms": [
+              "gender_bio"
+            ]
+          },
+          {
+            "name": "google_entity_id_id",
+            "type": "table column",
+            "column name": "google_entity_id_id",
+            "data type": "string",
+            "description": "The Google Entity ID for the legislator.",
+            "sample values": [
+              "kg:/m/034s80",
+              "kg:/m/01x68t",
+              "kg:/m/025k3k",
+              "kg:/m/01xw7t",
+              "kg:/m/047ymw"
+            ],
+            "synonyms": [
+              "google_entity_id_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator are not google entities"
+            }
+          },
+          {
+            "name": "govtrack_id",
+            "type": "table column",
+            "column name": "govtrack_id",
+            "data type": "numeric",
+            "description": "The numeric ID for this legislator on GovTrack.us.",
+            "sample values": [
+              400050,
+              300018,
+              400064,
+              300019,
+              412246
+            ],
+            "synonyms": [
+              "govtrack_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on GovTrack.us"
+            }
+          },
+          {
+            "name": "house_history_id",
+            "type": "table column",
+            "column name": "house_history_id",
+            "data type": "numeric",
+            "description": "The numeric ID for this legislator on http://history.house.gov/People/Search/.",
+            "sample values": [
+              9996.0,
+              10608.0,
+              10629.0,
+              10671.0,
+              13044.0
+            ],
+            "synonyms": [
+              "house_history_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The ID is present only for members who have served in the U.S. House."
+            }
+          },
+          {
+            "name": "icpsr_id",
+            "type": "table column",
+            "column name": "icpsr_id",
+            "data type": "numeric",
+            "description": "The numeric ID for this legislator in Keith Poole's VoteView.com website, originally based on an ID system by the Interuniversity Consortium for Political and Social Research (stored as an integer).",
+            "sample values": [
+              29389.0,
+              39310.0,
+              15408.0,
+              15015.0,
+              40703.0
+            ],
+            "synonyms": [
+              "icpsr_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on VoteView.com"
+            }
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "The last name of the legislator.",
+            "sample values": [
+              "Brown",
+              "Cantwell",
+              "Cardin",
+              "Carper",
+              "Casey"
+            ],
+            "synonyms": [
+              "last_name"
+            ]
+          },
+          {
+            "name": "lis_id",
+            "type": "table column",
+            "column name": "lis_id",
+            "data type": "string",
+            "description": "The alphanumeric ID for this legislator found in Senate roll call votes.",
+            "sample values": [
+              "S307",
+              "S275",
+              "S308",
+              "S277",
+              "S309"
+            ],
+            "synonyms": [
+              "lis_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The ID is present only for members who attended in Senate roll call votes"
+            }
+          },
+          {
+            "name": "maplight_id",
+            "type": "table column",
+            "column name": "maplight_id",
+            "data type": "numeric",
+            "description": "The numeric ID for this legislator on maplight.org.",
+            "sample values": [
+              168.0,
+              544.0,
+              182.0,
+              545.0,
+              727.0
+            ],
+            "synonyms": [
+              "maplight_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on maplight.org"
+            }
+          },
+          {
+            "name": "middle_name",
+            "type": "table column",
+            "column name": "middle_name",
+            "data type": "string",
+            "description": "The middle name of the legislator.",
+            "sample values": [
+              "L.",
+              "Richard",
+              "P.",
+              "G.",
+              "Jean"
+            ],
+            "synonyms": [
+              "middle_name"
+            ]
+          },
+          {
+            "name": "nickname_name",
+            "type": "table column",
+            "column name": "nickname_name",
+            "data type": "string",
+            "description": "The nickname of the legislator.",
+            "sample values": [
+              "Bob",
+              "Bernie",
+              "Jim",
+              "Jack",
+              "Jeff"
+            ],
+            "synonyms": [
+              "nickname_name"
+            ]
+          },
+          {
+            "name": "official_full_name",
+            "type": "table column",
+            "column name": "official_full_name",
+            "data type": "string",
+            "description": "The official full name of the legislator.",
+            "sample values": [
+              "Sherrod Brown",
+              "Maria Cantwell",
+              "Benjamin L. Cardin",
+              "Thomas R. Carper",
+              "Robert P. Casey, Jr."
+            ],
+            "synonyms": [
+              "official_full_name"
+            ]
+          },
+          {
+            "name": "opensecrets_id",
+            "type": "table column",
+            "column name": "opensecrets_id",
+            "data type": "string",
+            "description": "The alphanumeric ID for this legislator on OpenSecrets.org.",
+            "sample values": [
+              "N00003535",
+              "N00007836",
+              "N00001955",
+              "N00012508",
+              "N00027503"
+            ],
+            "synonyms": [
+              "opensecrets_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on OpenSecrets.org."
+            }
+          },
+          {
+            "name": "religion_bio",
+            "type": "table column",
+            "column name": "religion_bio",
+            "data type": "string",
+            "description": "The legislator's religion.",
+            "sample values": [
+              "Lutheran",
+              "Roman Catholic",
+              "Jewish",
+              "Presbyterian",
+              "Latter Day Saints"
+            ],
+            "synonyms": [
+              "religion_bio"
+            ]
+          },
+          {
+            "name": "suffix_name",
+            "type": "table column",
+            "column name": "suffix_name",
+            "data type": "string",
+            "description": "The suffix of the legislator's name.",
+            "sample values": [
+              "Jr.",
+              "III",
+              "II"
+            ],
+            "synonyms": [
+              "suffix_name"
+            ]
+          },
+          {
+            "name": "thomas_id",
+            "type": "table column",
+            "column name": "thomas_id",
+            "data type": "numeric",
+            "description": "The numeric ID for this legislator on http://thomas.gov and http://beta.congress.gov.",
+            "sample values": [
+              136,
+              172,
+              174,
+              179,
+              1828
+            ],
+            "synonyms": [
+              "thomas_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on both http://thomas.gov and http://beta.congress.gov."
+            }
+          },
+          {
+            "name": "votesmart_id",
+            "type": "table column",
+            "column name": "votesmart_id",
+            "data type": "numeric",
+            "description": "The numeric ID for this legislator on VoteSmart.org.",
+            "sample values": [
+              27018.0,
+              27122.0,
+              26888.0,
+              22421.0,
+              2541.0
+            ],
+            "synonyms": [
+              "votesmart_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on VoteSmart.org"
+            }
+          },
+          {
+            "name": "wikidata_id",
+            "type": "table column",
+            "column name": "wikidata_id",
+            "data type": "string",
+            "description": "The Wikidata ID for the legislator.",
+            "sample values": [
+              "Q381880",
+              "Q22250",
+              "Q723295",
+              "Q457432",
+              "Q887841"
+            ],
+            "synonyms": [
+              "wikidata_id"
+            ]
+          },
+          {
+            "name": "wikipedia_id",
+            "type": "table column",
+            "column name": "wikipedia_id",
+            "data type": "string",
+            "description": "The Wikipedia page name for the person.",
+            "sample values": [
+              "Sherrod Brown",
+              "Maria Cantwell",
+              "Ben Cardin",
+              "Tom Carper",
+              "Bob Casey Jr."
+            ],
+            "synonyms": [
+              "wikipedia_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if a legislator has a wikipedia id, it means he or she is famous or impactful"
+            }
+          }
+        ],
+        "description": "Contains biographical and identification information about current legislators.",
+        "synonyms": [
+          "current"
+        ]
+      },
+      {
+        "name": "current_terms",
+        "type": "simple table",
+        "table path": "main.\"current-terms\"",
+        "unique properties": [
+          [
+            "bioguide",
+            "end_"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string",
+            "description": "The address of this legislator.",
+            "sample values": [
+              "713 HART SENATE OFFICE BUILDING WASHI...",
+              "713 Hart Senate Office Building Washi...",
+              "311 HART SENATE OFFICE BUILDING WASHI...",
+              "511 Hart Senate Office Building Washi...",
+              "509 HART SENATE OFFICE BUILDING WASHI..."
+            ],
+            "synonyms": [
+              "address"
+            ]
+          },
+          {
+            "name": "bioguide",
+            "type": "table column",
+            "column name": "bioguide",
+            "data type": "string",
+            "description": "The alphanumeric ID for this legislator.",
+            "sample values": [
+              "A000055",
+              "A000360",
+              "A000367",
+              "A000369",
+              "A000370"
+            ],
+            "synonyms": [
+              "bioguide"
+            ]
+          },
+          {
+            "name": "caucus",
+            "type": "table column",
+            "column name": "caucus",
+            "data type": "string",
+            "description": "For independents, the party that the legislator caucuses with. This field is what normally determines committee seniority.",
+            "sample values": [
+              "Democrat"
+            ],
+            "synonyms": [
+              "caucus"
+            ]
+          },
+          {
+            "name": "chamber",
+            "type": "table column",
+            "column name": "chamber",
+            "data type": "string",
+            "description": "The chamber where the legislator serves. Values: senate, house.",
+            "sample values": [
+              "senate",
+              "house"
+            ],
+            "synonyms": [
+              "chamber"
+            ]
+          },
+          {
+            "name": "class_",
+            "type": "table column",
+            "column name": "class",
+            "data type": "numeric",
+            "description": "For senators, their election class (1, 2, or 3).",
+            "sample values": [
+              1.0,
+              2.0,
+              3.0
+            ],
+            "synonyms": [
+              "class"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Only senators have a class. If the value is null or empty, this legislator is not a senator."
+            }
+          },
+          {
+            "name": "contact_form",
+            "type": "table column",
+            "column name": "contact_form",
+            "data type": "string",
+            "description": "The website URL of the contact page on the legislator's official website.",
+            "sample values": [
+              "http://www.brown.senate.gov/contact/",
+              "http://www.brown.senate.gov/contact",
+              "http://www.cantwell.senate.gov/contact/",
+              "http://www.cantwell.senate.gov/public...",
+              "http://www.cardin.senate.gov/contact/"
+            ],
+            "synonyms": [
+              "contact_form"
+            ]
+          },
+          {
+            "name": "district",
+            "type": "table column",
+            "column name": "district",
+            "data type": "numeric",
+            "description": "For representatives, the district number they are serving from.",
+            "sample values": [
+              13.0,
+              1.0,
+              3.0,
+              0.0,
+              9.0
+            ],
+            "synonyms": [
+              "district"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "If null or empty, they are not representatives."
+            }
+          },
+          {
+            "name": "end_",
+            "type": "table column",
+            "column name": "\"end\"",
+            "data type": "string",
+            "description": "The date the term ended. This is the last date on which the legislator served this term.",
+            "sample values": [
+              "1999-01-03",
+              "2001-01-03",
+              "2003-01-03",
+              "2005-01-03",
+              "2007-01-03"
+            ],
+            "synonyms": [
+              "end"
+            ]
+          },
+          {
+            "name": "fax",
+            "type": "table column",
+            "column name": "fax",
+            "data type": "string",
+            "description": "The fax number of the legislator's Washington, D.C. office.",
+            "sample values": [
+              "202-228-6321",
+              "202-228-0514",
+              "202-224-1651",
+              "202-228-2190",
+              "202-228-0604"
+            ],
+            "synonyms": [
+              "fax"
+            ],
+            "extra semantic info": {
+              "validity": "Only valid if the term is current."
+            }
+          },
+          {
+            "name": "last",
+            "type": "table column",
+            "column name": "last",
+            "data type": "string",
+            "description": "The last known phone/fax number.",
+            "sample values": [
+              "Menendez"
+            ],
+            "synonyms": [
+              "last"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "Not a useful column.",
+            "sample values": [
+              "Stewart Lee Udall",
+              "Morris K. Udall",
+              "Mark Udall",
+              "Gordon H. Smith",
+              "Michael Bilirakis"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "office",
+            "type": "table column",
+            "column name": "office",
+            "data type": "string",
+            "description": "The legislator's office address.",
+            "sample values": [
+              "713 Hart Senate Office Building",
+              "311 Hart Senate Office Building",
+              "511 Hart Senate Office Building",
+              "509 Hart Senate Office Building",
+              "513 Hart Senate Office Building"
+            ],
+            "synonyms": [
+              "office"
+            ],
+            "extra semantic info": {
+              "validity": "Only valid if the term is current, otherwise the last known office."
+            }
+          },
+          {
+            "name": "party",
+            "type": "table column",
+            "column name": "party",
+            "data type": "string",
+            "description": "The political party of the legislator. Values are typically 'Democrat', 'Independent', or 'Republican'.",
+            "sample values": [
+              "Democrat",
+              "Republican",
+              "Independent"
+            ],
+            "synonyms": [
+              "party"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "If the legislator changed parties, this is the most recent party held during the term and party_affiliations will be set. The value typically matches the political party of the legislator on the ballot in his or her last election, although for state affiliate parties such as 'Democratic Farmer Labor' we will use the national party name ('Democrat') instead to keep the values of this field normalized."
+            }
+          },
+          {
+            "name": "party_affiliations",
+            "type": "table column",
+            "column name": "party_affiliations",
+            "data type": "string",
+            "description": "A list of time periods of party affiliations, present if the legislator changed party or caucus affiliation during the term.",
+            "sample values": [
+              "{'start': '2009-01-06', 'end': '2009-...",
+              "{'start': '1993-01-05', 'end': '1994-..."
+            ],
+            "synonyms": [
+              "party_affiliations"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string",
+            "description": "The phone number of the legislator's Washington, D.C. office.",
+            "sample values": [
+              "202-224-2315",
+              "202-224-3441",
+              "202-224-4524",
+              "202-224-2441",
+              "202-224-6324"
+            ],
+            "synonyms": [
+              "phone"
+            ],
+            "extra semantic info": {
+              "validity": "Only valid if the term is current, otherwise the last known number."
+            }
+          },
+          {
+            "name": "relation",
+            "type": "table column",
+            "column name": "relation",
+            "data type": "string",
+            "description": "Not a useful column.",
+            "sample values": [
+              "son",
+              "nephew",
+              "cousin",
+              "daughter",
+              "grandson"
+            ],
+            "synonyms": [
+              "relation"
+            ]
+          },
+          {
+            "name": "rss_url",
+            "type": "table column",
+            "column name": "rss_url",
+            "data type": "string",
+            "description": "The URL to the official website's RSS feed.",
+            "sample values": [
+              "http://www.brown.senate.gov/rss/feeds...",
+              "http://www.cantwell.senate.gov/public...",
+              "http://www.cardin.senate.gov/rss/feed...",
+              "http://www.carper.senate.gov/public/i...",
+              "http://www.casey.senate.gov/rss/feeds..."
+            ],
+            "synonyms": [
+              "rss_url"
+            ]
+          },
+          {
+            "name": "start",
+            "type": "table column",
+            "column name": "start",
+            "data type": "string",
+            "description": "The date legislative service began for this term.",
+            "sample values": [
+              "1993-01-05",
+              "1995-01-04",
+              "1997-01-07",
+              "1999-01-06",
+              "2001-01-03"
+            ],
+            "synonyms": [
+              "start"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "The two-letter state code for the state the legislator represents.",
+            "sample values": [
+              "OH",
+              "WA",
+              "MD",
+              "DE",
+              "PA"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "state_rank",
+            "type": "table column",
+            "column name": "state_rank",
+            "data type": "string",
+            "description": "For senators, whether they are the 'junior' or 'senior' senator.",
+            "sample values": [
+              "senior",
+              "junior"
+            ],
+            "synonyms": [
+              "state_rank"
+            ],
+            "extra semantic info": {
+              "validity": "Only valid if the term is current, otherwise it reflects the senator's rank at the time the term ended.",
+              "commonsense evidence": "Only senators have this value."
+            }
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "The title of the legislator (e.g., Minority Whip, Speaker).",
+            "sample values": [
+              "Minority Whip",
+              "Majority Whip",
+              "Minority Leader",
+              "Majority Leader",
+              "Speaker"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "type",
+            "data type": "string",
+            "description": "The type of the term. Either 'sen' for senators or 'rep' for representatives and delegates to the House.",
+            "sample values": [
+              "rep",
+              "sen"
+            ],
+            "synonyms": [
+              "type"
+            ]
+          },
+          {
+            "name": "url",
+            "type": "table column",
+            "column name": "url",
+            "data type": "string",
+            "description": "The official website URL of the legislator.",
+            "sample values": [
+              "http://www.house.gov/sherrodbrown",
+              "http://brown.senate.gov/",
+              "https://www.brown.senate.gov",
+              "http://cantwell.senate.gov",
+              "https://www.cantwell.senate.gov"
+            ],
+            "synonyms": [
+              "url"
+            ],
+            "extra semantic info": {
+              "validity": "Only valid if the term is current."
+            }
+          }
+        ],
+        "description": "Contains information about the terms served by current legislators.",
+        "synonyms": [
+          "current-terms"
+        ],
+        "extra semantic info": {
+          "state_codes": {
+            "AK": "Alaska",
+            "AL": "Alabama",
+            "AR": "Arkansas",
+            "AZ": "Arizona",
+            "CA": "California",
+            "CO": "Colorado",
+            "CT": "Connecticut",
+            "DE": "Delaware",
+            "FL": "Florida",
+            "GA": "Georgia",
+            "HI": "Hawaii",
+            "IA": "Iowa",
+            "ID": "Idaho",
+            "IL": "Illinois",
+            "IN": "Indiana",
+            "KS": "Kansas",
+            "KY": "Kentucky",
+            "LA": "Louisiana",
+            "MA": "Massachusetts",
+            "MD": "Maryland",
+            "ME": "Maine",
+            "MI": "Michigan",
+            "MN": "Minnesota",
+            "MO": "Missouri",
+            "MS": "Mississippi",
+            "MT": "Montana",
+            "NC": "North Carolina",
+            "ND": "North Dakota",
+            "NE": "Nebraska",
+            "NH": "New Hampshire",
+            "NJ": "New Jersey"
+          },
+          "census_divisions": "Further information on the 9 divisions of states can be found at https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf"
+        }
+      },
+      {
+        "name": "historical",
+        "type": "simple table",
+        "table path": "main.historical",
+        "unique properties": [
+          "bioguide_id"
+        ],
+        "properties": [
+          {
+            "name": "ballotpedia_id",
+            "type": "table column",
+            "column name": "ballotpedia_id",
+            "data type": "string",
+            "description": "The ballotpedia.org page name for the person (spaces are given as spaces, not underscores).",
+            "sample values": [
+              "Mo Cowan",
+              "Jo Bonner",
+              "Rodney Alexander",
+              "C.W. Bill Young",
+              "Jeff Chiesa"
+            ],
+            "synonyms": [
+              "ballotpedia_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on ballotpedia.org"
+            }
+          },
+          {
+            "name": "bioguide_id",
+            "type": "table column",
+            "column name": "bioguide_id",
+            "data type": "string",
+            "description": "The alphanumeric ID for this legislator.",
+            "sample values": [
+              "A000001",
+              "A000002",
+              "A000003",
+              "A000004",
+              "A000005"
+            ],
+            "synonyms": [
+              "bioguide_id"
+            ]
+          },
+          {
+            "name": "bioguide_previous_id",
+            "type": "table column",
+            "column name": "bioguide_previous_id",
+            "data type": "string",
+            "description": "The previous alphanumeric ID for this legislator.",
+            "sample values": [
+              "['F000246']",
+              "['L000266']",
+              "['W000790']"
+            ],
+            "synonyms": [
+              "bioguide_previous_id"
+            ]
+          },
+          {
+            "name": "birthday_bio",
+            "type": "table column",
+            "column name": "birthday_bio",
+            "data type": "string",
+            "description": "The legislator's birthday, in YYYY-MM-DD format.",
+            "sample values": [
+              "1745-04-02",
+              "1742-03-21",
+              "1743-06-16",
+              "1730-07-22",
+              "1739-03-16"
+            ],
+            "synonyms": [
+              "birthday_bio"
+            ]
+          },
+          {
+            "name": "cspan_id",
+            "type": "table column",
+            "column name": "cspan_id",
+            "data type": "string",
+            "description": "The numeric ID for this legislator on C-SPAN's video website.",
+            "sample values": [
+              "12590.0",
+              "4479.0",
+              "103.0",
+              "378.0",
+              "18623.0"
+            ],
+            "synonyms": [
+              "cspan_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on C-SPAN's video website"
+            }
+          },
+          {
+            "name": "fec_id",
+            "type": "table column",
+            "column name": "fec_id",
+            "data type": "string",
+            "description": "A list of IDs for this legislator in Federal Election Commission data.",
+            "sample values": [
+              "['S6CO00168']",
+              "['S2MN00126']",
+              "['S0ID00057']",
+              "['S2NC00083']",
+              "['S8NM00010']"
+            ],
+            "synonyms": [
+              "fec_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator hasn't not been registered in Federal Election Commission data."
+            }
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "The first name of the legislator.",
+            "sample values": [
+              "Richard",
+              "Theodorick",
+              "Aedanus",
+              "Daniel",
+              "George"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "gender_bio",
+            "type": "table column",
+            "column name": "gender_bio",
+            "data type": "string",
+            "description": "The gender of the legislator.",
+            "sample values": [
+              "M",
+              "F"
+            ],
+            "synonyms": [
+              "gender_bio"
+            ]
+          },
+          {
+            "name": "google_entity_id_id",
+            "type": "table column",
+            "column name": "google_entity_id_id",
+            "data type": "string",
+            "description": "The Google Entity ID for the legislator.",
+            "sample values": [
+              "kg:/m/02pz46",
+              "kg:/m/033mf4",
+              "kg:/m/03yccv",
+              "kg:/m/02q22c",
+              "kg:/m/01mpsj"
+            ],
+            "synonyms": [
+              "google_entity_id_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator are not google entities"
+            }
+          },
+          {
+            "name": "govtrack_id",
+            "type": "table column",
+            "column name": "govtrack_id",
+            "data type": "numeric",
+            "description": "The numeric ID for this legislator on GovTrack.us.",
+            "sample values": [
+              401222,
+              401521,
+              402032,
+              402334,
+              402671
+            ],
+            "synonyms": [
+              "govtrack_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on GovTrack.us"
+            }
+          },
+          {
+            "name": "house_history_alternate_id",
+            "type": "table column",
+            "column name": "house_history_alternate_id",
+            "data type": "string",
+            "description": "The alternative numeric ID for this legislator.",
+            "sample values": [
+              "13283.0"
+            ],
+            "synonyms": [
+              "house_history_alternate_id"
+            ]
+          },
+          {
+            "name": "house_history_id",
+            "type": "table column",
+            "column name": "house_history_id",
+            "data type": "numeric",
+            "description": "The numeric ID for this legislator on http://history.house.gov/People/Search/.",
+            "sample values": [
+              9479.0,
+              10177.0,
+              10687.0,
+              11120.0,
+              11343.0
+            ],
+            "synonyms": [
+              "house_history_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The ID is present only for members who have served in the U.S. House."
+            }
+          },
+          {
+            "name": "icpsr_id",
+            "type": "table column",
+            "column name": "icpsr_id",
+            "data type": "numeric",
+            "description": "The numeric ID for this legislator in Keith Poole's VoteView.com website, originally based on an ID system by the Interuniversity Consortium for Political and Social Research (stored as an integer).",
+            "sample values": [
+              507.0,
+              786.0,
+              1260.0,
+              1538.0,
+              1859.0
+            ],
+            "synonyms": [
+              "icpsr_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on VoteView.com"
+            }
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "The last name of the legislator.",
+            "sample values": [
+              "Bassett",
+              "Bland",
+              "Burke",
+              "Carroll",
+              "Clymer"
+            ],
+            "synonyms": [
+              "last_name"
+            ]
+          },
+          {
+            "name": "lis_id",
+            "type": "table column",
+            "column name": "lis_id",
+            "data type": "string",
+            "description": "The alphanumeric ID for this legislator found in Senate roll call votes.",
+            "sample values": [
+              "S134",
+              "S135",
+              "S138",
+              "S063",
+              "S178"
+            ],
+            "synonyms": [
+              "lis_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "The ID is present only for members who attended in Senate roll call votes"
+            }
+          },
+          {
+            "name": "maplight_id",
+            "type": "table column",
+            "column name": "maplight_id",
+            "data type": "string",
+            "description": "The numeric ID for this legislator on maplight.org.",
+            "sample values": [
+              "232.0",
+              "581.0",
+              "585.0",
+              "2044.0",
+              "157.0"
+            ],
+            "synonyms": [
+              "maplight_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on maplight.org"
+            }
+          },
+          {
+            "name": "middle_name",
+            "type": "table column",
+            "column name": "middle_name",
+            "data type": "string",
+            "description": "The middle name of the legislator.",
+            "sample values": [
+              "Samuel",
+              "Henry",
+              "Jenifer",
+              "Baptista",
+              "Corneliusen"
+            ],
+            "synonyms": [
+              "middle_name"
+            ]
+          },
+          {
+            "name": "nickname_name",
+            "type": "table column",
+            "column name": "nickname_name",
+            "data type": "string",
+            "description": "The nickname of the legislator.",
+            "sample values": [
+              "of Carrollton",
+              "of Colchester",
+              "of Milton",
+              "of Ohio",
+              "Aleck"
+            ],
+            "synonyms": [
+              "nickname_name"
+            ]
+          },
+          {
+            "name": "official_full_name",
+            "type": "table column",
+            "column name": "official_full_name",
+            "data type": "string",
+            "description": "The official full name of the legislator.",
+            "sample values": [
+              "Enid Greene Waldholtz",
+              "Jesse L. Jackson Jr.",
+              "Bob Filner",
+              "Daniel K. Inouye",
+              "Daniel K. Akaka"
+            ],
+            "synonyms": [
+              "official_full_name"
+            ]
+          },
+          {
+            "name": "opensecrets_id",
+            "type": "table column",
+            "column name": "opensecrets_id",
+            "data type": "string",
+            "description": "The alphanumeric ID for this legislator on OpenSecrets.org.",
+            "sample values": [
+              "N00008333",
+              "N00006953",
+              "N00009160",
+              "N00003136",
+              "N00005385"
+            ],
+            "synonyms": [
+              "opensecrets_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on OpenSecrets.org."
+            }
+          },
+          {
+            "name": "religion_bio",
+            "type": "table column",
+            "column name": "religion_bio",
+            "data type": "string",
+            "description": "The legislator's religion.",
+            "sample values": [
+              "Baptist",
+              "Roman Catholic",
+              "Methodist",
+              "United Church of Christ",
+              "Lutheran"
+            ],
+            "synonyms": [
+              "religion_bio"
+            ]
+          },
+          {
+            "name": "suffix_name",
+            "type": "table column",
+            "column name": "suffix_name",
+            "data type": "string",
+            "description": "The suffix of the legislator's name.",
+            "sample values": [
+              "Jr.",
+              "Sr.",
+              "II",
+              "III",
+              "IV"
+            ],
+            "synonyms": [
+              "suffix_name"
+            ]
+          },
+          {
+            "name": "thomas_id",
+            "type": "table column",
+            "column name": "thomas_id",
+            "data type": "string",
+            "description": "The numeric ID for this legislator on http://thomas.gov and http://beta.congress.gov.",
+            "sample values": [
+              "01308",
+              "01270",
+              "01281",
+              "01283",
+              "01320"
+            ],
+            "synonyms": [
+              "thomas_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on both http://thomas.gov and http://beta.congress.gov."
+            }
+          },
+          {
+            "name": "votesmart_id",
+            "type": "table column",
+            "column name": "votesmart_id",
+            "data type": "string",
+            "description": "The numeric ID for this legislator on VoteSmart.org.",
+            "sample values": [
+              "52156.0",
+              "128775.0",
+              "26829.0",
+              "34285.0",
+              "1515.0"
+            ],
+            "synonyms": [
+              "votesmart_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if this value is null or empty, it means this legislator doesn't have account on VoteSmart.org"
+            }
+          },
+          {
+            "name": "wikidata_id",
+            "type": "table column",
+            "column name": "wikidata_id",
+            "data type": "string",
+            "description": "The Wikidata ID for the legislator.",
+            "sample values": [
+              "Q518823",
+              "Q1749152",
+              "Q380504",
+              "Q674371",
+              "Q708913"
+            ],
+            "synonyms": [
+              "wikidata_id"
+            ]
+          },
+          {
+            "name": "wikipedia_id",
+            "type": "table column",
+            "column name": "wikipedia_id",
+            "data type": "string",
+            "description": "The Wikipedia page name for the person.",
+            "sample values": [
+              "Richard Bassett (politician)",
+              "Theodorick Bland (congressman)",
+              "Aedanus Burke",
+              "Daniel Carroll",
+              "George Clymer"
+            ],
+            "synonyms": [
+              "wikipedia_id"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "if a legislator has a wikipedia id, it means he or she is famous or impactful"
+            }
+          }
+        ],
+        "description": "Contains biographical and identification information about historical legislators.",
+        "synonyms": [
+          "historical"
+        ]
+      },
+      {
+        "name": "historical_terms",
+        "type": "simple table",
+        "table path": "main.\"historical-terms\"",
+        "unique properties": [
+          "bioguide"
+        ],
+        "properties": [
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string",
+            "description": "The address of this legislator.",
+            "sample values": [
+              "248 RUSSELL SENATE OFFICE BUILDING WA...",
+              "359 DIRKSEN SENATE OFFICE BUILDING WA...",
+              "216 Cannon HOB; Washington DC 20515-0924",
+              "323 Cannon HOB; Washington DC 20515-3401",
+              "1630 Longworth HOB; Washington DC 205..."
+            ],
+            "synonyms": [
+              "address"
+            ]
+          },
+          {
+            "name": "bioguide",
+            "type": "table column",
+            "column name": "bioguide",
+            "data type": "string",
+            "description": "The alphanumeric ID for this legislator.",
+            "sample values": [
+              "A000001",
+              "A000002",
+              "A000003",
+              "A000004",
+              "A000005"
+            ],
+            "synonyms": [
+              "bioguide"
+            ]
+          },
+          {
+            "name": "chamber",
+            "type": "table column",
+            "column name": "chamber",
+            "data type": "string",
+            "description": "The chamber where the legislator served. Values: senate, house.",
+            "sample values": [
+              "house",
+              "senate"
+            ],
+            "synonyms": [
+              "chamber"
+            ]
+          },
+          {
+            "name": "class_",
+            "type": "table column",
+            "column name": "class",
+            "data type": "numeric",
+            "description": "For senators, their election class (1, 2, or 3).",
+            "sample values": [
+              2.0,
+              1.0,
+              3.0
+            ],
+            "synonyms": [
+              "class"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Only senators have a class. If the value is null or empty, this legislator is not a senator."
+            }
+          },
+          {
+            "name": "contact_form",
+            "type": "table column",
+            "column name": "contact_form",
+            "data type": "string",
+            "description": "The website URL of the contact page on the legislator's official website.",
+            "sample values": [
+              "http://www.webb.senate.gov/contact.cfm",
+              "http://www.scottbrown.senate.gov/publ...",
+              "https://walsh.house.gov/contact-me",
+              "https://bobturner.house.gov/contact-me",
+              "http://www.cowan.senate.gov/contact"
+            ],
+            "synonyms": [
+              "contact_form"
+            ]
+          },
+          {
+            "name": "district",
+            "type": "table column",
+            "column name": "district",
+            "data type": "numeric",
+            "description": "For representatives, the district number they served from.",
+            "sample values": [
+              9.0,
+              2.0,
+              6.0,
+              -1.0,
+              3.0
+            ],
+            "synonyms": [
+              "district"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "If null or empty, they were not representatives."
+            }
+          },
+          {
+            "name": "end_",
+            "type": "table column",
+            "column name": "\"end\"",
+            "data type": "string",
+            "description": "The date the term ended. This is the last date on which the legislator served this term.",
+            "sample values": [
+              "1793-03-03",
+              "1791-03-03",
+              "1795-03-03",
+              "1791-12-31",
+              "1797-03-03"
+            ],
+            "synonyms": [
+              "end"
+            ]
+          },
+          {
+            "name": "fax",
+            "type": "table column",
+            "column name": "fax",
+            "data type": "string",
+            "description": "The fax number of the legislator's Washington, D.C. office.",
+            "sample values": [
+              "202-228-6363",
+              "202-226-6299",
+              "202-226-0893",
+              "202-225-4042",
+              "202-225-2237"
+            ],
+            "synonyms": [
+              "fax"
+            ]
+          },
+          {
+            "name": "last",
+            "type": "table column",
+            "column name": "last",
+            "data type": "string",
+            "description": "The last known phone/fax number.",
+            "sample values": [
+              "Levy",
+              "Lambert",
+              "Bono"
+            ],
+            "synonyms": [
+              "last"
+            ]
+          },
+          {
+            "name": "middle",
+            "type": "table column",
+            "column name": "middle",
+            "data type": "string",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "middle"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "Not a useful column.",
+            "sample values": [],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "office",
+            "type": "table column",
+            "column name": "office",
+            "data type": "string",
+            "description": "The legislator's last known office address.",
+            "sample values": [
+              "248 Russell Senate Office Building",
+              "359 Dirksen Senate Office Building",
+              "216 Cannon House Office Building",
+              "323 Cannon House Office Building",
+              "1630 Longworth House Office Building"
+            ],
+            "synonyms": [
+              "office"
+            ]
+          },
+          {
+            "name": "party",
+            "type": "table column",
+            "column name": "party",
+            "data type": "string",
+            "description": "The political party of the legislator.",
+            "sample values": [
+              "Anti-Administration",
+              "Pro-Administration",
+              "Republican",
+              "Federalist",
+              "Democratic Republican"
+            ],
+            "synonyms": [
+              "party"
+            ]
+          },
+          {
+            "name": "party_affiliations",
+            "type": "table column",
+            "column name": "party_affiliations",
+            "data type": "string",
+            "description": "A list of time periods of party affiliations, present if the legislator changed party or caucus affiliation during the term.",
+            "sample values": [
+              "{'start': '2009-01-06', 'end': '2009-...",
+              "{'start': '2003-01-07', 'end': '2004-..."
+            ],
+            "synonyms": [
+              "party_affiliations"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string",
+            "description": "The phone number of the legislator's Washington, D.C. office.",
+            "sample values": [
+              "202-224-4024",
+              "202-224-4543",
+              "202-225-2706",
+              "202-225-2611",
+              "202-225-3701"
+            ],
+            "synonyms": [
+              "phone"
+            ]
+          },
+          {
+            "name": "relation",
+            "type": "table column",
+            "column name": "relation",
+            "data type": "string",
+            "description": "Not a useful column.",
+            "sample values": [],
+            "synonyms": [
+              "relation"
+            ]
+          },
+          {
+            "name": "rss_url",
+            "type": "table column",
+            "column name": "rss_url",
+            "data type": "string",
+            "description": "The URL to the official website's RSS feed.",
+            "sample values": [
+              "http://radel.house.gov/news/rss.aspx",
+              "http://www.begich.senate.gov/public/?...",
+              "http://www.hagan.senate.gov/rss",
+              "http://negretemcleod.house.gov/rss.xml",
+              "http://garcia.house.gov/rss.xml"
+            ],
+            "synonyms": [
+              "rss_url"
+            ]
+          },
+          {
+            "name": "start",
+            "type": "table column",
+            "column name": "start",
+            "data type": "string",
+            "description": "The date legislative service began for this term.",
+            "sample values": [
+              "1789-03-04",
+              "1790-01-01",
+              "1791-10-24",
+              "1792-01-01",
+              "1793-01-10"
+            ],
+            "synonyms": [
+              "start"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "The two-letter state code for the state the legislator represented.",
+            "sample values": [
+              "DE",
+              "VA",
+              "SC",
+              "MD",
+              "PA"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "state_rank",
+            "type": "table column",
+            "column name": "state_rank",
+            "data type": "string",
+            "description": "For senators, whether they were the 'junior' or 'senior' senator.",
+            "sample values": [
+              "junior",
+              "senior"
+            ],
+            "synonyms": [
+              "state_rank"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "Only senators have this value."
+            }
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "The title of the legislator (e.g., Majority Leader, Speaker).",
+            "sample values": [
+              "Majority Leader",
+              "Speaker"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "type",
+            "data type": "string",
+            "description": "The type of the term. Either 'sen' for senators or 'rep' for representatives and delegates to the House.",
+            "sample values": [
+              "sen",
+              "rep"
+            ],
+            "synonyms": [
+              "type"
+            ]
+          },
+          {
+            "name": "url",
+            "type": "table column",
+            "column name": "url",
+            "data type": "string",
+            "description": "The official website URL of the legislator.",
+            "sample values": [
+              "http://edwards.senate.gov/",
+              "http://fitzgerald.senate.gov/",
+              "http://miller.senate.gov/",
+              "http://corzine.senate.gov",
+              "http://dayton.senate.gov"
+            ],
+            "synonyms": [
+              "url"
+            ]
+          }
+        ],
+        "description": "Contains information about the terms served by historical legislators.",
+        "synonyms": [
+          "historical-terms"
+        ],
+        "extra semantic info": {
+          "state_codes": {
+            "AK": "Alaska",
+            "AL": "Alabama",
+            "AR": "Arkansas",
+            "AZ": "Arizona",
+            "CA": "California",
+            "CO": "Colorado",
+            "CT": "Connecticut",
+            "DE": "Delaware",
+            "FL": "Florida",
+            "GA": "Georgia",
+            "HI": "Hawaii",
+            "IA": "Iowa",
+            "ID": "Idaho",
+            "IL": "Illinois",
+            "IN": "Indiana",
+            "KS": "Kansas",
+            "KY": "Kentucky",
+            "LA": "Louisiana",
+            "MA": "Massachusetts",
+            "MD": "Maryland",
+            "ME": "Maine",
+            "MI": "Michigan",
+            "MN": "Minnesota",
+            "MO": "Missouri",
+            "MS": "Mississippi",
+            "MT": "Montana",
+            "NC": "North Carolina",
+            "ND": "North Dakota",
+            "NE": "Nebraska",
+            "NH": "New Hampshire",
+            "NJ": "New Jersey"
+          },
+          "census_divisions": "Further information on the 9 divisions of states can be found at https://www2.census.gov/geo/pdfs/maps-data/maps/reference/us_regdiv.pdf"
+        }
+      },
+      {
+        "name": "social_media",
+        "type": "simple table",
+        "table path": "main.\"social-media\"",
+        "unique properties": [
+          "bioguide"
+        ],
+        "properties": [
+          {
+            "name": "bioguide",
+            "type": "table column",
+            "column name": "bioguide",
+            "data type": "string",
+            "description": "The unique alphanumeric ID for this legislator.",
+            "sample values": [
+              "A000055",
+              "A000360",
+              "A000367",
+              "A000369",
+              "A000370"
+            ],
+            "synonyms": [
+              "bioguide"
+            ]
+          },
+          {
+            "name": "facebook",
+            "type": "table column",
+            "column name": "facebook",
+            "data type": "string",
+            "description": "The username of the current official Facebook presence of the legislator.",
+            "sample values": [
+              "congresswomanaumuaamata",
+              "RepToddYoung",
+              "senjoniernst",
+              "SenatorThomTillis",
+              "CongressmanKevinYoder"
+            ],
+            "synonyms": [
+              "facebook"
+            ]
+          },
+          {
+            "name": "facebook_id",
+            "type": "table column",
+            "column name": "facebook_id",
+            "data type": "numeric",
+            "description": "The numeric ID of the current official Facebook presence of the legislator.",
+            "sample values": [
+              1537155909907320.0,
+              186203844738421.0,
+              351671691660938.0,
+              1576257352609470.0,
+              154026694650252.0
+            ],
+            "synonyms": [
+              "facebook_id"
+            ]
+          },
+          {
+            "name": "govtrack",
+            "type": "table column",
+            "column name": "govtrack",
+            "data type": "numeric",
+            "description": "The numeric ID for this legislator on GovTrack.us.",
+            "sample values": [
+              412664.0,
+              412428.0,
+              412667.0,
+              412668.0,
+              412430.0
+            ],
+            "synonyms": [
+              "govtrack"
+            ]
+          },
+          {
+            "name": "instagram",
+            "type": "table column",
+            "column name": "instagram",
+            "data type": "string",
+            "description": "The current official Instagram handle of the legislator.",
+            "sample values": [
+              "senjoniernst",
+              "senatorwarner",
+              "SenWhitehouse",
+              "peterwelchvt",
+              "RepDWSTweets"
+            ],
+            "synonyms": [
+              "instagram"
+            ]
+          },
+          {
+            "name": "instagram_id",
+            "type": "table column",
+            "column name": "instagram_id",
+            "data type": "numeric",
+            "description": "The numeric ID of the current official Instagram handle of the legislator.",
+            "sample values": [
+              1582702853.0,
+              515327940.0,
+              1559860900.0,
+              519685522.0,
+              382962594.0
+            ],
+            "synonyms": [
+              "instagram_id"
+            ]
+          },
+          {
+            "name": "thomas",
+            "type": "table column",
+            "column name": "thomas",
+            "data type": "numeric",
+            "description": "The numeric ID for this legislator on http://thomas.gov and http://beta.congress.gov.",
+            "sample values": [
+              2222,
+              2019,
+              2283,
+              2291,
+              2021
+            ],
+            "synonyms": [
+              "thomas"
+            ]
+          },
+          {
+            "name": "twitter",
+            "type": "table column",
+            "column name": "twitter",
+            "data type": "string",
+            "description": "The current official Twitter handle of the legislator.",
+            "sample values": [
+              "RepAmata",
+              "RepToddYoung",
+              "SenJoniErnst",
+              "senthomtillis",
+              "RepKevinYoder"
+            ],
+            "synonyms": [
+              "twitter"
+            ]
+          },
+          {
+            "name": "twitter_id",
+            "type": "table column",
+            "column name": "twitter_id",
+            "data type": "numeric",
+            "description": "The numeric ID of the current official twitter handle of the legislator.",
+            "sample values": [
+              3026622545.0,
+              234128524.0,
+              2856787757.0,
+              2964174789.0,
+              252819642.0
+            ],
+            "synonyms": [
+              "twitter_id"
+            ]
+          },
+          {
+            "name": "youtube",
+            "type": "table column",
+            "column name": "youtube",
+            "data type": "string",
+            "description": "The current official YouTube username of the legislator.",
+            "sample values": [
+              "RepToddYoung",
+              "RepYoder",
+              "RepJohnYarmuth",
+              "RepDonYoung",
+              "CongressmanWomack"
+            ],
+            "synonyms": [
+              "youtube"
+            ]
+          },
+          {
+            "name": "youtube_id",
+            "type": "table column",
+            "column name": "youtube_id",
+            "data type": "string",
+            "description": "The current official YouTube channel ID of the legislator.",
+            "sample values": [
+              "UCGdrLQbt1PYDTPsampx4t1A",
+              "UCuknj4PGn91gHDNAfboZEgQ",
+              "UCLwrmtF_84FIcK3TyMs4MIw",
+              "UCUD9VGV4SSGWjGdbn37Ea2w",
+              "UCCeYmn4A8kZEHCcAfeUW9lQ"
+            ],
+            "synonyms": [
+              "youtube_id"
+            ]
+          }
+        ],
+        "description": "Contains social media account information for legislators.",
+        "synonyms": [
+          "social-media"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "current_terms",
+        "parent collection": "current_",
+        "child collection": "current_terms",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "bioguide_id": [
+            "bioguide"
+          ]
+        },
+        "description": "Retrieves the terms served by a current legislator.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "current_record",
+        "original parent": "current_",
+        "original property": "current_terms",
+        "singular": true,
+        "always matches": false,
+        "description": "Retrieves the current legislator associated with this term.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "historical_term",
+        "parent collection": "historical",
+        "child collection": "historical_terms",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "bioguide_id": [
+            "bioguide"
+          ]
+        },
+        "description": "Retrieves the term served by a historical legislator.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "historical_record",
+        "original parent": "historical",
+        "original property": "historical_term",
+        "singular": true,
+        "always matches": false,
+        "description": "Retrieves the historical legislator associated with this term.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "social_media",
+        "parent collection": "current_",
+        "child collection": "social_media",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "bioguide_id": [
+            "bioguide"
+          ]
+        },
+        "description": "Retrieves the social media accounts for a current legislator.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "current_record",
+        "original parent": "current_",
+        "original property": "social_media",
+        "singular": true,
+        "always matches": false,
+        "description": "Retrieves the current legislator associated with this social media account.",
+        "synonyms": []
+      },
+      {
+        "name": "social_media_account",
+        "type": "simple join",
+        "singular": true,
+        "always matches": false,
+        "description": "Links a historical legislator to their social media account.",
+        "synonyms": [],
+        "parent collection": "historical",
+        "child collection": "social_media",
+        "keys": {
+          "bioguide_id": [
+            "bioguide"
+          ]
+        }
+      },
+      {
+        "name": "historical_record",
+        "type": "reverse",
+        "singular": true,
+        "always matches": false,
+        "description": "The historical legislator record associated with this social media account.",
+        "synonyms": [],
+        "original parent": "historical",
+        "original property": "social_media_account"
+      }
+    ]
+  }
+]

@@ -1,0 +1,831 @@
+[
+  {
+    "name": "software_company",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "customers",
+        "type": "simple table",
+        "table path": "main.Customers",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "ID",
+            "data type": "numeric",
+            "description": "A unique identifier for each customer.",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "ID"
+            ]
+          },
+          {
+            "name": "sex",
+            "type": "table column",
+            "column name": "SEX",
+            "data type": "string",
+            "description": "The gender of the customer.",
+            "sample values": [
+              "Male",
+              "Female"
+            ],
+            "synonyms": [
+              "SEX"
+            ]
+          },
+          {
+            "name": "marital_status",
+            "type": "table column",
+            "column name": "MARITAL_STATUS",
+            "data type": "string",
+            "description": "The marital status of the customer.",
+            "sample values": [
+              "Never-married",
+              "Married-civ-spouse",
+              "Divorced",
+              "Widowed",
+              "Other"
+            ],
+            "synonyms": [
+              "MARITAL_STATUS"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "\"Married-civ-spouse\", \"Divorced\", \"Widowed\" mean customer has been married."
+            }
+          },
+          {
+            "name": "geoid",
+            "type": "table column",
+            "column name": "GEOID",
+            "data type": "numeric",
+            "description": "A geographic identifier for the customer's location.",
+            "sample values": [
+              61,
+              70,
+              53,
+              79,
+              46
+            ],
+            "synonyms": [
+              "GEOID"
+            ]
+          },
+          {
+            "name": "educationnum",
+            "type": "table column",
+            "column name": "EDUCATIONNUM",
+            "data type": "numeric",
+            "description": "A numerical representation of the customer's education level.",
+            "sample values": [
+              7,
+              3,
+              4,
+              11,
+              5
+            ],
+            "synonyms": [
+              "EDUCATIONNUM"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "higher education number refers to higher education"
+            }
+          },
+          {
+            "name": "occupation",
+            "type": "table column",
+            "column name": "OCCUPATION",
+            "data type": "string",
+            "description": "The customer's occupation.",
+            "sample values": [
+              "Machine-op-inspct",
+              "Handlers-cleaners",
+              "Exec-managerial",
+              "Farming-fishing",
+              "Other-service"
+            ],
+            "synonyms": [
+              "OCCUPATION"
+            ]
+          },
+          {
+            "name": "age",
+            "type": "table column",
+            "column name": "age",
+            "data type": "numeric",
+            "description": "The age of the customer in years.",
+            "sample values": [
+              62,
+              78,
+              69,
+              53,
+              85
+            ],
+            "synonyms": [
+              "age"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": {
+                "teenager": "13-19 years old",
+                "elder": "people aged over 65"
+              }
+            }
+          }
+        ],
+        "description": "Contains demographic and personal information about each customer.",
+        "synonyms": [
+          "Customers"
+        ]
+      },
+      {
+        "name": "demog",
+        "type": "simple table",
+        "table path": "main.Demog",
+        "unique properties": [
+          "geoid"
+        ],
+        "properties": [
+          {
+            "name": "geoid",
+            "type": "table column",
+            "column name": "GEOID",
+            "data type": "numeric",
+            "description": "A unique identifier for each geographic area.",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "GEOID"
+            ]
+          },
+          {
+            "name": "inhabitants_k",
+            "type": "table column",
+            "column name": "INHABITANTS_K",
+            "data type": "numeric",
+            "description": "The number of inhabitants in the area, in thousands.",
+            "sample values": [
+              30.046,
+              36.25,
+              47.645,
+              15.417,
+              18.104
+            ],
+            "synonyms": [
+              "INHABITANTS_K"
+            ]
+          },
+          {
+            "name": "income_k",
+            "type": "table column",
+            "column name": "INCOME_K",
+            "data type": "numeric",
+            "description": "The average monthly income per inhabitant, in thousands of dollars.",
+            "sample values": [
+              2631.47,
+              3012.75,
+              2192.41,
+              2343.51,
+              2694.33
+            ],
+            "synonyms": [
+              "INCOME_K"
+            ]
+          },
+          {
+            "name": "a_var1",
+            "type": "table column",
+            "column name": "A_VAR1",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6.084,
+              4.604,
+              4.911,
+              6.2,
+              2.867
+            ],
+            "synonyms": [
+              "A_VAR1"
+            ]
+          },
+          {
+            "name": "a_var2",
+            "type": "table column",
+            "column name": "A_VAR2",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5.79,
+              8.309,
+              8.557,
+              5.623,
+              4.155
+            ],
+            "synonyms": [
+              "A_VAR2"
+            ]
+          },
+          {
+            "name": "a_var3",
+            "type": "table column",
+            "column name": "A_VAR3",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8.595,
+              6.007,
+              5.934,
+              8.55,
+              5.951
+            ],
+            "synonyms": [
+              "A_VAR3"
+            ]
+          },
+          {
+            "name": "a_var4",
+            "type": "table column",
+            "column name": "A_VAR4",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3.935,
+              5.938,
+              6.494,
+              3.959,
+              6.765
+            ],
+            "synonyms": [
+              "A_VAR4"
+            ]
+          },
+          {
+            "name": "a_var5",
+            "type": "table column",
+            "column name": "A_VAR5",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6.362,
+              8.773,
+              9.172,
+              6.52,
+              7.846
+            ],
+            "synonyms": [
+              "A_VAR5"
+            ]
+          },
+          {
+            "name": "a_var6",
+            "type": "table column",
+            "column name": "A_VAR6",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8.626,
+              3.579,
+              3.202,
+              8.089,
+              5.578
+            ],
+            "synonyms": [
+              "A_VAR6"
+            ]
+          },
+          {
+            "name": "a_var7",
+            "type": "table column",
+            "column name": "A_VAR7",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4.624,
+              6.349,
+              6.157,
+              4.32,
+              2.41
+            ],
+            "synonyms": [
+              "A_VAR7"
+            ]
+          },
+          {
+            "name": "a_var8",
+            "type": "table column",
+            "column name": "A_VAR8",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8.324,
+              4.694,
+              4.822,
+              8.694,
+              8.007
+            ],
+            "synonyms": [
+              "A_VAR8"
+            ]
+          },
+          {
+            "name": "a_var9",
+            "type": "table column",
+            "column name": "A_VAR9",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5.233,
+              6.884,
+              7.942,
+              5.217,
+              6.703
+            ],
+            "synonyms": [
+              "A_VAR9"
+            ]
+          },
+          {
+            "name": "a_var10",
+            "type": "table column",
+            "column name": "A_VAR10",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6.232,
+              7.062,
+              7.901,
+              6.627,
+              7.467
+            ],
+            "synonyms": [
+              "A_VAR10"
+            ]
+          },
+          {
+            "name": "a_var11",
+            "type": "table column",
+            "column name": "A_VAR11",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5.205,
+              7.319,
+              7.928,
+              5.493,
+              3.827
+            ],
+            "synonyms": [
+              "A_VAR11"
+            ]
+          },
+          {
+            "name": "a_var12",
+            "type": "table column",
+            "column name": "A_VAR12",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8.231,
+              3.72,
+              2.33,
+              8.73,
+              7.153
+            ],
+            "synonyms": [
+              "A_VAR12"
+            ]
+          },
+          {
+            "name": "a_var13",
+            "type": "table column",
+            "column name": "A_VAR13",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6.746,
+              6.405,
+              6.029,
+              6.713,
+              7.105
+            ],
+            "synonyms": [
+              "A_VAR13"
+            ]
+          },
+          {
+            "name": "a_var14",
+            "type": "table column",
+            "column name": "A_VAR14",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8.679,
+              7.202,
+              6.455,
+              8.851,
+              8.161
+            ],
+            "synonyms": [
+              "A_VAR14"
+            ]
+          },
+          {
+            "name": "a_var15",
+            "type": "table column",
+            "column name": "A_VAR15",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5.292,
+              4.932,
+              4.72,
+              5.198,
+              6.535
+            ],
+            "synonyms": [
+              "A_VAR15"
+            ]
+          },
+          {
+            "name": "a_var16",
+            "type": "table column",
+            "column name": "A_VAR16",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3.5,
+              7.969,
+              8.564,
+              3.313,
+              6.093
+            ],
+            "synonyms": [
+              "A_VAR16"
+            ]
+          },
+          {
+            "name": "a_var17",
+            "type": "table column",
+            "column name": "A_VAR17",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5.512,
+              8.15,
+              8.342,
+              5.076,
+              7.246
+            ],
+            "synonyms": [
+              "A_VAR17"
+            ]
+          },
+          {
+            "name": "a_var18",
+            "type": "table column",
+            "column name": "A_VAR18",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5.783,
+              5.633,
+              4.938,
+              5.796,
+              8.433
+            ],
+            "synonyms": [
+              "A_VAR18"
+            ]
+          }
+        ],
+        "description": "Contains demographic data for various geographic areas, identified by GEOID.",
+        "synonyms": [
+          "Demog"
+        ],
+        "extra semantic info": {
+          "calculation": "total income per year = INHABITANTS_K * INCOME_K * 12"
+        }
+      },
+      {
+        "name": "mailings1_2",
+        "type": "simple table",
+        "table path": "main.Mailings1_2",
+        "unique properties": [
+          "refid"
+        ],
+        "properties": [
+          {
+            "name": "refid",
+            "type": "table column",
+            "column name": "REFID",
+            "data type": "numeric",
+            "description": "A reference identifier for the customer who received the mailing.",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "REFID"
+            ]
+          },
+          {
+            "name": "ref_date",
+            "type": "table column",
+            "column name": "REF_DATE",
+            "data type": "datetime",
+            "description": "The date the mailing was sent.",
+            "sample values": [
+              "2007-02-01 12:00:00.0",
+              "2007-03-01 12:00:00.0"
+            ],
+            "synonyms": [
+              "REF_DATE"
+            ]
+          },
+          {
+            "name": "response",
+            "type": "table column",
+            "column name": "RESPONSE",
+            "data type": "string",
+            "description": "Indicates whether the customer responded to the mailing.",
+            "sample values": [
+              "false",
+              "true"
+            ],
+            "synonyms": [
+              "RESPONSE"
+            ],
+            "extra semantic info": {
+              "notes": "Any person who has not responded to a mailing within two months is considered to have responded negatively. 'true' means they responded to the mailing."
+            }
+          }
+        ],
+        "description": "Records of customer responses to the first two marketing mailings.",
+        "synonyms": [
+          "Mailings1_2"
+        ]
+      },
+      {
+        "name": "sales",
+        "type": "simple table",
+        "table path": "main.Sales",
+        "unique properties": [
+          "eventid"
+        ],
+        "properties": [
+          {
+            "name": "eventid",
+            "type": "table column",
+            "column name": "EVENTID",
+            "data type": "numeric",
+            "description": "A unique identifier for each sales event.",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "EVENTID"
+            ]
+          },
+          {
+            "name": "refid",
+            "type": "table column",
+            "column name": "REFID",
+            "data type": "numeric",
+            "description": "A reference identifier for the customer who made the purchase.",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "REFID"
+            ]
+          },
+          {
+            "name": "event_date",
+            "type": "table column",
+            "column name": "EVENT_DATE",
+            "data type": "datetime",
+            "description": "The date of the sales event.",
+            "sample values": [
+              "2006-12-21 12:00:00.0",
+              "2006-12-25 12:00:00.0",
+              "2007-01-26 12:00:00.0",
+              "2006-12-26 12:00:00.0",
+              "2007-01-17 12:00:00.0"
+            ],
+            "synonyms": [
+              "EVENT_DATE"
+            ]
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "AMOUNT",
+            "data type": "numeric",
+            "description": "The monetary amount of the sale.",
+            "sample values": [
+              17.907,
+              17.401,
+              13.277,
+              13.197,
+              15.001
+            ],
+            "synonyms": [
+              "AMOUNT"
+            ]
+          }
+        ],
+        "description": "Contains records of sales transactions.",
+        "synonyms": [
+          "Sales"
+        ]
+      },
+      {
+        "name": "mailings3",
+        "type": "simple table",
+        "table path": "main.mailings3",
+        "unique properties": [
+          "refid"
+        ],
+        "properties": [
+          {
+            "name": "refid",
+            "type": "table column",
+            "column name": "REFID",
+            "data type": "numeric",
+            "description": "A reference identifier for the customer who received the mailing.",
+            "sample values": [
+              60000,
+              60001,
+              60002,
+              60003,
+              60004
+            ],
+            "synonyms": [
+              "REFID"
+            ]
+          },
+          {
+            "name": "ref_date",
+            "type": "table column",
+            "column name": "REF_DATE",
+            "data type": "datetime",
+            "description": "The date the mailing was sent.",
+            "sample values": [
+              "2007-07-01 12:00:00.0"
+            ],
+            "synonyms": [
+              "REF_DATE"
+            ]
+          },
+          {
+            "name": "response",
+            "type": "table column",
+            "column name": "RESPONSE",
+            "data type": "string",
+            "description": "Indicates whether the customer responded to the mailing.",
+            "sample values": [
+              "false",
+              "true"
+            ],
+            "synonyms": [
+              "RESPONSE"
+            ],
+            "extra semantic info": {
+              "notes": "Any person who has not responded to a mailing within two months is considered to have responded negatively. 'true' means they responded to the mailing."
+            }
+          }
+        ],
+        "description": "Records of customer responses to the third marketing mailing.",
+        "synonyms": [
+          "mailings3"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "customers",
+        "parent collection": "demog",
+        "child collection": "customers",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "geoid": [
+            "geoid"
+          ]
+        },
+        "description": "The customers located in this geographic area.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "demog_record",
+        "original parent": "demog",
+        "original property": "customers",
+        "singular": true,
+        "always matches": false,
+        "description": "The demographic data for the customer's geographic area.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "mailings1_2_record",
+        "parent collection": "customers",
+        "child collection": "mailings1_2",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "refid"
+          ]
+        },
+        "description": "The record from the first two mailing campaigns corresponding to this customer.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customer_record",
+        "original parent": "customers",
+        "original property": "mailings1_2_record",
+        "singular": true,
+        "always matches": false,
+        "description": "The customer record associated with this mailing.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "sales",
+        "parent collection": "customers",
+        "child collection": "sales",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "refid"
+          ]
+        },
+        "description": "The sales transactions made by this customer.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customer_record",
+        "original parent": "customers",
+        "original property": "sales",
+        "singular": true,
+        "always matches": false,
+        "description": "The customer who made this sales transaction.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "mailings3_record",
+        "parent collection": "customers",
+        "child collection": "mailings3",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "refid"
+          ]
+        },
+        "description": "The record from the third mailing campaign corresponding to this customer.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customer_record",
+        "original parent": "customers",
+        "original property": "mailings3_record",
+        "singular": true,
+        "always matches": false,
+        "description": "The customer record associated with this mailing.",
+        "synonyms": []
+      }
+    ]
+  }
+]

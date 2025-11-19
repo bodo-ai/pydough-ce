@@ -1,0 +1,1490 @@
+[
+  {
+    "name": "book_publishing_company",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "authors",
+        "type": "simple table",
+        "table path": "main.authors",
+        "unique properties": [
+          "au_id"
+        ],
+        "properties": [
+          {
+            "name": "au_id",
+            "type": "table column",
+            "column name": "au_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "172-32-1176",
+              "213-46-8915",
+              "238-95-7766",
+              "267-41-2394",
+              "274-80-9391"
+            ],
+            "synonyms": [
+              "au_id"
+            ]
+          },
+          {
+            "name": "au_lname",
+            "type": "table column",
+            "column name": "au_lname",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "White",
+              "Green",
+              "Carson",
+              "O'Leary",
+              "Straight"
+            ],
+            "synonyms": [
+              "au_lname"
+            ]
+          },
+          {
+            "name": "au_fname",
+            "type": "table column",
+            "column name": "au_fname",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Johnson",
+              "Marjorie",
+              "Cheryl",
+              "Michael",
+              "Dean"
+            ],
+            "synonyms": [
+              "au_fname"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "408 496-7223",
+              "415 986-7020",
+              "415 548-7723",
+              "408 286-2428",
+              "415 834-2919"
+            ],
+            "synonyms": [
+              "phone"
+            ]
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "10932 Bigge Rd.",
+              "309 63rd St. #411",
+              "589 Darwin Ln.",
+              "22 Cleveland Av. #14",
+              "5420 College Av."
+            ],
+            "synonyms": [
+              "address"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Menlo Park",
+              "Oakland",
+              "Berkeley",
+              "San Jose",
+              "Lawrence"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CA",
+              "KS",
+              "TN",
+              "OR",
+              "MI"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "zip_",
+            "type": "table column",
+            "column name": "zip",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "94025",
+              "94618",
+              "94705",
+              "95128",
+              "94609"
+            ],
+            "synonyms": [
+              "zip"
+            ]
+          },
+          {
+            "name": "contract",
+            "type": "table column",
+            "column name": "contract",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0"
+            ],
+            "synonyms": [
+              "contract"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "authors"
+        ]
+      },
+      {
+        "name": "discounts",
+        "type": "simple table",
+        "table path": "main.discounts",
+        "unique properties": [
+          [
+            "discounttype",
+            "stor_id",
+            "lowqty",
+            "highqty",
+            "discount"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "discounttype",
+            "type": "table column",
+            "column name": "discounttype",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Initial Customer",
+              "Volume Discount",
+              "Customer Discount"
+            ],
+            "synonyms": [
+              "discounttype"
+            ]
+          },
+          {
+            "name": "stor_id",
+            "type": "table column",
+            "column name": "stor_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "8042"
+            ],
+            "synonyms": [
+              "stor_id"
+            ]
+          },
+          {
+            "name": "lowqty",
+            "type": "table column",
+            "column name": "lowqty",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              100
+            ],
+            "synonyms": [
+              "lowqty"
+            ]
+          },
+          {
+            "name": "highqty",
+            "type": "table column",
+            "column name": "highqty",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1000
+            ],
+            "synonyms": [
+              "highqty"
+            ]
+          },
+          {
+            "name": "discount",
+            "type": "table column",
+            "column name": "discount",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10.5,
+              6.7,
+              5.0
+            ],
+            "synonyms": [
+              "discount"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "discounts"
+        ]
+      },
+      {
+        "name": "employee",
+        "type": "simple table",
+        "table path": "main.employee",
+        "unique properties": [
+          "emp_id"
+        ],
+        "properties": [
+          {
+            "name": "emp_id",
+            "type": "table column",
+            "column name": "emp_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A-C71970F",
+              "A-R89858F",
+              "AMD15433F",
+              "ARD36773F",
+              "CFH28514M"
+            ],
+            "synonyms": [
+              "emp_id"
+            ]
+          },
+          {
+            "name": "fname",
+            "type": "table column",
+            "column name": "fname",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aria",
+              "Annette",
+              "Ann",
+              "Anabela",
+              "Carlos"
+            ],
+            "synonyms": [
+              "fname"
+            ]
+          },
+          {
+            "name": "minit",
+            "type": "table column",
+            "column name": "minit",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "",
+              "M",
+              "R",
+              "F",
+              "G"
+            ],
+            "synonyms": [
+              "minit"
+            ]
+          },
+          {
+            "name": "lname",
+            "type": "table column",
+            "column name": "lname",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Cruz",
+              "Roulet",
+              "Devon",
+              "Domingues",
+              "Hernadez"
+            ],
+            "synonyms": [
+              "lname"
+            ]
+          },
+          {
+            "name": "job_id",
+            "type": "table column",
+            "column name": "job_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              6,
+              3,
+              8,
+              5
+            ],
+            "synonyms": [
+              "job_id"
+            ]
+          },
+          {
+            "name": "job_lvl",
+            "type": "table column",
+            "column name": "job_lvl",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              87,
+              152,
+              200,
+              100,
+              211
+            ],
+            "synonyms": [
+              "job_lvl"
+            ]
+          },
+          {
+            "name": "pub_id",
+            "type": "table column",
+            "column name": "pub_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1389",
+              "9999",
+              "9952",
+              "0877",
+              "0736"
+            ],
+            "synonyms": [
+              "pub_id"
+            ]
+          },
+          {
+            "name": "hire_date",
+            "type": "table column",
+            "column name": "hire_date",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "1991-10-26 00:00:00.0",
+              "1990-02-21 00:00:00.0",
+              "1991-07-16 00:00:00.0",
+              "1993-01-27 00:00:00.0",
+              "1989-04-21 00:00:00.0"
+            ],
+            "synonyms": [
+              "hire_date"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "employee"
+        ]
+      },
+      {
+        "name": "jobs",
+        "type": "simple table",
+        "table path": "main.jobs",
+        "unique properties": [
+          "job_id"
+        ],
+        "properties": [
+          {
+            "name": "job_id",
+            "type": "table column",
+            "column name": "job_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "job_id"
+            ]
+          },
+          {
+            "name": "job_desc",
+            "type": "table column",
+            "column name": "job_desc",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "New Hire - Job not specified",
+              "Chief Executive Officer",
+              "Business Operations Manager",
+              "Chief Financial Officier",
+              "Publisher"
+            ],
+            "synonyms": [
+              "job_desc"
+            ]
+          },
+          {
+            "name": "min_lvl",
+            "type": "table column",
+            "column name": "min_lvl",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              200,
+              175,
+              150,
+              140
+            ],
+            "synonyms": [
+              "min_lvl"
+            ]
+          },
+          {
+            "name": "max_lvl",
+            "type": "table column",
+            "column name": "max_lvl",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              250,
+              225,
+              200,
+              175
+            ],
+            "synonyms": [
+              "max_lvl"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "jobs"
+        ]
+      },
+      {
+        "name": "pub_info",
+        "type": "simple table",
+        "table path": "main.pub_info",
+        "unique properties": [
+          "pub_id"
+        ],
+        "properties": [
+          {
+            "name": "pub_id",
+            "type": "table column",
+            "column name": "pub_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0877",
+              "1389",
+              "1622",
+              "1756",
+              "9901"
+            ],
+            "synonyms": [
+              "pub_id"
+            ]
+          },
+          {
+            "name": "logo",
+            "type": "table column",
+            "column name": "logo",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0x4749463839618B002F00B30F00000000800...",
+              "0x474946383961C2001D00B30F00000000800...",
+              "0x474946383961F5003400B30F00000000800...",
+              "0x474946383961E3002500B30F00000000800...",
+              "0x4749463839615D002200B30F00000000800..."
+            ],
+            "synonyms": [
+              "logo"
+            ]
+          },
+          {
+            "name": "pr_info",
+            "type": "table column",
+            "column name": "pr_info",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "This is sample text data for Binnet &...",
+              "This is sample text data for Algodata...",
+              "This is sample text data for Five Lak...",
+              "This is sample text data for Ramona P...",
+              "This is sample text data for GGG&G, p..."
+            ],
+            "synonyms": [
+              "pr_info"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "pub_info"
+        ]
+      },
+      {
+        "name": "publishers",
+        "type": "simple table",
+        "table path": "main.publishers",
+        "unique properties": [
+          "pub_id"
+        ],
+        "properties": [
+          {
+            "name": "pub_id",
+            "type": "table column",
+            "column name": "pub_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0736",
+              "0877",
+              "1389",
+              "1622",
+              "1756"
+            ],
+            "synonyms": [
+              "pub_id"
+            ]
+          },
+          {
+            "name": "pub_name",
+            "type": "table column",
+            "column name": "pub_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "New Moon Books",
+              "Binnet & Hardley",
+              "Algodata Infosystems",
+              "Five Lakes Publishing",
+              "Ramona Publishers"
+            ],
+            "synonyms": [
+              "pub_name"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Boston",
+              "Washington",
+              "Berkeley",
+              "Chicago",
+              "Dallas"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "MA",
+              "DC",
+              "CA",
+              "IL",
+              "TX"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "USA",
+              "Germany",
+              "France"
+            ],
+            "synonyms": [
+              "country"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "publishers"
+        ]
+      },
+      {
+        "name": "roysched",
+        "type": "simple table",
+        "table path": "main.roysched",
+        "unique properties": [
+          [
+            "title_id",
+            "lorange",
+            "hirange",
+            "royalty"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "title_id",
+            "type": "table column",
+            "column name": "title_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "BU1032",
+              "PC1035",
+              "BU2075",
+              "PS2091",
+              "PS2106"
+            ],
+            "synonyms": [
+              "title_id"
+            ]
+          },
+          {
+            "name": "lorange",
+            "type": "table column",
+            "column name": "lorange",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              5001,
+              2001,
+              3001,
+              4001
+            ],
+            "synonyms": [
+              "lorange"
+            ]
+          },
+          {
+            "name": "hirange",
+            "type": "table column",
+            "column name": "hirange",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5000,
+              50000,
+              2000,
+              3000,
+              4000
+            ],
+            "synonyms": [
+              "hirange"
+            ]
+          },
+          {
+            "name": "royalty",
+            "type": "table column",
+            "column name": "royalty",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              12,
+              14,
+              16,
+              18
+            ],
+            "synonyms": [
+              "royalty"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "roysched"
+        ]
+      },
+      {
+        "name": "sales",
+        "type": "simple table",
+        "table path": "main.sales",
+        "unique properties": [
+          [
+            "stor_id",
+            "ord_num",
+            "title_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "stor_id",
+            "type": "table column",
+            "column name": "stor_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "6380",
+              "7066",
+              "7067",
+              "7131",
+              "7896"
+            ],
+            "synonyms": [
+              "stor_id"
+            ]
+          },
+          {
+            "name": "ord_num",
+            "type": "table column",
+            "column name": "ord_num",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "6871",
+              "722a",
+              "A2976",
+              "QA7442.3",
+              "D4482"
+            ],
+            "synonyms": [
+              "ord_num"
+            ]
+          },
+          {
+            "name": "ord_date",
+            "type": "table column",
+            "column name": "ord_date",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "1994-09-14 00:00:00.0",
+              "1994-09-13 00:00:00.0",
+              "1993-05-24 00:00:00.0",
+              "1992-06-15 00:00:00.0",
+              "1993-05-29 00:00:00.0"
+            ],
+            "synonyms": [
+              "ord_date"
+            ]
+          },
+          {
+            "name": "qty",
+            "type": "table column",
+            "column name": "qty",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              3,
+              50,
+              75,
+              10
+            ],
+            "synonyms": [
+              "qty"
+            ]
+          },
+          {
+            "name": "payterms",
+            "type": "table column",
+            "column name": "payterms",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Net 60",
+              "Net 30",
+              "ON invoice"
+            ],
+            "synonyms": [
+              "payterms"
+            ]
+          },
+          {
+            "name": "title_id",
+            "type": "table column",
+            "column name": "title_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "BU1032",
+              "PS2091",
+              "PC8888",
+              "TC3218",
+              "TC4203"
+            ],
+            "synonyms": [
+              "title_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "sales"
+        ]
+      },
+      {
+        "name": "stores",
+        "type": "simple table",
+        "table path": "main.stores",
+        "unique properties": [
+          "stor_id"
+        ],
+        "properties": [
+          {
+            "name": "stor_id",
+            "type": "table column",
+            "column name": "stor_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "6380",
+              "7066",
+              "7067",
+              "7131",
+              "7896"
+            ],
+            "synonyms": [
+              "stor_id"
+            ]
+          },
+          {
+            "name": "stor_name",
+            "type": "table column",
+            "column name": "stor_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Eric the Read Books",
+              "Barnum's",
+              "News & Brews",
+              "Doc-U-Mat: Quality Laundry and Books",
+              "Fricative Bookshop"
+            ],
+            "synonyms": [
+              "stor_name"
+            ]
+          },
+          {
+            "name": "stor_address",
+            "type": "table column",
+            "column name": "stor_address",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "788 Catamaugus Ave.",
+              "567 Pasadena Ave.",
+              "577 First St.",
+              "24-A Avogadro Way",
+              "89 Madison St."
+            ],
+            "synonyms": [
+              "stor_address"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Seattle",
+              "Tustin",
+              "Los Gatos",
+              "Remulade",
+              "Fremont"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "WA",
+              "CA",
+              "OR"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "zip_",
+            "type": "table column",
+            "column name": "zip",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "98056",
+              "92789",
+              "96745",
+              "98014",
+              "90019"
+            ],
+            "synonyms": [
+              "zip"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "stores"
+        ]
+      },
+      {
+        "name": "titleauthor",
+        "type": "simple table",
+        "table path": "main.titleauthor",
+        "unique properties": [
+          [
+            "au_id",
+            "title_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "au_id",
+            "type": "table column",
+            "column name": "au_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "172-32-1176",
+              "213-46-8915",
+              "238-95-7766",
+              "267-41-2394",
+              "274-80-9391"
+            ],
+            "synonyms": [
+              "au_id"
+            ]
+          },
+          {
+            "name": "title_id",
+            "type": "table column",
+            "column name": "title_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "PS3333",
+              "BU1032",
+              "BU2075",
+              "PC1035",
+              "BU1111"
+            ],
+            "synonyms": [
+              "title_id"
+            ]
+          },
+          {
+            "name": "au_ord",
+            "type": "table column",
+            "column name": "au_ord",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3
+            ],
+            "synonyms": [
+              "au_ord"
+            ]
+          },
+          {
+            "name": "royaltyper",
+            "type": "table column",
+            "column name": "royaltyper",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              100,
+              40,
+              30,
+              60,
+              50
+            ],
+            "synonyms": [
+              "royaltyper"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "titleauthor"
+        ]
+      },
+      {
+        "name": "titles",
+        "type": "simple table",
+        "table path": "main.titles",
+        "unique properties": [
+          "title_id"
+        ],
+        "properties": [
+          {
+            "name": "title_id",
+            "type": "table column",
+            "column name": "title_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "BU1032",
+              "BU1111",
+              "BU2075",
+              "BU7832",
+              "MC2222"
+            ],
+            "synonyms": [
+              "title_id"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "The Busy Executive's Database Guide",
+              "Cooking with Computers: Surreptitious...",
+              "You Can Combat Computer Stress!",
+              "Straight Talk About Computers",
+              "Silicon Valley Gastronomic Treats"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "type",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "business",
+              "mod_cook",
+              "UNDECIDED",
+              "popular_comp",
+              "psychology"
+            ],
+            "synonyms": [
+              "type"
+            ]
+          },
+          {
+            "name": "pub_id",
+            "type": "table column",
+            "column name": "pub_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1389",
+              "0736",
+              "0877"
+            ],
+            "synonyms": [
+              "pub_id"
+            ]
+          },
+          {
+            "name": "price",
+            "type": "table column",
+            "column name": "price",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              19.99,
+              11.95,
+              2.99,
+              22.95,
+              20.0
+            ],
+            "synonyms": [
+              "price"
+            ]
+          },
+          {
+            "name": "advance",
+            "type": "table column",
+            "column name": "advance",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5000.0,
+              10125.0,
+              0.0,
+              15000.0,
+              7000.0
+            ],
+            "synonyms": [
+              "advance"
+            ]
+          },
+          {
+            "name": "royalty",
+            "type": "table column",
+            "column name": "royalty",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              24,
+              12,
+              16,
+              14
+            ],
+            "synonyms": [
+              "royalty"
+            ]
+          },
+          {
+            "name": "ytd_sales",
+            "type": "table column",
+            "column name": "ytd_sales",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4095,
+              3876,
+              18722,
+              2032,
+              22246
+            ],
+            "synonyms": [
+              "ytd_sales"
+            ]
+          },
+          {
+            "name": "notes",
+            "type": "table column",
+            "column name": "notes",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "An overview of available database sys...",
+              "Helpful hints on how to use your elec...",
+              "The latest medical and psychological ...",
+              "Annotated analysis of what computers ...",
+              "Favorite recipes for quick, easy, and..."
+            ],
+            "synonyms": [
+              "notes"
+            ]
+          },
+          {
+            "name": "pubdate",
+            "type": "table column",
+            "column name": "pubdate",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "1991-06-12 00:00:00.0",
+              "1991-06-09 00:00:00.0",
+              "1991-06-30 00:00:00.0",
+              "1991-06-22 00:00:00.0",
+              "1991-06-18 00:00:00.0"
+            ],
+            "synonyms": [
+              "pubdate"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "titles"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "discounts",
+        "parent collection": "stores",
+        "child collection": "discounts",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "stor_id": [
+            "stor_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "stores",
+        "original parent": "stores",
+        "original property": "discounts",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "employee",
+        "parent collection": "publishers",
+        "child collection": "employee",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "pub_id": [
+            "pub_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "publishers",
+        "original parent": "publishers",
+        "original property": "employee",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "employee",
+        "parent collection": "jobs",
+        "child collection": "employee",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "job_id": [
+            "job_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "jobs",
+        "original parent": "jobs",
+        "original property": "employee",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "pub_info",
+        "parent collection": "publishers",
+        "child collection": "pub_info",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "pub_id": [
+            "pub_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "publishers",
+        "original parent": "publishers",
+        "original property": "pub_info",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "roysched",
+        "parent collection": "titles",
+        "child collection": "roysched",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "title_id": [
+            "title_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "titles",
+        "original parent": "titles",
+        "original property": "roysched",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "sales",
+        "parent collection": "titles",
+        "child collection": "sales",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "title_id": [
+            "title_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "titles",
+        "original parent": "titles",
+        "original property": "sales",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "sales",
+        "parent collection": "stores",
+        "child collection": "sales",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "stor_id": [
+            "stor_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "stores",
+        "original parent": "stores",
+        "original property": "sales",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "titleauthor",
+        "parent collection": "titles",
+        "child collection": "titleauthor",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "title_id": [
+            "title_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "titles",
+        "original parent": "titles",
+        "original property": "titleauthor",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "titleauthor",
+        "parent collection": "authors",
+        "child collection": "titleauthor",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "au_id": [
+            "au_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "authors",
+        "original parent": "authors",
+        "original property": "titleauthor",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "titles",
+        "parent collection": "publishers",
+        "child collection": "titles",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "pub_id": [
+            "pub_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "publishers",
+        "original parent": "publishers",
+        "original property": "titles",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

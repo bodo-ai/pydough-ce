@@ -1,0 +1,695 @@
+[
+  {
+    "name": "movielens",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "actors",
+        "type": "simple table",
+        "table path": "main.actors",
+        "unique properties": [
+          "actorid"
+        ],
+        "properties": [
+          {
+            "name": "actorid",
+            "type": "table column",
+            "column name": "actorid",
+            "data type": "numeric",
+            "description": "unique identificator number of actors",
+            "sample values": [
+              4,
+              16,
+              28,
+              566,
+              580
+            ],
+            "synonyms": [
+              "actorid"
+            ]
+          },
+          {
+            "name": "a_gender",
+            "type": "table column",
+            "column name": "a_gender",
+            "data type": "string",
+            "description": "actor gender",
+            "sample values": [
+              "M",
+              "F"
+            ],
+            "synonyms": [
+              "a_gender"
+            ],
+            "extra semantic info": {
+              "M": "male",
+              "F": "female"
+            }
+          },
+          {
+            "name": "a_quality",
+            "type": "table column",
+            "column name": "a_quality",
+            "data type": "numeric",
+            "description": "actor quality",
+            "sample values": [
+              4,
+              0,
+              3,
+              2,
+              5
+            ],
+            "synonyms": [
+              "a_quality"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A higher value indicates better quality, a lower value indicates worse quality."
+            }
+          }
+        ],
+        "description": "Contains information about actors in the dataset.",
+        "synonyms": [
+          "actors"
+        ]
+      },
+      {
+        "name": "directors",
+        "type": "simple table",
+        "table path": "main.directors",
+        "unique properties": [
+          "directorid"
+        ],
+        "properties": [
+          {
+            "name": "directorid",
+            "type": "table column",
+            "column name": "directorid",
+            "data type": "numeric",
+            "description": "unique identification number of directors",
+            "sample values": [
+              7387,
+              12945,
+              15725,
+              21574,
+              34185
+            ],
+            "synonyms": [
+              "directorid"
+            ]
+          },
+          {
+            "name": "d_quality",
+            "type": "table column",
+            "column name": "d_quality",
+            "data type": "numeric",
+            "description": "director quality",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "d_quality"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A higher value indicates better quality, a lower value indicates worse quality."
+            }
+          },
+          {
+            "name": "avg_revenue",
+            "type": "table column",
+            "column name": "avg_revenue",
+            "data type": "numeric",
+            "description": "average revenue",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "avg_revenue"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A higher value indicates higher revenue, a lower value indicates lower revenue."
+            }
+          }
+        ],
+        "description": "Contains information about movie directors.",
+        "synonyms": [
+          "directors"
+        ]
+      },
+      {
+        "name": "movies",
+        "type": "simple table",
+        "table path": "main.movies",
+        "unique properties": [
+          "movieid"
+        ],
+        "properties": [
+          {
+            "name": "movieid",
+            "type": "table column",
+            "column name": "movieid",
+            "data type": "numeric",
+            "description": "unique identifier number of movies",
+            "sample values": [
+              1672052,
+              1672111,
+              1672580,
+              1672716,
+              1672946
+            ],
+            "synonyms": [
+              "movieid"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "year",
+            "sample values": [
+              3,
+              4,
+              1,
+              2
+            ],
+            "synonyms": [
+              "year"
+            ],
+            "extra semantic info": {
+              "scale": "1 (oldest) to 4 (newest)",
+              "interpretation": "A higher value indicates a more recent release date."
+            }
+          },
+          {
+            "name": "isenglish",
+            "type": "table column",
+            "column name": "isEnglish",
+            "data type": "string",
+            "description": "Indicates if the movie's primary language is English.",
+            "sample values": [
+              "T",
+              "F"
+            ],
+            "synonyms": [
+              "isEnglish"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "country",
+            "data type": "string",
+            "description": "The country of origin for the movie.",
+            "sample values": [
+              "other",
+              "USA",
+              "France",
+              "UK"
+            ],
+            "synonyms": [
+              "country"
+            ]
+          },
+          {
+            "name": "runningtime",
+            "type": "table column",
+            "column name": "runningtime",
+            "data type": "numeric",
+            "description": "The running time of the movie.",
+            "sample values": [
+              2,
+              3,
+              0,
+              1
+            ],
+            "synonyms": [
+              "runningtime"
+            ]
+          }
+        ],
+        "description": "Contains information about movies.",
+        "synonyms": [
+          "movies"
+        ]
+      },
+      {
+        "name": "movies2actors",
+        "type": "simple table",
+        "table path": "main.movies2actors",
+        "unique properties": [
+          [
+            "movieid",
+            "actorid"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "movieid",
+            "type": "table column",
+            "column name": "movieid",
+            "data type": "numeric",
+            "description": "identifier number of movies",
+            "sample values": [
+              1672052,
+              1672111,
+              1672580,
+              1672716,
+              1672946
+            ],
+            "synonyms": [
+              "movieid"
+            ]
+          },
+          {
+            "name": "actorid",
+            "type": "table column",
+            "column name": "actorid",
+            "data type": "numeric",
+            "description": "identifier number of actors",
+            "sample values": [
+              88796,
+              88848,
+              121878,
+              134348,
+              198682
+            ],
+            "synonyms": [
+              "actorid"
+            ]
+          },
+          {
+            "name": "cast_num",
+            "type": "table column",
+            "column name": "cast_num",
+            "data type": "numeric",
+            "description": "cast number",
+            "sample values": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "synonyms": [
+              "cast_num"
+            ]
+          }
+        ],
+        "description": "A linking table that associates actors with the movies they appeared in.",
+        "synonyms": [
+          "movies2actors"
+        ]
+      },
+      {
+        "name": "movies2directors",
+        "type": "simple table",
+        "table path": "main.movies2directors",
+        "unique properties": [
+          [
+            "movieid",
+            "directorid"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "movieid",
+            "type": "table column",
+            "column name": "movieid",
+            "data type": "numeric",
+            "description": "identifier number of movies",
+            "sample values": [
+              1672052,
+              1672111,
+              1672580,
+              1672716,
+              1672946
+            ],
+            "synonyms": [
+              "movieid"
+            ]
+          },
+          {
+            "name": "directorid",
+            "type": "table column",
+            "column name": "directorid",
+            "data type": "numeric",
+            "description": "identifier number of directors",
+            "sample values": [
+              22397,
+              54934,
+              297253,
+              188926,
+              188940
+            ],
+            "synonyms": [
+              "directorid"
+            ]
+          },
+          {
+            "name": "genre",
+            "type": "table column",
+            "column name": "genre",
+            "data type": "string",
+            "description": "genre of movies",
+            "sample values": [
+              "Action",
+              "Adventure",
+              "Animation",
+              "Comedy",
+              "Crime"
+            ],
+            "synonyms": [
+              "genre"
+            ]
+          }
+        ],
+        "description": "A linking table that associates directors with the movies they directed, including the genre.",
+        "synonyms": [
+          "movies2directors"
+        ]
+      },
+      {
+        "name": "u2base",
+        "type": "simple table",
+        "table path": "main.u2base",
+        "unique properties": [
+          [
+            "userid",
+            "movieid"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "userid",
+            "type": "table column",
+            "column name": "userid",
+            "data type": "numeric",
+            "description": "identifier number of users",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "userid"
+            ]
+          },
+          {
+            "name": "movieid",
+            "type": "table column",
+            "column name": "movieid",
+            "data type": "numeric",
+            "description": "identifier number of the movie",
+            "sample values": [
+              1684486,
+              1685309,
+              1685493,
+              1711384,
+              1713183
+            ],
+            "synonyms": [
+              "movieid"
+            ]
+          },
+          {
+            "name": "rating",
+            "type": "table column",
+            "column name": "rating",
+            "data type": "string",
+            "description": "ratings of movies",
+            "sample values": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "synonyms": [
+              "rating"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "A higher value indicates a higher and more satisfactory rating from the user."
+            }
+          }
+        ],
+        "description": "A linking table containing movie ratings given by users.",
+        "synonyms": [
+          "u2base"
+        ]
+      },
+      {
+        "name": "users",
+        "type": "simple table",
+        "table path": "main.users",
+        "unique properties": [
+          "userid"
+        ],
+        "properties": [
+          {
+            "name": "userid",
+            "type": "table column",
+            "column name": "userid",
+            "data type": "numeric",
+            "description": "unique identifier number of users",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "userid"
+            ]
+          },
+          {
+            "name": "age",
+            "type": "table column",
+            "column name": "age",
+            "data type": "string",
+            "description": "age",
+            "sample values": [
+              "1",
+              "56",
+              "25",
+              "45",
+              "50"
+            ],
+            "synonyms": [
+              "age"
+            ],
+            "extra semantic info": {
+              "1": "1-18 years old",
+              "18": "18-25 years old",
+              "25": "25-35 years old",
+              "35": "35-45 years old",
+              "45": "45-50 years old",
+              "50": "50-56 years old",
+              "56": "over 56 years old"
+            }
+          },
+          {
+            "name": "u_gender",
+            "type": "table column",
+            "column name": "u_gender",
+            "data type": "string",
+            "description": "user gender",
+            "sample values": [
+              "F",
+              "M"
+            ],
+            "synonyms": [
+              "u_gender"
+            ],
+            "extra semantic info": {
+              "M": "Male",
+              "F": "Female"
+            }
+          },
+          {
+            "name": "occupation",
+            "type": "table column",
+            "column name": "occupation",
+            "data type": "string",
+            "description": "occupation",
+            "sample values": [
+              "2",
+              "3",
+              "4",
+              "1",
+              "5"
+            ],
+            "synonyms": [
+              "occupation"
+            ]
+          }
+        ],
+        "description": "Contains information about users who rated movies.",
+        "synonyms": [
+          "users"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "movie_appearances",
+        "parent collection": "actors",
+        "child collection": "movies2actors",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "actorid": [
+            "actorid"
+          ]
+        },
+        "description": "The movie appearances for this actor.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "actor_record",
+        "original parent": "actors",
+        "original property": "movie_appearances",
+        "singular": true,
+        "always matches": true,
+        "description": "The actor associated with this movie appearance.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "cast_members",
+        "parent collection": "movies",
+        "child collection": "movies2actors",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "movieid": [
+            "movieid"
+          ]
+        },
+        "description": "The cast members who appeared in this movie.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "movie_record",
+        "original parent": "movies",
+        "original property": "cast_members",
+        "singular": true,
+        "always matches": true,
+        "description": "The movie associated with this cast member record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "directed_movies",
+        "parent collection": "directors",
+        "child collection": "movies2directors",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "directorid": [
+            "directorid"
+          ]
+        },
+        "description": "The movies directed by this director.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "director_record",
+        "original parent": "directors",
+        "original property": "directed_movies",
+        "singular": true,
+        "always matches": true,
+        "description": "The director associated with this movie direction record.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "director_credits",
+        "parent collection": "movies",
+        "child collection": "movies2directors",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "movieid": [
+            "movieid"
+          ]
+        },
+        "description": "The director credits for this movie.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "movie_record",
+        "original parent": "movies",
+        "original property": "director_credits",
+        "singular": true,
+        "always matches": true,
+        "description": "The movie associated with this director credit.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "user_ratings",
+        "parent collection": "movies",
+        "child collection": "u2base",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "movieid": [
+            "movieid"
+          ]
+        },
+        "description": "The ratings this movie has received from users.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "movie_record",
+        "original parent": "movies",
+        "original property": "user_ratings",
+        "singular": true,
+        "always matches": true,
+        "description": "The movie that was rated.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "submitted_ratings",
+        "parent collection": "users",
+        "child collection": "u2base",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "userid": [
+            "userid"
+          ]
+        },
+        "description": "The ratings submitted by this user.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "user_record",
+        "original parent": "users",
+        "original property": "submitted_ratings",
+        "singular": true,
+        "always matches": true,
+        "description": "The user who submitted the rating.",
+        "synonyms": []
+      }
+    ]
+  }
+]

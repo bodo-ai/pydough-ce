@@ -1,0 +1,1288 @@
+[
+  {
+    "name": "beer_factory",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "customers",
+        "type": "simple table",
+        "table path": "main.customers",
+        "unique properties": [
+          "customerid"
+        ],
+        "properties": [
+          {
+            "name": "customerid",
+            "type": "table column",
+            "column name": "CustomerID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              101811,
+              103508,
+              104939,
+              105549,
+              105771
+            ],
+            "synonyms": [
+              "CustomerID"
+            ]
+          },
+          {
+            "name": "first",
+            "type": "table column",
+            "column name": "First",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Kenneth",
+              "Madeleine",
+              "Damen",
+              "Kevin",
+              "John"
+            ],
+            "synonyms": [
+              "First"
+            ]
+          },
+          {
+            "name": "last",
+            "type": "table column",
+            "column name": "Last",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Walton",
+              "Jones",
+              "Wheeler",
+              "Gilbert",
+              "Young"
+            ],
+            "synonyms": [
+              "Last"
+            ]
+          },
+          {
+            "name": "streetaddress",
+            "type": "table column",
+            "column name": "StreetAddress",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "6715 Commonwealth Dr",
+              "3603 Leola Way",
+              "6740 Branwood Way",
+              "3198 Livingston Way",
+              "663 Westward Way"
+            ],
+            "synonyms": [
+              "StreetAddress"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "City",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Sacramento",
+              "Orangevale",
+              "Folsom",
+              "Isleton",
+              "Ryde"
+            ],
+            "synonyms": [
+              "City"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "State",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CA"
+            ],
+            "synonyms": [
+              "State"
+            ]
+          },
+          {
+            "name": "zipcode",
+            "type": "table column",
+            "column name": "ZipCode",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              94256,
+              94258,
+              95662,
+              95671,
+              95899
+            ],
+            "synonyms": [
+              "ZipCode"
+            ]
+          },
+          {
+            "name": "email",
+            "type": "table column",
+            "column name": "Email",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "walton.k76@fastmail.com",
+              "j_madeleine@gmail.com",
+              "dwheeler@outlook.com",
+              "kgilbert@fastmail.com",
+              "john.y90@mail.com"
+            ],
+            "synonyms": [
+              "Email"
+            ]
+          },
+          {
+            "name": "phonenumber",
+            "type": "table column",
+            "column name": "PhoneNumber",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "(916) 918-1561",
+              "(916) 186-9423",
+              "(916) 164-1156",
+              "(916) 304-9859",
+              "(916) 730-6109"
+            ],
+            "synonyms": [
+              "PhoneNumber"
+            ]
+          },
+          {
+            "name": "firstpurchasedate",
+            "type": "table column",
+            "column name": "FirstPurchaseDate",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2013-05-30",
+              "2013-02-06",
+              "2013-04-11",
+              "2013-02-28",
+              "2013-09-05"
+            ],
+            "synonyms": [
+              "FirstPurchaseDate"
+            ]
+          },
+          {
+            "name": "subscribedtoemaillist",
+            "type": "table column",
+            "column name": "SubscribedToEmailList",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FALSE",
+              "TRUE"
+            ],
+            "synonyms": [
+              "SubscribedToEmailList"
+            ]
+          },
+          {
+            "name": "gender",
+            "type": "table column",
+            "column name": "Gender",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "M",
+              "F"
+            ],
+            "synonyms": [
+              "Gender"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "customers"
+        ]
+      },
+      {
+        "name": "geolocation",
+        "type": "simple table",
+        "table path": "main.geolocation",
+        "unique properties": [
+          "locationid"
+        ],
+        "properties": [
+          {
+            "name": "locationid",
+            "type": "table column",
+            "column name": "LocationID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2
+            ],
+            "synonyms": [
+              "LocationID"
+            ]
+          },
+          {
+            "name": "latitude",
+            "type": "table column",
+            "column name": "Latitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0,
+              38.566129,
+              38.559615
+            ],
+            "synonyms": [
+              "Latitude"
+            ]
+          },
+          {
+            "name": "longitude",
+            "type": "table column",
+            "column name": "Longitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0,
+              -121.426432,
+              -121.42243
+            ],
+            "synonyms": [
+              "Longitude"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "geolocation"
+        ]
+      },
+      {
+        "name": "location",
+        "type": "simple table",
+        "table path": "main.location",
+        "unique properties": [
+          "locationid"
+        ],
+        "properties": [
+          {
+            "name": "locationid",
+            "type": "table column",
+            "column name": "LocationID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2
+            ],
+            "synonyms": [
+              "LocationID"
+            ]
+          },
+          {
+            "name": "locationname",
+            "type": "table column",
+            "column name": "LocationName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "LOST",
+              "Sac State American River Courtyard",
+              "Sac State Union"
+            ],
+            "synonyms": [
+              "LocationName"
+            ]
+          },
+          {
+            "name": "streetaddress",
+            "type": "table column",
+            "column name": "StreetAddress",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "6000 J St"
+            ],
+            "synonyms": [
+              "StreetAddress"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "City",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Sacramento"
+            ],
+            "synonyms": [
+              "City"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "State",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CA"
+            ],
+            "synonyms": [
+              "State"
+            ]
+          },
+          {
+            "name": "zipcode",
+            "type": "table column",
+            "column name": "ZipCode",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              95819
+            ],
+            "synonyms": [
+              "ZipCode"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "location"
+        ]
+      },
+      {
+        "name": "rootbeer",
+        "type": "simple table",
+        "table path": "main.rootbeer",
+        "unique properties": [
+          "rootbeerid"
+        ],
+        "properties": [
+          {
+            "name": "rootbeerid",
+            "type": "table column",
+            "column name": "RootBeerID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              100000,
+              100001,
+              100002,
+              100003,
+              100004
+            ],
+            "synonyms": [
+              "RootBeerID"
+            ]
+          },
+          {
+            "name": "brandid",
+            "type": "table column",
+            "column name": "BrandID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10001,
+              10002,
+              10003,
+              10004,
+              10005
+            ],
+            "synonyms": [
+              "BrandID"
+            ]
+          },
+          {
+            "name": "containertype",
+            "type": "table column",
+            "column name": "ContainerType",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Bottle",
+              "Can"
+            ],
+            "synonyms": [
+              "ContainerType"
+            ]
+          },
+          {
+            "name": "locationid",
+            "type": "table column",
+            "column name": "LocationID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "LocationID"
+            ]
+          },
+          {
+            "name": "purchasedate",
+            "type": "table column",
+            "column name": "PurchaseDate",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2015-07-03",
+              "2016-05-09",
+              "2015-05-24",
+              "2015-08-15",
+              "2015-03-10"
+            ],
+            "synonyms": [
+              "PurchaseDate"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "rootbeer"
+        ]
+      },
+      {
+        "name": "rootbeerbrand",
+        "type": "simple table",
+        "table path": "main.rootbeerbrand",
+        "unique properties": [
+          "brandid"
+        ],
+        "properties": [
+          {
+            "name": "brandid",
+            "type": "table column",
+            "column name": "BrandID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10001,
+              10002,
+              10003,
+              10004,
+              10005
+            ],
+            "synonyms": [
+              "BrandID"
+            ]
+          },
+          {
+            "name": "brandname",
+            "type": "table column",
+            "column name": "BrandName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A&W",
+              "A.J. Stephans",
+              "Abita",
+              "Barq's",
+              "Bedfords"
+            ],
+            "synonyms": [
+              "BrandName"
+            ]
+          },
+          {
+            "name": "firstbrewedyear",
+            "type": "table column",
+            "column name": "FirstBrewedYear",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1919,
+              1926,
+              1986,
+              1898,
+              1984
+            ],
+            "synonyms": [
+              "FirstBrewedYear"
+            ]
+          },
+          {
+            "name": "breweryname",
+            "type": "table column",
+            "column name": "BreweryName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Dr Pepper Snapple Group",
+              "AJ Stephans Beverages",
+              "Abita Brewery",
+              "Coca-Cola",
+              "Northwest Soda Works"
+            ],
+            "synonyms": [
+              "BreweryName"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "City",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Lodi",
+              "Fall River",
+              "Covington",
+              "New Orleans",
+              "Port Angeles"
+            ],
+            "synonyms": [
+              "City"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "State",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CA",
+              "MA",
+              "LA",
+              "WA",
+              "QLD"
+            ],
+            "synonyms": [
+              "State"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "United States",
+              "Australia"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "Description",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "After setting up the first A&W Root B...",
+              "AJ Stephans Company makes \nthe finest...",
+              "Abita Root Beer is made with a hot mi...",
+              "Since 1898 Barq's root beer has had a...",
+              "Always ice cold, \u201cnever with ice\u201d."
+            ],
+            "synonyms": [
+              "Description"
+            ]
+          },
+          {
+            "name": "canesugar",
+            "type": "table column",
+            "column name": "CaneSugar",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FALSE",
+              "TRUE"
+            ],
+            "synonyms": [
+              "CaneSugar"
+            ]
+          },
+          {
+            "name": "cornsyrup",
+            "type": "table column",
+            "column name": "CornSyrup",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "TRUE",
+              "FALSE"
+            ],
+            "synonyms": [
+              "CornSyrup"
+            ]
+          },
+          {
+            "name": "honey",
+            "type": "table column",
+            "column name": "Honey",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FALSE",
+              "TRUE"
+            ],
+            "synonyms": [
+              "Honey"
+            ]
+          },
+          {
+            "name": "artificialsweetener",
+            "type": "table column",
+            "column name": "ArtificialSweetener",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FALSE",
+              "TRUE"
+            ],
+            "synonyms": [
+              "ArtificialSweetener"
+            ]
+          },
+          {
+            "name": "caffeinated",
+            "type": "table column",
+            "column name": "Caffeinated",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FALSE",
+              "TRUE"
+            ],
+            "synonyms": [
+              "Caffeinated"
+            ]
+          },
+          {
+            "name": "alcoholic",
+            "type": "table column",
+            "column name": "Alcoholic",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FALSE"
+            ],
+            "synonyms": [
+              "Alcoholic"
+            ]
+          },
+          {
+            "name": "availableincans",
+            "type": "table column",
+            "column name": "AvailableInCans",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "TRUE",
+              "FALSE"
+            ],
+            "synonyms": [
+              "AvailableInCans"
+            ]
+          },
+          {
+            "name": "availableinbottles",
+            "type": "table column",
+            "column name": "AvailableInBottles",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FALSE",
+              "TRUE"
+            ],
+            "synonyms": [
+              "AvailableInBottles"
+            ]
+          },
+          {
+            "name": "availableinkegs",
+            "type": "table column",
+            "column name": "AvailableInKegs",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FALSE",
+              "TRUE"
+            ],
+            "synonyms": [
+              "AvailableInKegs"
+            ]
+          },
+          {
+            "name": "website",
+            "type": "table column",
+            "column name": "Website",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "http://www.rootbeer.com/",
+              "http://www.ajstephans.com/",
+              "https://abita.com/brews/our_brews/abi...",
+              "http://www.barqs.com/",
+              "http://bedfordssodas.com/products.html"
+            ],
+            "synonyms": [
+              "Website"
+            ]
+          },
+          {
+            "name": "facebookpage",
+            "type": "table column",
+            "column name": "FacebookPage",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://www.facebook.com/Dads-Old-Fas...",
+              "https://www.facebook.com/Dog-N-Suds-B...",
+              "https://www.facebook.com/fitzsrootbeer",
+              "https://www.facebook.com/Gales-Root-B...",
+              "https://www.facebook.com/MugRootBeer/"
+            ],
+            "synonyms": [
+              "FacebookPage"
+            ]
+          },
+          {
+            "name": "twitter",
+            "type": "table column",
+            "column name": "Twitter",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://twitter.com/ilovedads",
+              "https://twitter.com/1919rootbeer"
+            ],
+            "synonyms": [
+              "Twitter"
+            ]
+          },
+          {
+            "name": "wholesalecost",
+            "type": "table column",
+            "column name": "WholesaleCost",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.42,
+              0.98,
+              1.13,
+              0.4,
+              1.1
+            ],
+            "synonyms": [
+              "WholesaleCost"
+            ]
+          },
+          {
+            "name": "currentretailprice",
+            "type": "table column",
+            "column name": "CurrentRetailPrice",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1.0,
+              3.0,
+              44.0
+            ],
+            "synonyms": [
+              "CurrentRetailPrice"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "rootbeerbrand"
+        ]
+      },
+      {
+        "name": "rootbeerreview",
+        "type": "simple table",
+        "table path": "main.rootbeerreview",
+        "unique properties": [
+          [
+            "customerid",
+            "brandid"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "customerid",
+            "type": "table column",
+            "column name": "CustomerID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              101811,
+              105549,
+              105771,
+              108708,
+              109251
+            ],
+            "synonyms": [
+              "CustomerID"
+            ]
+          },
+          {
+            "name": "brandid",
+            "type": "table column",
+            "column name": "BrandID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10012,
+              10014,
+              10015,
+              10021,
+              10020
+            ],
+            "synonyms": [
+              "BrandID"
+            ]
+          },
+          {
+            "name": "starrating",
+            "type": "table column",
+            "column name": "StarRating",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              1,
+              3,
+              2,
+              4
+            ],
+            "synonyms": [
+              "StarRating"
+            ]
+          },
+          {
+            "name": "reviewdate",
+            "type": "table column",
+            "column name": "ReviewDate",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2013-07-15",
+              "2013-07-08",
+              "2013-07-25",
+              "2013-11-15",
+              "2013-08-11"
+            ],
+            "synonyms": [
+              "ReviewDate"
+            ]
+          },
+          {
+            "name": "review",
+            "type": "table column",
+            "column name": "Review",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "You could have done better Sactown.",
+              "Too much bite, not enough barq.",
+              "The drink is fine, but the crest on t...",
+              "Fantastic!",
+              "Love stopping by Fitz's in St. Louis."
+            ],
+            "synonyms": [
+              "Review"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "rootbeerreview"
+        ]
+      },
+      {
+        "name": "transaction_",
+        "type": "simple table",
+        "table path": "main.\"transaction\"",
+        "unique properties": [
+          "transactionid"
+        ],
+        "properties": [
+          {
+            "name": "transactionid",
+            "type": "table column",
+            "column name": "TransactionID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              100000,
+              100001,
+              100002,
+              100003,
+              100004
+            ],
+            "synonyms": [
+              "TransactionID"
+            ]
+          },
+          {
+            "name": "creditcardnumber",
+            "type": "table column",
+            "column name": "CreditCardNumber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6011583832864739,
+              4716634257568793,
+              5597608517846968,
+              5487443089509478,
+              4532262424412224
+            ],
+            "synonyms": [
+              "CreditCardNumber"
+            ]
+          },
+          {
+            "name": "customerid",
+            "type": "table column",
+            "column name": "CustomerID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              864896,
+              610766,
+              207846,
+              166612,
+              482274
+            ],
+            "synonyms": [
+              "CustomerID"
+            ]
+          },
+          {
+            "name": "transactiondate",
+            "type": "table column",
+            "column name": "TransactionDate",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2014-07-07",
+              "2014-07-13",
+              "2014-07-17",
+              "2014-07-26",
+              "2014-07-28"
+            ],
+            "synonyms": [
+              "TransactionDate"
+            ]
+          },
+          {
+            "name": "creditcardtype",
+            "type": "table column",
+            "column name": "CreditCardType",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Discover",
+              "Visa",
+              "MasterCard",
+              "American Express"
+            ],
+            "synonyms": [
+              "CreditCardType"
+            ]
+          },
+          {
+            "name": "locationid",
+            "type": "table column",
+            "column name": "LocationID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              1
+            ],
+            "synonyms": [
+              "LocationID"
+            ]
+          },
+          {
+            "name": "rootbeerid",
+            "type": "table column",
+            "column name": "RootBeerID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              105661,
+              105798,
+              102514,
+              105623,
+              103940
+            ],
+            "synonyms": [
+              "RootBeerID"
+            ]
+          },
+          {
+            "name": "purchaseprice",
+            "type": "table column",
+            "column name": "PurchasePrice",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3.0,
+              1.0
+            ],
+            "synonyms": [
+              "PurchasePrice"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "transaction"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "geolocation",
+        "parent collection": "location",
+        "child collection": "geolocation",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "locationid": [
+            "locationid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "location",
+        "original parent": "location",
+        "original property": "geolocation",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "rootbeer",
+        "parent collection": "rootbeerbrand",
+        "child collection": "rootbeer",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "brandid": [
+            "brandid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "rootbeerbrand",
+        "original parent": "rootbeerbrand",
+        "original property": "rootbeer",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "rootbeer",
+        "parent collection": "location",
+        "child collection": "rootbeer",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "locationid": [
+            "locationid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "location",
+        "original parent": "location",
+        "original property": "rootbeer",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "rootbeer",
+        "parent collection": "geolocation",
+        "child collection": "rootbeer",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "locationid": [
+            "locationid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "geolocation",
+        "original parent": "geolocation",
+        "original property": "rootbeer",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "rootbeerreview",
+        "parent collection": "rootbeerbrand",
+        "child collection": "rootbeerreview",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "brandid": [
+            "brandid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "rootbeerbrand",
+        "original parent": "rootbeerbrand",
+        "original property": "rootbeerreview",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "rootbeerreview",
+        "parent collection": "customers",
+        "child collection": "rootbeerreview",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customerid": [
+            "customerid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customers",
+        "original parent": "customers",
+        "original property": "rootbeerreview",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "transaction_",
+        "parent collection": "rootbeer",
+        "child collection": "transaction_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "rootbeerid": [
+            "rootbeerid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "rootbeer",
+        "original parent": "rootbeer",
+        "original property": "transaction_",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "transaction_",
+        "parent collection": "location",
+        "child collection": "transaction_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "locationid": [
+            "locationid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "location",
+        "original parent": "location",
+        "original property": "transaction_",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "transaction_",
+        "parent collection": "customers",
+        "child collection": "transaction_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customerid": [
+            "customerid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customers",
+        "original parent": "customers",
+        "original property": "transaction_",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

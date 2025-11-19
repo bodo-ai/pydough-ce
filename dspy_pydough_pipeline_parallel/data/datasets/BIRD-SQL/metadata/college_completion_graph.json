@@ -1,0 +1,1902 @@
+[
+  {
+    "name": "college_completion",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "institution_details",
+        "type": "simple table",
+        "table path": "main.institution_details",
+        "unique properties": [
+          "unitid"
+        ],
+        "properties": [
+          {
+            "name": "unitid",
+            "type": "table column",
+            "column name": "unitid",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              100654,
+              100663,
+              100690,
+              100706,
+              100724
+            ],
+            "synonyms": [
+              "unitid"
+            ]
+          },
+          {
+            "name": "chronname",
+            "type": "table column",
+            "column name": "chronname",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Alabama A&M University",
+              "University of Alabama at Birmingham",
+              "Amridge University",
+              "University of Alabama at Huntsville",
+              "Alabama State University"
+            ],
+            "synonyms": [
+              "chronname"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Normal",
+              "Birmingham",
+              "Montgomery",
+              "Huntsville",
+              "Tuscaloosa"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Alabama",
+              "Alaska",
+              "Arizona",
+              "New Mexico",
+              "Arkansas"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "level",
+            "type": "table column",
+            "column name": "level",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "4-year",
+              "2-year"
+            ],
+            "synonyms": [
+              "level"
+            ]
+          },
+          {
+            "name": "control",
+            "type": "table column",
+            "column name": "control",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Public",
+              "Private not-for-profit",
+              "Private for-profit"
+            ],
+            "synonyms": [
+              "control"
+            ]
+          },
+          {
+            "name": "basic",
+            "type": "table column",
+            "column name": "basic",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Masters Colleges and Universities--la...",
+              "Research Universities--very high rese...",
+              "Baccalaureate Colleges--Arts & Sciences",
+              "Research Universities--high research ...",
+              "Associates--Public Rural-serving Medium"
+            ],
+            "synonyms": [
+              "basic"
+            ]
+          },
+          {
+            "name": "hbcu",
+            "type": "table column",
+            "column name": "hbcu",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "X",
+              "NULL"
+            ],
+            "synonyms": [
+              "hbcu"
+            ]
+          },
+          {
+            "name": "flagship",
+            "type": "table column",
+            "column name": "flagship",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NULL",
+              "X"
+            ],
+            "synonyms": [
+              "flagship"
+            ]
+          },
+          {
+            "name": "long_x",
+            "type": "table column",
+            "column name": "long_x",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              -86.568502,
+              -86.80917,
+              -86.17401,
+              -86.63842,
+              -86.295677
+            ],
+            "synonyms": [
+              "long_x"
+            ]
+          },
+          {
+            "name": "lat_y",
+            "type": "table column",
+            "column name": "lat_y",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              34.783368,
+              33.50223,
+              32.362609,
+              34.722818,
+              32.364317
+            ],
+            "synonyms": [
+              "lat_y"
+            ]
+          },
+          {
+            "name": "site",
+            "type": "table column",
+            "column name": "site",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "www.aamu.edu/",
+              "www.uab.edu",
+              "www.amridgeuniversity.edu",
+              "www.uah.edu",
+              "www.alasu.edu/email/index.aspx"
+            ],
+            "synonyms": [
+              "site"
+            ]
+          },
+          {
+            "name": "student_count",
+            "type": "table column",
+            "column name": "student_count",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4051,
+              11502,
+              322,
+              5696,
+              5356
+            ],
+            "synonyms": [
+              "student_count"
+            ]
+          },
+          {
+            "name": "awards_per_value",
+            "type": "table column",
+            "column name": "awards_per_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              14.2,
+              20.9,
+              29.9,
+              11.6,
+              18.3
+            ],
+            "synonyms": [
+              "awards_per_value"
+            ]
+          },
+          {
+            "name": "awards_per_state_value",
+            "type": "table column",
+            "column name": "awards_per_state_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              18.8,
+              17.8,
+              15.9,
+              29.1,
+              3.2
+            ],
+            "synonyms": [
+              "awards_per_state_value"
+            ]
+          },
+          {
+            "name": "awards_per_natl_value",
+            "type": "table column",
+            "column name": "awards_per_natl_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              21.5,
+              22.5,
+              16.5,
+              24.6,
+              32.8
+            ],
+            "synonyms": [
+              "awards_per_natl_value"
+            ]
+          },
+          {
+            "name": "exp_award_value",
+            "type": "table column",
+            "column name": "exp_award_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              105331,
+              136546,
+              58414,
+              64418,
+              132407
+            ],
+            "synonyms": [
+              "exp_award_value"
+            ]
+          },
+          {
+            "name": "exp_award_state_value",
+            "type": "table column",
+            "column name": "exp_award_state_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              75743,
+              92268,
+              42194,
+              17406,
+              24274
+            ],
+            "synonyms": [
+              "exp_award_state_value"
+            ]
+          },
+          {
+            "name": "exp_award_natl_value",
+            "type": "table column",
+            "column name": "exp_award_natl_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              66436,
+              101725,
+              37780,
+              38763,
+              24795
+            ],
+            "synonyms": [
+              "exp_award_natl_value"
+            ]
+          },
+          {
+            "name": "exp_award_percentile",
+            "type": "table column",
+            "column name": "exp_award_percentile",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              90,
+              97,
+              30,
+              61,
+              96
+            ],
+            "synonyms": [
+              "exp_award_percentile"
+            ]
+          },
+          {
+            "name": "ft_pct",
+            "type": "table column",
+            "column name": "ft_pct",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              93.8,
+              72.7,
+              62.7,
+              74.4,
+              91.0
+            ],
+            "synonyms": [
+              "ft_pct"
+            ]
+          },
+          {
+            "name": "fte_value",
+            "type": "table column",
+            "column name": "fte_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3906,
+              10032,
+              294,
+              5000,
+              5035
+            ],
+            "synonyms": [
+              "fte_value"
+            ]
+          },
+          {
+            "name": "fte_percentile",
+            "type": "table column",
+            "column name": "fte_percentile",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              33,
+              67,
+              12,
+              40,
+              41
+            ],
+            "synonyms": [
+              "fte_percentile"
+            ]
+          },
+          {
+            "name": "med_sat_value",
+            "type": "table column",
+            "column name": "med_sat_value",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "823",
+              "1146",
+              "NULL",
+              "1180",
+              "830"
+            ],
+            "synonyms": [
+              "med_sat_value"
+            ]
+          },
+          {
+            "name": "med_sat_percentile",
+            "type": "table column",
+            "column name": "med_sat_percentile",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0",
+              "84",
+              "NULL",
+              "89",
+              "1"
+            ],
+            "synonyms": [
+              "med_sat_percentile"
+            ]
+          },
+          {
+            "name": "aid_value",
+            "type": "table column",
+            "column name": "aid_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              7142,
+              6088,
+              2540,
+              6647,
+              7256
+            ],
+            "synonyms": [
+              "aid_value"
+            ]
+          },
+          {
+            "name": "aid_percentile",
+            "type": "table column",
+            "column name": "aid_percentile",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              72,
+              50,
+              1,
+              63,
+              74
+            ],
+            "synonyms": [
+              "aid_percentile"
+            ]
+          },
+          {
+            "name": "endow_value",
+            "type": "table column",
+            "column name": "endow_value",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NULL",
+              "24136",
+              "302",
+              "11502",
+              "13202"
+            ],
+            "synonyms": [
+              "endow_value"
+            ]
+          },
+          {
+            "name": "endow_percentile",
+            "type": "table column",
+            "column name": "endow_percentile",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NULL",
+              "93",
+              "1",
+              "81",
+              "84"
+            ],
+            "synonyms": [
+              "endow_percentile"
+            ]
+          },
+          {
+            "name": "grad_100_value",
+            "type": "table column",
+            "column name": "grad_100_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10.0,
+              29.4,
+              0.0,
+              16.5,
+              8.8
+            ],
+            "synonyms": [
+              "grad_100_value"
+            ]
+          },
+          {
+            "name": "grad_100_percentile",
+            "type": "table column",
+            "column name": "grad_100_percentile",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              15,
+              67,
+              0,
+              34,
+              11
+            ],
+            "synonyms": [
+              "grad_100_percentile"
+            ]
+          },
+          {
+            "name": "grad_150_value",
+            "type": "table column",
+            "column name": "grad_150_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              29.1,
+              53.5,
+              66.7,
+              48.4,
+              25.2
+            ],
+            "synonyms": [
+              "grad_150_value"
+            ]
+          },
+          {
+            "name": "grad_150_percentile",
+            "type": "table column",
+            "column name": "grad_150_percentile",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              14,
+              66,
+              72,
+              54,
+              9
+            ],
+            "synonyms": [
+              "grad_150_percentile"
+            ]
+          },
+          {
+            "name": "pell_value",
+            "type": "table column",
+            "column name": "pell_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              71.2,
+              35.1,
+              68.4,
+              32.8,
+              82.7
+            ],
+            "synonyms": [
+              "pell_value"
+            ]
+          },
+          {
+            "name": "pell_percentile",
+            "type": "table column",
+            "column name": "pell_percentile",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              98,
+              39,
+              91,
+              32,
+              100
+            ],
+            "synonyms": [
+              "pell_percentile"
+            ]
+          },
+          {
+            "name": "retain_value",
+            "type": "table column",
+            "column name": "retain_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              63.1,
+              80.2,
+              37.5,
+              81.0,
+              62.2
+            ],
+            "synonyms": [
+              "retain_value"
+            ]
+          },
+          {
+            "name": "retain_percentile",
+            "type": "table column",
+            "column name": "retain_percentile",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              17,
+              70,
+              2,
+              72,
+              15
+            ],
+            "synonyms": [
+              "retain_percentile"
+            ]
+          },
+          {
+            "name": "ft_fac_value",
+            "type": "table column",
+            "column name": "ft_fac_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              82.8,
+              92.4,
+              67.2,
+              65.5,
+              67.0
+            ],
+            "synonyms": [
+              "ft_fac_value"
+            ]
+          },
+          {
+            "name": "ft_fac_percentile",
+            "type": "table column",
+            "column name": "ft_fac_percentile",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              89,
+              98,
+              71,
+              56,
+              58
+            ],
+            "synonyms": [
+              "ft_fac_percentile"
+            ]
+          },
+          {
+            "name": "vsa_year",
+            "type": "table column",
+            "column name": "vsa_year",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2010",
+              "2011",
+              "NULL",
+              "2008",
+              "2009"
+            ],
+            "synonyms": [
+              "vsa_year"
+            ]
+          },
+          {
+            "name": "vsa_grad_after4_first",
+            "type": "table column",
+            "column name": "vsa_grad_after4_first",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "14.7",
+              "22.3",
+              "NULL",
+              "12.8",
+              "4.1"
+            ],
+            "synonyms": [
+              "vsa_grad_after4_first"
+            ]
+          },
+          {
+            "name": "vsa_grad_elsewhere_after4_first",
+            "type": "table column",
+            "column name": "vsa_grad_elsewhere_after4_first",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2",
+              "2.9",
+              "NULL",
+              "4.7",
+              "1.3"
+            ],
+            "synonyms": [
+              "vsa_grad_elsewhere_after4_first"
+            ]
+          },
+          {
+            "name": "vsa_enroll_after4_first",
+            "type": "table column",
+            "column name": "vsa_enroll_after4_first",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "36.5",
+              "34.2",
+              "NULL",
+              "42.8",
+              "67.8"
+            ],
+            "synonyms": [
+              "vsa_enroll_after4_first"
+            ]
+          },
+          {
+            "name": "vsa_enroll_elsewhere_after4_first",
+            "type": "table column",
+            "column name": "vsa_enroll_elsewhere_after4_first",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "16.1",
+              "19.2",
+              "NULL",
+              "18.3",
+              "13.2"
+            ],
+            "synonyms": [
+              "vsa_enroll_elsewhere_after4_first"
+            ]
+          },
+          {
+            "name": "vsa_grad_after6_first",
+            "type": "table column",
+            "column name": "vsa_grad_after6_first",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "33",
+              "42.6",
+              "NULL",
+              "43",
+              "60.6"
+            ],
+            "synonyms": [
+              "vsa_grad_after6_first"
+            ]
+          },
+          {
+            "name": "vsa_grad_elsewhere_after6_first",
+            "type": "table column",
+            "column name": "vsa_grad_elsewhere_after6_first",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "5.3",
+              "10.5",
+              "NULL",
+              "14.5",
+              "8"
+            ],
+            "synonyms": [
+              "vsa_grad_elsewhere_after6_first"
+            ]
+          },
+          {
+            "name": "vsa_enroll_after6_first",
+            "type": "table column",
+            "column name": "vsa_enroll_after6_first",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "12.5",
+              "7.9",
+              "NULL",
+              "10.2",
+              "9.9"
+            ],
+            "synonyms": [
+              "vsa_enroll_after6_first"
+            ]
+          },
+          {
+            "name": "vsa_enroll_elsewhere_after6_first",
+            "type": "table column",
+            "column name": "vsa_enroll_elsewhere_after6_first",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "14.6",
+              "13.1",
+              "NULL",
+              "11.7",
+              "8"
+            ],
+            "synonyms": [
+              "vsa_enroll_elsewhere_after6_first"
+            ]
+          },
+          {
+            "name": "vsa_grad_after4_transfer",
+            "type": "table column",
+            "column name": "vsa_grad_after4_transfer",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "15.7",
+              "NULL",
+              "0",
+              "45.8",
+              "64.2"
+            ],
+            "synonyms": [
+              "vsa_grad_after4_transfer"
+            ]
+          },
+          {
+            "name": "vsa_grad_elsewhere_after4_transfer",
+            "type": "table column",
+            "column name": "vsa_grad_elsewhere_after4_transfer",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1.5",
+              "NULL",
+              "0",
+              "5.2",
+              "6.3"
+            ],
+            "synonyms": [
+              "vsa_grad_elsewhere_after4_transfer"
+            ]
+          },
+          {
+            "name": "vsa_enroll_after4_transfer",
+            "type": "table column",
+            "column name": "vsa_enroll_after4_transfer",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "40.9",
+              "NULL",
+              "0",
+              "23",
+              "11.6"
+            ],
+            "synonyms": [
+              "vsa_enroll_after4_transfer"
+            ]
+          },
+          {
+            "name": "vsa_enroll_elsewhere_after4_transfer",
+            "type": "table column",
+            "column name": "vsa_enroll_elsewhere_after4_transfer",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "17.2",
+              "NULL",
+              "0",
+              "7.9",
+              "7.6"
+            ],
+            "synonyms": [
+              "vsa_enroll_elsewhere_after4_transfer"
+            ]
+          },
+          {
+            "name": "vsa_grad_after6_transfer",
+            "type": "table column",
+            "column name": "vsa_grad_after6_transfer",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "36.4",
+              "NULL",
+              "0",
+              "61.5",
+              "72.2"
+            ],
+            "synonyms": [
+              "vsa_grad_after6_transfer"
+            ]
+          },
+          {
+            "name": "vsa_grad_elsewhere_after6_transfer",
+            "type": "table column",
+            "column name": "vsa_grad_elsewhere_after6_transfer",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "5.6",
+              "NULL",
+              "0",
+              "8.5",
+              "9.7"
+            ],
+            "synonyms": [
+              "vsa_grad_elsewhere_after6_transfer"
+            ]
+          },
+          {
+            "name": "vsa_enroll_after6_transfer",
+            "type": "table column",
+            "column name": "vsa_enroll_after6_transfer",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "17.2",
+              "NULL",
+              "0",
+              "6.3",
+              "2"
+            ],
+            "synonyms": [
+              "vsa_enroll_after6_transfer"
+            ]
+          },
+          {
+            "name": "vsa_enroll_elsewhere_after6_transfer",
+            "type": "table column",
+            "column name": "vsa_enroll_elsewhere_after6_transfer",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "11.1",
+              "NULL",
+              "0",
+              "5.5",
+              "4.6"
+            ],
+            "synonyms": [
+              "vsa_enroll_elsewhere_after6_transfer"
+            ]
+          },
+          {
+            "name": "similar",
+            "type": "table column",
+            "column name": "similar",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "232937|100724|405997|113607|139533|14...",
+              "196060|180461|201885|145600|209542|23...",
+              "217925|441511|205124|247825|197647|22...",
+              "232186|133881|196103|196413|207388|17...",
+              "100654|232937|242617|243197|144005|24..."
+            ],
+            "synonyms": [
+              "similar"
+            ]
+          },
+          {
+            "name": "state_sector_ct",
+            "type": "table column",
+            "column name": "state_sector_ct",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              13,
+              16,
+              25,
+              9,
+              5
+            ],
+            "synonyms": [
+              "state_sector_ct"
+            ]
+          },
+          {
+            "name": "carnegie_ct",
+            "type": "table column",
+            "column name": "carnegie_ct",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              386,
+              106,
+              252,
+              96,
+              289
+            ],
+            "synonyms": [
+              "carnegie_ct"
+            ]
+          },
+          {
+            "name": "counted_pct",
+            "type": "table column",
+            "column name": "counted_pct",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "99.7|07",
+              "56.0|07",
+              "100.0|07",
+              "43.1|07",
+              "88.0|07"
+            ],
+            "synonyms": [
+              "counted_pct"
+            ]
+          },
+          {
+            "name": "nicknames",
+            "type": "table column",
+            "column name": "nicknames",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NULL",
+              "UAB",
+              "UAH",
+              "ASU",
+              "AUM"
+            ],
+            "synonyms": [
+              "nicknames"
+            ]
+          },
+          {
+            "name": "cohort_size",
+            "type": "table column",
+            "column name": "cohort_size",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              882,
+              1376,
+              3,
+              759,
+              1351
+            ],
+            "synonyms": [
+              "cohort_size"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "institution_details"
+        ]
+      },
+      {
+        "name": "institution_grads",
+        "type": "simple table",
+        "table path": "main.institution_grads",
+        "unique properties": [
+          [
+            "unitid",
+            "year_",
+            "gender",
+            "race",
+            "cohort",
+            "grad_cohort",
+            "grad_100",
+            "grad_150",
+            "grad_100_rate",
+            "grad_150_rate"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "unitid",
+            "type": "table column",
+            "column name": "unitid",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              100760,
+              101028,
+              101143,
+              101161,
+              101240
+            ],
+            "synonyms": [
+              "unitid"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2011,
+              2012,
+              2013,
+              2010,
+              2009
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "gender",
+            "type": "table column",
+            "column name": "gender",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "B",
+              "M",
+              "F"
+            ],
+            "synonyms": [
+              "gender"
+            ]
+          },
+          {
+            "name": "race",
+            "type": "table column",
+            "column name": "race",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "X",
+              "W",
+              "B",
+              "H",
+              "Ai"
+            ],
+            "synonyms": [
+              "race"
+            ]
+          },
+          {
+            "name": "cohort",
+            "type": "table column",
+            "column name": "cohort",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2y all",
+              "4y other",
+              "4y bach"
+            ],
+            "synonyms": [
+              "cohort"
+            ]
+          },
+          {
+            "name": "grad_cohort",
+            "type": "table column",
+            "column name": "grad_cohort",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "446",
+              "185",
+              "261",
+              "348",
+              "162"
+            ],
+            "synonyms": [
+              "grad_cohort"
+            ]
+          },
+          {
+            "name": "grad_100",
+            "type": "table column",
+            "column name": "grad_100",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "73",
+              "NULL",
+              "40",
+              "46",
+              "25"
+            ],
+            "synonyms": [
+              "grad_100"
+            ]
+          },
+          {
+            "name": "grad_150",
+            "type": "table column",
+            "column name": "grad_150",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "105",
+              "40",
+              "65",
+              "86",
+              "35"
+            ],
+            "synonyms": [
+              "grad_150"
+            ]
+          },
+          {
+            "name": "grad_100_rate",
+            "type": "table column",
+            "column name": "grad_100_rate",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "16.4",
+              "NULL",
+              "6.7",
+              "7.7",
+              "9.6"
+            ],
+            "synonyms": [
+              "grad_100_rate"
+            ]
+          },
+          {
+            "name": "grad_150_rate",
+            "type": "table column",
+            "column name": "grad_150_rate",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "23.5",
+              "21.6",
+              "24.9",
+              "24.7",
+              "27.4"
+            ],
+            "synonyms": [
+              "grad_150_rate"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "institution_grads"
+        ]
+      },
+      {
+        "name": "state_sector_details",
+        "type": "simple table",
+        "table path": "main.state_sector_details",
+        "unique properties": [
+          [
+            "stateid",
+            "level",
+            "control"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "stateid",
+            "type": "table column",
+            "column name": "stateid",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              4,
+              5
+            ],
+            "synonyms": [
+              "stateid"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "United States",
+              "Alabama",
+              "Alaska",
+              "Arizona",
+              "Arkansas"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "state_post",
+            "type": "table column",
+            "column name": "state_post",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "U.S.",
+              "Ala.",
+              "Alaska",
+              "Ariz.",
+              "Ark."
+            ],
+            "synonyms": [
+              "state_post"
+            ]
+          },
+          {
+            "name": "level",
+            "type": "table column",
+            "column name": "level",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2-year",
+              "4-year"
+            ],
+            "synonyms": [
+              "level"
+            ]
+          },
+          {
+            "name": "control",
+            "type": "table column",
+            "column name": "control",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Private for-profit",
+              "Private not-for-profit",
+              "Public"
+            ],
+            "synonyms": [
+              "control"
+            ]
+          },
+          {
+            "name": "schools_count",
+            "type": "table column",
+            "column name": "schools_count",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              632,
+              1180,
+              527,
+              926,
+              68
+            ],
+            "synonyms": [
+              "schools_count"
+            ]
+          },
+          {
+            "name": "counted_pct",
+            "type": "table column",
+            "column name": "counted_pct",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NULL",
+              "61",
+              "62",
+              "37.8",
+              "49"
+            ],
+            "synonyms": [
+              "counted_pct"
+            ]
+          },
+          {
+            "name": "awards_per_state_value",
+            "type": "table column",
+            "column name": "awards_per_state_value",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NULL",
+              "18.8",
+              "17.8",
+              "29.1",
+              "15.9"
+            ],
+            "synonyms": [
+              "awards_per_state_value"
+            ]
+          },
+          {
+            "name": "awards_per_natl_value",
+            "type": "table column",
+            "column name": "awards_per_natl_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              21.5,
+              22.5,
+              24.6,
+              16.5,
+              25.9
+            ],
+            "synonyms": [
+              "awards_per_natl_value"
+            ]
+          },
+          {
+            "name": "exp_award_state_value",
+            "type": "table column",
+            "column name": "exp_award_state_value",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NULL",
+              "75743",
+              "92268",
+              "17406",
+              "42194"
+            ],
+            "synonyms": [
+              "exp_award_state_value"
+            ]
+          },
+          {
+            "name": "exp_award_natl_value",
+            "type": "table column",
+            "column name": "exp_award_natl_value",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              66436,
+              101725,
+              38763,
+              37780,
+              34510
+            ],
+            "synonyms": [
+              "exp_award_natl_value"
+            ]
+          },
+          {
+            "name": "state_appr_value",
+            "type": "table column",
+            "column name": "state_appr_value",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NULL",
+              "290.68",
+              "496.78",
+              "126.81",
+              "306.32"
+            ],
+            "synonyms": [
+              "state_appr_value"
+            ]
+          },
+          {
+            "name": "state_appr_rank",
+            "type": "table column",
+            "column name": "state_appr_rank",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NULL",
+              "11",
+              "2",
+              "47",
+              "9"
+            ],
+            "synonyms": [
+              "state_appr_rank"
+            ]
+          },
+          {
+            "name": "grad_rate_rank",
+            "type": "table column",
+            "column name": "grad_rate_rank",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "23",
+              "18",
+              "8",
+              "25",
+              "12"
+            ],
+            "synonyms": [
+              "grad_rate_rank"
+            ]
+          },
+          {
+            "name": "awards_per_rank",
+            "type": "table column",
+            "column name": "awards_per_rank",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NULL",
+              "42",
+              "49",
+              "9",
+              "39"
+            ],
+            "synonyms": [
+              "awards_per_rank"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "state_sector_details"
+        ]
+      },
+      {
+        "name": "state_sector_grads",
+        "type": "simple table",
+        "table path": "main.state_sector_grads",
+        "unique properties": [
+          [
+            "stateid",
+            "state",
+            "state_abbr",
+            "control",
+            "level",
+            "year_",
+            "gender",
+            "race",
+            "cohort",
+            "grad_cohort",
+            "grad_100",
+            "grad_150",
+            "grad_100_rate",
+            "grad_150_rate",
+            "grad_cohort_ct"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "stateid",
+            "type": "table column",
+            "column name": "stateid",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              4,
+              5,
+              6
+            ],
+            "synonyms": [
+              "stateid"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Alabama",
+              "Alaska",
+              "Arizona",
+              "Arkansas",
+              "California"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "state_abbr",
+            "type": "table column",
+            "column name": "state_abbr",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AL",
+              "AK",
+              "AZ",
+              "AR",
+              "CA"
+            ],
+            "synonyms": [
+              "state_abbr"
+            ]
+          },
+          {
+            "name": "control",
+            "type": "table column",
+            "column name": "control",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Private for-profit",
+              "Private not-for-profit",
+              "Public"
+            ],
+            "synonyms": [
+              "control"
+            ]
+          },
+          {
+            "name": "level",
+            "type": "table column",
+            "column name": "level",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "4-year",
+              "2-year"
+            ],
+            "synonyms": [
+              "level"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2011,
+              2012,
+              2013,
+              2002,
+              2003
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "gender",
+            "type": "table column",
+            "column name": "gender",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "B",
+              "F",
+              "M"
+            ],
+            "synonyms": [
+              "gender"
+            ]
+          },
+          {
+            "name": "race",
+            "type": "table column",
+            "column name": "race",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A",
+              "Ai",
+              "B",
+              "H",
+              "W"
+            ],
+            "synonyms": [
+              "race"
+            ]
+          },
+          {
+            "name": "cohort",
+            "type": "table column",
+            "column name": "cohort",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "4y bach",
+              "4y other",
+              "2y all"
+            ],
+            "synonyms": [
+              "cohort"
+            ]
+          },
+          {
+            "name": "grad_cohort",
+            "type": "table column",
+            "column name": "grad_cohort",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0",
+              "1",
+              "51",
+              "66",
+              "209"
+            ],
+            "synonyms": [
+              "grad_cohort"
+            ]
+          },
+          {
+            "name": "grad_100",
+            "type": "table column",
+            "column name": "grad_100",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0",
+              "2",
+              "15",
+              "39",
+              "6"
+            ],
+            "synonyms": [
+              "grad_100"
+            ]
+          },
+          {
+            "name": "grad_150",
+            "type": "table column",
+            "column name": "grad_150",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0",
+              "3",
+              "18",
+              "49",
+              "6"
+            ],
+            "synonyms": [
+              "grad_150"
+            ]
+          },
+          {
+            "name": "grad_100_rate",
+            "type": "table column",
+            "column name": "grad_100_rate",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NULL",
+              "0",
+              "3.9",
+              "22.7",
+              "18.7"
+            ],
+            "synonyms": [
+              "grad_100_rate"
+            ]
+          },
+          {
+            "name": "grad_150_rate",
+            "type": "table column",
+            "column name": "grad_150_rate",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NULL",
+              "0",
+              "5.9",
+              "27.3",
+              "23.4"
+            ],
+            "synonyms": [
+              "grad_150_rate"
+            ]
+          },
+          {
+            "name": "grad_cohort_ct",
+            "type": "table column",
+            "column name": "grad_cohort_ct",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              9,
+              16,
+              13,
+              1,
+              3
+            ],
+            "synonyms": [
+              "grad_cohort_ct"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "state_sector_grads"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "institution_grads",
+        "parent collection": "institution_details",
+        "child collection": "institution_grads",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "unitid": [
+            "unitid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "institution_details",
+        "original parent": "institution_details",
+        "original property": "institution_grads",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "state_sector_details",
+        "parent collection": "institution_details",
+        "child collection": "state_sector_details",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "state": [
+            "state"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "institution_details",
+        "original parent": "institution_details",
+        "original property": "state_sector_details",
+        "singular": false,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "state_sector_grads",
+        "parent collection": "state_sector_details",
+        "child collection": "state_sector_grads",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "stateid": [
+            "stateid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "state_sector_details",
+        "original parent": "state_sector_details",
+        "original property": "state_sector_grads",
+        "singular": false,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "state_sector_grads",
+        "parent collection": "institution_details",
+        "child collection": "state_sector_grads",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "state": [
+            "state"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "institution_details",
+        "original parent": "institution_details",
+        "original property": "state_sector_grads",
+        "singular": false,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

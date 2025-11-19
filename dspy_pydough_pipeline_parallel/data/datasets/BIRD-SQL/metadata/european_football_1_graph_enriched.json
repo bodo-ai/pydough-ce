@@ -1,0 +1,260 @@
+[
+  {
+    "name": "european_football_1",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "divisions",
+        "type": "simple table",
+        "table path": "main.divisions",
+        "unique properties": [
+          "division"
+        ],
+        "properties": [
+          {
+            "name": "division",
+            "type": "table column",
+            "column name": "division",
+            "data type": "string",
+            "description": "Identifier for the football division.",
+            "sample values": [
+              "B1",
+              "D1",
+              "D2",
+              "E0",
+              "E1"
+            ],
+            "synonyms": [
+              "division"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the division.",
+            "sample values": [
+              "Division 1A",
+              "Bundesliga",
+              "2. Bundesliga",
+              "Premier League",
+              "EFL Championship"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "country",
+            "data type": "string",
+            "description": "The country of the division.",
+            "sample values": [
+              "Belgium",
+              "Deutschland",
+              "England",
+              "France",
+              "Greece"
+            ],
+            "synonyms": [
+              "country"
+            ]
+          }
+        ],
+        "description": "Contains information about football divisions, including their name and country.",
+        "synonyms": [
+          "divisions"
+        ]
+      },
+      {
+        "name": "matchs",
+        "type": "simple table",
+        "table path": "main.matchs",
+        "unique properties": [
+          [
+            "div",
+            "date_",
+            "hometeam",
+            "awayteam",
+            "fthg",
+            "ftag",
+            "ftr",
+            "season"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "div",
+            "type": "table column",
+            "column name": "Div",
+            "data type": "string",
+            "description": "Identifier for the division in which the match was played.",
+            "sample values": [
+              "B1",
+              "D1",
+              "D2",
+              "E0",
+              "E1"
+            ],
+            "synonyms": [
+              "Div"
+            ]
+          },
+          {
+            "name": "date_",
+            "type": "table column",
+            "column name": "\"Date\"",
+            "data type": "datetime",
+            "description": "The date the match was played.",
+            "sample values": [
+              "2020-08-08",
+              "2020-08-09",
+              "2020-08-10",
+              "2020-08-14",
+              "2020-08-15"
+            ],
+            "synonyms": [
+              "Date"
+            ]
+          },
+          {
+            "name": "hometeam",
+            "type": "table column",
+            "column name": "HomeTeam",
+            "data type": "string",
+            "description": "The name of the home team.",
+            "sample values": [
+              "Club Brugge",
+              "Antwerp",
+              "Standard",
+              "St Truiden",
+              "Waregem"
+            ],
+            "synonyms": [
+              "HomeTeam"
+            ]
+          },
+          {
+            "name": "awayteam",
+            "type": "table column",
+            "column name": "AwayTeam",
+            "data type": "string",
+            "description": "The name of the away team.",
+            "sample values": [
+              "Charleroi",
+              "Mouscron",
+              "Cercle Brugge",
+              "Gent",
+              "Genk"
+            ],
+            "synonyms": [
+              "AwayTeam"
+            ]
+          },
+          {
+            "name": "fthg",
+            "type": "table column",
+            "column name": "FTHG",
+            "data type": "numeric",
+            "description": "Full-time goals scored by the home team.",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "FTHG"
+            ]
+          },
+          {
+            "name": "ftag",
+            "type": "table column",
+            "column name": "FTAG",
+            "data type": "numeric",
+            "description": "Full-time goals scored by the away team.",
+            "sample values": [
+              1,
+              0,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "FTAG"
+            ]
+          },
+          {
+            "name": "ftr",
+            "type": "table column",
+            "column name": "FTR",
+            "data type": "string",
+            "description": "Full-time result of the match (H=Home Win, A=Away Win, D=Draw).",
+            "sample values": [
+              "A",
+              "D",
+              "H"
+            ],
+            "synonyms": [
+              "FTR"
+            ],
+            "extra semantic info": {
+              "commonsense evidence": "H stands for home victory, which means FTHG is higher than FTAG. A stands for away victory, which means FTAG is higher than FTHG. D stands for draw, which means FTHG equals FTAG."
+            }
+          },
+          {
+            "name": "season",
+            "type": "table column",
+            "column name": "season",
+            "data type": "numeric",
+            "description": "The season in which the match took place.",
+            "sample values": [
+              2021,
+              2020,
+              2019,
+              2018,
+              2017
+            ],
+            "synonyms": [
+              "season"
+            ]
+          }
+        ],
+        "description": "Records of football matches, including teams, scores, results, and the division they were played in.",
+        "synonyms": [
+          "matchs"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "matchs",
+        "parent collection": "divisions",
+        "child collection": "matchs",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "division": [
+            "div"
+          ]
+        },
+        "description": "The matches played in this division.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "division",
+        "original parent": "divisions",
+        "original property": "matchs",
+        "singular": true,
+        "always matches": false,
+        "description": "The division in which this match was played.",
+        "synonyms": []
+      }
+    ]
+  }
+]

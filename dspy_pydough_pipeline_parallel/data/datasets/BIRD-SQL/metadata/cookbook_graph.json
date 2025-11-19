@@ -1,0 +1,824 @@
+[
+  {
+    "name": "cookbook",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "ingredient",
+        "type": "simple table",
+        "table path": "main.Ingredient",
+        "unique properties": [
+          "ingredient_id"
+        ],
+        "properties": [
+          {
+            "name": "ingredient_id",
+            "type": "table column",
+            "column name": "ingredient_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              6,
+              10,
+              11,
+              12
+            ],
+            "synonyms": [
+              "ingredient_id"
+            ]
+          },
+          {
+            "name": "category",
+            "type": "table column",
+            "column name": "category",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "dairy",
+              "Mexican products",
+              "cereals",
+              "breads",
+              "fresh vegetables"
+            ],
+            "synonyms": [
+              "category"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1% lowfat cottage cheese",
+              "1% lowfat milk",
+              "10-inch flour tortilla",
+              "100% bran cereal",
+              "2% lowfat milk"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "plural",
+            "type": "table column",
+            "column name": "plural",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "s",
+              "#NAME?",
+              "es"
+            ],
+            "synonyms": [
+              "plural"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Ingredient"
+        ]
+      },
+      {
+        "name": "nutrition",
+        "type": "simple table",
+        "table path": "main.Nutrition",
+        "unique properties": [
+          "recipe_id"
+        ],
+        "properties": [
+          {
+            "name": "recipe_id",
+            "type": "table column",
+            "column name": "recipe_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              214,
+              215,
+              216,
+              217,
+              218
+            ],
+            "synonyms": [
+              "recipe_id"
+            ]
+          },
+          {
+            "name": "protein",
+            "type": "table column",
+            "column name": "protein",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5.47,
+              5.7,
+              4.9,
+              1.77,
+              1.38
+            ],
+            "synonyms": [
+              "protein"
+            ]
+          },
+          {
+            "name": "carbo",
+            "type": "table column",
+            "column name": "carbo",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              41.29,
+              23.75,
+              26.88,
+              18.17,
+              36.63
+            ],
+            "synonyms": [
+              "carbo"
+            ]
+          },
+          {
+            "name": "alcohol",
+            "type": "table column",
+            "column name": "alcohol",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0,
+              1.93,
+              2.7,
+              1.95,
+              5.8
+            ],
+            "synonyms": [
+              "alcohol"
+            ]
+          },
+          {
+            "name": "total_fat",
+            "type": "table column",
+            "column name": "total_fat",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              11.53,
+              1.08,
+              1.1,
+              0.21,
+              5.47
+            ],
+            "synonyms": [
+              "total_fat"
+            ]
+          },
+          {
+            "name": "sat_fat",
+            "type": "table column",
+            "column name": "sat_fat",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2.21,
+              0.58,
+              0.06,
+              3.46,
+              0.01
+            ],
+            "synonyms": [
+              "sat_fat"
+            ]
+          },
+          {
+            "name": "cholestrl",
+            "type": "table column",
+            "column name": "cholestrl",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1.39,
+              3.48,
+              3.46,
+              0.0,
+              10.36
+            ],
+            "synonyms": [
+              "cholestrl"
+            ]
+          },
+          {
+            "name": "sodium",
+            "type": "table column",
+            "column name": "sodium",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              260.78,
+              46.17,
+              41.79,
+              14.01,
+              50.22
+            ],
+            "synonyms": [
+              "sodium"
+            ]
+          },
+          {
+            "name": "iron",
+            "type": "table column",
+            "column name": "iron",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.81,
+              0.57,
+              0.37,
+              0.19,
+              0.66
+            ],
+            "synonyms": [
+              "iron"
+            ]
+          },
+          {
+            "name": "vitamin_c",
+            "type": "table column",
+            "column name": "vitamin_c",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8.89,
+              13.02,
+              6.13,
+              8.79,
+              0.16
+            ],
+            "synonyms": [
+              "vitamin_c"
+            ]
+          },
+          {
+            "name": "vitamin_a",
+            "type": "table column",
+            "column name": "vitamin_a",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              586.2,
+              2738.24,
+              1521.1,
+              478.09,
+              229.16
+            ],
+            "synonyms": [
+              "vitamin_a"
+            ]
+          },
+          {
+            "name": "fiber",
+            "type": "table column",
+            "column name": "fiber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.87,
+              0.62,
+              0.34,
+              0.69,
+              1.05
+            ],
+            "synonyms": [
+              "fiber"
+            ]
+          },
+          {
+            "name": "pcnt_cal_carb",
+            "type": "table column",
+            "column name": "pcnt_cal_carb",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              56.8,
+              67.38,
+              78.45,
+              88.98,
+              72.81
+            ],
+            "synonyms": [
+              "pcnt_cal_carb"
+            ]
+          },
+          {
+            "name": "pcnt_cal_fat",
+            "type": "table column",
+            "column name": "pcnt_cal_fat",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              35.68,
+              6.89,
+              7.24,
+              2.35,
+              24.46
+            ],
+            "synonyms": [
+              "pcnt_cal_fat"
+            ]
+          },
+          {
+            "name": "pcnt_cal_prot",
+            "type": "table column",
+            "column name": "pcnt_cal_prot",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              7.53,
+              16.17,
+              14.3,
+              8.67,
+              2.73
+            ],
+            "synonyms": [
+              "pcnt_cal_prot"
+            ]
+          },
+          {
+            "name": "calories",
+            "type": "table column",
+            "column name": "calories",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              290.79,
+              141.01,
+              137.06,
+              81.7,
+              201.23
+            ],
+            "synonyms": [
+              "calories"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Nutrition"
+        ]
+      },
+      {
+        "name": "quantity",
+        "type": "simple table",
+        "table path": "main.Quantity",
+        "unique properties": [
+          "quantity_id"
+        ],
+        "properties": [
+          {
+            "name": "quantity_id",
+            "type": "table column",
+            "column name": "quantity_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "quantity_id"
+            ]
+          },
+          {
+            "name": "recipe_id",
+            "type": "table column",
+            "column name": "recipe_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              214,
+              215,
+              216,
+              217,
+              218
+            ],
+            "synonyms": [
+              "recipe_id"
+            ]
+          },
+          {
+            "name": "ingredient_id",
+            "type": "table column",
+            "column name": "ingredient_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1613,
+              3334,
+              2222,
+              2797,
+              3567
+            ],
+            "synonyms": [
+              "ingredient_id"
+            ]
+          },
+          {
+            "name": "max_qty",
+            "type": "table column",
+            "column name": "max_qty",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2.0,
+              0.25,
+              0.5,
+              3.0,
+              0.67
+            ],
+            "synonyms": [
+              "max_qty"
+            ]
+          },
+          {
+            "name": "min_qty",
+            "type": "table column",
+            "column name": "min_qty",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2.0,
+              0.25,
+              0.5,
+              3.0,
+              0.67
+            ],
+            "synonyms": [
+              "min_qty"
+            ]
+          },
+          {
+            "name": "unit",
+            "type": "table column",
+            "column name": "unit",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "cup(s)",
+              "teaspoon(s)",
+              "14 oz. can(s)",
+              "envelope(s)",
+              "tablespoon(s)"
+            ],
+            "synonyms": [
+              "unit"
+            ]
+          },
+          {
+            "name": "preparation",
+            "type": "table column",
+            "column name": "preparation",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "melted",
+              "or water",
+              "divided",
+              "crushed",
+              "sliced"
+            ],
+            "synonyms": [
+              "preparation"
+            ]
+          },
+          {
+            "name": "optional",
+            "type": "table column",
+            "column name": "optional",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FALSE",
+              "TRUE"
+            ],
+            "synonyms": [
+              "optional"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Quantity"
+        ]
+      },
+      {
+        "name": "recipe",
+        "type": "simple table",
+        "table path": "main.Recipe",
+        "unique properties": [
+          "recipe_id"
+        ],
+        "properties": [
+          {
+            "name": "recipe_id",
+            "type": "table column",
+            "column name": "recipe_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              214,
+              215,
+              216,
+              217,
+              218
+            ],
+            "synonyms": [
+              "recipe_id"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Raspberry Chiffon Pie",
+              "Apricot Yogurt Parfaits",
+              "Fresh Apricot Bavarian",
+              "Fresh Peaches",
+              "Canned Cherry Crisp"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "subtitle",
+            "type": "table column",
+            "column name": "subtitle",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "with Banana Cream Whip",
+              "a La Creme",
+              "with Raspberry Yogurt Mint Sauce",
+              "with Apricot Sauce",
+              "with Orange Custard Sauce"
+            ],
+            "synonyms": [
+              "subtitle"
+            ]
+          },
+          {
+            "name": "servings",
+            "type": "table column",
+            "column name": "servings",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              4,
+              8,
+              6,
+              12
+            ],
+            "synonyms": [
+              "servings"
+            ]
+          },
+          {
+            "name": "yield_unit",
+            "type": "table column",
+            "column name": "yield_unit",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1 pie",
+              "8 tarts",
+              "2 quarts",
+              "10 popsicles",
+              "1 cake"
+            ],
+            "synonyms": [
+              "yield_unit"
+            ]
+          },
+          {
+            "name": "prep_min",
+            "type": "table column",
+            "column name": "prep_min",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              20,
+              5,
+              10,
+              6,
+              15
+            ],
+            "synonyms": [
+              "prep_min"
+            ]
+          },
+          {
+            "name": "cook_min",
+            "type": "table column",
+            "column name": "cook_min",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8,
+              2,
+              13,
+              0,
+              5
+            ],
+            "synonyms": [
+              "cook_min"
+            ]
+          },
+          {
+            "name": "stnd_min",
+            "type": "table column",
+            "column name": "stnd_min",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              305,
+              65,
+              0,
+              60,
+              240
+            ],
+            "synonyms": [
+              "stnd_min"
+            ]
+          },
+          {
+            "name": "source",
+            "type": "table column",
+            "column name": "source",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "The California Tree Fruit Agreement",
+              "Produce for Better Health Foundation ...",
+              "The California Apricot Advisory Board",
+              "The Cherry Marketing Institute",
+              "North American Blueberry Council"
+            ],
+            "synonyms": [
+              "source"
+            ]
+          },
+          {
+            "name": "intro",
+            "type": "table column",
+            "column name": "intro",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Serve in stemmed glasses and top with...",
+              "For a quick, low-cal dessert, serve t...",
+              "Your microwave turns a can of cherry ...",
+              "No one could ever guess that these ta...",
+              "Cholesterol-free, lowfat and refreshing."
+            ],
+            "synonyms": [
+              "intro"
+            ]
+          },
+          {
+            "name": "directions",
+            "type": "table column",
+            "column name": "directions",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "For crust, preheat oven to 375 degree...",
+              "Drain canned apricots, pour 1/4 cup o...",
+              "Drop apricots into boiling water to c...",
+              "In a small bowl, beat egg white until...",
+              "Pour cherry pie filling into an 8-inc..."
+            ],
+            "synonyms": [
+              "directions"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Recipe"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "nutrition",
+        "parent collection": "recipe",
+        "child collection": "nutrition",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "recipe_id": [
+            "recipe_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "recipe",
+        "original parent": "recipe",
+        "original property": "nutrition",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "quantity",
+        "parent collection": "nutrition",
+        "child collection": "quantity",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "recipe_id": [
+            "recipe_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "nutrition",
+        "original parent": "nutrition",
+        "original property": "quantity",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "quantity",
+        "parent collection": "ingredient",
+        "child collection": "quantity",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "ingredient_id": [
+            "ingredient_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "ingredient",
+        "original parent": "ingredient",
+        "original property": "quantity",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "quantity",
+        "parent collection": "recipe",
+        "child collection": "quantity",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "recipe_id": [
+            "recipe_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "recipe",
+        "original parent": "recipe",
+        "original property": "quantity",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

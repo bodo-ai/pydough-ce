@@ -1,0 +1,3015 @@
+[
+  {
+    "name": "professional_basketball",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "awards_coaches",
+        "type": "simple table",
+        "table path": "main.awards_coaches",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1962,
+              1963,
+              1964,
+              1965,
+              1966
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "coachid",
+            "type": "table column",
+            "column name": "coachID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "gallaha01",
+              "hannual01",
+              "auerbre01",
+              "schaydo01",
+              "kerrjo01"
+            ],
+            "synonyms": [
+              "coachID"
+            ]
+          },
+          {
+            "name": "award",
+            "type": "table column",
+            "column name": "award",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NBA Coach of the Year",
+              "ABA Coach of the Year"
+            ],
+            "synonyms": [
+              "award"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NBA",
+              "ABA"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "note",
+            "type": "table column",
+            "column name": "note",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "tie"
+            ],
+            "synonyms": [
+              "note"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "awards_coaches"
+        ]
+      },
+      {
+        "name": "awards_players",
+        "type": "simple table",
+        "table path": "main.awards_players",
+        "unique properties": [
+          [
+            "playerid",
+            "year_",
+            "award"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "abdulka01",
+              "abdulma02",
+              "adamsal01",
+              "aingeda01",
+              "aldrila01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "award",
+            "type": "table column",
+            "column name": "award",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "All-Defensive Second Team",
+              "All-NBA Second Team",
+              "Rookie of the Year",
+              "All-NBA First Team",
+              "Finals MVP"
+            ],
+            "synonyms": [
+              "award"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1969,
+              1970,
+              1971,
+              1972,
+              1973
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NBA",
+              "ABA",
+              "NBL",
+              "ABL1"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "note",
+            "type": "table column",
+            "column name": "note",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "tie"
+            ],
+            "synonyms": [
+              "note"
+            ]
+          },
+          {
+            "name": "pos",
+            "type": "table column",
+            "column name": "pos",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "C",
+              "F",
+              "G",
+              "F/G",
+              "F/C"
+            ],
+            "synonyms": [
+              "pos"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "awards_players"
+        ]
+      },
+      {
+        "name": "coaches",
+        "type": "simple table",
+        "table path": "main.coaches",
+        "unique properties": [
+          [
+            "coachid",
+            "year_",
+            "tmid",
+            "stint"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "coachid",
+            "type": "table column",
+            "column name": "coachID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "adelmri01",
+              "adubari01",
+              "aingeda01",
+              "albecst01",
+              "anderla01"
+            ],
+            "synonyms": [
+              "coachID"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1988,
+              1989,
+              1990,
+              1991,
+              1992
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "POR",
+              "GSW",
+              "SAC",
+              "HOU",
+              "MIN"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NBA",
+              "ABA",
+              "ABL1",
+              "PBLA",
+              "NPBL"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "stint",
+            "type": "table column",
+            "column name": "stint",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              1,
+              4,
+              5,
+              3
+            ],
+            "synonyms": [
+              "stint"
+            ]
+          },
+          {
+            "name": "won",
+            "type": "table column",
+            "column name": "won",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              14,
+              59,
+              63,
+              57,
+              51
+            ],
+            "synonyms": [
+              "won"
+            ]
+          },
+          {
+            "name": "lost",
+            "type": "table column",
+            "column name": "lost",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              21,
+              23,
+              19,
+              25,
+              31
+            ],
+            "synonyms": [
+              "lost"
+            ]
+          },
+          {
+            "name": "post_wins",
+            "type": "table column",
+            "column name": "post_wins",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              12,
+              9,
+              13,
+              1
+            ],
+            "synonyms": [
+              "post_wins"
+            ]
+          },
+          {
+            "name": "post_losses",
+            "type": "table column",
+            "column name": "post_losses",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              9,
+              7,
+              8,
+              0
+            ],
+            "synonyms": [
+              "post_losses"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "coaches"
+        ]
+      },
+      {
+        "name": "draft",
+        "type": "simple table",
+        "table path": "main.draft",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "draftyear",
+            "type": "table column",
+            "column name": "draftYear",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1967,
+              1968,
+              1969,
+              1970,
+              1971
+            ],
+            "synonyms": [
+              "draftYear"
+            ]
+          },
+          {
+            "name": "draftround",
+            "type": "table column",
+            "column name": "draftRound",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "draftRound"
+            ]
+          },
+          {
+            "name": "draftselection",
+            "type": "table column",
+            "column name": "draftSelection",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              3,
+              4,
+              5,
+              7
+            ],
+            "synonyms": [
+              "draftSelection"
+            ]
+          },
+          {
+            "name": "draftoverall",
+            "type": "table column",
+            "column name": "draftOverall",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              3,
+              4,
+              5,
+              7
+            ],
+            "synonyms": [
+              "draftOverall"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "ANA",
+              "DNR",
+              "DLC",
+              "HSM",
+              "INA"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "firstname",
+            "type": "table column",
+            "column name": "firstName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Darrell",
+              "Bob",
+              "Mike",
+              "Tom",
+              "Jim"
+            ],
+            "synonyms": [
+              "firstName"
+            ]
+          },
+          {
+            "name": "lastname",
+            "type": "table column",
+            "column name": "lastName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Hardy",
+              "Krulish",
+              "Lewis",
+              "Lynn",
+              "Workman"
+            ],
+            "synonyms": [
+              "lastName"
+            ]
+          },
+          {
+            "name": "suffixname",
+            "type": "table column",
+            "column name": "suffixName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Jr."
+            ],
+            "synonyms": [
+              "suffixName"
+            ]
+          },
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "hardyda01",
+              "lewisbo01",
+              "lynnmi01",
+              "workmto01",
+              "holmade01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "draftfrom",
+            "type": "table column",
+            "column name": "draftFrom",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Baylor",
+              "Pacific",
+              "North Carolina",
+              "UCLA",
+              "Seattle"
+            ],
+            "synonyms": [
+              "draftFrom"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "ABA",
+              "NBA"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "draft"
+        ]
+      },
+      {
+        "name": "player_allstar",
+        "type": "simple table",
+        "table path": "main.player_allstar",
+        "unique properties": [
+          [
+            "playerid",
+            "season_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "abdulka01",
+              "abdursh01",
+              "adamsal01",
+              "adamsmi01",
+              "aguirma01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Abdul-Jabbar",
+              "A-Rahim",
+              "Adams",
+              "Aguirre",
+              "Ainge"
+            ],
+            "synonyms": [
+              "last_name"
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Kareem",
+              "Shareef",
+              "Alvan",
+              "Michael",
+              "Mark"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "season_id",
+            "type": "table column",
+            "column name": "season_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1969,
+              1970,
+              1971,
+              1972,
+              1973
+            ],
+            "synonyms": [
+              "season_id"
+            ]
+          },
+          {
+            "name": "conference",
+            "type": "table column",
+            "column name": "conference",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "East",
+              "West",
+              "Weset",
+              "Allstars",
+              "Denver"
+            ],
+            "synonyms": [
+              "conference"
+            ]
+          },
+          {
+            "name": "league_id",
+            "type": "table column",
+            "column name": "league_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NBA",
+              "ABA"
+            ],
+            "synonyms": [
+              "league_id"
+            ]
+          },
+          {
+            "name": "games_played",
+            "type": "table column",
+            "column name": "games_played",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1
+            ],
+            "synonyms": [
+              "games_played"
+            ]
+          },
+          {
+            "name": "minutes",
+            "type": "table column",
+            "column name": "minutes",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              18,
+              30,
+              19,
+              98,
+              23
+            ],
+            "synonyms": [
+              "minutes"
+            ]
+          },
+          {
+            "name": "points",
+            "type": "table column",
+            "column name": "points",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              19,
+              12,
+              14,
+              7
+            ],
+            "synonyms": [
+              "points"
+            ]
+          },
+          {
+            "name": "o_rebounds",
+            "type": "table column",
+            "column name": "o_rebounds",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              0,
+              3,
+              4
+            ],
+            "synonyms": [
+              "o_rebounds"
+            ]
+          },
+          {
+            "name": "d_rebounds",
+            "type": "table column",
+            "column name": "d_rebounds",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              5,
+              0,
+              1,
+              4
+            ],
+            "synonyms": [
+              "d_rebounds"
+            ]
+          },
+          {
+            "name": "rebounds",
+            "type": "table column",
+            "column name": "rebounds",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              11,
+              14,
+              7,
+              8,
+              10
+            ],
+            "synonyms": [
+              "rebounds"
+            ]
+          },
+          {
+            "name": "assists",
+            "type": "table column",
+            "column name": "assists",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4,
+              1,
+              2,
+              6,
+              3
+            ],
+            "synonyms": [
+              "assists"
+            ]
+          },
+          {
+            "name": "steals",
+            "type": "table column",
+            "column name": "steals",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              0,
+              1,
+              2,
+              5
+            ],
+            "synonyms": [
+              "steals"
+            ]
+          },
+          {
+            "name": "blocks",
+            "type": "table column",
+            "column name": "blocks",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              0,
+              1,
+              3,
+              5
+            ],
+            "synonyms": [
+              "blocks"
+            ]
+          },
+          {
+            "name": "turnovers",
+            "type": "table column",
+            "column name": "turnovers",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              0,
+              3,
+              2,
+              4
+            ],
+            "synonyms": [
+              "turnovers"
+            ]
+          },
+          {
+            "name": "personal_fouls",
+            "type": "table column",
+            "column name": "personal_fouls",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              2,
+              0,
+              1,
+              5
+            ],
+            "synonyms": [
+              "personal_fouls"
+            ]
+          },
+          {
+            "name": "fg_attempted",
+            "type": "table column",
+            "column name": "fg_attempted",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8,
+              16,
+              10,
+              11,
+              14
+            ],
+            "synonyms": [
+              "fg_attempted"
+            ]
+          },
+          {
+            "name": "fg_made",
+            "type": "table column",
+            "column name": "fg_made",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4,
+              8,
+              5,
+              7,
+              3
+            ],
+            "synonyms": [
+              "fg_made"
+            ]
+          },
+          {
+            "name": "ft_attempted",
+            "type": "table column",
+            "column name": "ft_attempted",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              4,
+              0,
+              6,
+              3
+            ],
+            "synonyms": [
+              "ft_attempted"
+            ]
+          },
+          {
+            "name": "ft_made",
+            "type": "table column",
+            "column name": "ft_made",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3,
+              0,
+              1,
+              4
+            ],
+            "synonyms": [
+              "ft_made"
+            ]
+          },
+          {
+            "name": "three_attempted",
+            "type": "table column",
+            "column name": "three_attempted",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              6,
+              7,
+              10
+            ],
+            "synonyms": [
+              "three_attempted"
+            ]
+          },
+          {
+            "name": "three_made",
+            "type": "table column",
+            "column name": "three_made",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              3,
+              5,
+              4
+            ],
+            "synonyms": [
+              "three_made"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "player_allstar"
+        ]
+      },
+      {
+        "name": "players",
+        "type": "simple table",
+        "table path": "main.players",
+        "unique properties": [
+          "playerid"
+        ],
+        "properties": [
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "abdelal01",
+              "abdulka01",
+              "abdulma01",
+              "abdulma02",
+              "abdulta01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "usefirst",
+            "type": "table column",
+            "column name": "useFirst",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Alaa",
+              "Kareem",
+              "Mahdi",
+              "Mahmoud",
+              "Tariq"
+            ],
+            "synonyms": [
+              "useFirst"
+            ]
+          },
+          {
+            "name": "firstname",
+            "type": "table column",
+            "column name": "firstName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Alaa",
+              "Kareem",
+              "Mahdi",
+              "Mahmoud",
+              "Tariq"
+            ],
+            "synonyms": [
+              "firstName"
+            ]
+          },
+          {
+            "name": "middlename",
+            "type": "table column",
+            "column name": "middleName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Shareef",
+              "Craig",
+              "Edward",
+              "D.",
+              "Richard"
+            ],
+            "synonyms": [
+              "middleName"
+            ]
+          },
+          {
+            "name": "lastname",
+            "type": "table column",
+            "column name": "lastName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Abdelnaby",
+              "Abdul-Jabbar",
+              "Abdul-Rahman",
+              "Abdul-Rauf",
+              "Abdul-Wahad"
+            ],
+            "synonyms": [
+              "lastName"
+            ]
+          },
+          {
+            "name": "namegiven",
+            "type": "table column",
+            "column name": "nameGiven",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "nameGiven",
+              "Mort",
+              "Robert",
+              "Jim",
+              "Mike"
+            ],
+            "synonyms": [
+              "nameGiven"
+            ]
+          },
+          {
+            "name": "fullgivenname",
+            "type": "table column",
+            "column name": "fullGivenName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Ferdinand Lewis Alcindor, Jr.",
+              "Walter Raphael Hazzard, Jr.",
+              "Chris Wayne Jackson",
+              "Olivier Michael Saint-Jean",
+              "Donald A. Smith"
+            ],
+            "synonyms": [
+              "fullGivenName"
+            ]
+          },
+          {
+            "name": "namesuffix",
+            "type": "table column",
+            "column name": "nameSuffix",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Jr.",
+              "III",
+              "nameSuffix",
+              "II",
+              "IV"
+            ],
+            "synonyms": [
+              "nameSuffix"
+            ]
+          },
+          {
+            "name": "namenick",
+            "type": "table column",
+            "column name": "nameNick",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Lew, Cap",
+              "Walt",
+              "Don, The Kangaroo",
+              "Shareef, Reef",
+              "Tom"
+            ],
+            "synonyms": [
+              "nameNick"
+            ]
+          },
+          {
+            "name": "pos",
+            "type": "table column",
+            "column name": "pos",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "F-C",
+              "C",
+              "G",
+              "G-F",
+              "C-F"
+            ],
+            "synonyms": [
+              "pos"
+            ]
+          },
+          {
+            "name": "firstseason",
+            "type": "table column",
+            "column name": "firstseason",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1951
+            ],
+            "synonyms": [
+              "firstseason"
+            ]
+          },
+          {
+            "name": "lastseason",
+            "type": "table column",
+            "column name": "lastseason",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1951
+            ],
+            "synonyms": [
+              "lastseason"
+            ]
+          },
+          {
+            "name": "height",
+            "type": "table column",
+            "column name": "height",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              82.0,
+              85.0,
+              74.0,
+              73.0,
+              78.0
+            ],
+            "synonyms": [
+              "height"
+            ]
+          },
+          {
+            "name": "weight",
+            "type": "table column",
+            "column name": "weight",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              240,
+              225,
+              185,
+              162,
+              223
+            ],
+            "synonyms": [
+              "weight"
+            ]
+          },
+          {
+            "name": "college",
+            "type": "table column",
+            "column name": "college",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Duke",
+              "UCLA",
+              "Louisiana State",
+              "San Jose State",
+              "Iowa State"
+            ],
+            "synonyms": [
+              "college"
+            ]
+          },
+          {
+            "name": "collegeother",
+            "type": "table column",
+            "column name": "collegeOther",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Santa Monica City",
+              "Michigan",
+              "Louisville",
+              "Alma College",
+              "Kentucky (dnp)  Ph.D"
+            ],
+            "synonyms": [
+              "collegeOther"
+            ]
+          },
+          {
+            "name": "birthdate",
+            "type": "table column",
+            "column name": "birthDate",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "1968-06-24",
+              "1947-04-16",
+              "1942-04-15",
+              "1969-03-09",
+              "1974-11-03"
+            ],
+            "synonyms": [
+              "birthDate"
+            ]
+          },
+          {
+            "name": "birthcity",
+            "type": "table column",
+            "column name": "birthCity",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Cairo",
+              "New York",
+              "Wilmington",
+              "Gulfport",
+              "Maisons Alfort"
+            ],
+            "synonyms": [
+              "birthCity"
+            ]
+          },
+          {
+            "name": "birthstate",
+            "type": "table column",
+            "column name": "birthState",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NY",
+              "DE",
+              "MS",
+              "GA",
+              "IN"
+            ],
+            "synonyms": [
+              "birthState"
+            ]
+          },
+          {
+            "name": "birthcountry",
+            "type": "table column",
+            "column name": "birthCountry",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "EGY",
+              "USA",
+              "FRA",
+              "NGR",
+              "TAI"
+            ],
+            "synonyms": [
+              "birthCountry"
+            ]
+          },
+          {
+            "name": "highschool",
+            "type": "table column",
+            "column name": "highSchool",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Bloomfield Senior",
+              "Power Memorial",
+              "Overbrook / Moton",
+              "Gulfport",
+              "Lycee Aristide Briand"
+            ],
+            "synonyms": [
+              "highSchool"
+            ]
+          },
+          {
+            "name": "hscity",
+            "type": "table column",
+            "column name": "hsCity",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Bloomfield",
+              "New York",
+              "Philadelphia / Easton",
+              "Gulfport",
+              "Evreux"
+            ],
+            "synonyms": [
+              "hsCity"
+            ]
+          },
+          {
+            "name": "hsstate",
+            "type": "table column",
+            "column name": "hsState",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NJ",
+              "NY",
+              "PA / MD",
+              "MS",
+              "GA"
+            ],
+            "synonyms": [
+              "hsState"
+            ]
+          },
+          {
+            "name": "hscountry",
+            "type": "table column",
+            "column name": "hsCountry",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "USA",
+              "FRA",
+              "NGR",
+              "AUS",
+              "CAN"
+            ],
+            "synonyms": [
+              "hsCountry"
+            ]
+          },
+          {
+            "name": "deathdate",
+            "type": "table column",
+            "column name": "deathDate",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "0000-00-00",
+              "2011-11-18",
+              "2000-06-09",
+              "2011-07-09",
+              "1998-10-27"
+            ],
+            "synonyms": [
+              "deathDate"
+            ]
+          },
+          {
+            "name": "race",
+            "type": "table column",
+            "column name": "race",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "B",
+              "W",
+              "O",
+              "1",
+              "r"
+            ],
+            "synonyms": [
+              "race"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "players"
+        ]
+      },
+      {
+        "name": "players_teams",
+        "type": "simple table",
+        "table path": "main.players_teams",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "playerid",
+            "type": "table column",
+            "column name": "playerID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "abdelal01",
+              "abdulka01",
+              "abdulma01",
+              "abdulma02",
+              "abdulta01"
+            ],
+            "synonyms": [
+              "playerID"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1990,
+              1991,
+              1992,
+              1993,
+              1994
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "stint",
+            "type": "table column",
+            "column name": "stint",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              0,
+              3,
+              4
+            ],
+            "synonyms": [
+              "stint"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "POR",
+              "MIL",
+              "BOS",
+              "SAC",
+              "PHI"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NBA",
+              "NBL",
+              "ABA",
+              "ABL1",
+              "NPBL"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "gp",
+            "type": "table column",
+            "column name": "GP",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              43,
+              71,
+              12,
+              63,
+              13
+            ],
+            "synonyms": [
+              "GP"
+            ]
+          },
+          {
+            "name": "gs",
+            "type": "table column",
+            "column name": "GS",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              69,
+              62,
+              2,
+              81
+            ],
+            "synonyms": [
+              "GS"
+            ]
+          },
+          {
+            "name": "minutes",
+            "type": "table column",
+            "column name": "minutes",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              290,
+              934,
+              159,
+              1152,
+              476
+            ],
+            "synonyms": [
+              "minutes"
+            ]
+          },
+          {
+            "name": "points",
+            "type": "table column",
+            "column name": "points",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              135,
+              432,
+              64,
+              514,
+              254
+            ],
+            "synonyms": [
+              "points"
+            ]
+          },
+          {
+            "name": "orebounds",
+            "type": "table column",
+            "column name": "oRebounds",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              27,
+              81,
+              12,
+              114,
+              34
+            ],
+            "synonyms": [
+              "oRebounds"
+            ]
+          },
+          {
+            "name": "drebounds",
+            "type": "table column",
+            "column name": "dRebounds",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              62,
+              179,
+              25,
+              186,
+              34
+            ],
+            "synonyms": [
+              "dRebounds"
+            ]
+          },
+          {
+            "name": "rebounds",
+            "type": "table column",
+            "column name": "rebounds",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              89,
+              260,
+              37,
+              300,
+              46
+            ],
+            "synonyms": [
+              "rebounds"
+            ]
+          },
+          {
+            "name": "assists",
+            "type": "table column",
+            "column name": "assists",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              12,
+              30,
+              10,
+              17,
+              3
+            ],
+            "synonyms": [
+              "assists"
+            ]
+          },
+          {
+            "name": "steals",
+            "type": "table column",
+            "column name": "steals",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4,
+              25,
+              6,
+              19,
+              2
+            ],
+            "synonyms": [
+              "steals"
+            ]
+          },
+          {
+            "name": "blocks",
+            "type": "table column",
+            "column name": "blocks",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              12,
+              17,
+              4,
+              22,
+              3
+            ],
+            "synonyms": [
+              "blocks"
+            ]
+          },
+          {
+            "name": "turnovers",
+            "type": "table column",
+            "column name": "turnovers",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              22,
+              66,
+              0,
+              97,
+              17
+            ],
+            "synonyms": [
+              "turnovers"
+            ]
+          },
+          {
+            "name": "pf",
+            "type": "table column",
+            "column name": "PF",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              39,
+              132,
+              24,
+              165,
+              20
+            ],
+            "synonyms": [
+              "PF"
+            ]
+          },
+          {
+            "name": "fgattempted",
+            "type": "table column",
+            "column name": "fgAttempted",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              116,
+              361,
+              56,
+              417,
+              55
+            ],
+            "synonyms": [
+              "fgAttempted"
+            ]
+          },
+          {
+            "name": "fgmade",
+            "type": "table column",
+            "column name": "fgMade",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              55,
+              178,
+              26,
+              219,
+              24
+            ],
+            "synonyms": [
+              "fgMade"
+            ]
+          },
+          {
+            "name": "ftattempted",
+            "type": "table column",
+            "column name": "ftAttempted",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              44,
+              101,
+              16,
+              100,
+              25
+            ],
+            "synonyms": [
+              "ftAttempted"
+            ]
+          },
+          {
+            "name": "ftmade",
+            "type": "table column",
+            "column name": "ftMade",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              25,
+              76,
+              12,
+              16,
+              20
+            ],
+            "synonyms": [
+              "ftMade"
+            ]
+          },
+          {
+            "name": "threeattempted",
+            "type": "table column",
+            "column name": "threeAttempted",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              100
+            ],
+            "synonyms": [
+              "threeAttempted"
+            ]
+          },
+          {
+            "name": "threemade",
+            "type": "table column",
+            "column name": "threeMade",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              24,
+              31,
+              70
+            ],
+            "synonyms": [
+              "threeMade"
+            ]
+          },
+          {
+            "name": "postgp",
+            "type": "table column",
+            "column name": "PostGP",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              8,
+              0,
+              4,
+              10
+            ],
+            "synonyms": [
+              "PostGP"
+            ]
+          },
+          {
+            "name": "postgs",
+            "type": "table column",
+            "column name": "PostGS",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              6,
+              3,
+              7,
+              1
+            ],
+            "synonyms": [
+              "PostGS"
+            ]
+          },
+          {
+            "name": "postminutes",
+            "type": "table column",
+            "column name": "PostMinutes",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              13,
+              25,
+              0,
+              68,
+              435
+            ],
+            "synonyms": [
+              "PostMinutes"
+            ]
+          },
+          {
+            "name": "postpoints",
+            "type": "table column",
+            "column name": "PostPoints",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4,
+              12,
+              0,
+              22,
+              352
+            ],
+            "synonyms": [
+              "PostPoints"
+            ]
+          },
+          {
+            "name": "postorebounds",
+            "type": "table column",
+            "column name": "PostoRebounds",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              0,
+              2,
+              67,
+              51
+            ],
+            "synonyms": [
+              "PostoRebounds"
+            ]
+          },
+          {
+            "name": "postdrebounds",
+            "type": "table column",
+            "column name": "PostdRebounds",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              4,
+              0,
+              11,
+              186
+            ],
+            "synonyms": [
+              "PostdRebounds"
+            ]
+          },
+          {
+            "name": "postrebounds",
+            "type": "table column",
+            "column name": "PostRebounds",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              4,
+              0,
+              13,
+              168
+            ],
+            "synonyms": [
+              "PostRebounds"
+            ]
+          },
+          {
+            "name": "postassists",
+            "type": "table column",
+            "column name": "PostAssists",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              2,
+              1,
+              41,
+              35
+            ],
+            "synonyms": [
+              "PostAssists"
+            ]
+          },
+          {
+            "name": "poststeals",
+            "type": "table column",
+            "column name": "PostSteals",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              20,
+              19,
+              2,
+              8
+            ],
+            "synonyms": [
+              "PostSteals"
+            ]
+          },
+          {
+            "name": "postblocks",
+            "type": "table column",
+            "column name": "PostBlocks",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              39,
+              38,
+              12
+            ],
+            "synonyms": [
+              "PostBlocks"
+            ]
+          },
+          {
+            "name": "postturnovers",
+            "type": "table column",
+            "column name": "PostTurnovers",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              2,
+              9,
+              14,
+              29
+            ],
+            "synonyms": [
+              "PostTurnovers"
+            ]
+          },
+          {
+            "name": "postpf",
+            "type": "table column",
+            "column name": "PostPF",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              4,
+              7,
+              25,
+              35
+            ],
+            "synonyms": [
+              "PostPF"
+            ]
+          },
+          {
+            "name": "postfgattempted",
+            "type": "table column",
+            "column name": "PostfgAttempted",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6,
+              10,
+              0,
+              24,
+              245
+            ],
+            "synonyms": [
+              "PostfgAttempted"
+            ]
+          },
+          {
+            "name": "postfgmade",
+            "type": "table column",
+            "column name": "PostfgMade",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              5,
+              0,
+              11,
+              139
+            ],
+            "synonyms": [
+              "PostfgMade"
+            ]
+          },
+          {
+            "name": "postftattempted",
+            "type": "table column",
+            "column name": "PostftAttempted",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              4,
+              101,
+              54,
+              35
+            ],
+            "synonyms": [
+              "PostftAttempted"
+            ]
+          },
+          {
+            "name": "postftmade",
+            "type": "table column",
+            "column name": "PostftMade",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              2,
+              74,
+              68,
+              38
+            ],
+            "synonyms": [
+              "PostftMade"
+            ]
+          },
+          {
+            "name": "postthreeattempted",
+            "type": "table column",
+            "column name": "PostthreeAttempted",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              37,
+              12
+            ],
+            "synonyms": [
+              "PostthreeAttempted"
+            ]
+          },
+          {
+            "name": "postthreemade",
+            "type": "table column",
+            "column name": "PostthreeMade",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              12,
+              2,
+              17,
+              10
+            ],
+            "synonyms": [
+              "PostthreeMade"
+            ]
+          },
+          {
+            "name": "note",
+            "type": "table column",
+            "column name": "note",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "C"
+            ],
+            "synonyms": [
+              "note"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "players_teams"
+        ]
+      },
+      {
+        "name": "series_post",
+        "type": "simple table",
+        "table path": "main.series_post",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1946,
+              1947,
+              1948,
+              1949,
+              1950
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "round_",
+            "type": "table column",
+            "column name": "\"round\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "F",
+              "QF",
+              "SF",
+              "DT",
+              "DF"
+            ],
+            "synonyms": [
+              "round"
+            ]
+          },
+          {
+            "name": "series",
+            "type": "table column",
+            "column name": "series",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "O",
+              "M",
+              "N",
+              "A",
+              "K"
+            ],
+            "synonyms": [
+              "series"
+            ]
+          },
+          {
+            "name": "tmidwinner",
+            "type": "table column",
+            "column name": "tmIDWinner",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "PHW",
+              "NYK",
+              "CHS",
+              "BLB",
+              "WSC"
+            ],
+            "synonyms": [
+              "tmIDWinner"
+            ]
+          },
+          {
+            "name": "lgidwinner",
+            "type": "table column",
+            "column name": "lgIDWinner",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NBA",
+              "ABA"
+            ],
+            "synonyms": [
+              "lgIDWinner"
+            ]
+          },
+          {
+            "name": "tmidloser",
+            "type": "table column",
+            "column name": "tmIDLoser",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CHS",
+              "CLR",
+              "STB",
+              "NYK",
+              "WSC"
+            ],
+            "synonyms": [
+              "tmIDLoser"
+            ]
+          },
+          {
+            "name": "lgidloser",
+            "type": "table column",
+            "column name": "lgIDLoser",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NBA",
+              "ABA"
+            ],
+            "synonyms": [
+              "lgIDLoser"
+            ]
+          },
+          {
+            "name": "w",
+            "type": "table column",
+            "column name": "W",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4,
+              2,
+              1,
+              3,
+              0
+            ],
+            "synonyms": [
+              "W"
+            ]
+          },
+          {
+            "name": "l",
+            "type": "table column",
+            "column name": "L",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              0,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "L"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "series_post"
+        ]
+      },
+      {
+        "name": "teams",
+        "type": "simple table",
+        "table path": "main.teams",
+        "unique properties": [
+          [
+            "year_",
+            "tmid"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1937,
+              1938,
+              1939,
+              1940,
+              1941
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "lgid",
+            "type": "table column",
+            "column name": "lgID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NBL",
+              "NBA",
+              "PBLA",
+              "NPBL",
+              "ABL1"
+            ],
+            "synonyms": [
+              "lgID"
+            ]
+          },
+          {
+            "name": "tmid",
+            "type": "table column",
+            "column name": "tmID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AFS",
+              "AGW",
+              "BFB",
+              "CNC",
+              "COL"
+            ],
+            "synonyms": [
+              "tmID"
+            ]
+          },
+          {
+            "name": "franchid",
+            "type": "table column",
+            "column name": "franchID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AFS",
+              "AGW",
+              "BFB",
+              "CNC",
+              "COL"
+            ],
+            "synonyms": [
+              "franchID"
+            ]
+          },
+          {
+            "name": "confid",
+            "type": "table column",
+            "column name": "confID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "EC",
+              "WC"
+            ],
+            "synonyms": [
+              "confID"
+            ]
+          },
+          {
+            "name": "divid",
+            "type": "table column",
+            "column name": "divID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "EA",
+              "WE",
+              "ED",
+              "WD",
+              "SO"
+            ],
+            "synonyms": [
+              "divID"
+            ]
+          },
+          {
+            "name": "rank",
+            "type": "table column",
+            "column name": "rank",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              4,
+              5,
+              6
+            ],
+            "synonyms": [
+              "rank"
+            ]
+          },
+          {
+            "name": "confrank",
+            "type": "table column",
+            "column name": "confRank",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              4,
+              3,
+              5,
+              7
+            ],
+            "synonyms": [
+              "confRank"
+            ]
+          },
+          {
+            "name": "playoff",
+            "type": "table column",
+            "column name": "playoff",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CF",
+              "WC",
+              "LC",
+              "CS",
+              "F"
+            ],
+            "synonyms": [
+              "playoff"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Akron Firestone Non-Skids",
+              "Akron Goodyear Wingfoots",
+              "Buffalo Bisons",
+              "Richmond King Clothiers/Cincinnati Co...",
+              "Columbus Athletic Supply"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "o_fgm",
+            "type": "table column",
+            "column name": "o_fgm",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              249,
+              243,
+              108,
+              110,
+              109
+            ],
+            "synonyms": [
+              "o_fgm"
+            ]
+          },
+          {
+            "name": "o_ftm",
+            "type": "table column",
+            "column name": "o_ftm",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              183,
+              159,
+              46,
+              42,
+              64
+            ],
+            "synonyms": [
+              "o_ftm"
+            ]
+          },
+          {
+            "name": "o_pts",
+            "type": "table column",
+            "column name": "o_pts",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              681,
+              645,
+              262,
+              282,
+              347
+            ],
+            "synonyms": [
+              "o_pts"
+            ]
+          },
+          {
+            "name": "d_pts",
+            "type": "table column",
+            "column name": "d_pts",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              578,
+              498,
+              275,
+              338,
+              426
+            ],
+            "synonyms": [
+              "d_pts"
+            ]
+          },
+          {
+            "name": "homewon",
+            "type": "table column",
+            "column name": "homeWon",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8,
+              2,
+              3,
+              1,
+              9
+            ],
+            "synonyms": [
+              "homeWon"
+            ]
+          },
+          {
+            "name": "homelost",
+            "type": "table column",
+            "column name": "homeLost",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              0
+            ],
+            "synonyms": [
+              "homeLost"
+            ]
+          },
+          {
+            "name": "awaywon",
+            "type": "table column",
+            "column name": "awayWon",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              1,
+              0,
+              2,
+              3
+            ],
+            "synonyms": [
+              "awayWon"
+            ]
+          },
+          {
+            "name": "awaylost",
+            "type": "table column",
+            "column name": "awayLost",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              4,
+              5,
+              7,
+              6
+            ],
+            "synonyms": [
+              "awayLost"
+            ]
+          },
+          {
+            "name": "won",
+            "type": "table column",
+            "column name": "won",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              14,
+              13,
+              3,
+              1,
+              2
+            ],
+            "synonyms": [
+              "won"
+            ]
+          },
+          {
+            "name": "lost",
+            "type": "table column",
+            "column name": "lost",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4,
+              5,
+              6,
+              7,
+              12
+            ],
+            "synonyms": [
+              "lost"
+            ]
+          },
+          {
+            "name": "games",
+            "type": "table column",
+            "column name": "games",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              18,
+              9,
+              10,
+              13,
+              20
+            ],
+            "synonyms": [
+              "games"
+            ]
+          },
+          {
+            "name": "arena",
+            "type": "table column",
+            "column name": "arena",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Boston Garden",
+              "Chicago Stadium",
+              "Cleveland Arena",
+              "Detroit Olympia",
+              "Madison Square Garden (III)"
+            ],
+            "synonyms": [
+              "arena"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "teams"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "awards_coaches",
+        "parent collection": "coaches",
+        "child collection": "awards_coaches",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "coachid": [
+            "coachid"
+          ],
+          "year_": [
+            "year_"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "coaches",
+        "original parent": "coaches",
+        "original property": "awards_coaches",
+        "singular": false,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "awards_players",
+        "parent collection": "players",
+        "child collection": "awards_players",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "playerid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "players",
+        "original parent": "players",
+        "original property": "awards_players",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "coaches",
+        "parent collection": "teams",
+        "child collection": "coaches",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "tmid": [
+            "tmid"
+          ],
+          "year_": [
+            "year_"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "teams",
+        "original parent": "teams",
+        "original property": "coaches",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "draft",
+        "parent collection": "teams",
+        "child collection": "draft",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "tmid": [
+            "tmid"
+          ],
+          "year_": [
+            "draftyear"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "teams",
+        "original parent": "teams",
+        "original property": "draft",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "player_allstar",
+        "parent collection": "players",
+        "child collection": "player_allstar",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "playerid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "players",
+        "original parent": "players",
+        "original property": "player_allstar",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "players_teams",
+        "parent collection": "teams",
+        "child collection": "players_teams",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "tmid": [
+            "tmid"
+          ],
+          "year_": [
+            "year_"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "teams",
+        "original parent": "teams",
+        "original property": "players_teams",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "players_teams",
+        "parent collection": "players",
+        "child collection": "players_teams",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "playerid": [
+            "playerid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "players",
+        "original parent": "players",
+        "original property": "players_teams",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "series_post",
+        "parent collection": "teams",
+        "child collection": "series_post",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "tmid": [
+            "tmidloser"
+          ],
+          "year_": [
+            "year_"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "teams",
+        "original parent": "teams",
+        "original property": "series_post",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "series_post_2",
+        "parent collection": "teams",
+        "child collection": "series_post",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "tmid": [
+            "tmidwinner"
+          ],
+          "year_": [
+            "year_"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "teams_2",
+        "original parent": "teams",
+        "original property": "series_post_2",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

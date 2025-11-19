@@ -1,0 +1,475 @@
+[
+  {
+    "name": "shooting",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "incidents",
+        "type": "simple table",
+        "table path": "main.incidents",
+        "unique properties": [
+          "case_number"
+        ],
+        "properties": [
+          {
+            "name": "case_number",
+            "type": "table column",
+            "column name": "case_number",
+            "data type": "string",
+            "description": "Unique identifier for the shooting incident.",
+            "sample values": [
+              "031347-2015",
+              "072458-2016",
+              "089985-2016",
+              "1004453N",
+              "100577T"
+            ],
+            "synonyms": [
+              "case_number"
+            ]
+          },
+          {
+            "name": "date_",
+            "type": "table column",
+            "column name": "\"date\"",
+            "data type": "datetime",
+            "description": "The date on which the incident occurred.",
+            "sample values": [
+              "2015/2/9",
+              "2016/3/26",
+              "2016/4/16",
+              "2004/12/29",
+              "2007/2/12"
+            ],
+            "synonyms": [
+              "date"
+            ]
+          },
+          {
+            "name": "location",
+            "type": "table column",
+            "column name": "location",
+            "data type": "string",
+            "description": "The location where the incident took place.",
+            "sample values": [
+              "7400 Bonnie View Road",
+              "8218 Willoughby Boulevard",
+              "4800 Columbia Ave",
+              "2400 Walnut Hill Lane",
+              "3847 Timberglen Road, #3116"
+            ],
+            "synonyms": [
+              "location"
+            ]
+          },
+          {
+            "name": "subject_statuses",
+            "type": "table column",
+            "column name": "subject_statuses",
+            "data type": "string",
+            "description": "The status of the subject(s) after the incident.",
+            "sample values": [
+              "Deceased",
+              "Shoot and Miss",
+              "Injured",
+              "Other",
+              "Deceased Injured"
+            ],
+            "synonyms": [
+              "subject_statuses"
+            ]
+          },
+          {
+            "name": "subject_weapon",
+            "type": "table column",
+            "column name": "subject_weapon",
+            "data type": "string",
+            "description": "The weapon used by the subject(s) during the incident.",
+            "sample values": [
+              "Vehicle",
+              "Shotgun",
+              "Handgun",
+              "Toy Handun",
+              "Knife"
+            ],
+            "synonyms": [
+              "subject_weapon"
+            ]
+          },
+          {
+            "name": "subjects",
+            "type": "table column",
+            "column name": "subjects",
+            "data type": "string",
+            "description": "A text field listing the subjects involved in the incident.",
+            "sample values": [
+              "Luster, Desmond Dwayne B/M",
+              "Gilstrap, Bryan B/M",
+              "Unknown L/M",
+              "Evans, Jerry W/M",
+              "Mims, Carlton B/M"
+            ],
+            "synonyms": [
+              "subjects"
+            ]
+          },
+          {
+            "name": "subject_count",
+            "type": "table column",
+            "column name": "subject_count",
+            "data type": "numeric",
+            "description": "The total number of subjects involved in the incident.",
+            "sample values": [
+              1,
+              2,
+              0,
+              3
+            ],
+            "synonyms": [
+              "subject_count"
+            ]
+          },
+          {
+            "name": "officers",
+            "type": "table column",
+            "column name": "officers",
+            "data type": "string",
+            "description": "A text field listing the officers involved in the incident.",
+            "sample values": [
+              "Tollerton, Aaron W/M",
+              "Cardenas, Steven L/M",
+              "Ruben, Fredirick W/M",
+              "Nguyen, Buu A/M",
+              "Ragsdale, Barry W/M"
+            ],
+            "synonyms": [
+              "officers"
+            ]
+          }
+        ],
+        "description": "Contains information about shooting incidents, including case details, date, location, and a summary of subjects and officers involved.",
+        "synonyms": [
+          "incidents"
+        ]
+      },
+      {
+        "name": "officers",
+        "type": "simple table",
+        "table path": "main.officers",
+        "unique properties": [
+          [
+            "case_number",
+            "race",
+            "gender",
+            "last_name",
+            "first_name",
+            "full_name"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "case_number",
+            "type": "table column",
+            "column name": "case_number",
+            "data type": "string",
+            "description": "Identifier linking the officer to a specific incident case.",
+            "sample values": [
+              "44523A",
+              "121982X",
+              "605484T",
+              "384832T",
+              "244659R"
+            ],
+            "synonyms": [
+              "case_number"
+            ]
+          },
+          {
+            "name": "race",
+            "type": "table column",
+            "column name": "race",
+            "data type": "string",
+            "description": "The race of the officer.",
+            "sample values": [
+              "L",
+              "W",
+              "B",
+              "A"
+            ],
+            "synonyms": [
+              "race"
+            ],
+            "extra semantic info": {
+              "value_mapping": {
+                "L": "Latino",
+                "W": "White",
+                "B": "Black",
+                "A": "Asian"
+              }
+            }
+          },
+          {
+            "name": "gender",
+            "type": "table column",
+            "column name": "gender",
+            "data type": "string",
+            "description": "The gender of the officer.",
+            "sample values": [
+              "M",
+              "F"
+            ],
+            "synonyms": [
+              "gender"
+            ],
+            "extra semantic info": {
+              "value_mapping": {
+                "M": "Male",
+                "F": "Female"
+              }
+            }
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "The last name of the officer.",
+            "sample values": [
+              "Patino",
+              "Fillingim",
+              "Padilla",
+              "Poston",
+              "Mondy"
+            ],
+            "synonyms": [
+              "last_name"
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "The first name of the officer.",
+            "sample values": [
+              "Michael",
+              "Brian",
+              "Gilbert",
+              "Jerry",
+              "Jesse"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "full_name",
+            "type": "table column",
+            "column name": "full_name",
+            "data type": "string",
+            "description": "The full name of the officer, typically in 'Last, First' format.",
+            "sample values": [
+              "Patino, Michael",
+              "Fillingim, Brian",
+              "Padilla, Gilbert",
+              "Poston, Jerry",
+              "Mondy, Michael"
+            ],
+            "synonyms": [
+              "full_name"
+            ]
+          }
+        ],
+        "description": "Contains detailed information about each officer involved in a shooting incident.",
+        "synonyms": [
+          "officers"
+        ]
+      },
+      {
+        "name": "subjects",
+        "type": "simple table",
+        "table path": "main.subjects",
+        "unique properties": [
+          [
+            "case_number",
+            "race",
+            "gender",
+            "last_name",
+            "first_name",
+            "full_name"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "case_number",
+            "type": "table column",
+            "column name": "case_number",
+            "data type": "string",
+            "description": "Identifier linking the subject to a specific incident case.",
+            "sample values": [
+              "44523A",
+              "121982X",
+              "605484T",
+              "384832T",
+              "244659R"
+            ],
+            "synonyms": [
+              "case_number"
+            ]
+          },
+          {
+            "name": "race",
+            "type": "table column",
+            "column name": "race",
+            "data type": "string",
+            "description": "The race of the subject.",
+            "sample values": [
+              "L",
+              "B",
+              "W",
+              "A"
+            ],
+            "synonyms": [
+              "race"
+            ],
+            "extra semantic info": {
+              "value_mapping": {
+                "L": "Latino",
+                "W": "White",
+                "B": "Black",
+                "A": "Asian"
+              }
+            }
+          },
+          {
+            "name": "gender",
+            "type": "table column",
+            "column name": "gender",
+            "data type": "string",
+            "description": "The gender of the subject.",
+            "sample values": [
+              "M",
+              "F"
+            ],
+            "synonyms": [
+              "gender"
+            ],
+            "extra semantic info": {
+              "value_mapping": {
+                "M": "Male",
+                "F": "Female"
+              }
+            }
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "The last name of the subject.",
+            "sample values": [
+              "Curry",
+              "Chavez",
+              "Salinas",
+              "Smith",
+              "Dews"
+            ],
+            "synonyms": [
+              "last_name"
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "The first name of the subject.",
+            "sample values": [
+              "James",
+              "Gabriel",
+              "Nick",
+              "Antonio",
+              "Damion"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "full_name",
+            "type": "table column",
+            "column name": "full_name",
+            "data type": "string",
+            "description": "The full name of the subject, typically in 'Last, First' format.",
+            "sample values": [
+              "Curry, James",
+              "Chavez, Gabriel",
+              "Salinas, Nick",
+              "Smith, James",
+              "Dews, Antonio"
+            ],
+            "synonyms": [
+              "full_name"
+            ]
+          }
+        ],
+        "description": "Contains detailed information about each subject involved in a shooting incident.",
+        "synonyms": [
+          "subjects"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "incident_officers",
+        "parent collection": "incidents",
+        "child collection": "officers",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "case_number": [
+            "case_number"
+          ]
+        },
+        "description": "Retrieves all officers associated with a specific incident.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "incident",
+        "original parent": "incidents",
+        "original property": "incident_officers",
+        "singular": true,
+        "always matches": true,
+        "description": "Retrieves the incident associated with a specific officer.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "incident_subjects",
+        "parent collection": "incidents",
+        "child collection": "subjects",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "case_number": [
+            "case_number"
+          ]
+        },
+        "description": "Retrieves all subjects associated with a specific incident.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "incident",
+        "original parent": "incidents",
+        "original property": "incident_subjects",
+        "singular": true,
+        "always matches": true,
+        "description": "Retrieves the incident associated with a specific subject.",
+        "synonyms": []
+      }
+    ]
+  }
+]

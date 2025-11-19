@@ -1,0 +1,989 @@
+[
+  {
+    "name": "simpson_episodes",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "award",
+        "type": "simple table",
+        "table path": "main.Award",
+        "unique properties": [
+          "award_id"
+        ],
+        "properties": [
+          {
+            "name": "award_id",
+            "type": "table column",
+            "column name": "award_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              325,
+              326,
+              327,
+              328,
+              329
+            ],
+            "synonyms": [
+              "award_id"
+            ]
+          },
+          {
+            "name": "organization",
+            "type": "table column",
+            "column name": "organization",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Primetime Emmy Awards",
+              "Annie Awards",
+              "Image Awards (NAACP)",
+              "Jupiter Award",
+              "Kids' Choice Awards, USA"
+            ],
+            "synonyms": [
+              "organization"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2009,
+              2010,
+              2017,
+              2018
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "award_category",
+            "type": "table column",
+            "column name": "award_category",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Primetime Emmy",
+              "Annie",
+              "Image Award",
+              "Jupiter Award",
+              "Blimp Award"
+            ],
+            "synonyms": [
+              "award_category"
+            ]
+          },
+          {
+            "name": "award",
+            "type": "table column",
+            "column name": "award",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Outstanding Voice-Over Performance",
+              "Outstanding Animated Program (For Pro...",
+              "Outstanding Music Composition for a S...",
+              "Writing in a Television Production",
+              "Best Animated Television Production"
+            ],
+            "synonyms": [
+              "award"
+            ]
+          },
+          {
+            "name": "person",
+            "type": "table column",
+            "column name": "person",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Dan Castellaneta",
+              "Hank Azaria",
+              "Harry Shearer",
+              "James L. Brooks",
+              "Matt Groening"
+            ],
+            "synonyms": [
+              "person"
+            ]
+          },
+          {
+            "name": "role",
+            "type": "table column",
+            "column name": "role",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "executive producer",
+              "co-executive producer",
+              "co-executive producer, writer",
+              "animation producer",
+              "writer"
+            ],
+            "synonyms": [
+              "role"
+            ]
+          },
+          {
+            "name": "episode_id",
+            "type": "table column",
+            "column name": "episode_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "S20-E18",
+              "S20-E16",
+              "S20-E8",
+              "S20-E13",
+              "S20-E20"
+            ],
+            "synonyms": [
+              "episode_id"
+            ]
+          },
+          {
+            "name": "season",
+            "type": "table column",
+            "column name": "season",
+            "data type": "string",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "season"
+            ]
+          },
+          {
+            "name": "song",
+            "type": "table column",
+            "column name": "song",
+            "data type": "string",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "song"
+            ]
+          },
+          {
+            "name": "result",
+            "type": "table column",
+            "column name": "result",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Winner",
+              "Nominee"
+            ],
+            "synonyms": [
+              "result"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Award"
+        ]
+      },
+      {
+        "name": "character_award",
+        "type": "simple table",
+        "table path": "main.Character_Award",
+        "unique properties": [
+          [
+            "award_id",
+            "character_"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "award_id",
+            "type": "table column",
+            "column name": "award_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              325,
+              326,
+              327
+            ],
+            "synonyms": [
+              "award_id"
+            ]
+          },
+          {
+            "name": "character_",
+            "type": "table column",
+            "column name": "\"character\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Homer Simpson",
+              "Moe Szyslak",
+              "Kent Brockman",
+              "Lenny",
+              "Mr. Burns"
+            ],
+            "synonyms": [
+              "character"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Character_Award"
+        ]
+      },
+      {
+        "name": "credit",
+        "type": "simple table",
+        "table path": "main.Credit",
+        "unique properties": [
+          [
+            "episode_id",
+            "category",
+            "person",
+            "role",
+            "credited"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "episode_id",
+            "type": "table column",
+            "column name": "episode_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "S20-E10",
+              "S20-E13",
+              "S20-E14",
+              "S20-E4",
+              "S20-E19"
+            ],
+            "synonyms": [
+              "episode_id"
+            ]
+          },
+          {
+            "name": "category",
+            "type": "table column",
+            "column name": "category",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Casting Department",
+              "Animation Department",
+              "Sound Department",
+              "Editorial Department",
+              "Produced by"
+            ],
+            "synonyms": [
+              "category"
+            ]
+          },
+          {
+            "name": "person",
+            "type": "table column",
+            "column name": "person",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Bonita Pietila",
+              "Adam Kuhlman",
+              "Carlton Batten",
+              "Jack Dyer",
+              "Jeremy Robinson"
+            ],
+            "synonyms": [
+              "person"
+            ]
+          },
+          {
+            "name": "role",
+            "type": "table column",
+            "column name": "role",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "casting",
+              "additional timer",
+              "adr engineer",
+              "adr mixer",
+              "animatic editor"
+            ],
+            "synonyms": [
+              "role"
+            ]
+          },
+          {
+            "name": "credited",
+            "type": "table column",
+            "column name": "credited",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "true",
+              "false"
+            ],
+            "synonyms": [
+              "credited"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Credit"
+        ]
+      },
+      {
+        "name": "episode",
+        "type": "simple table",
+        "table path": "main.Episode",
+        "unique properties": [
+          "episode_id"
+        ],
+        "properties": [
+          {
+            "name": "episode_id",
+            "type": "table column",
+            "column name": "episode_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "S20-E1",
+              "S20-E10",
+              "S20-E11",
+              "S20-E12",
+              "S20-E13"
+            ],
+            "synonyms": [
+              "episode_id"
+            ]
+          },
+          {
+            "name": "season",
+            "type": "table column",
+            "column name": "season",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              20
+            ],
+            "synonyms": [
+              "season"
+            ]
+          },
+          {
+            "name": "episode",
+            "type": "table column",
+            "column name": "episode",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "episode"
+            ]
+          },
+          {
+            "name": "number_in_series",
+            "type": "table column",
+            "column name": "number_in_series",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              421,
+              422,
+              423,
+              424,
+              425
+            ],
+            "synonyms": [
+              "number_in_series"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Sex, Pies and Idiot Scrapes",
+              "Lost Verizon",
+              "Double, Double, Boy in Trouble",
+              "Treehouse of Horror XIX",
+              "Dangerous Curves"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "summary",
+            "type": "table column",
+            "column name": "summary",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Homer and Ned go into business togeth...",
+              "Bart gets in trouble with Marge after...",
+              "Bart trades lives with his multi-mill...",
+              "The Simpsons' 19th Halloween Special,...",
+              "The Simpsons take a Fourth of July va..."
+            ],
+            "synonyms": [
+              "summary"
+            ]
+          },
+          {
+            "name": "air_date",
+            "type": "table column",
+            "column name": "air_date",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2008-09-28",
+              "2008-10-05",
+              "2008-10-19",
+              "2008-11-02",
+              "2008-11-09"
+            ],
+            "synonyms": [
+              "air_date"
+            ]
+          },
+          {
+            "name": "episode_image",
+            "type": "table column",
+            "column name": "episode_image",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://m.media-amazon.com/images/M/M...",
+              "https://m.media-amazon.com/images/M/M...",
+              "https://m.media-amazon.com/images/M/M...",
+              "https://m.media-amazon.com/images/M/M...",
+              "https://m.media-amazon.com/images/M/M..."
+            ],
+            "synonyms": [
+              "episode_image"
+            ]
+          },
+          {
+            "name": "rating",
+            "type": "table column",
+            "column name": "rating",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              7.2,
+              7.0,
+              7.1,
+              6.5,
+              6.6
+            ],
+            "synonyms": [
+              "rating"
+            ]
+          },
+          {
+            "name": "votes",
+            "type": "table column",
+            "column name": "votes",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1192,
+              1055,
+              1015,
+              1190,
+              951
+            ],
+            "synonyms": [
+              "votes"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Episode"
+        ]
+      },
+      {
+        "name": "keyword",
+        "type": "simple table",
+        "table path": "main.Keyword",
+        "unique properties": [
+          [
+            "episode_id",
+            "keyword"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "episode_id",
+            "type": "table column",
+            "column name": "episode_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "S20-E1",
+              "S20-E10",
+              "S20-E11",
+              "S20-E12",
+              "S20-E13"
+            ],
+            "synonyms": [
+              "episode_id"
+            ]
+          },
+          {
+            "name": "keyword",
+            "type": "table column",
+            "column name": "keyword",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1930s to 2020s",
+              "erotic bakery",
+              "cake",
+              "bullet",
+              "st. patrick's day"
+            ],
+            "synonyms": [
+              "keyword"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Keyword"
+        ]
+      },
+      {
+        "name": "person",
+        "type": "simple table",
+        "table path": "main.Person",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Adam Greeley",
+              "Adam Klein",
+              "Adam Kuhlman",
+              "Al Holter",
+              "Al Jean"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "birthdate",
+            "type": "table column",
+            "column name": "birthdate",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1963-05-04",
+              "1975-03-30",
+              "1969-12-04",
+              "1969-10-02",
+              "1940-05-09"
+            ],
+            "synonyms": [
+              "birthdate"
+            ]
+          },
+          {
+            "name": "birth_name",
+            "type": "table column",
+            "column name": "birth_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Marc Edward Wilmore",
+              "Valentina Lantigua",
+              "Joseph Stewart Burns",
+              "Stephanie Katina Gillis",
+              "Laurie D Templeton"
+            ],
+            "synonyms": [
+              "birth_name"
+            ]
+          },
+          {
+            "name": "birth_place",
+            "type": "table column",
+            "column name": "birth_place",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "USA",
+              "Brooklyn",
+              "Chicago",
+              "Portland",
+              "New York City"
+            ],
+            "synonyms": [
+              "birth_place"
+            ]
+          },
+          {
+            "name": "birth_region",
+            "type": "table column",
+            "column name": "birth_region",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "California",
+              "New York",
+              "Illinois",
+              "Oregon",
+              "Connecticut"
+            ],
+            "synonyms": [
+              "birth_region"
+            ]
+          },
+          {
+            "name": "birth_country",
+            "type": "table column",
+            "column name": "birth_country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "USA",
+              "Canada",
+              "Ireland",
+              "Philippines",
+              "Czechoslovakia"
+            ],
+            "synonyms": [
+              "birth_country"
+            ]
+          },
+          {
+            "name": "height_meters",
+            "type": "table column",
+            "column name": "height_meters",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1.85,
+              1.75,
+              2.03,
+              1.89,
+              1.82
+            ],
+            "synonyms": [
+              "height_meters"
+            ]
+          },
+          {
+            "name": "nickname",
+            "type": "table column",
+            "column name": "nickname",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Jim",
+              "Doofus",
+              "Hoops",
+              "Boop",
+              "King Cool"
+            ],
+            "synonyms": [
+              "nickname"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Person"
+        ]
+      },
+      {
+        "name": "vote",
+        "type": "simple table",
+        "table path": "main.Vote",
+        "unique properties": [
+          [
+            "episode_id",
+            "stars",
+            "votes",
+            "percent"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "episode_id",
+            "type": "table column",
+            "column name": "episode_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "S20-E1",
+              "S20-E10",
+              "S20-E11",
+              "S20-E12",
+              "S20-E13"
+            ],
+            "synonyms": [
+              "episode_id"
+            ]
+          },
+          {
+            "name": "stars",
+            "type": "table column",
+            "column name": "stars",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3,
+              4,
+              5,
+              1
+            ],
+            "synonyms": [
+              "stars"
+            ]
+          },
+          {
+            "name": "votes",
+            "type": "table column",
+            "column name": "votes",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              16,
+              20,
+              36,
+              49,
+              67
+            ],
+            "synonyms": [
+              "votes"
+            ]
+          },
+          {
+            "name": "percent",
+            "type": "table column",
+            "column name": "percent",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1.3,
+              1.7,
+              3.0,
+              4.1,
+              5.6
+            ],
+            "synonyms": [
+              "percent"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Vote"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "award",
+        "parent collection": "episode",
+        "child collection": "award",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "episode_id": [
+            "episode_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "episode",
+        "original parent": "episode",
+        "original property": "award",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "award",
+        "parent collection": "person",
+        "child collection": "award",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "person"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person_2",
+        "original parent": "person",
+        "original property": "award",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "character_award",
+        "parent collection": "award",
+        "child collection": "character_award",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "award_id": [
+            "award_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "award",
+        "original parent": "award",
+        "original property": "character_award",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "credit",
+        "parent collection": "person",
+        "child collection": "credit",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "person"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person_2",
+        "original parent": "person",
+        "original property": "credit",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "credit",
+        "parent collection": "episode",
+        "child collection": "credit",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "episode_id": [
+            "episode_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "episode",
+        "original parent": "episode",
+        "original property": "credit",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "keyword",
+        "parent collection": "episode",
+        "child collection": "keyword",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "episode_id": [
+            "episode_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "episode",
+        "original parent": "episode",
+        "original property": "keyword",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "vote",
+        "parent collection": "episode",
+        "child collection": "vote",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "episode_id": [
+            "episode_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "episode",
+        "original parent": "episode",
+        "original property": "vote",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

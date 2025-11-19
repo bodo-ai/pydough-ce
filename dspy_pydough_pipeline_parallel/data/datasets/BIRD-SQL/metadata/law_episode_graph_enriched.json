@@ -1,0 +1,952 @@
+[
+  {
+    "name": "law_episode",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "award",
+        "type": "simple table",
+        "table path": "main.Award",
+        "unique properties": [
+          "award_id"
+        ],
+        "properties": [
+          {
+            "name": "award_id",
+            "type": "table column",
+            "column name": "award_id",
+            "data type": "numeric",
+            "description": "The unique identifier for the award nomination.",
+            "sample values": [
+              258,
+              259,
+              260,
+              261,
+              262
+            ],
+            "synonyms": [
+              "award_id"
+            ]
+          },
+          {
+            "name": "organization",
+            "type": "table column",
+            "column name": "organization",
+            "data type": "string",
+            "description": "The name of the organization that grants the award.",
+            "sample values": [
+              "International Monitor Awards",
+              "Primetime Emmy Awards",
+              "American Bar Association Silver Gavel...",
+              "Edgar Allan Poe Awards"
+            ],
+            "synonyms": [
+              "organization"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "The year of the nomination for the award.",
+            "sample values": [
+              1999,
+              2000
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "award_category",
+            "type": "table column",
+            "column name": "award_category",
+            "data type": "string",
+            "description": "The class of the award.",
+            "sample values": [
+              "Monitor",
+              "Primetime Emmy",
+              "Silver Gavel Award",
+              "Edgar"
+            ],
+            "synonyms": [
+              "award_category"
+            ]
+          },
+          {
+            "name": "award",
+            "type": "table column",
+            "column name": "award",
+            "data type": "string",
+            "description": "The specific award.",
+            "sample values": [
+              "Film Originated Television Series - B...",
+              "Outstanding Costume Design for a Series",
+              "Outstanding Directing for a Drama Series",
+              "Outstanding Guest Actress in a Drama ...",
+              "Outstanding Sound Mixing for a Drama ..."
+            ],
+            "synonyms": [
+              "award"
+            ]
+          },
+          {
+            "name": "series",
+            "type": "table column",
+            "column name": "series",
+            "data type": "string",
+            "description": "The name of the Law & Order series that has been nominated.",
+            "sample values": [
+              "Law and Order"
+            ],
+            "synonyms": [
+              "series"
+            ]
+          },
+          {
+            "name": "episode_id",
+            "type": "table column",
+            "column name": "episode_id",
+            "data type": "string",
+            "description": "The id of the episode that has been nominated.",
+            "sample values": [
+              "tt0629149",
+              "tt0629398",
+              "tt0629248",
+              "tt0629422",
+              "tt0629228"
+            ],
+            "synonyms": [
+              "episode_id"
+            ]
+          },
+          {
+            "name": "person_id",
+            "type": "table column",
+            "column name": "person_id",
+            "data type": "string",
+            "description": "The id of the person that has been nominated.",
+            "sample values": [
+              "nm0937725",
+              "nm0792309",
+              "nm0049569",
+              "nm0371065",
+              "nm0288886"
+            ],
+            "synonyms": [
+              "person_id"
+            ]
+          },
+          {
+            "name": "role",
+            "type": "table column",
+            "column name": "role",
+            "data type": "string",
+            "description": "The role that has been nominated.",
+            "sample values": [
+              "Katrina Ludlow",
+              "production mixer",
+              "re-recording mixer",
+              "writer",
+              "director"
+            ],
+            "synonyms": [
+              "role"
+            ]
+          },
+          {
+            "name": "result",
+            "type": "table column",
+            "column name": "result",
+            "data type": "string",
+            "description": "The nomination result.",
+            "extra semantic info": {
+              "commonsense evidence": "'Winner' means that the award was actually received."
+            },
+            "sample values": [
+              "Winner",
+              "Nominee"
+            ],
+            "synonyms": [
+              "result"
+            ]
+          }
+        ],
+        "description": "Contains information about awards and nominations for episodes, series, and people involved in the Law & Order series.",
+        "synonyms": [
+          "Award"
+        ]
+      },
+      {
+        "name": "credit",
+        "type": "simple table",
+        "table path": "main.Credit",
+        "unique properties": [
+          [
+            "episode_id",
+            "person_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "episode_id",
+            "type": "table column",
+            "column name": "episode_id",
+            "data type": "string",
+            "description": "The id of the episode to which the credit information pertains.",
+            "sample values": [
+              "tt0629146",
+              "tt0629149",
+              "tt0629153",
+              "tt0629170",
+              "tt0629204"
+            ],
+            "synonyms": [
+              "episode_id"
+            ]
+          },
+          {
+            "name": "person_id",
+            "type": "table column",
+            "column name": "person_id",
+            "data type": "string",
+            "description": "The id of the person to which the credit information pertains.",
+            "sample values": [
+              "nm0000973",
+              "nm0001583",
+              "nm0001832",
+              "nm0003167",
+              "nm0004135"
+            ],
+            "synonyms": [
+              "person_id"
+            ]
+          },
+          {
+            "name": "category",
+            "type": "table column",
+            "column name": "category",
+            "data type": "string",
+            "description": "The kind of credit being recognized.",
+            "sample values": [
+              "Additional Crew",
+              "Art Department",
+              "Camera and Electrical Department",
+              "Cast",
+              "Casting Department"
+            ],
+            "synonyms": [
+              "category"
+            ]
+          },
+          {
+            "name": "role",
+            "type": "table column",
+            "column name": "role",
+            "data type": "string",
+            "description": "The role for which the person is being recognized.",
+            "extra semantic info": {
+              "value_description": "If the credit is for an actor, this is the name of the character he or she portrayed (Dan Florek plays Donald Craven). Otherwise, this is the production role (producer, sound editor)."
+            },
+            "sample values": [
+              "technical advisor",
+              "production accountant",
+              "president of NBC West Coast",
+              "executive assistant to executive prod...",
+              "production coordinator"
+            ],
+            "synonyms": [
+              "role"
+            ]
+          },
+          {
+            "name": "credited",
+            "type": "table column",
+            "column name": "credited",
+            "data type": "string",
+            "description": "Whether the credit was displayed in the credits at the end of the episode.",
+            "extra semantic info": {
+              "commonsense evidence": "A person may fill a role in an episode, but not show up in the on-screen credits. In this case, the work is said to be \"uncredited.\""
+            },
+            "sample values": [
+              "true",
+              "false"
+            ],
+            "synonyms": [
+              "credited"
+            ]
+          }
+        ],
+        "description": "Lists the credits for people involved in each episode, including cast and crew roles.",
+        "synonyms": [
+          "Credit"
+        ]
+      },
+      {
+        "name": "episode",
+        "type": "simple table",
+        "table path": "main.Episode",
+        "unique properties": [
+          "episode_id"
+        ],
+        "properties": [
+          {
+            "name": "episode_id",
+            "type": "table column",
+            "column name": "episode_id",
+            "data type": "string",
+            "description": "The unique identifier of the episode.",
+            "sample values": [
+              "tt0629146",
+              "tt0629149",
+              "tt0629153",
+              "tt0629170",
+              "tt0629204"
+            ],
+            "synonyms": [
+              "episode_id"
+            ]
+          },
+          {
+            "name": "series",
+            "type": "table column",
+            "column name": "series",
+            "data type": "string",
+            "description": "The name of the series.",
+            "sample values": [
+              "Law and Order"
+            ],
+            "synonyms": [
+              "series"
+            ]
+          },
+          {
+            "name": "season",
+            "type": "table column",
+            "column name": "season",
+            "data type": "numeric",
+            "description": "A number indicating the season of the episode.",
+            "sample values": [
+              9
+            ],
+            "synonyms": [
+              "season"
+            ]
+          },
+          {
+            "name": "episode",
+            "type": "table column",
+            "column name": "episode",
+            "data type": "numeric",
+            "description": "The sequential number of the episode within a specific season.",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "episode"
+            ]
+          },
+          {
+            "name": "number_in_series",
+            "type": "table column",
+            "column name": "number_in_series",
+            "data type": "numeric",
+            "description": "The overall sequence number of episode in the entire series.",
+            "sample values": [
+              182,
+              183,
+              184,
+              185,
+              186
+            ],
+            "synonyms": [
+              "number_in_series"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "The title of the episode.",
+            "sample values": [
+              "Cherished",
+              "DWB",
+              "Bait",
+              "Flight",
+              "Agony"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "summary",
+            "type": "table column",
+            "column name": "summary",
+            "data type": "string",
+            "description": "A brief description of what happens in the episode.",
+            "sample values": [
+              "New assistant DA Abbie Carmichael agg...",
+              "White police officers are accused of ...",
+              "A teenager who was shot in a drug dea...",
+              "Prosecutors have trouble making a cas...",
+              "After a woman is brutally attacked, t..."
+            ],
+            "synonyms": [
+              "summary"
+            ]
+          },
+          {
+            "name": "air_date",
+            "type": "table column",
+            "column name": "air_date",
+            "data type": "datetime",
+            "description": "The date the episode was initially broadcast in the United States.",
+            "sample values": [
+              "1998-09-23",
+              "1998-10-07",
+              "1998-10-14",
+              "1998-10-21",
+              "1998-11-04"
+            ],
+            "synonyms": [
+              "air_date"
+            ]
+          },
+          {
+            "name": "episode_image",
+            "type": "table column",
+            "column name": "episode_image",
+            "data type": "string",
+            "description": "A link to an image from the episode.",
+            "sample values": [
+              "https://m.media-amazon.com/images/M/M...",
+              "https://m.media-amazon.com/images/M/M...",
+              "https://m.media-amazon.com/images/M/M...",
+              "https://m.media-amazon.com/images/M/M...",
+              "https://m.media-amazon.com/images/M/M..."
+            ],
+            "synonyms": [
+              "episode_image"
+            ]
+          },
+          {
+            "name": "rating",
+            "type": "table column",
+            "column name": "rating",
+            "data type": "numeric",
+            "description": "The weighted average of the votes received for the episode.",
+            "extra semantic info": {
+              "commonsense evidence": "The higher rating means the episode has more positive viewer comments."
+            },
+            "sample values": [
+              7.9,
+              7.6,
+              8.2,
+              7.7,
+              7.8
+            ],
+            "synonyms": [
+              "rating"
+            ]
+          },
+          {
+            "name": "votes",
+            "type": "table column",
+            "column name": "votes",
+            "data type": "numeric",
+            "description": "The total number of rating votes for the episode.",
+            "sample values": [
+              203,
+              177,
+              159,
+              165,
+              187
+            ],
+            "synonyms": [
+              "votes"
+            ]
+          }
+        ],
+        "description": "Contains detailed information about each episode of the Law & Order series.",
+        "synonyms": [
+          "Episode"
+        ]
+      },
+      {
+        "name": "keyword",
+        "type": "simple table",
+        "table path": "main.Keyword",
+        "unique properties": [
+          [
+            "episode_id",
+            "keyword"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "episode_id",
+            "type": "table column",
+            "column name": "episode_id",
+            "data type": "string",
+            "description": "The id of the episode.",
+            "sample values": [
+              "tt0629239",
+              "tt0629397",
+              "tt0629420"
+            ],
+            "synonyms": [
+              "episode_id"
+            ]
+          },
+          {
+            "name": "keyword",
+            "type": "table column",
+            "column name": "keyword",
+            "data type": "string",
+            "description": "The keyword that is relevant for the episode.",
+            "sample values": [
+              "nun",
+              "priest",
+              "police officer",
+              "police officer killed",
+              "police officer shot"
+            ],
+            "synonyms": [
+              "keyword"
+            ]
+          }
+        ],
+        "description": "Links episodes to relevant keywords that describe their content.",
+        "synonyms": [
+          "Keyword"
+        ]
+      },
+      {
+        "name": "person",
+        "type": "simple table",
+        "table path": "main.Person",
+        "unique properties": [
+          "person_id"
+        ],
+        "properties": [
+          {
+            "name": "person_id",
+            "type": "table column",
+            "column name": "person_id",
+            "data type": "string",
+            "description": "The unique identifier for the person.",
+            "sample values": [
+              "nm0000210",
+              "nm0000973",
+              "nm0001346",
+              "nm0001583",
+              "nm0001832"
+            ],
+            "synonyms": [
+              "person_id"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "The name of the person.",
+            "sample values": [
+              "Julia Roberts",
+              "Rene Balcer",
+              "Billy Fox",
+              "Constantine Makris",
+              "Thomas Meloeny"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "birthdate",
+            "type": "table column",
+            "column name": "birthdate",
+            "data type": "datetime",
+            "description": "The date the person was born.",
+            "extra semantic info": {
+              "value_description": "If null, it means the birthdate of the person is not available."
+            },
+            "sample values": [
+              "1967-10-28",
+              "1954-02-09",
+              "1930-01-15",
+              "1946-12-20",
+              "1970-04-01"
+            ],
+            "synonyms": [
+              "birthdate"
+            ]
+          },
+          {
+            "name": "birth_name",
+            "type": "table column",
+            "column name": "birth_name",
+            "data type": "string",
+            "description": "The name parents gave to the person shortly after birth.",
+            "sample values": [
+              "Julia Fiona Roberts",
+              "Rene Chenevert Balcer",
+              "William M. Nicholson",
+              "Richard A. Wolf",
+              "Sondra Karyl Kattlove"
+            ],
+            "synonyms": [
+              "birth_name"
+            ]
+          },
+          {
+            "name": "birth_place",
+            "type": "table column",
+            "column name": "birth_place",
+            "data type": "string",
+            "description": "The place where a person was born.",
+            "sample values": [
+              "Smyrna",
+              "Montreal",
+              "Harrisburg",
+              "New York City",
+              "Wilmington"
+            ],
+            "synonyms": [
+              "birth_place"
+            ]
+          },
+          {
+            "name": "birth_region",
+            "type": "table column",
+            "column name": "birth_region",
+            "data type": "string",
+            "description": "The geographical area describing where a person was born that is larger than the birth place.",
+            "sample values": [
+              "Georgia",
+              "Quebec",
+              "Pennsylvania",
+              "New York",
+              "North Carolina"
+            ],
+            "synonyms": [
+              "birth_region"
+            ]
+          },
+          {
+            "name": "birth_country",
+            "type": "table column",
+            "column name": "birth_country",
+            "data type": "string",
+            "description": "The name of the country where the person was born.",
+            "extra semantic info": {
+              "commonsense_evidence": "Can be used to infer the continent (e.g., USA -> North America)."
+            },
+            "sample values": [
+              "USA",
+              "Canada",
+              "England",
+              "USSR",
+              "Italy"
+            ],
+            "synonyms": [
+              "birth_country"
+            ]
+          },
+          {
+            "name": "height_meters",
+            "type": "table column",
+            "column name": "height_meters",
+            "data type": "numeric",
+            "description": "How tall the person is in meters.",
+            "sample values": [
+              1.73,
+              1.88,
+              1.93,
+              1.8,
+              1.75
+            ],
+            "synonyms": [
+              "height_meters"
+            ]
+          },
+          {
+            "name": "nickname",
+            "type": "table column",
+            "column name": "nickname",
+            "data type": "string",
+            "description": "The nickname the person goes by.",
+            "sample values": [
+              "Jules",
+              "Gus",
+              "Ed",
+              "Dagmar",
+              "Mike Preston"
+            ],
+            "synonyms": [
+              "nickname"
+            ]
+          }
+        ],
+        "description": "Contains biographical information about the people (cast and crew) involved in the series.",
+        "extra semantic info": {
+          "birth_place_integration": "The full birth place can be constructed if birth_name, birth_place, and birth_region are not null.",
+          "full_birth_place_formula": "full birth place = birth_country + birth_region + birth_place"
+        },
+        "synonyms": [
+          "Person"
+        ]
+      },
+      {
+        "name": "vote",
+        "type": "simple table",
+        "table path": "main.Vote",
+        "unique properties": [
+          [
+            "episode_id",
+            "stars",
+            "votes",
+            "percent"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "episode_id",
+            "type": "table column",
+            "column name": "episode_id",
+            "data type": "string",
+            "description": "The id of the episode.",
+            "sample values": [
+              "tt0629204",
+              "tt0629228",
+              "tt0629170",
+              "tt0629266",
+              "tt0629149"
+            ],
+            "synonyms": [
+              "episode_id"
+            ]
+          },
+          {
+            "name": "stars",
+            "type": "table column",
+            "column name": "stars",
+            "data type": "numeric",
+            "description": "A number between 1 and 10 indicating how much the viewer enjoyed the episode.",
+            "extra semantic info": {
+              "commonsense evidence": "The higher the number, the more the episode was enjoyed."
+            },
+            "sample values": [
+              10,
+              9,
+              8,
+              7,
+              6
+            ],
+            "synonyms": [
+              "stars"
+            ]
+          },
+          {
+            "name": "votes",
+            "type": "table column",
+            "column name": "votes",
+            "data type": "numeric",
+            "description": "The total number of viewers that gave the specific episode the number of stars indicated in the \"stars\" column.",
+            "sample values": [
+              36,
+              39,
+              64,
+              35,
+              13
+            ],
+            "synonyms": [
+              "votes"
+            ]
+          },
+          {
+            "name": "percent",
+            "type": "table column",
+            "column name": "percent",
+            "data type": "numeric",
+            "description": "The percent of viewers that gave the specific episode the number of stars indicated in the \"stars\" column.",
+            "sample values": [
+              17.7,
+              19.2,
+              31.5,
+              17.2,
+              6.4
+            ],
+            "synonyms": [
+              "percent"
+            ]
+          }
+        ],
+        "description": "Contains the distribution of viewer votes for each episode, broken down by the number of stars.",
+        "synonyms": [
+          "Vote"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "awards",
+        "parent collection": "person",
+        "child collection": "award",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "person_id": [
+            "person_id"
+          ]
+        },
+        "description": "Awards and nominations associated with this person.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person_record",
+        "original parent": "person",
+        "original property": "awards",
+        "singular": true,
+        "always matches": false,
+        "description": "The person associated with this award nomination.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "awards",
+        "parent collection": "episode",
+        "child collection": "award",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "episode_id": [
+            "episode_id"
+          ]
+        },
+        "description": "Awards and nominations associated with this episode.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "episode_record",
+        "original parent": "episode",
+        "original property": "awards",
+        "singular": true,
+        "always matches": false,
+        "description": "The episode associated with this award nomination.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "person_credits",
+        "parent collection": "person",
+        "child collection": "credit",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "person_id": [
+            "person_id"
+          ]
+        },
+        "description": "Credits for this person in various episodes.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person_record",
+        "original parent": "person",
+        "original property": "person_credits",
+        "singular": true,
+        "always matches": false,
+        "description": "The person associated with this credit.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "episode_credits",
+        "parent collection": "episode",
+        "child collection": "credit",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "episode_id": [
+            "episode_id"
+          ]
+        },
+        "description": "All credits (cast and crew) for this episode.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "episode_record",
+        "original parent": "episode",
+        "original property": "episode_credits",
+        "singular": true,
+        "always matches": false,
+        "description": "The episode associated with this credit.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "keywords",
+        "parent collection": "episode",
+        "child collection": "keyword",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "episode_id": [
+            "episode_id"
+          ]
+        },
+        "description": "Keywords associated with this episode.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "episode_record",
+        "original parent": "episode",
+        "original property": "keywords",
+        "singular": true,
+        "always matches": false,
+        "description": "The episode associated with this keyword.",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "votes_distribution",
+        "parent collection": "episode",
+        "child collection": "vote",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "episode_id": [
+            "episode_id"
+          ]
+        },
+        "description": "The distribution of viewer votes for this episode.",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "episode_record",
+        "original parent": "episode",
+        "original property": "votes_distribution",
+        "singular": true,
+        "always matches": false,
+        "description": "The episode associated with this vote distribution entry.",
+        "synonyms": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,1898 @@
+[
+  {
+    "name": "public_review_platform",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "attributes",
+        "type": "simple table",
+        "table path": "main.Attributes",
+        "unique properties": [
+          "attribute_id"
+        ],
+        "properties": [
+          {
+            "name": "attribute_id",
+            "type": "table column",
+            "column name": "attribute_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "attribute_id"
+            ]
+          },
+          {
+            "name": "attribute_name",
+            "type": "table column",
+            "column name": "attribute_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Alcohol",
+              "Waiter Service",
+              "Delivery",
+              "Attire",
+              "Good for Kids"
+            ],
+            "synonyms": [
+              "attribute_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Attributes"
+        ]
+      },
+      {
+        "name": "business",
+        "type": "simple table",
+        "table path": "main.Business",
+        "unique properties": [
+          "business_id"
+        ],
+        "properties": [
+          {
+            "name": "business_id",
+            "type": "table column",
+            "column name": "business_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "business_id"
+            ]
+          },
+          {
+            "name": "active",
+            "type": "table column",
+            "column name": "active",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "true",
+              "false"
+            ],
+            "synonyms": [
+              "active"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Phoenix",
+              "Scottsdale",
+              "Glendale",
+              "Casa Grande",
+              "Peoria"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AZ",
+              "SC",
+              "CA"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "stars",
+            "type": "table column",
+            "column name": "stars",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3.0,
+              4.5,
+              4.0,
+              5.0,
+              3.5
+            ],
+            "synonyms": [
+              "stars"
+            ]
+          },
+          {
+            "name": "review_count",
+            "type": "table column",
+            "column name": "review_count",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "review_count"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Business"
+        ]
+      },
+      {
+        "name": "business_attributes",
+        "type": "simple table",
+        "table path": "main.Business_Attributes",
+        "unique properties": [
+          [
+            "attribute_id",
+            "business_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "attribute_id",
+            "type": "table column",
+            "column name": "attribute_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "attribute_id"
+            ]
+          },
+          {
+            "name": "business_id",
+            "type": "table column",
+            "column name": "business_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3,
+              13,
+              17,
+              22
+            ],
+            "synonyms": [
+              "business_id"
+            ]
+          },
+          {
+            "name": "attribute_value",
+            "type": "table column",
+            "column name": "attribute_value",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "none",
+              "full_bar",
+              "beer_and_wine",
+              "false",
+              "true"
+            ],
+            "synonyms": [
+              "attribute_value"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Business_Attributes"
+        ]
+      },
+      {
+        "name": "business_categories",
+        "type": "simple table",
+        "table path": "main.Business_Categories",
+        "unique properties": [
+          [
+            "business_id",
+            "category_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "business_id",
+            "type": "table column",
+            "column name": "business_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "business_id"
+            ]
+          },
+          {
+            "name": "category_id",
+            "type": "table column",
+            "column name": "category_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8,
+              143,
+              18,
+              170,
+              93
+            ],
+            "synonyms": [
+              "category_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Business_Categories"
+        ]
+      },
+      {
+        "name": "business_hours",
+        "type": "simple table",
+        "table path": "main.Business_Hours",
+        "unique properties": [
+          [
+            "business_id",
+            "day_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "business_id",
+            "type": "table column",
+            "column name": "business_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3,
+              4,
+              7,
+              11
+            ],
+            "synonyms": [
+              "business_id"
+            ]
+          },
+          {
+            "name": "day_id",
+            "type": "table column",
+            "column name": "day_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "synonyms": [
+              "day_id"
+            ]
+          },
+          {
+            "name": "opening_time",
+            "type": "table column",
+            "column name": "opening_time",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "11AM",
+              "12PM",
+              "10AM",
+              "8AM",
+              "9AM"
+            ],
+            "synonyms": [
+              "opening_time"
+            ]
+          },
+          {
+            "name": "closing_time",
+            "type": "table column",
+            "column name": "closing_time",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "8PM",
+              "9PM",
+              "6PM",
+              "5PM",
+              "7PM"
+            ],
+            "synonyms": [
+              "closing_time"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Business_Hours"
+        ]
+      },
+      {
+        "name": "categories",
+        "type": "simple table",
+        "table path": "main.Categories",
+        "unique properties": [
+          "category_id"
+        ],
+        "properties": [
+          {
+            "name": "category_id",
+            "type": "table column",
+            "column name": "category_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "category_id"
+            ]
+          },
+          {
+            "name": "category_name",
+            "type": "table column",
+            "column name": "category_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Active Life",
+              "Arts & Entertainment",
+              "Stadiums & Arenas",
+              "Horse Racing",
+              "Tires"
+            ],
+            "synonyms": [
+              "category_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Categories"
+        ]
+      },
+      {
+        "name": "checkins",
+        "type": "simple table",
+        "table path": "main.Checkins",
+        "unique properties": [
+          [
+            "business_id",
+            "day_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "business_id",
+            "type": "table column",
+            "column name": "business_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              5,
+              6
+            ],
+            "synonyms": [
+              "business_id"
+            ]
+          },
+          {
+            "name": "day_id",
+            "type": "table column",
+            "column name": "day_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "day_id"
+            ]
+          },
+          {
+            "name": "label_time_0",
+            "type": "table column",
+            "column name": "label_time_0",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High"
+            ],
+            "synonyms": [
+              "label_time_0"
+            ]
+          },
+          {
+            "name": "label_time_1",
+            "type": "table column",
+            "column name": "label_time_1",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High"
+            ],
+            "synonyms": [
+              "label_time_1"
+            ]
+          },
+          {
+            "name": "label_time_2",
+            "type": "table column",
+            "column name": "label_time_2",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium"
+            ],
+            "synonyms": [
+              "label_time_2"
+            ]
+          },
+          {
+            "name": "label_time_3",
+            "type": "table column",
+            "column name": "label_time_3",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium"
+            ],
+            "synonyms": [
+              "label_time_3"
+            ]
+          },
+          {
+            "name": "label_time_4",
+            "type": "table column",
+            "column name": "label_time_4",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High"
+            ],
+            "synonyms": [
+              "label_time_4"
+            ]
+          },
+          {
+            "name": "label_time_5",
+            "type": "table column",
+            "column name": "label_time_5",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "Uber",
+              "High"
+            ],
+            "synonyms": [
+              "label_time_5"
+            ]
+          },
+          {
+            "name": "label_time_6",
+            "type": "table column",
+            "column name": "label_time_6",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_6"
+            ]
+          },
+          {
+            "name": "label_time_7",
+            "type": "table column",
+            "column name": "label_time_7",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_7"
+            ]
+          },
+          {
+            "name": "label_time_8",
+            "type": "table column",
+            "column name": "label_time_8",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_8"
+            ]
+          },
+          {
+            "name": "label_time_9",
+            "type": "table column",
+            "column name": "label_time_9",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Low",
+              "None",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_9"
+            ]
+          },
+          {
+            "name": "label_time_10",
+            "type": "table column",
+            "column name": "label_time_10",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_10"
+            ]
+          },
+          {
+            "name": "label_time_11",
+            "type": "table column",
+            "column name": "label_time_11",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Low",
+              "None",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_11"
+            ]
+          },
+          {
+            "name": "label_time_12",
+            "type": "table column",
+            "column name": "label_time_12",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_12"
+            ]
+          },
+          {
+            "name": "label_time_13",
+            "type": "table column",
+            "column name": "label_time_13",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_13"
+            ]
+          },
+          {
+            "name": "label_time_14",
+            "type": "table column",
+            "column name": "label_time_14",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_14"
+            ]
+          },
+          {
+            "name": "label_time_15",
+            "type": "table column",
+            "column name": "label_time_15",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_15"
+            ]
+          },
+          {
+            "name": "label_time_16",
+            "type": "table column",
+            "column name": "label_time_16",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_16"
+            ]
+          },
+          {
+            "name": "label_time_17",
+            "type": "table column",
+            "column name": "label_time_17",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Low",
+              "None",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_17"
+            ]
+          },
+          {
+            "name": "label_time_18",
+            "type": "table column",
+            "column name": "label_time_18",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_18"
+            ]
+          },
+          {
+            "name": "label_time_19",
+            "type": "table column",
+            "column name": "label_time_19",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_19"
+            ]
+          },
+          {
+            "name": "label_time_20",
+            "type": "table column",
+            "column name": "label_time_20",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_20"
+            ]
+          },
+          {
+            "name": "label_time_21",
+            "type": "table column",
+            "column name": "label_time_21",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_21"
+            ]
+          },
+          {
+            "name": "label_time_22",
+            "type": "table column",
+            "column name": "label_time_22",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "label_time_22"
+            ]
+          },
+          {
+            "name": "label_time_23",
+            "type": "table column",
+            "column name": "label_time_23",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High"
+            ],
+            "synonyms": [
+              "label_time_23"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Checkins"
+        ]
+      },
+      {
+        "name": "compliments",
+        "type": "simple table",
+        "table path": "main.Compliments",
+        "unique properties": [
+          "compliment_id"
+        ],
+        "properties": [
+          {
+            "name": "compliment_id",
+            "type": "table column",
+            "column name": "compliment_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "compliment_id"
+            ]
+          },
+          {
+            "name": "compliment_type",
+            "type": "table column",
+            "column name": "compliment_type",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "photos",
+              "cool",
+              "hot",
+              "note",
+              "more"
+            ],
+            "synonyms": [
+              "compliment_type"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Compliments"
+        ]
+      },
+      {
+        "name": "days",
+        "type": "simple table",
+        "table path": "main.Days",
+        "unique properties": [
+          "day_id"
+        ],
+        "properties": [
+          {
+            "name": "day_id",
+            "type": "table column",
+            "column name": "day_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "day_id"
+            ]
+          },
+          {
+            "name": "day_of_week",
+            "type": "table column",
+            "column name": "day_of_week",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday"
+            ],
+            "synonyms": [
+              "day_of_week"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Days"
+        ]
+      },
+      {
+        "name": "elite",
+        "type": "simple table",
+        "table path": "main.Elite",
+        "unique properties": [
+          [
+            "user_id",
+            "year_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "user_id",
+            "type": "table column",
+            "column name": "user_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              19,
+              33,
+              45,
+              65
+            ],
+            "synonyms": [
+              "user_id"
+            ]
+          },
+          {
+            "name": "year_id",
+            "type": "table column",
+            "column name": "year_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2010,
+              2011,
+              2012,
+              2013,
+              2014
+            ],
+            "synonyms": [
+              "year_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Elite"
+        ]
+      },
+      {
+        "name": "reviews",
+        "type": "simple table",
+        "table path": "main.Reviews",
+        "unique properties": [
+          [
+            "business_id",
+            "user_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "business_id",
+            "type": "table column",
+            "column name": "business_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "business_id"
+            ]
+          },
+          {
+            "name": "user_id",
+            "type": "table column",
+            "column name": "user_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              36129,
+              40299,
+              59125,
+              60776,
+              62013
+            ],
+            "synonyms": [
+              "user_id"
+            ]
+          },
+          {
+            "name": "review_stars",
+            "type": "table column",
+            "column name": "review_stars",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              1,
+              5,
+              4,
+              3
+            ],
+            "synonyms": [
+              "review_stars"
+            ]
+          },
+          {
+            "name": "review_votes_funny",
+            "type": "table column",
+            "column name": "review_votes_funny",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "review_votes_funny"
+            ]
+          },
+          {
+            "name": "review_votes_useful",
+            "type": "table column",
+            "column name": "review_votes_useful",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "Uber",
+              "High"
+            ],
+            "synonyms": [
+              "review_votes_useful"
+            ]
+          },
+          {
+            "name": "review_votes_cool",
+            "type": "table column",
+            "column name": "review_votes_cool",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "None",
+              "Low",
+              "Medium",
+              "Uber",
+              "High"
+            ],
+            "synonyms": [
+              "review_votes_cool"
+            ]
+          },
+          {
+            "name": "review_length",
+            "type": "table column",
+            "column name": "review_length",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Medium",
+              "Short",
+              "Long"
+            ],
+            "synonyms": [
+              "review_length"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Reviews"
+        ]
+      },
+      {
+        "name": "tips",
+        "type": "simple table",
+        "table path": "main.Tips",
+        "unique properties": [
+          [
+            "business_id",
+            "user_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "business_id",
+            "type": "table column",
+            "column name": "business_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3,
+              6,
+              8,
+              9
+            ],
+            "synonyms": [
+              "business_id"
+            ]
+          },
+          {
+            "name": "user_id",
+            "type": "table column",
+            "column name": "user_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              12490,
+              16328,
+              19191,
+              25891,
+              34759
+            ],
+            "synonyms": [
+              "user_id"
+            ]
+          },
+          {
+            "name": "likes",
+            "type": "table column",
+            "column name": "likes",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3
+            ],
+            "synonyms": [
+              "likes"
+            ]
+          },
+          {
+            "name": "tip_length",
+            "type": "table column",
+            "column name": "tip_length",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Medium",
+              "Short",
+              "Long"
+            ],
+            "synonyms": [
+              "tip_length"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Tips"
+        ]
+      },
+      {
+        "name": "users",
+        "type": "simple table",
+        "table path": "main.Users",
+        "unique properties": [
+          "user_id"
+        ],
+        "properties": [
+          {
+            "name": "user_id",
+            "type": "table column",
+            "column name": "user_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "user_id"
+            ]
+          },
+          {
+            "name": "user_yelping_since_year",
+            "type": "table column",
+            "column name": "user_yelping_since_year",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2012,
+              2010,
+              2009,
+              2008,
+              2013
+            ],
+            "synonyms": [
+              "user_yelping_since_year"
+            ]
+          },
+          {
+            "name": "user_average_stars",
+            "type": "table column",
+            "column name": "user_average_stars",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "4.0",
+              "2.5",
+              "4.5",
+              "5.0",
+              "2.0"
+            ],
+            "synonyms": [
+              "user_average_stars"
+            ]
+          },
+          {
+            "name": "user_votes_funny",
+            "type": "table column",
+            "column name": "user_votes_funny",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Low",
+              "None",
+              "Uber",
+              "Medium",
+              "High"
+            ],
+            "synonyms": [
+              "user_votes_funny"
+            ]
+          },
+          {
+            "name": "user_votes_useful",
+            "type": "table column",
+            "column name": "user_votes_useful",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Low",
+              "Medium",
+              "Uber",
+              "None",
+              "High"
+            ],
+            "synonyms": [
+              "user_votes_useful"
+            ]
+          },
+          {
+            "name": "user_votes_cool",
+            "type": "table column",
+            "column name": "user_votes_cool",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Low",
+              "Uber",
+              "None",
+              "High",
+              "Medium"
+            ],
+            "synonyms": [
+              "user_votes_cool"
+            ]
+          },
+          {
+            "name": "user_review_count",
+            "type": "table column",
+            "column name": "user_review_count",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Medium",
+              "High",
+              "Low",
+              "Uber"
+            ],
+            "synonyms": [
+              "user_review_count"
+            ]
+          },
+          {
+            "name": "user_fans",
+            "type": "table column",
+            "column name": "user_fans",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Low",
+              "None",
+              "Medium",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "user_fans"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Users"
+        ]
+      },
+      {
+        "name": "users_compliments",
+        "type": "simple table",
+        "table path": "main.Users_Compliments",
+        "unique properties": [
+          [
+            "compliment_id",
+            "user_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "compliment_id",
+            "type": "table column",
+            "column name": "compliment_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "compliment_id"
+            ]
+          },
+          {
+            "name": "user_id",
+            "type": "table column",
+            "column name": "user_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              19,
+              45,
+              53,
+              102
+            ],
+            "synonyms": [
+              "user_id"
+            ]
+          },
+          {
+            "name": "number_of_compliments",
+            "type": "table column",
+            "column name": "number_of_compliments",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Medium",
+              "Low",
+              "High",
+              "Uber"
+            ],
+            "synonyms": [
+              "number_of_compliments"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Users_Compliments"
+        ]
+      },
+      {
+        "name": "years",
+        "type": "simple table",
+        "table path": "main.Years",
+        "unique properties": [
+          "year_id"
+        ],
+        "properties": [
+          {
+            "name": "year_id",
+            "type": "table column",
+            "column name": "year_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2005,
+              2006,
+              2007,
+              2008,
+              2009
+            ],
+            "synonyms": [
+              "year_id"
+            ]
+          },
+          {
+            "name": "actual_year",
+            "type": "table column",
+            "column name": "actual_year",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2005,
+              2006,
+              2007,
+              2008,
+              2009
+            ],
+            "synonyms": [
+              "actual_year"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Years"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "business_attributes",
+        "parent collection": "business",
+        "child collection": "business_attributes",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "business_id": [
+            "business_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "business",
+        "original parent": "business",
+        "original property": "business_attributes",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "business_attributes",
+        "parent collection": "attributes",
+        "child collection": "business_attributes",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "attribute_id": [
+            "attribute_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "attributes",
+        "original parent": "attributes",
+        "original property": "business_attributes",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "business_categories",
+        "parent collection": "categories",
+        "child collection": "business_categories",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "category_id": [
+            "category_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "categories",
+        "original parent": "categories",
+        "original property": "business_categories",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "business_categories",
+        "parent collection": "business",
+        "child collection": "business_categories",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "business_id": [
+            "business_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "business",
+        "original parent": "business",
+        "original property": "business_categories",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "business_hours",
+        "parent collection": "days",
+        "child collection": "business_hours",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "day_id": [
+            "day_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "days",
+        "original parent": "days",
+        "original property": "business_hours",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "business_hours",
+        "parent collection": "business",
+        "child collection": "business_hours",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "business_id": [
+            "business_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "business",
+        "original parent": "business",
+        "original property": "business_hours",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "checkins",
+        "parent collection": "days",
+        "child collection": "checkins",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "day_id": [
+            "day_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "days",
+        "original parent": "days",
+        "original property": "checkins",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "checkins",
+        "parent collection": "business",
+        "child collection": "checkins",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "business_id": [
+            "business_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "business",
+        "original parent": "business",
+        "original property": "checkins",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "elite",
+        "parent collection": "years",
+        "child collection": "elite",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "year_id": [
+            "year_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "years",
+        "original parent": "years",
+        "original property": "elite",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "elite",
+        "parent collection": "users",
+        "child collection": "elite",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "user_id": [
+            "user_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "users",
+        "original parent": "users",
+        "original property": "elite",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "reviews",
+        "parent collection": "users",
+        "child collection": "reviews",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "user_id": [
+            "user_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "users",
+        "original parent": "users",
+        "original property": "reviews",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "reviews",
+        "parent collection": "business",
+        "child collection": "reviews",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "business_id": [
+            "business_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "business",
+        "original parent": "business",
+        "original property": "reviews",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "tips",
+        "parent collection": "users",
+        "child collection": "tips",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "user_id": [
+            "user_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "users",
+        "original parent": "users",
+        "original property": "tips",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "tips",
+        "parent collection": "business",
+        "child collection": "tips",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "business_id": [
+            "business_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "business",
+        "original parent": "business",
+        "original property": "tips",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "users_compliments",
+        "parent collection": "users",
+        "child collection": "users_compliments",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "user_id": [
+            "user_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "users",
+        "original parent": "users",
+        "original property": "users_compliments",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "users_compliments",
+        "parent collection": "compliments",
+        "child collection": "users_compliments",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "compliment_id": [
+            "compliment_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "compliments",
+        "original parent": "compliments",
+        "original property": "users_compliments",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,185 @@
+[
+  {
+    "name": "citeseer",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "cites",
+        "type": "simple table",
+        "table path": "main.cites",
+        "unique properties": [
+          [
+            "cited_paper_id",
+            "citing_paper_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "cited_paper_id",
+            "type": "table column",
+            "column name": "cited_paper_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "100157",
+              "100598",
+              "101570",
+              "10227",
+              "103027"
+            ],
+            "synonyms": [
+              "cited_paper_id"
+            ]
+          },
+          {
+            "name": "citing_paper_id",
+            "type": "table column",
+            "column name": "citing_paper_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "100157",
+              "364207",
+              "38848",
+              "bradshaw97introduction",
+              "bylund99coordinating"
+            ],
+            "synonyms": [
+              "citing_paper_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "cites"
+        ]
+      },
+      {
+        "name": "content",
+        "type": "simple table",
+        "table path": "main.content",
+        "unique properties": [
+          [
+            "paper_id",
+            "word_cited_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "paper_id",
+            "type": "table column",
+            "column name": "paper_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "100157",
+              "100598",
+              "101570",
+              "10227",
+              "102637"
+            ],
+            "synonyms": [
+              "paper_id"
+            ]
+          },
+          {
+            "name": "word_cited_id",
+            "type": "table column",
+            "column name": "word_cited_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "word1163",
+              "word1509",
+              "word1614",
+              "word1642",
+              "word1663"
+            ],
+            "synonyms": [
+              "word_cited_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "content"
+        ]
+      },
+      {
+        "name": "paper",
+        "type": "simple table",
+        "table path": "main.paper",
+        "unique properties": [
+          "paper_id"
+        ],
+        "properties": [
+          {
+            "name": "paper_id",
+            "type": "table column",
+            "column name": "paper_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "100157",
+              "100598",
+              "101570",
+              "10227",
+              "102637"
+            ],
+            "synonyms": [
+              "paper_id"
+            ]
+          },
+          {
+            "name": "class_label",
+            "type": "table column",
+            "column name": "class_label",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Agents",
+              "IR",
+              "ML",
+              "AI",
+              "DB"
+            ],
+            "synonyms": [
+              "class_label"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "paper"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "content",
+        "parent collection": "paper",
+        "child collection": "content",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "paper_id": [
+            "paper_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "paper",
+        "original parent": "paper",
+        "original property": "content",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]
