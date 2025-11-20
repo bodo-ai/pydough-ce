@@ -5,13 +5,21 @@
 
 set -e  # Stop on error
 
-echo "=== Downloading dev.zip ==="
-wget -O train.zip https://bird-bench.oss-cn-beijing.aliyuncs.com/train.zip 
+# Ensure target directory exists
+mkdir -p data/datasets/BIRD-SQL/databases/
+
+# Download only if train.zip doesn't exist
+if [ ! -f train.zip ]; then
+    echo "=== Downloading train.zip ==="
+    wget -O train.zip https://bird-bench.oss-cn-beijing.aliyuncs.com/train.zip
+else
+    echo "=== train.zip already exists, skipping download ==="
+fi
 
 echo "=== Extracting train.zip ==="
 unzip -q train.zip
 
-echo "=== Extracting train_databases.zip ==="
+echo "=== Extracting train/train_databases.zip ==="
 unzip -q train/train_databases.zip
 
 echo "=== Moving train_databases content ==="
