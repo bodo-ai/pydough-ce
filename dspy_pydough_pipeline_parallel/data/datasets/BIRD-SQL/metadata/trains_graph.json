@@ -1,0 +1,253 @@
+[
+  {
+    "name": "trains",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "cars",
+        "type": "simple table",
+        "table path": "main.cars",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "train_id",
+            "type": "table column",
+            "column name": "train_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "train_id"
+            ]
+          },
+          {
+            "name": "position",
+            "type": "table column",
+            "column name": "position",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "position"
+            ]
+          },
+          {
+            "name": "shape",
+            "type": "table column",
+            "column name": "shape",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "rectangle",
+              "bucket",
+              "u_shaped",
+              "hexagon",
+              "ellipse"
+            ],
+            "synonyms": [
+              "shape"
+            ]
+          },
+          {
+            "name": "len_",
+            "type": "table column",
+            "column name": "len",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "short",
+              "long"
+            ],
+            "synonyms": [
+              "len"
+            ]
+          },
+          {
+            "name": "sides",
+            "type": "table column",
+            "column name": "sides",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "not_double",
+              "double"
+            ],
+            "synonyms": [
+              "sides"
+            ]
+          },
+          {
+            "name": "roof",
+            "type": "table column",
+            "column name": "roof",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "none",
+              "peaked",
+              "flat",
+              "arc",
+              "jagged"
+            ],
+            "synonyms": [
+              "roof"
+            ]
+          },
+          {
+            "name": "wheels",
+            "type": "table column",
+            "column name": "wheels",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3
+            ],
+            "synonyms": [
+              "wheels"
+            ]
+          },
+          {
+            "name": "load_shape",
+            "type": "table column",
+            "column name": "load_shape",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "circle",
+              "hexagon",
+              "triangle",
+              "rectangle",
+              "diamond"
+            ],
+            "synonyms": [
+              "load_shape"
+            ]
+          },
+          {
+            "name": "load_num",
+            "type": "table column",
+            "column name": "load_num",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              3,
+              2,
+              0
+            ],
+            "synonyms": [
+              "load_num"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "cars"
+        ]
+      },
+      {
+        "name": "trains",
+        "type": "simple table",
+        "table path": "main.trains",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "direction",
+            "type": "table column",
+            "column name": "direction",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "east",
+              "west"
+            ],
+            "synonyms": [
+              "direction"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "trains"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "cars",
+        "parent collection": "trains",
+        "child collection": "cars",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "train_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "trains",
+        "original parent": "trains",
+        "original property": "cars",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,2402 @@
+[
+  {
+    "name": "soccer_2016",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "ball_by_ball",
+        "type": "simple table",
+        "table path": "main.Ball_by_Ball",
+        "unique properties": [
+          [
+            "match_id",
+            "over_id",
+            "ball_id",
+            "innings_no"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "match_id",
+            "type": "table column",
+            "column name": "Match_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              335987,
+              335988,
+              335989,
+              335990,
+              335991
+            ],
+            "synonyms": [
+              "Match_Id"
+            ]
+          },
+          {
+            "name": "over_id",
+            "type": "table column",
+            "column name": "Over_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Over_Id"
+            ]
+          },
+          {
+            "name": "ball_id",
+            "type": "table column",
+            "column name": "Ball_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Ball_Id"
+            ]
+          },
+          {
+            "name": "innings_no",
+            "type": "table column",
+            "column name": "Innings_No",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "Innings_No"
+            ]
+          },
+          {
+            "name": "team_batting",
+            "type": "table column",
+            "column name": "Team_Batting",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Team_Batting"
+            ]
+          },
+          {
+            "name": "team_bowling",
+            "type": "table column",
+            "column name": "Team_Bowling",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              1,
+              4,
+              3,
+              6
+            ],
+            "synonyms": [
+              "Team_Bowling"
+            ]
+          },
+          {
+            "name": "striker_batting_position",
+            "type": "table column",
+            "column name": "Striker_Batting_Position",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Striker_Batting_Position"
+            ]
+          },
+          {
+            "name": "striker",
+            "type": "table column",
+            "column name": "Striker",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              6,
+              2,
+              7,
+              8
+            ],
+            "synonyms": [
+              "Striker"
+            ]
+          },
+          {
+            "name": "non_striker",
+            "type": "table column",
+            "column name": "Non_Striker",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              7,
+              1,
+              6,
+              8
+            ],
+            "synonyms": [
+              "Non_Striker"
+            ]
+          },
+          {
+            "name": "bowler",
+            "type": "table column",
+            "column name": "Bowler",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              14,
+              106,
+              15,
+              84,
+              13
+            ],
+            "synonyms": [
+              "Bowler"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Ball_by_Ball"
+        ]
+      },
+      {
+        "name": "batsman_scored",
+        "type": "simple table",
+        "table path": "main.Batsman_Scored",
+        "unique properties": [
+          [
+            "match_id",
+            "over_id",
+            "ball_id",
+            "innings_no"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "match_id",
+            "type": "table column",
+            "column name": "Match_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              335987,
+              335988,
+              335989,
+              335990,
+              335991
+            ],
+            "synonyms": [
+              "Match_Id"
+            ]
+          },
+          {
+            "name": "over_id",
+            "type": "table column",
+            "column name": "Over_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Over_Id"
+            ]
+          },
+          {
+            "name": "ball_id",
+            "type": "table column",
+            "column name": "Ball_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Ball_Id"
+            ]
+          },
+          {
+            "name": "runs_scored",
+            "type": "table column",
+            "column name": "Runs_Scored",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              4,
+              6,
+              2
+            ],
+            "synonyms": [
+              "Runs_Scored"
+            ]
+          },
+          {
+            "name": "innings_no",
+            "type": "table column",
+            "column name": "Innings_No",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "Innings_No"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Batsman_Scored"
+        ]
+      },
+      {
+        "name": "batting_style",
+        "type": "simple table",
+        "table path": "main.Batting_Style",
+        "unique properties": [
+          "batting_id"
+        ],
+        "properties": [
+          {
+            "name": "batting_id",
+            "type": "table column",
+            "column name": "Batting_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "Batting_Id"
+            ]
+          },
+          {
+            "name": "batting_hand",
+            "type": "table column",
+            "column name": "Batting_hand",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Left-hand bat",
+              "Right-hand bat"
+            ],
+            "synonyms": [
+              "Batting_hand"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Batting_Style"
+        ]
+      },
+      {
+        "name": "bowling_style",
+        "type": "simple table",
+        "table path": "main.Bowling_Style",
+        "unique properties": [
+          "bowling_id"
+        ],
+        "properties": [
+          {
+            "name": "bowling_id",
+            "type": "table column",
+            "column name": "Bowling_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Bowling_Id"
+            ]
+          },
+          {
+            "name": "bowling_skill",
+            "type": "table column",
+            "column name": "Bowling_skill",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Right-arm medium",
+              "Right-arm offbreak",
+              "Right-arm fast-medium",
+              "Legbreak googly",
+              "Right-arm medium-fast"
+            ],
+            "synonyms": [
+              "Bowling_skill"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Bowling_Style"
+        ]
+      },
+      {
+        "name": "city",
+        "type": "simple table",
+        "table path": "main.City",
+        "unique properties": [
+          "city_id"
+        ],
+        "properties": [
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "City_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "City_Id"
+            ]
+          },
+          {
+            "name": "city_name",
+            "type": "table column",
+            "column name": "City_Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Bangalore",
+              "Chandigarh",
+              "Delhi",
+              "Mumbai",
+              "Kolkata"
+            ],
+            "synonyms": [
+              "City_Name"
+            ]
+          },
+          {
+            "name": "country_id",
+            "type": "table column",
+            "column name": "Country_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3
+            ],
+            "synonyms": [
+              "Country_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "City"
+        ]
+      },
+      {
+        "name": "country",
+        "type": "simple table",
+        "table path": "main.Country",
+        "unique properties": [
+          "country_id"
+        ],
+        "properties": [
+          {
+            "name": "country_id",
+            "type": "table column",
+            "column name": "Country_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Country_Id"
+            ]
+          },
+          {
+            "name": "country_name",
+            "type": "table column",
+            "column name": "Country_Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "India",
+              "South Africa",
+              "U.A.E",
+              "New Zealand",
+              "Australia"
+            ],
+            "synonyms": [
+              "Country_Name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Country"
+        ]
+      },
+      {
+        "name": "extra_runs",
+        "type": "simple table",
+        "table path": "main.Extra_Runs",
+        "unique properties": [
+          [
+            "match_id",
+            "over_id",
+            "ball_id",
+            "innings_no"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "match_id",
+            "type": "table column",
+            "column name": "Match_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              335987,
+              335988,
+              335989,
+              335990,
+              335991
+            ],
+            "synonyms": [
+              "Match_Id"
+            ]
+          },
+          {
+            "name": "over_id",
+            "type": "table column",
+            "column name": "Over_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              7
+            ],
+            "synonyms": [
+              "Over_Id"
+            ]
+          },
+          {
+            "name": "ball_id",
+            "type": "table column",
+            "column name": "Ball_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              7,
+              5
+            ],
+            "synonyms": [
+              "Ball_Id"
+            ]
+          },
+          {
+            "name": "extra_type_id",
+            "type": "table column",
+            "column name": "Extra_Type_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Extra_Type_Id"
+            ]
+          },
+          {
+            "name": "extra_runs",
+            "type": "table column",
+            "column name": "Extra_Runs",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              4,
+              5,
+              2,
+              3
+            ],
+            "synonyms": [
+              "Extra_Runs"
+            ]
+          },
+          {
+            "name": "innings_no",
+            "type": "table column",
+            "column name": "Innings_No",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "Innings_No"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Extra_Runs"
+        ]
+      },
+      {
+        "name": "extra_type",
+        "type": "simple table",
+        "table path": "main.Extra_Type",
+        "unique properties": [
+          "extra_id"
+        ],
+        "properties": [
+          {
+            "name": "extra_id",
+            "type": "table column",
+            "column name": "Extra_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Extra_Id"
+            ]
+          },
+          {
+            "name": "extra_name",
+            "type": "table column",
+            "column name": "Extra_Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "legbyes",
+              "wides",
+              "byes",
+              "noballs",
+              "penalty"
+            ],
+            "synonyms": [
+              "Extra_Name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Extra_Type"
+        ]
+      },
+      {
+        "name": "match_",
+        "type": "simple table",
+        "table path": "main.\"Match\"",
+        "unique properties": [
+          "match_id"
+        ],
+        "properties": [
+          {
+            "name": "match_id",
+            "type": "table column",
+            "column name": "Match_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              335987,
+              335988,
+              335989,
+              335990,
+              335991
+            ],
+            "synonyms": [
+              "Match_Id"
+            ]
+          },
+          {
+            "name": "team_1",
+            "type": "table column",
+            "column name": "Team_1",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              4,
+              6,
+              7,
+              1
+            ],
+            "synonyms": [
+              "Team_1"
+            ]
+          },
+          {
+            "name": "team_2",
+            "type": "table column",
+            "column name": "Team_2",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              3,
+              5,
+              2,
+              8
+            ],
+            "synonyms": [
+              "Team_2"
+            ]
+          },
+          {
+            "name": "match_date",
+            "type": "table column",
+            "column name": "Match_Date",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2008-04-18",
+              "2008-04-19",
+              "2008-04-20",
+              "2008-04-21",
+              "2008-04-22"
+            ],
+            "synonyms": [
+              "Match_Date"
+            ]
+          },
+          {
+            "name": "season_id",
+            "type": "table column",
+            "column name": "Season_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Season_Id"
+            ]
+          },
+          {
+            "name": "venue_id",
+            "type": "table column",
+            "column name": "Venue_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Venue_Id"
+            ]
+          },
+          {
+            "name": "toss_winner",
+            "type": "table column",
+            "column name": "Toss_Winner",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3,
+              5,
+              7,
+              8
+            ],
+            "synonyms": [
+              "Toss_Winner"
+            ]
+          },
+          {
+            "name": "toss_decide",
+            "type": "table column",
+            "column name": "Toss_Decide",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "Toss_Decide"
+            ]
+          },
+          {
+            "name": "win_type",
+            "type": "table column",
+            "column name": "Win_Type",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              4,
+              3
+            ],
+            "synonyms": [
+              "Win_Type"
+            ]
+          },
+          {
+            "name": "win_margin",
+            "type": "table column",
+            "column name": "Win_Margin",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              140,
+              33,
+              9,
+              5,
+              6
+            ],
+            "synonyms": [
+              "Win_Margin"
+            ]
+          },
+          {
+            "name": "outcome_type",
+            "type": "table column",
+            "column name": "Outcome_type",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              3,
+              2
+            ],
+            "synonyms": [
+              "Outcome_type"
+            ]
+          },
+          {
+            "name": "match_winner",
+            "type": "table column",
+            "column name": "Match_Winner",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              3,
+              6,
+              2,
+              5
+            ],
+            "synonyms": [
+              "Match_Winner"
+            ]
+          },
+          {
+            "name": "man_of_the_match",
+            "type": "table column",
+            "column name": "Man_of_the_Match",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              19,
+              90,
+              11,
+              4
+            ],
+            "synonyms": [
+              "Man_of_the_Match"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Match"
+        ]
+      },
+      {
+        "name": "out_type",
+        "type": "simple table",
+        "table path": "main.Out_Type",
+        "unique properties": [
+          "out_id"
+        ],
+        "properties": [
+          {
+            "name": "out_id",
+            "type": "table column",
+            "column name": "Out_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Out_Id"
+            ]
+          },
+          {
+            "name": "out_name",
+            "type": "table column",
+            "column name": "Out_Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "caught",
+              "bowled",
+              "run out",
+              "lbw",
+              "retired hurt"
+            ],
+            "synonyms": [
+              "Out_Name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Out_Type"
+        ]
+      },
+      {
+        "name": "outcome",
+        "type": "simple table",
+        "table path": "main.Outcome",
+        "unique properties": [
+          "outcome_id"
+        ],
+        "properties": [
+          {
+            "name": "outcome_id",
+            "type": "table column",
+            "column name": "Outcome_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3
+            ],
+            "synonyms": [
+              "Outcome_Id"
+            ]
+          },
+          {
+            "name": "outcome_type",
+            "type": "table column",
+            "column name": "Outcome_Type",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Result",
+              "No Result",
+              "Superover"
+            ],
+            "synonyms": [
+              "Outcome_Type"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Outcome"
+        ]
+      },
+      {
+        "name": "player",
+        "type": "simple table",
+        "table path": "main.Player",
+        "unique properties": [
+          "player_id"
+        ],
+        "properties": [
+          {
+            "name": "player_id",
+            "type": "table column",
+            "column name": "Player_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Player_Id"
+            ]
+          },
+          {
+            "name": "player_name",
+            "type": "table column",
+            "column name": "Player_Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "SC Ganguly",
+              "BB McCullum",
+              "RT Ponting",
+              "DJ Hussey",
+              "Mohammad Hafeez"
+            ],
+            "synonyms": [
+              "Player_Name"
+            ]
+          },
+          {
+            "name": "dob",
+            "type": "table column",
+            "column name": "DOB",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "1972-07-08",
+              "1981-09-27",
+              "1974-12-19",
+              "1977-07-15",
+              "1980-10-17"
+            ],
+            "synonyms": [
+              "DOB"
+            ]
+          },
+          {
+            "name": "batting_hand",
+            "type": "table column",
+            "column name": "Batting_hand",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "Batting_hand"
+            ]
+          },
+          {
+            "name": "bowling_skill",
+            "type": "table column",
+            "column name": "Bowling_skill",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Bowling_skill"
+            ]
+          },
+          {
+            "name": "country_name",
+            "type": "table column",
+            "column name": "Country_Name",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              4,
+              5,
+              6,
+              2
+            ],
+            "synonyms": [
+              "Country_Name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Player"
+        ]
+      },
+      {
+        "name": "player_match",
+        "type": "simple table",
+        "table path": "main.Player_Match",
+        "unique properties": [
+          [
+            "match_id",
+            "player_id",
+            "role_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "match_id",
+            "type": "table column",
+            "column name": "Match_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              335987,
+              335988,
+              335989,
+              335990,
+              335991
+            ],
+            "synonyms": [
+              "Match_Id"
+            ]
+          },
+          {
+            "name": "player_id",
+            "type": "table column",
+            "column name": "Player_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Player_Id"
+            ]
+          },
+          {
+            "name": "role_id",
+            "type": "table column",
+            "column name": "Role_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              3,
+              2,
+              4
+            ],
+            "synonyms": [
+              "Role_Id"
+            ]
+          },
+          {
+            "name": "team_id",
+            "type": "table column",
+            "column name": "Team_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Team_Id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Player_Match"
+        ]
+      },
+      {
+        "name": "rolee",
+        "type": "simple table",
+        "table path": "main.Rolee",
+        "unique properties": [
+          "role_id"
+        ],
+        "properties": [
+          {
+            "name": "role_id",
+            "type": "table column",
+            "column name": "Role_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "Role_Id"
+            ]
+          },
+          {
+            "name": "role_desc",
+            "type": "table column",
+            "column name": "Role_Desc",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Captain",
+              "Keeper",
+              "Player",
+              "CaptainKeeper"
+            ],
+            "synonyms": [
+              "Role_Desc"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Rolee"
+        ]
+      },
+      {
+        "name": "season",
+        "type": "simple table",
+        "table path": "main.Season",
+        "unique properties": [
+          "season_id"
+        ],
+        "properties": [
+          {
+            "name": "season_id",
+            "type": "table column",
+            "column name": "Season_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Season_Id"
+            ]
+          },
+          {
+            "name": "man_of_the_series",
+            "type": "table column",
+            "column name": "Man_of_the_Series",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              32,
+              53,
+              133,
+              162,
+              315
+            ],
+            "synonyms": [
+              "Man_of_the_Series"
+            ]
+          },
+          {
+            "name": "orange_cap",
+            "type": "table column",
+            "column name": "Orange_Cap",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              100,
+              18,
+              133,
+              162,
+              19
+            ],
+            "synonyms": [
+              "Orange_Cap"
+            ]
+          },
+          {
+            "name": "purple_cap",
+            "type": "table column",
+            "column name": "Purple_Cap",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              102,
+              61,
+              131,
+              194,
+              190
+            ],
+            "synonyms": [
+              "Purple_Cap"
+            ]
+          },
+          {
+            "name": "season_year",
+            "type": "table column",
+            "column name": "Season_Year",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2008,
+              2009,
+              2010,
+              2011,
+              2012
+            ],
+            "synonyms": [
+              "Season_Year"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Season"
+        ]
+      },
+      {
+        "name": "team",
+        "type": "simple table",
+        "table path": "main.Team",
+        "unique properties": [
+          "team_id"
+        ],
+        "properties": [
+          {
+            "name": "team_id",
+            "type": "table column",
+            "column name": "Team_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Team_Id"
+            ]
+          },
+          {
+            "name": "team_name",
+            "type": "table column",
+            "column name": "Team_Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Kolkata Knight Riders",
+              "Royal Challengers Bangalore",
+              "Chennai Super Kings",
+              "Kings XI Punjab",
+              "Rajasthan Royals"
+            ],
+            "synonyms": [
+              "Team_Name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Team"
+        ]
+      },
+      {
+        "name": "toss_decision",
+        "type": "simple table",
+        "table path": "main.Toss_Decision",
+        "unique properties": [
+          "toss_id"
+        ],
+        "properties": [
+          {
+            "name": "toss_id",
+            "type": "table column",
+            "column name": "Toss_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "Toss_Id"
+            ]
+          },
+          {
+            "name": "toss_name",
+            "type": "table column",
+            "column name": "Toss_Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "field",
+              "bat"
+            ],
+            "synonyms": [
+              "Toss_Name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Toss_Decision"
+        ]
+      },
+      {
+        "name": "umpire",
+        "type": "simple table",
+        "table path": "main.Umpire",
+        "unique properties": [
+          "umpire_id"
+        ],
+        "properties": [
+          {
+            "name": "umpire_id",
+            "type": "table column",
+            "column name": "Umpire_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Umpire_Id"
+            ]
+          },
+          {
+            "name": "umpire_name",
+            "type": "table column",
+            "column name": "Umpire_Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Asad Rauf",
+              "MR Benson",
+              "Aleem Dar",
+              "SJ Davis",
+              "BF Bowden"
+            ],
+            "synonyms": [
+              "Umpire_Name"
+            ]
+          },
+          {
+            "name": "umpire_country",
+            "type": "table column",
+            "column name": "Umpire_Country",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6,
+              10,
+              4,
+              2,
+              5
+            ],
+            "synonyms": [
+              "Umpire_Country"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Umpire"
+        ]
+      },
+      {
+        "name": "venue",
+        "type": "simple table",
+        "table path": "main.Venue",
+        "unique properties": [
+          "venue_id"
+        ],
+        "properties": [
+          {
+            "name": "venue_id",
+            "type": "table column",
+            "column name": "Venue_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Venue_Id"
+            ]
+          },
+          {
+            "name": "venue_name",
+            "type": "table column",
+            "column name": "Venue_Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "M Chinnaswamy Stadium",
+              "Punjab Cricket Association Stadium",
+              "Feroz Shah Kotla",
+              "Wankhede Stadium",
+              "Eden Gardens"
+            ],
+            "synonyms": [
+              "Venue_Name"
+            ]
+          },
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "City_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "City_Id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Venue"
+        ]
+      },
+      {
+        "name": "wicket_taken",
+        "type": "simple table",
+        "table path": "main.Wicket_Taken",
+        "unique properties": [
+          [
+            "match_id",
+            "over_id",
+            "ball_id",
+            "innings_no"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "match_id",
+            "type": "table column",
+            "column name": "Match_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              335987,
+              335988,
+              335989,
+              335990,
+              335991
+            ],
+            "synonyms": [
+              "Match_Id"
+            ]
+          },
+          {
+            "name": "over_id",
+            "type": "table column",
+            "column name": "Over_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3,
+              5,
+              6,
+              8
+            ],
+            "synonyms": [
+              "Over_Id"
+            ]
+          },
+          {
+            "name": "ball_id",
+            "type": "table column",
+            "column name": "Ball_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              5,
+              8,
+              6
+            ],
+            "synonyms": [
+              "Ball_Id"
+            ]
+          },
+          {
+            "name": "player_out",
+            "type": "table column",
+            "column name": "Player_Out",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6,
+              8,
+              9,
+              1,
+              7
+            ],
+            "synonyms": [
+              "Player_Out"
+            ]
+          },
+          {
+            "name": "kind_out",
+            "type": "table column",
+            "column name": "Kind_Out",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              1,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Kind_Out"
+            ]
+          },
+          {
+            "name": "fielders",
+            "type": "table column",
+            "column name": "Fielders",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              83,
+              9,
+              3,
+              62,
+              82
+            ],
+            "synonyms": [
+              "Fielders"
+            ]
+          },
+          {
+            "name": "innings_no",
+            "type": "table column",
+            "column name": "Innings_No",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              1,
+              3,
+              4
+            ],
+            "synonyms": [
+              "Innings_No"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Wicket_Taken"
+        ]
+      },
+      {
+        "name": "win_by",
+        "type": "simple table",
+        "table path": "main.Win_By",
+        "unique properties": [
+          "win_id"
+        ],
+        "properties": [
+          {
+            "name": "win_id",
+            "type": "table column",
+            "column name": "Win_Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "Win_Id"
+            ]
+          },
+          {
+            "name": "win_type",
+            "type": "table column",
+            "column name": "Win_Type",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "runs",
+              "wickets",
+              "NO Result",
+              "Tie"
+            ],
+            "synonyms": [
+              "Win_Type"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Win_By"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "ball_by_ball",
+        "parent collection": "match_",
+        "child collection": "ball_by_ball",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "match_id": [
+            "match_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "match_",
+        "original parent": "match_",
+        "original property": "ball_by_ball",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "batsman_scored",
+        "parent collection": "match_",
+        "child collection": "batsman_scored",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "match_id": [
+            "match_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "match_",
+        "original parent": "match_",
+        "original property": "batsman_scored",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "country",
+        "parent collection": "country",
+        "child collection": "country",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "country_id": [
+            "country_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "extra_runs",
+        "parent collection": "extra_type",
+        "child collection": "extra_runs",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "extra_id": [
+            "extra_type_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "extra_type",
+        "original parent": "extra_type",
+        "original property": "extra_runs",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "match_",
+        "parent collection": "player",
+        "child collection": "match_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "player_id": [
+            "man_of_the_match"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "player",
+        "original parent": "player",
+        "original property": "match_",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "match_",
+        "parent collection": "team",
+        "child collection": "match_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "team_id": [
+            "match_winner"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team",
+        "original parent": "team",
+        "original property": "match_",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "match_",
+        "parent collection": "out_type",
+        "child collection": "match_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "out_id": [
+            "outcome_type"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "out_type",
+        "original parent": "out_type",
+        "original property": "match_",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "match_",
+        "parent collection": "win_by",
+        "child collection": "match_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "win_id": [
+            "win_type"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "win_by",
+        "original parent": "win_by",
+        "original property": "match_",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "match_",
+        "parent collection": "toss_decision",
+        "child collection": "match_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "toss_id": [
+            "toss_decide"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "toss_decision",
+        "original parent": "toss_decision",
+        "original property": "match_",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "match__2",
+        "parent collection": "team",
+        "child collection": "match_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "team_id": [
+            "toss_winner"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_3",
+        "original parent": "team",
+        "original property": "match__2",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "match_",
+        "parent collection": "venue",
+        "child collection": "match_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "venue_id": [
+            "venue_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "venue",
+        "original parent": "venue",
+        "original property": "match_",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "match_",
+        "parent collection": "season",
+        "child collection": "match_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "season_id": [
+            "season_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "season",
+        "original parent": "season",
+        "original property": "match_",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "match__3",
+        "parent collection": "team",
+        "child collection": "match_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "team_id": [
+            "team_2"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_4",
+        "original parent": "team",
+        "original property": "match__3",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "match__4",
+        "parent collection": "team",
+        "child collection": "match_",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "team_id": [
+            "team_1"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team_5",
+        "original parent": "team",
+        "original property": "match__4",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "player",
+        "parent collection": "country",
+        "child collection": "player",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "country_id": [
+            "country_name"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country",
+        "original parent": "country",
+        "original property": "player",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "player",
+        "parent collection": "bowling_style",
+        "child collection": "player",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "bowling_id": [
+            "bowling_skill"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "bowling_style",
+        "original parent": "bowling_style",
+        "original property": "player",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "player",
+        "parent collection": "batting_style",
+        "child collection": "player",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "batting_id": [
+            "batting_hand"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "batting_style",
+        "original parent": "batting_style",
+        "original property": "player",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "player_match",
+        "parent collection": "rolee",
+        "child collection": "player_match",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "role_id": [
+            "role_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "rolee",
+        "original parent": "rolee",
+        "original property": "player_match",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "player_match",
+        "parent collection": "team",
+        "child collection": "player_match",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "team_id": [
+            "team_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "team",
+        "original parent": "team",
+        "original property": "player_match",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "player_match",
+        "parent collection": "player",
+        "child collection": "player_match",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "player_id": [
+            "player_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "player",
+        "original parent": "player",
+        "original property": "player_match",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "player_match",
+        "parent collection": "match_",
+        "child collection": "player_match",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "match_id": [
+            "match_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "match_",
+        "original parent": "match_",
+        "original property": "player_match",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "umpire",
+        "parent collection": "country",
+        "child collection": "umpire",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "country_id": [
+            "umpire_country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country",
+        "original parent": "country",
+        "original property": "umpire",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "venue",
+        "parent collection": "city",
+        "child collection": "venue",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "city_id": [
+            "city_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "city",
+        "original parent": "city",
+        "original property": "venue",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "wicket_taken",
+        "parent collection": "player",
+        "child collection": "wicket_taken",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "player_id": [
+            "fielders"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "player",
+        "original parent": "player",
+        "original property": "wicket_taken",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "wicket_taken",
+        "parent collection": "out_type",
+        "child collection": "wicket_taken",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "out_id": [
+            "kind_out"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "out_type",
+        "original parent": "out_type",
+        "original property": "wicket_taken",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "wicket_taken_2",
+        "parent collection": "player",
+        "child collection": "wicket_taken",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "player_id": [
+            "player_out"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "player_2",
+        "original parent": "player",
+        "original property": "wicket_taken_2",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "wicket_taken",
+        "parent collection": "match_",
+        "child collection": "wicket_taken",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "match_id": [
+            "match_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "match_",
+        "original parent": "match_",
+        "original property": "wicket_taken",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

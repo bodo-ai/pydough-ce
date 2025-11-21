@@ -1,0 +1,4507 @@
+[
+  {
+    "name": "mondial_geo",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "borders",
+        "type": "simple table",
+        "table path": "main.borders",
+        "unique properties": [
+          [
+            "country1",
+            "country2"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "country1",
+            "type": "table column",
+            "column name": "Country1",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A",
+              "AFG",
+              "AL",
+              "AND",
+              "ANG"
+            ],
+            "synonyms": [
+              "Country1"
+            ]
+          },
+          {
+            "name": "country2",
+            "type": "table column",
+            "column name": "Country2",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CH",
+              "CZ",
+              "D",
+              "FL",
+              "H"
+            ],
+            "synonyms": [
+              "Country2"
+            ]
+          },
+          {
+            "name": "length_",
+            "type": "table column",
+            "column name": "\"Length\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              164.0,
+              362.0,
+              784.0,
+              37.0,
+              366.0
+            ],
+            "synonyms": [
+              "Length"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "borders"
+        ]
+      },
+      {
+        "name": "city",
+        "type": "simple table",
+        "table path": "main.city",
+        "unique properties": [
+          [
+            "name",
+            "province"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aachen",
+              "Aalborg",
+              "Aarau",
+              "Aarhus",
+              "Aarri"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "D",
+              "DK",
+              "CH",
+              "WAN",
+              "BR"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Nordrhein Westfalen",
+              "Denmark",
+              "AG",
+              "Nigeria",
+              "Para"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          },
+          {
+            "name": "population",
+            "type": "table column",
+            "column name": "Population",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              247113,
+              113865,
+              194345,
+              111000,
+              264000
+            ],
+            "synonyms": [
+              "Population"
+            ]
+          },
+          {
+            "name": "longitude",
+            "type": "table column",
+            "column name": "Longitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10.0,
+              10.1,
+              -4.0,
+              -99.6833,
+              54.36
+            ],
+            "synonyms": [
+              "Longitude"
+            ]
+          },
+          {
+            "name": "latitude",
+            "type": "table column",
+            "column name": "Latitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              57.0,
+              56.1,
+              5.3,
+              32.4167,
+              24.27
+            ],
+            "synonyms": [
+              "Latitude"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "city"
+        ]
+      },
+      {
+        "name": "continent",
+        "type": "simple table",
+        "table path": "main.continent",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Africa",
+              "America",
+              "Asia",
+              "Australia/Oceania",
+              "Europe"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "area",
+            "type": "table column",
+            "column name": "Area",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              30254700.0,
+              39872000.0,
+              45095300.0,
+              8503470.0,
+              9562490.0
+            ],
+            "synonyms": [
+              "Area"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "continent"
+        ]
+      },
+      {
+        "name": "country",
+        "type": "simple table",
+        "table path": "main.country",
+        "unique properties": [
+          "code",
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Afghanistan",
+              "Albania",
+              "Algeria",
+              "American Samoa",
+              "Andorra"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "code",
+            "type": "table column",
+            "column name": "Code",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A",
+              "AFG",
+              "AG",
+              "AL",
+              "AMSA"
+            ],
+            "synonyms": [
+              "Code"
+            ]
+          },
+          {
+            "name": "capital",
+            "type": "table column",
+            "column name": "Capital",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Vienna",
+              "Kabul",
+              "Saint Johns",
+              "Tirane",
+              "Pago Pago"
+            ],
+            "synonyms": [
+              "Capital"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Vienna",
+              "Afghanistan",
+              "Antigua and Barbuda",
+              "Albania",
+              "American Samoa"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          },
+          {
+            "name": "area",
+            "type": "table column",
+            "column name": "Area",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              83850.0,
+              647500.0,
+              442.0,
+              28750.0,
+              199.0
+            ],
+            "synonyms": [
+              "Area"
+            ]
+          },
+          {
+            "name": "population",
+            "type": "table column",
+            "column name": "Population",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8023244,
+              22664136,
+              65647,
+              3249136,
+              65628
+            ],
+            "synonyms": [
+              "Population"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "country"
+        ]
+      },
+      {
+        "name": "desert",
+        "type": "simple table",
+        "table path": "main.desert",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Arabian Desert",
+              "Atacama",
+              "Azaouad",
+              "Baja California Desert",
+              "Chihuahua"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "area",
+            "type": "table column",
+            "column name": "Area",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              50000.0,
+              181300.0,
+              80000.0,
+              30000.0,
+              360000.0
+            ],
+            "synonyms": [
+              "Area"
+            ]
+          },
+          {
+            "name": "longitude",
+            "type": "table column",
+            "column name": "Longitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              26.0,
+              -69.25,
+              0.0,
+              -116.0,
+              -105.0
+            ],
+            "synonyms": [
+              "Longitude"
+            ]
+          },
+          {
+            "name": "latitude",
+            "type": "table column",
+            "column name": "Latitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              33.0,
+              -24.5,
+              20.0,
+              31.0,
+              36.0
+            ],
+            "synonyms": [
+              "Latitude"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "desert"
+        ]
+      },
+      {
+        "name": "economy",
+        "type": "simple table",
+        "table path": "main.economy",
+        "unique properties": [
+          "country"
+        ],
+        "properties": [
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A",
+              "AFG",
+              "AG",
+              "AL",
+              "AMSA"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "gdp",
+            "type": "table column",
+            "column name": "GDP",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              152000.0,
+              12800.0,
+              425.0,
+              4100.0,
+              462.2
+            ],
+            "synonyms": [
+              "GDP"
+            ]
+          },
+          {
+            "name": "agriculture",
+            "type": "table column",
+            "column name": "Agriculture",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2.0,
+              65.0,
+              3.5,
+              55.0,
+              12.0
+            ],
+            "synonyms": [
+              "Agriculture"
+            ]
+          },
+          {
+            "name": "service",
+            "type": "table column",
+            "column name": "Service",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              34.0,
+              15.0,
+              19.3,
+              56.0,
+              36.0
+            ],
+            "synonyms": [
+              "Service"
+            ]
+          },
+          {
+            "name": "industry",
+            "type": "table column",
+            "column name": "Industry",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              64.0,
+              20.0,
+              77.2,
+              32.0,
+              7.0
+            ],
+            "synonyms": [
+              "Industry"
+            ]
+          },
+          {
+            "name": "inflation",
+            "type": "table column",
+            "column name": "Inflation",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2.3,
+              3.5,
+              16.0,
+              20.0,
+              32.2
+            ],
+            "synonyms": [
+              "Inflation"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "economy"
+        ]
+      },
+      {
+        "name": "encompasses",
+        "type": "simple table",
+        "table path": "main.encompasses",
+        "unique properties": [
+          [
+            "country",
+            "continent"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A",
+              "AFG",
+              "AG",
+              "AL",
+              "AMSA"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "continent",
+            "type": "table column",
+            "column name": "Continent",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Europe",
+              "Asia",
+              "America",
+              "Australia/Oceania",
+              "Africa"
+            ],
+            "synonyms": [
+              "Continent"
+            ]
+          },
+          {
+            "name": "percentage",
+            "type": "table column",
+            "column name": "Percentage",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              100.0,
+              90.0,
+              10.0,
+              80.0,
+              20.0
+            ],
+            "synonyms": [
+              "Percentage"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "encompasses"
+        ]
+      },
+      {
+        "name": "ethnicgroup",
+        "type": "simple table",
+        "table path": "main.ethnicGroup",
+        "unique properties": [
+          [
+            "name",
+            "country"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "GE",
+              "EAU",
+              "DJI",
+              "ER",
+              "ETH"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Abkhaz",
+              "Acholi",
+              "Afar",
+              "African",
+              "African descent"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "percentage",
+            "type": "table column",
+            "column name": "Percentage",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1.8,
+              4.0,
+              35.0,
+              80.0,
+              99.0
+            ],
+            "synonyms": [
+              "Percentage"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "ethnicGroup"
+        ]
+      },
+      {
+        "name": "geo_desert",
+        "type": "simple table",
+        "table path": "main.geo_desert",
+        "unique properties": [
+          [
+            "province",
+            "country",
+            "desert"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "desert",
+            "type": "table column",
+            "column name": "Desert",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Desert",
+              "Rub Al Chali",
+              "Dascht-e-Margoh",
+              "Rigestan",
+              "Karakum"
+            ],
+            "synonyms": [
+              "Desert"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Coun",
+              "UAE",
+              "AFG",
+              "TM",
+              "IRQ"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Abu Dhabi",
+              "Afghanistan",
+              "Ahal",
+              "Al Anbar",
+              "Al Fujayrah"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "geo_desert"
+        ]
+      },
+      {
+        "name": "geo_estuary",
+        "type": "simple table",
+        "table path": "main.geo_estuary",
+        "unique properties": [
+          [
+            "province",
+            "country",
+            "river"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "river",
+            "type": "table column",
+            "column name": "River",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "River",
+              "Bahr el-Djebel/Albert-Nil",
+              "Bahr el-Ghasal",
+              "Sobat",
+              "Pjandsh"
+            ],
+            "synonyms": [
+              "River"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Coun",
+              "SUD",
+              "AFG",
+              "CH",
+              "N"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AG",
+              "Aali an Nil",
+              "Afghanistan",
+              "Akershus",
+              "Al Anbar"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "geo_estuary"
+        ]
+      },
+      {
+        "name": "geo_island",
+        "type": "simple table",
+        "table path": "main.geo_island",
+        "unique properties": [
+          [
+            "province",
+            "country",
+            "island"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "island",
+            "type": "table column",
+            "column name": "Island",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aland",
+              "Alicudi",
+              "Ambon",
+              "Ameland",
+              "Amrum"
+            ],
+            "synonyms": [
+              "Island"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Alan",
+              "Lipa",
+              "Molu",
+              "West",
+              "Nord"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "101",
+              "102",
+              "10244",
+              "104",
+              "10429"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "geo_island"
+        ]
+      },
+      {
+        "name": "geo_lake",
+        "type": "simple table",
+        "table path": "main.geo_lake",
+        "unique properties": [
+          [
+            "province",
+            "country",
+            "lake"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "lake",
+            "type": "table column",
+            "column name": "Lake",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Lake",
+              "Barrage de Mbakaou",
+              "Lake Nicaragua",
+              "Lake Ohrid",
+              "Lake Prespa"
+            ],
+            "synonyms": [
+              "Lake"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Coun",
+              "CAM",
+              "CR",
+              "AL",
+              "KAZ"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Adamaoua",
+              "Alajuela",
+              "Albania",
+              "Almaty (munic.)",
+              "Alvsborg"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "geo_lake"
+        ]
+      },
+      {
+        "name": "geo_mountain",
+        "type": "simple table",
+        "table path": "main.geo_mountain",
+        "unique properties": [
+          [
+            "province",
+            "country",
+            "mountain"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "mountain",
+            "type": "table column",
+            "column name": "Mountain",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Mountain",
+              "Gran Sasso",
+              "Tirich Mir",
+              "Ararat",
+              "Mt Blackburn"
+            ],
+            "synonyms": [
+              "Mountain"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Coun",
+              "I",
+              "AFG",
+              "TR",
+              "USA"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Abruzzo",
+              "Afghanistan",
+              "Agri",
+              "Alaska",
+              "Albania"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "geo_mountain"
+        ]
+      },
+      {
+        "name": "geo_river",
+        "type": "simple table",
+        "table path": "main.geo_river",
+        "unique properties": [
+          [
+            "province",
+            "country",
+            "river"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "river",
+            "type": "table column",
+            "column name": "River",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "River",
+              "Bahr el-Djebel/Albert-Nil",
+              "Bahr el-Ghasal",
+              "Pibor",
+              "Sobat"
+            ],
+            "synonyms": [
+              "River"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Coun",
+              "SUD",
+              "IRQ",
+              "TR",
+              "AFG"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AG",
+              "Aali an Nil",
+              "Ad Tamim",
+              "Adiyaman",
+              "Afghanistan"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "geo_river"
+        ]
+      },
+      {
+        "name": "geo_sea",
+        "type": "simple table",
+        "table path": "main.geo_sea",
+        "unique properties": [
+          [
+            "province",
+            "country",
+            "sea"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "sea",
+            "type": "table column",
+            "column name": "Sea",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Sea",
+              "Mediterranean Sea",
+              "Persian Gulf",
+              "Pacific Ocean",
+              "Skagerrak"
+            ],
+            "synonyms": [
+              "Sea"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Coun",
+              "I",
+              "UAE",
+              "TR",
+              "J"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Abruzzo",
+              "Abu Dhabi",
+              "Adana",
+              "Aichi",
+              "Ajman"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "geo_sea"
+        ]
+      },
+      {
+        "name": "geo_source",
+        "type": "simple table",
+        "table path": "main.geo_source",
+        "unique properties": [
+          [
+            "province",
+            "country",
+            "river"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "river",
+            "type": "table column",
+            "column name": "River",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "River",
+              "White Nile",
+              "Amudarja",
+              "Pjandsh",
+              "Murat"
+            ],
+            "synonyms": [
+              "River"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Coun",
+              "SUD",
+              "AFG",
+              "TR",
+              "IRQ"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aali an Nil",
+              "Afghanistan",
+              "Agri",
+              "Al Anbar",
+              "Albania"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "geo_source"
+        ]
+      },
+      {
+        "name": "ismember",
+        "type": "simple table",
+        "table path": "main.isMember",
+        "unique properties": [
+          [
+            "country",
+            "organization"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A",
+              "AFG",
+              "AG",
+              "AL",
+              "AMSA"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "organization",
+            "type": "table column",
+            "column name": "Organization",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AG",
+              "ANC",
+              "AfDB",
+              "AsDB",
+              "BIS"
+            ],
+            "synonyms": [
+              "Organization"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "Type",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Type",
+              "nonregional member",
+              "observer",
+              "member",
+              "National Society"
+            ],
+            "synonyms": [
+              "Type"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "isMember"
+        ]
+      },
+      {
+        "name": "island",
+        "type": "simple table",
+        "table path": "main.island",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aland",
+              "Alicudi",
+              "Ambon",
+              "Ameland",
+              "Amrum"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "islands",
+            "type": "table column",
+            "column name": "Islands",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aland Islands",
+              "Lipari Islands",
+              "Moluccan Islands",
+              "Westfriesische Inseln",
+              "Nordfriesische Inseln"
+            ],
+            "synonyms": [
+              "Islands"
+            ]
+          },
+          {
+            "name": "area",
+            "type": "table column",
+            "column name": "Area",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              650.0,
+              5.2,
+              775.0,
+              57.6,
+              20.5
+            ],
+            "synonyms": [
+              "Area"
+            ]
+          },
+          {
+            "name": "height",
+            "type": "table column",
+            "column name": "Height",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              675.0,
+              1225.0,
+              32.0,
+              65.0,
+              400.0
+            ],
+            "synonyms": [
+              "Height"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "Type",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "volcanic",
+              "lime",
+              "coral",
+              "atoll"
+            ],
+            "synonyms": [
+              "Type"
+            ]
+          },
+          {
+            "name": "longitude",
+            "type": "table column",
+            "column name": "Longitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              20.0,
+              14.4,
+              128.2,
+              5.75,
+              8.3
+            ],
+            "synonyms": [
+              "Longitude"
+            ]
+          },
+          {
+            "name": "latitude",
+            "type": "table column",
+            "column name": "Latitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              60.1,
+              38.6,
+              -3.7,
+              53.5,
+              54.65
+            ],
+            "synonyms": [
+              "Latitude"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "island"
+        ]
+      },
+      {
+        "name": "islandin",
+        "type": "simple table",
+        "table path": "main.islandIn",
+        "unique properties": [
+          [
+            "island",
+            "sea",
+            "lake",
+            "river"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "island",
+            "type": "table column",
+            "column name": "Island",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Island",
+              "Svalbard",
+              "Greenland",
+              "Iceland",
+              "Aust-Vagoey"
+            ],
+            "synonyms": [
+              "Island"
+            ]
+          },
+          {
+            "name": "sea",
+            "type": "table column",
+            "column name": "Sea",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Sea",
+              "Norwegian Sea",
+              "Barents Sea",
+              "Arctic Ocean",
+              "Atlantic Ocean"
+            ],
+            "synonyms": [
+              "Sea"
+            ]
+          },
+          {
+            "name": "lake",
+            "type": "table column",
+            "column name": "Lake",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Lake",
+              "Ozero Baikal",
+              "Lake Toba",
+              "Lake Manicouagan",
+              "Lake Huron"
+            ],
+            "synonyms": [
+              "Lake"
+            ]
+          },
+          {
+            "name": "river",
+            "type": "table column",
+            "column name": "River",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "River"
+            ],
+            "synonyms": [
+              "River"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "islandIn"
+        ]
+      },
+      {
+        "name": "lake",
+        "type": "simple table",
+        "table path": "main.lake",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Ammersee",
+              "Arresoe",
+              "Atlin Lake",
+              "Balaton",
+              "Barrage de Mbakaou"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "area",
+            "type": "table column",
+            "column name": "Area",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              46.6,
+              40.2,
+              798.0,
+              594.0,
+              538.5
+            ],
+            "synonyms": [
+              "Area"
+            ]
+          },
+          {
+            "name": "depth",
+            "type": "table column",
+            "column name": "Depth",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              81.1,
+              5.6,
+              283.0,
+              12.5,
+              254.0
+            ],
+            "synonyms": [
+              "Depth"
+            ]
+          },
+          {
+            "name": "altitude",
+            "type": "table column",
+            "column name": "Altitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              533.0,
+              668.0,
+              104.0,
+              395.0,
+              564.0
+            ],
+            "synonyms": [
+              "Altitude"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "Type",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "artificial",
+              "salt",
+              "caldera",
+              "impact",
+              "acid"
+            ],
+            "synonyms": [
+              "Type"
+            ]
+          },
+          {
+            "name": "river",
+            "type": "table column",
+            "column name": "River",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Ammer",
+              "Yukon River",
+              "Sanaga",
+              "Rhein",
+              "Aare"
+            ],
+            "synonyms": [
+              "River"
+            ]
+          },
+          {
+            "name": "longitude",
+            "type": "table column",
+            "column name": "Longitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              11.6,
+              12.1,
+              -133.75,
+              17.6,
+              12.75
+            ],
+            "synonyms": [
+              "Longitude"
+            ]
+          },
+          {
+            "name": "latitude",
+            "type": "table column",
+            "column name": "Latitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              48.0,
+              56.0,
+              59.5,
+              46.8,
+              6.4
+            ],
+            "synonyms": [
+              "Latitude"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "lake"
+        ]
+      },
+      {
+        "name": "language",
+        "type": "simple table",
+        "table path": "main.language",
+        "unique properties": [
+          [
+            "name",
+            "country"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AFG",
+              "NAM",
+              "MK",
+              "MNE",
+              "IR"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Afghan Persian",
+              "Afrikaans",
+              "Albanian",
+              "Arabic",
+              "Armenian"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "percentage",
+            "type": "table column",
+            "column name": "Percentage",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              50.0,
+              60.0,
+              21.0,
+              5.3,
+              1.0
+            ],
+            "synonyms": [
+              "Percentage"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "language"
+        ]
+      },
+      {
+        "name": "located",
+        "type": "simple table",
+        "table path": "main.located",
+        "unique properties": [
+          [
+            "city",
+            "province",
+            "country",
+            "river",
+            "lake",
+            "sea"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "City",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "City",
+              "Shkoder",
+              "Durres",
+              "Vlore",
+              "Kavalla"
+            ],
+            "synonyms": [
+              "City"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Province",
+              "Albania",
+              "Anatoliki Makedhonia kai Thraki",
+              "Attiki",
+              "Dhytiki Ellas"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Coun",
+              "AL",
+              "GR",
+              "SRB",
+              "F"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "river",
+            "type": "table column",
+            "column name": "River",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "River",
+              "Donau",
+              "Save",
+              "Rhein",
+              "Garonne"
+            ],
+            "synonyms": [
+              "River"
+            ]
+          },
+          {
+            "name": "lake",
+            "type": "table column",
+            "column name": "Lake",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Lake",
+              "Lake Skutari",
+              "Bodensee",
+              "Lac Leman",
+              "Vierwaldstattersee"
+            ],
+            "synonyms": [
+              "Lake"
+            ]
+          },
+          {
+            "name": "sea",
+            "type": "table column",
+            "column name": "Sea",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Sea",
+              "Mediterranean Sea",
+              "Atlantic Ocean",
+              "The Channel",
+              "North Sea"
+            ],
+            "synonyms": [
+              "Sea"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "located"
+        ]
+      },
+      {
+        "name": "locatedon",
+        "type": "simple table",
+        "table path": "main.locatedOn",
+        "unique properties": [
+          [
+            "city",
+            "province",
+            "country",
+            "island"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "City",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aberdeen",
+              "Aberystwyth",
+              "Adamstown",
+              "Agana",
+              "Ajaccio"
+            ],
+            "synonyms": [
+              "City"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Province",
+              "Grampian",
+              "Ceredigion",
+              "Pitcairn Islands",
+              "Guam"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Coun",
+              "GB",
+              "PITC",
+              "GUAM",
+              "F"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "island",
+            "type": "table column",
+            "column name": "Island",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Island",
+              "Great Britain",
+              "Pitcairn",
+              "Guam",
+              "Corse"
+            ],
+            "synonyms": [
+              "Island"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "locatedOn"
+        ]
+      },
+      {
+        "name": "mergeswith",
+        "type": "simple table",
+        "table path": "main.mergesWith",
+        "unique properties": [
+          [
+            "sea1",
+            "sea2"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "sea1",
+            "type": "table column",
+            "column name": "Sea1",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Andaman Sea",
+              "Arabian Sea",
+              "Arctic Ocean",
+              "Atlantic Ocean",
+              "Baltic Sea"
+            ],
+            "synonyms": [
+              "Sea1"
+            ]
+          },
+          {
+            "name": "sea2",
+            "type": "table column",
+            "column name": "Sea2",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Sea2",
+              "Gulf of Bengal",
+              "Indian Ocean",
+              "Malakka Strait",
+              "Gulf of Aden"
+            ],
+            "synonyms": [
+              "Sea2"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "mergesWith"
+        ]
+      },
+      {
+        "name": "mountain",
+        "type": "simple table",
+        "table path": "main.mountain",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "mountains",
+            "type": "table column",
+            "column name": "Mountains",
+            "data type": "string",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "Mountains"
+            ]
+          },
+          {
+            "name": "height",
+            "type": "table column",
+            "column name": "Height",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "Height"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "Type",
+            "data type": "string",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "Type"
+            ]
+          },
+          {
+            "name": "longitude",
+            "type": "table column",
+            "column name": "Longitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "Longitude"
+            ]
+          },
+          {
+            "name": "latitude",
+            "type": "table column",
+            "column name": "Latitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "Latitude"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "mountain"
+        ]
+      },
+      {
+        "name": "mountainonisland",
+        "type": "simple table",
+        "table path": "main.mountainOnIsland",
+        "unique properties": [
+          [
+            "mountain",
+            "island"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "mountain",
+            "type": "table column",
+            "column name": "Mountain",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Andringitra",
+              "Asahi-Dake",
+              "Barbeau Peak",
+              "Ben Nevis",
+              "Blue Mountain Peak"
+            ],
+            "synonyms": [
+              "Mountain"
+            ]
+          },
+          {
+            "name": "island",
+            "type": "table column",
+            "column name": "Island",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Island",
+              "Madagaskar",
+              "Hokkaido",
+              "Ellesmere Island",
+              "Great Britain"
+            ],
+            "synonyms": [
+              "Island"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "mountainOnIsland"
+        ]
+      },
+      {
+        "name": "organization",
+        "type": "simple table",
+        "table path": "main.organization",
+        "unique properties": [
+          "abbreviation",
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "abbreviation",
+            "type": "table column",
+            "column name": "Abbreviation",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "ABEDA",
+              "ACC",
+              "ACCT",
+              "ACP",
+              "AFESD"
+            ],
+            "synonyms": [
+              "Abbreviation"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "ASEAN-Mekong Basin Development Group",
+              "African Development Bank",
+              "African, Caribbean, and Pacific Count...",
+              "Agency for Cultural and Technical Coo...",
+              "Agency for the Prohibition of Nuclear..."
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "City",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "City",
+              "Khartoum",
+              "Paris",
+              "Brussels",
+              "Abidjan"
+            ],
+            "synonyms": [
+              "City"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Coun",
+              "SUD",
+              "F",
+              "B",
+              "CI"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "province",
+            "type": "table column",
+            "column name": "Province",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Province",
+              "al Khartum",
+              "Ile de France",
+              "Brabant",
+              "Cote dIvoire"
+            ],
+            "synonyms": [
+              "Province"
+            ]
+          },
+          {
+            "name": "established",
+            "type": "table column",
+            "column name": "Established",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "Established",
+              "1974-02-18",
+              "1989-02-16",
+              "1970-03-21",
+              "1976-04-01"
+            ],
+            "synonyms": [
+              "Established"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "organization"
+        ]
+      },
+      {
+        "name": "politics",
+        "type": "simple table",
+        "table path": "main.politics",
+        "unique properties": [
+          "country"
+        ],
+        "properties": [
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A",
+              "AFG",
+              "AG",
+              "AL",
+              "AMSA"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "independence",
+            "type": "table column",
+            "column name": "Independence",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "Independence",
+              "1918-11-12",
+              "1919-08-19",
+              "1981-11-01",
+              "1912-11-28"
+            ],
+            "synonyms": [
+              "Independence"
+            ]
+          },
+          {
+            "name": "dependent",
+            "type": "table column",
+            "column name": "Dependent",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Depe",
+              "USA",
+              "NL",
+              "GB",
+              "AUS"
+            ],
+            "synonyms": [
+              "Dependent"
+            ]
+          },
+          {
+            "name": "government",
+            "type": "table column",
+            "column name": "Government",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Government",
+              "federal republic",
+              "transitional government",
+              "parliamentary democracy",
+              "emerging democracy"
+            ],
+            "synonyms": [
+              "Government"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "politics"
+        ]
+      },
+      {
+        "name": "population",
+        "type": "simple table",
+        "table path": "main.population",
+        "unique properties": [
+          "country"
+        ],
+        "properties": [
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A",
+              "AFG",
+              "AG",
+              "AL",
+              "AMSA"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "population_growth",
+            "type": "table column",
+            "column name": "Population_Growth",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.41,
+              4.78,
+              0.76,
+              1.34,
+              1.22
+            ],
+            "synonyms": [
+              "Population_Growth"
+            ]
+          },
+          {
+            "name": "infant_mortality",
+            "type": "table column",
+            "column name": "Infant_Mortality",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6.2,
+              149.7,
+              17.2,
+              49.2,
+              10.18
+            ],
+            "synonyms": [
+              "Infant_Mortality"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "population"
+        ]
+      },
+      {
+        "name": "province",
+        "type": "simple table",
+        "table path": "main.province",
+        "unique properties": [
+          [
+            "name",
+            "country"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AG",
+              "AI",
+              "AR",
+              "Aali an Nil",
+              "Aberconwy and Colwyn"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CH",
+              "SUD",
+              "GB",
+              "I",
+              "UAE"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "population",
+            "type": "table column",
+            "column name": "Population",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1599605,
+              110700,
+              1263000,
+              670000,
+              483483
+            ],
+            "synonyms": [
+              "Population"
+            ]
+          },
+          {
+            "name": "area",
+            "type": "table column",
+            "column name": "Area",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              238792.0,
+              1130.0,
+              10794.0,
+              67350.0,
+              153149.0
+            ],
+            "synonyms": [
+              "Area"
+            ]
+          },
+          {
+            "name": "capital",
+            "type": "table column",
+            "column name": "Capital",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Malakal",
+              "Colwyn Bay",
+              "LAquila",
+              "Rio Branco",
+              "Kirkuk"
+            ],
+            "synonyms": [
+              "Capital"
+            ]
+          },
+          {
+            "name": "capprov",
+            "type": "table column",
+            "column name": "CapProv",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aali an Nil",
+              "Aberconwy and Colwyn",
+              "Abruzzo",
+              "Acre",
+              "Ad Tamim"
+            ],
+            "synonyms": [
+              "CapProv"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "province"
+        ]
+      },
+      {
+        "name": "religion",
+        "type": "simple table",
+        "table path": "main.religion",
+        "unique properties": [
+          [
+            "name",
+            "country"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "BERM",
+              "AUS",
+              "AXA",
+              "BS",
+              "CAYM"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "African Methodist Episcopal",
+              "Anglican",
+              "Armenian Apostolic",
+              "Bahai",
+              "Baptist"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "percentage",
+            "type": "table column",
+            "column name": "Percentage",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              11.0,
+              26.1,
+              29.0,
+              23.0,
+              20.0
+            ],
+            "synonyms": [
+              "Percentage"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "religion"
+        ]
+      },
+      {
+        "name": "river",
+        "type": "simple table",
+        "table path": "main.river",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aare",
+              "Adda",
+              "Akagera",
+              "Allegheny River",
+              "Aller"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "river",
+            "type": "table column",
+            "column name": "River",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Rhein",
+              "Po",
+              "Ohio River",
+              "Weser",
+              "Inn"
+            ],
+            "synonyms": [
+              "River"
+            ]
+          },
+          {
+            "name": "lake",
+            "type": "table column",
+            "column name": "Lake",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Brienzersee",
+              "Lago di Como",
+              "Lake Victoria",
+              "Chiemsee",
+              "Ammersee"
+            ],
+            "synonyms": [
+              "Lake"
+            ]
+          },
+          {
+            "name": "sea",
+            "type": "table column",
+            "column name": "Sea",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Atlantic Ocean",
+              "Sea of Okhotsk",
+              "Mediterranean Sea",
+              "Malakka Strait",
+              "Ganges"
+            ],
+            "synonyms": [
+              "Sea"
+            ]
+          },
+          {
+            "name": "length_",
+            "type": "table column",
+            "column name": "\"Length\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              288.0,
+              313.0,
+              275.0,
+              523.0,
+              211.0
+            ],
+            "synonyms": [
+              "Length"
+            ]
+          },
+          {
+            "name": "sourcelongitude",
+            "type": "table column",
+            "column name": "SourceLongitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8.2,
+              10.3,
+              29.3,
+              -77.9,
+              11.23
+            ],
+            "synonyms": [
+              "SourceLongitude"
+            ]
+          },
+          {
+            "name": "sourcelatitude",
+            "type": "table column",
+            "column name": "SourceLatitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              46.55,
+              -2.5,
+              41.9,
+              52.1,
+              47.3
+            ],
+            "synonyms": [
+              "SourceLatitude"
+            ]
+          },
+          {
+            "name": "mountains",
+            "type": "table column",
+            "column name": "Mountains",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Alps",
+              "East African Rift",
+              "Appalachian Mountains",
+              "Andes",
+              "Apennin"
+            ],
+            "synonyms": [
+              "Mountains"
+            ]
+          },
+          {
+            "name": "sourcealtitude",
+            "type": "table column",
+            "column name": "SourceAltitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2310.0,
+              2235.0,
+              2700.0,
+              759.0,
+              130.0
+            ],
+            "synonyms": [
+              "SourceAltitude"
+            ]
+          },
+          {
+            "name": "estuarylongitude",
+            "type": "table column",
+            "column name": "EstuaryLongitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              8.22,
+              9.88,
+              33.0,
+              -80.0,
+              9.18
+            ],
+            "synonyms": [
+              "EstuaryLongitude"
+            ]
+          },
+          {
+            "name": "estuarylatitude",
+            "type": "table column",
+            "column name": "EstuaryLatitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              47.61,
+              45.13,
+              -1.0,
+              40.42,
+              52.94
+            ],
+            "synonyms": [
+              "EstuaryLatitude"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "river"
+        ]
+      },
+      {
+        "name": "sea",
+        "type": "simple table",
+        "table path": "main.sea",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Andaman Sea",
+              "Arabian Sea",
+              "Arctic Ocean",
+              "Atlantic Ocean",
+              "Baltic Sea"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "depth",
+            "type": "table column",
+            "column name": "Depth",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3113.0,
+              5203.0,
+              5608.0,
+              9219.0,
+              459.0
+            ],
+            "synonyms": [
+              "Depth"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "sea"
+        ]
+      },
+      {
+        "name": "target",
+        "type": "simple table",
+        "table path": "main.target",
+        "unique properties": [
+          "country"
+        ],
+        "properties": [
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A",
+              "AFG",
+              "AL",
+              "AMSA",
+              "AND"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "target",
+            "type": "table column",
+            "column name": "Target",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Target",
+              "Christian",
+              "non-Christian"
+            ],
+            "synonyms": [
+              "Target"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "target"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "borders",
+        "parent collection": "country",
+        "child collection": "borders",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country2"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country",
+        "original parent": "country",
+        "original property": "borders",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "borders_2",
+        "parent collection": "country",
+        "child collection": "borders",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country1"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "borders_2",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "city",
+        "parent collection": "province",
+        "child collection": "city",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "province"
+          ],
+          "country": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "province_2",
+        "original parent": "province",
+        "original property": "city",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "city",
+        "parent collection": "country",
+        "child collection": "city",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "city",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "economy",
+        "parent collection": "country",
+        "child collection": "economy",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "economy",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "encompasses",
+        "parent collection": "continent",
+        "child collection": "encompasses",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "continent"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "continent_2",
+        "original parent": "continent",
+        "original property": "encompasses",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "encompasses",
+        "parent collection": "country",
+        "child collection": "encompasses",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "encompasses",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "ethnicgroup",
+        "parent collection": "country",
+        "child collection": "ethnicgroup",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "ethnicgroup",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_desert",
+        "parent collection": "province",
+        "child collection": "geo_desert",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "province"
+          ],
+          "country": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "province_2",
+        "original parent": "province",
+        "original property": "geo_desert",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_desert",
+        "parent collection": "country",
+        "child collection": "geo_desert",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "geo_desert",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_desert",
+        "parent collection": "desert",
+        "child collection": "geo_desert",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "desert"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "desert_2",
+        "original parent": "desert",
+        "original property": "geo_desert",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_estuary",
+        "parent collection": "province",
+        "child collection": "geo_estuary",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "province"
+          ],
+          "country": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "province_2",
+        "original parent": "province",
+        "original property": "geo_estuary",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_estuary",
+        "parent collection": "country",
+        "child collection": "geo_estuary",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "geo_estuary",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_estuary",
+        "parent collection": "river",
+        "child collection": "geo_estuary",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "river"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "river_2",
+        "original parent": "river",
+        "original property": "geo_estuary",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_island",
+        "parent collection": "province",
+        "child collection": "geo_island",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "province"
+          ],
+          "country": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "province_2",
+        "original parent": "province",
+        "original property": "geo_island",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_island",
+        "parent collection": "country",
+        "child collection": "geo_island",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "geo_island",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_island",
+        "parent collection": "island",
+        "child collection": "geo_island",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "island"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "island_2",
+        "original parent": "island",
+        "original property": "geo_island",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_lake",
+        "parent collection": "province",
+        "child collection": "geo_lake",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "province"
+          ],
+          "country": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "province_2",
+        "original parent": "province",
+        "original property": "geo_lake",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_lake",
+        "parent collection": "country",
+        "child collection": "geo_lake",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "geo_lake",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_lake",
+        "parent collection": "lake",
+        "child collection": "geo_lake",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "lake"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "lake_2",
+        "original parent": "lake",
+        "original property": "geo_lake",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_mountain",
+        "parent collection": "province",
+        "child collection": "geo_mountain",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "province"
+          ],
+          "country": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "province_2",
+        "original parent": "province",
+        "original property": "geo_mountain",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_mountain",
+        "parent collection": "country",
+        "child collection": "geo_mountain",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "geo_mountain",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_mountain",
+        "parent collection": "mountain",
+        "child collection": "geo_mountain",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "mountain"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "mountain_2",
+        "original parent": "mountain",
+        "original property": "geo_mountain",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_river",
+        "parent collection": "province",
+        "child collection": "geo_river",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "province"
+          ],
+          "country": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "province_2",
+        "original parent": "province",
+        "original property": "geo_river",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_river",
+        "parent collection": "country",
+        "child collection": "geo_river",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "geo_river",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_river",
+        "parent collection": "river",
+        "child collection": "geo_river",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "river"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "river_2",
+        "original parent": "river",
+        "original property": "geo_river",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_sea",
+        "parent collection": "province",
+        "child collection": "geo_sea",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "province"
+          ],
+          "country": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "province_2",
+        "original parent": "province",
+        "original property": "geo_sea",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_sea",
+        "parent collection": "country",
+        "child collection": "geo_sea",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "geo_sea",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_sea",
+        "parent collection": "sea",
+        "child collection": "geo_sea",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "sea"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "sea_2",
+        "original parent": "sea",
+        "original property": "geo_sea",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_source",
+        "parent collection": "province",
+        "child collection": "geo_source",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "province"
+          ],
+          "country": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "province_2",
+        "original parent": "province",
+        "original property": "geo_source",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_source",
+        "parent collection": "country",
+        "child collection": "geo_source",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "geo_source",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "geo_source",
+        "parent collection": "river",
+        "child collection": "geo_source",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "river"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "river_2",
+        "original parent": "river",
+        "original property": "geo_source",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "ismember",
+        "parent collection": "organization",
+        "child collection": "ismember",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "abbreviation": [
+            "organization"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "organization_2",
+        "original parent": "organization",
+        "original property": "ismember",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "ismember",
+        "parent collection": "country",
+        "child collection": "ismember",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "ismember",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "islandin",
+        "parent collection": "river",
+        "child collection": "islandin",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "river"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "river_2",
+        "original parent": "river",
+        "original property": "islandin",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "islandin",
+        "parent collection": "lake",
+        "child collection": "islandin",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "lake"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "lake_2",
+        "original parent": "lake",
+        "original property": "islandin",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "islandin",
+        "parent collection": "sea",
+        "child collection": "islandin",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "sea"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "sea_2",
+        "original parent": "sea",
+        "original property": "islandin",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "islandin",
+        "parent collection": "island",
+        "child collection": "islandin",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "island"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "island_2",
+        "original parent": "island",
+        "original property": "islandin",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "language",
+        "parent collection": "country",
+        "child collection": "language",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "language",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "located",
+        "parent collection": "province",
+        "child collection": "located",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "province"
+          ],
+          "country": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "province_2",
+        "original parent": "province",
+        "original property": "located",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "located",
+        "parent collection": "city",
+        "child collection": "located",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "city"
+          ],
+          "province": [
+            "province"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "city_2",
+        "original parent": "city",
+        "original property": "located",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "located",
+        "parent collection": "sea",
+        "child collection": "located",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "sea"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "sea_2",
+        "original parent": "sea",
+        "original property": "located",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "located",
+        "parent collection": "lake",
+        "child collection": "located",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "lake"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "lake_2",
+        "original parent": "lake",
+        "original property": "located",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "located",
+        "parent collection": "river",
+        "child collection": "located",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "river"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "river_2",
+        "original parent": "river",
+        "original property": "located",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "located",
+        "parent collection": "country",
+        "child collection": "located",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "located",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "locatedon",
+        "parent collection": "province",
+        "child collection": "locatedon",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "province"
+          ],
+          "country": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "province_2",
+        "original parent": "province",
+        "original property": "locatedon",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "locatedon",
+        "parent collection": "city",
+        "child collection": "locatedon",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "city"
+          ],
+          "province": [
+            "province"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "city_2",
+        "original parent": "city",
+        "original property": "locatedon",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "locatedon",
+        "parent collection": "island",
+        "child collection": "locatedon",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "island"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "island_2",
+        "original parent": "island",
+        "original property": "locatedon",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "locatedon",
+        "parent collection": "country",
+        "child collection": "locatedon",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "locatedon",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "mergeswith",
+        "parent collection": "sea",
+        "child collection": "mergeswith",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "sea2"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "sea",
+        "original parent": "sea",
+        "original property": "mergeswith",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "mergeswith_2",
+        "parent collection": "sea",
+        "child collection": "mergeswith",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "sea1"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "sea_2",
+        "original parent": "sea",
+        "original property": "mergeswith_2",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "mountainonisland",
+        "parent collection": "island",
+        "child collection": "mountainonisland",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "island"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "island_2",
+        "original parent": "island",
+        "original property": "mountainonisland",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "mountainonisland",
+        "parent collection": "mountain",
+        "child collection": "mountainonisland",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "mountain"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "mountain_2",
+        "original parent": "mountain",
+        "original property": "mountainonisland",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "organization",
+        "parent collection": "province",
+        "child collection": "organization",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "province"
+          ],
+          "country": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "province_2",
+        "original parent": "province",
+        "original property": "organization",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "organization",
+        "parent collection": "city",
+        "child collection": "organization",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "city"
+          ],
+          "province": [
+            "province"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "city_2",
+        "original parent": "city",
+        "original property": "organization",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "organization",
+        "parent collection": "country",
+        "child collection": "organization",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "organization",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "politics",
+        "parent collection": "country",
+        "child collection": "politics",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "dependent"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "politics",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "politics_2",
+        "parent collection": "country",
+        "child collection": "politics",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_3",
+        "original parent": "country",
+        "original property": "politics_2",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "population_2",
+        "parent collection": "country",
+        "child collection": "population",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "population_2",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "province_2",
+        "parent collection": "country",
+        "child collection": "province",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "province_2",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "religion",
+        "parent collection": "country",
+        "child collection": "religion",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "religion",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "river_2",
+        "parent collection": "lake",
+        "child collection": "river",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "lake"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "lake_2",
+        "original parent": "lake",
+        "original property": "river_2",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "target",
+        "parent collection": "country",
+        "child collection": "target",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "country"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country_2",
+        "original parent": "country",
+        "original property": "target",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

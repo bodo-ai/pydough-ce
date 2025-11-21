@@ -1,0 +1,1331 @@
+[
+  {
+    "name": "superstore",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "central_superstore",
+        "type": "simple table",
+        "table path": "main.central_superstore",
+        "unique properties": [
+          "row_id"
+        ],
+        "properties": [
+          {
+            "name": "row_id",
+            "type": "table column",
+            "column name": "\"Row ID\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Row ID"
+            ]
+          },
+          {
+            "name": "order_id",
+            "type": "table column",
+            "column name": "\"Order ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CA-2011-103800",
+              "CA-2011-112326",
+              "CA-2011-105417",
+              "CA-2011-135405",
+              "CA-2011-167927"
+            ],
+            "synonyms": [
+              "Order ID"
+            ]
+          },
+          {
+            "name": "order_date",
+            "type": "table column",
+            "column name": "\"Order Date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2013-01-03",
+              "2013-01-04",
+              "2013-01-07",
+              "2013-01-09",
+              "2013-01-20"
+            ],
+            "synonyms": [
+              "Order Date"
+            ]
+          },
+          {
+            "name": "ship_date",
+            "type": "table column",
+            "column name": "\"Ship Date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2013-01-07",
+              "2013-01-08",
+              "2013-01-12",
+              "2013-01-13",
+              "2013-01-26"
+            ],
+            "synonyms": [
+              "Ship Date"
+            ]
+          },
+          {
+            "name": "ship_mode",
+            "type": "table column",
+            "column name": "\"Ship Mode\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Standard Class",
+              "First Class",
+              "Second Class",
+              "Same Day"
+            ],
+            "synonyms": [
+              "Ship Mode"
+            ]
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "\"Customer ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "DP-13000",
+              "PO-19195",
+              "VS-21820",
+              "MS-17830",
+              "XP-21865"
+            ],
+            "synonyms": [
+              "Customer ID"
+            ]
+          },
+          {
+            "name": "region",
+            "type": "table column",
+            "column name": "Region",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Central"
+            ],
+            "synonyms": [
+              "Region"
+            ]
+          },
+          {
+            "name": "product_id",
+            "type": "table column",
+            "column name": "\"Product ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "OFF-PA-10000174",
+              "OFF-LA-10003223",
+              "OFF-ST-10002743",
+              "OFF-BI-10004094",
+              "FUR-FU-10004864"
+            ],
+            "synonyms": [
+              "Product ID"
+            ]
+          },
+          {
+            "name": "sales",
+            "type": "table column",
+            "column name": "Sales",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              16.448,
+              11.784,
+              272.736,
+              3.54,
+              76.728
+            ],
+            "synonyms": [
+              "Sales"
+            ]
+          },
+          {
+            "name": "quantity",
+            "type": "table column",
+            "column name": "Quantity",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3,
+              7,
+              1,
+              5
+            ],
+            "synonyms": [
+              "Quantity"
+            ]
+          },
+          {
+            "name": "discount",
+            "type": "table column",
+            "column name": "Discount",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.2,
+              0.8,
+              0.6,
+              0.0,
+              0.1
+            ],
+            "synonyms": [
+              "Discount"
+            ]
+          },
+          {
+            "name": "profit",
+            "type": "table column",
+            "column name": "Profit",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5.5512,
+              4.2717,
+              -64.7748,
+              -5.487,
+              -53.7096
+            ],
+            "synonyms": [
+              "Profit"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "central_superstore"
+        ]
+      },
+      {
+        "name": "east_superstore",
+        "type": "simple table",
+        "table path": "main.east_superstore",
+        "unique properties": [
+          "row_id"
+        ],
+        "properties": [
+          {
+            "name": "row_id",
+            "type": "table column",
+            "column name": "\"Row ID\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4647,
+              4648,
+              4649,
+              4650,
+              4651
+            ],
+            "synonyms": [
+              "Row ID"
+            ]
+          },
+          {
+            "name": "order_id",
+            "type": "table column",
+            "column name": "\"Order ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CA-2011-141817",
+              "CA-2011-130092",
+              "CA-2011-118192",
+              "CA-2011-149524",
+              "CA-2011-115791"
+            ],
+            "synonyms": [
+              "Order ID"
+            ]
+          },
+          {
+            "name": "order_date",
+            "type": "table column",
+            "column name": "\"Order Date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2013-01-05",
+              "2013-01-11",
+              "2013-01-13",
+              "2013-01-14",
+              "2013-01-16"
+            ],
+            "synonyms": [
+              "Order Date"
+            ]
+          },
+          {
+            "name": "ship_date",
+            "type": "table column",
+            "column name": "\"Ship Date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2013-01-12",
+              "2013-01-14",
+              "2013-01-18",
+              "2013-01-15",
+              "2013-02-03"
+            ],
+            "synonyms": [
+              "Ship Date"
+            ]
+          },
+          {
+            "name": "ship_mode",
+            "type": "table column",
+            "column name": "\"Ship Mode\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Standard Class",
+              "First Class",
+              "Second Class",
+              "Same Day"
+            ],
+            "synonyms": [
+              "Ship Mode"
+            ]
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "\"Customer ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "MB-18085",
+              "SV-20365",
+              "MM-17920",
+              "BS-11590",
+              "DL-13315"
+            ],
+            "synonyms": [
+              "Customer ID"
+            ]
+          },
+          {
+            "name": "region",
+            "type": "table column",
+            "column name": "Region",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "East"
+            ],
+            "synonyms": [
+              "Region"
+            ]
+          },
+          {
+            "name": "product_id",
+            "type": "table column",
+            "column name": "\"Product ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "OFF-AR-10003478",
+              "FUR-FU-10000010",
+              "OFF-PA-10002947",
+              "OFF-BI-10003476",
+              "FUR-BO-10003433"
+            ],
+            "synonyms": [
+              "Product ID"
+            ]
+          },
+          {
+            "name": "sales",
+            "type": "table column",
+            "column name": "Sales",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              19.536,
+              9.94,
+              37.408,
+              3.438,
+              61.96
+            ],
+            "synonyms": [
+              "Sales"
+            ]
+          },
+          {
+            "name": "quantity",
+            "type": "table column",
+            "column name": "Quantity",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              2,
+              7,
+              4,
+              6
+            ],
+            "synonyms": [
+              "Quantity"
+            ]
+          },
+          {
+            "name": "discount",
+            "type": "table column",
+            "column name": "Discount",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.2,
+              0.0,
+              0.7,
+              0.5,
+              0.4
+            ],
+            "synonyms": [
+              "Discount"
+            ]
+          },
+          {
+            "name": "profit",
+            "type": "table column",
+            "column name": "Profit",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4.884,
+              3.0814,
+              13.0928,
+              -2.5212,
+              -53.2856
+            ],
+            "synonyms": [
+              "Profit"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "east_superstore"
+        ]
+      },
+      {
+        "name": "people",
+        "type": "simple table",
+        "table path": "main.people",
+        "unique properties": [
+          [
+            "customer_id",
+            "region"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "\"Customer ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AA-10315",
+              "AA-10375",
+              "AA-10480",
+              "AA-10645",
+              "AB-10015"
+            ],
+            "synonyms": [
+              "Customer ID"
+            ]
+          },
+          {
+            "name": "customer_name",
+            "type": "table column",
+            "column name": "\"Customer Name\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Alex Avila",
+              "Allen Armold",
+              "Andrew Allen",
+              "Anna Andreadi",
+              "Aaron Bergman"
+            ],
+            "synonyms": [
+              "Customer Name"
+            ]
+          },
+          {
+            "name": "segment",
+            "type": "table column",
+            "column name": "Segment",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Consumer",
+              "Home Office",
+              "Corporate"
+            ],
+            "synonyms": [
+              "Segment"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "Country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "United States"
+            ],
+            "synonyms": [
+              "Country"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "City",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Round Rock",
+              "Omaha",
+              "Springfield",
+              "Oklahoma City",
+              "Arlington"
+            ],
+            "synonyms": [
+              "City"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "State",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Texas",
+              "Nebraska",
+              "Missouri",
+              "Oklahoma",
+              "Indiana"
+            ],
+            "synonyms": [
+              "State"
+            ]
+          },
+          {
+            "name": "postal_code",
+            "type": "table column",
+            "column name": "\"Postal Code\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              78664,
+              68104,
+              65807,
+              73120,
+              76017
+            ],
+            "synonyms": [
+              "Postal Code"
+            ]
+          },
+          {
+            "name": "region",
+            "type": "table column",
+            "column name": "Region",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Central",
+              "East",
+              "West",
+              "South"
+            ],
+            "synonyms": [
+              "Region"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "people"
+        ]
+      },
+      {
+        "name": "product",
+        "type": "simple table",
+        "table path": "main.product",
+        "unique properties": [
+          [
+            "product_id",
+            "region"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "product_id",
+            "type": "table column",
+            "column name": "\"Product ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FUR-BO-10000112",
+              "FUR-BO-10000330",
+              "FUR-BO-10000362",
+              "FUR-BO-10000468",
+              "FUR-BO-10000711"
+            ],
+            "synonyms": [
+              "Product ID"
+            ]
+          },
+          {
+            "name": "product_name",
+            "type": "table column",
+            "column name": "\"Product Name\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Sauder Camden County Barrister Bookca...",
+              "Sauder Inglewood Library Bookcases",
+              "O'Sullivan 2-Shelf Heavy-Duty Bookcases",
+              "O'Sullivan Living Dimensions 2-Shelf ...",
+              "O'Sullivan 3-Shelf Heavy-Duty Bookcases"
+            ],
+            "synonyms": [
+              "Product Name"
+            ]
+          },
+          {
+            "name": "category",
+            "type": "table column",
+            "column name": "Category",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Furniture",
+              "Office Supplies",
+              "Technology"
+            ],
+            "synonyms": [
+              "Category"
+            ]
+          },
+          {
+            "name": "sub_category",
+            "type": "table column",
+            "column name": "\"Sub-Category\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Bookcases",
+              "Chairs",
+              "Furnishings",
+              "Tables",
+              "Appliances"
+            ],
+            "synonyms": [
+              "Sub-Category"
+            ]
+          },
+          {
+            "name": "region",
+            "type": "table column",
+            "column name": "Region",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Central",
+              "South",
+              "West",
+              "East"
+            ],
+            "synonyms": [
+              "Region"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "product"
+        ]
+      },
+      {
+        "name": "south_superstore",
+        "type": "simple table",
+        "table path": "main.south_superstore",
+        "unique properties": [
+          "row_id"
+        ],
+        "properties": [
+          {
+            "name": "row_id",
+            "type": "table column",
+            "column name": "\"Row ID\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10343,
+              10344,
+              10345,
+              10346,
+              10347
+            ],
+            "synonyms": [
+              "Row ID"
+            ]
+          },
+          {
+            "name": "order_id",
+            "type": "table column",
+            "column name": "\"Order ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CA-2011-106054",
+              "CA-2011-167199",
+              "CA-2011-149020",
+              "CA-2011-162775",
+              "CA-2011-109232"
+            ],
+            "synonyms": [
+              "Order ID"
+            ]
+          },
+          {
+            "name": "order_date",
+            "type": "table column",
+            "column name": "\"Order Date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2013-01-06",
+              "2013-01-10",
+              "2013-01-13",
+              "2013-01-15",
+              "2013-01-20"
+            ],
+            "synonyms": [
+              "Order Date"
+            ]
+          },
+          {
+            "name": "ship_date",
+            "type": "table column",
+            "column name": "\"Ship Date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2013-01-07",
+              "2013-01-10",
+              "2013-01-15",
+              "2013-01-16",
+              "2013-01-17"
+            ],
+            "synonyms": [
+              "Ship Date"
+            ]
+          },
+          {
+            "name": "ship_mode",
+            "type": "table column",
+            "column name": "\"Ship Mode\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "First Class",
+              "Standard Class",
+              "Second Class",
+              "Same Day"
+            ],
+            "synonyms": [
+              "Ship Mode"
+            ]
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "\"Customer ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "JO-15145",
+              "ME-17320",
+              "AJ-10780",
+              "CS-12250",
+              "ND-18370"
+            ],
+            "synonyms": [
+              "Customer ID"
+            ]
+          },
+          {
+            "name": "region",
+            "type": "table column",
+            "column name": "Region",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "South"
+            ],
+            "synonyms": [
+              "Region"
+            ]
+          },
+          {
+            "name": "product_id",
+            "type": "table column",
+            "column name": "\"Product ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "OFF-AR-10002399",
+              "FUR-CH-10004063",
+              "OFF-BI-10004632",
+              "OFF-AR-10001662",
+              "TEC-PH-10004977"
+            ],
+            "synonyms": [
+              "Product ID"
+            ]
+          },
+          {
+            "name": "sales",
+            "type": "table column",
+            "column name": "Sales",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              12.78,
+              2573.82,
+              609.98,
+              5.48,
+              391.98
+            ],
+            "synonyms": [
+              "Sales"
+            ]
+          },
+          {
+            "name": "quantity",
+            "type": "table column",
+            "column name": "Quantity",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              9,
+              2,
+              4,
+              1
+            ],
+            "synonyms": [
+              "Quantity"
+            ]
+          },
+          {
+            "name": "discount",
+            "type": "table column",
+            "column name": "Discount",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0,
+              0.7,
+              0.2,
+              0.5,
+              0.45
+            ],
+            "synonyms": [
+              "Discount"
+            ]
+          },
+          {
+            "name": "profit",
+            "type": "table column",
+            "column name": "Profit",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5.2398,
+              746.4078,
+              274.491,
+              1.4796,
+              113.6742
+            ],
+            "synonyms": [
+              "Profit"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "south_superstore"
+        ]
+      },
+      {
+        "name": "west_superstore",
+        "type": "simple table",
+        "table path": "main.west_superstore",
+        "unique properties": [
+          "row_id"
+        ],
+        "properties": [
+          {
+            "name": "row_id",
+            "type": "table column",
+            "column name": "\"Row ID\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              13583,
+              13584,
+              13585,
+              13586,
+              13587
+            ],
+            "synonyms": [
+              "Row ID"
+            ]
+          },
+          {
+            "name": "order_id",
+            "type": "table column",
+            "column name": "\"Order ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CA-2011-130813",
+              "CA-2011-157147",
+              "CA-2011-123477",
+              "CA-2011-146591",
+              "CA-2011-148614"
+            ],
+            "synonyms": [
+              "Order ID"
+            ]
+          },
+          {
+            "name": "order_date",
+            "type": "table column",
+            "column name": "\"Order Date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2013-01-06",
+              "2013-01-13",
+              "2013-01-18",
+              "2013-01-19",
+              "2013-01-20"
+            ],
+            "synonyms": [
+              "Order Date"
+            ]
+          },
+          {
+            "name": "ship_date",
+            "type": "table column",
+            "column name": "\"Ship Date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2013-01-08",
+              "2013-01-18",
+              "2013-01-21",
+              "2013-01-20",
+              "2013-01-25"
+            ],
+            "synonyms": [
+              "Ship Date"
+            ]
+          },
+          {
+            "name": "ship_mode",
+            "type": "table column",
+            "column name": "\"Ship Mode\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Second Class",
+              "Standard Class",
+              "First Class",
+              "Same Day"
+            ],
+            "synonyms": [
+              "Ship Mode"
+            ]
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "\"Customer ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "LS-17230",
+              "BD-11605",
+              "DW-13195",
+              "TS-21340",
+              "MV-17485"
+            ],
+            "synonyms": [
+              "Customer ID"
+            ]
+          },
+          {
+            "name": "region",
+            "type": "table column",
+            "column name": "Region",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "West"
+            ],
+            "synonyms": [
+              "Region"
+            ]
+          },
+          {
+            "name": "product_id",
+            "type": "table column",
+            "column name": "\"Product ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "OFF-PA-10002005",
+              "OFF-ST-10000078",
+              "FUR-BO-10003034",
+              "OFF-AR-10003514",
+              "OFF-AP-10000692"
+            ],
+            "synonyms": [
+              "Product ID"
+            ]
+          },
+          {
+            "name": "sales",
+            "type": "table column",
+            "column name": "Sales",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              19.44,
+              1325.85,
+              333.999,
+              19.9,
+              64.864
+            ],
+            "synonyms": [
+              "Sales"
+            ]
+          },
+          {
+            "name": "quantity",
+            "type": "table column",
+            "column name": "Quantity",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              5,
+              4,
+              10,
+              2
+            ],
+            "synonyms": [
+              "Quantity"
+            ]
+          },
+          {
+            "name": "discount",
+            "type": "table column",
+            "column name": "Discount",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0,
+              0.15,
+              0.2,
+              0.7,
+              0.5
+            ],
+            "synonyms": [
+              "Discount"
+            ]
+          },
+          {
+            "name": "profit",
+            "type": "table column",
+            "column name": "Profit",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              9.3312,
+              238.653,
+              3.9294,
+              6.567,
+              6.4864
+            ],
+            "synonyms": [
+              "Profit"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "west_superstore"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "central_superstore",
+        "parent collection": "product",
+        "child collection": "central_superstore",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "product_id": [
+            "product_id"
+          ],
+          "region": [
+            "region"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "product",
+        "original parent": "product",
+        "original property": "central_superstore",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "central_superstore",
+        "parent collection": "people",
+        "child collection": "central_superstore",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ],
+          "region": [
+            "region"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "people",
+        "original parent": "people",
+        "original property": "central_superstore",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "east_superstore",
+        "parent collection": "product",
+        "child collection": "east_superstore",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "product_id": [
+            "product_id"
+          ],
+          "region": [
+            "region"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "product",
+        "original parent": "product",
+        "original property": "east_superstore",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "east_superstore",
+        "parent collection": "people",
+        "child collection": "east_superstore",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ],
+          "region": [
+            "region"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "people",
+        "original parent": "people",
+        "original property": "east_superstore",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "south_superstore",
+        "parent collection": "product",
+        "child collection": "south_superstore",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "product_id": [
+            "product_id"
+          ],
+          "region": [
+            "region"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "product",
+        "original parent": "product",
+        "original property": "south_superstore",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "south_superstore",
+        "parent collection": "people",
+        "child collection": "south_superstore",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ],
+          "region": [
+            "region"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "people",
+        "original parent": "people",
+        "original property": "south_superstore",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "west_superstore",
+        "parent collection": "product",
+        "child collection": "west_superstore",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "product_id": [
+            "product_id"
+          ],
+          "region": [
+            "region"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "product",
+        "original parent": "product",
+        "original property": "west_superstore",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "west_superstore",
+        "parent collection": "people",
+        "child collection": "west_superstore",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ],
+          "region": [
+            "region"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "people",
+        "original parent": "people",
+        "original property": "west_superstore",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

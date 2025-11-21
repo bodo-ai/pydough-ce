@@ -1,0 +1,367 @@
+[
+  {
+    "name": "computer_student",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "advisedby",
+        "type": "simple table",
+        "table path": "main.advisedBy",
+        "unique properties": [
+          [
+            "p_id",
+            "p_id_dummy"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "p_id",
+            "type": "table column",
+            "column name": "p_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6,
+              9,
+              13,
+              14,
+              18
+            ],
+            "synonyms": [
+              "p_id"
+            ]
+          },
+          {
+            "name": "p_id_dummy",
+            "type": "table column",
+            "column name": "p_id_dummy",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              7,
+              29,
+              57,
+              72
+            ],
+            "synonyms": [
+              "p_id_dummy"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "advisedBy"
+        ]
+      },
+      {
+        "name": "course",
+        "type": "simple table",
+        "table path": "main.course",
+        "unique properties": [
+          "course_id"
+        ],
+        "properties": [
+          {
+            "name": "course_id",
+            "type": "table column",
+            "column name": "course_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "course_id"
+            ]
+          },
+          {
+            "name": "courselevel",
+            "type": "table column",
+            "column name": "courseLevel",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Level_500",
+              "Level_300",
+              "Level_400"
+            ],
+            "synonyms": [
+              "courseLevel"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "course"
+        ]
+      },
+      {
+        "name": "person",
+        "type": "simple table",
+        "table path": "main.person",
+        "unique properties": [
+          "p_id"
+        ],
+        "properties": [
+          {
+            "name": "p_id",
+            "type": "table column",
+            "column name": "p_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "synonyms": [
+              "p_id"
+            ]
+          },
+          {
+            "name": "professor",
+            "type": "table column",
+            "column name": "professor",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "professor"
+            ]
+          },
+          {
+            "name": "student",
+            "type": "table column",
+            "column name": "student",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              0
+            ],
+            "synonyms": [
+              "student"
+            ]
+          },
+          {
+            "name": "hasposition",
+            "type": "table column",
+            "column name": "hasPosition",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0",
+              "Faculty",
+              "Faculty_adj",
+              "Faculty_eme",
+              "Faculty_aff"
+            ],
+            "synonyms": [
+              "hasPosition"
+            ]
+          },
+          {
+            "name": "inphase",
+            "type": "table column",
+            "column name": "inPhase",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0",
+              "Post_Quals",
+              "Post_Generals",
+              "Pre_Quals"
+            ],
+            "synonyms": [
+              "inPhase"
+            ]
+          },
+          {
+            "name": "yearsinprogram",
+            "type": "table column",
+            "column name": "yearsInProgram",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0",
+              "Year_2",
+              "Year_5",
+              "Year_7",
+              "Year_10"
+            ],
+            "synonyms": [
+              "yearsInProgram"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "person"
+        ]
+      },
+      {
+        "name": "taughtby",
+        "type": "simple table",
+        "table path": "main.taughtBy",
+        "unique properties": [
+          [
+            "course_id",
+            "p_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "course_id",
+            "type": "table column",
+            "column name": "course_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "course_id"
+            ]
+          },
+          {
+            "name": "p_id",
+            "type": "table column",
+            "column name": "p_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              40,
+              180,
+              279,
+              107,
+              415
+            ],
+            "synonyms": [
+              "p_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "taughtBy"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "advisedby",
+        "parent collection": "person",
+        "child collection": "advisedby",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "p_id": [
+            "p_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "advisedby",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "advisedby_2",
+        "parent collection": "person",
+        "child collection": "advisedby",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "p_id": [
+            "p_id_dummy"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person_2",
+        "original parent": "person",
+        "original property": "advisedby_2",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "taughtby",
+        "parent collection": "course",
+        "child collection": "taughtby",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "course_id": [
+            "course_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "course",
+        "original parent": "course",
+        "original property": "taughtby",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "taughtby",
+        "parent collection": "person",
+        "child collection": "taughtby",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "p_id": [
+            "p_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "taughtby",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

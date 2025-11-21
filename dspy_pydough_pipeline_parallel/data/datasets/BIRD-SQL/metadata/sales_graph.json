@@ -1,0 +1,413 @@
+[
+  {
+    "name": "sales",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "customers",
+        "type": "simple table",
+        "table path": "main.Customers",
+        "unique properties": [
+          "customerid"
+        ],
+        "properties": [
+          {
+            "name": "customerid",
+            "type": "table column",
+            "column name": "CustomerID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "CustomerID"
+            ]
+          },
+          {
+            "name": "firstname",
+            "type": "table column",
+            "column name": "FirstName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aaron",
+              "Abby",
+              "Abe",
+              "Abhijit",
+              "Abigail"
+            ],
+            "synonyms": [
+              "FirstName"
+            ]
+          },
+          {
+            "name": "middleinitial",
+            "type": "table column",
+            "column name": "MiddleInitial",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A",
+              "B",
+              "C",
+              "E",
+              "J"
+            ],
+            "synonyms": [
+              "MiddleInitial"
+            ]
+          },
+          {
+            "name": "lastname",
+            "type": "table column",
+            "column name": "LastName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Alexander",
+              "Bryant",
+              "Butler",
+              "Chen",
+              "Coleman"
+            ],
+            "synonyms": [
+              "LastName"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Customers"
+        ]
+      },
+      {
+        "name": "employees",
+        "type": "simple table",
+        "table path": "main.Employees",
+        "unique properties": [
+          "employeeid"
+        ],
+        "properties": [
+          {
+            "name": "employeeid",
+            "type": "table column",
+            "column name": "EmployeeID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "EmployeeID"
+            ]
+          },
+          {
+            "name": "firstname",
+            "type": "table column",
+            "column name": "FirstName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Abraham",
+              "Reginald",
+              "Cheryl",
+              "Michel",
+              "Innes"
+            ],
+            "synonyms": [
+              "FirstName"
+            ]
+          },
+          {
+            "name": "middleinitial",
+            "type": "table column",
+            "column name": "MiddleInitial",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "e",
+              "l",
+              "a",
+              "u",
+              "r"
+            ],
+            "synonyms": [
+              "MiddleInitial"
+            ]
+          },
+          {
+            "name": "lastname",
+            "type": "table column",
+            "column name": "LastName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Bennet",
+              "Blotchet-Halls",
+              "Carson",
+              "DeFrance",
+              "del Castillo"
+            ],
+            "synonyms": [
+              "LastName"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Employees"
+        ]
+      },
+      {
+        "name": "products",
+        "type": "simple table",
+        "table path": "main.Products",
+        "unique properties": [
+          "productid"
+        ],
+        "properties": [
+          {
+            "name": "productid",
+            "type": "table column",
+            "column name": "ProductID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "ProductID"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Adjustable Race",
+              "Bearing Ball",
+              "BB Ball Bearing",
+              "Headset Ball Bearings",
+              "Blade"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "price",
+            "type": "table column",
+            "column name": "Price",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1.6,
+              0.8,
+              2.4,
+              0.0,
+              189.6
+            ],
+            "synonyms": [
+              "Price"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Products"
+        ]
+      },
+      {
+        "name": "sales",
+        "type": "simple table",
+        "table path": "main.Sales",
+        "unique properties": [
+          "salesid"
+        ],
+        "properties": [
+          {
+            "name": "salesid",
+            "type": "table column",
+            "column name": "SalesID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "SalesID"
+            ]
+          },
+          {
+            "name": "salespersonid",
+            "type": "table column",
+            "column name": "SalesPersonID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              17,
+              5,
+              8,
+              1,
+              14
+            ],
+            "synonyms": [
+              "SalesPersonID"
+            ]
+          },
+          {
+            "name": "customerid",
+            "type": "table column",
+            "column name": "CustomerID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10482,
+              1964,
+              12300,
+              4182,
+              15723
+            ],
+            "synonyms": [
+              "CustomerID"
+            ]
+          },
+          {
+            "name": "productid",
+            "type": "table column",
+            "column name": "ProductID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              500,
+              306,
+              123,
+              437,
+              246
+            ],
+            "synonyms": [
+              "ProductID"
+            ]
+          },
+          {
+            "name": "quantity",
+            "type": "table column",
+            "column name": "Quantity",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              500,
+              810,
+              123,
+              437,
+              750
+            ],
+            "synonyms": [
+              "Quantity"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Sales"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "sales",
+        "parent collection": "products",
+        "child collection": "sales",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "productid": [
+            "productid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "products",
+        "original parent": "products",
+        "original property": "sales",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "sales",
+        "parent collection": "customers",
+        "child collection": "sales",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customerid": [
+            "customerid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customers",
+        "original parent": "customers",
+        "original property": "sales",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "sales",
+        "parent collection": "employees",
+        "child collection": "sales",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "employeeid": [
+            "salespersonid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "employees",
+        "original parent": "employees",
+        "original property": "sales",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

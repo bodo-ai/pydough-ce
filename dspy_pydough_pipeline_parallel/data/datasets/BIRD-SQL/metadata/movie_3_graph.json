@@ -1,0 +1,2174 @@
+[
+  {
+    "name": "movie_3",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "actor",
+        "type": "simple table",
+        "table path": "main.actor",
+        "unique properties": [
+          "actor_id"
+        ],
+        "properties": [
+          {
+            "name": "actor_id",
+            "type": "table column",
+            "column name": "actor_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "actor_id"
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "PENELOPE",
+              "NICK",
+              "ED",
+              "JENNIFER",
+              "JOHNNY"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "GUINESS",
+              "WAHLBERG",
+              "CHASE",
+              "DAVIS",
+              "LOLLOBRIGIDA"
+            ],
+            "synonyms": [
+              "last_name"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 04:34:33.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "actor"
+        ]
+      },
+      {
+        "name": "address",
+        "type": "simple table",
+        "table path": "main.address",
+        "unique properties": [
+          "address_id"
+        ],
+        "properties": [
+          {
+            "name": "address_id",
+            "type": "table column",
+            "column name": "address_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "address_id"
+            ]
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "47 MySakila Drive",
+              "28 MySQL Boulevard",
+              "23 Workhaven Lane",
+              "1411 Lillydale Drive",
+              "1913 Hanoi Way"
+            ],
+            "synonyms": [
+              "address"
+            ]
+          },
+          {
+            "name": "address2",
+            "type": "table column",
+            "column name": "address2",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              ""
+            ],
+            "synonyms": [
+              "address2"
+            ]
+          },
+          {
+            "name": "district",
+            "type": "table column",
+            "column name": "district",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Alberta",
+              "QLD",
+              "Nagasaki",
+              "California",
+              "Attika"
+            ],
+            "synonyms": [
+              "district"
+            ]
+          },
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "city_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              300,
+              576,
+              463,
+              449,
+              38
+            ],
+            "synonyms": [
+              "city_id"
+            ]
+          },
+          {
+            "name": "postal_code",
+            "type": "table column",
+            "column name": "postal_code",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "",
+              "35200",
+              "17886",
+              "83579",
+              "53561"
+            ],
+            "synonyms": [
+              "postal_code"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "",
+              "14033335568",
+              "6172235589",
+              "28303384290",
+              "838635286649"
+            ],
+            "synonyms": [
+              "phone"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 04:45:30.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "address"
+        ]
+      },
+      {
+        "name": "category",
+        "type": "simple table",
+        "table path": "main.category",
+        "unique properties": [
+          "category_id"
+        ],
+        "properties": [
+          {
+            "name": "category_id",
+            "type": "table column",
+            "column name": "category_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "category_id"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Action",
+              "Animation",
+              "Children",
+              "Classics",
+              "Comedy"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 04:46:27.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "category"
+        ]
+      },
+      {
+        "name": "city",
+        "type": "simple table",
+        "table path": "main.city",
+        "unique properties": [
+          "city_id"
+        ],
+        "properties": [
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "city_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "city_id"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A Corua (La Corua)",
+              "Abha",
+              "Abu Dhabi",
+              "Acua",
+              "Adana"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "country_id",
+            "type": "table column",
+            "column name": "country_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              87,
+              82,
+              101,
+              60,
+              97
+            ],
+            "synonyms": [
+              "country_id"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 04:45:25.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "city"
+        ]
+      },
+      {
+        "name": "country",
+        "type": "simple table",
+        "table path": "main.country",
+        "unique properties": [
+          "country_id"
+        ],
+        "properties": [
+          {
+            "name": "country_id",
+            "type": "table column",
+            "column name": "country_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "country_id"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Afghanistan",
+              "Algeria",
+              "American Samoa",
+              "Angola",
+              "Anguilla"
+            ],
+            "synonyms": [
+              "country"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 04:44:00.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "country"
+        ]
+      },
+      {
+        "name": "customer",
+        "type": "simple table",
+        "table path": "main.customer",
+        "unique properties": [
+          "customer_id"
+        ],
+        "properties": [
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "customer_id"
+            ]
+          },
+          {
+            "name": "store_id",
+            "type": "table column",
+            "column name": "store_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "store_id"
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "MARY",
+              "PATRICIA",
+              "LINDA",
+              "BARBARA",
+              "ELIZABETH"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "SMITH",
+              "JOHNSON",
+              "WILLIAMS",
+              "JONES",
+              "BROWN"
+            ],
+            "synonyms": [
+              "last_name"
+            ]
+          },
+          {
+            "name": "email",
+            "type": "table column",
+            "column name": "email",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "MARY.SMITH@sakilacustomer.org",
+              "PATRICIA.JOHNSON@sakilacustomer.org",
+              "LINDA.WILLIAMS@sakilacustomer.org",
+              "BARBARA.JONES@sakilacustomer.org",
+              "ELIZABETH.BROWN@sakilacustomer.org"
+            ],
+            "synonyms": [
+              "email"
+            ]
+          },
+          {
+            "name": "address_id",
+            "type": "table column",
+            "column name": "address_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "synonyms": [
+              "address_id"
+            ]
+          },
+          {
+            "name": "active",
+            "type": "table column",
+            "column name": "active",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              0
+            ],
+            "synonyms": [
+              "active"
+            ]
+          },
+          {
+            "name": "create_date",
+            "type": "table column",
+            "column name": "create_date",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-14 22:04:36.0",
+              "2006-02-14 22:04:37.0"
+            ],
+            "synonyms": [
+              "create_date"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 04:57:20.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "customer"
+        ]
+      },
+      {
+        "name": "film",
+        "type": "simple table",
+        "table path": "main.film",
+        "unique properties": [
+          "film_id"
+        ],
+        "properties": [
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "film_id"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "ACADEMY DINOSAUR",
+              "ACE GOLDFINGER",
+              "ADAPTATION HOLES",
+              "AFFAIR PREJUDICE",
+              "AFRICAN EGG"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "description",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A Epic Drama of a Feminist And a Mad ...",
+              "A Astounding Epistle of a Database Ad...",
+              "A Astounding Reflection of a Lumberja...",
+              "A Fanciful Documentary of a Frisbee A...",
+              "A Fast-Paced Documentary of a Pastry ..."
+            ],
+            "synonyms": [
+              "description"
+            ]
+          },
+          {
+            "name": "release_year",
+            "type": "table column",
+            "column name": "release_year",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2006"
+            ],
+            "synonyms": [
+              "release_year"
+            ]
+          },
+          {
+            "name": "language_id",
+            "type": "table column",
+            "column name": "language_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1
+            ],
+            "synonyms": [
+              "language_id"
+            ]
+          },
+          {
+            "name": "original_language_id",
+            "type": "table column",
+            "column name": "original_language_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "original_language_id"
+            ]
+          },
+          {
+            "name": "rental_duration",
+            "type": "table column",
+            "column name": "rental_duration",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6,
+              3,
+              7,
+              5,
+              4
+            ],
+            "synonyms": [
+              "rental_duration"
+            ]
+          },
+          {
+            "name": "rental_rate",
+            "type": "table column",
+            "column name": "rental_rate",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.99,
+              4.99,
+              2.99
+            ],
+            "synonyms": [
+              "rental_rate"
+            ]
+          },
+          {
+            "name": "length_",
+            "type": "table column",
+            "column name": "\"length\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              86,
+              48,
+              50,
+              117,
+              130
+            ],
+            "synonyms": [
+              "length"
+            ]
+          },
+          {
+            "name": "replacement_cost",
+            "type": "table column",
+            "column name": "replacement_cost",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              20.99,
+              12.99,
+              18.99,
+              26.99,
+              22.99
+            ],
+            "synonyms": [
+              "replacement_cost"
+            ]
+          },
+          {
+            "name": "rating",
+            "type": "table column",
+            "column name": "rating",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "PG",
+              "G",
+              "NC-17",
+              "PG-13",
+              "R"
+            ],
+            "synonyms": [
+              "rating"
+            ]
+          },
+          {
+            "name": "special_features",
+            "type": "table column",
+            "column name": "special_features",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Deleted Scenes,Behind the Scenes",
+              "Trailers,Deleted Scenes",
+              "Commentaries,Behind the Scenes",
+              "Deleted Scenes",
+              "Trailers"
+            ],
+            "synonyms": [
+              "special_features"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 05:03:42.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "film"
+        ]
+      },
+      {
+        "name": "film_actor",
+        "type": "simple table",
+        "table path": "main.film_actor",
+        "unique properties": [
+          [
+            "actor_id",
+            "film_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "actor_id",
+            "type": "table column",
+            "column name": "actor_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "actor_id"
+            ]
+          },
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              23,
+              25,
+              106,
+              140
+            ],
+            "synonyms": [
+              "film_id"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 05:05:03.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "film_actor"
+        ]
+      },
+      {
+        "name": "film_category",
+        "type": "simple table",
+        "table path": "main.film_category",
+        "unique properties": [
+          [
+            "film_id",
+            "category_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "film_id"
+            ]
+          },
+          {
+            "name": "category_id",
+            "type": "table column",
+            "column name": "category_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6,
+              11,
+              8,
+              9,
+              5
+            ],
+            "synonyms": [
+              "category_id"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 05:07:09.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "film_category"
+        ]
+      },
+      {
+        "name": "film_text",
+        "type": "simple table",
+        "table path": "main.film_text",
+        "unique properties": [
+          "film_id"
+        ],
+        "properties": [
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "film_id"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "ACADEMY DINOSAUR",
+              "ACE GOLDFINGER",
+              "ADAPTATION HOLES",
+              "AFFAIR PREJUDICE",
+              "AFRICAN EGG"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "description",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A Epic Drama of a Feminist And a Mad ...",
+              "A Astounding Epistle of a Database Ad...",
+              "A Astounding Reflection of a Lumberja...",
+              "A Fanciful Documentary of a Frisbee A...",
+              "A Fast-Paced Documentary of a Pastry ..."
+            ],
+            "synonyms": [
+              "description"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "film_text"
+        ]
+      },
+      {
+        "name": "inventory",
+        "type": "simple table",
+        "table path": "main.inventory",
+        "unique properties": [
+          "inventory_id"
+        ],
+        "properties": [
+          {
+            "name": "inventory_id",
+            "type": "table column",
+            "column name": "inventory_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "inventory_id"
+            ]
+          },
+          {
+            "name": "film_id",
+            "type": "table column",
+            "column name": "film_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "film_id"
+            ]
+          },
+          {
+            "name": "store_id",
+            "type": "table column",
+            "column name": "store_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "store_id"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 05:09:17.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "inventory"
+        ]
+      },
+      {
+        "name": "language",
+        "type": "simple table",
+        "table path": "main.language",
+        "unique properties": [
+          "language_id"
+        ],
+        "properties": [
+          {
+            "name": "language_id",
+            "type": "table column",
+            "column name": "language_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "language_id"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "English",
+              "Italian",
+              "Japanese",
+              "Mandarin",
+              "French"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 05:02:19.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "language"
+        ]
+      },
+      {
+        "name": "payment",
+        "type": "simple table",
+        "table path": "main.payment",
+        "unique properties": [
+          "payment_id"
+        ],
+        "properties": [
+          {
+            "name": "payment_id",
+            "type": "table column",
+            "column name": "payment_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "payment_id"
+            ]
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "customer_id"
+            ]
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "staff_id"
+            ]
+          },
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              76,
+              573,
+              1185,
+              1422,
+              1476
+            ],
+            "synonyms": [
+              "rental_id"
+            ]
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2.99,
+              0.99,
+              5.99,
+              9.99,
+              4.99
+            ],
+            "synonyms": [
+              "amount"
+            ]
+          },
+          {
+            "name": "payment_date",
+            "type": "table column",
+            "column name": "payment_date",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2005-05-25 11:30:37.0",
+              "2005-05-28 10:35:23.0",
+              "2005-06-15 00:54:12.0",
+              "2005-06-15 18:02:53.0",
+              "2005-06-15 21:08:46.0"
+            ],
+            "synonyms": [
+              "payment_date"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 22:12:30.0",
+              "2006-02-15 22:12:31.0",
+              "2006-02-15 22:12:32.0",
+              "2006-02-15 22:12:33.0",
+              "2006-02-15 22:12:34.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "payment"
+        ]
+      },
+      {
+        "name": "rental",
+        "type": "simple table",
+        "table path": "main.rental",
+        "unique properties": [
+          "rental_id",
+          [
+            "rental_date",
+            "inventory_id",
+            "customer_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "rental_id",
+            "type": "table column",
+            "column name": "rental_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "rental_id"
+            ]
+          },
+          {
+            "name": "rental_date",
+            "type": "table column",
+            "column name": "rental_date",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2005-05-24 22:53:30.0",
+              "2005-05-24 22:54:33.0",
+              "2005-05-24 23:03:39.0",
+              "2005-05-24 23:04:41.0",
+              "2005-05-24 23:05:21.0"
+            ],
+            "synonyms": [
+              "rental_date"
+            ]
+          },
+          {
+            "name": "inventory_id",
+            "type": "table column",
+            "column name": "inventory_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              367,
+              1525,
+              1711,
+              2452,
+              2079
+            ],
+            "synonyms": [
+              "inventory_id"
+            ]
+          },
+          {
+            "name": "customer_id",
+            "type": "table column",
+            "column name": "customer_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              130,
+              459,
+              408,
+              333,
+              222
+            ],
+            "synonyms": [
+              "customer_id"
+            ]
+          },
+          {
+            "name": "return_date",
+            "type": "table column",
+            "column name": "return_date",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2005-05-26 22:04:30.0",
+              "2005-05-28 19:40:33.0",
+              "2005-06-01 22:12:39.0",
+              "2005-06-03 01:43:41.0",
+              "2005-06-02 04:33:21.0"
+            ],
+            "synonyms": [
+              "return_date"
+            ]
+          },
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "staff_id"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 21:30:53.0",
+              "2006-02-23 04:12:08.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "rental"
+        ]
+      },
+      {
+        "name": "staff",
+        "type": "simple table",
+        "table path": "main.staff",
+        "unique properties": [
+          "staff_id"
+        ],
+        "properties": [
+          {
+            "name": "staff_id",
+            "type": "table column",
+            "column name": "staff_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "staff_id"
+            ]
+          },
+          {
+            "name": "first_name",
+            "type": "table column",
+            "column name": "first_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Mike",
+              "Jon"
+            ],
+            "synonyms": [
+              "first_name"
+            ]
+          },
+          {
+            "name": "last_name",
+            "type": "table column",
+            "column name": "last_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Hillyer",
+              "Stephens"
+            ],
+            "synonyms": [
+              "last_name"
+            ]
+          },
+          {
+            "name": "address_id",
+            "type": "table column",
+            "column name": "address_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              4
+            ],
+            "synonyms": [
+              "address_id"
+            ]
+          },
+          {
+            "name": "picture",
+            "type": "table column",
+            "column name": "picture",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0x3F504E470D0A1A0A0000000D49484452000..."
+            ],
+            "synonyms": [
+              "picture"
+            ]
+          },
+          {
+            "name": "email",
+            "type": "table column",
+            "column name": "email",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Mike.Hillyer@sakilastaff.com",
+              "Jon.Stephens@sakilastaff.com"
+            ],
+            "synonyms": [
+              "email"
+            ]
+          },
+          {
+            "name": "store_id",
+            "type": "table column",
+            "column name": "store_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "store_id"
+            ]
+          },
+          {
+            "name": "active",
+            "type": "table column",
+            "column name": "active",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1
+            ],
+            "synonyms": [
+              "active"
+            ]
+          },
+          {
+            "name": "username",
+            "type": "table column",
+            "column name": "username",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Mike",
+              "Jon"
+            ],
+            "synonyms": [
+              "username"
+            ]
+          },
+          {
+            "name": "password",
+            "type": "table column",
+            "column name": "password",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "8cb2237d0679ca88db6464eac60da96345513964"
+            ],
+            "synonyms": [
+              "password"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 04:57:16.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "staff"
+        ]
+      },
+      {
+        "name": "store",
+        "type": "simple table",
+        "table path": "main.store",
+        "unique properties": [
+          "store_id",
+          "manager_staff_id"
+        ],
+        "properties": [
+          {
+            "name": "store_id",
+            "type": "table column",
+            "column name": "store_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "store_id"
+            ]
+          },
+          {
+            "name": "manager_staff_id",
+            "type": "table column",
+            "column name": "manager_staff_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "manager_staff_id"
+            ]
+          },
+          {
+            "name": "address_id",
+            "type": "table column",
+            "column name": "address_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "address_id"
+            ]
+          },
+          {
+            "name": "last_update",
+            "type": "table column",
+            "column name": "last_update",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2006-02-15 04:57:12.0"
+            ],
+            "synonyms": [
+              "last_update"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "store"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "address",
+        "parent collection": "city",
+        "child collection": "address",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "city_id": [
+            "city_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "city",
+        "original parent": "city",
+        "original property": "address",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "city",
+        "parent collection": "country",
+        "child collection": "city",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "country_id": [
+            "country_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country",
+        "original parent": "country",
+        "original property": "city",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "customer",
+        "parent collection": "address",
+        "child collection": "customer",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "address_id": [
+            "address_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "address",
+        "original parent": "address",
+        "original property": "customer",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "customer",
+        "parent collection": "store",
+        "child collection": "customer",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "store_id": [
+            "store_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "store",
+        "original parent": "store",
+        "original property": "customer",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "film",
+        "parent collection": "language",
+        "child collection": "film",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "language_id": [
+            "original_language_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "language",
+        "original parent": "language",
+        "original property": "film",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "film_2",
+        "parent collection": "language",
+        "child collection": "film",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "language_id": [
+            "language_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "language_2",
+        "original parent": "language",
+        "original property": "film_2",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "film_actor",
+        "parent collection": "film",
+        "child collection": "film_actor",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "film_id": [
+            "film_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "film",
+        "original parent": "film",
+        "original property": "film_actor",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "film_actor",
+        "parent collection": "actor",
+        "child collection": "film_actor",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "actor_id": [
+            "actor_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "actor",
+        "original parent": "actor",
+        "original property": "film_actor",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "film_category",
+        "parent collection": "category",
+        "child collection": "film_category",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "category_id": [
+            "category_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "category",
+        "original parent": "category",
+        "original property": "film_category",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "film_category",
+        "parent collection": "film",
+        "child collection": "film_category",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "film_id": [
+            "film_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "film",
+        "original parent": "film",
+        "original property": "film_category",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "inventory",
+        "parent collection": "store",
+        "child collection": "inventory",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "store_id": [
+            "store_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "store",
+        "original parent": "store",
+        "original property": "inventory",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "inventory",
+        "parent collection": "film",
+        "child collection": "inventory",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "film_id": [
+            "film_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "film",
+        "original parent": "film",
+        "original property": "inventory",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "payment",
+        "parent collection": "rental",
+        "child collection": "payment",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "rental_id": [
+            "rental_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "rental",
+        "original parent": "rental",
+        "original property": "payment",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "payment",
+        "parent collection": "staff",
+        "child collection": "payment",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "staff_id": [
+            "staff_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "staff",
+        "original parent": "staff",
+        "original property": "payment",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "payment",
+        "parent collection": "customer",
+        "child collection": "payment",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customer",
+        "original property": "payment",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "rental",
+        "parent collection": "staff",
+        "child collection": "rental",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "staff_id": [
+            "staff_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "staff",
+        "original parent": "staff",
+        "original property": "rental",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "rental",
+        "parent collection": "customer",
+        "child collection": "rental",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customer_id": [
+            "customer_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customer",
+        "original parent": "customer",
+        "original property": "rental",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "rental",
+        "parent collection": "inventory",
+        "child collection": "rental",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "inventory_id": [
+            "inventory_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "inventory",
+        "original parent": "inventory",
+        "original property": "rental",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "staff",
+        "parent collection": "store",
+        "child collection": "staff",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "store_id": [
+            "store_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "store",
+        "original parent": "store",
+        "original property": "staff",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "staff",
+        "parent collection": "address",
+        "child collection": "staff",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "address_id": [
+            "address_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "address",
+        "original parent": "address",
+        "original property": "staff",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "store",
+        "parent collection": "address",
+        "child collection": "store",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "address_id": [
+            "address_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "address",
+        "original parent": "address",
+        "original property": "store",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "store_2",
+        "parent collection": "staff",
+        "child collection": "store",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "staff_id": [
+            "manager_staff_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "staff_2",
+        "original parent": "staff",
+        "original property": "store_2",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

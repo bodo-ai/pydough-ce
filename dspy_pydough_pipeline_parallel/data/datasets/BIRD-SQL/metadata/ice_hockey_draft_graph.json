@@ -1,0 +1,774 @@
+[
+  {
+    "name": "ice_hockey_draft",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "playerinfo",
+        "type": "simple table",
+        "table path": "main.PlayerInfo",
+        "unique properties": [
+          "eliteid"
+        ],
+        "properties": [
+          {
+            "name": "eliteid",
+            "type": "table column",
+            "column name": "ELITEID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              9,
+              18,
+              27,
+              30,
+              58
+            ],
+            "synonyms": [
+              "ELITEID"
+            ]
+          },
+          {
+            "name": "playername",
+            "type": "table column",
+            "column name": "PlayerName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "David Bornhammar",
+              "David Printz",
+              "Yared Hagos",
+              "Andreas Jamtin",
+              "Per Mars"
+            ],
+            "synonyms": [
+              "PlayerName"
+            ]
+          },
+          {
+            "name": "birthdate",
+            "type": "table column",
+            "column name": "birthdate",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1981-06-15",
+              "1980-07-24",
+              "1983-03-27",
+              "1983-05-04",
+              "1982-10-23"
+            ],
+            "synonyms": [
+              "birthdate"
+            ]
+          },
+          {
+            "name": "birthyear",
+            "type": "table column",
+            "column name": "birthyear",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              1981,
+              1980,
+              1983,
+              1982,
+              1972
+            ],
+            "synonyms": [
+              "birthyear"
+            ]
+          },
+          {
+            "name": "birthmonth",
+            "type": "table column",
+            "column name": "birthmonth",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6,
+              7,
+              3,
+              5,
+              10
+            ],
+            "synonyms": [
+              "birthmonth"
+            ]
+          },
+          {
+            "name": "birthday",
+            "type": "table column",
+            "column name": "birthday",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              15,
+              24,
+              27,
+              4,
+              23
+            ],
+            "synonyms": [
+              "birthday"
+            ]
+          },
+          {
+            "name": "birthplace",
+            "type": "table column",
+            "column name": "birthplace",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Lidingo, SWE",
+              "Stockholm, SWE",
+              "Ostersund, SWE",
+              "Marsta, SWE",
+              "Huddinge, SWE"
+            ],
+            "synonyms": [
+              "birthplace"
+            ]
+          },
+          {
+            "name": "nation",
+            "type": "table column",
+            "column name": "nation",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Sweden",
+              "Austria",
+              "Slovakia",
+              "Denmark",
+              "Hungary"
+            ],
+            "synonyms": [
+              "nation"
+            ]
+          },
+          {
+            "name": "height",
+            "type": "table column",
+            "column name": "height",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              73,
+              76,
+              72,
+              75,
+              70
+            ],
+            "synonyms": [
+              "height"
+            ]
+          },
+          {
+            "name": "weight",
+            "type": "table column",
+            "column name": "weight",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              198,
+              220,
+              218,
+              194,
+              216
+            ],
+            "synonyms": [
+              "weight"
+            ]
+          },
+          {
+            "name": "position_info",
+            "type": "table column",
+            "column name": "position_info",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "D",
+              "C",
+              "LW/C",
+              "RW",
+              "LW/RW"
+            ],
+            "synonyms": [
+              "position_info"
+            ]
+          },
+          {
+            "name": "shoots",
+            "type": "table column",
+            "column name": "shoots",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "L",
+              "R",
+              "-"
+            ],
+            "synonyms": [
+              "shoots"
+            ]
+          },
+          {
+            "name": "draftyear",
+            "type": "table column",
+            "column name": "draftyear",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1999,
+              2001,
+              2002,
+              2000,
+              1998
+            ],
+            "synonyms": [
+              "draftyear"
+            ]
+          },
+          {
+            "name": "draftround",
+            "type": "table column",
+            "column name": "draftround",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              7,
+              3,
+              5,
+              4,
+              1
+            ],
+            "synonyms": [
+              "draftround"
+            ]
+          },
+          {
+            "name": "overall",
+            "type": "table column",
+            "column name": "overall",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              192,
+              225,
+              70,
+              157,
+              87
+            ],
+            "synonyms": [
+              "overall"
+            ]
+          },
+          {
+            "name": "overallby",
+            "type": "table column",
+            "column name": "overallby",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Washington Capitals",
+              "Philadelphia Flyers",
+              "Dallas Stars",
+              "Detroit Red Wings",
+              "Columbus Blue Jackets"
+            ],
+            "synonyms": [
+              "overallby"
+            ]
+          },
+          {
+            "name": "css_rank",
+            "type": "table column",
+            "column name": "CSS_rank",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              192,
+              176,
+              24,
+              36,
+              26
+            ],
+            "synonyms": [
+              "CSS_rank"
+            ]
+          },
+          {
+            "name": "sum_7yr_gp",
+            "type": "table column",
+            "column name": "sum_7yr_GP",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              13,
+              6,
+              115,
+              51
+            ],
+            "synonyms": [
+              "sum_7yr_GP"
+            ]
+          },
+          {
+            "name": "sum_7yr_toi",
+            "type": "table column",
+            "column name": "sum_7yr_TOI",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              84,
+              42,
+              2235,
+              444
+            ],
+            "synonyms": [
+              "sum_7yr_TOI"
+            ]
+          },
+          {
+            "name": "gp_greater_than_0",
+            "type": "table column",
+            "column name": "GP_greater_than_0",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "no",
+              "yes"
+            ],
+            "synonyms": [
+              "GP_greater_than_0"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "PlayerInfo"
+        ]
+      },
+      {
+        "name": "seasonstatus",
+        "type": "simple table",
+        "table path": "main.SeasonStatus",
+        "unique properties": [
+          [
+            "eliteid",
+            "season",
+            "team",
+            "league",
+            "gametype",
+            "gp",
+            "g",
+            "a",
+            "p",
+            "pim",
+            "plusminus"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "eliteid",
+            "type": "table column",
+            "column name": "ELITEID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3667,
+              3668,
+              3669,
+              8767,
+              8755
+            ],
+            "synonyms": [
+              "ELITEID"
+            ]
+          },
+          {
+            "name": "season",
+            "type": "table column",
+            "column name": "SEASON",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1997-1998",
+              "1999-2000",
+              "1998-1999",
+              "2000-2001",
+              "2001-2002"
+            ],
+            "synonyms": [
+              "SEASON"
+            ]
+          },
+          {
+            "name": "team",
+            "type": "table column",
+            "column name": "TEAM",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Rimouski Oceanic",
+              "Canada U20",
+              "Plymouth Whalers",
+              "USA U20",
+              "Regina Pats"
+            ],
+            "synonyms": [
+              "TEAM"
+            ]
+          },
+          {
+            "name": "league",
+            "type": "table column",
+            "column name": "LEAGUE",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "QMJHL",
+              "WJC-20",
+              "OHL",
+              "WHL",
+              "Russia"
+            ],
+            "synonyms": [
+              "LEAGUE"
+            ]
+          },
+          {
+            "name": "gametype",
+            "type": "table column",
+            "column name": "GAMETYPE",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Regular Season",
+              "Playoffs"
+            ],
+            "synonyms": [
+              "GAMETYPE"
+            ]
+          },
+          {
+            "name": "gp",
+            "type": "table column",
+            "column name": "GP",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              58,
+              18,
+              7,
+              59,
+              15
+            ],
+            "synonyms": [
+              "GP"
+            ]
+          },
+          {
+            "name": "g",
+            "type": "table column",
+            "column name": "G",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              44,
+              15,
+              1,
+              54,
+              8
+            ],
+            "synonyms": [
+              "G"
+            ]
+          },
+          {
+            "name": "a",
+            "type": "table column",
+            "column name": "A",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              71,
+              26,
+              1,
+              51,
+              12
+            ],
+            "synonyms": [
+              "A"
+            ]
+          },
+          {
+            "name": "p",
+            "type": "table column",
+            "column name": "P",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              115,
+              41,
+              2,
+              105,
+              20
+            ],
+            "synonyms": [
+              "P"
+            ]
+          },
+          {
+            "name": "pim",
+            "type": "table column",
+            "column name": "PIM",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              117,
+              46,
+              4,
+              56,
+              24
+            ],
+            "synonyms": [
+              "PIM"
+            ]
+          },
+          {
+            "name": "plusminus",
+            "type": "table column",
+            "column name": "PLUSMINUS",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              27,
+              4,
+              0,
+              50,
+              3
+            ],
+            "synonyms": [
+              "PLUSMINUS"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "SeasonStatus"
+        ]
+      },
+      {
+        "name": "height_info",
+        "type": "simple table",
+        "table path": "main.height_info",
+        "unique properties": [
+          "height_id"
+        ],
+        "properties": [
+          {
+            "name": "height_id",
+            "type": "table column",
+            "column name": "height_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              65,
+              67,
+              68,
+              69,
+              70
+            ],
+            "synonyms": [
+              "height_id"
+            ]
+          },
+          {
+            "name": "height_in_cm",
+            "type": "table column",
+            "column name": "height_in_cm",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              165,
+              170,
+              172,
+              174,
+              177
+            ],
+            "synonyms": [
+              "height_in_cm"
+            ]
+          },
+          {
+            "name": "height_in_inch",
+            "type": "table column",
+            "column name": "height_in_inch",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "5'5\"",
+              "5'7\"",
+              "5'8\"",
+              "5'9\"",
+              "5'10\""
+            ],
+            "synonyms": [
+              "height_in_inch"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "height_info"
+        ]
+      },
+      {
+        "name": "weight_info",
+        "type": "simple table",
+        "table path": "main.weight_info",
+        "unique properties": [
+          "weight_id"
+        ],
+        "properties": [
+          {
+            "name": "weight_id",
+            "type": "table column",
+            "column name": "weight_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              154,
+              159,
+              161,
+              163,
+              165
+            ],
+            "synonyms": [
+              "weight_id"
+            ]
+          },
+          {
+            "name": "weight_in_kg",
+            "type": "table column",
+            "column name": "weight_in_kg",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              70,
+              72,
+              73,
+              74,
+              75
+            ],
+            "synonyms": [
+              "weight_in_kg"
+            ]
+          },
+          {
+            "name": "weight_in_lbs",
+            "type": "table column",
+            "column name": "weight_in_lbs",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              154,
+              159,
+              161,
+              163,
+              165
+            ],
+            "synonyms": [
+              "weight_in_lbs"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "weight_info"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "playerinfo",
+        "parent collection": "weight_info",
+        "child collection": "playerinfo",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "weight_id": [
+            "weight"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "weight_info",
+        "original parent": "weight_info",
+        "original property": "playerinfo",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "playerinfo",
+        "parent collection": "height_info",
+        "child collection": "playerinfo",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "height_id": [
+            "height"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "height_info",
+        "original parent": "height_info",
+        "original property": "playerinfo",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "seasonstatus",
+        "parent collection": "playerinfo",
+        "child collection": "seasonstatus",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "eliteid": [
+            "eliteid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "playerinfo",
+        "original parent": "playerinfo",
+        "original property": "seasonstatus",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

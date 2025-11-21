@@ -1,0 +1,402 @@
+[
+  {
+    "name": "music_platform_2",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "categories",
+        "type": "simple table",
+        "table path": "main.categories",
+        "unique properties": [
+          [
+            "podcast_id",
+            "category"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "podcast_id",
+            "type": "table column",
+            "column name": "podcast_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "a00018b54eb342567c94dacfb2a3e504",
+              "a00043d34e734b09246d17dc5d56f63c",
+              "a0004b1ef445af9dc84dad1e7821b1e3",
+              "a00071f9aaae9ac725c3a586701abf4d",
+              "a000aa69852b276565c4f5eb9cdd999b"
+            ],
+            "synonyms": [
+              "podcast_id"
+            ]
+          },
+          {
+            "name": "category",
+            "type": "table column",
+            "column name": "category",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "arts",
+              "arts-performing-arts",
+              "music",
+              "arts-design",
+              "education"
+            ],
+            "synonyms": [
+              "category"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "categories"
+        ]
+      },
+      {
+        "name": "podcasts",
+        "type": "simple table",
+        "table path": "main.podcasts",
+        "unique properties": [
+          "podcast_id"
+        ],
+        "properties": [
+          {
+            "name": "podcast_id",
+            "type": "table column",
+            "column name": "podcast_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "a00018b54eb342567c94dacfb2a3e504",
+              "a00043d34e734b09246d17dc5d56f63c",
+              "a0004b1ef445af9dc84dad1e7821b1e3",
+              "a00071f9aaae9ac725c3a586701abf4d",
+              "a000aa69852b276565c4f5eb9cdd999b"
+            ],
+            "synonyms": [
+              "podcast_id"
+            ]
+          },
+          {
+            "name": "itunes_id",
+            "type": "table column",
+            "column name": "itunes_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1313466221,
+              158973461,
+              139076942,
+              1332508972,
+              1342447811
+            ],
+            "synonyms": [
+              "itunes_id"
+            ]
+          },
+          {
+            "name": "slug",
+            "type": "table column",
+            "column name": "slug",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "scaling-global",
+              "cornerstone-baptist-church-of-orlando",
+              "mystery-dancing-in-the-dark",
+              "kts-money-matters",
+              "speedway-soccer"
+            ],
+            "synonyms": [
+              "slug"
+            ]
+          },
+          {
+            "name": "itunes_url",
+            "type": "table column",
+            "column name": "itunes_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://podcasts.apple.com/us/podcast...",
+              "https://podcasts.apple.com/us/podcast...",
+              "https://podcasts.apple.com/us/podcast...",
+              "https://podcasts.apple.com/us/podcast...",
+              "https://podcasts.apple.com/us/podcast..."
+            ],
+            "synonyms": [
+              "itunes_url"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Scaling Global",
+              "Cornerstone Baptist Church of Orlando",
+              "Mystery: Dancing in the Dark",
+              "KTs Money Matters",
+              "Speedway Soccer"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "podcasts"
+        ]
+      },
+      {
+        "name": "reviews",
+        "type": "simple table",
+        "table path": "main.reviews",
+        "unique properties": [
+          [
+            "podcast_id",
+            "title",
+            "content",
+            "rating",
+            "author_id",
+            "created_at"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "podcast_id",
+            "type": "table column",
+            "column name": "podcast_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "c61aa81c9b929a66f0c1db6cbe5d8548",
+              "ad4f2bf69c72b8db75978423c25f379e",
+              "f2970432aad718a000ebac10e48ae6b0",
+              "f90b974d49b86b2d4d1769519fb478c0",
+              "d9122defb9898145688449f610c8943e"
+            ],
+            "synonyms": [
+              "podcast_id"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "really interesting!",
+              "Must listen for anyone interested in ...",
+              "nauseatingly left",
+              "Diverse stories",
+              "\ud83d\udc4d\ud83d\udc4d\ud83d\udc4d\ud83d\udc4d"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "content",
+            "type": "table column",
+            "column name": "content",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Thanks for providing these insights. ...",
+              "Super excited to see this podcast gro...",
+              "I'm a liberal myself, but its pretty ...",
+              "I find Tedx talks very inspirational ...",
+              "I love this podcast, it is so good."
+            ],
+            "synonyms": [
+              "content"
+            ]
+          },
+          {
+            "name": "rating",
+            "type": "table column",
+            "column name": "rating",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              1,
+              3,
+              4,
+              2
+            ],
+            "synonyms": [
+              "rating"
+            ]
+          },
+          {
+            "name": "author_id",
+            "type": "table column",
+            "column name": "author_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "F7E5A318989779D",
+              "F6BF5472689BD12",
+              "1AB95B8E6E1309E",
+              "11BB760AA5DEBD1",
+              "D86032C8E57D15A"
+            ],
+            "synonyms": [
+              "author_id"
+            ]
+          },
+          {
+            "name": "created_at",
+            "type": "table column",
+            "column name": "created_at",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2018-04-24T12:05:16-07:00",
+              "2018-05-09T18:14:32-07:00",
+              "2019-06-11T14:53:39-07:00",
+              "2018-05-31T13:08:09-07:00",
+              "2019-06-19T13:56:05-07:00"
+            ],
+            "synonyms": [
+              "created_at"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "reviews"
+        ]
+      },
+      {
+        "name": "runs",
+        "type": "simple table",
+        "table path": "main.runs",
+        "unique properties": [
+          [
+            "run_at",
+            "max_rowid",
+            "reviews_added"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "run_at",
+            "type": "table column",
+            "column name": "run_at",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2021-05-10 02:53:00",
+              "2021-06-06 21:34:36",
+              "2021-07-02 18:04:55",
+              "2021-08-01 17:54:42",
+              "2021-09-02 18:00:30"
+            ],
+            "synonyms": [
+              "run_at"
+            ]
+          },
+          {
+            "name": "max_rowid",
+            "type": "table column",
+            "column name": "max_rowid",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3266481,
+              3300773,
+              3329699,
+              3360315,
+              3390165
+            ],
+            "synonyms": [
+              "max_rowid"
+            ]
+          },
+          {
+            "name": "reviews_added",
+            "type": "table column",
+            "column name": "reviews_added",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1215223,
+              13139,
+              11561,
+              11855,
+              11714
+            ],
+            "synonyms": [
+              "reviews_added"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "runs"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "categories",
+        "parent collection": "podcasts",
+        "child collection": "categories",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "podcast_id": [
+            "podcast_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "podcasts",
+        "original parent": "podcasts",
+        "original property": "categories",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "reviews",
+        "parent collection": "podcasts",
+        "child collection": "reviews",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "podcast_id": [
+            "podcast_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "podcasts",
+        "original parent": "podcasts",
+        "original property": "reviews",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

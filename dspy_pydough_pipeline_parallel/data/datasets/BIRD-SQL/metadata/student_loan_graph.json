@@ -1,0 +1,630 @@
+[
+  {
+    "name": "student_loan",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "bool_",
+        "type": "simple table",
+        "table path": "main.\"bool\"",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "neg",
+              "pos"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "bool"
+        ]
+      },
+      {
+        "name": "disabled",
+        "type": "simple table",
+        "table path": "main.disabled",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "student114",
+              "student125",
+              "student142",
+              "student155",
+              "student156"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "disabled"
+        ]
+      },
+      {
+        "name": "enlist",
+        "type": "simple table",
+        "table path": "main.enlist",
+        "unique properties": [
+          [
+            "name",
+            "organ"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "student40",
+              "student51",
+              "student109",
+              "student139",
+              "student148"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "organ",
+            "type": "table column",
+            "column name": "organ",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "fire_department",
+              "air_force",
+              "navy",
+              "marines",
+              "foreign_legion"
+            ],
+            "synonyms": [
+              "organ"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "enlist"
+        ]
+      },
+      {
+        "name": "enrolled",
+        "type": "simple table",
+        "table path": "main.enrolled",
+        "unique properties": [
+          [
+            "name",
+            "school"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "student1",
+              "student10",
+              "student100",
+              "student1000",
+              "student101"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "school",
+            "type": "table column",
+            "column name": "school",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "occ",
+              "smc",
+              "ucb",
+              "ucla",
+              "ucsd"
+            ],
+            "synonyms": [
+              "school"
+            ]
+          },
+          {
+            "name": "month_",
+            "type": "table column",
+            "column name": "\"month\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "month"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "enrolled"
+        ]
+      },
+      {
+        "name": "filed_for_bankrupcy",
+        "type": "simple table",
+        "table path": "main.filed_for_bankrupcy",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "student122",
+              "student126",
+              "student136",
+              "student145",
+              "student148"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "filed_for_bankrupcy"
+        ]
+      },
+      {
+        "name": "longest_absense_from_school",
+        "type": "simple table",
+        "table path": "main.longest_absense_from_school",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "student1",
+              "student10",
+              "student100",
+              "student1000",
+              "student101"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "month_",
+            "type": "table column",
+            "column name": "\"month\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "month"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "longest_absense_from_school"
+        ]
+      },
+      {
+        "name": "male",
+        "type": "simple table",
+        "table path": "main.male",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "student1",
+              "student101",
+              "student102",
+              "student103",
+              "student105"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "male"
+        ]
+      },
+      {
+        "name": "no_payment_due",
+        "type": "simple table",
+        "table path": "main.no_payment_due",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "student1",
+              "student10",
+              "student100",
+              "student1000",
+              "student101"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "bool_",
+            "type": "table column",
+            "column name": "\"bool\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "neg",
+              "pos"
+            ],
+            "synonyms": [
+              "bool"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "no_payment_due"
+        ]
+      },
+      {
+        "name": "person",
+        "type": "simple table",
+        "table path": "main.person",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "student1",
+              "student10",
+              "student100",
+              "student1000",
+              "student101"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "person"
+        ]
+      },
+      {
+        "name": "unemployed",
+        "type": "simple table",
+        "table path": "main.unemployed",
+        "unique properties": [
+          "name"
+        ],
+        "properties": [
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "student1000",
+              "student102",
+              "student106",
+              "student109",
+              "student118"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "unemployed"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "disabled",
+        "parent collection": "person",
+        "child collection": "disabled",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "disabled",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "enlist",
+        "parent collection": "person",
+        "child collection": "enlist",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "enlist",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "enrolled",
+        "parent collection": "person",
+        "child collection": "enrolled",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "enrolled",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "filed_for_bankrupcy",
+        "parent collection": "person",
+        "child collection": "filed_for_bankrupcy",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "filed_for_bankrupcy",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "longest_absense_from_school",
+        "parent collection": "person",
+        "child collection": "longest_absense_from_school",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "longest_absense_from_school",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "male",
+        "parent collection": "person",
+        "child collection": "male",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "male",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "no_payment_due",
+        "parent collection": "bool_",
+        "child collection": "no_payment_due",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "bool_"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "bool__2",
+        "original parent": "bool_",
+        "original property": "no_payment_due",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "no_payment_due",
+        "parent collection": "person",
+        "child collection": "no_payment_due",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "no_payment_due",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "unemployed",
+        "parent collection": "person",
+        "child collection": "unemployed",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "name": [
+            "name"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "unemployed",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

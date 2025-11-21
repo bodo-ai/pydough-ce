@@ -1,0 +1,560 @@
+[
+  {
+    "name": "movie",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "actor",
+        "type": "simple table",
+        "table path": "main.actor",
+        "unique properties": [
+          "actorid"
+        ],
+        "properties": [
+          {
+            "name": "actorid",
+            "type": "table column",
+            "column name": "ActorID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "ActorID"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "John Travolta",
+              "Kirstie Alley",
+              "Olympia Dukakis",
+              "George Segal",
+              "Abe Vigoda"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "date_of_birth",
+            "type": "table column",
+            "column name": "\"Date of Birth\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "1954-02-18",
+              "1951-01-12",
+              "1931-06-20",
+              "1934-02-13",
+              "1921-02-24"
+            ],
+            "synonyms": [
+              "Date of Birth"
+            ]
+          },
+          {
+            "name": "birth_city",
+            "type": "table column",
+            "column name": "\"Birth City\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Englewood",
+              "Wichita",
+              "Lowell",
+              "Great Neck",
+              "Brooklyn"
+            ],
+            "synonyms": [
+              "Birth City"
+            ]
+          },
+          {
+            "name": "birth_country",
+            "type": "table column",
+            "column name": "\"Birth Country\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "USA",
+              "West Germany",
+              "UK",
+              "Canada",
+              "Scotland"
+            ],
+            "synonyms": [
+              "Birth Country"
+            ]
+          },
+          {
+            "name": "height_inches",
+            "type": "table column",
+            "column name": "\"Height (Inches)\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              74,
+              67,
+              63,
+              71,
+              73
+            ],
+            "synonyms": [
+              "Height (Inches)"
+            ]
+          },
+          {
+            "name": "biography",
+            "type": "table column",
+            "column name": "Biography",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "John Joseph Travolta was born in Engl...",
+              "Long a vital, respected lady of the c...",
+              "Actor and musician Bruce Willis is we...",
+              "With an authoritative voice and calm ...",
+              "A beloved, twinkly blue-eyed doyenne ..."
+            ],
+            "synonyms": [
+              "Biography"
+            ]
+          },
+          {
+            "name": "gender",
+            "type": "table column",
+            "column name": "Gender",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Male",
+              "Female"
+            ],
+            "synonyms": [
+              "Gender"
+            ]
+          },
+          {
+            "name": "ethnicity",
+            "type": "table column",
+            "column name": "Ethnicity",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "White",
+              "African American",
+              "Lebanese",
+              "Armenian",
+              "Asian"
+            ],
+            "synonyms": [
+              "Ethnicity"
+            ]
+          },
+          {
+            "name": "networth",
+            "type": "table column",
+            "column name": "NetWorth",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "$250,000,000.00",
+              "$40,000,000.00",
+              "$6,000,000.00",
+              "$10,000,000.00",
+              "$20,000,000.00"
+            ],
+            "synonyms": [
+              "NetWorth"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "actor"
+        ]
+      },
+      {
+        "name": "characters",
+        "type": "simple table",
+        "table path": "main.characters",
+        "unique properties": [
+          [
+            "movieid",
+            "actorid"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "movieid",
+            "type": "table column",
+            "column name": "MovieID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              4,
+              5,
+              6
+            ],
+            "synonyms": [
+              "MovieID"
+            ]
+          },
+          {
+            "name": "actorid",
+            "type": "table column",
+            "column name": "ActorID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "ActorID"
+            ]
+          },
+          {
+            "name": "character_name",
+            "type": "table column",
+            "column name": "\"Character Name\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "James",
+              "Mollie",
+              "Rosie",
+              "Albert",
+              "Grandpa"
+            ],
+            "synonyms": [
+              "Character Name"
+            ]
+          },
+          {
+            "name": "creditorder",
+            "type": "table column",
+            "column name": "creditOrder",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "creditOrder"
+            ]
+          },
+          {
+            "name": "pay",
+            "type": "table column",
+            "column name": "pay",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "$5,000,000.00",
+              "$60,000,000.00",
+              "$29,000,000.00",
+              "$65,000,000.00",
+              "$50,000,000.00"
+            ],
+            "synonyms": [
+              "pay"
+            ]
+          },
+          {
+            "name": "screentime",
+            "type": "table column",
+            "column name": "screentime",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0:32:30",
+              "0:32:15",
+              "0:29:00",
+              "0:08:45",
+              "0:04:30"
+            ],
+            "synonyms": [
+              "screentime"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "characters"
+        ]
+      },
+      {
+        "name": "movie",
+        "type": "simple table",
+        "table path": "main.movie",
+        "unique properties": [
+          "movieid"
+        ],
+        "properties": [
+          {
+            "name": "movieid",
+            "type": "table column",
+            "column name": "MovieID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "MovieID"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "Title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Look Who's Talking",
+              "Driving Miss Daisy",
+              "Turner & Hooch",
+              "Born on the Fourth of July",
+              "Field of Dreams"
+            ],
+            "synonyms": [
+              "Title"
+            ]
+          },
+          {
+            "name": "mpaa_rating",
+            "type": "table column",
+            "column name": "\"MPAA Rating\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "PG-13",
+              "PG",
+              "R",
+              "G"
+            ],
+            "synonyms": [
+              "MPAA Rating"
+            ]
+          },
+          {
+            "name": "budget",
+            "type": "table column",
+            "column name": "Budget",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              7500000,
+              13000000,
+              14000000,
+              15000000,
+              16000000
+            ],
+            "synonyms": [
+              "Budget"
+            ]
+          },
+          {
+            "name": "gross",
+            "type": "table column",
+            "column name": "Gross",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              296000000,
+              145793296,
+              71079915,
+              161001698,
+              84431625
+            ],
+            "synonyms": [
+              "Gross"
+            ]
+          },
+          {
+            "name": "release_date",
+            "type": "table column",
+            "column name": "\"Release Date\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1989-10-12",
+              "1989-12-13",
+              "1989-07-28",
+              "1989-12-20",
+              "1989-04-21"
+            ],
+            "synonyms": [
+              "Release Date"
+            ]
+          },
+          {
+            "name": "genre",
+            "type": "table column",
+            "column name": "Genre",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Romance",
+              "Comedy",
+              "Crime",
+              "War",
+              "Drama"
+            ],
+            "synonyms": [
+              "Genre"
+            ]
+          },
+          {
+            "name": "runtime",
+            "type": "table column",
+            "column name": "Runtime",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              93,
+              99,
+              100,
+              145,
+              107
+            ],
+            "synonyms": [
+              "Runtime"
+            ]
+          },
+          {
+            "name": "rating",
+            "type": "table column",
+            "column name": "Rating",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5.9,
+              7.4,
+              7.2,
+              7.5,
+              7.0
+            ],
+            "synonyms": [
+              "Rating"
+            ]
+          },
+          {
+            "name": "rating_count",
+            "type": "table column",
+            "column name": "\"Rating Count\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              73638,
+              91075,
+              91415,
+              101702,
+              77659
+            ],
+            "synonyms": [
+              "Rating Count"
+            ]
+          },
+          {
+            "name": "summary",
+            "type": "table column",
+            "column name": "Summary",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "After a single, career-minded woman i...",
+              "An old Jewish woman and her African-A...",
+              "Det. Scott Turner (Tom Hanks) is an u...",
+              "The biography of Ron Kovic. Paralyzed...",
+              "An Iowa corn farmer, hearing voices, ..."
+            ],
+            "synonyms": [
+              "Summary"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "movie"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "characters",
+        "parent collection": "movie",
+        "child collection": "characters",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "movieid": [
+            "movieid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "movie",
+        "original parent": "movie",
+        "original property": "characters",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "characters",
+        "parent collection": "actor",
+        "child collection": "characters",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "actorid": [
+            "actorid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "actor",
+        "original parent": "actor",
+        "original property": "characters",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

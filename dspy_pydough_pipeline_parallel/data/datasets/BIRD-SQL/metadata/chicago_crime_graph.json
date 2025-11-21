@@ -1,0 +1,1127 @@
+[
+  {
+    "name": "chicago_crime",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "community_area",
+        "type": "simple table",
+        "table path": "main.Community_Area",
+        "unique properties": [
+          "community_area_no"
+        ],
+        "properties": [
+          {
+            "name": "community_area_no",
+            "type": "table column",
+            "column name": "community_area_no",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "community_area_no"
+            ]
+          },
+          {
+            "name": "community_area_name",
+            "type": "table column",
+            "column name": "community_area_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Rogers Park",
+              "West Ridge",
+              "Uptown",
+              "Lincoln Square",
+              "North Center"
+            ],
+            "synonyms": [
+              "community_area_name"
+            ]
+          },
+          {
+            "name": "side",
+            "type": "table column",
+            "column name": "side",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Far North ",
+              "North ",
+              "Central",
+              "Northwest ",
+              "West "
+            ],
+            "synonyms": [
+              "side"
+            ]
+          },
+          {
+            "name": "population",
+            "type": "table column",
+            "column name": "population",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "54,991",
+              "71,942",
+              "56,362",
+              "39,493",
+              "31,867"
+            ],
+            "synonyms": [
+              "population"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Community_Area"
+        ]
+      },
+      {
+        "name": "crime",
+        "type": "simple table",
+        "table path": "main.Crime",
+        "unique properties": [
+          "report_no"
+        ],
+        "properties": [
+          {
+            "name": "report_no",
+            "type": "table column",
+            "column name": "report_no",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              23757,
+              23758,
+              23759,
+              23761,
+              23762
+            ],
+            "synonyms": [
+              "report_no"
+            ]
+          },
+          {
+            "name": "case_number",
+            "type": "table column",
+            "column name": "case_number",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "JB100159",
+              "JB100522",
+              "JB100839",
+              "JB101043",
+              "JB105277"
+            ],
+            "synonyms": [
+              "case_number"
+            ]
+          },
+          {
+            "name": "date_",
+            "type": "table column",
+            "column name": "\"date\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1/1/2018 2:46",
+              "1/1/2018 11:33",
+              "1/1/2018 18:27",
+              "1/1/2018 22:40",
+              "1/6/2018 12:54"
+            ],
+            "synonyms": [
+              "date"
+            ]
+          },
+          {
+            "name": "block",
+            "type": "table column",
+            "column name": "block",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "039XX W CORNELIA AVE",
+              "026XX N HAMPDEN CT",
+              "047XX S PRINCETON AVE",
+              "081XX S STONY ISLAND AVE",
+              "015XX E 62ND ST"
+            ],
+            "synonyms": [
+              "block"
+            ]
+          },
+          {
+            "name": "iucr_no",
+            "type": "table column",
+            "column name": "iucr_no",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "110",
+              "143B",
+              "1310",
+              "460",
+              "2022"
+            ],
+            "synonyms": [
+              "iucr_no"
+            ]
+          },
+          {
+            "name": "location_description",
+            "type": "table column",
+            "column name": "location_description",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AUTO",
+              "APARTMENT",
+              "ALLEY",
+              "STREET",
+              "PARKING LOT"
+            ],
+            "synonyms": [
+              "location_description"
+            ]
+          },
+          {
+            "name": "arrest",
+            "type": "table column",
+            "column name": "arrest",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FALSE",
+              "TRUE"
+            ],
+            "synonyms": [
+              "arrest"
+            ]
+          },
+          {
+            "name": "domestic",
+            "type": "table column",
+            "column name": "domestic",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FALSE",
+              "TRUE"
+            ],
+            "synonyms": [
+              "domestic"
+            ]
+          },
+          {
+            "name": "beat",
+            "type": "table column",
+            "column name": "beat",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1732,
+              1935,
+              935,
+              411,
+              314
+            ],
+            "synonyms": [
+              "beat"
+            ]
+          },
+          {
+            "name": "district_no",
+            "type": "table column",
+            "column name": "district_no",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              17,
+              19,
+              9,
+              4,
+              3
+            ],
+            "synonyms": [
+              "district_no"
+            ]
+          },
+          {
+            "name": "ward_no",
+            "type": "table column",
+            "column name": "ward_no",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              30,
+              43,
+              3,
+              8,
+              5
+            ],
+            "synonyms": [
+              "ward_no"
+            ]
+          },
+          {
+            "name": "community_area_no",
+            "type": "table column",
+            "column name": "community_area_no",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              21,
+              7,
+              37,
+              45,
+              42
+            ],
+            "synonyms": [
+              "community_area_no"
+            ]
+          },
+          {
+            "name": "fbi_code_no",
+            "type": "table column",
+            "column name": "fbi_code_no",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "01A",
+              "15",
+              "14",
+              "08B",
+              "18"
+            ],
+            "synonyms": [
+              "fbi_code_no"
+            ]
+          },
+          {
+            "name": "latitude",
+            "type": "table column",
+            "column name": "latitude",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "41.94456125",
+              "41.92972657",
+              "41.808168",
+              "41.74698404",
+              "41.78289015"
+            ],
+            "synonyms": [
+              "latitude"
+            ]
+          },
+          {
+            "name": "longitude",
+            "type": "table column",
+            "column name": "longitude",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "-87.72668181",
+              "-87.64092074",
+              "-87.63333646",
+              "-87.5854287",
+              "-87.58877343"
+            ],
+            "synonyms": [
+              "longitude"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Crime"
+        ]
+      },
+      {
+        "name": "district",
+        "type": "simple table",
+        "table path": "main.District",
+        "unique properties": [
+          "district_no"
+        ],
+        "properties": [
+          {
+            "name": "district_no",
+            "type": "table column",
+            "column name": "district_no",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "district_no"
+            ]
+          },
+          {
+            "name": "district_name",
+            "type": "table column",
+            "column name": "district_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Central",
+              "Wentworth",
+              "Grand Crossing",
+              "South Chicago",
+              "Calumet"
+            ],
+            "synonyms": [
+              "district_name"
+            ]
+          },
+          {
+            "name": "address",
+            "type": "table column",
+            "column name": "address",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1718 South State Street",
+              "5101 South Wentworh Avenue",
+              "7040 South Cottage Grove Ave",
+              "2255 East 103rd St",
+              "727 East 111th St"
+            ],
+            "synonyms": [
+              "address"
+            ]
+          },
+          {
+            "name": "zip_code",
+            "type": "table column",
+            "column name": "zip_code",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              60616,
+              60609,
+              60637,
+              60617,
+              60628
+            ],
+            "synonyms": [
+              "zip_code"
+            ]
+          },
+          {
+            "name": "commander",
+            "type": "table column",
+            "column name": "commander",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Jake M. Alderden",
+              "Joshua Wallace",
+              "Eve T. Quarterman",
+              "Robert A. Rubio",
+              "Glenn White"
+            ],
+            "synonyms": [
+              "commander"
+            ]
+          },
+          {
+            "name": "email",
+            "type": "table column",
+            "column name": "email",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "\u00a0CAPS001District@chicagopolice.org",
+              "\u00a0CAPS002District@chicagopolice.org",
+              "\u00a0CAPS003District@chicagopolice.org",
+              "\u00a0caps.004district@chicagopolice.org",
+              "\u00a0CAPS005District@chicagopolice.org"
+            ],
+            "synonyms": [
+              "email"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "312-745-4290",
+              "312-747-8366",
+              "312-747-8201",
+              "312-747-8205",
+              "312-747-8210"
+            ],
+            "synonyms": [
+              "phone"
+            ]
+          },
+          {
+            "name": "fax",
+            "type": "table column",
+            "column name": "fax",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "312-745-3694",
+              "312-747-5396",
+              "312-747-5479",
+              "312-747-4559",
+              "312-747-5935"
+            ],
+            "synonyms": [
+              "fax"
+            ]
+          },
+          {
+            "name": "tty",
+            "type": "table column",
+            "column name": "tty",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "312-745-3693",
+              "312-747-6656",
+              "312-747-9168",
+              "312-747-9169",
+              "312-747-9170"
+            ],
+            "synonyms": [
+              "tty"
+            ]
+          },
+          {
+            "name": "twitter",
+            "type": "table column",
+            "column name": "twitter",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "\u00a0ChicagoCAPS01",
+              "\u00a0ChicagoCAPS02",
+              "\u00a0ChicagoCAPS03",
+              "\u00a0ChicagoCAPS04",
+              "\u00a0ChicagoCAPS05"
+            ],
+            "synonyms": [
+              "twitter"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "District"
+        ]
+      },
+      {
+        "name": "fbi_code",
+        "type": "simple table",
+        "table path": "main.FBI_Code",
+        "unique properties": [
+          "fbi_code_no"
+        ],
+        "properties": [
+          {
+            "name": "fbi_code_no",
+            "type": "table column",
+            "column name": "fbi_code_no",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "01A",
+              "01B",
+              "04A",
+              "04B",
+              "08A"
+            ],
+            "synonyms": [
+              "fbi_code_no"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Homicide 1st & 2nd Degree",
+              "Involuntary Manslaughter",
+              "Criminal Sexual Assault",
+              "Robbery",
+              "Aggravated Assault"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "description",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "The killing of one human being by ano...",
+              "The killing of another person through...",
+              "Any sexual act directed against anoth...",
+              "The taking or attempting to take anyt...",
+              "An unlawful attack by one person upon..."
+            ],
+            "synonyms": [
+              "description"
+            ]
+          },
+          {
+            "name": "crime_against",
+            "type": "table column",
+            "column name": "crime_against",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Persons",
+              "Property",
+              "Society",
+              "Persons and Society"
+            ],
+            "synonyms": [
+              "crime_against"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "FBI_Code"
+        ]
+      },
+      {
+        "name": "iucr",
+        "type": "simple table",
+        "table path": "main.IUCR",
+        "unique properties": [
+          "iucr_no"
+        ],
+        "properties": [
+          {
+            "name": "iucr_no",
+            "type": "table column",
+            "column name": "iucr_no",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "031A",
+              "031B",
+              "033A",
+              "033B",
+              "041A"
+            ],
+            "synonyms": [
+              "iucr_no"
+            ]
+          },
+          {
+            "name": "primary_description",
+            "type": "table column",
+            "column name": "primary_description",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "HOMICIDE",
+              "CRIM SEXUAL ASSAULT",
+              "BATTERY",
+              "PUBLIC PEACE VIOLATION",
+              "RITUALISM"
+            ],
+            "synonyms": [
+              "primary_description"
+            ]
+          },
+          {
+            "name": "secondary_description",
+            "type": "table column",
+            "column name": "secondary_description",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "FIRST DEGREE MURDER",
+              "SECOND DEGREE MURDER",
+              "INVOLUNTARY MANSLAUGHTER",
+              "RECKLESS HOMICIDE",
+              "AGGRAVATED: HANDGUN"
+            ],
+            "synonyms": [
+              "secondary_description"
+            ]
+          },
+          {
+            "name": "index_code",
+            "type": "table column",
+            "column name": "index_code",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "I",
+              "N"
+            ],
+            "synonyms": [
+              "index_code"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "IUCR"
+        ]
+      },
+      {
+        "name": "neighborhood",
+        "type": "simple table",
+        "table path": "main.Neighborhood",
+        "unique properties": [
+          "neighborhood_name"
+        ],
+        "properties": [
+          {
+            "name": "neighborhood_name",
+            "type": "table column",
+            "column name": "neighborhood_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Albany Park",
+              "Altgeld Gardens",
+              "Andersonville",
+              "Archer Heights",
+              "Armour Square"
+            ],
+            "synonyms": [
+              "neighborhood_name"
+            ]
+          },
+          {
+            "name": "community_area_no",
+            "type": "table column",
+            "column name": "community_area_no",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              14,
+              54,
+              77,
+              57,
+              34
+            ],
+            "synonyms": [
+              "community_area_no"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Neighborhood"
+        ]
+      },
+      {
+        "name": "ward",
+        "type": "simple table",
+        "table path": "main.Ward",
+        "unique properties": [
+          "ward_no"
+        ],
+        "properties": [
+          {
+            "name": "ward_no",
+            "type": "table column",
+            "column name": "ward_no",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "ward_no"
+            ]
+          },
+          {
+            "name": "alderman_first_name",
+            "type": "table column",
+            "column name": "alderman_first_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Daniel",
+              "Brian",
+              "Pat",
+              "Sophia",
+              "Leslie"
+            ],
+            "synonyms": [
+              "alderman_first_name"
+            ]
+          },
+          {
+            "name": "alderman_last_name",
+            "type": "table column",
+            "column name": "alderman_last_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "La Spata",
+              "Hopkins",
+              "Dowell",
+              "King",
+              "Hairston"
+            ],
+            "synonyms": [
+              "alderman_last_name"
+            ]
+          },
+          {
+            "name": "alderman_name_suffix",
+            "type": "table column",
+            "column name": "alderman_name_suffix",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Jr."
+            ],
+            "synonyms": [
+              "alderman_name_suffix"
+            ]
+          },
+          {
+            "name": "ward_office_address",
+            "type": "table column",
+            "column name": "ward_office_address",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1958 N. Milwaukee Ave.",
+              "1400 N. Ashland",
+              "5046 S. State St.",
+              "435 E. 35th\u00a0Street",
+              "2325 E. 71st\u00a0Street"
+            ],
+            "synonyms": [
+              "ward_office_address"
+            ]
+          },
+          {
+            "name": "ward_office_zip",
+            "type": "table column",
+            "column name": "ward_office_zip",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "60647",
+              "60622",
+              "60609",
+              "60616",
+              "60649"
+            ],
+            "synonyms": [
+              "ward_office_zip"
+            ]
+          },
+          {
+            "name": "ward_email",
+            "type": "table column",
+            "column name": "ward_email",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "info@the1stward.com",
+              "ward02@cityofchicago.org",
+              "ward03@cityofchicago.org",
+              "ward04@cityofchicago.org",
+              "ward05@cityofchicago.org"
+            ],
+            "synonyms": [
+              "ward_email"
+            ]
+          },
+          {
+            "name": "ward_office_phone",
+            "type": "table column",
+            "column name": "ward_office_phone",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "872.206.2685",
+              "312.643.2299",
+              "773.373.9273",
+              "773.536.8103",
+              "773.324.5555"
+            ],
+            "synonyms": [
+              "ward_office_phone"
+            ]
+          },
+          {
+            "name": "ward_office_fax",
+            "type": "table column",
+            "column name": "ward_office_fax",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "312.448.8829",
+              "773.536.7296",
+              "773.324.1585",
+              "773.224.2425",
+              "312.744.4096"
+            ],
+            "synonyms": [
+              "ward_office_fax"
+            ]
+          },
+          {
+            "name": "city_hall_office_room",
+            "type": "table column",
+            "column name": "city_hall_office_room",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              200,
+              305,
+              300,
+              302
+            ],
+            "synonyms": [
+              "city_hall_office_room"
+            ]
+          },
+          {
+            "name": "city_hall_office_phone",
+            "type": "table column",
+            "column name": "city_hall_office_phone",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "312.744.6836",
+              "312.744.8734",
+              "312.744.2690",
+              "312.744.6832",
+              "312.744.6868"
+            ],
+            "synonyms": [
+              "city_hall_office_phone"
+            ]
+          },
+          {
+            "name": "city_hall_office_fax",
+            "type": "table column",
+            "column name": "city_hall_office_fax",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "312.744.6712",
+              "312.744.7738",
+              "312.744.3195",
+              "312.744.0670",
+              "312.744.6825"
+            ],
+            "synonyms": [
+              "city_hall_office_fax"
+            ]
+          },
+          {
+            "name": "population",
+            "type": "table column",
+            "column name": "Population",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              56149,
+              55805,
+              53039,
+              54589,
+              51455
+            ],
+            "synonyms": [
+              "Population"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Ward"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "crime",
+        "parent collection": "fbi_code",
+        "child collection": "crime",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "fbi_code_no": [
+            "fbi_code_no"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "fbi_code",
+        "original parent": "fbi_code",
+        "original property": "crime",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "crime",
+        "parent collection": "community_area",
+        "child collection": "crime",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "community_area_no": [
+            "community_area_no"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "community_area",
+        "original parent": "community_area",
+        "original property": "crime",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "crime",
+        "parent collection": "district",
+        "child collection": "crime",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "district_no": [
+            "district_no"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "district",
+        "original parent": "district",
+        "original property": "crime",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "crime",
+        "parent collection": "iucr",
+        "child collection": "crime",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "iucr_no": [
+            "iucr_no"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "iucr",
+        "original parent": "iucr",
+        "original property": "crime",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "crime",
+        "parent collection": "ward",
+        "child collection": "crime",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "ward_no": [
+            "ward_no"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "ward",
+        "original parent": "ward",
+        "original property": "crime",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "neighborhood",
+        "parent collection": "community_area",
+        "child collection": "neighborhood",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "community_area_no": [
+            "community_area_no"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "community_area",
+        "original parent": "community_area",
+        "original property": "neighborhood",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

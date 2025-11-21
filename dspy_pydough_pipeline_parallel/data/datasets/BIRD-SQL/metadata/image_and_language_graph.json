@@ -1,0 +1,605 @@
+[
+  {
+    "name": "image_and_language",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "att_classes",
+        "type": "simple table",
+        "table path": "main.ATT_CLASSES",
+        "unique properties": [
+          "att_class_id"
+        ],
+        "properties": [
+          {
+            "name": "att_class_id",
+            "type": "table column",
+            "column name": "ATT_CLASS_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "ATT_CLASS_ID"
+            ]
+          },
+          {
+            "name": "att_class",
+            "type": "table column",
+            "column name": "ATT_CLASS",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "building s",
+              "indoors",
+              "cluttered",
+              "park",
+              "two story"
+            ],
+            "synonyms": [
+              "ATT_CLASS"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "ATT_CLASSES"
+        ]
+      },
+      {
+        "name": "img_obj",
+        "type": "simple table",
+        "table path": "main.IMG_OBJ",
+        "unique properties": [
+          [
+            "img_id",
+            "obj_sample_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "img_id",
+            "type": "table column",
+            "column name": "IMG_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "IMG_ID"
+            ]
+          },
+          {
+            "name": "obj_sample_id",
+            "type": "table column",
+            "column name": "OBJ_SAMPLE_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "OBJ_SAMPLE_ID"
+            ]
+          },
+          {
+            "name": "obj_class_id",
+            "type": "table column",
+            "column name": "OBJ_CLASS_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              298,
+              246,
+              293,
+              239,
+              295
+            ],
+            "synonyms": [
+              "OBJ_CLASS_ID"
+            ]
+          },
+          {
+            "name": "x",
+            "type": "table column",
+            "column name": "X",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              78,
+              1,
+              439,
+              178
+            ],
+            "synonyms": [
+              "X"
+            ]
+          },
+          {
+            "name": "y",
+            "type": "table column",
+            "column name": "Y",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              308,
+              283,
+              1,
+              344
+            ],
+            "synonyms": [
+              "Y"
+            ]
+          },
+          {
+            "name": "w",
+            "type": "table column",
+            "column name": "W",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              799,
+              722,
+              222,
+              359,
+              135
+            ],
+            "synonyms": [
+              "W"
+            ]
+          },
+          {
+            "name": "h",
+            "type": "table column",
+            "column name": "H",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              557,
+              290,
+              538,
+              258,
+              535
+            ],
+            "synonyms": [
+              "H"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "IMG_OBJ"
+        ]
+      },
+      {
+        "name": "img_obj_att",
+        "type": "simple table",
+        "table path": "main.IMG_OBJ_ATT",
+        "unique properties": [
+          [
+            "img_id",
+            "att_class_id",
+            "obj_sample_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "img_id",
+            "type": "table column",
+            "column name": "IMG_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "IMG_ID"
+            ]
+          },
+          {
+            "name": "att_class_id",
+            "type": "table column",
+            "column name": "ATT_CLASS_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "ATT_CLASS_ID"
+            ]
+          },
+          {
+            "name": "obj_sample_id",
+            "type": "table column",
+            "column name": "OBJ_SAMPLE_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              21,
+              22,
+              23,
+              24,
+              25
+            ],
+            "synonyms": [
+              "OBJ_SAMPLE_ID"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "IMG_OBJ_ATT"
+        ]
+      },
+      {
+        "name": "img_rel",
+        "type": "simple table",
+        "table path": "main.IMG_REL",
+        "unique properties": [
+          [
+            "img_id",
+            "pred_class_id",
+            "obj1_sample_id",
+            "obj2_sample_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "img_id",
+            "type": "table column",
+            "column name": "IMG_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "IMG_ID"
+            ]
+          },
+          {
+            "name": "pred_class_id",
+            "type": "table column",
+            "column name": "PRED_CLASS_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "PRED_CLASS_ID"
+            ]
+          },
+          {
+            "name": "obj1_sample_id",
+            "type": "table column",
+            "column name": "OBJ1_SAMPLE_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              13,
+              12,
+              4,
+              17,
+              33
+            ],
+            "synonyms": [
+              "OBJ1_SAMPLE_ID"
+            ]
+          },
+          {
+            "name": "obj2_sample_id",
+            "type": "table column",
+            "column name": "OBJ2_SAMPLE_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              34,
+              5,
+              9,
+              8
+            ],
+            "synonyms": [
+              "OBJ2_SAMPLE_ID"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "IMG_REL"
+        ]
+      },
+      {
+        "name": "obj_classes",
+        "type": "simple table",
+        "table path": "main.OBJ_CLASSES",
+        "unique properties": [
+          "obj_class_id"
+        ],
+        "properties": [
+          {
+            "name": "obj_class_id",
+            "type": "table column",
+            "column name": "OBJ_CLASS_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "OBJ_CLASS_ID"
+            ]
+          },
+          {
+            "name": "obj_class",
+            "type": "table column",
+            "column name": "OBJ_CLASS",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "awning",
+              "goggles",
+              "dot",
+              "kitchen",
+              "feathers"
+            ],
+            "synonyms": [
+              "OBJ_CLASS"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "OBJ_CLASSES"
+        ]
+      },
+      {
+        "name": "pred_classes",
+        "type": "simple table",
+        "table path": "main.PRED_CLASSES",
+        "unique properties": [
+          "pred_class_id"
+        ],
+        "properties": [
+          {
+            "name": "pred_class_id",
+            "type": "table column",
+            "column name": "PRED_CLASS_ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "PRED_CLASS_ID"
+            ]
+          },
+          {
+            "name": "pred_class",
+            "type": "table column",
+            "column name": "PRED_CLASS",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "playing on",
+              "looking a",
+              "to left of",
+              "beyond",
+              "covers"
+            ],
+            "synonyms": [
+              "PRED_CLASS"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "PRED_CLASSES"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "img_obj",
+        "parent collection": "obj_classes",
+        "child collection": "img_obj",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "obj_class_id": [
+            "obj_class_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "obj_classes",
+        "original parent": "obj_classes",
+        "original property": "img_obj",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "img_obj_att",
+        "parent collection": "img_obj",
+        "child collection": "img_obj_att",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "img_id": [
+            "img_id"
+          ],
+          "obj_sample_id": [
+            "obj_sample_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "img_obj",
+        "original parent": "img_obj",
+        "original property": "img_obj_att",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "img_obj_att",
+        "parent collection": "att_classes",
+        "child collection": "img_obj_att",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "att_class_id": [
+            "att_class_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "att_classes",
+        "original parent": "att_classes",
+        "original property": "img_obj_att",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "img_rel",
+        "parent collection": "img_obj",
+        "child collection": "img_rel",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "img_id": [
+            "img_id"
+          ],
+          "obj_sample_id": [
+            "obj2_sample_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "img_obj",
+        "original parent": "img_obj",
+        "original property": "img_rel",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "img_rel_2",
+        "parent collection": "img_obj",
+        "child collection": "img_rel",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "img_id": [
+            "img_id"
+          ],
+          "obj_sample_id": [
+            "obj1_sample_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "img_obj_2",
+        "original parent": "img_obj",
+        "original property": "img_rel_2",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "img_rel",
+        "parent collection": "pred_classes",
+        "child collection": "img_rel",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "pred_class_id": [
+            "pred_class_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "pred_classes",
+        "original parent": "pred_classes",
+        "original property": "img_rel",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

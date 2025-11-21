@@ -1,0 +1,1166 @@
+[
+  {
+    "name": "movie_platform",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "lists",
+        "type": "simple table",
+        "table path": "main.lists",
+        "unique properties": [
+          "list_id"
+        ],
+        "properties": [
+          {
+            "name": "user_id",
+            "type": "table column",
+            "column name": "user_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              88260493,
+              45204418,
+              48905025,
+              12074910,
+              67171533
+            ],
+            "synonyms": [
+              "user_id"
+            ]
+          },
+          {
+            "name": "list_id",
+            "type": "table column",
+            "column name": "list_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              7,
+              8
+            ],
+            "synonyms": [
+              "list_id"
+            ]
+          },
+          {
+            "name": "list_title",
+            "type": "table column",
+            "column name": "list_title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Films that made your kid sister cry",
+              "Headscratchers",
+              "Sexy Time Movies",
+              "This is America",
+              "Best Documentaries"
+            ],
+            "synonyms": [
+              "list_title"
+            ]
+          },
+          {
+            "name": "list_movie_number",
+            "type": "table column",
+            "column name": "list_movie_number",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              3,
+              7,
+              11,
+              41
+            ],
+            "synonyms": [
+              "list_movie_number"
+            ]
+          },
+          {
+            "name": "list_update_timestamp_utc",
+            "type": "table column",
+            "column name": "list_update_timestamp_utc",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2019-01-24 19:16:18",
+              "2018-12-03 15:12:20",
+              "2019-05-30 03:00:07",
+              "2020-04-25 05:55:07",
+              "2009-11-11 00:41:28"
+            ],
+            "synonyms": [
+              "list_update_timestamp_utc"
+            ]
+          },
+          {
+            "name": "list_creation_timestamp_utc",
+            "type": "table column",
+            "column name": "list_creation_timestamp_utc",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2009-11-11 00:02:21",
+              "2009-11-11 00:05:11",
+              "2009-11-11 00:20:00",
+              "2009-11-11 00:32:52",
+              "2009-11-11 00:41:10"
+            ],
+            "synonyms": [
+              "list_creation_timestamp_utc"
+            ]
+          },
+          {
+            "name": "list_followers",
+            "type": "table column",
+            "column name": "list_followers",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              1,
+              6,
+              9,
+              90
+            ],
+            "synonyms": [
+              "list_followers"
+            ]
+          },
+          {
+            "name": "list_url",
+            "type": "table column",
+            "column name": "list_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "http://mubi.com/lists/films-that-made...",
+              "http://mubi.com/lists/headscratchers",
+              "http://mubi.com/lists/sexy-time-movies",
+              "http://mubi.com/lists/this-is-america",
+              "http://mubi.com/lists/best-documentaries"
+            ],
+            "synonyms": [
+              "list_url"
+            ]
+          },
+          {
+            "name": "list_comments",
+            "type": "table column",
+            "column name": "list_comments",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              2,
+              5,
+              4,
+              0
+            ],
+            "synonyms": [
+              "list_comments"
+            ]
+          },
+          {
+            "name": "list_description",
+            "type": "table column",
+            "column name": "list_description",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "<p>Don\u2019t be such a baby!!</p>\n<p><str...",
+              "<p>Films that need at least two viewi...",
+              "<p>Films that get you in the mood\u2026for...",
+              "<p>Stories of the people, place and t...",
+              "<p>See also: <a href=\"http://www.thea..."
+            ],
+            "synonyms": [
+              "list_description"
+            ]
+          },
+          {
+            "name": "list_cover_image_url",
+            "type": "table column",
+            "column name": "list_cover_image_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil..."
+            ],
+            "synonyms": [
+              "list_cover_image_url"
+            ]
+          },
+          {
+            "name": "list_first_image_url",
+            "type": "table column",
+            "column name": "list_first_image_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil..."
+            ],
+            "synonyms": [
+              "list_first_image_url"
+            ]
+          },
+          {
+            "name": "list_second_image_url",
+            "type": "table column",
+            "column name": "list_second_image_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil..."
+            ],
+            "synonyms": [
+              "list_second_image_url"
+            ]
+          },
+          {
+            "name": "list_third_image_url",
+            "type": "table column",
+            "column name": "list_third_image_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil...",
+              "https://assets.mubicdn.net/images/fil..."
+            ],
+            "synonyms": [
+              "list_third_image_url"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "lists"
+        ]
+      },
+      {
+        "name": "lists_users",
+        "type": "simple table",
+        "table path": "main.lists_users",
+        "unique properties": [
+          [
+            "user_id",
+            "list_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "user_id",
+            "type": "table column",
+            "column name": "user_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2385,
+              15264,
+              15344,
+              18833,
+              21050
+            ],
+            "synonyms": [
+              "user_id"
+            ]
+          },
+          {
+            "name": "list_id",
+            "type": "table column",
+            "column name": "list_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              192287,
+              192313,
+              192318,
+              192449,
+              24044
+            ],
+            "synonyms": [
+              "list_id"
+            ]
+          },
+          {
+            "name": "list_update_date_utc",
+            "type": "table column",
+            "column name": "list_update_date_utc",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2019-11-26",
+              "2020-05-01",
+              "2020-04-12",
+              "2018-12-14",
+              "2016-04-12"
+            ],
+            "synonyms": [
+              "list_update_date_utc"
+            ]
+          },
+          {
+            "name": "list_creation_date_utc",
+            "type": "table column",
+            "column name": "list_creation_date_utc",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2009-12-18",
+              "2010-01-30",
+              "2010-03-31",
+              "2010-05-10",
+              "2010-08-25"
+            ],
+            "synonyms": [
+              "list_creation_date_utc"
+            ]
+          },
+          {
+            "name": "user_trialist",
+            "type": "table column",
+            "column name": "user_trialist",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              0
+            ],
+            "synonyms": [
+              "user_trialist"
+            ]
+          },
+          {
+            "name": "user_subscriber",
+            "type": "table column",
+            "column name": "user_subscriber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              0
+            ],
+            "synonyms": [
+              "user_subscriber"
+            ]
+          },
+          {
+            "name": "user_avatar_image_url",
+            "type": "table column",
+            "column name": "user_avatar_image_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://assets.mubicdn.net/images/ava...",
+              "https://graph.facebook.com/754931657/...",
+              "https://assets.mubicdn.net/images/ava...",
+              "https://graph.facebook.com/1639060242...",
+              "https://assets.mubicdn.net/images/ava..."
+            ],
+            "synonyms": [
+              "user_avatar_image_url"
+            ]
+          },
+          {
+            "name": "user_cover_image_url",
+            "type": "table column",
+            "column name": "user_cover_image_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://assets.mubicdn.net/images/cov...",
+              "https://assets.mubicdn.net/images/cov...",
+              "https://assets.mubicdn.net/images/cov...",
+              "https://assets.mubicdn.net/images/cov...",
+              "https://assets.mubicdn.net/images/cov..."
+            ],
+            "synonyms": [
+              "user_cover_image_url"
+            ]
+          },
+          {
+            "name": "user_eligible_for_trial",
+            "type": "table column",
+            "column name": "user_eligible_for_trial",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0",
+              "1"
+            ],
+            "synonyms": [
+              "user_eligible_for_trial"
+            ]
+          },
+          {
+            "name": "user_has_payment_method",
+            "type": "table column",
+            "column name": "user_has_payment_method",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1",
+              "0"
+            ],
+            "synonyms": [
+              "user_has_payment_method"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "lists_users"
+        ]
+      },
+      {
+        "name": "movies",
+        "type": "simple table",
+        "table path": "main.movies",
+        "unique properties": [
+          "movie_id"
+        ],
+        "properties": [
+          {
+            "name": "movie_id",
+            "type": "table column",
+            "column name": "movie_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "movie_id"
+            ]
+          },
+          {
+            "name": "movie_title",
+            "type": "table column",
+            "column name": "movie_title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "La Antena",
+              "Elementary Particles",
+              "It's Winter",
+              "Kirikou and the Wild Beasts",
+              "Padre Nuestro"
+            ],
+            "synonyms": [
+              "movie_title"
+            ]
+          },
+          {
+            "name": "movie_release_year",
+            "type": "table column",
+            "column name": "movie_release_year",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2007,
+              2006,
+              2005,
+              2003,
+              1957
+            ],
+            "synonyms": [
+              "movie_release_year"
+            ]
+          },
+          {
+            "name": "movie_url",
+            "type": "table column",
+            "column name": "movie_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "http://mubi.com/films/la-antena",
+              "http://mubi.com/films/elementary-part...",
+              "http://mubi.com/films/its-winter",
+              "http://mubi.com/films/kirikou-and-the...",
+              "http://mubi.com/films/padre-nuestro"
+            ],
+            "synonyms": [
+              "movie_url"
+            ]
+          },
+          {
+            "name": "movie_title_language",
+            "type": "table column",
+            "column name": "movie_title_language",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "en"
+            ],
+            "synonyms": [
+              "movie_title_language"
+            ]
+          },
+          {
+            "name": "movie_popularity",
+            "type": "table column",
+            "column name": "movie_popularity",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              105,
+              23,
+              21,
+              46,
+              7
+            ],
+            "synonyms": [
+              "movie_popularity"
+            ]
+          },
+          {
+            "name": "movie_image_url",
+            "type": "table column",
+            "column name": "movie_image_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://images.mubicdn.net/images/fil...",
+              "https://images.mubicdn.net/images/fil...",
+              "https://images.mubicdn.net/images/fil...",
+              "https://images.mubicdn.net/images/fil...",
+              "https://images.mubicdn.net/images/fil..."
+            ],
+            "synonyms": [
+              "movie_image_url"
+            ]
+          },
+          {
+            "name": "director_id",
+            "type": "table column",
+            "column name": "director_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "131",
+              "73",
+              "82",
+              "89, 90",
+              "92"
+            ],
+            "synonyms": [
+              "director_id"
+            ]
+          },
+          {
+            "name": "director_name",
+            "type": "table column",
+            "column name": "director_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Esteban Sapir",
+              "Oskar Roehler",
+              "Rafi Pitts",
+              "Michel Ocelot, B\u00e9n\u00e9dicte Galup",
+              "Christopher Zalla"
+            ],
+            "synonyms": [
+              "director_name"
+            ]
+          },
+          {
+            "name": "director_url",
+            "type": "table column",
+            "column name": "director_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "http://mubi.com/cast/esteban-sapir",
+              "http://mubi.com/cast/oskar-roehler",
+              "http://mubi.com/cast/rafi-pitts",
+              "http://mubi.com/cast/michel-ocelot, h...",
+              "http://mubi.com/cast/christopher-zalla"
+            ],
+            "synonyms": [
+              "director_url"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "movies"
+        ]
+      },
+      {
+        "name": "ratings",
+        "type": "simple table",
+        "table path": "main.ratings",
+        "unique properties": [
+          [
+            "movie_id",
+            "rating_id",
+            "rating_url",
+            "rating_score",
+            "rating_timestamp_utc",
+            "critic",
+            "critic_likes",
+            "critic_comments",
+            "user_id",
+            "user_trialist",
+            "user_subscriber",
+            "user_eligible_for_trial",
+            "user_has_payment_method"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "movie_id",
+            "type": "table column",
+            "column name": "movie_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1066,
+              1067,
+              1068,
+              1069,
+              1070
+            ],
+            "synonyms": [
+              "movie_id"
+            ]
+          },
+          {
+            "name": "rating_id",
+            "type": "table column",
+            "column name": "rating_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              15610495,
+              10704606,
+              10177114,
+              10130280,
+              8357049
+            ],
+            "synonyms": [
+              "rating_id"
+            ]
+          },
+          {
+            "name": "rating_url",
+            "type": "table column",
+            "column name": "rating_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "http://mubi.com/films/pavee-lackeen-t...",
+              "http://mubi.com/films/pavee-lackeen-t...",
+              "http://mubi.com/films/pavee-lackeen-t...",
+              "http://mubi.com/films/pavee-lackeen-t...",
+              "http://mubi.com/films/pavee-lackeen-t..."
+            ],
+            "synonyms": [
+              "rating_url"
+            ]
+          },
+          {
+            "name": "rating_score",
+            "type": "table column",
+            "column name": "rating_score",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              2,
+              4,
+              5,
+              1
+            ],
+            "synonyms": [
+              "rating_score"
+            ]
+          },
+          {
+            "name": "rating_timestamp_utc",
+            "type": "table column",
+            "column name": "rating_timestamp_utc",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2017-06-10 12:38:33",
+              "2014-08-15 23:42:31",
+              "2014-01-30 13:21:57",
+              "2014-01-19 01:04:23",
+              "2012-10-02 18:28:47"
+            ],
+            "synonyms": [
+              "rating_timestamp_utc"
+            ]
+          },
+          {
+            "name": "critic",
+            "type": "table column",
+            "column name": "critic",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "I am a bit disappointed by this docum...",
+              "Splendid debut. Whatever happened to ...",
+              "One of the more harrowing viewing exp...",
+              "2,5",
+              "Can we all just agree to pretend that..."
+            ],
+            "synonyms": [
+              "critic"
+            ]
+          },
+          {
+            "name": "critic_likes",
+            "type": "table column",
+            "column name": "critic_likes",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              4,
+              6
+            ],
+            "synonyms": [
+              "critic_likes"
+            ]
+          },
+          {
+            "name": "critic_comments",
+            "type": "table column",
+            "column name": "critic_comments",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              2,
+              1,
+              3,
+              11
+            ],
+            "synonyms": [
+              "critic_comments"
+            ]
+          },
+          {
+            "name": "user_id",
+            "type": "table column",
+            "column name": "user_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              41579158,
+              85981819,
+              4208563,
+              9820140,
+              68654088
+            ],
+            "synonyms": [
+              "user_id"
+            ]
+          },
+          {
+            "name": "user_trialist",
+            "type": "table column",
+            "column name": "user_trialist",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "user_trialist"
+            ]
+          },
+          {
+            "name": "user_subscriber",
+            "type": "table column",
+            "column name": "user_subscriber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "user_subscriber"
+            ]
+          },
+          {
+            "name": "user_eligible_for_trial",
+            "type": "table column",
+            "column name": "user_eligible_for_trial",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              0
+            ],
+            "synonyms": [
+              "user_eligible_for_trial"
+            ]
+          },
+          {
+            "name": "user_has_payment_method",
+            "type": "table column",
+            "column name": "user_has_payment_method",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "user_has_payment_method"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "ratings"
+        ]
+      },
+      {
+        "name": "ratings_users",
+        "type": "simple table",
+        "table path": "main.ratings_users",
+        "unique properties": [
+          [
+            "user_id",
+            "rating_date_utc",
+            "user_trialist",
+            "user_subscriber",
+            "user_avatar_image_url",
+            "user_cover_image_url",
+            "user_eligible_for_trial",
+            "user_has_payment_method"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "user_id",
+            "type": "table column",
+            "column name": "user_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              41579158,
+              68654088,
+              84114365,
+              29755671,
+              93302487
+            ],
+            "synonyms": [
+              "user_id"
+            ]
+          },
+          {
+            "name": "rating_date_utc",
+            "type": "table column",
+            "column name": "rating_date_utc",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2017-06-10",
+              "2012-10-02",
+              "2010-12-25",
+              "2010-11-15",
+              "2010-01-05"
+            ],
+            "synonyms": [
+              "rating_date_utc"
+            ]
+          },
+          {
+            "name": "user_trialist",
+            "type": "table column",
+            "column name": "user_trialist",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "user_trialist"
+            ]
+          },
+          {
+            "name": "user_subscriber",
+            "type": "table column",
+            "column name": "user_subscriber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "user_subscriber"
+            ]
+          },
+          {
+            "name": "user_avatar_image_url",
+            "type": "table column",
+            "column name": "user_avatar_image_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://assets.mubicdn.net/images/ava...",
+              "https://assets.mubicdn.net/images/ava...",
+              "https://assets.mubicdn.net/images/ava...",
+              "//mubi.com/assets/placeholders/avatar...",
+              "https://assets.mubicdn.net/images/ava..."
+            ],
+            "synonyms": [
+              "user_avatar_image_url"
+            ]
+          },
+          {
+            "name": "user_cover_image_url",
+            "type": "table column",
+            "column name": "user_cover_image_url",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "https://assets.mubicdn.net/images/cov...",
+              "https://assets.mubicdn.net/images/cov...",
+              "https://assets.mubicdn.net/images/cov...",
+              "https://assets.mubicdn.net/images/cov...",
+              "https://assets.mubicdn.net/images/cov..."
+            ],
+            "synonyms": [
+              "user_cover_image_url"
+            ]
+          },
+          {
+            "name": "user_eligible_for_trial",
+            "type": "table column",
+            "column name": "user_eligible_for_trial",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              0
+            ],
+            "synonyms": [
+              "user_eligible_for_trial"
+            ]
+          },
+          {
+            "name": "user_has_payment_method",
+            "type": "table column",
+            "column name": "user_has_payment_method",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "user_has_payment_method"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "ratings_users"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "lists",
+        "parent collection": "lists_users",
+        "child collection": "lists",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "user_id": [
+            "user_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "lists_users",
+        "original parent": "lists_users",
+        "original property": "lists",
+        "singular": false,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "lists_users_2",
+        "parent collection": "lists",
+        "child collection": "lists_users",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "list_id": [
+            "list_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "lists_2",
+        "original parent": "lists",
+        "original property": "lists_users_2",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "ratings",
+        "parent collection": "ratings_users",
+        "child collection": "ratings",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "user_id": [
+            "user_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "ratings_users",
+        "original parent": "ratings_users",
+        "original property": "ratings",
+        "singular": false,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "ratings",
+        "parent collection": "ratings",
+        "child collection": "ratings",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "rating_id": [
+            "rating_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "ratings",
+        "parent collection": "lists_users",
+        "child collection": "ratings",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "user_id": [
+            "user_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "lists_users",
+        "original parent": "lists_users",
+        "original property": "ratings",
+        "singular": false,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "ratings",
+        "parent collection": "movies",
+        "child collection": "ratings",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "movie_id": [
+            "movie_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "movies",
+        "original parent": "movies",
+        "original property": "ratings",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "ratings_users",
+        "parent collection": "lists_users",
+        "child collection": "ratings_users",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "user_id": [
+            "user_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "lists_users",
+        "original parent": "lists_users",
+        "original property": "ratings_users",
+        "singular": false,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

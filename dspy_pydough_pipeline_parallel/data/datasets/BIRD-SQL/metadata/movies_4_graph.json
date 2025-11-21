@@ -1,0 +1,1584 @@
+[
+  {
+    "name": "movies_4",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "country",
+        "type": "simple table",
+        "table path": "main.country",
+        "unique properties": [
+          "country_id"
+        ],
+        "properties": [
+          {
+            "name": "country_id",
+            "type": "table column",
+            "column name": "country_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              128,
+              129,
+              130,
+              131,
+              132
+            ],
+            "synonyms": [
+              "country_id"
+            ]
+          },
+          {
+            "name": "country_iso_code",
+            "type": "table column",
+            "column name": "country_iso_code",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AE",
+              "AF",
+              "AO",
+              "AR",
+              "AT"
+            ],
+            "synonyms": [
+              "country_iso_code"
+            ]
+          },
+          {
+            "name": "country_name",
+            "type": "table column",
+            "column name": "country_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "United Arab Emirates",
+              "Afghanistan",
+              "Angola",
+              "Argentina",
+              "Austria"
+            ],
+            "synonyms": [
+              "country_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "country"
+        ]
+      },
+      {
+        "name": "department",
+        "type": "simple table",
+        "table path": "main.department",
+        "unique properties": [
+          "department_id"
+        ],
+        "properties": [
+          {
+            "name": "department_id",
+            "type": "table column",
+            "column name": "department_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "department_id"
+            ]
+          },
+          {
+            "name": "department_name",
+            "type": "table column",
+            "column name": "department_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Camera",
+              "Directing",
+              "Production",
+              "Writing",
+              "Editing"
+            ],
+            "synonyms": [
+              "department_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "department"
+        ]
+      },
+      {
+        "name": "gender",
+        "type": "simple table",
+        "table path": "main.gender",
+        "unique properties": [
+          "gender_id"
+        ],
+        "properties": [
+          {
+            "name": "gender_id",
+            "type": "table column",
+            "column name": "gender_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2
+            ],
+            "synonyms": [
+              "gender_id"
+            ]
+          },
+          {
+            "name": "gender",
+            "type": "table column",
+            "column name": "gender",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Unspecified",
+              "Female",
+              "Male"
+            ],
+            "synonyms": [
+              "gender"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "gender"
+        ]
+      },
+      {
+        "name": "genre",
+        "type": "simple table",
+        "table path": "main.genre",
+        "unique properties": [
+          "genre_id"
+        ],
+        "properties": [
+          {
+            "name": "genre_id",
+            "type": "table column",
+            "column name": "genre_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              12,
+              14,
+              16,
+              18,
+              27
+            ],
+            "synonyms": [
+              "genre_id"
+            ]
+          },
+          {
+            "name": "genre_name",
+            "type": "table column",
+            "column name": "genre_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Adventure",
+              "Fantasy",
+              "Animation",
+              "Drama",
+              "Horror"
+            ],
+            "synonyms": [
+              "genre_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "genre"
+        ]
+      },
+      {
+        "name": "keyword",
+        "type": "simple table",
+        "table path": "main.keyword",
+        "unique properties": [
+          "keyword_id"
+        ],
+        "properties": [
+          {
+            "name": "keyword_id",
+            "type": "table column",
+            "column name": "keyword_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              30,
+              65,
+              74,
+              75,
+              83
+            ],
+            "synonyms": [
+              "keyword_id"
+            ]
+          },
+          {
+            "name": "keyword_name",
+            "type": "table column",
+            "column name": "keyword_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "individual",
+              "holiday",
+              "germany",
+              "gunslinger",
+              "saving the world"
+            ],
+            "synonyms": [
+              "keyword_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "keyword"
+        ]
+      },
+      {
+        "name": "language",
+        "type": "simple table",
+        "table path": "main.language",
+        "unique properties": [
+          "language_id"
+        ],
+        "properties": [
+          {
+            "name": "language_id",
+            "type": "table column",
+            "column name": "language_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              24574,
+              24575,
+              24576,
+              24577,
+              24578
+            ],
+            "synonyms": [
+              "language_id"
+            ]
+          },
+          {
+            "name": "language_code",
+            "type": "table column",
+            "column name": "language_code",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "en",
+              "sv",
+              "de",
+              "xx",
+              "ja"
+            ],
+            "synonyms": [
+              "language_code"
+            ]
+          },
+          {
+            "name": "language_name",
+            "type": "table column",
+            "column name": "language_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "English",
+              "svenska",
+              "Deutsch",
+              "No Language",
+              "u65e5u672cu8a9e"
+            ],
+            "synonyms": [
+              "language_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "language"
+        ]
+      },
+      {
+        "name": "language_role",
+        "type": "simple table",
+        "table path": "main.language_role",
+        "unique properties": [
+          "role_id"
+        ],
+        "properties": [
+          {
+            "name": "role_id",
+            "type": "table column",
+            "column name": "role_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2
+            ],
+            "synonyms": [
+              "role_id"
+            ]
+          },
+          {
+            "name": "language_role",
+            "type": "table column",
+            "column name": "language_role",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Original",
+              "Spoken"
+            ],
+            "synonyms": [
+              "language_role"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "language_role"
+        ]
+      },
+      {
+        "name": "movie",
+        "type": "simple table",
+        "table path": "main.movie",
+        "unique properties": [
+          "movie_id"
+        ],
+        "properties": [
+          {
+            "name": "movie_id",
+            "type": "table column",
+            "column name": "movie_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              11,
+              12,
+              13,
+              14
+            ],
+            "synonyms": [
+              "movie_id"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Four Rooms",
+              "Star Wars",
+              "Finding Nemo",
+              "Forrest Gump",
+              "American Beauty"
+            ],
+            "synonyms": [
+              "title"
+            ]
+          },
+          {
+            "name": "budget",
+            "type": "table column",
+            "column name": "budget",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4000000,
+              11000000,
+              94000000,
+              55000000,
+              15000000
+            ],
+            "synonyms": [
+              "budget"
+            ]
+          },
+          {
+            "name": "homepage",
+            "type": "table column",
+            "column name": "homepage",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "",
+              "http://www.starwars.com/films/star-wa...",
+              "http://movies.disney.com/finding-nemo",
+              "http://www.dreamworks.com/ab/",
+              "http://www.clubcultura.com/clubcine/c..."
+            ],
+            "synonyms": [
+              "homepage"
+            ]
+          },
+          {
+            "name": "overview",
+            "type": "table column",
+            "column name": "overview",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "It's Ted the Bellhop's first night on...",
+              "Princess Leia is captured and held ho...",
+              "Nemo, an adventurous young clownfish,...",
+              "A man with a low IQ has accomplished ...",
+              "Lester Burnham, a depressed suburban ..."
+            ],
+            "synonyms": [
+              "overview"
+            ]
+          },
+          {
+            "name": "popularity",
+            "type": "table column",
+            "column name": "popularity",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              22.87623,
+              126.393695,
+              85.688789,
+              138.133331,
+              80.878605
+            ],
+            "synonyms": [
+              "popularity"
+            ]
+          },
+          {
+            "name": "release_date",
+            "type": "table column",
+            "column name": "release_date",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "1995-12-09",
+              "1977-05-25",
+              "2003-05-30",
+              "1994-07-06",
+              "1999-09-15"
+            ],
+            "synonyms": [
+              "release_date"
+            ]
+          },
+          {
+            "name": "revenue",
+            "type": "table column",
+            "column name": "revenue",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4300000,
+              775398007,
+              940335536,
+              677945399,
+              356296601
+            ],
+            "synonyms": [
+              "revenue"
+            ]
+          },
+          {
+            "name": "runtime",
+            "type": "table column",
+            "column name": "runtime",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              98,
+              121,
+              100,
+              142,
+              122
+            ],
+            "synonyms": [
+              "runtime"
+            ]
+          },
+          {
+            "name": "movie_status",
+            "type": "table column",
+            "column name": "movie_status",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Released",
+              "Rumored",
+              "Post Production"
+            ],
+            "synonyms": [
+              "movie_status"
+            ]
+          },
+          {
+            "name": "tagline",
+            "type": "table column",
+            "column name": "tagline",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Twelve outrageous guests. Four scanda...",
+              "A long time ago in a galaxy far, far ...",
+              "There are 3.7 trillion fish in the oc...",
+              "The world will never be the same, onc...",
+              "Look closer."
+            ],
+            "synonyms": [
+              "tagline"
+            ]
+          },
+          {
+            "name": "vote_average",
+            "type": "table column",
+            "column name": "vote_average",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6.5,
+              8.1,
+              7.6,
+              8.2,
+              7.9
+            ],
+            "synonyms": [
+              "vote_average"
+            ]
+          },
+          {
+            "name": "vote_count",
+            "type": "table column",
+            "column name": "vote_count",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              530,
+              6624,
+              6122,
+              7927,
+              3313
+            ],
+            "synonyms": [
+              "vote_count"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "movie"
+        ]
+      },
+      {
+        "name": "movie_cast",
+        "type": "simple table",
+        "table path": "main.movie_cast",
+        "unique properties": [
+          [
+            "movie_id",
+            "person_id",
+            "character_name",
+            "gender_id",
+            "cast_order"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "movie_id",
+            "type": "table column",
+            "column name": "movie_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              285,
+              559,
+              767,
+              1452,
+              58
+            ],
+            "synonyms": [
+              "movie_id"
+            ]
+          },
+          {
+            "name": "person_id",
+            "type": "table column",
+            "column name": "person_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              85,
+              114,
+              116,
+              1640,
+              1619
+            ],
+            "synonyms": [
+              "person_id"
+            ]
+          },
+          {
+            "name": "character_name",
+            "type": "table column",
+            "column name": "character_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Captain Jack Sparrow",
+              "Will Turner",
+              "Elizabeth Swann",
+              "William Bootstrap Bill Turner",
+              "Captain Sao Feng"
+            ],
+            "synonyms": [
+              "character_name"
+            ]
+          },
+          {
+            "name": "gender_id",
+            "type": "table column",
+            "column name": "gender_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              1,
+              0
+            ],
+            "synonyms": [
+              "gender_id"
+            ]
+          },
+          {
+            "name": "cast_order",
+            "type": "table column",
+            "column name": "cast_order",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "cast_order"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "movie_cast"
+        ]
+      },
+      {
+        "name": "movie_company",
+        "type": "simple table",
+        "table path": "main.movie_company",
+        "unique properties": [
+          [
+            "movie_id",
+            "company_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "movie_id",
+            "type": "table column",
+            "column name": "movie_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              11,
+              12,
+              13,
+              14
+            ],
+            "synonyms": [
+              "movie_id"
+            ]
+          },
+          {
+            "name": "company_id",
+            "type": "table column",
+            "column name": "company_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              14,
+              59,
+              1,
+              306,
+              3
+            ],
+            "synonyms": [
+              "company_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "movie_company"
+        ]
+      },
+      {
+        "name": "movie_crew",
+        "type": "simple table",
+        "table path": "main.movie_crew",
+        "unique properties": [
+          [
+            "movie_id",
+            "person_id",
+            "department_id",
+            "job"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "movie_id",
+            "type": "table column",
+            "column name": "movie_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              285,
+              559,
+              767,
+              1452,
+              58
+            ],
+            "synonyms": [
+              "movie_id"
+            ]
+          },
+          {
+            "name": "person_id",
+            "type": "table column",
+            "column name": "person_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              120,
+              1704,
+              770,
+              1705,
+              1706
+            ],
+            "synonyms": [
+              "person_id"
+            ]
+          },
+          {
+            "name": "department_id",
+            "type": "table column",
+            "column name": "department_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "department_id"
+            ]
+          },
+          {
+            "name": "job",
+            "type": "table column",
+            "column name": "job",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Director of Photography",
+              "Director",
+              "Producer",
+              "Screenplay",
+              "Editor"
+            ],
+            "synonyms": [
+              "job"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "movie_crew"
+        ]
+      },
+      {
+        "name": "movie_genres",
+        "type": "simple table",
+        "table path": "main.movie_genres",
+        "unique properties": [
+          [
+            "movie_id",
+            "genre_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "movie_id",
+            "type": "table column",
+            "column name": "movie_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              11,
+              12,
+              13,
+              14
+            ],
+            "synonyms": [
+              "movie_id"
+            ]
+          },
+          {
+            "name": "genre_id",
+            "type": "table column",
+            "column name": "genre_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              35,
+              80,
+              12,
+              28,
+              878
+            ],
+            "synonyms": [
+              "genre_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "movie_genres"
+        ]
+      },
+      {
+        "name": "movie_keywords",
+        "type": "simple table",
+        "table path": "main.movie_keywords",
+        "unique properties": [
+          [
+            "movie_id",
+            "keyword_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "movie_id",
+            "type": "table column",
+            "column name": "movie_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              11,
+              12,
+              13,
+              14
+            ],
+            "synonyms": [
+              "movie_id"
+            ]
+          },
+          {
+            "name": "keyword_id",
+            "type": "table column",
+            "column name": "keyword_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              612,
+              613,
+              616,
+              622,
+              922
+            ],
+            "synonyms": [
+              "keyword_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "movie_keywords"
+        ]
+      },
+      {
+        "name": "movie_languages",
+        "type": "simple table",
+        "table path": "main.movie_languages",
+        "unique properties": [
+          [
+            "movie_id",
+            "language_id",
+            "language_role_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "movie_id",
+            "type": "table column",
+            "column name": "movie_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              11,
+              12,
+              13,
+              14
+            ],
+            "synonyms": [
+              "movie_id"
+            ]
+          },
+          {
+            "name": "language_id",
+            "type": "table column",
+            "column name": "language_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              24574,
+              24575,
+              24576,
+              24577,
+              24578
+            ],
+            "synonyms": [
+              "language_id"
+            ]
+          },
+          {
+            "name": "language_role_id",
+            "type": "table column",
+            "column name": "language_role_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              1
+            ],
+            "synonyms": [
+              "language_role_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "movie_languages"
+        ]
+      },
+      {
+        "name": "person",
+        "type": "simple table",
+        "table path": "main.person",
+        "unique properties": [
+          "person_id"
+        ],
+        "properties": [
+          {
+            "name": "person_id",
+            "type": "table column",
+            "column name": "person_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "person_id"
+            ]
+          },
+          {
+            "name": "person_name",
+            "type": "table column",
+            "column name": "person_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "George Lucas",
+              "Mark Hamill",
+              "Harrison Ford",
+              "Carrie Fisher",
+              "Peter Cushing"
+            ],
+            "synonyms": [
+              "person_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "person"
+        ]
+      },
+      {
+        "name": "production_company",
+        "type": "simple table",
+        "table path": "main.production_company",
+        "unique properties": [
+          "company_id"
+        ],
+        "properties": [
+          {
+            "name": "company_id",
+            "type": "table column",
+            "column name": "company_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "company_id"
+            ]
+          },
+          {
+            "name": "company_name",
+            "type": "table column",
+            "column name": "company_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Lucasfilm",
+              "Walt Disney Pictures",
+              "Pixar Animation Studios",
+              "Paramount Pictures",
+              "Columbia Pictures"
+            ],
+            "synonyms": [
+              "company_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "production_company"
+        ]
+      },
+      {
+        "name": "production_country",
+        "type": "simple table",
+        "table path": "main.production_country",
+        "unique properties": [
+          [
+            "movie_id",
+            "country_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "movie_id",
+            "type": "table column",
+            "column name": "movie_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              11,
+              12,
+              13,
+              14
+            ],
+            "synonyms": [
+              "movie_id"
+            ]
+          },
+          {
+            "name": "country_id",
+            "type": "table column",
+            "column name": "country_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              214,
+              131,
+              152,
+              159,
+              161
+            ],
+            "synonyms": [
+              "country_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "production_country"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "movie_cast",
+        "parent collection": "person",
+        "child collection": "movie_cast",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "person_id": [
+            "person_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "movie_cast",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_cast",
+        "parent collection": "movie",
+        "child collection": "movie_cast",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "movie_id": [
+            "movie_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "movie",
+        "original parent": "movie",
+        "original property": "movie_cast",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_cast",
+        "parent collection": "gender",
+        "child collection": "movie_cast",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "gender_id": [
+            "gender_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "gender",
+        "original parent": "gender",
+        "original property": "movie_cast",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_company",
+        "parent collection": "production_company",
+        "child collection": "movie_company",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "company_id": [
+            "company_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "production_company",
+        "original parent": "production_company",
+        "original property": "movie_company",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_company",
+        "parent collection": "movie",
+        "child collection": "movie_company",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "movie_id": [
+            "movie_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "movie",
+        "original parent": "movie",
+        "original property": "movie_company",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_crew",
+        "parent collection": "person",
+        "child collection": "movie_crew",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "person_id": [
+            "person_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "movie_crew",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_crew",
+        "parent collection": "movie",
+        "child collection": "movie_crew",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "movie_id": [
+            "movie_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "movie",
+        "original parent": "movie",
+        "original property": "movie_crew",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_crew",
+        "parent collection": "department",
+        "child collection": "movie_crew",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "department_id": [
+            "department_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "department",
+        "original parent": "department",
+        "original property": "movie_crew",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_genres",
+        "parent collection": "movie",
+        "child collection": "movie_genres",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "movie_id": [
+            "movie_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "movie",
+        "original parent": "movie",
+        "original property": "movie_genres",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_genres",
+        "parent collection": "genre",
+        "child collection": "movie_genres",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "genre_id": [
+            "genre_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "genre",
+        "original parent": "genre",
+        "original property": "movie_genres",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_keywords",
+        "parent collection": "keyword",
+        "child collection": "movie_keywords",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "keyword_id": [
+            "keyword_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "keyword",
+        "original parent": "keyword",
+        "original property": "movie_keywords",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_keywords",
+        "parent collection": "movie",
+        "child collection": "movie_keywords",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "movie_id": [
+            "movie_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "movie",
+        "original parent": "movie",
+        "original property": "movie_keywords",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_languages",
+        "parent collection": "language_role",
+        "child collection": "movie_languages",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "role_id": [
+            "language_role_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "language_role",
+        "original parent": "language_role",
+        "original property": "movie_languages",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_languages",
+        "parent collection": "movie",
+        "child collection": "movie_languages",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "movie_id": [
+            "movie_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "movie",
+        "original parent": "movie",
+        "original property": "movie_languages",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "movie_languages",
+        "parent collection": "language",
+        "child collection": "movie_languages",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "language_id": [
+            "language_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "language",
+        "original parent": "language",
+        "original property": "movie_languages",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "production_country",
+        "parent collection": "movie",
+        "child collection": "production_country",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "movie_id": [
+            "movie_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "movie",
+        "original parent": "movie",
+        "original property": "production_country",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "production_country",
+        "parent collection": "country",
+        "child collection": "production_country",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "country_id": [
+            "country_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country",
+        "original parent": "country",
+        "original property": "production_country",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

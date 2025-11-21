@@ -1,0 +1,542 @@
+[
+  {
+    "name": "authors",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "author",
+        "type": "simple table",
+        "table path": "main.Author",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              9,
+              14,
+              15,
+              25,
+              37
+            ],
+            "synonyms": [
+              "Id"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Ernest Jordan",
+              "K. MORIBE",
+              "D. Jakominich",
+              "William H. Nailon",
+              "P. B. Littlewood"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "affiliation",
+            "type": "table column",
+            "column name": "Affiliation",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Cavendish Laboratory|Cambridge Univer...",
+              "Department of Molecular Biology|Schoo...",
+              "HASLab / INESC TEC and Universidade d...",
+              "Purdue University, West Lafayette, In...",
+              "This project,is supported,by a Hong,K..."
+            ],
+            "synonyms": [
+              "Affiliation"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Author"
+        ]
+      },
+      {
+        "name": "conference",
+        "type": "simple table",
+        "table path": "main.Conference",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              4,
+              5,
+              6
+            ],
+            "synonyms": [
+              "Id"
+            ]
+          },
+          {
+            "name": "shortname",
+            "type": "table column",
+            "column name": "ShortName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "IADIS",
+              "IADT",
+              "",
+              "ICOMP",
+              "ICAC"
+            ],
+            "synonyms": [
+              "ShortName"
+            ]
+          },
+          {
+            "name": "fullname",
+            "type": "table column",
+            "column name": "FullName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "International Association for Develop...",
+              "Issues and Applications of Database T...",
+              "IBM Germany Scientific Symposium Series",
+              "International Conference on Internet ...",
+              "International Conference on Autonomic..."
+            ],
+            "synonyms": [
+              "FullName"
+            ]
+          },
+          {
+            "name": "homepage",
+            "type": "table column",
+            "column name": "HomePage",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "",
+              "http://www.informatik.uni-trier.de/~l...",
+              "http://www.informatik.uni-trier.de/~l...",
+              "http://www.informatik.uni-trier.de/~l...",
+              "http://www.autonomic-conference.org/"
+            ],
+            "synonyms": [
+              "HomePage"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Conference"
+        ]
+      },
+      {
+        "name": "journal",
+        "type": "simple table",
+        "table path": "main.Journal",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Id"
+            ]
+          },
+          {
+            "name": "shortname",
+            "type": "table column",
+            "column name": "ShortName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "ICOM",
+              "AEPIA",
+              "IBMRD",
+              "IBMSJ",
+              ""
+            ],
+            "synonyms": [
+              "ShortName"
+            ]
+          },
+          {
+            "name": "fullname",
+            "type": "table column",
+            "column name": "FullName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Zeitschrift F\u00fcr Interaktive Und Koope...",
+              "Inteligencia Artificial,revista Ibero...",
+              "Ibm Journal of Research and Development",
+              "Ibm Systems Journal",
+              "Iet Software/iee Proceedings - Software"
+            ],
+            "synonyms": [
+              "FullName"
+            ]
+          },
+          {
+            "name": "homepage",
+            "type": "table column",
+            "column name": "HomePage",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "http://www.i-com-media.de",
+              "http://aepia.dsic.upv.es/revista/",
+              "http://www-tr.watson.ibm.com/journal/...",
+              "http://researchweb.watson.ibm.com/jou...",
+              "http://www.ietdl.org/IET-SEN"
+            ],
+            "synonyms": [
+              "HomePage"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Journal"
+        ]
+      },
+      {
+        "name": "paper",
+        "type": "simple table",
+        "table path": "main.Paper",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "Id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Id"
+            ]
+          },
+          {
+            "name": "title",
+            "type": "table column",
+            "column name": "Title",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Stitching videos streamed by mobile p...",
+              "A nonlocal convection\u2013diffusion equation",
+              "Area Effects in Cepaea",
+              "Multiple paternity in a natural popul...",
+              "Complexity of Finding Short Resolutio..."
+            ],
+            "synonyms": [
+              "Title"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"Year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2009,
+              2007,
+              1963,
+              2005,
+              1997
+            ],
+            "synonyms": [
+              "Year"
+            ]
+          },
+          {
+            "name": "conferenceid",
+            "type": "table column",
+            "column name": "ConferenceId",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              167,
+              0,
+              158,
+              341,
+              2397
+            ],
+            "synonyms": [
+              "ConferenceId"
+            ]
+          },
+          {
+            "name": "journalid",
+            "type": "table column",
+            "column name": "JournalId",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              7234,
+              16867,
+              6130,
+              17639
+            ],
+            "synonyms": [
+              "JournalId"
+            ]
+          },
+          {
+            "name": "keyword",
+            "type": "table column",
+            "column name": "Keyword",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "mobile video capturing|real-time|vide...",
+              "Nonlocal diffusion; Convection\u2013diffus...",
+              "Keywords: methylation, epigenetic, me...",
+              "Optical properties, Organic materials...",
+              "Computational model; X-machine; Ants;..."
+            ],
+            "synonyms": [
+              "Keyword"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Paper"
+        ]
+      },
+      {
+        "name": "paperauthor",
+        "type": "simple table",
+        "table path": "main.PaperAuthor",
+        "unique properties": [
+          [
+            "paperid",
+            "authorid",
+            "name",
+            "affiliation"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "paperid",
+            "type": "table column",
+            "column name": "PaperId",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "synonyms": [
+              "PaperId"
+            ]
+          },
+          {
+            "name": "authorid",
+            "type": "table column",
+            "column name": "AuthorId",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1456512,
+              1102257,
+              1806301,
+              2252569,
+              1491002
+            ],
+            "synonyms": [
+              "AuthorId"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "ADAM G. JONES",
+              "Kazuo Iwama",
+              "Asgeir Finnseth",
+              "Gu\u00f0mundur J\u00f6kulsson",
+              "M. H. Friedman"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "affiliation",
+            "type": "table column",
+            "column name": "Affiliation",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Kyushu University 812 Fukuoka Japan 8...",
+              "The french National Institute for Res...",
+              "Nanjing University",
+              "NOAA|Forecast Systems Laboratory|Colo...",
+              "Office of Naval Research"
+            ],
+            "synonyms": [
+              "Affiliation"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "PaperAuthor"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "paper",
+        "parent collection": "journal",
+        "child collection": "paper",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "journalid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "journal",
+        "original parent": "journal",
+        "original property": "paper",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "paper",
+        "parent collection": "conference",
+        "child collection": "paper",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "conferenceid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "conference",
+        "original parent": "conference",
+        "original property": "paper",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "paperauthor",
+        "parent collection": "author",
+        "child collection": "paperauthor",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "authorid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "author",
+        "original parent": "author",
+        "original property": "paperauthor",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "paperauthor",
+        "parent collection": "paper",
+        "child collection": "paperauthor",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "paperid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "paper",
+        "original parent": "paper",
+        "original property": "paperauthor",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

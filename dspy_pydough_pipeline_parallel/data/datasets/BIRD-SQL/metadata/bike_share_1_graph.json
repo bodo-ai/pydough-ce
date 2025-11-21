@@ -1,0 +1,874 @@
+[
+  {
+    "name": "bike_share_1",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "station",
+        "type": "simple table",
+        "table path": "main.station",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "San Jose Diridon Caltrain Station",
+              "San Jose Civic Center",
+              "Santa Clara at Almaden",
+              "Adobe on Almaden",
+              "San Pedro Square"
+            ],
+            "synonyms": [
+              "name"
+            ]
+          },
+          {
+            "name": "lat",
+            "type": "table column",
+            "column name": "lat",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              37.329732,
+              37.330698,
+              37.333988,
+              37.331415,
+              37.336721000000004
+            ],
+            "synonyms": [
+              "lat"
+            ]
+          },
+          {
+            "name": "long",
+            "type": "table column",
+            "column name": "long",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              -121.90178200000001,
+              -121.888979,
+              -121.894902,
+              -121.8932,
+              -121.894074
+            ],
+            "synonyms": [
+              "long"
+            ]
+          },
+          {
+            "name": "dock_count",
+            "type": "table column",
+            "column name": "dock_count",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              27,
+              15,
+              11,
+              19,
+              25
+            ],
+            "synonyms": [
+              "dock_count"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "San Jose",
+              "Redwood City",
+              "Mountain View",
+              "Palo Alto",
+              "San Francisco"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "installation_date",
+            "type": "table column",
+            "column name": "installation_date",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "8/6/2013",
+              "8/5/2013",
+              "8/7/2013",
+              "8/12/2013",
+              "8/15/2013"
+            ],
+            "synonyms": [
+              "installation_date"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "station"
+        ]
+      },
+      {
+        "name": "status",
+        "type": "simple table",
+        "table path": "main.status",
+        "unique properties": [
+          [
+            "station_id",
+            "bikes_available",
+            "docks_available",
+            "time"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "station_id",
+            "type": "table column",
+            "column name": "station_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "synonyms": [
+              "station_id"
+            ]
+          },
+          {
+            "name": "bikes_available",
+            "type": "table column",
+            "column name": "bikes_available",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              3,
+              4,
+              1,
+              5
+            ],
+            "synonyms": [
+              "bikes_available"
+            ]
+          },
+          {
+            "name": "docks_available",
+            "type": "table column",
+            "column name": "docks_available",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              25,
+              24,
+              23,
+              26,
+              22
+            ],
+            "synonyms": [
+              "docks_available"
+            ]
+          },
+          {
+            "name": "time",
+            "type": "table column",
+            "column name": "time",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2013/08/29 12:06:01",
+              "2013/08/29 12:07:01",
+              "2013/08/29 12:08:01",
+              "2013/08/29 12:09:01",
+              "2013/08/29 12:10:01"
+            ],
+            "synonyms": [
+              "time"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "status"
+        ]
+      },
+      {
+        "name": "trip",
+        "type": "simple table",
+        "table path": "main.trip",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4069,
+              4073,
+              4074,
+              4075,
+              4076
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "duration",
+            "type": "table column",
+            "column name": "duration",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              174,
+              1067,
+              1131,
+              1117,
+              1118
+            ],
+            "synonyms": [
+              "duration"
+            ]
+          },
+          {
+            "name": "start_date",
+            "type": "table column",
+            "column name": "start_date",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "8/29/2013 9:08",
+              "8/29/2013 9:24",
+              "8/29/2013 9:25",
+              "8/29/2013 9:31",
+              "8/29/2013 9:35"
+            ],
+            "synonyms": [
+              "start_date"
+            ]
+          },
+          {
+            "name": "start_station_name",
+            "type": "table column",
+            "column name": "start_station_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2nd at South Park",
+              "South Van Ness at Market",
+              "Redwood City Caltrain Station",
+              "Mountain View City Hall",
+              "Commercial at Montgomery"
+            ],
+            "synonyms": [
+              "start_station_name"
+            ]
+          },
+          {
+            "name": "start_station_id",
+            "type": "table column",
+            "column name": "start_station_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              64,
+              66,
+              22,
+              27,
+              45
+            ],
+            "synonyms": [
+              "start_station_id"
+            ]
+          },
+          {
+            "name": "end_date",
+            "type": "table column",
+            "column name": "end_date",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "8/29/2013 9:11",
+              "8/29/2013 9:42",
+              "8/29/2013 9:43",
+              "8/29/2013 10:34",
+              "8/29/2013 9:52"
+            ],
+            "synonyms": [
+              "end_date"
+            ]
+          },
+          {
+            "name": "end_station_name",
+            "type": "table column",
+            "column name": "end_station_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2nd at South Park",
+              "San Francisco Caltrain 2 (330 Townsend)",
+              "Redwood City Caltrain Station",
+              "South Van Ness at Market",
+              "Mountain View City Hall"
+            ],
+            "synonyms": [
+              "end_station_name"
+            ]
+          },
+          {
+            "name": "end_station_id",
+            "type": "table column",
+            "column name": "end_station_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              64,
+              69,
+              22,
+              66,
+              27
+            ],
+            "synonyms": [
+              "end_station_id"
+            ]
+          },
+          {
+            "name": "bike_id",
+            "type": "table column",
+            "column name": "bike_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              288,
+              321,
+              317,
+              316,
+              322
+            ],
+            "synonyms": [
+              "bike_id"
+            ]
+          },
+          {
+            "name": "subscription_type",
+            "type": "table column",
+            "column name": "subscription_type",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Subscriber",
+              "Customer"
+            ],
+            "synonyms": [
+              "subscription_type"
+            ]
+          },
+          {
+            "name": "zip_code",
+            "type": "table column",
+            "column name": "zip_code",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              94114,
+              94703,
+              94115,
+              94122,
+              94597
+            ],
+            "synonyms": [
+              "zip_code"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "trip"
+        ]
+      },
+      {
+        "name": "weather",
+        "type": "simple table",
+        "table path": "main.weather",
+        "unique properties": [
+          [
+            "date_",
+            "max_temperature_f",
+            "mean_temperature_f",
+            "min_temperature_f",
+            "max_dew_point_f",
+            "mean_dew_point_f",
+            "min_dew_point_f",
+            "max_humidity",
+            "mean_humidity",
+            "min_humidity",
+            "max_sea_level_pressure_inches",
+            "mean_sea_level_pressure_inches",
+            "min_sea_level_pressure_inches",
+            "max_visibility_miles",
+            "mean_visibility_miles",
+            "min_visibility_miles",
+            "max_wind_speed_mph",
+            "mean_wind_speed_mph",
+            "max_gust_speed_mph",
+            "precipitation_inches",
+            "cloud_cover",
+            "events",
+            "wind_dir_degrees",
+            "zip_code"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "date_",
+            "type": "table column",
+            "column name": "\"date\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "8/29/2013",
+              "8/30/2013",
+              "8/31/2013",
+              "9/1/2013",
+              "9/2/2013"
+            ],
+            "synonyms": [
+              "date"
+            ]
+          },
+          {
+            "name": "max_temperature_f",
+            "type": "table column",
+            "column name": "max_temperature_f",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              74,
+              78,
+              71,
+              75,
+              73
+            ],
+            "synonyms": [
+              "max_temperature_f"
+            ]
+          },
+          {
+            "name": "mean_temperature_f",
+            "type": "table column",
+            "column name": "mean_temperature_f",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              68,
+              69,
+              64,
+              66,
+              67
+            ],
+            "synonyms": [
+              "mean_temperature_f"
+            ]
+          },
+          {
+            "name": "min_temperature_f",
+            "type": "table column",
+            "column name": "min_temperature_f",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              61,
+              60,
+              57,
+              58,
+              62
+            ],
+            "synonyms": [
+              "min_temperature_f"
+            ]
+          },
+          {
+            "name": "max_dew_point_f",
+            "type": "table column",
+            "column name": "max_dew_point_f",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              61,
+              57,
+              60,
+              59,
+              64
+            ],
+            "synonyms": [
+              "max_dew_point_f"
+            ]
+          },
+          {
+            "name": "mean_dew_point_f",
+            "type": "table column",
+            "column name": "mean_dew_point_f",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              58,
+              56,
+              60,
+              57,
+              51
+            ],
+            "synonyms": [
+              "mean_dew_point_f"
+            ]
+          },
+          {
+            "name": "min_dew_point_f",
+            "type": "table column",
+            "column name": "min_dew_point_f",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              56,
+              54,
+              53,
+              58,
+              51
+            ],
+            "synonyms": [
+              "min_dew_point_f"
+            ]
+          },
+          {
+            "name": "max_humidity",
+            "type": "table column",
+            "column name": "max_humidity",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              93,
+              90,
+              87,
+              84,
+              86
+            ],
+            "synonyms": [
+              "max_humidity"
+            ]
+          },
+          {
+            "name": "mean_humidity",
+            "type": "table column",
+            "column name": "mean_humidity",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              75,
+              70,
+              68,
+              77,
+              65
+            ],
+            "synonyms": [
+              "mean_humidity"
+            ]
+          },
+          {
+            "name": "min_humidity",
+            "type": "table column",
+            "column name": "min_humidity",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              57,
+              50,
+              49,
+              61,
+              46
+            ],
+            "synonyms": [
+              "min_humidity"
+            ]
+          },
+          {
+            "name": "max_sea_level_pressure_inches",
+            "type": "table column",
+            "column name": "max_sea_level_pressure_inches",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              30.07,
+              30.05,
+              30.0,
+              29.96,
+              29.97
+            ],
+            "synonyms": [
+              "max_sea_level_pressure_inches"
+            ]
+          },
+          {
+            "name": "mean_sea_level_pressure_inches",
+            "type": "table column",
+            "column name": "mean_sea_level_pressure_inches",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              30.02,
+              30.0,
+              29.96,
+              29.93,
+              29.94
+            ],
+            "synonyms": [
+              "mean_sea_level_pressure_inches"
+            ]
+          },
+          {
+            "name": "min_sea_level_pressure_inches",
+            "type": "table column",
+            "column name": "min_sea_level_pressure_inches",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              29.97,
+              29.93,
+              29.92,
+              29.91,
+              29.9
+            ],
+            "synonyms": [
+              "min_sea_level_pressure_inches"
+            ]
+          },
+          {
+            "name": "max_visibility_miles",
+            "type": "table column",
+            "column name": "max_visibility_miles",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              9,
+              8,
+              20,
+              15
+            ],
+            "synonyms": [
+              "max_visibility_miles"
+            ]
+          },
+          {
+            "name": "mean_visibility_miles",
+            "type": "table column",
+            "column name": "mean_visibility_miles",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              9,
+              8,
+              5,
+              7
+            ],
+            "synonyms": [
+              "mean_visibility_miles"
+            ]
+          },
+          {
+            "name": "min_visibility_miles",
+            "type": "table column",
+            "column name": "min_visibility_miles",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10,
+              7,
+              6,
+              9,
+              2
+            ],
+            "synonyms": [
+              "min_visibility_miles"
+            ]
+          },
+          {
+            "name": "max_wind_speed_mph",
+            "type": "table column",
+            "column name": "max_wind_Speed_mph",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              23,
+              29,
+              26,
+              25,
+              24
+            ],
+            "synonyms": [
+              "max_wind_Speed_mph"
+            ]
+          },
+          {
+            "name": "mean_wind_speed_mph",
+            "type": "table column",
+            "column name": "mean_wind_speed_mph",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              11,
+              13,
+              15,
+              12,
+              19
+            ],
+            "synonyms": [
+              "mean_wind_speed_mph"
+            ]
+          },
+          {
+            "name": "max_gust_speed_mph",
+            "type": "table column",
+            "column name": "max_gust_speed_mph",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              28,
+              35,
+              31,
+              29,
+              30
+            ],
+            "synonyms": [
+              "max_gust_speed_mph"
+            ]
+          },
+          {
+            "name": "precipitation_inches",
+            "type": "table column",
+            "column name": "precipitation_inches",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "0",
+              "0.23",
+              "T",
+              "0.01",
+              "0.28"
+            ],
+            "synonyms": [
+              "precipitation_inches"
+            ]
+          },
+          {
+            "name": "cloud_cover",
+            "type": "table column",
+            "column name": "cloud_cover",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4,
+              2,
+              6,
+              3,
+              0
+            ],
+            "synonyms": [
+              "cloud_cover"
+            ]
+          },
+          {
+            "name": "events",
+            "type": "table column",
+            "column name": "events",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "",
+              "Fog",
+              "Rain",
+              "Fog-Rain",
+              "rain"
+            ],
+            "synonyms": [
+              "events"
+            ]
+          },
+          {
+            "name": "wind_dir_degrees",
+            "type": "table column",
+            "column name": "wind_dir_degrees",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              286,
+              291,
+              284,
+              277,
+              276
+            ],
+            "synonyms": [
+              "wind_dir_degrees"
+            ]
+          },
+          {
+            "name": "zip_code",
+            "type": "table column",
+            "column name": "zip_code",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "94107",
+              "94063",
+              "94301",
+              "94041",
+              "95113"
+            ],
+            "synonyms": [
+              "zip_code"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "weather"
+        ]
+      }
+    ],
+    "relationships": []
+  }
+]

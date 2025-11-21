@@ -1,0 +1,392 @@
+[
+  {
+    "name": "genes",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "classification",
+        "type": "simple table",
+        "table path": "main.Classification",
+        "unique properties": [
+          "geneid"
+        ],
+        "properties": [
+          {
+            "name": "geneid",
+            "type": "table column",
+            "column name": "GeneID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "G234064",
+              "G234065",
+              "G234070",
+              "G234073",
+              "G234074"
+            ],
+            "synonyms": [
+              "GeneID"
+            ]
+          },
+          {
+            "name": "localization",
+            "type": "table column",
+            "column name": "Localization",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "cytoplasm",
+              "cytoskeleton",
+              "nucleus",
+              "plasma membrane",
+              "mitochondria"
+            ],
+            "synonyms": [
+              "Localization"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Classification"
+        ]
+      },
+      {
+        "name": "genes",
+        "type": "simple table",
+        "table path": "main.Genes",
+        "unique properties": [
+          [
+            "geneid",
+            "essential",
+            "class_",
+            "complex_",
+            "phenotype",
+            "motif",
+            "chromosome",
+            "function",
+            "localization"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "geneid",
+            "type": "table column",
+            "column name": "GeneID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "G234064",
+              "G234065",
+              "G234070",
+              "G234073",
+              "G234074"
+            ],
+            "synonyms": [
+              "GeneID"
+            ]
+          },
+          {
+            "name": "essential",
+            "type": "table column",
+            "column name": "Essential",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Essential",
+              "Non-Essential",
+              "?",
+              "Ambiguous-Essential"
+            ],
+            "synonyms": [
+              "Essential"
+            ]
+          },
+          {
+            "name": "class_",
+            "type": "table column",
+            "column name": "Class",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "GTP/GDP-exchange factors (GEFs)",
+              "ATPases",
+              "Molecular chaperones",
+              "Motorproteins",
+              "Cyclins"
+            ],
+            "synonyms": [
+              "Class"
+            ]
+          },
+          {
+            "name": "complex_",
+            "type": "table column",
+            "column name": "Complex",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Translation complexes",
+              "?",
+              "Cytoskeleton",
+              "Cyclin-CDK (Cyclin-dependent kinases)...",
+              "Transcription complexes/Transcriptosome"
+            ],
+            "synonyms": [
+              "Complex"
+            ]
+          },
+          {
+            "name": "phenotype",
+            "type": "table column",
+            "column name": "Phenotype",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "?",
+              "Mating and sporulation defects",
+              "Cell cycle defects",
+              "Cell morphology and organelle mutants",
+              "Conditional phenotypes"
+            ],
+            "synonyms": [
+              "Phenotype"
+            ]
+          },
+          {
+            "name": "motif",
+            "type": "table column",
+            "column name": "Motif",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "PS00824",
+              "PS00825",
+              "?",
+              "PS00017",
+              "PS00013"
+            ],
+            "synonyms": [
+              "Motif"
+            ]
+          },
+          {
+            "name": "chromosome",
+            "type": "table column",
+            "column name": "Chromosome",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "Chromosome"
+            ]
+          },
+          {
+            "name": "function",
+            "type": "table column",
+            "column name": "Function",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CELLULAR ORGANIZATION (proteins are l...",
+              "PROTEIN SYNTHESIS",
+              "CELL RESCUE, DEFENSE, CELL DEATH AND ...",
+              "CELLULAR TRANSPORT AND TRANSPORTMECHA...",
+              "PROTEIN DESTINATION"
+            ],
+            "synonyms": [
+              "Function"
+            ]
+          },
+          {
+            "name": "localization",
+            "type": "table column",
+            "column name": "Localization",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "cytoplasm",
+              "cytoskeleton",
+              "nucleus",
+              "plasma membrane",
+              "mitochondria"
+            ],
+            "synonyms": [
+              "Localization"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Genes"
+        ]
+      },
+      {
+        "name": "interactions",
+        "type": "simple table",
+        "table path": "main.Interactions",
+        "unique properties": [
+          [
+            "geneid1",
+            "geneid2"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "geneid1",
+            "type": "table column",
+            "column name": "GeneID1",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "G234064",
+              "G234065",
+              "G234073",
+              "G234074",
+              "G234076"
+            ],
+            "synonyms": [
+              "GeneID1"
+            ]
+          },
+          {
+            "name": "geneid2",
+            "type": "table column",
+            "column name": "GeneID2",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "G234126",
+              "G235065",
+              "G234371",
+              "G234854",
+              "G234065"
+            ],
+            "synonyms": [
+              "GeneID2"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "Type",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Genetic-Physical",
+              "Genetic",
+              "Physical"
+            ],
+            "synonyms": [
+              "Type"
+            ]
+          },
+          {
+            "name": "expression_corr",
+            "type": "table column",
+            "column name": "Expression_Corr",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.914095071,
+              0.751584888,
+              0.823773738,
+              0.939001091,
+              0.749192312
+            ],
+            "synonyms": [
+              "Expression_Corr"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Interactions"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "genes",
+        "parent collection": "classification",
+        "child collection": "genes",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "geneid": [
+            "geneid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "classification",
+        "original parent": "classification",
+        "original property": "genes",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "interactions",
+        "parent collection": "classification",
+        "child collection": "interactions",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "geneid": [
+            "geneid2"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "classification",
+        "original parent": "classification",
+        "original property": "interactions",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "interactions_2",
+        "parent collection": "classification",
+        "child collection": "interactions",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "geneid": [
+            "geneid1"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "classification_2",
+        "original parent": "classification",
+        "original property": "interactions_2",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

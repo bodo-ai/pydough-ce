@@ -1,0 +1,1317 @@
+[
+  {
+    "name": "car_retails",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "customers",
+        "type": "simple table",
+        "table path": "main.customers",
+        "unique properties": [
+          "customernumber"
+        ],
+        "properties": [
+          {
+            "name": "customernumber",
+            "type": "table column",
+            "column name": "customerNumber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              103,
+              112,
+              114,
+              119,
+              121
+            ],
+            "synonyms": [
+              "customerNumber"
+            ]
+          },
+          {
+            "name": "customername",
+            "type": "table column",
+            "column name": "customerName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Atelier graphique",
+              "Signal Gift Stores",
+              "Australian Collectors, Co.",
+              "La Rochelle Gifts",
+              "Baane Mini Imports"
+            ],
+            "synonyms": [
+              "customerName"
+            ]
+          },
+          {
+            "name": "contactlastname",
+            "type": "table column",
+            "column name": "contactLastName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Schmitt",
+              "King",
+              "Ferguson",
+              "Labrune",
+              "Bergulfsen"
+            ],
+            "synonyms": [
+              "contactLastName"
+            ]
+          },
+          {
+            "name": "contactfirstname",
+            "type": "table column",
+            "column name": "contactFirstName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Carine ",
+              "Jean",
+              "Peter",
+              "Janine ",
+              "Jonas "
+            ],
+            "synonyms": [
+              "contactFirstName"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "40.32.2555",
+              "7025551838",
+              "03 9520 4555",
+              "40.67.8555",
+              "07-98 9555"
+            ],
+            "synonyms": [
+              "phone"
+            ]
+          },
+          {
+            "name": "addressline1",
+            "type": "table column",
+            "column name": "addressLine1",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "54, rue Royale",
+              "8489 Strong St.",
+              "636 St Kilda Road",
+              "67, rue des Cinquante Otages",
+              "Erling Skakkes gate 78"
+            ],
+            "synonyms": [
+              "addressLine1"
+            ]
+          },
+          {
+            "name": "addressline2",
+            "type": "table column",
+            "column name": "addressLine2",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Level 3",
+              "Bronz Apt. 3/6 Tesvikiye",
+              "Suite 400",
+              "2nd Floor",
+              "PR 334 Sentrum"
+            ],
+            "synonyms": [
+              "addressLine2"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Nantes",
+              "Las Vegas",
+              "Melbourne",
+              "Stavern",
+              "San Rafael"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NV",
+              "Victoria",
+              "CA",
+              "NY",
+              "PA"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "postalcode",
+            "type": "table column",
+            "column name": "postalCode",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "44000",
+              "83030",
+              "3004",
+              "4110",
+              "97562"
+            ],
+            "synonyms": [
+              "postalCode"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "France",
+              "USA",
+              "Australia",
+              "Norway",
+              "Poland"
+            ],
+            "synonyms": [
+              "country"
+            ]
+          },
+          {
+            "name": "salesrepemployeenumber",
+            "type": "table column",
+            "column name": "salesRepEmployeeNumber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1370,
+              1166,
+              1611,
+              1504,
+              1165
+            ],
+            "synonyms": [
+              "salesRepEmployeeNumber"
+            ]
+          },
+          {
+            "name": "creditlimit",
+            "type": "table column",
+            "column name": "creditLimit",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              21000.0,
+              71800.0,
+              117300.0,
+              118200.0,
+              81700.0
+            ],
+            "synonyms": [
+              "creditLimit"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "customers"
+        ]
+      },
+      {
+        "name": "employees",
+        "type": "simple table",
+        "table path": "main.employees",
+        "unique properties": [
+          "employeenumber"
+        ],
+        "properties": [
+          {
+            "name": "employeenumber",
+            "type": "table column",
+            "column name": "employeeNumber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1002,
+              1056,
+              1076,
+              1088,
+              1102
+            ],
+            "synonyms": [
+              "employeeNumber"
+            ]
+          },
+          {
+            "name": "lastname",
+            "type": "table column",
+            "column name": "lastName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Murphy",
+              "Patterson",
+              "Firrelli",
+              "Bondur",
+              "Bow"
+            ],
+            "synonyms": [
+              "lastName"
+            ]
+          },
+          {
+            "name": "firstname",
+            "type": "table column",
+            "column name": "firstName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Diane",
+              "Mary",
+              "Jeff",
+              "William",
+              "Gerard"
+            ],
+            "synonyms": [
+              "firstName"
+            ]
+          },
+          {
+            "name": "extension",
+            "type": "table column",
+            "column name": "extension",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "x5800",
+              "x4611",
+              "x9273",
+              "x4871",
+              "x5408"
+            ],
+            "synonyms": [
+              "extension"
+            ]
+          },
+          {
+            "name": "email",
+            "type": "table column",
+            "column name": "email",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "dmurphy@classicmodelcars.com",
+              "mpatterso@classicmodelcars.com",
+              "jfirrelli@classicmodelcars.com",
+              "wpatterson@classicmodelcars.com",
+              "gbondur@classicmodelcars.com"
+            ],
+            "synonyms": [
+              "email"
+            ]
+          },
+          {
+            "name": "officecode",
+            "type": "table column",
+            "column name": "officeCode",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1",
+              "6",
+              "4",
+              "2",
+              "3"
+            ],
+            "synonyms": [
+              "officeCode"
+            ]
+          },
+          {
+            "name": "reportsto",
+            "type": "table column",
+            "column name": "reportsTo",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1002,
+              1056,
+              1143,
+              1102,
+              1088
+            ],
+            "synonyms": [
+              "reportsTo"
+            ]
+          },
+          {
+            "name": "jobtitle",
+            "type": "table column",
+            "column name": "jobTitle",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "President",
+              "VP Sales",
+              "VP Marketing",
+              "Sales Manager (APAC)",
+              "Sale Manager (EMEA)"
+            ],
+            "synonyms": [
+              "jobTitle"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "employees"
+        ]
+      },
+      {
+        "name": "offices",
+        "type": "simple table",
+        "table path": "main.offices",
+        "unique properties": [
+          "officecode"
+        ],
+        "properties": [
+          {
+            "name": "officecode",
+            "type": "table column",
+            "column name": "officeCode",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5"
+            ],
+            "synonyms": [
+              "officeCode"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "San Francisco",
+              "Boston",
+              "NYC",
+              "Paris",
+              "Tokyo"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "+1 650 219 4782",
+              "+1 215 837 0825",
+              "+1 212 555 3000",
+              "+33 14 723 4404",
+              "+81 33 224 5000"
+            ],
+            "synonyms": [
+              "phone"
+            ]
+          },
+          {
+            "name": "addressline1",
+            "type": "table column",
+            "column name": "addressLine1",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "100 Market Street",
+              "1550 Court Place",
+              "523 East 53rd Street",
+              "43 Rue Jouffroy D'abbans",
+              "4-1 Kioicho"
+            ],
+            "synonyms": [
+              "addressLine1"
+            ]
+          },
+          {
+            "name": "addressline2",
+            "type": "table column",
+            "column name": "addressLine2",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Suite 300",
+              "Suite 102",
+              "apt. 5A",
+              "Floor #2",
+              "Level 7"
+            ],
+            "synonyms": [
+              "addressLine2"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CA",
+              "MA",
+              "NY",
+              "Chiyoda-Ku"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "country",
+            "type": "table column",
+            "column name": "country",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "USA",
+              "France",
+              "Japan",
+              "Australia",
+              "UK"
+            ],
+            "synonyms": [
+              "country"
+            ]
+          },
+          {
+            "name": "postalcode",
+            "type": "table column",
+            "column name": "postalCode",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "94080",
+              "02107",
+              "10022",
+              "75017",
+              "102-8578"
+            ],
+            "synonyms": [
+              "postalCode"
+            ]
+          },
+          {
+            "name": "territory",
+            "type": "table column",
+            "column name": "territory",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NA",
+              "EMEA",
+              "Japan",
+              "APAC"
+            ],
+            "synonyms": [
+              "territory"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "offices"
+        ]
+      },
+      {
+        "name": "orderdetails",
+        "type": "simple table",
+        "table path": "main.orderdetails",
+        "unique properties": [
+          [
+            "ordernumber",
+            "productcode"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "ordernumber",
+            "type": "table column",
+            "column name": "orderNumber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10100,
+              10101,
+              10102,
+              10103,
+              10104
+            ],
+            "synonyms": [
+              "orderNumber"
+            ]
+          },
+          {
+            "name": "productcode",
+            "type": "table column",
+            "column name": "productCode",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "S18_1749",
+              "S18_2248",
+              "S18_4409",
+              "S24_3969",
+              "S18_2325"
+            ],
+            "synonyms": [
+              "productCode"
+            ]
+          },
+          {
+            "name": "quantityordered",
+            "type": "table column",
+            "column name": "quantityOrdered",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              30,
+              50,
+              22,
+              49,
+              25
+            ],
+            "synonyms": [
+              "quantityOrdered"
+            ]
+          },
+          {
+            "name": "priceeach",
+            "type": "table column",
+            "column name": "priceEach",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              136.0,
+              55.09,
+              75.46,
+              35.29,
+              108.06
+            ],
+            "synonyms": [
+              "priceEach"
+            ]
+          },
+          {
+            "name": "orderlinenumber",
+            "type": "table column",
+            "column name": "orderLineNumber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3,
+              2,
+              4,
+              1,
+              11
+            ],
+            "synonyms": [
+              "orderLineNumber"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "orderdetails"
+        ]
+      },
+      {
+        "name": "orders",
+        "type": "simple table",
+        "table path": "main.orders",
+        "unique properties": [
+          "ordernumber"
+        ],
+        "properties": [
+          {
+            "name": "ordernumber",
+            "type": "table column",
+            "column name": "orderNumber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              10100,
+              10101,
+              10102,
+              10103,
+              10104
+            ],
+            "synonyms": [
+              "orderNumber"
+            ]
+          },
+          {
+            "name": "orderdate",
+            "type": "table column",
+            "column name": "orderDate",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2003-01-06",
+              "2003-01-09",
+              "2003-01-10",
+              "2003-01-29",
+              "2003-01-31"
+            ],
+            "synonyms": [
+              "orderDate"
+            ]
+          },
+          {
+            "name": "requireddate",
+            "type": "table column",
+            "column name": "requiredDate",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2003-01-13",
+              "2003-01-18",
+              "2003-02-07",
+              "2003-02-09",
+              "2003-02-21"
+            ],
+            "synonyms": [
+              "requiredDate"
+            ]
+          },
+          {
+            "name": "shippeddate",
+            "type": "table column",
+            "column name": "shippedDate",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2003-01-10",
+              "2003-01-11",
+              "2003-01-14",
+              "2003-02-02",
+              "2003-02-01"
+            ],
+            "synonyms": [
+              "shippedDate"
+            ]
+          },
+          {
+            "name": "status",
+            "type": "table column",
+            "column name": "status",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Shipped",
+              "Resolved",
+              "Cancelled",
+              "On Hold",
+              "Disputed"
+            ],
+            "synonyms": [
+              "status"
+            ]
+          },
+          {
+            "name": "comments",
+            "type": "table column",
+            "column name": "comments",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Check on availability.",
+              "Difficult to negotiate with customer....",
+              "Customer requested that FedEx Ground ...",
+              "Customer requested that ad materials ...",
+              "Customer has worked with some of our ..."
+            ],
+            "synonyms": [
+              "comments"
+            ]
+          },
+          {
+            "name": "customernumber",
+            "type": "table column",
+            "column name": "customerNumber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              363,
+              128,
+              181,
+              121,
+              141
+            ],
+            "synonyms": [
+              "customerNumber"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "orders"
+        ]
+      },
+      {
+        "name": "payments",
+        "type": "simple table",
+        "table path": "main.payments",
+        "unique properties": [
+          [
+            "customernumber",
+            "checknumber"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "customernumber",
+            "type": "table column",
+            "column name": "customerNumber",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              103,
+              112,
+              114,
+              119,
+              121
+            ],
+            "synonyms": [
+              "customerNumber"
+            ]
+          },
+          {
+            "name": "checknumber",
+            "type": "table column",
+            "column name": "checkNumber",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "HQ336336",
+              "JM555205",
+              "OM314933",
+              "BO864823",
+              "HQ55022"
+            ],
+            "synonyms": [
+              "checkNumber"
+            ]
+          },
+          {
+            "name": "paymentdate",
+            "type": "table column",
+            "column name": "paymentDate",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2004-10-19",
+              "2003-06-05",
+              "2004-12-18",
+              "2004-12-17",
+              "2003-06-06"
+            ],
+            "synonyms": [
+              "paymentDate"
+            ]
+          },
+          {
+            "name": "amount",
+            "type": "table column",
+            "column name": "amount",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              6066.78,
+              14571.44,
+              1676.14,
+              14191.12,
+              32641.98
+            ],
+            "synonyms": [
+              "amount"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "payments"
+        ]
+      },
+      {
+        "name": "productlines",
+        "type": "simple table",
+        "table path": "main.productlines",
+        "unique properties": [
+          "productline"
+        ],
+        "properties": [
+          {
+            "name": "productline",
+            "type": "table column",
+            "column name": "productLine",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Classic Cars",
+              "Motorcycles",
+              "Planes",
+              "Ships",
+              "Trains"
+            ],
+            "synonyms": [
+              "productLine"
+            ]
+          },
+          {
+            "name": "textdescription",
+            "type": "table column",
+            "column name": "textDescription",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Attention car enthusiasts: Make your ...",
+              "Our motorcycles are state of the art ...",
+              "Unique, diecast airplane and helicopt...",
+              "The perfect holiday or anniversary gi...",
+              "Model trains are a rewarding hobby fo..."
+            ],
+            "synonyms": [
+              "textDescription"
+            ]
+          },
+          {
+            "name": "htmldescription",
+            "type": "table column",
+            "column name": "htmlDescription",
+            "data type": "string",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "htmlDescription"
+            ]
+          },
+          {
+            "name": "image",
+            "type": "table column",
+            "column name": "image",
+            "data type": "string",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "image"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "productlines"
+        ]
+      },
+      {
+        "name": "products",
+        "type": "simple table",
+        "table path": "main.products",
+        "unique properties": [
+          "productcode"
+        ],
+        "properties": [
+          {
+            "name": "productcode",
+            "type": "table column",
+            "column name": "productCode",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "S10_1678",
+              "S10_1949",
+              "S10_2016",
+              "S10_4698",
+              "S10_4757"
+            ],
+            "synonyms": [
+              "productCode"
+            ]
+          },
+          {
+            "name": "productname",
+            "type": "table column",
+            "column name": "productName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1969 Harley Davidson Ultimate Chopper",
+              "1952 Alpine Renault 1300",
+              "1996 Moto Guzzi 1100i",
+              "2003 Harley-Davidson Eagle Drag Bike",
+              "1972 Alfa Romeo GTA"
+            ],
+            "synonyms": [
+              "productName"
+            ]
+          },
+          {
+            "name": "productline",
+            "type": "table column",
+            "column name": "productLine",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Motorcycles",
+              "Classic Cars",
+              "Trucks and Buses",
+              "Vintage Cars",
+              "Planes"
+            ],
+            "synonyms": [
+              "productLine"
+            ]
+          },
+          {
+            "name": "productscale",
+            "type": "table column",
+            "column name": "productScale",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1:10",
+              "1:12",
+              "1:18",
+              "1:72",
+              "1:24"
+            ],
+            "synonyms": [
+              "productScale"
+            ]
+          },
+          {
+            "name": "productvendor",
+            "type": "table column",
+            "column name": "productVendor",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Min Lin Diecast",
+              "Classic Metal Creations",
+              "Highway 66 Mini Classics",
+              "Red Start Diecast",
+              "Motor City Art Classics"
+            ],
+            "synonyms": [
+              "productVendor"
+            ]
+          },
+          {
+            "name": "productdescription",
+            "type": "table column",
+            "column name": "productDescription",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "This replica features working kicksta...",
+              "Turnable front wheels; steering funct...",
+              "Official Moto Guzzi logos and insigni...",
+              "Model features, official Harley David...",
+              "Features include: Turnable front whee..."
+            ],
+            "synonyms": [
+              "productDescription"
+            ]
+          },
+          {
+            "name": "quantityinstock",
+            "type": "table column",
+            "column name": "quantityInStock",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              7933,
+              7305,
+              6625,
+              5582,
+              3252
+            ],
+            "synonyms": [
+              "quantityInStock"
+            ]
+          },
+          {
+            "name": "buyprice",
+            "type": "table column",
+            "column name": "buyPrice",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              48.81,
+              98.58,
+              68.99,
+              91.02,
+              85.68
+            ],
+            "synonyms": [
+              "buyPrice"
+            ]
+          },
+          {
+            "name": "msrp",
+            "type": "table column",
+            "column name": "MSRP",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              95.7,
+              214.3,
+              118.94,
+              193.66,
+              136.0
+            ],
+            "synonyms": [
+              "MSRP"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "products"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "customers",
+        "parent collection": "employees",
+        "child collection": "customers",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "employeenumber": [
+            "salesrepemployeenumber"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "employees",
+        "original parent": "employees",
+        "original property": "customers",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "employees",
+        "parent collection": "employees",
+        "child collection": "employees",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "employeenumber": [
+            "reportsto"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "employees_2",
+        "original parent": "employees",
+        "original property": "employees",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "employees",
+        "parent collection": "offices",
+        "child collection": "employees",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "officecode": [
+            "officecode"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "offices",
+        "original parent": "offices",
+        "original property": "employees",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "orderdetails",
+        "parent collection": "products",
+        "child collection": "orderdetails",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "productcode": [
+            "productcode"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "products",
+        "original parent": "products",
+        "original property": "orderdetails",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "orderdetails",
+        "parent collection": "orders",
+        "child collection": "orderdetails",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "ordernumber": [
+            "ordernumber"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "orders",
+        "original parent": "orders",
+        "original property": "orderdetails",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "orders",
+        "parent collection": "customers",
+        "child collection": "orders",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customernumber": [
+            "customernumber"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customers",
+        "original parent": "customers",
+        "original property": "orders",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "payments",
+        "parent collection": "customers",
+        "child collection": "payments",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "customernumber": [
+            "customernumber"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "customers",
+        "original parent": "customers",
+        "original property": "payments",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "products",
+        "parent collection": "productlines",
+        "child collection": "products",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "productline": [
+            "productline"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "productlines",
+        "original parent": "productlines",
+        "original property": "products",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

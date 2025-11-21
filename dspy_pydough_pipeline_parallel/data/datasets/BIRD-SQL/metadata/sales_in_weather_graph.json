@@ -1,0 +1,551 @@
+[
+  {
+    "name": "sales_in_weather",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "relation",
+        "type": "simple table",
+        "table path": "main.relation",
+        "unique properties": [
+          "store_nbr"
+        ],
+        "properties": [
+          {
+            "name": "store_nbr",
+            "type": "table column",
+            "column name": "store_nbr",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "store_nbr"
+            ]
+          },
+          {
+            "name": "station_nbr",
+            "type": "table column",
+            "column name": "station_nbr",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              14,
+              7,
+              9,
+              12
+            ],
+            "synonyms": [
+              "station_nbr"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "relation"
+        ]
+      },
+      {
+        "name": "sales_in_weather",
+        "type": "simple table",
+        "table path": "main.sales_in_weather",
+        "unique properties": [
+          [
+            "store_nbr",
+            "date_",
+            "item_nbr"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "date_",
+            "type": "table column",
+            "column name": "\"date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2012-01-01",
+              "2012-01-02",
+              "2012-01-03",
+              "2012-01-04",
+              "2012-01-05"
+            ],
+            "synonyms": [
+              "date"
+            ]
+          },
+          {
+            "name": "store_nbr",
+            "type": "table column",
+            "column name": "store_nbr",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "store_nbr"
+            ]
+          },
+          {
+            "name": "item_nbr",
+            "type": "table column",
+            "column name": "item_nbr",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "item_nbr"
+            ]
+          },
+          {
+            "name": "units",
+            "type": "table column",
+            "column name": "units",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              29,
+              2,
+              1,
+              60
+            ],
+            "synonyms": [
+              "units"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "sales_in_weather"
+        ]
+      },
+      {
+        "name": "weather",
+        "type": "simple table",
+        "table path": "main.weather",
+        "unique properties": [
+          [
+            "station_nbr",
+            "date_"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "station_nbr",
+            "type": "table column",
+            "column name": "station_nbr",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "station_nbr"
+            ]
+          },
+          {
+            "name": "date_",
+            "type": "table column",
+            "column name": "\"date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2012-01-01",
+              "2012-01-02",
+              "2012-01-03",
+              "2012-01-04",
+              "2012-01-05"
+            ],
+            "synonyms": [
+              "date"
+            ]
+          },
+          {
+            "name": "tmax",
+            "type": "table column",
+            "column name": "tmax",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              52,
+              50,
+              32,
+              28,
+              38
+            ],
+            "synonyms": [
+              "tmax"
+            ]
+          },
+          {
+            "name": "tmin",
+            "type": "table column",
+            "column name": "tmin",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              31,
+              11,
+              9,
+              25,
+              28
+            ],
+            "synonyms": [
+              "tmin"
+            ]
+          },
+          {
+            "name": "tavg",
+            "type": "table column",
+            "column name": "tavg",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              42,
+              41,
+              22,
+              19,
+              32
+            ],
+            "synonyms": [
+              "tavg"
+            ]
+          },
+          {
+            "name": "depart",
+            "type": "table column",
+            "column name": "depart",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              16,
+              12,
+              -6,
+              -11,
+              2
+            ],
+            "synonyms": [
+              "depart"
+            ]
+          },
+          {
+            "name": "dewpoint",
+            "type": "table column",
+            "column name": "dewpoint",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              36,
+              26,
+              4,
+              -1,
+              13
+            ],
+            "synonyms": [
+              "dewpoint"
+            ]
+          },
+          {
+            "name": "wetbulb",
+            "type": "table column",
+            "column name": "wetbulb",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              40,
+              35,
+              18,
+              14,
+              25
+            ],
+            "synonyms": [
+              "wetbulb"
+            ]
+          },
+          {
+            "name": "heat",
+            "type": "table column",
+            "column name": "heat",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              23,
+              24,
+              43,
+              46,
+              33
+            ],
+            "synonyms": [
+              "heat"
+            ]
+          },
+          {
+            "name": "cool",
+            "type": "table column",
+            "column name": "cool",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              5,
+              6,
+              2,
+              1
+            ],
+            "synonyms": [
+              "cool"
+            ]
+          },
+          {
+            "name": "sunrise",
+            "type": "table column",
+            "column name": "sunrise",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "07:16:00",
+              "07:15:00",
+              "07:14:00",
+              "07:13:00",
+              "07:12:00"
+            ],
+            "synonyms": [
+              "sunrise"
+            ]
+          },
+          {
+            "name": "sunset",
+            "type": "table column",
+            "column name": "sunset",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "16:26:00",
+              "16:27:00",
+              "16:28:00",
+              "16:29:00",
+              "16:30:00"
+            ],
+            "synonyms": [
+              "sunset"
+            ]
+          },
+          {
+            "name": "codesum",
+            "type": "table column",
+            "column name": "codesum",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "RA FZFG BR",
+              " ",
+              "SN",
+              "RA SN BR",
+              "RA FZRA FG+ FG BR UP"
+            ],
+            "synonyms": [
+              "codesum"
+            ]
+          },
+          {
+            "name": "snowfall",
+            "type": "table column",
+            "column name": "snowfall",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0,
+              0.05,
+              0.2,
+              3.6,
+              2.0
+            ],
+            "synonyms": [
+              "snowfall"
+            ]
+          },
+          {
+            "name": "preciptotal",
+            "type": "table column",
+            "column name": "preciptotal",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.05,
+              0.01,
+              0.0,
+              0.69,
+              0.02
+            ],
+            "synonyms": [
+              "preciptotal"
+            ]
+          },
+          {
+            "name": "stnpressure",
+            "type": "table column",
+            "column name": "stnpressure",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              29.78,
+              29.44,
+              29.67,
+              29.86,
+              29.68
+            ],
+            "synonyms": [
+              "stnpressure"
+            ]
+          },
+          {
+            "name": "sealevel",
+            "type": "table column",
+            "column name": "sealevel",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              29.92,
+              29.62,
+              29.87,
+              30.03,
+              29.84
+            ],
+            "synonyms": [
+              "sealevel"
+            ]
+          },
+          {
+            "name": "resultspeed",
+            "type": "table column",
+            "column name": "resultspeed",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              3.6,
+              9.8,
+              10.8,
+              6.3,
+              6.9
+            ],
+            "synonyms": [
+              "resultspeed"
+            ]
+          },
+          {
+            "name": "resultdir",
+            "type": "table column",
+            "column name": "resultdir",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              20,
+              24,
+              31,
+              27,
+              25
+            ],
+            "synonyms": [
+              "resultdir"
+            ]
+          },
+          {
+            "name": "avgspeed",
+            "type": "table column",
+            "column name": "avgspeed",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4.6,
+              10.3,
+              11.6,
+              8.3,
+              7.8
+            ],
+            "synonyms": [
+              "avgspeed"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "weather"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "relation",
+        "parent collection": "weather",
+        "child collection": "relation",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "station_nbr": [
+            "station_nbr"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "weather",
+        "original parent": "weather",
+        "original property": "relation",
+        "singular": false,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "relation",
+        "parent collection": "sales_in_weather",
+        "child collection": "relation",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "store_nbr": [
+            "store_nbr"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "sales_in_weather",
+        "original parent": "sales_in_weather",
+        "original property": "relation",
+        "singular": false,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

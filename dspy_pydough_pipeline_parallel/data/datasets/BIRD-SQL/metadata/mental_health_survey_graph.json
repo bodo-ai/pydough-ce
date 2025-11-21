@@ -1,0 +1,241 @@
+[
+  {
+    "name": "mental_health_survey",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "answer",
+        "type": "simple table",
+        "table path": "main.Answer",
+        "unique properties": [
+          [
+            "userid",
+            "questionid"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "answertext",
+            "type": "table column",
+            "column name": "AnswerText",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "37",
+              "44",
+              "32",
+              "31",
+              "33"
+            ],
+            "synonyms": [
+              "AnswerText"
+            ]
+          },
+          {
+            "name": "surveyid",
+            "type": "table column",
+            "column name": "SurveyID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2014,
+              2016,
+              2017,
+              2018,
+              2019
+            ],
+            "synonyms": [
+              "SurveyID"
+            ]
+          },
+          {
+            "name": "userid",
+            "type": "table column",
+            "column name": "UserID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "UserID"
+            ]
+          },
+          {
+            "name": "questionid",
+            "type": "table column",
+            "column name": "QuestionID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "QuestionID"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Answer"
+        ]
+      },
+      {
+        "name": "question",
+        "type": "simple table",
+        "table path": "main.Question",
+        "unique properties": [
+          "questionid"
+        ],
+        "properties": [
+          {
+            "name": "questiontext",
+            "type": "table column",
+            "column name": "questiontext",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "What is your age?",
+              "What is your gender?",
+              "What country do you live in?",
+              "If you live in the United States, whi...",
+              "Are you self-employed?"
+            ],
+            "synonyms": [
+              "questiontext"
+            ]
+          },
+          {
+            "name": "questionid",
+            "type": "table column",
+            "column name": "questionid",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "questionid"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Question"
+        ]
+      },
+      {
+        "name": "survey",
+        "type": "simple table",
+        "table path": "main.Survey",
+        "unique properties": [
+          "surveyid"
+        ],
+        "properties": [
+          {
+            "name": "surveyid",
+            "type": "table column",
+            "column name": "SurveyID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2014,
+              2016,
+              2017,
+              2018,
+              2019
+            ],
+            "synonyms": [
+              "SurveyID"
+            ]
+          },
+          {
+            "name": "description",
+            "type": "table column",
+            "column name": "Description",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "mental health survey for 2014",
+              "mental health survey for 2016",
+              "mental health survey for 2017",
+              "mental health survey for 2018",
+              "mental health survey for 2019"
+            ],
+            "synonyms": [
+              "Description"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Survey"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "answer",
+        "parent collection": "question",
+        "child collection": "answer",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "questionid": [
+            "questionid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "question",
+        "original parent": "question",
+        "original property": "answer",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "answer",
+        "parent collection": "survey",
+        "child collection": "answer",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "surveyid": [
+            "surveyid"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "survey",
+        "original parent": "survey",
+        "original property": "answer",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

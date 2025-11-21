@@ -1,0 +1,959 @@
+[
+  {
+    "name": "olympics",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "city",
+        "type": "simple table",
+        "table path": "main.city",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "city_name",
+            "type": "table column",
+            "column name": "city_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Barcelona",
+              "London",
+              "Antwerpen",
+              "Paris",
+              "Calgary"
+            ],
+            "synonyms": [
+              "city_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "city"
+        ]
+      },
+      {
+        "name": "competitor_event",
+        "type": "simple table",
+        "table path": "main.competitor_event",
+        "unique properties": [
+          [
+            "event_id",
+            "competitor_id",
+            "medal_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "event_id",
+            "type": "table column",
+            "column name": "event_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "event_id"
+            ]
+          },
+          {
+            "name": "competitor_id",
+            "type": "table column",
+            "column name": "competitor_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "competitor_id"
+            ]
+          },
+          {
+            "name": "medal_id",
+            "type": "table column",
+            "column name": "medal_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              4,
+              1,
+              3,
+              2
+            ],
+            "synonyms": [
+              "medal_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "competitor_event"
+        ]
+      },
+      {
+        "name": "event",
+        "type": "simple table",
+        "table path": "main.event",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "sport_id",
+            "type": "table column",
+            "column name": "sport_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              9,
+              33,
+              25,
+              62,
+              54
+            ],
+            "synonyms": [
+              "sport_id"
+            ]
+          },
+          {
+            "name": "event_name",
+            "type": "table column",
+            "column name": "event_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Basketball Men's Basketball",
+              "Judo Men's Extra-Lightweight",
+              "Football Men's Football",
+              "Tug-Of-War Men's Tug-Of-War",
+              "Speed Skating Women's 500 metres"
+            ],
+            "synonyms": [
+              "event_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "event"
+        ]
+      },
+      {
+        "name": "games",
+        "type": "simple table",
+        "table path": "main.games",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "games_year",
+            "type": "table column",
+            "column name": "games_year",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1992,
+              2012,
+              1920,
+              1900,
+              1988
+            ],
+            "synonyms": [
+              "games_year"
+            ]
+          },
+          {
+            "name": "games_name",
+            "type": "table column",
+            "column name": "games_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "1992 Summer",
+              "2012 Summer",
+              "1920 Summer",
+              "1900 Summer",
+              "1988 Winter"
+            ],
+            "synonyms": [
+              "games_name"
+            ]
+          },
+          {
+            "name": "season",
+            "type": "table column",
+            "column name": "season",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Summer",
+              "Winter"
+            ],
+            "synonyms": [
+              "season"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "games"
+        ]
+      },
+      {
+        "name": "games_city",
+        "type": "simple table",
+        "table path": "main.games_city",
+        "unique properties": [
+          [
+            "games_id",
+            "city_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "games_id",
+            "type": "table column",
+            "column name": "games_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "games_id"
+            ]
+          },
+          {
+            "name": "city_id",
+            "type": "table column",
+            "column name": "city_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "city_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "games_city"
+        ]
+      },
+      {
+        "name": "games_competitor",
+        "type": "simple table",
+        "table path": "main.games_competitor",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "games_id",
+            "type": "table column",
+            "column name": "games_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "games_id"
+            ]
+          },
+          {
+            "name": "person_id",
+            "type": "table column",
+            "column name": "person_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "person_id"
+            ]
+          },
+          {
+            "name": "age",
+            "type": "table column",
+            "column name": "age",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              24,
+              23,
+              34,
+              21,
+              25
+            ],
+            "synonyms": [
+              "age"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "games_competitor"
+        ]
+      },
+      {
+        "name": "medal",
+        "type": "simple table",
+        "table path": "main.medal",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "medal_name",
+            "type": "table column",
+            "column name": "medal_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Gold",
+              "Silver",
+              "Bronze",
+              "NA"
+            ],
+            "synonyms": [
+              "medal_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "medal"
+        ]
+      },
+      {
+        "name": "noc_region",
+        "type": "simple table",
+        "table path": "main.noc_region",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "noc",
+            "type": "table column",
+            "column name": "noc",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AFG",
+              "AHO",
+              "ALB",
+              "ALG",
+              "AND"
+            ],
+            "synonyms": [
+              "noc"
+            ]
+          },
+          {
+            "name": "region_name",
+            "type": "table column",
+            "column name": "region_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Afghanistan",
+              "Netherlands Antilles",
+              "Albania",
+              "Algeria",
+              "Andorra"
+            ],
+            "synonyms": [
+              "region_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "noc_region"
+        ]
+      },
+      {
+        "name": "person",
+        "type": "simple table",
+        "table path": "main.person",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "full_name",
+            "type": "table column",
+            "column name": "full_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "A Dijiang",
+              "A Lamusi",
+              "Gunnar Nielsen Aaby",
+              "Edgar Lindenau Aabye",
+              "Christine Jacoba Aaftink"
+            ],
+            "synonyms": [
+              "full_name"
+            ]
+          },
+          {
+            "name": "gender",
+            "type": "table column",
+            "column name": "gender",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "M",
+              "F"
+            ],
+            "synonyms": [
+              "gender"
+            ]
+          },
+          {
+            "name": "height",
+            "type": "table column",
+            "column name": "height",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              180,
+              170,
+              0,
+              185,
+              188
+            ],
+            "synonyms": [
+              "height"
+            ]
+          },
+          {
+            "name": "weight",
+            "type": "table column",
+            "column name": "weight",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              80,
+              60,
+              0,
+              82,
+              75
+            ],
+            "synonyms": [
+              "weight"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "person"
+        ]
+      },
+      {
+        "name": "person_region",
+        "type": "simple table",
+        "table path": "main.person_region",
+        "unique properties": [
+          [
+            "person_id",
+            "region_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "person_id",
+            "type": "table column",
+            "column name": "person_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "person_id"
+            ]
+          },
+          {
+            "name": "region_id",
+            "type": "table column",
+            "column name": "region_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              42,
+              56,
+              146,
+              217,
+              69
+            ],
+            "synonyms": [
+              "region_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "person_region"
+        ]
+      },
+      {
+        "name": "sport",
+        "type": "simple table",
+        "table path": "main.sport",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "id"
+            ]
+          },
+          {
+            "name": "sport_name",
+            "type": "table column",
+            "column name": "sport_name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aeronautics",
+              "Alpine Skiing",
+              "Alpinism",
+              "Archery",
+              "Art Competitions"
+            ],
+            "synonyms": [
+              "sport_name"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "sport"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "competitor_event",
+        "parent collection": "medal",
+        "child collection": "competitor_event",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "medal_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "medal",
+        "original parent": "medal",
+        "original property": "competitor_event",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "competitor_event",
+        "parent collection": "event",
+        "child collection": "competitor_event",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "event_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "event",
+        "original parent": "event",
+        "original property": "competitor_event",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "competitor_event",
+        "parent collection": "games_competitor",
+        "child collection": "competitor_event",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "competitor_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "games_competitor",
+        "original parent": "games_competitor",
+        "original property": "competitor_event",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "event",
+        "parent collection": "sport",
+        "child collection": "event",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "sport_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "sport",
+        "original parent": "sport",
+        "original property": "event",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "games_city",
+        "parent collection": "games",
+        "child collection": "games_city",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "games_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "games",
+        "original parent": "games",
+        "original property": "games_city",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "games_city",
+        "parent collection": "city",
+        "child collection": "games_city",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "city_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "city",
+        "original parent": "city",
+        "original property": "games_city",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "games_competitor",
+        "parent collection": "person",
+        "child collection": "games_competitor",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "person_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "games_competitor",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "games_competitor",
+        "parent collection": "games",
+        "child collection": "games_competitor",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "games_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "games",
+        "original parent": "games",
+        "original property": "games_competitor",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "person_region",
+        "parent collection": "noc_region",
+        "child collection": "person_region",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "region_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "noc_region",
+        "original parent": "noc_region",
+        "original property": "person_region",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "person_region",
+        "parent collection": "person",
+        "child collection": "person_region",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "id_": [
+            "person_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "person",
+        "original parent": "person",
+        "original property": "person_region",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

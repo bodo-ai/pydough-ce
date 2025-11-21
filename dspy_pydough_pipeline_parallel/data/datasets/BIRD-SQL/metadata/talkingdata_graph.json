@@ -1,0 +1,1101 @@
+[
+  {
+    "name": "talkingdata",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "app_all",
+        "type": "simple table",
+        "table path": "main.app_all",
+        "unique properties": [
+          "app_id"
+        ],
+        "properties": [
+          {
+            "name": "app_id",
+            "type": "table column",
+            "column name": "app_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              -9223281467940916832,
+              -9222877069545393219,
+              -9222785464897897681,
+              -9222198347540756780,
+              -9221970424041518544
+            ],
+            "synonyms": [
+              "app_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "app_all"
+        ]
+      },
+      {
+        "name": "app_events",
+        "type": "simple table",
+        "table path": "main.app_events",
+        "unique properties": [
+          [
+            "event_id",
+            "app_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "event_id",
+            "type": "table column",
+            "column name": "event_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              6,
+              7,
+              9,
+              16
+            ],
+            "synonyms": [
+              "event_id"
+            ]
+          },
+          {
+            "name": "app_id",
+            "type": "table column",
+            "column name": "app_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              -8942695423876075857,
+              -8022267440849930066,
+              -5720078949152207372,
+              -3725672010020973973,
+              -1758857579862594461
+            ],
+            "synonyms": [
+              "app_id"
+            ]
+          },
+          {
+            "name": "is_installed",
+            "type": "table column",
+            "column name": "is_installed",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1
+            ],
+            "synonyms": [
+              "is_installed"
+            ]
+          },
+          {
+            "name": "is_active",
+            "type": "table column",
+            "column name": "is_active",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "is_active"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "app_events"
+        ]
+      },
+      {
+        "name": "app_events_relevant",
+        "type": "simple table",
+        "table path": "main.app_events_relevant",
+        "unique properties": [
+          [
+            "event_id",
+            "app_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "event_id",
+            "type": "table column",
+            "column name": "event_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              6,
+              7,
+              9,
+              16
+            ],
+            "synonyms": [
+              "event_id"
+            ]
+          },
+          {
+            "name": "app_id",
+            "type": "table column",
+            "column name": "app_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              -8942695423876075857,
+              -8022267440849930066,
+              -5720078949152207372,
+              -3725672010020973973,
+              -1758857579862594461
+            ],
+            "synonyms": [
+              "app_id"
+            ]
+          },
+          {
+            "name": "is_installed",
+            "type": "table column",
+            "column name": "is_installed",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1
+            ],
+            "synonyms": [
+              "is_installed"
+            ]
+          },
+          {
+            "name": "is_active",
+            "type": "table column",
+            "column name": "is_active",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              1
+            ],
+            "synonyms": [
+              "is_active"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "app_events_relevant"
+        ]
+      },
+      {
+        "name": "app_labels",
+        "type": "simple table",
+        "table path": "main.app_labels",
+        "unique properties": [
+          [
+            "app_id",
+            "label_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "app_id",
+            "type": "table column",
+            "column name": "app_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              7324884708820027918,
+              -4494216993218550286,
+              6058196446775239644,
+              8694625920731541625,
+              1977658975649789753
+            ],
+            "synonyms": [
+              "app_id"
+            ]
+          },
+          {
+            "name": "label_id",
+            "type": "table column",
+            "column name": "label_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              251,
+              406,
+              407,
+              256,
+              261
+            ],
+            "synonyms": [
+              "label_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "app_labels"
+        ]
+      },
+      {
+        "name": "events",
+        "type": "simple table",
+        "table path": "main.events",
+        "unique properties": [
+          "event_id"
+        ],
+        "properties": [
+          {
+            "name": "event_id",
+            "type": "table column",
+            "column name": "event_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "event_id"
+            ]
+          },
+          {
+            "name": "device_id",
+            "type": "table column",
+            "column name": "device_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              29182687948017175,
+              -6401643145415154744,
+              -4833982096941402721,
+              -6815121365017318426,
+              -5373797595892518570
+            ],
+            "synonyms": [
+              "device_id"
+            ]
+          },
+          {
+            "name": "timestamp_",
+            "type": "table column",
+            "column name": "\"timestamp\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2016-05-01 00:55:25.0",
+              "2016-05-01 00:54:12.0",
+              "2016-05-01 00:08:05.0",
+              "2016-05-01 00:06:40.0",
+              "2016-05-01 00:07:18.0"
+            ],
+            "synonyms": [
+              "timestamp"
+            ]
+          },
+          {
+            "name": "longitude",
+            "type": "table column",
+            "column name": "longitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              121.0,
+              104.0,
+              107.0,
+              116.0,
+              0.0
+            ],
+            "synonyms": [
+              "longitude"
+            ]
+          },
+          {
+            "name": "latitude",
+            "type": "table column",
+            "column name": "latitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              31.0,
+              30.0,
+              23.0,
+              29.0,
+              0.0
+            ],
+            "synonyms": [
+              "latitude"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "events"
+        ]
+      },
+      {
+        "name": "events_relevant",
+        "type": "simple table",
+        "table path": "main.events_relevant",
+        "unique properties": [
+          "event_id"
+        ],
+        "properties": [
+          {
+            "name": "event_id",
+            "type": "table column",
+            "column name": "event_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              2,
+              6,
+              7,
+              9,
+              16
+            ],
+            "synonyms": [
+              "event_id"
+            ]
+          },
+          {
+            "name": "device_id",
+            "type": "table column",
+            "column name": "device_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "device_id"
+            ]
+          },
+          {
+            "name": "timestamp_",
+            "type": "table column",
+            "column name": "\"timestamp\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              -8942695423876075857,
+              -8764672938472212518,
+              -9050100410106163077,
+              -7680145830980282919,
+              -9142957261685295367
+            ],
+            "synonyms": [
+              "timestamp"
+            ]
+          },
+          {
+            "name": "longitude",
+            "type": "table column",
+            "column name": "longitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1.0
+            ],
+            "synonyms": [
+              "longitude"
+            ]
+          },
+          {
+            "name": "latitude",
+            "type": "table column",
+            "column name": "latitude",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0,
+              1.0
+            ],
+            "synonyms": [
+              "latitude"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "events_relevant"
+        ]
+      },
+      {
+        "name": "gender_age",
+        "type": "simple table",
+        "table path": "main.gender_age",
+        "unique properties": [
+          "device_id"
+        ],
+        "properties": [
+          {
+            "name": "device_id",
+            "type": "table column",
+            "column name": "device_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              -9221086586254644858,
+              -9221079146476055829,
+              -9221066489596332354,
+              -9221046405740900422,
+              -9221026417907250887
+            ],
+            "synonyms": [
+              "device_id"
+            ]
+          },
+          {
+            "name": "gender",
+            "type": "table column",
+            "column name": "gender",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "M",
+              "F"
+            ],
+            "synonyms": [
+              "gender"
+            ]
+          },
+          {
+            "name": "age",
+            "type": "table column",
+            "column name": "age",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              29,
+              31,
+              38,
+              20,
+              19
+            ],
+            "synonyms": [
+              "age"
+            ]
+          },
+          {
+            "name": "group_",
+            "type": "table column",
+            "column name": "\"group\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "M29-31",
+              "M32-38",
+              "F29-32",
+              "M22-",
+              "M39+"
+            ],
+            "synonyms": [
+              "group"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "gender_age"
+        ]
+      },
+      {
+        "name": "gender_age_test",
+        "type": "simple table",
+        "table path": "main.gender_age_test",
+        "unique properties": [
+          "device_id"
+        ],
+        "properties": [
+          {
+            "name": "device_id",
+            "type": "table column",
+            "column name": "device_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              -9223321966609553846,
+              -9223042152723782980,
+              -9222896629442493034,
+              -9222894989445037972,
+              -9222894319703307262
+            ],
+            "synonyms": [
+              "device_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "gender_age_test"
+        ]
+      },
+      {
+        "name": "gender_age_train",
+        "type": "simple table",
+        "table path": "main.gender_age_train",
+        "unique properties": [
+          "device_id"
+        ],
+        "properties": [
+          {
+            "name": "device_id",
+            "type": "table column",
+            "column name": "device_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              -9223067244542181226,
+              -9222956879900151005,
+              -9222754701995937853,
+              -9222352239947207574,
+              -9222173362545970626
+            ],
+            "synonyms": [
+              "device_id"
+            ]
+          },
+          {
+            "name": "gender",
+            "type": "table column",
+            "column name": "gender",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "M",
+              "F"
+            ],
+            "synonyms": [
+              "gender"
+            ]
+          },
+          {
+            "name": "age",
+            "type": "table column",
+            "column name": "age",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              24,
+              36,
+              29,
+              23,
+              56
+            ],
+            "synonyms": [
+              "age"
+            ]
+          },
+          {
+            "name": "group_",
+            "type": "table column",
+            "column name": "\"group\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "M23-26",
+              "M32-38",
+              "M29-31",
+              "F43+",
+              "F27-28"
+            ],
+            "synonyms": [
+              "group"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "gender_age_train"
+        ]
+      },
+      {
+        "name": "label_categories",
+        "type": "simple table",
+        "table path": "main.label_categories",
+        "unique properties": [
+          "label_id"
+        ],
+        "properties": [
+          {
+            "name": "label_id",
+            "type": "table column",
+            "column name": "label_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "label_id"
+            ]
+          },
+          {
+            "name": "category",
+            "type": "table column",
+            "column name": "category",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "game-game type",
+              "game-Game themes",
+              "game-Art Style",
+              "game-Leisure time",
+              "game-Cutting things"
+            ],
+            "synonyms": [
+              "category"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "label_categories"
+        ]
+      },
+      {
+        "name": "phone_brand_device_model2",
+        "type": "simple table",
+        "table path": "main.phone_brand_device_model2",
+        "unique properties": [
+          [
+            "device_id",
+            "phone_brand",
+            "device_model"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "device_id",
+            "type": "table column",
+            "column name": "device_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              -9223321966609553846,
+              -9223067244542181226,
+              -9223042152723782980,
+              -9222956879900151005,
+              -9222896629442493034
+            ],
+            "synonyms": [
+              "device_id"
+            ]
+          },
+          {
+            "name": "phone_brand",
+            "type": "table column",
+            "column name": "phone_brand",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "\u5c0f\u7c73",
+              "vivo",
+              "\u4e09\u661f",
+              "OPPO",
+              "\u91d1\u7acb"
+            ],
+            "synonyms": [
+              "phone_brand"
+            ]
+          },
+          {
+            "name": "device_model",
+            "type": "table column",
+            "column name": "device_model",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "\u7ea2\u7c73note",
+              "Y19T",
+              "MI 3",
+              "Galaxy Note 2",
+              "A31"
+            ],
+            "synonyms": [
+              "device_model"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "phone_brand_device_model2"
+        ]
+      },
+      {
+        "name": "sample_submission",
+        "type": "simple table",
+        "table path": "main.sample_submission",
+        "unique properties": [
+          "device_id"
+        ],
+        "properties": [
+          {
+            "name": "device_id",
+            "type": "table column",
+            "column name": "device_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              -9223321966609553846,
+              -9223042152723782980,
+              -9222896629442493034,
+              -9222894989445037972,
+              -9222894319703307262
+            ],
+            "synonyms": [
+              "device_id"
+            ]
+          },
+          {
+            "name": "f23",
+            "type": "table column",
+            "column name": "\"F23-\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0833
+            ],
+            "synonyms": [
+              "F23-"
+            ]
+          },
+          {
+            "name": "f24_26",
+            "type": "table column",
+            "column name": "\"F24-26\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0833
+            ],
+            "synonyms": [
+              "F24-26"
+            ]
+          },
+          {
+            "name": "f27_28",
+            "type": "table column",
+            "column name": "\"F27-28\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0833
+            ],
+            "synonyms": [
+              "F27-28"
+            ]
+          },
+          {
+            "name": "f29_32",
+            "type": "table column",
+            "column name": "\"F29-32\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0833
+            ],
+            "synonyms": [
+              "F29-32"
+            ]
+          },
+          {
+            "name": "f33_42",
+            "type": "table column",
+            "column name": "\"F33-42\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0833
+            ],
+            "synonyms": [
+              "F33-42"
+            ]
+          },
+          {
+            "name": "f43_plus",
+            "type": "table column",
+            "column name": "\"F43+\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0833
+            ],
+            "synonyms": [
+              "F43+"
+            ]
+          },
+          {
+            "name": "m22",
+            "type": "table column",
+            "column name": "\"M22-\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0833
+            ],
+            "synonyms": [
+              "M22-"
+            ]
+          },
+          {
+            "name": "m23_26",
+            "type": "table column",
+            "column name": "\"M23-26\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0833
+            ],
+            "synonyms": [
+              "M23-26"
+            ]
+          },
+          {
+            "name": "m27_28",
+            "type": "table column",
+            "column name": "\"M27-28\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0833
+            ],
+            "synonyms": [
+              "M27-28"
+            ]
+          },
+          {
+            "name": "m29_31",
+            "type": "table column",
+            "column name": "\"M29-31\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0833
+            ],
+            "synonyms": [
+              "M29-31"
+            ]
+          },
+          {
+            "name": "m32_38",
+            "type": "table column",
+            "column name": "\"M32-38\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0833
+            ],
+            "synonyms": [
+              "M32-38"
+            ]
+          },
+          {
+            "name": "m39_plus",
+            "type": "table column",
+            "column name": "\"M39+\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0.0833
+            ],
+            "synonyms": [
+              "M39+"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "sample_submission"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "app_events",
+        "parent collection": "events",
+        "child collection": "app_events",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "event_id": [
+            "event_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "events",
+        "original parent": "events",
+        "original property": "app_events",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "app_events_relevant",
+        "parent collection": "app_all",
+        "child collection": "app_events_relevant",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "app_id": [
+            "app_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "app_all",
+        "original parent": "app_all",
+        "original property": "app_events_relevant",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "app_events_relevant",
+        "parent collection": "events_relevant",
+        "child collection": "app_events_relevant",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "event_id": [
+            "event_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "events_relevant",
+        "original parent": "events_relevant",
+        "original property": "app_events_relevant",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "app_labels",
+        "parent collection": "app_all",
+        "child collection": "app_labels",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "app_id": [
+            "app_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "app_all",
+        "original parent": "app_all",
+        "original property": "app_labels",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "app_labels",
+        "parent collection": "label_categories",
+        "child collection": "app_labels",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "label_id": [
+            "label_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "label_categories",
+        "original parent": "label_categories",
+        "original property": "app_labels",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "events_relevant",
+        "parent collection": "gender_age",
+        "child collection": "events_relevant",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "device_id": [
+            "device_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "gender_age",
+        "original parent": "gender_age",
+        "original property": "events_relevant",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "gender_age",
+        "parent collection": "phone_brand_device_model2",
+        "child collection": "gender_age",
+        "singular": true,
+        "always matches": false,
+        "keys": {
+          "device_id": [
+            "device_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "phone_brand_device_model2",
+        "original parent": "phone_brand_device_model2",
+        "original property": "gender_age",
+        "singular": false,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

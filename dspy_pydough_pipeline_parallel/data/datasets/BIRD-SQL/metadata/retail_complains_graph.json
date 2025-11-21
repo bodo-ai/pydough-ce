@@ -1,0 +1,1203 @@
+[
+  {
+    "name": "retail_complains",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "callcenterlogs",
+        "type": "simple table",
+        "table path": "main.callcenterlogs",
+        "unique properties": [
+          "complaint_id"
+        ],
+        "properties": [
+          {
+            "name": "date_received",
+            "type": "table column",
+            "column name": "\"Date received\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2017-03-27",
+              "2017-03-23",
+              "2017-03-22",
+              "2017-03-21",
+              "2017-03-17"
+            ],
+            "synonyms": [
+              "Date received"
+            ]
+          },
+          {
+            "name": "complaint_id",
+            "type": "table column",
+            "column name": "\"Complaint ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CR0000072",
+              "CR0000084",
+              "CR0000175",
+              "CR0000298",
+              "CR0000895"
+            ],
+            "synonyms": [
+              "Complaint ID"
+            ]
+          },
+          {
+            "name": "rand_client",
+            "type": "table column",
+            "column name": "\"rand client\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "C00004587",
+              "C00003328",
+              "C00001685",
+              "C00001945",
+              "C00004303"
+            ],
+            "synonyms": [
+              "rand client"
+            ]
+          },
+          {
+            "name": "phonefinal",
+            "type": "table column",
+            "column name": "phonefinal",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "977-806-9726",
+              "322-598-7152",
+              "508-311-5237",
+              "265-394-2727",
+              "206-008-0460"
+            ],
+            "synonyms": [
+              "phonefinal"
+            ]
+          },
+          {
+            "name": "vru_plus_line",
+            "type": "table column",
+            "column name": "\"vru+line\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AA0103",
+              "AA0205",
+              "AA0110",
+              "AA0113",
+              "AA0102"
+            ],
+            "synonyms": [
+              "vru+line"
+            ]
+          },
+          {
+            "name": "call_id",
+            "type": "table column",
+            "column name": "call_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              34536,
+              34537,
+              34538,
+              34540,
+              34541
+            ],
+            "synonyms": [
+              "call_id"
+            ]
+          },
+          {
+            "name": "priority",
+            "type": "table column",
+            "column name": "priority",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              0,
+              2,
+              1
+            ],
+            "synonyms": [
+              "priority"
+            ]
+          },
+          {
+            "name": "type_",
+            "type": "table column",
+            "column name": "type",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NW",
+              "PS",
+              "NE",
+              "TT",
+              "IN"
+            ],
+            "synonyms": [
+              "type"
+            ]
+          },
+          {
+            "name": "outcome",
+            "type": "table column",
+            "column name": "outcome",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AGENT",
+              "HANG",
+              "PHANTOM"
+            ],
+            "synonyms": [
+              "outcome"
+            ]
+          },
+          {
+            "name": "server",
+            "type": "table column",
+            "column name": "server",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "MICHAL",
+              "TOVA",
+              "YIFAT",
+              "AVNI",
+              "STEREN"
+            ],
+            "synonyms": [
+              "server"
+            ]
+          },
+          {
+            "name": "ser_start",
+            "type": "table column",
+            "column name": "ser_start",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "13:34:11",
+              "10:58:22",
+              "13:00:54",
+              "16:18:21",
+              "14:48:22"
+            ],
+            "synonyms": [
+              "ser_start"
+            ]
+          },
+          {
+            "name": "ser_exit",
+            "type": "table column",
+            "column name": "ser_exit",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "13:40:23",
+              "11:16:10",
+              "13:13:31",
+              "16:19:40",
+              "14:55:19"
+            ],
+            "synonyms": [
+              "ser_exit"
+            ]
+          },
+          {
+            "name": "ser_time",
+            "type": "table column",
+            "column name": "ser_time",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "00:06:12",
+              "00:17:48",
+              "00:12:37",
+              "00:01:19",
+              "00:06:57"
+            ],
+            "synonyms": [
+              "ser_time"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "callcenterlogs"
+        ]
+      },
+      {
+        "name": "client",
+        "type": "simple table",
+        "table path": "main.client",
+        "unique properties": [
+          "client_id"
+        ],
+        "properties": [
+          {
+            "name": "client_id",
+            "type": "table column",
+            "column name": "client_id",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "C00000001",
+              "C00000002",
+              "C00000003",
+              "C00000004",
+              "C00000005"
+            ],
+            "synonyms": [
+              "client_id"
+            ]
+          },
+          {
+            "name": "sex",
+            "type": "table column",
+            "column name": "sex",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Female",
+              "Male"
+            ],
+            "synonyms": [
+              "sex"
+            ]
+          },
+          {
+            "name": "day_",
+            "type": "table column",
+            "column name": "\"day\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              13,
+              4,
+              9,
+              1,
+              3
+            ],
+            "synonyms": [
+              "day"
+            ]
+          },
+          {
+            "name": "month_",
+            "type": "table column",
+            "column name": "\"month\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              12,
+              2,
+              10,
+              7,
+              9
+            ],
+            "synonyms": [
+              "month"
+            ]
+          },
+          {
+            "name": "year_",
+            "type": "table column",
+            "column name": "\"year\"",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1990,
+              1965,
+              1960,
+              1976,
+              1980
+            ],
+            "synonyms": [
+              "year"
+            ]
+          },
+          {
+            "name": "age",
+            "type": "table column",
+            "column name": "age",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              29,
+              54,
+              59,
+              43,
+              39
+            ],
+            "synonyms": [
+              "age"
+            ]
+          },
+          {
+            "name": "social",
+            "type": "table column",
+            "column name": "social",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "926-93-2157",
+              "806-94-5725",
+              "614-70-9100",
+              "580-20-3414",
+              "536-14-5809"
+            ],
+            "synonyms": [
+              "social"
+            ]
+          },
+          {
+            "name": "first",
+            "type": "table column",
+            "column name": "first",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Emma",
+              "Noah",
+              "Olivia",
+              "Liam",
+              "Sophia"
+            ],
+            "synonyms": [
+              "first"
+            ]
+          },
+          {
+            "name": "middle",
+            "type": "table column",
+            "column name": "middle",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Avaya",
+              "Everest",
+              "Brooklynne",
+              "Irvin",
+              "Danae"
+            ],
+            "synonyms": [
+              "middle"
+            ]
+          },
+          {
+            "name": "last",
+            "type": "table column",
+            "column name": "last",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Smith",
+              "Thompson",
+              "Johnson",
+              "White",
+              "Williams"
+            ],
+            "synonyms": [
+              "last"
+            ]
+          },
+          {
+            "name": "phone",
+            "type": "table column",
+            "column name": "phone",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "367-171-6840",
+              "212-423-7734",
+              "212-425-6932",
+              "951-567-8925",
+              "428-265-1568"
+            ],
+            "synonyms": [
+              "phone"
+            ]
+          },
+          {
+            "name": "email",
+            "type": "table column",
+            "column name": "email",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "emma.smith@gmail.com",
+              "noah.thompson@gmail.com",
+              "olivia.johnson@outlook.com",
+              "liam.white@gmail.com",
+              "sophia.williams@gmail.com"
+            ],
+            "synonyms": [
+              "email"
+            ]
+          },
+          {
+            "name": "address_1",
+            "type": "table column",
+            "column name": "address_1",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "387 Wellington Ave.",
+              "75 W. Berkshire St.",
+              "36 Second St.",
+              "7607 Sunnyslope Street",
+              "755 Galvin Street"
+            ],
+            "synonyms": [
+              "address_1"
+            ]
+          },
+          {
+            "name": "address_2",
+            "type": "table column",
+            "column name": "address_2",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Unit 1",
+              "Unit 6",
+              "Unit 80",
+              "Unit 1B",
+              "Apt. 3D"
+            ],
+            "synonyms": [
+              "address_2"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Albuquerque",
+              "New York City",
+              "Indianapolis",
+              "Portland",
+              "Louisville"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "state",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NM",
+              "NY",
+              "IN",
+              "OR",
+              "KY"
+            ],
+            "synonyms": [
+              "state"
+            ]
+          },
+          {
+            "name": "zipcode",
+            "type": "table column",
+            "column name": "zipcode",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              47246,
+              10040,
+              10162,
+              49047,
+              40852
+            ],
+            "synonyms": [
+              "zipcode"
+            ]
+          },
+          {
+            "name": "district_id",
+            "type": "table column",
+            "column name": "district_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              18,
+              1,
+              5,
+              12,
+              15
+            ],
+            "synonyms": [
+              "district_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "client"
+        ]
+      },
+      {
+        "name": "district",
+        "type": "simple table",
+        "table path": "main.district",
+        "unique properties": [
+          "district_id"
+        ],
+        "properties": [
+          {
+            "name": "district_id",
+            "type": "table column",
+            "column name": "district_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "district_id"
+            ]
+          },
+          {
+            "name": "city",
+            "type": "table column",
+            "column name": "city",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "New York City",
+              "Jacksonville",
+              "Columbus",
+              "Charlotte",
+              "Indianapolis"
+            ],
+            "synonyms": [
+              "city"
+            ]
+          },
+          {
+            "name": "state_abbrev",
+            "type": "table column",
+            "column name": "state_abbrev",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "NY",
+              "FL",
+              "OH",
+              "NC",
+              "IN"
+            ],
+            "synonyms": [
+              "state_abbrev"
+            ]
+          },
+          {
+            "name": "division",
+            "type": "table column",
+            "column name": "division",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Middle Atlantic",
+              "South Atlantic",
+              "East North Central",
+              "Pacific",
+              "Mountain"
+            ],
+            "synonyms": [
+              "division"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "district"
+        ]
+      },
+      {
+        "name": "events",
+        "type": "simple table",
+        "table path": "main.events",
+        "unique properties": [
+          [
+            "complaint_id",
+            "client_id"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "date_received",
+            "type": "table column",
+            "column name": "\"Date received\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2014-07-03",
+              "2012-04-12",
+              "2012-04-03",
+              "2012-03-14",
+              "2012-03-05"
+            ],
+            "synonyms": [
+              "Date received"
+            ]
+          },
+          {
+            "name": "product",
+            "type": "table column",
+            "column name": "Product",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Bank account or service",
+              "Credit card"
+            ],
+            "synonyms": [
+              "Product"
+            ]
+          },
+          {
+            "name": "sub_product",
+            "type": "table column",
+            "column name": "\"Sub-product\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Checking account",
+              "Savings account",
+              "Other bank product/service",
+              "(CD) Certificate of deposit",
+              "Cashing a check without an account"
+            ],
+            "synonyms": [
+              "Sub-product"
+            ]
+          },
+          {
+            "name": "issue",
+            "type": "table column",
+            "column name": "Issue",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Deposits and withdrawals",
+              "Account opening, closing, or management",
+              "Billing disputes",
+              "Problems caused by my funds being low",
+              "Other fee"
+            ],
+            "synonyms": [
+              "Issue"
+            ]
+          },
+          {
+            "name": "sub_issue",
+            "type": "table column",
+            "column name": "\"Sub-issue\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [],
+            "synonyms": [
+              "Sub-issue"
+            ]
+          },
+          {
+            "name": "consumer_complaint_narrative",
+            "type": "table column",
+            "column name": "\"Consumer complaint narrative\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Deposited a XXXX check into my accoun...",
+              "I called Eagle National Bank 's custo...",
+              "I was a victim of fraud involving my ...",
+              "On Thursday XX/XX/2017 I initiated a ...",
+              "Today, XXXX/XXXX/2017, I attempted to..."
+            ],
+            "synonyms": [
+              "Consumer complaint narrative"
+            ]
+          },
+          {
+            "name": "tags",
+            "type": "table column",
+            "column name": "Tags",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Older American",
+              "Older American, Servicemember",
+              "Servicemember"
+            ],
+            "synonyms": [
+              "Tags"
+            ]
+          },
+          {
+            "name": "consumer_consent_provided",
+            "type": "table column",
+            "column name": "\"Consumer consent provided?\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "N/A",
+              "Consent not provided",
+              "Consent provided",
+              "Other"
+            ],
+            "synonyms": [
+              "Consumer consent provided?"
+            ]
+          },
+          {
+            "name": "submitted_via",
+            "type": "table column",
+            "column name": "\"Submitted via\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Email",
+              "Fax",
+              "Postal mail",
+              "Referral",
+              "Web"
+            ],
+            "synonyms": [
+              "Submitted via"
+            ]
+          },
+          {
+            "name": "date_sent_to_company",
+            "type": "table column",
+            "column name": "\"Date sent to company\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "2014-07-09",
+              "2012-04-13",
+              "2012-04-03",
+              "2012-03-14",
+              "2012-03-06"
+            ],
+            "synonyms": [
+              "Date sent to company"
+            ]
+          },
+          {
+            "name": "company_response_to_consumer",
+            "type": "table column",
+            "column name": "\"Company response to consumer\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Closed with explanation",
+              "Closed with relief",
+              "Closed without relief",
+              "Closed with non-monetary relief",
+              "In progress"
+            ],
+            "synonyms": [
+              "Company response to consumer"
+            ]
+          },
+          {
+            "name": "timely_response",
+            "type": "table column",
+            "column name": "\"Timely response?\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Yes",
+              "No"
+            ],
+            "synonyms": [
+              "Timely response?"
+            ]
+          },
+          {
+            "name": "consumer_disputed",
+            "type": "table column",
+            "column name": "\"Consumer disputed?\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "No",
+              "Yes"
+            ],
+            "synonyms": [
+              "Consumer disputed?"
+            ]
+          },
+          {
+            "name": "complaint_id",
+            "type": "table column",
+            "column name": "\"Complaint ID\"",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "CR0000072",
+              "CR0000084",
+              "CR0000140",
+              "CR0000175",
+              "CR0000193"
+            ],
+            "synonyms": [
+              "Complaint ID"
+            ]
+          },
+          {
+            "name": "client_id",
+            "type": "table column",
+            "column name": "Client_ID",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "C00003714",
+              "C00001366",
+              "C00002330",
+              "C00001231",
+              "C00013588"
+            ],
+            "synonyms": [
+              "Client_ID"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "events"
+        ]
+      },
+      {
+        "name": "reviews",
+        "type": "simple table",
+        "table path": "main.reviews",
+        "unique properties": [
+          "date_"
+        ],
+        "properties": [
+          {
+            "name": "date_",
+            "type": "table column",
+            "column name": "\"Date\"",
+            "data type": "datetime",
+            "description": "",
+            "sample values": [
+              "2013-02-04",
+              "2013-02-06",
+              "2013-02-08",
+              "2013-03-02",
+              "2013-03-21"
+            ],
+            "synonyms": [
+              "Date"
+            ]
+          },
+          {
+            "name": "stars",
+            "type": "table column",
+            "column name": "Stars",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5,
+              1,
+              2
+            ],
+            "synonyms": [
+              "Stars"
+            ]
+          },
+          {
+            "name": "reviews",
+            "type": "table column",
+            "column name": "Reviews",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Great job, Eagle National! Each perso...",
+              "Matthew Richardson is professional an...",
+              "We had a past experience with Eagle N...",
+              "We have been dealing with Brad Thomka...",
+              "I can't express how grateful I am for..."
+            ],
+            "synonyms": [
+              "Reviews"
+            ]
+          },
+          {
+            "name": "product",
+            "type": "table column",
+            "column name": "Product",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Eagle National Mortgage",
+              "Eagle National Bank",
+              "Eagle Capital"
+            ],
+            "synonyms": [
+              "Product"
+            ]
+          },
+          {
+            "name": "district_id",
+            "type": "table column",
+            "column name": "district_id",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              65,
+              66,
+              23,
+              55,
+              24
+            ],
+            "synonyms": [
+              "district_id"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "reviews"
+        ]
+      },
+      {
+        "name": "state",
+        "type": "simple table",
+        "table path": "main.state",
+        "unique properties": [
+          "statecode"
+        ],
+        "properties": [
+          {
+            "name": "statecode",
+            "type": "table column",
+            "column name": "StateCode",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AL",
+              "AR",
+              "AZ",
+              "CA",
+              "CO"
+            ],
+            "synonyms": [
+              "StateCode"
+            ]
+          },
+          {
+            "name": "state",
+            "type": "table column",
+            "column name": "State",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Alabama",
+              "Arkansas",
+              "Arizona",
+              "California",
+              "Colorado"
+            ],
+            "synonyms": [
+              "State"
+            ]
+          },
+          {
+            "name": "region",
+            "type": "table column",
+            "column name": "Region",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "South",
+              "West",
+              "Northeast",
+              "Midwest"
+            ],
+            "synonyms": [
+              "Region"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "state"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "callcenterlogs",
+        "parent collection": "client",
+        "child collection": "callcenterlogs",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "client_id": [
+            "rand_client"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "client",
+        "original parent": "client",
+        "original property": "callcenterlogs",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "client",
+        "parent collection": "district",
+        "child collection": "client",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "district_id": [
+            "district_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "district",
+        "original parent": "district",
+        "original property": "client",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "district",
+        "parent collection": "state",
+        "child collection": "district",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "statecode": [
+            "state_abbrev"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "state",
+        "original parent": "state",
+        "original property": "district",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "events",
+        "parent collection": "client",
+        "child collection": "events",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "client_id": [
+            "client_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "client",
+        "original parent": "client",
+        "original property": "events",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "events",
+        "parent collection": "callcenterlogs",
+        "child collection": "events",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "complaint_id": [
+            "complaint_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "callcenterlogs",
+        "original parent": "callcenterlogs",
+        "original property": "events",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "reviews",
+        "parent collection": "district",
+        "child collection": "reviews",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "district_id": [
+            "district_id"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "district",
+        "original parent": "district",
+        "original property": "reviews",
+        "singular": true,
+        "always matches": false,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]

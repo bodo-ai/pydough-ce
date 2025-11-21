@@ -1,0 +1,510 @@
+[
+  {
+    "name": "world",
+    "version": "V2",
+    "collections": [
+      {
+        "name": "city",
+        "type": "simple table",
+        "table path": "main.City",
+        "unique properties": [
+          "id_"
+        ],
+        "properties": [
+          {
+            "name": "id_",
+            "type": "table column",
+            "column name": "ID",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "synonyms": [
+              "ID"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Kabul",
+              "Qandahar",
+              "Herat",
+              "Mazar-e-Sharif",
+              "Amsterdam"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "countrycode",
+            "type": "table column",
+            "column name": "CountryCode",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AFG",
+              "NLD",
+              "ANT",
+              "ALB",
+              "DZA"
+            ],
+            "synonyms": [
+              "CountryCode"
+            ]
+          },
+          {
+            "name": "district",
+            "type": "table column",
+            "column name": "District",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Kabol",
+              "Qandahar",
+              "Herat",
+              "Balkh",
+              "Noord-Holland"
+            ],
+            "synonyms": [
+              "District"
+            ]
+          },
+          {
+            "name": "population",
+            "type": "table column",
+            "column name": "Population",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1780000,
+              237500,
+              186800,
+              127800,
+              731200
+            ],
+            "synonyms": [
+              "Population"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "City"
+        ]
+      },
+      {
+        "name": "country",
+        "type": "simple table",
+        "table path": "main.Country",
+        "unique properties": [
+          "code"
+        ],
+        "properties": [
+          {
+            "name": "code",
+            "type": "table column",
+            "column name": "Code",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "ABW",
+              "AFG",
+              "AGO",
+              "AIA",
+              "ALB"
+            ],
+            "synonyms": [
+              "Code"
+            ]
+          },
+          {
+            "name": "name",
+            "type": "table column",
+            "column name": "Name",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aruba",
+              "Afghanistan",
+              "Angola",
+              "Anguilla",
+              "Albania"
+            ],
+            "synonyms": [
+              "Name"
+            ]
+          },
+          {
+            "name": "continent",
+            "type": "table column",
+            "column name": "Continent",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "North America",
+              "Asia",
+              "Africa",
+              "Europe",
+              "South America"
+            ],
+            "synonyms": [
+              "Continent"
+            ]
+          },
+          {
+            "name": "region",
+            "type": "table column",
+            "column name": "Region",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Caribbean",
+              "Southern and Central Asia",
+              "Central Africa",
+              "Southern Europe",
+              "Middle East"
+            ],
+            "synonyms": [
+              "Region"
+            ]
+          },
+          {
+            "name": "surfacearea",
+            "type": "table column",
+            "column name": "SurfaceArea",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              193.0,
+              652090.0,
+              1246700.0,
+              96.0,
+              28748.0
+            ],
+            "synonyms": [
+              "SurfaceArea"
+            ]
+          },
+          {
+            "name": "indepyear",
+            "type": "table column",
+            "column name": "IndepYear",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              1919,
+              1975,
+              1912,
+              1278,
+              1971
+            ],
+            "synonyms": [
+              "IndepYear"
+            ]
+          },
+          {
+            "name": "population",
+            "type": "table column",
+            "column name": "Population",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              103000,
+              22720000,
+              12878000,
+              8000,
+              3401200
+            ],
+            "synonyms": [
+              "Population"
+            ]
+          },
+          {
+            "name": "lifeexpectancy",
+            "type": "table column",
+            "column name": "LifeExpectancy",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              78.4,
+              45.9,
+              38.3,
+              76.1,
+              71.6
+            ],
+            "synonyms": [
+              "LifeExpectancy"
+            ]
+          },
+          {
+            "name": "gnp",
+            "type": "table column",
+            "column name": "GNP",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              828.0,
+              5976.0,
+              6648.0,
+              63.2,
+              3205.0
+            ],
+            "synonyms": [
+              "GNP"
+            ]
+          },
+          {
+            "name": "gnpold",
+            "type": "table column",
+            "column name": "GNPOld",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              793.0,
+              7984.0,
+              2500.0,
+              36846.0,
+              323310.0
+            ],
+            "synonyms": [
+              "GNPOld"
+            ]
+          },
+          {
+            "name": "localname",
+            "type": "table column",
+            "column name": "LocalName",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Aruba",
+              "Afganistan/Afqanestan",
+              "Angola",
+              "Anguilla",
+              "Shqip\u00ebria"
+            ],
+            "synonyms": [
+              "LocalName"
+            ]
+          },
+          {
+            "name": "governmentform",
+            "type": "table column",
+            "column name": "GovernmentForm",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Nonmetropolitan Territory of The Neth...",
+              "Islamic Emirate",
+              "Republic",
+              "Dependent Territory of the UK",
+              "Parliamentary Coprincipality"
+            ],
+            "synonyms": [
+              "GovernmentForm"
+            ]
+          },
+          {
+            "name": "headofstate",
+            "type": "table column",
+            "column name": "HeadOfState",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Beatrix",
+              "Mohammad Omar",
+              "Jos\u00e9 Eduardo dos Santos",
+              "Elisabeth II",
+              "Rexhep Mejdani"
+            ],
+            "synonyms": [
+              "HeadOfState"
+            ]
+          },
+          {
+            "name": "capital",
+            "type": "table column",
+            "column name": "Capital",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              129,
+              1,
+              56,
+              62,
+              34
+            ],
+            "synonyms": [
+              "Capital"
+            ]
+          },
+          {
+            "name": "code2",
+            "type": "table column",
+            "column name": "Code2",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "AW",
+              "AF",
+              "AO",
+              "AI",
+              "AL"
+            ],
+            "synonyms": [
+              "Code2"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "Country"
+        ]
+      },
+      {
+        "name": "countrylanguage",
+        "type": "simple table",
+        "table path": "main.CountryLanguage",
+        "unique properties": [
+          [
+            "countrycode",
+            "language"
+          ]
+        ],
+        "properties": [
+          {
+            "name": "countrycode",
+            "type": "table column",
+            "column name": "CountryCode",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "ABW",
+              "AFG",
+              "AGO",
+              "AIA",
+              "ALB"
+            ],
+            "synonyms": [
+              "CountryCode"
+            ]
+          },
+          {
+            "name": "language",
+            "type": "table column",
+            "column name": "Language",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "Dutch",
+              "English",
+              "Papiamento",
+              "Spanish",
+              "Balochi"
+            ],
+            "synonyms": [
+              "Language"
+            ]
+          },
+          {
+            "name": "isofficial",
+            "type": "table column",
+            "column name": "IsOfficial",
+            "data type": "string",
+            "description": "",
+            "sample values": [
+              "T",
+              "F"
+            ],
+            "synonyms": [
+              "IsOfficial"
+            ]
+          },
+          {
+            "name": "percentage",
+            "type": "table column",
+            "column name": "Percentage",
+            "data type": "numeric",
+            "description": "",
+            "sample values": [
+              5.3,
+              9.5,
+              76.7,
+              7.4,
+              0.9
+            ],
+            "synonyms": [
+              "Percentage"
+            ]
+          }
+        ],
+        "description": "",
+        "synonyms": [
+          "CountryLanguage"
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "type": "simple join",
+        "name": "city",
+        "parent collection": "country",
+        "child collection": "city",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "countrycode"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country",
+        "original parent": "country",
+        "original property": "city",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "simple join",
+        "name": "countrylanguage",
+        "parent collection": "country",
+        "child collection": "countrylanguage",
+        "singular": false,
+        "always matches": false,
+        "keys": {
+          "code": [
+            "countrycode"
+          ]
+        },
+        "description": "",
+        "synonyms": []
+      },
+      {
+        "type": "reverse",
+        "name": "country",
+        "original parent": "country",
+        "original property": "countrylanguage",
+        "singular": true,
+        "always matches": true,
+        "description": "",
+        "synonyms": []
+      }
+    ]
+  }
+]
