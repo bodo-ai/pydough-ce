@@ -49,7 +49,10 @@ if __name__ == "__main__":
         retries=3
     )
 
+    print("Preparing questions...")
     questions = prepare_questions(db_base_path, metadata_base_path, questions_df, cache_path)
+    print(f"Prepared {len(questions)} questions.")
+
     ensemble = FrequencyEnsemble([(factory1, 3)])  
 
 
