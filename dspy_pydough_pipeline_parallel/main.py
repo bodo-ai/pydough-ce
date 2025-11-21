@@ -52,9 +52,11 @@ if __name__ == "__main__":
     questions = prepare_questions(db_base_path, metadata_base_path, questions_df, cache_path)
     ensemble = FrequencyEnsemble([(factory1, 3)])  
 
+
+    print(f"Starting test with {len(questions)} questions...")
     start_time = time.perf_counter()
     parallel_process_questions(ensemble, questions, api_keys, experiment_name,processes_per_key, results_path)
     end_time = time.perf_counter()
     elapsed = end_time - start_time
-        
+    print("Test completed.")    
     print(f"Test duration: {elapsed:.2f} s")

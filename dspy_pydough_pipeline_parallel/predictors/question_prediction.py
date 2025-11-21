@@ -30,7 +30,7 @@ class Question:
         self.dataset_name = row["dataset_name"]
 
         self.db_path = os.path.join(db_base_path, self.dataset_name, 'databases', self.db_name, f"{self.db_name}.sqlite")
-        self.metadata_path = os.path.join(metadata_base_path, self.dataset_name, "metadata", f"{self.db_name}_graph_enriched.json")  
+        self.metadata_path = os.path.join(metadata_base_path, self.dataset_name, "metadata", f"{self.db_name}_graph.json")  
 
         graph = parse_json_metadata_from_file(self.metadata_path, self.db_name)
 

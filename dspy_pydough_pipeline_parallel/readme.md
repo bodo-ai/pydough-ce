@@ -20,14 +20,14 @@ dspy_pydough_pipeline_parallel/
 │   │   └── datasets/
 │   │       └── BIRD-SQL/
 │   │           └── metadata/             # Database metadata (JSON graph)
-│   │               ├── chicago_crime_graph_enriched.json  
-│   │               ├── movie_graph_enriched.json
+│   │               ├── chicago_crime_graph.json  
+│   │               ├── movie_graph.json
 │   │               └── ...
 │   ├── prompts/                     # Prompt templates and context
 │   │   └── cheatsheet_8_1.md
 │   └── questions/                   # Question datasets
-│       ├── bird_10.csv
-│       └── complete_corrected_questions_8_1_gtj_with_id.csv
+│       ├── bird_30.csv
+│      
 ├── evaluation/
 │   ├── eval.py                      # Evaluation metrics
 │   └── prompt_evaluation.py         # Internal parallel processing logic
@@ -376,4 +376,4 @@ The upper bounds represent the theoretical ceiling of performance across all gen
 - Keep sensitive credentials out of the repository; use environment variables
 - Ensure you're running on a Linux environment or WSL for proper script execution
 - The BIRD-SQL database download is required before running experiments
-- Results are cached to avoid redundant API calls; clear cache if needed for fresh predictions
+- Results are cached to avoid redundant API calls
