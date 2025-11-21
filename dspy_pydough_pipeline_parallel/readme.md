@@ -243,7 +243,7 @@ Selects the most frequently occurring prediction across multiple runs.
 ```python
 from predictors.ensembles.frequency import FrequencyEnsemble
 
-ensemble = FrequencyEnsemble([(factory1, 3)])  # Run factory1 3 times
+ensemble = FrequencyEnsemble([(factory1, 3)])  # Using factory1 with 3 tries(3 differend predictions)
 ```
 
 **Use case**: Best when you want the most consistent/stable prediction across multiple attempts.
@@ -254,7 +254,7 @@ Selects the prediction with the highest byte density (most information-dense out
 ```python
 from predictors.ensembles.density import DensityEnsemble
 
-ensemble = DensityEnsemble([(factory1, 3)])  # Run factory1 3 times
+ensemble = DensityEnsemble([(factory1, 3)])  # Using factory1 with 3 tries(3 differend predictions)
 ```
 
 **Use case**: Useful when you want the most detailed or comprehensive response.
@@ -265,7 +265,7 @@ Randomly selects one prediction from all generated outputs.
 ```python
 from predictors.ensembles.random import RandomEnsemble
 
-ensemble = RandomEnsemble([(factory1, 3)])  # Run factory1 3 times
+ensemble = RandomEnsemble([(factory1, 3)])  # Using factory1 with 3 tries(3 differend predictions)
 ```
 
 **Use case**: Useful for baseline comparisons or when you want unbiased sampling from the generated predictions.
@@ -276,7 +276,7 @@ Applies heuristic rules to select the best prediction.
 ```python
 from predictors.ensembles.heuristics import HeuristicsEnsemble
 
-ensemble = HeuristicsEnsemble([(factory1, 3)])  # Run factory1 3 times
+ensemble = HeuristicsEnsemble([(factory1, 3)])  # Using factory1 with 3 tries(3 differend predictions)
 ```
 
 **Use case**: When you have domain-specific rules for determining quality.
@@ -287,7 +287,7 @@ Selects prediction based on size criteria.
 ```python
 from predictors.ensembles.size import SizeEnsemble
 
-ensemble = SizeEnsemble([(factory1, 3)])  # Run factory1 3 times
+ensemble = SizeEnsemble([(factory1, 3)])  # Using factory1 with 3 tries(3 differend predictions)
 ```
 
 **Use case**: When prediction length correlates with quality in your domain.
@@ -300,7 +300,7 @@ You can combine multiple factories with different configurations:
 factory1 = PydoughPredictionFactory(model='gemini/gemini-2.5-flash', temperature=0.2, ...)
 factory2 = PydoughPredictionFactory(model='gemini/gemini-2.5-pro', temperature=0.5, ...)
 
-# Run factory1 three times and factory2 twice
+# Make 3 different predictions for Factory1, and 2 predictions for Factory2.
 ensemble = FrequencyEnsemble([(factory1, 3), (factory2, 2)])
 ```
 

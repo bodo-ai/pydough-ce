@@ -21,12 +21,12 @@ if __name__ == "__main__":
     env = load_dotenv()
     
     api_keys = [
-        os.getenv("GOOGLE_API_KEY_1"),
-        os.getenv("GOOGLE_API_KEY_2"),
-        os.getenv("GOOGLE_API_KEY_3"),
-        os.getenv("GOOGLE_API_KEY_4"),
-        os.getenv("GOOGLE_API_KEY_5"),
-        os.getenv("GOOGLE_API_KEY_6")
+        os.getenv("API_KEY_1"),
+        os.getenv("API_KEY_2"),
+        os.getenv("API_KEY_3"),
+        os.getenv("API_KEY_4"),
+        os.getenv("API_KEY_5"),
+        os.getenv("API_KEY_6")
     ] 
 
     db_base_path = "data/datasets/"  
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     
     cache_path = f"cache/{experiment_name}"  
     questions_df = pd.read_csv("data/questions/bird_30.csv")
-    context = Path("data/prompts/cheatsheet_8_1.md").read_text() 
+    context = Path("data/prompts/cheatsheet.md").read_text() 
 
 
     factory1 = PydoughPredictionFactory(
