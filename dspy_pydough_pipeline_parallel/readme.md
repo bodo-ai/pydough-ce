@@ -12,19 +12,16 @@ dspy_pydough_pipeline_parallel/
 ├── download_bird_database.sh        # Script to download and setup BIRD-SQL databases
 ├── environment.yml                  # Conda environment configuration
 ├── data/
-│   ├── databases/                   # SQLite database files
-│   │   └── datasets/
-│   │       └── BIRD-SQL/
-│   │           └── databases/       # BIRD-SQL databases
-│   ├── metadata/                   
-│   │   └── datasets/
-│   │       └── BIRD-SQL/
-│   │           └── metadata/             # Database metadata (JSON graph)
-│   │               ├── chicago_crime_graph.json  
-│   │               ├── movie_graph.json
-│   │               └── ...
+│   ├── datasets/                   # SQLite database files
+│   │   └── BIRD-SQL/
+│   │       └── databases/
+│   │       │      └── databases/       # BIRD-SQL databases
+│   |       |                  
+│   │       └── metadata/             # Database metadata (JSON graph)
+│   │           
+│   │               
 │   ├── prompts/                     # Prompt templates and context
-│   │   └── cheatsheet_8_1.md
+│   │   └── cheatsheet.md
 │   └── questions/                   # Question datasets
 │       ├── bird_30.csv
 │      
@@ -100,9 +97,9 @@ conda activate dspy-pydough
 ## Data Preparation
 
 After running the database download script, verify that:
-- Database files exist in `data/databases/datasets/BIRD-SQL/databases/`
+- Database files exist in `data/datasets/BIRD-SQL/databases/`
 - Question datasets are present in `data/questions/` (e.g., `bird_10.csv`)
-- Metadata exists in `data/metadata/datasets/BIRD-SQL/metadata/`
+- Metadata exists in `data/datasets/BIRD-SQL/metadata/`
 - Prompt templates are in `data/prompts/` (e.g., `cheatsheet_8_1.md`)
 
 ---
@@ -155,6 +152,10 @@ api_keys = [
 ]  # add the keys in the .env file
 ```
 
+***IMPORTANT: Update the main.py file to match your API key configuration***
+
+Open main.py and locate the API keys section. You must modify this code to match the number and names of API keys in your .env file.
+
 ### Custom .env Path
 
 If your `.env` file is located elsewhere, you can specify the path:
@@ -206,7 +207,7 @@ cache_path = "/home/cache/Bird_COT"  # Cache directory for predictions
 db_base_path = "data/databases/datasets/BIRD-SQL/databases/"  # SQLite databases location
 metadata_base_path = "data/metadata/datasets/BIRD-SQL/metadata/"  # Metadata JSON files
 questions_df = pd.read_csv("data/questions/bird_10.csv")  # Questions dataset
-context = Path("data/prompts/cheatsheet_8_1.md").read_text()  # Prompt context
+context = Path("data/prompts/cheatsheet.md").read_text()  # Prompt context
 ```
 
 ### Prediction Factory
