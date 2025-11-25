@@ -1,8 +1,10 @@
 # PyDough-CE
 
-Welcome to the `pydough-ce` project! This repository contains the `pydough-analytics` toolkit, a powerful system that turns natural language questions into safe, executable analytics.
+Welcome to the `pydough-ce` project! This repository contains the `pydough-analytics` toolkit, a powerful system that turns natural language questions into safe, executable analytics. 
 
 It combines a custom Domain-Specific Language (DSL) called PyDough with LLM-powered system to create a seamless text-to-analytics workflow.
+
+This repository also includes a DSPy-based pipeline in `dspy_pydough_pipeline_parallel` that evaluates and generates PyDough queries from natural language using prompt-driven large language models, validating predictions against ground truth through multiple evaluation metrics while supporting ensemble selection methods, caching, and parallel processing with multiple API keys.
 
 ## What It Does
 
@@ -228,6 +230,15 @@ SQLite DB → JSON metadata graph → Markdown documentation → **LLM Ask**.
 
 ```
 / 
+├── dspy_pydough_pipeline_parallel 
+│   ├── data                      # Sanmple  and database files.
+│   ├── download_bird_database.sh # Script to download and setup BIRD-SQL databases
+│   ├── environment.yml           # Conda environment
+│   ├── evaluation                # folder with the validation scripts
+│   ├── main.py                   # Main entry point 
+│   ├── predictors                # Folder with the generation scripts
+│   ├── readme.md                 # In-depth package documentation.
+│   └── utils                     # Utils functions 
 │
 ├── pydough-analytics/     # Core Python package.
 │   ├── data/              # Sanmple metadata files.
@@ -238,6 +249,7 @@ SQLite DB → JSON metadata graph → Markdown documentation → **LLM Ask**.
 │   └── README.md          # In-depth package documentation.
 └── README.md              # You are here!
 ```
+
 
 ## The PyDough DSL
 

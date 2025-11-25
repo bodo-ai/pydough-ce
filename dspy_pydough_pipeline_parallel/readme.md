@@ -378,3 +378,4 @@ The upper bounds represent the theoretical ceiling of performance across all gen
 - Ensure you're running on a Linux environment or WSL for proper script execution
 - The BIRD-SQL database download is required before running experiments
 - Results are cached to avoid redundant API calls
+- If you encounter database errors, dataframe generation failures, or issues with generated PyDough/SQL code, try deleting the cache folder. A corrupted cache may be causing these problems.

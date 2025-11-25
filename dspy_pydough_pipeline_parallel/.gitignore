@@ -215,3 +215,4 @@ dspy_pydough_pipeline_parallel/main.py
 .vscode/settings.json
 dspy_pydough_pipeline_parallel/csv_files/
 *pkl
+cache
