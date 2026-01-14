@@ -5,6 +5,9 @@ from google.genai import types
 from anthropic import AnthropicVertex
 import aisuite as ai
 from dotenv import load_dotenv
+import requests
+import json
+
 load_dotenv()
 
 class AIProvider(ABC):
@@ -88,6 +91,36 @@ class GeminiAIProvider(AIProvider):
             raise ValueError(f"Error during ask in GeminiAIProvider: {e}")
 
 
+class OllamaAIProvider(AIProvider):
+    def __init__(self, model_id, config=None):
+        self.model_id = model_id
+        self.base_url = os.getenv("OLLAMA_BASE_URL")
+
+    def ask(self, question, prompt, **kwargs):
+        payload = {
+            "model": self.model_id,
+            "messages": [
+                {"role": "system", "content": prompt},
+                {"role": "user", "content": question},
+            ],
+            "stream": False,
+            "options": {
+                "temperature": 0.1,
+                "top_p": 0.9,
+                "num_ctx": 8192,
+            },
+        }
+
+        r = requests.post(
+            f"{self.base_url}/api/chat",
+            json=payload,
+            timeout=600,
+        )
+        r.raise_for_status()
+
+        return r.json()["message"]["content"]
+
+
 class OtherAIProvider(AIProvider):
     def __init__(self, provider, model_id, config=None):
         try:
@@ -116,6 +149,8 @@ def get_provider(provider, model_id, config=None):
             return ClaudeAIProvider(model_id, config=config)
         elif provider == "google":
             return GeminiAIProvider(model_id, config=config)
+        elif provider == "ollama":
+            return OllamaAIProvider(model_id, config=config)
         else:
             return OtherAIProvider(provider, model_id, config)
     except Exception as e:
