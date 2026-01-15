@@ -73,7 +73,20 @@ def test_other_ai_provider(monkeypatch):
     p = providers.OtherAIProvider("openai", "gpt-4")
     out = p.ask("Q?", "Prompt")
     assert out == "Other Answer"
+    
+# ---------------------------
+# OllamaAIProvider
+# ---------------------------
+    
+def test_ollama_ai_provider_returns_content(monkeypatch):
+    mock_resp = MagicMock()
+    mock_resp.raise_for_status.return_value = None
+    mock_resp.json.return_value = {"message": {"content": "Ollama Answer"}}
 
+    with patch.object(providers.requests, "post", return_value=mock_resp):
+        p = providers.OllamaAIProvider(model_id="llama3:instruct")
+        out = p.ask("Q?", "Prompt")
+        assert out == "Ollama Answer"
 
 # ---------------------------
 # get_provider
@@ -84,6 +97,7 @@ def test_other_ai_provider(monkeypatch):
     [
         ("anthropic", providers.ClaudeAIProvider),
         ("google", providers.GeminiAIProvider),
+        ("ollama", providers.OllamaAIProvider),
         ("openai", providers.OtherAIProvider),
     ],
 )
