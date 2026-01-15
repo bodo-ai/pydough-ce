@@ -1,6 +1,6 @@
 [
   {
-    "name": "TPCH",
+    "name": "tpch",
     "version": "V2",
     "collections": [
       {

@@ -93,32 +93,39 @@ class GeminiAIProvider(AIProvider):
 
 class OllamaAIProvider(AIProvider):
     def __init__(self, model_id, config=None):
-        self.model_id = model_id
-        self.base_url = os.getenv("OLLAMA_BASE_URL")
+        try:
+            self.model_id = model_id
+            self.base_url = os.getenv("OLLAMA_BASE_URL")
+        except Exception as e:
+            raise ValueError(f"Error initializing OllamaAIProvider: {e}")
 
     def ask(self, question, prompt, **kwargs):
-        payload = {
-            "model": self.model_id,
-            "messages": [
-                {"role": "system", "content": prompt},
-                {"role": "user", "content": question},
-            ],
-            "stream": False,
-            "options": {
-                "temperature": 0.1,
-                "top_p": 0.9,
-                "num_ctx": 8192,
-            },
-        }
+        try:
+            payload = {
+                "model": self.model_id,
+                "messages": [
+                    {"role": "system", "content": prompt},
+                    {"role": "user", "content": question},
+                ],
+                "stream": False,
+                "options": {
+                    "temperature": 0,
+                    "top_p": 0.9,
+                    "num_ctx": 8192,
+                },
+            }
 
-        r = requests.post(
-            f"{self.base_url}/api/chat",
-            json=payload,
-            timeout=600,
-        )
-        r.raise_for_status()
+            r = requests.post(
+                f"{self.base_url}/api/chat",
+                json=payload,
+                timeout=600,
+            )
+            r.raise_for_status()
 
-        return r.json()["message"]["content"]
+            return r.json()["message"]["content"]
+
+        except Exception as e:
+            raise ValueError(f"Error during ask in OllamaAIProvider: {e}")
 
 
 class OtherAIProvider(AIProvider):
