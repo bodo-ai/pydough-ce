@@ -100,6 +100,52 @@ GOOGLE_GENAI_USE_VERTEXAI=true
   - `false` → API‑key mode for Gemini. Requires `GOOGLE_API_KEY`.
 - **Claude** in this repo runs **only via Vertex** (ADC), so it needs `project` and a supported `region` (e.g., `us-east5`).
 
+## Using Local Models (Ollama)
+
+PyDough-CE can also be used with **locally hosted open-source models via Ollama**.  
+However, it’s important to note that **results may vary and are not fully standardized** when using local models.
+
+The current PyDough prompting strategy and DSL generation were primarily designed and optimized for **high-performing hosted models**, specifically **Gemini 2.5 Pro** and **Anthropic Claude (Opus / Sonnet)**. As a result, local models may occasionally produce PyDough code that is syntactically close but semantically incorrect (for example, small naming mismatches or invalid expressions).
+
+That said, local inference can still be useful for experimentation, development, or environments without external API access.
+
+### Recommended local models:
+
+- `gemma3:12b`
+- `qwen3:8b`
+- `llama3.1:8b`
+
+---
+
+### Running PyDough-CE with Ollama
+
+Make sure Ollama is installed and running locally:
+
+```bash
+ollama serve
+```
+
+Pull a model (example):
+
+```bash
+ollama pull gemma3:12b
+```
+
+Set the required environment variables via CLI(or .env file):
+
+```bash
+export OLLAMA_BASE_URL=http://localhost:11434
+export OLLAMA_CONTEXT_LENGTH=32768
+```
+
+> A large context window is strongly recommended, as PyDough prompts are relatively large to perform well.
+---
+
+### Recommendation
+
+For the most reliable and consistent results, we recommend using **Gemini 2.5 Pro** or **Anthropic Claude Opus 4**.  
+Local models via Ollama are supported, but should be considered **experimental** at this time.
+
 ## TPCH sample database (download helper)
 
 To make local testing easy, this repo includes a small helper script to download the TPCH demo database.
@@ -171,7 +217,7 @@ Run all of the next commands **from the `pydough-analytics` folder** (the folder
 
 ### Default paths (data at `pydough-analytics` folder)
 
-We keep project artifacts in **`./data/`** for consistency:
+We keep project files in **`./data/`** for consistency:
 - **Database (SQLite):** `./data/databases/TPCH.db`
 - **Metadata JSON:** `./data/metadata/Tpch_graph.json`
 - **Metadata Markdown:** `./data/metadata_markdowns/Tpch.md`
@@ -205,6 +251,10 @@ Notes:
 - To switch providers (e.g., Anthropic), pass a valid provider/model for your integration:
   ```bash
   --provider anthropic --model claude-sonnet-4-5@20250929
+  ```
+- To run with **Ollama** you'll also need to add the provider and model as corresponds:
+```bash
+  --provider ollama --model qwen3:8b
   ```
 - Use `--rows` to control how many DataFrame rows are displayed (default: 20).
 
