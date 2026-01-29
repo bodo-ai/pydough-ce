@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pydough-analytics"
-version = "0.1.0"
+version = "0.1.2"
 description = "Text-to-analytics toolkit built on PyDough"
 readme = "README.md"
 authors = [{name = "Bodo.ai"}]
