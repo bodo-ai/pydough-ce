@@ -4,6 +4,8 @@ from rich.console import Console
 from .commands.generate_json_cmd import generate_metadata_from_config
 from .commands.generate_md_cmd import generate_markdown_from_config
 from .commands.ask_cmd import ask_from_cli
+from .config.env import load_env
+load_env()
 
 console = Console()
 

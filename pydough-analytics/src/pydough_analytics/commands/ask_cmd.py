@@ -85,7 +85,7 @@ def ask_from_cli(
     rows: int = 20,
 ) -> None:
     try:
-        PKG = Path(__file__).resolve().parents[3]
+        PKG = Path(__file__).resolve().parents[1]
         prompt_path = PKG / "data" / "prompts" / "prompt.md"
         cheatsheet_path = PKG / "data" / "prompts" / "cheatsheet.md"
 

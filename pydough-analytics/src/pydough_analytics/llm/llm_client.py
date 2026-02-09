@@ -38,7 +38,7 @@ class Result:
 # This class serves as a client for interacting with an LLM to ask questions, handle discourse, and correct errors.
 class LLMClient:
     def __init__(self, prompt=None, script=None, db_markdown_map=None, provider="google", model="gemini-2.5-pro", definitions=None):
-        PKG = Path(__file__).resolve().parents[3]
+        PKG = Path(__file__).resolve().parents[1]
         DATA_DIR = PKG / "data" / "prompts"
         prompt_path = prompt or (DATA_DIR / "prompt.md")
         script_path = script or (DATA_DIR / "cheatsheet.md")

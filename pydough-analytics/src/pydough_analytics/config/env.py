@@ -24,5 +24,3 @@ def load_env() -> bool:
         load_dotenv(found, override=False)
         return True
     return False
-
-load_env()
