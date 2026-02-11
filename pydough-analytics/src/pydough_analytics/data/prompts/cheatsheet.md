@@ -153,7 +153,7 @@ Select top k records.
   Example: HAS(People.packages)==1
 
 - **HASNOT(collection)**: True if collection is empty.
-  Example: HASNOT(orders)==1
+  Example: HASNOT(orders)
   
 - **COUNT(collection)**: Count non-null records.  
   Example: COUNT(People.packages)  
@@ -759,7 +759,7 @@ People.CALCULATE(
 js = current_occupants.WHERE(
     (first_name == "John") &  
     (last_name == "Smith") & 
-    (HASNOT(middle_name) == 1)
+    (HASNOT(middle_name))
 ).SINGULAR()
 Addresses.CALCULATE(
     address_id,
@@ -1114,7 +1114,7 @@ Orders.CALCULATE(is_lt_30_seconds = SECOND(order_date) < 30)
 * **Inactive Customers**  
   *Goal: Find customers who never placed orders.*  
   *Code:*  
-  customers_without_orders = customers.WHERE(HASNOT(orders)==1).CALCULATE(  
+  customers_without_orders = customers.WHERE(HASNOT(orders)).CALCULATE(  
       customer_key=key,  
       customer_name=name  
   )  

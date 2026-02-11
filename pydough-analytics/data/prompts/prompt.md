@@ -99,18 +99,18 @@ From the database structure reference, we can see that:
 
 To do this:
 1. We can use the `HASNOT` function to check if a customer has no orders
-2. We'll filter the customers using `WHERE(HASNOT(orders)==1)`
+2. We'll filter the customers using `WHERE(HASNOT(orders))`
 3. Then select just their names using `CALCULATE`
 Answer: Here's the PyDough code I'll generate:
 
 ```python
-customers_without_orders = customers.WHERE(HASNOT(orders)==1).CALCULATE(
+customers_without_orders = customers.WHERE(HASNOT(orders)).CALCULATE(
     customer_name=name
 )
 ```
 This code:
 1. Starts with the `customers` collection
-2. Filters to only include customers where `HASNOT(orders)==1`, meaning they have no orders
+2. Filters to only include customers where `HASNOT(orders)`, meaning they have no orders
 3. Uses `CALCULATE` to return only the customer names
 
 Question: What is the total order value in Brazil in 1992? Total order value is defined as the sum of extended_price * (1 - discount) Return the name and the total order value.
