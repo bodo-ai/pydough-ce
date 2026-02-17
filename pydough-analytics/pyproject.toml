@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pydough-analytics"
-version = "0.1.5"
+version = "0.1.7"
 description = "Text-to-analytics toolkit built on PyDough"
 readme = "README.md"
 authors = [{name = "Bodo.ai"}]
@@ -31,8 +31,6 @@ dependencies = [
   "boto3>=1.38.37",
 
   # Database connectors
-  "snowflake-sqlalchemy>=1.7.6",
-  "snowflake-connector-python[pandas]>=3.15.0",
   "mysql-connector-python>=9.4.0",
   "psycopg2-binary>=2.9.10",
 
@@ -46,6 +44,14 @@ dependencies = [
 dev = [
   "pytest>=8.4.0",
   "pytest-mock>=3.15.0",
+]
+snowflake = [
+  "snowflake-connector-python[pandas]>=3.15.0",
+  "snowflake-sqlalchemy>=1.7.6",
+]
+snowflake-lite = [
+  "snowflake-connector-python>=3.15.0",
+  "snowflake-sqlalchemy>=1.7.6",
 ]
 notebooks = [
   "jupyterlab>=4.4.0",
