@@ -38,7 +38,7 @@ class Result:
 # This class serves as a client for interacting with an LLM to ask questions, handle discourse, and correct errors.
 class LLMClient:
     def __init__(self, prompt=None, script=None, db_markdown_map=None, provider="google", model="gemini-2.5-pro", definitions=None):
-        PKG = Path(__file__).resolve().parents[3]
+        PKG = Path(__file__).resolve().parents[1]
         DATA_DIR = PKG / "data" / "prompts"
         prompt_path = prompt or (DATA_DIR / "prompt.md")
         script_path = script or (DATA_DIR / "cheatsheet.md")
@@ -101,7 +101,33 @@ class LLMClient:
                 )
 
         return result
-    
+
+    # This method asks a question to the LLM, formats the prompt and return de PyDough.
+    def simple_ask(self, question, md_content, db_name, context_data=None, **kwargs):
+        result = Result(original_question=question)
+
+        try:
+            self.db_markdown_map[db_name] = md_content
+            client = get_provider(self.provider, self.model)
+            formatted_q, formatted_prompt = self.format_prompt(question, db_name, context_data)
+
+            response = client.ask(formatted_q, formatted_prompt, **kwargs)
+            raw_response = response[0] if isinstance(response, tuple) else response 
+            extracted_code = extract_python_code(raw_response)
+
+            cleaned_explanation = re.sub(r"```python\n.*?```", "", raw_response, flags=re.DOTALL).strip()
+            pretty_explanation = "\n\n".join([line.strip() for line in cleaned_explanation.split("\n") if line.strip()])
+            
+            result.code = extracted_code
+            result.full_explanation = pretty_explanation
+            result.df = None
+            result.sql = None
+
+        except Exception as e:
+            result.exception = str(e) 
+
+        return result
+
     # This method reformulates a follow-up question based on the original question and the result of a previous query.
     def discourse(self, result, follow_up):
         if not result:

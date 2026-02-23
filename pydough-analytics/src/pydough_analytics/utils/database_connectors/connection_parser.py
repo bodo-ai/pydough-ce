@@ -1,4 +1,4 @@
-from urllib.parse import urlparse, parse_qs, ParseResult
+from urllib.parse import urlparse, parse_qs, ParseResult, unquote
 from collections.abc import Callable
 
 # Registry for parser functions
@@ -49,10 +49,12 @@ def parse_snowflake(parsed: ParseResult) -> dict:
     """
     path_parts = [p for p in parsed.path.split("/") if p]
     query = parse_qs(parsed.query)
+    user = unquote(parsed.username) if parsed.username else ""
+    password = unquote(parsed.password) if parsed.password else ""
     return {
         "engine": "snowflake",
-        "user": parsed.username,
-        "password": parsed.password,
+        "user": user,
+        "password": password,
         "account": parsed.hostname,
         "database": path_parts[0] if len(path_parts) > 0 else "",
         "schema": path_parts[1] if len(path_parts) > 1 else "",

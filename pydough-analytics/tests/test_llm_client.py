@@ -250,6 +250,162 @@ def test_llmclient_ask_exception_with_autocorrect_calls_correct(mocker):
 
 
 # ---------------------------
+# LLMClient.simple_ask
+# ---------------------------
+
+def test_llmclient_simple_ask_happy_text_only(mocker):
+    """
+    simple_ask(): returns code + cleaned explanation, without executing anything.
+    """
+    # prompt & script
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.read_file",
+        side_effect=[
+            "PROMPT {script_content} {database_content} {similar_queries} {recomendation} {definitions}",
+            "SCRIPT",
+        ],
+    )
+
+    fake_provider = MagicMock()
+    provider_text = "```python\nx = 1\n```\nThis is an explanation."
+    fake_provider.ask.return_value = provider_text
+
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.get_provider",
+        return_value=fake_provider,
+    )
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.extract_python_code",
+        return_value="x = 1",
+    )
+
+    c = LLMClient(provider="google", model="gemini")
+
+    res = c.simple_ask(
+        question="What is x?",
+        md_content="# DB SCHEMA",
+        db_name="DB1",
+    )
+
+    assert isinstance(res, Result)
+    assert res.code == "x = 1"
+    assert res.df is None
+    assert res.sql is None
+    assert "```python" not in res.full_explanation
+    assert "This is an explanation." in res.full_explanation
+
+    # db_markdown_map must be populated
+    assert c.db_markdown_map["DB1"] == "# DB SCHEMA"
+    fake_provider.ask.assert_called_once()
+
+
+def test_llmclient_simple_ask_tuple_response(mocker):
+    """
+    simple_ask(): handles (text, usage) tuple responses.
+    """
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.read_file",
+        side_effect=["PROMPT X", "SCRIPT X"],
+    )
+
+    fake_provider = MagicMock()
+    fake_provider.ask.return_value = (
+        "```python\nprint(1)\n```\nDone.",
+        {"usage": 10},
+    )
+
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.get_provider",
+        return_value=fake_provider,
+    )
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.extract_python_code",
+        return_value="print(1)",
+    )
+
+    c = LLMClient()
+    res = c.simple_ask(
+        question="Q",
+        md_content="SCHEMA",
+        db_name="DB",
+    )
+
+    assert res.code == "print(1)"
+    assert "```python" not in res.full_explanation
+    assert "Done." in res.full_explanation
+
+
+def test_llmclient_simple_ask_with_context_data(mocker):
+    """
+    simple_ask(): passes context_data into format_prompt.
+    """
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.read_file",
+        side_effect=[
+            "PROMPT {script_content} {database_content} {similar_queries} {recomendation} {definitions}",
+            "SCRIPT",
+        ],
+    )
+
+    fake_provider = MagicMock()
+    fake_provider.ask.return_value = "```python\nx=2\n```\nOk"
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.get_provider",
+        return_value=fake_provider,
+    )
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.extract_python_code",
+        return_value="x=2",
+    )
+
+    c = LLMClient()
+
+    res = c.simple_ask(
+        question="Original?",
+        md_content="DBMD",
+        db_name="DB",
+        context_data={
+            "redefined_question": "Better question",
+            "similar_queries": "SELECT 1",
+            "context_id": "ctx-1",
+        },
+    )
+
+    assert res.code == "x=2"
+    assert res.original_question == "Original?"
+
+
+def test_llmclient_simple_ask_exception(mocker):
+    """
+    simple_ask(): on exception, returns Result with exception populated.
+    """
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.read_file",
+        side_effect=["PROMPT", "SCRIPT"],
+    )
+
+    fake_provider = MagicMock()
+    fake_provider.ask.side_effect = RuntimeError("LLM failed")
+
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.get_provider",
+        return_value=fake_provider,
+    )
+
+    c = LLMClient()
+
+    res = c.simple_ask(
+        question="Q",
+        md_content="DBMD",
+        db_name="DB",
+    )
+
+    assert isinstance(res, Result)
+    assert res.exception is not None
+    assert "LLM failed" in res.exception
+
+
+# ---------------------------
 # LLMClient.discourse
 # ---------------------------
 

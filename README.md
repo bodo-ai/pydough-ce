@@ -160,6 +160,67 @@ hash -r
 pydough-analytics --version
 ```
 
+#### Development Mode
+
+``` bash
+pip install -e .[dev]
+```
+
+Adds:
+
+-   pytest
+-   pytest-mock
+
+#### Snowflake
+
+``` bash
+pip install -e .[snowflake]
+```
+
+Adds:
+
+-   snowflake-connector-python\[pandas\]
+-   snowflake-sqlalchemy
+
+It is recommended to generate metadata or use Ask for Snowflake.
+
+#### Snowflake Lite (Platform-Safe)
+
+``` bash
+pip install -e .[snowflake-lite]
+```
+
+Adds:
+
+-   snowflake-connector-python
+-   snowflake-sqlalchemy
+
+Recommended for platform deployments to avoid dependency conflicts.
+
+#### Notebook Mode
+
+``` bash
+pip install -e .[notebooks]
+```
+
+Adds:
+
+-   JupyterLab
+-   IPython kernel
+-   Matplotlib
+
+#### MCP Mode
+
+``` bash
+pip install -e .[mcp]
+```
+
+Adds:
+
+-   fastmcp
+
+Allows running PyDough as an MCP server.
+
 ## **Terminal location:** 
 
 Run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  

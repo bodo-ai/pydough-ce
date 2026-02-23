@@ -4,11 +4,7 @@ import google.genai as genai
 from google.genai import types
 from anthropic import AnthropicVertex
 import aisuite as ai
-from dotenv import load_dotenv
 import requests
-import json
-
-load_dotenv()
 
 class AIProvider(ABC):
     @abstractmethod
