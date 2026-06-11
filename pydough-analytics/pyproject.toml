@@ -61,6 +61,13 @@ notebooks = [
 mcp = [
   "fastmcp>=0.4.0"
 ]
+bodosql = [
+  "bodo>=2026.5",
+  "bodosql>=2026.5"
+]
+iceberg = [
+  "pyiceberg"
+]
 
 [project.urls]
 Repository = "https://github.com/bodo-ai/pydough-ce"

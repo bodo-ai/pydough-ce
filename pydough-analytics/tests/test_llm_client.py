@@ -1,6 +1,5 @@
 import pytest
 from unittest.mock import MagicMock
-from types import SimpleNamespace
 
 # Target under test
 from src.pydough_analytics.llm.llm_client import LLMClient, Result
@@ -10,6 +9,7 @@ from src.pydough_analytics.llm.llm_client import LLMClient, Result
 # Helpers
 # ---------------------------
 
+
 @pytest.fixture(autouse=True)
 def _patch_llmclient_default_prompt_read(mocker):
     """
@@ -17,15 +17,18 @@ def _patch_llmclient_default_prompt_read(mocker):
     """
     mocker.patch(
         "src.pydough_analytics.llm.llm_client.read_file",
-        return_value="DUMMY_PROMPT_CONTENT"
+        return_value="DUMMY_PROMPT_CONTENT",
     )
+
 
 class FakeDF:
     """
     Minimal DataFrame-like object for serialization tests.
     """
+
     def __init__(self, rows):
         self._rows = rows
+
     def to_dict(self, orient="records"):
         assert orient == "records"
         return self._rows
@@ -34,6 +37,7 @@ class FakeDF:
 # ---------------------------
 # Result.to_dict
 # ---------------------------
+
 
 def test_result_to_dict_serializes_df():
     """
@@ -46,7 +50,7 @@ def test_result_to_dict_serializes_df():
         df=df,
         exception=None,
         original_question="Q",
-        sql_output="SELECT 1"
+        sql_output="SELECT 1",
     )
     out = r.to_dict()
     assert out["code"] == "x=1"
@@ -61,6 +65,7 @@ def test_result_to_dict_serializes_df():
 # LLMClient.ask (happy path) - provider returns TEXT
 # ---------------------------
 
+
 def test_llmclient_ask_happy_text_only(mocker):
     """
     ask(): extracts python code, executes, and returns Result with df/sql and explanation cleaned.
@@ -68,7 +73,10 @@ def test_llmclient_ask_happy_text_only(mocker):
     # read_file for prompt & script
     mocker.patch(
         "src.pydough_analytics.llm.llm_client.read_file",
-        side_effect=["PROMPT {script_content} {database_content} {similar_queries} {recomendation} {definitions}", "SCRIPTX"],
+        side_effect=[
+            "PROMPT {script_content} {database_content} {similar_queries} {recomendation} {definitions}",
+            "SCRIPTX",
+        ],
     )
     # markdown load
     mocker.patch(
@@ -96,6 +104,7 @@ def test_llmclient_ask_happy_text_only(mocker):
 
     c = LLMClient(provider="google", model="gemini")
     res = c.ask(
+        url="sqlite:///dummy.db",
         question="How many rows?",
         kg_path="graph.json",
         md_path="docs.md",
@@ -118,6 +127,7 @@ def test_llmclient_ask_happy_text_only(mocker):
 # ---------------------------
 # LLMClient.ask (happy path) - provider returns (TEXT, usage)
 # ---------------------------
+
 
 def test_llmclient_ask_happy_tuple_response(mocker):
     """
@@ -148,7 +158,8 @@ def test_llmclient_ask_happy_tuple_response(mocker):
 
     c = LLMClient(provider="google", model="gemini")
     res = c.ask(
-        "Q",
+        url="sqlite:///dummy.db",
+        question="Q",
         kg_path="kg.json",
         md_path="md.md",
         db_name="DB",
@@ -163,6 +174,7 @@ def test_llmclient_ask_happy_tuple_response(mocker):
 # ---------------------------
 # LLMClient.ask (error path) - no auto-correct
 # ---------------------------
+
 
 def test_llmclient_ask_exception_no_autocorrect(mocker):
     """
@@ -192,7 +204,14 @@ def test_llmclient_ask_exception_no_autocorrect(mocker):
     )
 
     c = LLMClient()
-    res = c.ask("Q?", kg_path="kg", md_path="md", db_name="DB", auto_correct=False)
+    res = c.ask(
+        url="sqlite:///dummy.db",
+        question="Q?",
+        kg_path="kg",
+        md_path="md",
+        db_name="DB",
+        auto_correct=False,
+    )
     assert isinstance(res, Result)
     assert res.exception is not None
     assert "exec failed" in res.exception
@@ -201,6 +220,7 @@ def test_llmclient_ask_exception_no_autocorrect(mocker):
 # ---------------------------
 # LLMClient.ask (error path) - WITH auto-correct
 # ---------------------------
+
 
 def test_llmclient_ask_exception_with_autocorrect_calls_correct(mocker):
     """
@@ -235,7 +255,8 @@ def test_llmclient_ask_exception_with_autocorrect_calls_correct(mocker):
     mocker.patch.object(c, "correct", return_value=sentinel)
 
     res = c.ask(
-        "Q",
+        url="sqlite:///dummy.db",
+        question="Q",
         kg_path="kg",
         md_path="md",
         db_name="DB",
@@ -252,6 +273,7 @@ def test_llmclient_ask_exception_with_autocorrect_calls_correct(mocker):
 # ---------------------------
 # LLMClient.simple_ask
 # ---------------------------
+
 
 def test_llmclient_simple_ask_happy_text_only(mocker):
     """
@@ -409,6 +431,7 @@ def test_llmclient_simple_ask_exception(mocker):
 # LLMClient.discourse
 # ---------------------------
 
+
 def test_discourse_no_result_returns_followup():
     """
     discourse(): if result is falsy, returns follow-up unchanged.
@@ -445,6 +468,7 @@ def test_discourse_with_code_and_df():
 # LLMClient.add_definition
 # ---------------------------
 
+
 def test_add_definition_appends():
     """
     add_definition(): append non-empty definitions.
@@ -458,6 +482,7 @@ def test_add_definition_appends():
 # ---------------------------
 # LLMClient.format_prompt
 # ---------------------------
+
 
 def test_format_prompt_uses_map_and_context(mocker):
     """
@@ -503,6 +528,7 @@ def test_format_prompt_uses_map_and_context(mocker):
 # LLMClient.correct
 # ---------------------------
 
+
 def test_correct_calls_ask_with_corrective_question(mocker):
     """
     correct(): builds a corrective prompt and delegates back to ask().
@@ -518,7 +544,9 @@ def test_correct_calls_ask_with_corrective_question(mocker):
     sentinel = Result(pydough_code="fixed", original_question="orig")
     mocker.patch.object(c, "ask", return_value=sentinel)
 
-    r = Result(pydough_code="x=1", original_question="orig", exception="ZeroDivisionError")
+    r = Result(
+        pydough_code="x=1", original_question="orig", exception="ZeroDivisionError"
+    )
     out = c.correct(
         result=r,
         kg_path="kg",
