@@ -10,7 +10,7 @@ Community Edition toolkit that combines the PyDough DSL with LLM-based prompting
 
 ## Provider Setup — Env (Vertex vs API‑Key)
 
-Below are concise **`.env` examples** reflecting the two modes we support and a variant with explicit region.  
+Below are concise **`.env` examples** reflecting the two modes we support and a variant with explicit region.
 > **Do not commit real credentials or API keys to Git.** Use placeholders in docs and local `.env` files.
 
 ---
@@ -39,7 +39,7 @@ GOOGLE_GENAI_USE_VERTEXAI=true
 
 ### 2) API‑Key mode (no Vertex) — *Gemini only*
 
-If you set `GOOGLE_GENAI_USE_VERTEXAI=false`, the code will use the **Google AI Studio (API‑key) SDK** for Gemini.  
+If you set `GOOGLE_GENAI_USE_VERTEXAI=false`, the code will use the **Google AI Studio (API‑key) SDK** for Gemini.
 In this mode, `GOOGLE_API_KEY` is **required**, and ADC / project / region are **not used** by the Gemini client.
 
 ```bash
@@ -85,7 +85,7 @@ GOOGLE_GENAI_USE_VERTEXAI=true
 
 ## Using Local Models (Ollama)
 
-PyDough-CE can also be used with **locally hosted open-source models via Ollama**.  
+PyDough-CE can also be used with **locally hosted open-source models via Ollama**.
 However, it’s important to note that **results may vary and are not fully standardized** when using local models.
 
 The current PyDough prompting strategy and DSL generation were primarily designed and optimized for **high-performing hosted models**, specifically **Gemini 2.5 Pro** and **Anthropic Claude (Opus / Sonnet)**. As a result, local models may occasionally produce PyDough code that is syntactically close but semantically incorrect (for example, small naming mismatches or invalid expressions).
@@ -126,7 +126,7 @@ export OLLAMA_CONTEXT_LENGTH=32768
 
 ### Recommendation
 
-For the most reliable and consistent results, we recommend using **Gemini 2.5 Pro** or **Anthropic Claude Opus 4**.  
+For the most reliable and consistent results, we recommend using **Gemini 2.5 Pro** or **Anthropic Claude Opus 4**.
 Local models via Ollama are supported, but should be considered **experimental** at this time.
 
 ## TPCH sample database (download helper)
@@ -168,9 +168,9 @@ Invoke-WebRequest -Uri https://github.com/lovasoa/TPCH-sqlite/releases/download/
 
 ## Quick Guide
 
-### **Terminal location:** 
+### **Terminal location:**
 
-Run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).  
+Run all of the next commands **from the `pydough-analytics` folder** (the folder that contains `data/`, `docs/`, `samples/`, `src/`, etc.).
  Quick check:
  ```bash
  ls data
@@ -250,14 +250,14 @@ Each connection string must include all required parameters (user, password, hos
 
 ### SQLite
 
-Used for local files or in-memory databases.    
+Used for local files or in-memory databases.
 All values are required in the URL format.
 
 ```bash
 sqlite:///path/to/mydb.db
 ```
 
-- Uses a local .sqlite or .db file.      
+- Uses a local .sqlite or .db file.
 
 To use an in-memory database (for testing):
 
@@ -267,7 +267,7 @@ sqlite:///:memory:
 
 ### Snowflake
 
-Used for analytical data warehouses.      
+Used for analytical data warehouses.
 The connection string must include credentials, account, database, schema, and warehouse.
 
 ```bash
@@ -284,9 +284,9 @@ snowflake://user:password@account/db/schema?warehouse=WH&role=PUBLIC
 
 ### MySQL
 
-Used for transactional databases.   
-The URL must include user, password, host, port, and database.    
-Internally converted to mysql+mysqlconnector://.    
+Used for transactional databases.
+The URL must include user, password, host, port, and database.
+Internally converted to mysql+mysqlconnector://.
 
 ```bash
 mysql://user:password@host:port/mydb
@@ -307,9 +307,9 @@ mysql+mysqlconnector://user:password@host:port/mydb
 
 ### PostgreSQL
 
-Used for relational and analytical databases.   
-The URL must include all connection details.    
-Internally converted to postgresql+psycopg2://.   
+Used for relational and analytical databases.
+The URL must include all connection details.
+Internally converted to postgresql+psycopg2://.
 
 ```bash
 postgres://user:password@host:port/mydb
@@ -327,6 +327,32 @@ postgresql+psycopg2://user:password@host:port/mydb
 - `host`: Server hostname or IP address.
 - `port`: Port number (default: 5432).
 - `mydb`: Database name.
+
+### BodoSQL
+
+A high performance SQL engine that can query a variety of data sources.
+Currently, the BodoSQL backend is only available through the Python API.
+To use this backend, pass a [BodoSQLContext](https://docs.bodo.ai/latest/api_docs/sql/bodosqlcontext/) to `LLMClient.ask()`
+
+For example, the following code assumes TPCH data was written in [Iceberg table format](https://iceberg.apache.org/) to a local directory:
+``` py
+import os
+import pandas as pd
+from bodosql import BodoSQLContext, FileSystemCatalog
+
+catalog = FileSystemCatalog(os.path.abspath("./data/databases/tpch_db"))
+bc = BodoSQLContext(catalog=catalog)
+
+result = client.ask(
+    bodosql_context=bc
+    question="What are the most common transaction statuses and their respective counts?",
+    kg_path="./data/metadata/tpch_graph.json",           # Knowledge Graph JSON
+    md_path="./data/metadata_markdowns/tpch.md",         # Markdown doc for the DB
+    db_name="TPCH"
+)
+```
+
+For a complete list of supported database catalogs [see here](https://docs.bodo.ai/latest/api_docs/sql/database_catalogs/).
 
 ## MCP Server (Optional)
 
@@ -381,10 +407,10 @@ See more on the README_MCP.md under the mcp folder.
 ### Environment Variables
 
 The MCP server uses the same environment configuration as the CLI:
-- `GOOGLE_PROJECT_ID`, `GOOGLE_REGION`, and `GOOGLE_APPLICATION_CREDENTIALS` — for Vertex/Claude/Gemini clients.  
-- `GEMINI_API_KEY` or `ANTHROPIC_API_KEY` — if using direct SDK mode.  
+- `GOOGLE_PROJECT_ID`, `GOOGLE_REGION`, and `GOOGLE_APPLICATION_CREDENTIALS` — for Vertex/Claude/Gemini clients.
+- `GEMINI_API_KEY` or `ANTHROPIC_API_KEY` — if using direct SDK mode.
 
-When metadata is passed inline (instead of via `metadata_path`), it’s persisted temporarily in  
+When metadata is passed inline (instead of via `metadata_path`), it’s persisted temporarily in
 `/tmp/pydough_analytics_mcp/` and automatically deleted when `close_session()` is called.
 
 ---
@@ -433,51 +459,51 @@ pydough-analytics/
 ## Architecture Overview
 
 ```
-+-----------------------------+                               
-| CLI (Typer)                 |                               
-| (generate-json, generate-md,|                               
-|  ask)                       |                               
-+-------------+---------------+                               
-              |                                               
-              v                                               
-+-----------------------------+       +---------------------------+       
-| Metadata Generator          | ----> | Metadata JSON             |       
-| (SQLAlchemy inspector +     |       | (graph definition, V2)    |       
-|  identifier sanitizer,      |       +---------------------------+       
-|  type mapping)              |                                               
-+-------------+---------------+                                               
-              |                                               
-              v                                               
-+-----------------------------+       +---------------------------+       
-| Markdown Exporter           | ----> | Markdown Docs             |       
-| (render schema from graph)  |       | (human-readable overview) |       
-+-------------+---------------+       +---------------------------+       
++-----------------------------+
+| CLI (Typer)                 |
+| (generate-json, generate-md,|
+|  ask)                       |
++-------------+---------------+
+              |
+              v
++-----------------------------+       +---------------------------+
+| Metadata Generator          | ----> | Metadata JSON             |
+| (SQLAlchemy inspector +     |       | (graph definition, V2)    |
+|  identifier sanitizer,      |       +---------------------------+
+|  type mapping)              |
++-------------+---------------+
+              |
+              v
++-----------------------------+       +---------------------------+
+| Markdown Exporter           | ----> | Markdown Docs             |
+| (render schema from graph)  |       | (human-readable overview) |
++-------------+---------------+       +---------------------------+
 
               |
               v
-+-----------------------------+       +---------------------------+       
-| Ask Command (Typer)         | ----> | LLM Client                |       
-| (natural language question) |       | (prompt + schema + guide) |       
-+-------------+---------------+       +-------------+-------------+       
-              |                                                    
-              v                                                    
-+-----------------------------+       +---------------------------+       
-| AI Providers                | ----> | Gemini / Claude / aisuite |       
-| (google, anthropic,         |       |                           |       
-|  other via aisuite)         |       +---------------------------+       
-+-------------+---------------+                                      
-              |                                                    
-              v                                                    
-+-----------------------------+       +---------------------------+       
-| PyDough Executor            | ----> | SQL + DataFrame           |       
-| (extract code, run on DB,   |       | (results + explanation)   |       
-|  sanitize, retry on errors) |       +---------------------------+       
-+-------------+---------------+                                            
++-----------------------------+       +---------------------------+
+| Ask Command (Typer)         | ----> | LLM Client                |
+| (natural language question) |       | (prompt + schema + guide) |
++-------------+---------------+       +-------------+-------------+
+              |
+              v
++-----------------------------+       +---------------------------+
+| AI Providers                | ----> | Gemini / Claude / aisuite |
+| (google, anthropic,         |       |                           |
+|  other via aisuite)         |       +---------------------------+
++-------------+---------------+
+              |
+              v
++-----------------------------+       +---------------------------+
+| PyDough Executor            | ----> | SQL + DataFrame           |
+| (extract code, run on DB,   |       | (results + explanation)   |
+|  sanitize, retry on errors) |       +---------------------------+
++-------------+---------------+
               |
               v
 +-----------------------------+       +---------------------------+
 | MCP Server (FastMCP)        | ----> | External Clients (MCP)    |
-| (tools + resources:         |       | Inspector / Claude / IDEs | 
+| (tools + resources:         |       | Inspector / Claude / IDEs |
 |  init_metadata, ask, etc.)  |       |                           |
 +-----------------------------+       +---------------------------+
 

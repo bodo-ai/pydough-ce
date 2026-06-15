@@ -551,6 +551,7 @@ def test_correct_calls_ask_with_corrective_question(mocker):
         result=r,
         kg_path="kg",
         url="sqlite:///dummy.db",
+        bodosql_context=None,
         md_path="md",
         db_name="DB",
         context_data={"x": 1},
