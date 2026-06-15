@@ -89,7 +89,7 @@ def execute_code_and_extract_result(
     Execute a PyDough query using the provided environment, metadata and DB URL.
     The connection logic is dynamically configured per engine.
     """
-    if kg_path and db_name and url:
+    if kg_path and db_name and (url is not None or bodosql_context is not None):
         metadata: list = load_json(kg_path)
         graph: dict | None = next(
             (graph for graph in metadata if graph.get("name") == db_name), None

@@ -149,6 +149,7 @@ class LLMClient:
                     db_name=db_name,
                     kg_path=kg_path,
                     url=url,
+                    bodosql_context=bodosql_context,
                     md_path=md_path,
                     context_data=context_data,
                     auto_correct=auto_correct,
@@ -217,7 +218,7 @@ class LLMClient:
             self.definitions.append(new_definition)
 
     # This method corrects the result of a previous query if an exception occurred, reformulating the question to ask for help.
-    def correct(self, result, kg_path, url, md_path, db_name, context_data, **kwargs):
+    def correct(self, result, kg_path, url, bodosql_context, md_path, db_name, context_data, **kwargs):
         if result.exception:
             try:
                 formatted_q, formatted_prompt = self.format_prompt(
@@ -233,6 +234,7 @@ class LLMClient:
                     db_name=db_name,
                     kg_path=kg_path,
                     url=url,
+                    bodosql_context=bodosql_context,
                     md_path=md_path,
                     context_data=context_data,
                     **kwargs,
