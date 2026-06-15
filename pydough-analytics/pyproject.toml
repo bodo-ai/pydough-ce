@@ -66,7 +66,7 @@ bodosql = [
   "bodosql>=2026.5"
 ]
 iceberg = [
-  "pyiceberg"
+  "pyiceberg<0.11"
 ]
 
 [project.urls]
