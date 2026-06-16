@@ -82,8 +82,6 @@ class LLMClient:
             raise ValueError(
                 "Both 'url' and 'bodosql_context' provided. Please provide only one of them."
             )
-        elif url is None and bodosql_context is None:
-            raise ValueError("Either 'url' or 'bodosql_context' must be provided.")
         elif bodosql_context:
             try:
                 import bodosql
