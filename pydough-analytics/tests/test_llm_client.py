@@ -1,3 +1,4 @@
+import pydough
 import pytest
 from unittest.mock import MagicMock
 
@@ -268,6 +269,75 @@ def test_llmclient_ask_exception_with_autocorrect_calls_correct(mocker):
     # Ensure max_corrections was decremented (verified via call kwargs)
     kwargs = c.correct.call_args.kwargs
     assert kwargs.get("max_corrections") == 1
+
+
+# ---------------------------
+# LLMClient.ask with BodoSQL context
+# ---------------------------
+
+
+def test_llmclient_ask_with_bodosql_context(mocker, tmp_path):
+    """
+    Test ask() with BodoSQLContext and verify Pydough connects to the database. 
+    """
+    try:
+        from bodosql import BodoSQLContext
+    except ImportError:
+        pytest.skip("bodosql not installed, skipping")
+
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.read_file",
+        side_effect=["PROMPT", "SCRIPT"],
+    )
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.load_markdown",
+        return_value="MD",
+    )
+    spy = mocker.spy(pydough.active_session, "connect_database")
+
+    # Create an empty metadata graph file
+    db_name = "BodoSQLTestDB"
+    kg_path = tmp_path / "kg.json"
+    with open(kg_path, "w") as f:
+        f.write(f"""
+        [
+            {{
+                "name": "{db_name}",
+                "version": "V2",
+                "collections": [],
+                "relationships": []
+            }}
+        ]
+        """)
+    pydough_code = f"x={db_name}.CALCULATE(1)"
+
+    fake_provider = MagicMock()
+    fake_provider.ask.return_value = f"```python\n{pydough_code}\n```"
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.get_provider",
+        return_value=fake_provider,
+    )
+
+    mocker.patch(
+        "src.pydough_analytics.llm.llm_client.extract_python_code",
+        return_value=pydough_code,
+    )
+
+    bc = BodoSQLContext()
+
+    c = LLMClient()
+    result = c.ask(
+        question="Q",
+        kg_path=kg_path,
+        md_path="md.md",
+        db_name=db_name,
+        bodosql_context=bc,
+    )
+
+    assert result.code == pydough_code
+    assert result.exception is None
+    assert result.df is not None
+    assert spy.call_count == 1
 
 
 # ---------------------------

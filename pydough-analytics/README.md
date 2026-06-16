@@ -330,11 +330,11 @@ postgresql+psycopg2://user:password@host:port/mydb
 
 ### BodoSQL
 
-A high performance SQL engine that can query a variety of data sources.
+A high performance SQL engine that can connect to a variety of data sources.
 Currently, the BodoSQL backend is only available through the Python API.
 To use this backend, pass a [BodoSQLContext](https://docs.bodo.ai/latest/api_docs/sql/bodosqlcontext/) to `LLMClient.ask()`.
 
-For example, the following code assumes TPCH data was written in [Iceberg table format](https://iceberg.apache.org/) to a local directory:
+For example, the following code assumes TPCH data was written in [Apache Iceberg table format](https://iceberg.apache.org/) to a local directory:
 ``` py
 import os
 import pandas as pd
