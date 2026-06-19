@@ -344,7 +344,7 @@ catalog = FileSystemCatalog(os.path.abspath("./data/databases/tpch_db"))
 bc = BodoSQLContext(catalog=catalog)
 
 result = client.ask(
-    bodosql_context=bc
+    bodosql_context=bc,
     question="What are the most common transaction statuses and their respective counts?",
     kg_path="./data/metadata/tpch_graph.json",           # Knowledge Graph JSON
     md_path="./data/metadata_markdowns/tpch.md",         # Markdown doc for the DB
