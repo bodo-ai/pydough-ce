@@ -29,8 +29,10 @@ class SessionData:
     metadata_markdown: str  # cached Markdown content
     db_name: str
     db_config: Dict[str, Any]
+    database_url: Optional[str]  # original URL, forwarded to execute_code_and_extract_result
     default_max_rows: int
     last_result: Optional[Result]
+    owns_files: bool = True  # False when kg_path points to a caller-supplied file
 
 
 _sessions: Dict[str, SessionData] = {}
@@ -177,8 +179,10 @@ async def open_session_impl(
         metadata_markdown=md_text,
         db_name=db_name,
         db_config=db_config,
+        database_url=database_url,
         default_max_rows=max_rows,
         last_result=None,
+        owns_files=metadata_path is None,  # only delete files we created ourselves
     )
     return {"session_id": session_id}
 
@@ -189,12 +193,13 @@ async def close_session_impl(*, session_id: str) -> Dict[str, Any]:
     if not data:
         raise ToolError(f"Session '{session_id}' not found")
 
-    for p in (data.kg_path, data.md_path):
-        try:
-            if p.exists():
-                p.unlink()
-        except Exception:
-            logger.debug("Failed to remove temporary file: %s", p, exc_info=True)
+    if data.owns_files:
+        for p in (data.kg_path, data.md_path):
+            try:
+                if p.exists():
+                    p.unlink()
+            except Exception:
+                logger.debug("Failed to remove temporary file: %s", p, exc_info=True)
 
     return {"closed": True}
 
@@ -218,6 +223,7 @@ async def ask_impl(
             kg_path=str(session.kg_path),
             md_path=str(session.md_path),
             db_name=session.db_name,
+            url=session.database_url,
             auto_correct=auto_correct,
             max_corrections=max_corrections,
             **(provider_params or {}),
