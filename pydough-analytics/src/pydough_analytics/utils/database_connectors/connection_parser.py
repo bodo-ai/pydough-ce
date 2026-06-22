@@ -34,11 +34,15 @@ def parse_db_url(url: str) -> dict:
 @register_parser("sqlite")
 def parse_sqlite(parsed: ParseResult) -> dict:
     """
-    Example: sqlite:///path/to/file.db
+    Example: sqlite:///relative/path.db  or  sqlite:////absolute/path.db
     """
+    path = parsed.path
+    # 4-slash URLs (sqlite:////abs/path) → path starts with "//" → absolute path
+    # 3-slash URLs (sqlite:///rel/path)  → path starts with "/"  → relative path
+    database = path[1:] if path.startswith("//") else path.lstrip("/")
     return {
         "engine": "sqlite",
-        "database": parsed.path.lstrip("/"),
+        "database": database,
     }
 
 # Parser for Snowflake
